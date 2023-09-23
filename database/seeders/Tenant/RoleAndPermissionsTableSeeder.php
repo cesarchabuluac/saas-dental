@@ -165,9 +165,7 @@ class RoleAndPermissionsTableSeeder extends Seeder
         Permission::updateOrCreate(['name' => 'cash_registers.update'], ['guard_name' => 'web', 'group' => 'cash_registers', 'description' => 'Actualizar corte de caja']);
         Permission::updateOrCreate(['name' => 'cash_registers.download'], ['guard_name' => 'web', 'group' => 'cash_registers', 'description' => 'Descargar corte de caja']);
 
-
-
-
+        //Reports
         Permission::updateOrCreate(['name' => 'reports.index'], ['guard_name' => 'web', 'group' => 'reports', 'description' => 'Informes del sistema']);
         Permission::updateOrCreate(['name' => 'reports.appointments'], ['guard_name' => 'web', 'group' => 'reports', 'description' => 'Informes de Citas Médicas']);
         Permission::updateOrCreate(['name' => 'reports.patients'], ['guard_name' => 'web', 'group' => 'reports', 'description' => 'Informes de Pacientes']);
@@ -175,7 +173,8 @@ class RoleAndPermissionsTableSeeder extends Seeder
         Permission::updateOrCreate(['name' => 'reports.payments'], ['guard_name' => 'web', 'group' => 'reports', 'description' => 'Informes de Pagos']);
         Permission::updateOrCreate(['name' => 'reports.medicines'], ['guard_name' => 'web', 'group' => 'reports', 'description' => 'Informes de Inventarios']);
 
-        
+        //Importers
+        Permission::updateOrCreate(['name' => 'imports.index'], ['guard_name' => 'web', 'group' => 'settings', 'description' => 'Ver el importador de catalogos']);
 
         //Create role admin
         $admin = Role::updateOrCreate(['name' => 'Administrator'], ['guard_name' => 'web']);

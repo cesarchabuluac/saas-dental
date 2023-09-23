@@ -27,6 +27,12 @@ export default [
         permission: 'settings.index',
       },
       {
+        title: "importer",
+        icon: 'UploadCloudIcon',
+        route: "settings-imports",
+        permission: 'imports.index',
+      },
+      {
         title: "users",
         icon: 'UsersIcon',
         route: "settings-users",

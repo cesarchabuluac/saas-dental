@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\DashboardAPIController;
+use App\Http\Controllers\API\ImportAPIController;
 use App\Http\Controllers\API\NotificationAPIController;
 use App\Http\Controllers\API\UserAPIController;
 use App\Http\Controllers\AuthController;
@@ -188,4 +189,7 @@ Route::group(['middleware' => 'auth:api', 'as' => 'tenant.'], function () {
 
   //NOTIFICATIONS
   Route::resource('notifications', NotificationAPIController::class);
+
+  Route::get('imports/donwload', [ImportAPIController::class, 'donwloadCatalog']);
+  Route::post('imports/import-catalog', [ImportAPIController::class, 'importCatalog']);
 });

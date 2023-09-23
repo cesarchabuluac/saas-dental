@@ -44,7 +44,6 @@ class SendAppointmentCommand extends Command
                 ->pluck('value', 'key')
                 ->toArray();
 
-
             $enabled = (int)$settings['enable_appointment_notification'] ?? 0;
             $frequency = $settings['app_appointment_reminder_every'] ?? 'daily';
             $language = $settings['language'] ?? 'es';

@@ -76,6 +76,7 @@
   "cancel": "Cancelar",
   "confirm": "Confirmar",
   "save": "Guardar",
+  "donwload": "Descargar",
   "save_changes": "Guardar cambios",
   "delete": "Eliminar",
   "edit": "Editar",
@@ -3089,5 +3090,28 @@
     "slug": "Notificación",
     "plural": "Notificaciones",
     "read_all": "Leer Todas"
+  },
+  "importer": "Importador",
+  "imports": {
+    "desc": "Gestion de Catálogos",
+    "slug": "Importador",
+    "import_catalog": "Importar Catálogos",
+    "importer": "Importador",
+    "import": "Importar",
+    "import_donwload_description": "Descargue una plantilla de Excel para importar sus catálogos de forma sencilla",
+    "import_description": "Elige el archivo a subir previamente llenado con los datos requeridos",
+    "import_template": "Descargar una plantilla",
+    "import_template_help": "Seleccionar la plantilla a descargar",
+    "import_template_placeholder": "Descargar una plantilla",
+    "import_input_template": "Selecciona la plantilla a importar",
+    "import_input_template_help": "Selecciona la plantilla a importar",
+    "import_input_template_placeholder": "Selecciona la plantilla a importar",
+    "import_input_file": "Subir archivo",
+    "import_input_file_help": "Seleccionar archivo",
+    "import_input_file_placeholder": "Seleccionar archivo",
+    "files": {
+      "actions": "Acciones Clínicas",
+      "laboratory_actions":"Acciones de Laboratorio"
+    }
   }
 }

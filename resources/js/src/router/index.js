@@ -293,6 +293,28 @@ const router = new VueRouter({
       },
     },
 
+    //IMPORTS
+    {
+      path: "/settings/imports",
+      name: "settings-imports",
+      component: () => import("@/views/settings/Imports/Index.vue"),
+      meta: {
+        permission: "import.index",
+        pageTitle: "imports.desc",
+        requiresAuth: true,
+        breadcrumb: [
+          {
+            text: "dashboard",
+            to: "/"
+          },
+          {
+            text: "imports.slug",
+            active: true,
+          },
+        ],
+      },
+    },
+
     //Plans
     {
       path: "/plans",

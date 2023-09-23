@@ -371,10 +371,10 @@ export default {
             };
         },
         isProfessional() {
-            return store.getters['auth/getRoleId'] === 4 //state.auth.user.roles[0].id === 4
+            return store.getters['auth/getRoleId'] === 4
         },
         user_id() {
-            return store.getters['auth/getUserId'] // state.auth.user.id
+            return store.getters['auth/getUserId']
         }
     },
     async mounted() {
@@ -395,17 +395,14 @@ export default {
         handleResize() {
             this.isMobile = window.innerWidth < 576;
         },
-        async getProfessionals() {
-            if (store.state.auth.doctors.length > 0) {
-                this.professionals = _.orderBy(store.state.auth.doctors, 'name', 'asc')
-            } else {
-                this.loading = true
-                const { data } = await UserResource.index({
-                    criteria: 'professionals',
-                });
-                this.loading = false
-                this.professionals = _.orderBy(data.data, 'name', 'asc')
-            }
+        async getProfessionals() {            
+            this.loading = true
+            const { data } = await UserResource.index({
+                criteria: 'professionals',
+                ignoreSchedules: false,
+            });
+            this.loading = false
+            this.professionals = _.orderBy(data.data, 'name', 'asc')
         },
         async donwloadAppointment() {
             const query = {
