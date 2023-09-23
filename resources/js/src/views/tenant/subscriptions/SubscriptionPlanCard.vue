@@ -21,12 +21,10 @@
             </b-card-header>
             <b-card-header v-else class="d-flex justify-content-between align-items-center pt-75 pb-25">
                 <h5 class="mb-0">{{ $t('subscriptions.card_plan.trial.title').replace(':plan', account.plan.name) }}</h5>
-                <h6 v-if="daysRemaining(account.trial_ends_at) > 0" class="text-muted_ text-danger w-100">
-                    {{ $t('subscriptions.card_plan.trial.subtitle').replace(':days', daysRemaining(account.trial_ends_at)) }}
+                <h6 v-if="timeLeft === 'ended'" class="text-muted_ mt-1 text-danger w-100">
+                    {{ $t('subscriptions.trial_ended').replace(':days', account.end_on_trial) }}
                 </h6>
-                <h6 v-else class="text-muted_ text-danger w-100">
-                    {{ $t('subscriptions.trial_ended').replace(':date', dateHuman(account.trial_ends_at)) }}
-                </h6>
+                <h6 v-else class="text-muted_ mt-1 text-danger w-100" v-html="$t('subscriptions.card_plan.trial.subtitle').replace(':timeleft', timeLeft)"></h6>
             </b-card-header>
 
             <b-card-body>
@@ -110,13 +108,35 @@ export default {
         BOverlay, 
         BSpinner,
     },
+    created() {
+        setInterval(() => {
+            
+        }, 1000);
+    },
     setup() {   
         
         // Use toast
         const toast = useToast();
 
         const loading = ref(false) 
-        // const account = store.getters['auth/getCurrentAccount'];
+        const targetDate = ref(new Date(store.state.auth.account.trial_ends_at));
+        const timeLeft = ref("Calculando...");
+
+        const calculateTimeLeft = () => {
+            const now = new Date();
+            const timeDiff = targetDate.value - now;
+            if (timeDiff <= 0) {
+                timeLeft.value = "ended";
+                return;
+            }
+
+            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            timeLeft.value = `${days} Días, ${hours} Horas, ${minutes} Minutos, ${seconds} Segundos,`;
+        };
 
         const account = computed({
             get: () => store.state.auth.account,
@@ -192,12 +212,16 @@ export default {
 
         onMounted(() => {
             store.commit('auth/SET_SWITCH_PLAN', false)
+
+            calculateTimeLeft();
+            setInterval(calculateTimeLeft, 1000);
         })
 
         return {
             loading,
             account,
             isWitchPlan,
+            timeLeft,
 
             //
             switchPlan,

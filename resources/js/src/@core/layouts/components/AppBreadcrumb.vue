@@ -15,7 +15,7 @@
               </b-button>
             </h4>
             <div v-if="isTrial" class="alert-body">
-              <span>{{ $t('subscriptions.trial.description').replace(':days', daysRemaining(trialEnd)) }}</span>
+              <span>{{ $t('subscriptions.trial.description').replace(':days', trialEnd) }}</span>
             </div>
           </b-alert>
         </b-col>
@@ -92,7 +92,7 @@ export default {
       if(!this.checkIsTenant()) {
         return false
       }
-      return store.getters['auth/getCurrentAccount'].trial_ends_at
+      return store.getters['auth/getCurrentAccount'].end_on_trial
     },
     isSubscriptionView() {
       return this.$route.name === 'subscription'

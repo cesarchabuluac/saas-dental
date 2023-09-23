@@ -37,7 +37,10 @@ class TenantAPIController extends Controller
             });
         }
 
-        return $this->sendResponse(new TenantResource($tenant), __('lang.retrievied_successfully', ['operator' => 'tenant']));
+        $data = new TenantResource($tenant);
+        Log::info(json_encode($data));
+
+        return $this->sendResponse($data, __('lang.retrievied_successfully', ['operator' => 'tenant']));
 
     }
 }

@@ -2902,13 +2902,13 @@
     },
     "trial": {
       "title": "¡Estás en versión de prueba!",
-      "description": "¡Tu período de prueba termina en :days días!"
+      "description": "¡Tu período de prueba termina :days!"
     },
-    "trial_ended": "Tu período de prueba terminó el :date",
+    "trial_ended": "Tu período de prueba terminó :days",
     "card_plan": {
       "trial": {
         "title": "Estás en período de prueba para el plan :plan",
-        "subtitle": "Te quedan :days días en tu prueba"
+        "subtitle": "Tu período de prueba está llegando a su fin. ¡No te preocupes, todavía tienes: <br><br><strong class='text-warning'>:timeleft</strong> para disfrutarlo al máximo!"
       }
     },
     "switch_plan": {
@@ -3111,7 +3111,9 @@
     "import_input_file_placeholder": "Seleccionar archivo",
     "files": {
       "actions": "Acciones Clínicas",
-      "laboratory_actions":"Acciones de Laboratorio"
+      "laboratory_actions":"Acciones de Laboratorio",
+      "inventories": "Inventarios",
+      "help": "Modificar la estructura de este archivo puede causar errores en la importación de datos. Por favor, utilice esta plantilla tal como se proporciona."
     }
   }
 }

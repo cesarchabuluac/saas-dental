@@ -3,9 +3,11 @@
 namespace App\Models;
 
 use Attribute;
+use Carbon\Carbon;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Log;
 use Stancl\Tenancy\Contracts\TenantWithDatabase;
 use Stancl\Tenancy\Database\Concerns\HasDatabase;
 use Stancl\Tenancy\Database\Concerns\HasDomains;
@@ -24,12 +26,13 @@ class Tenant extends BaseTenant implements TenantWithDatabase
      * The accessors to append to the model's array form.
      *
      * @var array
-    */
+     */
     protected $appends = [
         'on_trial',
         'is_subscribed',
         'photo_url',
         'domain_url',
+        'end_on_trial',
     ];
 
     protected $hidden = [
@@ -67,9 +70,19 @@ class Tenant extends BaseTenant implements TenantWithDatabase
             });
     }
 
-    public function getIsSubscribedAttribute() {
-        if (! is_null($this->plan_id) || $this->onTrial()) {
-            if (! is_null($this->plan_ends_at)) {
+    public function getEndOnTrialAttribute(): String
+    {
+        if (!is_null($this->trial_ends_at)) {
+            return Carbon::createFromTimeStamp(strtotime($this->trial_ends_at))->diffForHumans(null, false, false);
+        }
+
+        return "";
+    }
+
+    public function getIsSubscribedAttribute(): bool
+    {
+        if (!is_null($this->plan_id) || $this->onTrial()) {
+            if (!is_null($this->plan_ends_at)) {
                 return $this->plan_ends_at->gt(now());
             }
             return true;
@@ -78,7 +91,8 @@ class Tenant extends BaseTenant implements TenantWithDatabase
         }
     }
 
-     /**
+
+    /**
      * Determine if the subscription is within its trial period.
      *
      */
@@ -87,7 +101,8 @@ class Tenant extends BaseTenant implements TenantWithDatabase
         return $this->onTrial();
     }
 
-    public function getPhotoUrlAttribute () {
+    public function getPhotoUrlAttribute()
+    {
         // $gravatarUrl = vsprintf(
         //     'https://www.gravatar.com/avatar/%s.jpg?s=200&d=%s',
         //     [
@@ -103,15 +118,15 @@ class Tenant extends BaseTenant implements TenantWithDatabase
     public function getDomainUrlAttribute()
     {
         return str_contains($this->domain, '.') ?
-            request()->getScheme().'://'.$this->domain
+            request()->getScheme() . '://' . $this->domain
             :
-            request()->getScheme().'://'.$this->domain.'.'.request()->getHost();
+            request()->getScheme() . '://' . $this->domain . '.' . request()->getHost();
     }
 
 
     public function hasVerifiedEmail(): bool
     {
-        return ! is_null($this->email_verified_at);
+        return !is_null($this->email_verified_at);
     }
 
     public function getEmailForVerification()
@@ -125,7 +140,7 @@ class Tenant extends BaseTenant implements TenantWithDatabase
             'email_verified_at' => $this->freshTimestamp(),
         ])->save();
     }
-    
+
     public static function isMainDomain()
     {
         return request()->getHost() === config('tenancy.central_domains')[0];

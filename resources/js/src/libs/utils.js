@@ -100,9 +100,9 @@ export default {
             return false
         },
         daysRemaining(value) {
-            const endDate = moment(value, 'YYYY-MM-DD');
+            const endDate = moment(value, 'YYYY-MM-DD H:m');
             const currentDate = moment();
-            return endDate.diff(currentDate, 'days');
+            return endDate.diff(currentDate, 'days');            
         },
         formatDateTime(value, formatting = { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false }) {
             if (!value)

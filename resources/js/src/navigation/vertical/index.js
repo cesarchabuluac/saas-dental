@@ -110,7 +110,7 @@ export default [
   {
     title: 'inventories.menu',
     icon: 'ArchiveIcon',
-    permission: 'inventories',
+    permission: 'inventories.active',
     children: [
       {
         title: 'inventories.brands.title_menu',
