@@ -2,11 +2,9 @@
 
 namespace App\Notifications;
 
-use App\Models\Task;
-use Benwilkins\FCM\FcmMessage;
-use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Notifications\Messages\BroadcastMessage;
@@ -14,26 +12,20 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use Illuminate\Queue\SerializesModels;
 
-class TaskNotification extends Notification
+class NewNotification extends Notification implements ShouldBroadcast
 {
     use Queueable, Dispatchable, InteractsWithSockets, SerializesModels;
 
-    private $task;
     public $message;
-    public $title;
-    public $icon;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct(Task $task)
+    public function __construct($message)
     {
-        $this->task = $task;
-        $this->title = "Tarea asignada con prioridad: " . __("lang.todos.todo_tags_{$task->tags}");
-        $this->message = "Descripción: " . $this->task->description;
-        $this->icon = null;
+        $this->message = $message;
     }
 
     /**
@@ -44,7 +36,7 @@ class TaskNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['database', 'fcm', 'broadcast'];
+        return ['broadcast'];
     }
 
     /**
@@ -56,26 +48,9 @@ class TaskNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->line('The introduction to the notification.')
-            ->action('Notification Action', url('/'))
-            ->line('Thank you for using our application!');
-    }
-
-    public function toFcm($notifiable)
-    {
-
-        $message = new FcmMessage();
-        $notification = [
-            'title'        => $this->title,
-            'body'         => $this->message,
-            'icon'         => null, //$this->task->user->getFirstMediaUrl('image', 'thumb'),
-            'click_action' => "FLUTTER_NOTIFICATION_CLICK",
-            'id' => '1',
-            'status' => 'done',
-        ];
-        $message->content($notification)->data($notification)->priority(FcmMessage::PRIORITY_HIGH);
-
-        return $message;
+                    ->line('The introduction to the notification.')
+                    ->action('Notification Action', url('/'))
+                    ->line('Thank you for using our application!');
     }
 
     /**
@@ -87,15 +62,15 @@ class TaskNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'id' => $this->task->id,
-            "data" => $this->task,
+            'appointment_id' => 1,
+            "appointment" => [],
             "message" => $this->message,
-            "title" => $this->title,
-            "icon" => $this->icon,
+            "title" => "Titulo",
+            "icon" => null,
         ];
     }
 
-    /**
+     /**
      * The event's broadcast name.
      *
      * @return array
@@ -103,18 +78,18 @@ class TaskNotification extends Notification
     public function broadcastWith(): array
     {
         return [
-            'title' => $this->title,
+            'title' => "Hola mensaje",
             'message' => $this->message
         ];
     }
 
     public function broadcastAs()
     {
-        return 'tasks';
+        return 'appointments';
     }
 
     public function toBroadcast($notifiable)
     {
-        return new BroadcastMessage(['id' => $this->task->id, 'name' => $this->task->user->name]);
+        return new BroadcastMessage(['appointment_id' => 1, 'patient' => 'Cesar Chab']);
     }
 }

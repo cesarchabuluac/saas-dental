@@ -7,6 +7,7 @@ use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\TenantImpersonationController;
+use App\Http\Controllers\WebNotificationController;
 use Illuminate\Support\Facades\Route;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomainOrSubdomain;
@@ -53,6 +54,11 @@ Route::middleware([
         
         // Plans routes
         Route::get('/plans', [SubscriptionController::class, 'plans']);
+
+        Route::get('push-notificaiton', [WebNotificationController::class, 'index'])->name('push-notificaiton');
+        Route::post('store-token', [WebNotificationController::class, 'storeToken'])->name('store.token');
+        Route::post('send-web-notification', [WebNotificationController::class, 'sendWebNotification'])->name('send.web-notification');
+
 
         //Subscriptions routes
         Route::get('subscriptions/setup-intent', [SubscriptionController::class, 'getSetupIntent']);

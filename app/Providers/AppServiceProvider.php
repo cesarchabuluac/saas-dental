@@ -72,6 +72,7 @@ class AppServiceProvider extends ServiceProvider
                 config(['paypal.live.client_id' => config()->get('paypal_live_client_id')]);
                 config(['paypal.live.client_secret' => config()->get('paypal_live_client_secret')]);
                 config(['app.timezone' => config()->get('settings.timezone')]);
+                config(['services.fcm.key' => config()->get('settings.fcm_key')]);
             }
 
             if (Schema::hasTable('currencies')) {
@@ -154,6 +155,7 @@ class AppServiceProvider extends ServiceProvider
                 config(['paypal.live.client_id' => config()->get('paypal_live_client_id')]);
                 config(['paypal.live.client_secret' => config()->get('paypal_live_client_secret')]);
                 config(['app.timezone' => config()->get('settings.timezone')]);
+                config(['services.fcm.key' => config()->get('settings.fcm_key')]);
             }
         }
 

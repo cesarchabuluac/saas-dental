@@ -491,6 +491,7 @@ return [
     "appointment_confirm_destroy_button_cancel" => "Cancelar",
     "appointment_mail_number" => "Folio de Cita",
     "appointment_professional" => "Doctor",
+    'appointment_of_patient' => 'del paciente',
     "status" => "Estado",
     "scheduled_appointment" => "Cita Programada",
     "scheduled_appointment_pending" => "Cita Programada",

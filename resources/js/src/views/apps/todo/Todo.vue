@@ -429,7 +429,6 @@ export default {
         tag: router.currentRoute.params.tag,
         sortBy: sortBy.value,
       })
-      console.log(data)
       tasks.value = data
     }
 

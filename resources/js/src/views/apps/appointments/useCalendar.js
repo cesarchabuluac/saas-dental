@@ -543,24 +543,18 @@ export default function userCalendar() {
 
         dateClick(info) {
             /*
-        ! Vue3 Change
-        Using Vue.set isn't working for now so we will try to check reactivity in Vue 3 as it can handle this automatically
-        ```
-        event.value.start = info.date
-        ```
-      */
+                ! Vue3 Change
+                Using Vue.set isn't working for now so we will try to check reactivity in Vue 3 as it can handle this automatically
+                ```
+                event.value.start = info.date
+                ```
+            */
 
             event.value = JSON.parse(JSON.stringify(Object.assign(event.value, { start: info.date })));
 
-            console.log(store.state.calendar.selectedProfessional.id)
-            //
-            return
-
-
-
             // isEventHandlerSidebarActive.value = true;
             // const m = toMoment(info.date, calendarApi); // calendar is required
-            if (store.state.auth.user.roles[0].id !== 4) {
+            if (store.getters['auth/getRoleId'] !== 4) {
                 // store.commit("calendar/SET_SELECTED_CURRENT_DATE", m.format('YYYY-MM-DD H:mm'));
                 // const formattedDate = moment(event.value.start).format('YYYY-MM-DD hh:mm');
                 // console.log(formattedDate)

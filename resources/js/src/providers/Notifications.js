@@ -8,4 +8,8 @@ export default class Notifications {
     update (id, payload) {
         return axios.put(`/api/notifications/${id}`, payload)
     }
+
+    storeDeviceToken (token) {
+        return axios.post('api/store-token', { token: token});
+    }
 }

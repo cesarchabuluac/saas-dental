@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\UserSessionChanged;
 use App\Http\Resources\Tenant\TenantResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -117,8 +118,10 @@ class AuthController extends Controller
             }
         }
 
+        $user = $request->user();
+
         $data = [
-            'user' => $request->user(),
+            'user' => checkIsCentral() ? $user : $user->load('schedules'),
             'permissions' => $request->user()->getAllPermissions(),
             'roles' => DB::table('roles')->get(['id', 'name']),
             'settings' => DB::table('settings')->whereNotIn('key', ['mail_password'])->get(['key', 'value']),

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\API;
 
 use App\Criteria\TaskUserCriteria;
+use App\Events\MiEvento;
+use App\Events\NewMessage;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
@@ -82,6 +84,8 @@ class TaskAPIController extends Controller
             DB::beginTransaction();
             $task = $this->taskRepository->create($input);
             $task->user->notify(new TaskNotification($task));
+            // broadcast(new TaskNotification($task))->toOthers();
+           
 
             DB::commit();
             return $this->sendResponse($task, __('lang.saved_successfully', ['operator' => __('lang.todos.todo')]));

@@ -17,11 +17,15 @@
   <link rel="stylesheet" href="{{ mix('css/core.css') }}">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="{{ global_asset('logo.png') }}">  
+  <link rel="shortcut icon" href="{{ global_asset('logo.png') }}">
 
   <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Scripts -->
+  <script>
+    window.Laravel = {!! json_encode(['csrfToken' => csrf_token(),]) !!};
+  </script>
 </head>
 
 <body>
@@ -42,30 +46,31 @@
   </div>
 
   <script src="{{ mix('js/app.js') }}"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase.js"></script>
 
   <script>
-	 	@auth
-			window.Permissions = []
-			window._authenticated = {!! json_encode(Auth::user(), true) !!}
-			localStorage.setItem('authenticated', {!! json_encode(Auth::user(), true) !!})
+    @auth
+      window.Permissions = []
+      window._authenticated = {!!json_encode(Auth::user(), true) !!}
+      localStorage.setItem('authenticated', {!!json_encode(Auth::user(), true) !!})
       window.locale = `{{Auth()->user()->settings->locale}}`
-		@else
-			window.Permissions = [];
+    @else
+      window.Permissions = [];
       window.locale = `{{ config('settings.language') }}`,
-		@endauth
-		
-		window._setting = {
-        app_logo: `{{ isset($app_logo) ? $app_logo : public_path('images/logo/logo.jpg') }}`,
-        theme: `{{ config('settings.app_theme')}}`,
-        app_name: `{{ config('settings.app_name') }}`,
-        app_short_description: `{{ config('settings.app_short_description') }}`,
-        timezone: `{{ config('settings.timezone') }}`,
-        locale: `{{ config('settings.language') }}`,
-        dateFormat: `{{ config('settings.date_format') }}`,
-        app_theme: `{{ config('settings.theme') }}`
-    }
+    @endauth
 
-    console.log(window._setting)
+    localStorage.setItem('vapid_key', `{!!config('settings.firebase_vapid_key')!!}`)
+
+    window._setting = {
+      app_logo: `{{ isset($app_logo) ? $app_logo : public_path('images/logo/logo.jpg') }}`,
+      theme: `{{ config('settings.app_theme')}}`,
+      app_name: `{{ config('settings.app_name') }}`,
+      app_short_description: `{{ config('settings.app_short_description') }}`,
+      timezone: `{{ config('settings.timezone') }}`,
+      locale: `{{ config('settings.language') }}`,
+      dateFormat: `{{ config('settings.date_format') }}`,
+      app_theme: `{{ config('settings.theme') }}`
+    }
   </script>
 </body>
 

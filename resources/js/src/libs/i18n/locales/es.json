@@ -3082,5 +3082,12 @@
     "lab_specification": "Especificaciones de Laboratorio",
     "lab_specification_help": "Escribe una especificación de laboratorio",
     "lab_specification_placeholder": "Escribe una especificación de laboratorio"
+  },
+  "new_notifications": ":quantity Nuevo",
+  "notifications": {
+    "desc": "Gestion de Notificaciones",
+    "slug": "Notificación",
+    "plural": "Notificaciones",
+    "read_all": "Leer Todas"
   }
 }

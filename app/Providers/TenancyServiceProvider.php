@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Providers;
 
 use App\Events\TenantVerified;
+use App\Jobs\CreateFrameworkDirectoriesForTenant;
 use App\Jobs\CreateTenantAdmin;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Event;
@@ -25,11 +26,11 @@ class TenancyServiceProvider extends ServiceProvider
 
     public function developmentOrProductionEvent()
     {
-        if (App::isLocal()) {
+        // if (App::isLocal()) {
             return Events\TenantCreated::class;
-        }
+        // }
 
-        return TenantVerified::class;
+        // return TenantVerified::class;
     }
 
     public function events()
@@ -45,6 +46,7 @@ class TenancyServiceProvider extends ServiceProvider
                         Jobs\MigrateDatabase::class,
                         // CreateTenantAdmin::class,
                         Jobs\SeedDatabase::class,
+                        CreateFrameworkDirectoriesForTenant::class,
     
                         // Your own jobs to prepare the tenant.
                         // Provision API keys, create S3 buckets, anything you want!

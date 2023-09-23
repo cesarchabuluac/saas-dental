@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Schema;
 use Laravel\Passport\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 use Spatie\Permission\Models\Permission;
@@ -20,7 +21,7 @@ class User extends Authenticatable
 
     public $guard_name = 'web';
 
-    protected $with = ['schedules'];
+    // protected $with = ['schedules'];
 
     /**
      * The attributes that are mass assignable.
@@ -75,6 +76,16 @@ class User extends Authenticatable
     protected $appends = [
         'has_media',
     ];
+
+    /**
+     * Specifies the user's FCM token
+     *
+     * @return string
+     */
+    public function routeNotificationForFcm($notification)
+    {
+        return $this->device_token;
+    }
 
     public function getAllPermissionsAttribute()
     {

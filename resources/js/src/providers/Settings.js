@@ -16,5 +16,5 @@ export default class Settings {
 
     update(formdata) {
         return axios.post('/api/settings', formdata);
-    }
+    }   
 }

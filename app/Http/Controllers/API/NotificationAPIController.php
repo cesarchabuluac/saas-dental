@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Repositories\NotificationRepository;
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -29,7 +30,7 @@ class NotificationAPIController extends Controller
     public function index()
     {
         return $this->notificationRepository
-            // ->where('notifiable_id', auth()->user()->id)
+            ->where('notifiable_id', auth()->user()->id)
             ->whereNull('read_at')
             ->orderBy('created_at', 'DESC')
             ->get();
@@ -89,30 +90,32 @@ class NotificationAPIController extends Controller
     {
         $notification = $this->notificationRepository->find($id);
         if (empty($notification)) {
-            return $this->sendError('Notification not found');
+            return $this->sendError(__('lang.not_found', ['operator', __('lang.notification')]));
         }
 
         $input = $request->all();
         if (isset($input['read_at'])) {
-            if ($input['read_at'] == true) {
-                $input['read_at'] = Carbon::now();
-            } else {
-                unset($input['read_at']);
-            }
+            $input['read_at'] = Carbon::now();
         }
         try {
-            if (isset($input['read_all']) && $input['read_at'] == true) {
+            if (isset($input['read_all'])) {
                 $notification = $this->notificationRepository->where('notifiable_id', auth()->user()->id)
                     ->whereNull('read_at')
                     ->update(['read_at' => Carbon::now()]);
             } else {
                 $notification = $this->notificationRepository->update($input, $id);
             }
-        } catch (ValidatorException $e) {
-            return $this->sendError($e->getMessage());
+        } catch (Exception $ex) {
+            return $this->sendError($ex->getMessage());
         }
 
-        return $this->sendResponse($notification, __('lang.saved_successfully', ['operator' => __('lang.notification')]));
+        $notifications = $this->notificationRepository
+            ->where('notifiable_id', auth()->user()->id)
+            ->whereNull('read_at')
+            ->orderBy('created_at', 'DESC')
+            ->get();
+
+        return $this->sendResponse($notifications, __('lang.saved_successfully', ['operator' => __('lang.notification')]));
     }
 
     /**

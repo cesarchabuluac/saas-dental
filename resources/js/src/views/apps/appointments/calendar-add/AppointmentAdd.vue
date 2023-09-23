@@ -42,8 +42,8 @@
                                         enableTime: true,
                                         time_24hr: true,
                                         dateFormat: 'd/m/Y H:i',
-                                        minTime: '09:00:00',
-                                        maxTime: '21:45:00',
+                                        minTime: slotMinTime,
+                                        maxTime: slotMaxTime,
                                         minuteIncrement: 15,
                                     }" placeholder="DD/MM/YYYY H:I:S" />
                             </b-form-group>
@@ -251,6 +251,17 @@ export default {
             activeSearchPatient: false,
         }
     },
+    computed: {
+        slotMinTime () {
+            return store.state.auth.setting['schedule_start_time'] || "09:00:00"
+        }, 
+        slotMaxTime() {
+            store.state.auth.setting['schedule_end_time'] || "22:00:00"
+        },
+        slotInterval() {
+            return store.state.auth.setting['scheduled_appointment_interval'] || 1
+        }
+    },
     created() {
         if (store.state.auth.setting['language'] === "es") {
             flatpickr.localize(Spanish);
@@ -260,6 +271,7 @@ export default {
         if (store.state.calendar) {
             if (router.currentRoute.params.date) {
                 this.appointment.date = router.currentRoute.params.date
+                this.isAvailable = true
             }
         }
     },
@@ -291,8 +303,7 @@ export default {
 
             const inputDateFormat = 'DD/MM/YYYY HH:mm';
             const officeStartTime = store.state.auth.setting['schedule_start_time'] || '09:00:00'; // Schedule start time
-            const officeEndTime = store.state.auth.setting['schedule_end_time'] || '22:00:00'; // Schedule end time
-
+            const officeEndTime = store.state.auth.setting['schedule_end_time'] || '22:00:00'; // Schedule end time            
 
             const isValidDate = this.isValidDate(dateStr, inputDateFormat);
             if (!isValidDate) {
@@ -402,6 +413,11 @@ export default {
             this.selectedPatient = { ...e }
             this.appointment.patient = { ...e }
         },
+    },
+    watch: {
+        isAvailable(value) {
+            console.log(value)
+        }
     }
 
 }

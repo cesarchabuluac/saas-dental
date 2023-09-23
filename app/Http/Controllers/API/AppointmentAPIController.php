@@ -315,7 +315,8 @@ class AppointmentAPIController extends Controller
             // $appointment->user->notify(new AppointmentStatusChangeEvent("New appointment #".$appointment->id." to ".$appointment->patient->full_name,));
             // $appointment->user->notify(new RealTimeMessage("New appointment #".$appointment->id." to ".$appointment->patient->full_name,));
 
-            // $appointment->user->notify(new AppointmentNotification($appointment));
+            $appointment->user->notify(new AppointmentNotification($appointment));
+            
             if (config('settings.enable_appointment_notification')) {
                 if (filter_var($appointment->patient->email, FILTER_VALIDATE_EMAIL)) {
                     dispatch(new SendEmail('appointment', $appointment->patient->email, $appointment));
@@ -405,7 +406,7 @@ class AppointmentAPIController extends Controller
 
 
         if ($oldAppointment->state != $input['state']) {
-            // $appointment->user->notify(new AppointmentNotification($appointment));
+            $appointment->user->notify(new AppointmentNotification($appointment));
             if (config('settings.enable_appointment_notification')) {
                 if (filter_var($appointment->patient->email, FILTER_VALIDATE_EMAIL)) {
                     if ($input['state'] != 'assisted' || $input['state'] != 'unassisted') {
@@ -524,7 +525,6 @@ class AppointmentAPIController extends Controller
 
     public function availableEvent(Request $request)
     {
-
         // Duración estimada de una cita en minutos (ejemplo: 60 minutos)
         $appointmentDuration = config('settings.scheduled_appointment_interval') ?? 15;
 

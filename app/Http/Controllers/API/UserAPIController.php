@@ -53,6 +53,10 @@ class UserAPIController extends Controller
         $this->userRepository->pushCriteria(new TenantCriteria());
         $this->userRepository->pushCriteria(new UserCriteria($request));
 
+        if ($request->filled('isCalendar')) {
+            return $this->userRepository->with(['roles', 'schedules'])->get();
+        }
+
         return $this->userRepository->with('roles')
             ->where(function ($q) {
                 $q->where('name', 'LIKE', '%' . request('search') . '%')
@@ -222,6 +226,10 @@ class UserAPIController extends Controller
 
         if (isset($transactionsData)) {
             $user['transactionsData'] = $transactionsData;
+        }
+
+        if (checkIsCentral()) {
+            $user = $user->load('schedules');
         }
 
         return $this->sendResponse($user, __('lang.retrieved_successfully', ['operator' => __('lang.user')]));

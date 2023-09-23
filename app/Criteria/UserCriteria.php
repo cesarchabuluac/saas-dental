@@ -55,9 +55,6 @@ class UserCriteria implements CriteriaInterface
     {
         $selectedDateTime = Carbon::now(); // Obtener la fecha y hora actual, ajusta esto según tus necesidades
         $ignoreSchedules = $this->request->has('ignoreSchedules');
-
-        Log::warning($ignoreSchedules);
-
         if ($this->request->has('criteria')) {
 
             $roleID = $this->myRoles()[$this->request->criteria] ?? 4;

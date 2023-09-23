@@ -38,11 +38,12 @@ export default function useCalendarSidebar() {
         // }
 
         isLoading.value = true;
-        const { data } = await UserResource.index({ criteria: "professionals" });
+        const { data } = await UserResource.index({ criteria: "professionals", 'isCalendar': true, });
+        console.warn(data)
         isLoading.value = false;
-        professionals.value = data.data
-        store.commit('auth/SET_DOCTORS', data.data)
-        store.commit("calendar/SET_USE_PROFESSIONALS", data.data);
+        professionals.value = data
+        store.commit('auth/SET_DOCTORS', data)
+        store.commit("calendar/SET_USE_PROFESSIONALS", data);
 
         if (store.getters['auth/getRoleId'] === 4) {
             store.commit("calendar/SET_SELECTED_PROFESSIONAL", store.getters['auth/getUser']);

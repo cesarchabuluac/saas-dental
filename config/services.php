@@ -29,12 +29,19 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
-    
+
     'stripe' => [
         'model' => App\Models\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
         'version' => env('STRIPE_API_VERSION'),
     ],
+
+    /*
+     * Add the Firebase API key
+     */
+    'fcm' => [
+        'key' => env('FCM_SECRET_KEY')
+    ]
 
 ];
