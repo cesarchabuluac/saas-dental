@@ -74,6 +74,7 @@ return [
     'applied_successfully' => ':operator aplicado exitosamente',
     'retrievied_successfully' => ':operator recuperado exitosamente',
     'updated_successfully' => ':operator actualizado exitosamente',
+    'subscribed_successfully' => ':operator suscrito exitosamente',
     "banned_successfully" => ":operator baneado exitosamente",
     "unbanned_successfully" => ":operator desbaneado exitosamente",
     "impersonate_error" => "No tienes permiso para suplantar como inquilino.",

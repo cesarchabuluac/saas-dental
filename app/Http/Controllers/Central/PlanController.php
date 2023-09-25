@@ -67,9 +67,7 @@ class PlanController extends Controller
     public function store(CreatePlanRequest $request, ImageService $imageService)
     {
 
-        // Retrieve the validated input data...
-        $input = $request->validated();
-        // $input['is_popular'] = boolval($input['is_popular']);
+        $input = $request->all();
         $currency = $this->currencyRepository->find($input['currency_id']);
         unset($input['currency_id']);
 
@@ -86,8 +84,6 @@ class PlanController extends Controller
             ],
         ]);
 
-        Log::info($plan);
-
         // stripe always add extra 00 in amount
         $amount = (int) $plan['amount'] / 100;
 
@@ -99,7 +95,7 @@ class PlanController extends Controller
             'product_id' => $plan['product'],
             'description' => $plan['metadata']['description'],
             'is_popular' => $input['is_popular'] === 'true' ? true : false,
-            'currency_id' => $input['currency_id'],
+            'currency_id' => $currency->id,
             'currency' => $plan['currency'],
             'interval' => $plan['interval'],
             'limit_doctor' => $input['limit_doctor'],

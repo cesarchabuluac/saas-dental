@@ -6,10 +6,10 @@ Vue.use(Toast, {
   position: 'bottom-right'
 });
 
-export const success = (message) => {
+export const success = (message, icon = 'CheckIcon') => {
 	const options = {
 		type: 'success',
-		icon: 'check',
+		icon: icon,
 		showCloseButton: true,
 		hideProgressBar: false,
 		closeButton: "button",
@@ -19,10 +19,10 @@ export const success = (message) => {
 	Vue.prototype.$toast.success(message, options);
 }
 
-export const danger = (message) => {
+export const danger = (message, icon = 'XIcon') => {
 	const options = {
 		type: 'error',
-		icon: 'error',
+		icon: icon,
 		showCloseButton: true,
 		hideProgressBar: false,
 		closeButton: "button",
@@ -70,7 +70,7 @@ export const handleResponseErrors = (e) => {
 
 	const options = {
 		type: 'error',
-		icon: 'error',
+		icon: 'XIcon',
 		showCloseButton: true,
 		hideProgressBar: false,
 		closeButton: "button",

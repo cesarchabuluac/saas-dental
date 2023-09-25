@@ -72,15 +72,17 @@
                             <!--/ plan benefit -->
 
                             <!-- buttons -->
-                            <b-button  
+                            <b-button v-if="!isWitchPlan"
                                 :disabled="loading || account.plan_id === item.id"
-                                @click="onSetPlan(item)"                             
-                                v-ripple.400="'rgba(40, 199, 111, 0.15)'"
-                                block
-                                class="mt-2"
-                                :variant="`${account.plan_id === item.id ? 'outline-success': 'primary'}`"
-                            >
-                                {{ account.plan_id === item.id ? $t('tenants.current_plan') :$t('button_upgrade') }}
+                                @click="onSetPlan(item)" v-ripple.400="'rgba(40, 199, 111, 0.15)'" block
+                                class="mt-2" :variant="`${account.plan_id === item.id ? 'outline-success': 'primary'}`">
+                                {{ account.plan_id === item.id ? $t('tenants.current_plan') : $t('button_upgrade') }}
+                            </b-button>
+                            <b-button v-else
+                                :disabled="loading || account.plan_id === item.id"
+                                @click="onSetPlan(item)" v-ripple.400="'rgba(40, 199, 111, 0.15)'" block
+                                class="mt-2" :variant="`${account.plan_id === item.id ? 'outline-success': 'primary'}`">
+                                {{ account.plan_id === item.id ? $t('tenants.current_plan') : $t('button_change_plan') }}
                             </b-button>
                         </b-card>
                     </b-col>
@@ -167,7 +169,6 @@
                             {{ $t('button_subscribe') }}
                         </b-button>
                     </div>
-
                 </b-card>
                 </div>
             </b-col>
@@ -207,7 +208,7 @@ import Ripple from "vue-ripple-directive";
 // Notification
 import { useToast } from "vue-toastification/composition";
 import ToastificationContent from "@core/components/toastification/ToastificationContent.vue";
-
+import * as helper from '@/libs/helpers';
 import SubscriptionProviders from "@/providers/Subscriptions";
 const SubscriptionResources = new SubscriptionProviders()
 
@@ -261,7 +262,7 @@ export default {
             elements: '',
             card: '',
             form: {
-                name: null,
+                name: store.getters['auth/getUserName'],
             },
             addPaymentStatus: 0,
             addPaymentStatusError: '',
@@ -308,10 +309,17 @@ export default {
         };
 
         const onSetPlan = (item) => {
-            subscription.value.plan = {...item}
-            includeStripe('js.stripe.com/v3/', function(){
-                configureStripe();
-            }.bind(this) );
+            if (isWitchPlan.value) {
+                updateSubscription({
+                    plan_id: item.id,
+                    payment_method_id: null
+                })
+            } else {            
+                subscription.value.plan = {...item}
+                includeStripe('js.stripe.com/v3/', function(){
+                    configureStripe();
+                }.bind(this) );
+            }
         }
 
         const getSeptupIntent = async () => {
@@ -357,32 +365,29 @@ export default {
             await loadPaymentMethods()
         }
 
-        const updateSubscription = async () => {
-            loading.value = true
-            const { data } = await SubscriptionResources.postSubscriptions({
-                plan_id: subscription.value.plan.id,
-                payment_method_id: subscription.value.paymentMethodSelected.id
-            })
-            loading.value = false
-            if (data.success) {
-                store.commit('auth/SET_CURRENT_ACCOUNT', {...data.data})
-                toast({
-                    component: ToastificationContent,
-                    props: {
-                        title: data.message,  
-                        icon: "CheckIcon",                      
-                        variant: "success",
-                    },
-                });
-            } else {
-                toast({
-                    component: ToastificationContent,
-                    props: {
-                        title: data.message, 
-                        icon: "XIcon",                       
-                        variant: "danger",
-                    },
-                });
+        const updateSubscription = async (payload = null) => {
+            try {
+                loading.value = true
+
+                if (!payload) {
+                    payload = {
+                        plan_id: subscription.value.plan.id,
+                        payment_method_id: subscription.value.paymentMethodSelected.id
+                    }                    
+                }
+
+                const { data } = await SubscriptionResources.postSubscriptions(payload)
+                loading.value = false
+                if (data.success) {
+                    store.commit('auth/SET_CURRENT_ACCOUNT', {...data.data})
+                    store.commit("auth/SET_SWITCH_PLAN", false);
+                    helper.success(data.message)
+                } else {
+                    helper.danger(data.message)
+                }
+            }catch(e) {
+                loading.value = false
+                helper.handleResponseErrors(e);
             }
         }
 
@@ -420,15 +425,17 @@ export default {
             })
         }
 
+        const isWitchPlan = computed({
+            get: () => store.state.auth.switch_plan,
+            set: (val) => {
+                store.commit("auth/SET_SWITCH_PLAN", val);
+            },
+        });
+
         onMounted(async () => {
             await getPlans();
             await getSeptupIntent()
             await loadPaymentMethods()
-
-            // loading.value = true
-            // const { data } = await SubscriptionResources.currentSubscriptions()
-            // loading.value = false
-            // console.log(data)
         });
 
         return {
@@ -437,6 +444,7 @@ export default {
             account,
             monthlyPlanShow,
             subscription,
+            isWitchPlan,
 
             //
             onSetPlan,

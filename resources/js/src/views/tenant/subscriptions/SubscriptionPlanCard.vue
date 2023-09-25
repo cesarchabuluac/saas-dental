@@ -10,14 +10,23 @@
         <b-card no-body class="border-primary">
             <b-card-header v-if="!account.on_trial && account.is_subscribed && !account.plan_ends_at" class="d-flex justify-content-between align-items-center pt-75 pb-25">
                 <h5 class="mb-0">{{ $t('subscriptions.plans.current_plan') }}</h5>
-                <b-badge variant="light-primary"> {{ account.plan.name }} </b-badge>
+                <b-badge variant="success"> {{ account.plan.name }} </b-badge>
                 <small class="text-muted text-info w-100">{{ $t('subscriptions.plans.start')}} {{ formatDate(account.updated_at) }}</small>
             </b-card-header>
             <b-card-header v-else-if="account.plan_ends_at" class="d-flex justify-content-between align-items-center pt-75 pb-25">
                 <h5 class="mb-0">{{ $t('subscriptions.subscribed.header').replace(':plan', account.plan.name) }}</h5>
                 <h4 class="text-muted_ mt-1 text-danger w-100">
                     {{ $t('subscriptions.cancelled.description').replace(':date', formatDate(account.plan_ends_at)) }}
-                </h4>           
+                </h4>
+
+                <b-button                    
+                    :disabled="loading"
+                    v-ripple.400="'rgba(255, 255, 255, 0.15)'"
+                    variant="outline-warning"                
+                    @click="resumeSubscription"                 
+                >
+                    {{ $t('subscriptions.resumed.button') }}
+                </b-button>
             </b-card-header>
             <b-card-header v-else class="d-flex justify-content-between align-items-center pt-75 pb-25">
                 <h5 class="mb-0">{{ $t('subscriptions.card_plan.trial.title').replace(':plan', account.plan.name) }}</h5>
@@ -43,39 +52,7 @@
                     </li>
                 </ul> 
 
-                <div v-if="!account.plan_ends_at">
-                    <!-- <b-button
-                        v-if="account.is_subscribed && !account.on_trial && !isWitchPlan"
-                        v-ripple.400="'rgba(255, 255, 255, 0.15)'"
-                        variant="primary"                
-                        size="sm"
-                        @click="switchPlan"
-                    >
-                        {{ $t('subscriptions.switch_plan.button') }}
-                    </b-button> -->
-
-                    <b-button
-                        v-if="account.is_subscribed && !account.on_trial && !isWitchPlan"
-                        :disabled="loading"
-                        v-ripple.400="'rgba(255, 255, 255, 0.15)'"
-                        variant="danger"                
-                        size="sm"
-                        @click="cancelSubscription"
-                    >
-                        {{ $t('subscriptions.cancelled.button') }}
-                    </b-button>
-                </div>
-                <div v-else class="mt-1">
-                    <b-button                    
-                        :disabled="loading"
-                        v-ripple.400="'rgba(255, 255, 255, 0.15)'"
-                        variant="warning"                
-                        size="sm"   
-                        @click="resumeSubscription"                 
-                    >
-                        {{ $t('subscriptions.resumed.button') }}
-                    </b-button>
-                </div>
+               
             </b-card-body>
         </b-card>
     </b-overlay>

@@ -11,20 +11,22 @@
                 </b-col>
             </b-row>
 
-            <b-tabs vertical content-class="col-12 col-md-9 mt-1 mt-md-0" pills nav-wrapper-class="col-md-3 col-12" nav-class="nav-left">
+            <b-tabs horizontal content-class="col-12 col-md-12 mt-1 mt-md-0" pills nav-wrapper-class="col-md-12 col-12" nav-class="nav-left">
             
                 <!-- general tab -->
-                <b-tab active :disabled="account.plan_ends_at">
+                <b-tab active :disabled="account.plan_ends_at !== null" lazy>
                     <!-- title -->
                     <template #title>
                         <feather-icon icon="DollarSignIcon" size="18" class="mr-50"/>
                         <span class="font-weight-bold">{{ $t('subscriptions.plans.title') }}</span>
                     </template>
 
-                    <subscription-price />
+                    <subscription-current v-if="!isWitchPlan && account.is_subscribed && !account.on_trial" class="mt-3" />
+                    <subscription-price v-else-if="isWitchPlan || !account.is_subscribed || account.on_trial" class="mt-3" />
+                    
                 </b-tab>
 
-                <b-tab>
+                <b-tab lazy>
 
                     <!-- title -->
                     <template #title>
@@ -32,7 +34,7 @@
                         <span class="font-weight-bold">{{$t('tenants.invoices.title')}}</span>
                     </template>
                     
-                    <subscription-invoices />
+                    <subscription-invoices class="mt-3" />
                     
                     </b-tab>
             </b-tabs>
@@ -49,8 +51,10 @@ import SubscriptionViewInfoCard from "./SubscriptionViewInfoCard.vue"
 import SubscriptionPlanCard from './SubscriptionPlanCard.vue';
 import SubscriptionPrice from './SubscriptionPrice.vue';
 import SubscriptionInvoices from './SubscriptionInvoices.vue';
+import SubscriptionCurrent from './SubscriptionCurrent.vue';
 
 import SubscriptionProviders from "@/providers/Subscriptions";
+
 const SubscriptionResources = new SubscriptionProviders()
 
 export default {
@@ -70,6 +74,7 @@ export default {
         SubscriptionPlanCard,
         SubscriptionPrice,
         SubscriptionInvoices,
+        SubscriptionCurrent,
     },
     setup() {
         const loading = ref(false)
