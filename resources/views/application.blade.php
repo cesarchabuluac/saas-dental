@@ -14,7 +14,7 @@
   <link rel="stylesheet" type="text/css" href="{{ asset(mix('css/loader.css')) }}" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="{{ asset(mix('css/core.css')9 }}">
+  <link rel="stylesheet" href="{{ asset(mix('css/core.css')) }}">
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="{{ asset('logo.png') }}">
@@ -45,7 +45,7 @@
   <div id="app">
   </div>
 
-  <script src="{{ mix('js/app.js') }}"></script>
+  <script src="{{ asset(mix('js/app.js')) }}"></script>
   <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase.js"></script>
 
   <script>
