@@ -48,14 +48,9 @@ class DashboardService implements IDashboardService
             $from = Carbon::parse($request->start_at)->startOfDay();
             $to = Carbon::parse($request->end_at)->endOfDay();
             $revenueDoctors = (in_array(auth()->user()->roles[0]->id, $this->roles)) ? $this->userRepository->revenueReport($from, $to) : [];
-            // $totalBuddgetApproved = (in_array(auth()->user()->roles[0]->id, $this->roles)) ? $this->budgetRepository->totalBudgetApproved($from, $to) : 0;
-            // $totalBudgetPaid = (in_array(auth()->user()->roles[0]->id, $this->roles)) ? $this->budgetRepository->totalPaidByDate($from, $to) : 0;
 
             return [
                 "revenueDoctors" => $revenueDoctors,
-                // "totalBuddgetApproved" => $totalBuddgetApproved,
-                // "totalBudgetPaid" => $totalBudgetPaid,
-
             ];
         } else if ($request->boolean('onlyPayments')) {
 
@@ -91,7 +86,6 @@ class DashboardService implements IDashboardService
 
     public function getSummeryBetweenDates($from, $to)
     {
-
         $amountEarningLastMonth = (in_array(auth()->user()->roles[0]->id, $this->roles)) ? $this->paymentRepository->earningLastMonth() : $this->paymentRepository->earningLastMonthByUser();
         $amountEarningCurrentMonth = (in_array(auth()->user()->roles[0]->id, $this->roles)) ? $this->paymentRepository->earningCurrentMonth() : $this->paymentRepository->earningCurrentMonthByUser();
         $amountEarningDay = (in_array(auth()->user()->roles[0]->id, $this->roles)) ? $this->paymentRepository->earningCurrentDay() : $this->paymentRepository->earningCurrentDayByUser();
@@ -106,8 +100,8 @@ class DashboardService implements IDashboardService
 
 
         //User doctors        
-        $doctors = []; //(in_array(auth()->user()->roles[0]->id, $this->roles)) ? $this->userRepository->getDoctors($from, $to) : [];
-        $revenueDoctors = []; // (in_array(auth()->user()->roles[0]->id, $this->roles)) ? $this->userRepository->revenueReport($from, $to) : [];
+        $doctors = [];
+        $revenueDoctors = [];
 
         // Creamos un arreglo asociativo para almacenar los totales por metodo
         $totalMethods = [

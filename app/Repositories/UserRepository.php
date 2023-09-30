@@ -37,65 +37,54 @@ class UserRepository extends BaseRepository
 
     public function revenueReport($startAt, $endAt, $userID = null)
     {
-        return $this->model
-            ->whereHas("roles", function ($q) {
-                $q->where("id", 4)
-                    ->where('is_active', true);
-            })
-            ->leftJoin('appointments', function ($query) use ($startAt, $endAt) {
-                $query->on('users.id', 'appointments.user_id')
-                    ->whereBetween('appointments.date', [$startAt, $endAt]);
-            })
-            ->leftJoin('action_payments', function ($query) use ($startAt, $endAt) {
-                $query->on('users.id', '=', 'action_payments.professional_id')
-                    ->join('payments', 'action_payments.payment_id', '=', 'payments.id')
-                    ->whereBetween('action_payments.payment_date', [$startAt, $endAt])
-                    ->where('payments.check_paid', 1);
-            })
+        $queryFilterPayment = " ";
+        $queryFilterAppointment = " ";
 
-            ->select(
-                'users.id',
-                'users.name',
-                DB::raw('SUM(COALESCE(action_payments.amount, 0)) as total'),
-                DB::raw('COUNT(CASE WHEN appointments.state = "pending" THEN 1 END) as pending'),
-                DB::raw('COUNT(CASE WHEN appointments.state = "confirmed" THEN 1 END) as confirmed'),
-                DB::raw('COUNT(CASE WHEN appointments.state = "canceled" THEN 1 END) as canceled'),
-                DB::raw('COUNT(CASE WHEN appointments.state = "assisted" THEN 1 END) as assisted'),
-                DB::raw('COUNT(CASE WHEN appointments.state = "unassisted" THEN 1 END) as unassisted')
-
-            )
-            ->groupBy('users.id', 'users.name')
-            ->when($userID, function ($query) use ($userID) {
-                return $query->where('users.id', $userID);
-            })
-            ->get();
-    }
-
-    public function getDoctors($startAt, $endAt)
-    {
-
-        return $this->model
-            ->whereHas("roles", function ($q) {
-                $q->where("id", 4)
-                    ->where('is_active', true);
-            })->leftJoin('appointments', 'users.id', '=', 'appointments.user_id')
-            ->leftJoin('action_payments', 'users.id', '=', 'action_payments.professional_id')
-            ->leftJoin('budgets', 'users.id', '=', 'budgets.user_id')
-            ->select(
-                'users.id',
-                'users.name',
-                DB::raw('COUNT(CASE WHEN appointments.state = "pending" THEN 1 END) as pending'),
-                DB::raw('COUNT(CASE WHEN appointments.state = "confirmed" THEN 1 END) as confirmed'),
-                DB::raw('COUNT(CASE WHEN appointments.state = "canceled" THEN 1 END) as canceled'),
-                DB::raw('COUNT(CASE WHEN appointments.state = "assisted" THEN 1 END) as assisted'),
-                DB::raw('COUNT(CASE WHEN appointments.state = "unassisted" THEN 1 END) as unassisted'),
-                DB::raw('SUM(action_payments.amount) as total_payments'),
-                DB::raw('SUM(CASE WHEN budgets.approved = 1 THEN budgets.total ELSE 0 END) as total_approved_budgets'),
-                DB::raw('SUM(CASE WHEN budgets.approved = 0 THEN budgets.total ELSE 0 END) as total_unapproved_budgets')
-            )
-            ->whereBetween('appointments.created_at', [$startAt, $endAt])
-            ->whereBetween('action_payments.updated_at', [$startAt, $endAt])
-            ->groupBy('users.id', 'users.name')
-            ->get();
+        if ($userID) {
+            $queryFilterPayment = " AND users.id = " . $userID;
+            $queryFilterAppointment = " AND appointments.user_id = " . $userID;
+        }
+        return DB::select("SELECT 
+                p.user_id, 
+                p.name, 
+                p.total,
+                COALESCE(a.pending, 0) as pending,
+                COALESCE(a.confirmed, 0) as confirmed,
+                COALESCE(a.canceled, 0) as canceled,
+                COALESCE(a.assisted, 0) as assisted,
+                COALESCE(a.unassisted, 0) as unassisted
+            FROM (
+                SELECT
+                    users.id as user_id,
+                    users.name,
+                    SUM(COALESCE(action_payments.amount, 0)) as total
+                FROM users
+                JOIN model_has_roles ON users.id = model_has_roles.model_id
+                LEFT JOIN action_payments ON users.id = action_payments.professional_id
+                LEFT JOIN payments ON action_payments.payment_id = payments.id
+                WHERE model_has_roles.role_id = 4
+                    AND users.is_active = true
+                    AND payments.check_paid = 1
+                    and action_payments.deleted_at is null 
+                    and payments.deleted_at is null 
+                    and users.deleted_at is null 
+                    and action_payments.payment_date >= '{$startAt}' and action_payments.payment_date <= '{$endAt}'
+                    {$queryFilterPayment}
+                GROUP BY users.id, users.name
+            ) p
+            LEFT JOIN (
+                select 
+                    appointments.user_id, 
+                    SUM(CASE WHEN appointments.state = 'pending' THEN 1 ELSE 0 END) as pending,
+                    SUM(CASE WHEN appointments.state = 'confirmed' THEN 1 ELSE 0 END) as confirmed,
+                    SUM(CASE WHEN appointments.state = 'canceled' THEN 1 ELSE 0 END) as canceled,
+                    SUM(CASE WHEN appointments.state = 'assisted' THEN 1 ELSE 0 END) as assisted,
+                    SUM(CASE WHEN appointments.state = 'unassisted' THEN 1 ELSE 0 END) as unassisted
+                from appointments
+                where appointments.date BETWEEN '{$startAt}' AND '{$endAt}'
+                and appointments.deleted_at is null {$queryFilterAppointment}
+                group by appointments.user_id
+            ) a
+            ON p.user_id = a.user_id");
     }
 }

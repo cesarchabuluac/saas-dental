@@ -419,7 +419,6 @@ export default {
             return obj;
         },
         resolvePaginationTranslate(dataMeta) {
-            console.log(dataMeta)
             let _string = this.$t('datatables.sInfo')
             _string = _string.replace('_START_', dataMeta.from)
             _string = _string.replace('_END_', dataMeta.to)

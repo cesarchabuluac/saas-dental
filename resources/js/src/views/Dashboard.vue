@@ -241,7 +241,6 @@ export default {
             this.dashboard = data
         },
         async onCallRevenue(query) {
-            console.warn(query)
             // this.loading = true
             // const { data } = await DashboardResource.index(query)
             // this.loading = false

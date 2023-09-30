@@ -103,10 +103,10 @@ class LaboratoryActionAPIController extends Controller
             $message = "";
             if (empty($action->deleted_at)) {
                 $action->delete($id);
-                $message = "locale.inactived_successfully";
+                $message = "lang.inactived_successfully";
             } else {
                 $action->restore();
-                $message = "locale.activated_successfully";
+                $message = "lang.activated_successfully";
             }
 
             return $this->sendResponse($action, __($message, ['operator' => __('lang.laboratory_action')]));

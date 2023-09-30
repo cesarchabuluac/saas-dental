@@ -302,7 +302,7 @@ export default {
             to: 0,
             loading: false,
             isAddNewExpenseSidebarActive: false,
-            sidebarTitle: this.$t("locale.expense_add_title"),
+            sidebarTitle: this.$t("expense_add_title"),
             isEdit: false,
         };
     },
@@ -371,7 +371,7 @@ export default {
         },
         editExpense(item) {
             this.isEdit = true
-            this.sidebarTitle = this.$t('locale.expense_edit_title')
+            this.sidebarTitle = this.$t('expense_edit_title')
             this.expense = { ...item }
             this.isAddNewExpenseSidebarActive = true
         },
@@ -435,7 +435,7 @@ export default {
             }
             if (!value) {
                 this.isEdit = false
-                this.sidebarTitle = this.$t("locale.expense_add_title")
+                this.sidebarTitle = this.$t("expense_add_title")
             }
         }
     },

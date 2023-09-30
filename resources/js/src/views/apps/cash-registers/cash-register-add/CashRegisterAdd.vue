@@ -247,7 +247,7 @@
                                     <template #cell(bons)="data">
                                         <div class="align-items-center">
                                             {{ data.item.method !== "cash" && data.item.method !== "check" ?
-                                                $t('locale.cash_register_detail_transfer') : "" }}
+                                                $t('cash_register_detail_transfer') : "" }}
                                         </div>
                                     </template>
 
@@ -370,7 +370,7 @@
                 <b-col cols="12" xl="6" md="6">
                     <b-card no-body class="card-company-table">
                         <b-card-header>
-                            <!-- <b-card-title>{{$t('locale.cash_register_detail_expense')}}</b-card-title>                                         -->
+                            <!-- <b-card-title>{{$t('cash_register_detail_expense')}}</b-card-title>                                         -->
                         </b-card-header>
                         <b-card-body class="invoice-padding pt-0">
                             <b-col cols="12">
@@ -676,16 +676,16 @@ export default {
 
             if (_.isEmpty(this.cashRegister) || _.isEmpty(this.cashRegister.date)) {
                 if (this.isRange) {
-                    this.danger(this.$t('locale.cash_register_date_start_help'), "Error", "AlertOctagonIcon");
+                    this.danger(this.$t('cash_register_date_start_help'), "Error", "AlertOctagonIcon");
                 } else {
-                    this.danger(this.$t('locale.cash_register_close_help'), "Error", "AlertOctagonIcon");
+                    this.danger(this.$t('cash_register_close_help'), "Error", "AlertOctagonIcon");
                 }
                 return false
             }
 
             if (this.isRange) {
                 if (_.isEmpty(this.cashRegister.date_end)) {
-                    this.danger(this.$t('locale.cash_register_date_end_help'), "Error", "AlertOctagonIcon");
+                    this.danger(this.$t('cash_register_date_end_help'), "Error", "AlertOctagonIcon");
                     return false
                 }
             }

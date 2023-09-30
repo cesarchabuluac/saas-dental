@@ -10,38 +10,40 @@
             </template>
             <b-card no-body>
                 <b-card-header class="pb-0">
-                    <b-card-title>{{ $t('payments.details_plural') }}</b-card-title>
+                    <b-card-title>{{ $t('payments.payment_details_title') }}</b-card-title>
                 </b-card-header>
                 <b-card-body>
                     <div class="mt-2">
                         <b-row>
                             <b-table ref="refPaymentsListTable" class="position-relative" :items="payments" responsive
                                 :fields="columns" primary-key="id" show-empty :sticky-header="true"
-                                :no-border-collapse="true" :empty-text="$t('datatables.sZeroRecords')">
+                                :no-border-collapse="true" :empty-text="$t('datatables.sZeroRecords')"
+                                small
+                                size="small">
                                 <!-- Column: label -->
                                 <template #cell(label)="data">
-                                    {{ data.item.budget_action.budget.label }}
+                                    {{ data.item.label }}
                                 </template>
 
                                 <!-- Column: action Type -->
                                 <template #cell(action_type)="data">
-                                    {{ data.item.budget_action.action_type === 'clinical' ? $t('budgets.clinical') : $t('budgets.laboratory') }}<br>
+                                    {{ data.item.action_type === 'clinical' ? $t('budgets.clinical') : $t('budgets.laboratory') }}<br>
                                 </template>
 
                                 <!-- Column: Concept / detail -->
                                 <template #cell(concept)="data">
-                                    {{ data.item.budget_action.action_name }}<br>
-                                    <small>{{ data.item.budget_action.action_group_name }}</small>
+                                    {{ data.item.action_name }}<br>
+                                    <small>{{ data.item.action_group_name }}</small>
                                 </template>
 
                                 <!-- Column: action Type -->
                                 <template #cell(action_area)="data">
-                                    {{ data.item.budget_action.area }}<br>
+                                    {{ data.item.area }}<br>
                                 </template>
 
                                 <!-- Column: Payment date -->
                                 <template #cell(payment_date)="data">
-                                    {{ formatDate(data.item.payment_date) }}
+                                    <span class="text-capitalize">{{ formatDate(data.item.payment_date) }}</span>
                                 </template>
 
                                 <!-- Column: Total -->
@@ -51,9 +53,9 @@
 
                                 <!-- Column: Status -->
                                 <template #cell(status)="data">
-                                    <b-badge pill :variant="`${data.item.payment.check_paid ? 'success' : 'danger'}`"
+                                    <b-badge pill :variant="`${data.item.check_paid ? 'success' : 'danger'}`"
                                         class="text-capitalize">
-                                        {{ data.item.payment.check_paid ? $t('payments.status_applied') : $t('payments.status_pending') }}
+                                        {{ data.item.check_paid ? $t('payments.status_applied') : $t('payments.status_pending') }}
                                     </b-badge>
                                 </template>
                             </b-table>
@@ -90,6 +92,9 @@ import {
 import Ripple from "vue-ripple-directive";
 import { kFormatter } from "@core/utils/filter";
 
+import UserProvider from "@/providers/Users";
+const UserResource = new UserProvider();
+
 export default {
     components: {
         BAvatar,
@@ -111,17 +116,13 @@ export default {
         Ripple,
     },
     props: {
-        loading: {
-            type: Boolean,
-            default: false,
-        },
-        payments: {
-            type: Array,
-            default: () => [],
-        },
+        startAt: null,
+        endAt: null,
+        isActive: false,
     },
     data() {
         return {
+            loading: false,
             columns: [
                 {
                     key: "label",
@@ -152,6 +153,7 @@ export default {
                     label: this.$t('payments.table_status'),
                 },
             ],
+            payments: []
         };
     },
     mounted() {
@@ -159,6 +161,29 @@ export default {
     },
     methods: {
         kFormatter,
+        async getPayments() {            
+            const query = {
+                start_at: this.startAt,
+                end_at: this.endAt,
+                only_payments: true,
+                is_profile: true,
+            }
+
+            this.loading = true
+            const { data } = await UserResource.getUserDetail(this.$route.params.id, query)
+            this.loading = false
+
+            this.$nextTick(() => {
+                this.payments = data
+            })
+        }
     },
+    watch: {
+        isActive(value) {
+            if (value) {
+                this.getPayments()
+            }
+        }
+    }
 };
 </script>

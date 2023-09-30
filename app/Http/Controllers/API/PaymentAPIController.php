@@ -457,6 +457,7 @@ class PaymentAPIController extends Controller
             $inputBudget['user_id'] = auth()->user()->id;
             $inputBudget['branch_office_id'] = 1;
             $inputBudget['subtotal'] = $request['cost'];
+            $inputBudget['is_direct_payment'] = true;
             if ($enableTax) {
                 $inputBudget['tax'] = $request['cost'] * (($defaultTax / 100));
                 $inputBudget['total'] = $request['cost'] + $inputBudget['tax'];
@@ -651,7 +652,9 @@ class PaymentAPIController extends Controller
      */
     public function destroy($id, Request $request)
     {
-        $payment = $this->paymentRepository->with('actionPayments')->find($id);
+        $payment = $this->paymentRepository->find($id);
+
+        Log::info($payment->budget);
 
         if (empty($payment)) {
             return $this->sendError(__('lang.not_found', ['operator' => __('lang.payment')]));
@@ -670,6 +673,10 @@ class PaymentAPIController extends Controller
             $payment->delete();
             $payment->actionPayments()->delete();
             $payment->check()->delete();
+
+            if ($payment->budget->is_direct_payment) {                
+                $payment->budget()->delete();
+            }
 
             if (!empty($parentPayment)) {
                 $count = $this->paymentRepository->where('parent_payment', $parentPayment->id)->count();

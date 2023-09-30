@@ -26,7 +26,7 @@
                                 }" class="form-control _flat-picker _bg-transparent border-1 _shadow-none"
                                     placeholder="YYYY-MM-DD" @on-change="handleChange" @on-ValueUpdate="handleChange" />
                                 <b-input-group-prepend>
-                                    <b-button @click="getDashboard" sm variant="primary">
+                                    <b-button @click="getDashboard(null)" sm round variant="primary">
                                         <feather-icon icon="SearchIcon" />
                                     </b-button>
                                 </b-input-group-prepend>
@@ -58,7 +58,7 @@
                         show-empty 
                         :empty-text="$t('datatables.sZeroRecords')">
                         <template #cell(name)="data">
-                            <b-link :to="{ name: 'user-profile', params: { id: data.item.id }, }"
+                            <b-link :to="{ name: 'user-profile', params: { id: data.item.user_id }, }"
                                 class="font-weight-bold d-block text-nowrap">
                                 {{ data.item.name }}
                             </b-link>
@@ -67,30 +67,7 @@
                             <strong>{{ formatPrice(data.item.total) }}</strong>
                         </template>
                     </b-table>
-                </b-col>
-
-                <!-- <b-col md="4" class="budget-wrapper">
-                    <div class="d-flex align-items-center">
-                        
-                    </div>
-
-                    <h2 class="mb-25 mt-3">
-                        <small>{{ $t('budgets.total_paid') }}</small><br>
-                        {{ formatPrice(totalBudgetPaid) }}
-                    </h2>
-                    <div class="d-flex justify-content-center">
-                        <span class="font-weight-bolder mr-25">{{ $t('budgets.total') }}</span>
-                        <span>{{ formatPrice(totalBudget) }}</span>
-                    </div>
-                    <div class="d-flex justify-content-center text-danger">
-                        <span class="font-weight-bolder mr-25">{{ $t('budgets.details.balance') }}</span>
-                        <span>{{ formatPrice(totalBudgetPaid - totalBudget) }}</span>
-                    </div>
-                    <h2 class="mb-25 mt-1">
-                        <small>{{ $t('total_commissions') }}</small><br>
-                        {{ formatPrice(totalCommission) }}
-                    </h2>
-                </b-col> -->
+                </b-col>               
             </b-row>
         </b-card>
     </b-overlay>
@@ -286,7 +263,11 @@ export default {
         kFormatter,
         cFormatter,
         async handleChange(selectedDates, dateStr, instance) {
-            const [startAt, endAt] = dateStr.split(' to ');
+            // const [startAt, endAt] = dateStr.split(' to ');
+            const dateStart = selectedDates[0];
+            const startAt = dateStart.toISOString().split('T')[0];
+            const dateEnd = selectedDates[selectedDates.length - 1];
+            const endAt = dateEnd.toISOString().split('T')[0];            
 
             if (startAt && endAt) {
                 const query = {
@@ -295,11 +276,21 @@ export default {
                     onlyRevenue: true,
                 }
                 // this.updateProp(query)
-                await this.getDashboard(query)
+                // await this.getDashboard(query)
             }
 
         },
-        async getDashboard(query) {
+        async getDashboard(query = null) {
+            console.log(query)
+            if (query == null) {
+                const dates = this.rangePicker.split(' a ');
+                query = {
+                    start_at: dates[0],
+                    end_at: dates[1],
+                    onlyRevenue: true,
+                }
+            }
+            
             this.isLoading = true
             const { data } = await DashboardResource.index(query)
             this.isLoading = false
@@ -336,15 +327,18 @@ export default {
                     this.getDashboard(query)
                 }
             }
-            // if (value.revenueDoctors) {
-            //     this.professionals = value.revenueDoctors.filter(item => parseFloat(item.total) > 0).flat()
-            //     this.chartOptions.xaxis.categories = value.revenueDoctors.map(item => item.name).flat();
-            //     this.series[0].data = value.revenueDoctors.map(item => item.total).flat()
-            //     this.totalCommission = value.revenueDoctors.map(item => parseFloat(item.total)).reduce((a, b) => a + b)
-            //     this.totalBudget = value.totalBuddgetApproved
-            //     this.totalBudgetPaid = value.totalBudgetPaid
-            // }
-        }        
+        },
+        rangePicker(value) {
+            const dates = value.split(' a ');
+            if (dates.length === 2) {                
+                this.getDashboard({
+                    start_at: dates[0],
+                    end_at: dates[1],
+                    onlyRevenue: true,
+                })
+            }
+            
+        }       
     }
 
 }

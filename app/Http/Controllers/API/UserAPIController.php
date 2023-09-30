@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\PasswordRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Repositories\AppointmentRepository;
 use App\Repositories\RoleRepository;
 use App\Repositories\SettingRepository;
 use App\Repositories\UserRepository;
@@ -21,6 +22,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
+use Psy\Readline\Hoa\Console;
 
 class UserAPIController extends Controller
 {
@@ -32,14 +34,21 @@ class UserAPIController extends Controller
     protected $storageService;
     protected $roleRepository;
     protected $settingRepository;
+    protected $appontmentRepository;
 
 
-    public function __construct(UserRepository $userRepository, RoleRepository $roleRepository, StorageService $storageService, SettingRepository $settingRepository)
-    {
+    public function __construct(
+        UserRepository $userRepository,
+        RoleRepository $roleRepository,
+        StorageService $storageService,
+        SettingRepository $settingRepository,
+        AppointmentRepository $appointmentRepository
+    ) {
         $this->userRepository = $userRepository;
         $this->roleRepository = $roleRepository;
         $this->storageService = $storageService;
         $this->settingRepository = $settingRepository;
+        $this->appontmentRepository = $appointmentRepository;
     }
 
 
@@ -130,7 +139,7 @@ class UserAPIController extends Controller
     public function show($id, Request $request)
     {
 
-        $user = $this->userRepository; //->with(['roles']);
+        $user = $this->userRepository;
 
         $totalMethods = [
             'cash' => 0,
@@ -141,21 +150,38 @@ class UserAPIController extends Controller
         ];
 
         if ($request->filled('is_profile')) {
+
             $start = Carbon::parse($request->start_at)->startOfDay()->toDateTimeString();
             $end = Carbon::parse($request->end_at)->endOfDay()->toDateTimeString();
+
+            $payload = [
+                'start' => $start,
+                'end' => $end,
+            ];
+
+            if ($request->filled('only_appointments')) {                
+                return $this->loadAppointments($id, $payload);
+            }
+
+            if ($request->filled('only_payments')) {
+                return $this->loadPayments($id, $payload);
+            }
+
             $revenue = $user->revenueReport($start, $end, $id);
-            $payments = $user->whereHas('actionPayments', function ($query) use ($start, $end) {
-                $query->where('action_payments.payment_date', '>=', $start)->where('action_payments.payment_date', '<=', $end);
-            })->with(['actionPayments.budgetAction.budget', 'actionPayments.payment'])->get();
+
+            $payments = [];
+            // $user->whereHas('actionPayments', function ($query) use ($start, $end) {
+            //     $query->where('action_payments.payment_date', '>=', $start)->where('action_payments.payment_date', '<=', $end);
+            // })->with(['actionPayments.budgetAction.budget', 'actionPayments.payment'])->get();
 
             $paymentMethods = DB::select("SELECT pm.name, COALESCE(ROUND(SUM(ap.amount)), 0) AS amount FROM payment_methods pm 
-            LEFT JOIN payments p ON p.payment_method_id = pm.id 
-            LEFT JOIN action_payments ap ON p.id = ap.payment_id 
-            WHERE p.deleted_at IS NULL AND ap.deleted_at IS NULL 
-            AND ap.payment_date >= ? 
-            AND ap.payment_date <= ? 
-            AND (ap.professional_id = ? OR ? IS NULL)
-            GROUP BY pm.name", [$start, $end, $id, $id]);
+                LEFT JOIN payments p ON p.payment_method_id = pm.id 
+                LEFT JOIN action_payments ap ON p.id = ap.payment_id 
+                WHERE p.deleted_at IS NULL AND ap.deleted_at IS NULL 
+                AND ap.payment_date >= ? 
+                AND ap.payment_date <= ? 
+                AND (ap.professional_id = ? OR ? IS NULL)
+                GROUP BY pm.name", [$start, $end, $id, $id]);
 
             $totalMethods = [];
             foreach ($paymentMethods as $payment) {
@@ -228,7 +254,7 @@ class UserAPIController extends Controller
             $user['transactionsData'] = $transactionsData;
         }
 
-        if (checkIsCentral()) {
+        if (isTenant()) {
             $user = $user->load('schedules');
         }
 
@@ -397,5 +423,74 @@ class UserAPIController extends Controller
     {
         auth()->user()->update(['password' => Hash::make($request->get('password'))]);
         return $this->sendResponse(auth()->user(), __('lang.password_updated_successfully'));
+    }
+
+    /**
+     * $data['start]
+     * $data['end']
+     */
+    protected function loadAppointments($id, $data)
+    {
+        $appointments =  DB::select("SELECT
+            p.name, 
+            p.last_name, 
+            p.mother_last_name,
+            p.document_type,
+            p.rut,
+            p.phone,
+            p.cellphone,
+            p.email, 
+            a.`date`,
+            a.duration,
+            a.intern_observation,
+            a.state 
+        FROM appointments a 
+        INNER JOIN patients p ON a.patient_id = p.id 
+        WHERE a.user_id = $id AND a.date >= '{$data["start"]}' AND a.date <= '{$data['end']}'
+        AND a.deleted_at IS NULL ");
+
+        foreach ($appointments as $key => $appointment) {
+            $appointment->custom_duration = $this->customDurationOnAppointment($appointment->date, $appointment->duration);
+        }
+
+        return $appointments;
+    }
+
+    protected function loadPayments($id, $data)
+    {
+        return DB::select("SELECT 
+            ap.id,
+            CONCAT(
+                DATE_FORMAT(b.created_at, '%d/%m/%Y'),
+                ' #',
+                LPAD(b.id, 5, '0')
+            ) AS label,
+                ba.action_type,
+                ba.action_name,
+                ba.action_group_name,
+                ba.area,
+                ap.payment_date,
+                ap.amount,
+                p.check_paid 
+            FROM action_payments ap 
+            INNER JOIN payments p ON ap.payment_id = p.id 
+            INNER JOIN budget_actions ba ON ap.budget_action_id = ba.id 
+            INNER JOIN budgets b ON ba.budget_id = b.id 
+            WHERE ap.payment_date >= '{$data["start"]}' AND ap.payment_date <= '{$data["end"]}'
+            AND ap.deleted_at IS NULL
+            AND ap.professional_id = 98 AND ap.amount > 0");
+    }
+
+    protected function customDurationOnAppointment($date, $duration = 15)
+    {
+        $date = new \DateTime($date);
+        $dateStart = $date->format('Y-m-d\TH:i:s');
+        if ($duration != null)
+            $duration = $duration * 15;
+        else
+            $duration = 15;
+        $dateEnd = $date->add(new \DateInterval('PT' . $duration . 'M'));
+        $dateEnd = $dateEnd->format('Y-m-d\TH:i:s');
+        return $dateEnd;
     }
 }

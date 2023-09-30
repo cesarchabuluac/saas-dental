@@ -8,8 +8,63 @@
             </div>
         </template>
 
+         <b-card no-body class="mb-0">
+            <div class="m-2">
+                <b-card-header class="pb-50">
+                    <h5>{{ $t('filters.title') }}</h5>
+                </b-card-header>
+                <b-card-body>
+                    <b-row>
+                        <b-col cols="12" md="4">
+                            <b-form-group :label="$t('branch_office')">
+                                <v-select 
+                                    v-model="branch_id"
+                                    :options="branchs"
+                                    label="name" 
+                                    :reduce="option => option.id"
+                                    :placeholder="$t('select_an_option')"
+                                    :searchable="false"
+                                    @input="getChecks">
+                                </v-select>
+                            </b-form-group>
+                        </b-col>
+
+                        <!-- Charged -->
+                        <b-col cols="12" md="4">
+                            <b-form-group :label="$t('checks.table_charged')">
+                                <v-select 
+                                    v-model="is_charged"
+                                    :options="chargedOptions"
+                                    label="label" 
+                                    :reduce="option => option.value"
+                                    :placeholder="$t('select_an_option')"
+                                    :searchable="false"
+                                    @input="getChecks">
+                                </v-select>
+                            </b-form-group>
+                        </b-col>
+
+                        <!-- Expireds -->
+                        <b-col cols="12" md="4">
+                            <b-form-group :label="$t('checks.table_expiration')">
+                                <v-select 
+                                    v-model="expires_on"
+                                    :options="expiredOptions"
+                                    label="label" 
+                                    :reduce="option => option.value"
+                                    :placeholder="$t('select_an_option')"
+                                    :searchable="false"
+                                    @input="getChecks">
+                                </v-select>
+                            </b-form-group>
+                        </b-col>
+                    </b-row>
+                </b-card-body>
+            </div>
+         </b-card>
+
         <!-- Table Container Card -->
-        <b-card no-body class="mb-0">
+        <b-card no-body class="mb-0 mt-3">
             <div class="m-2">
                 <!-- Table Top -->
                 <b-row>
@@ -42,6 +97,11 @@
                 primary-key="id" :sort-by.sync="sortBy" show-empty :empty-text="$t('datatables.sZeroRecords')"
                 :sort-desc.sync="sortDesc" :current-page="currentPage" busy.sync="loading" stacked="md">
 
+                <!-- Column: created_at -->
+                <template #cell(branch)="data">
+                    {{ data.item.payment.branch.name }}
+                </template>
+
                 <!-- Column: payment_id -->
                 <template #cell(payment_id)="data">
                     <b-link
@@ -53,6 +113,8 @@
                         #{{ data.item.payment.id }}
                     </b-link>
                 </template>
+
+
 
                 <!-- Column: created_at -->
                 <template #cell(created_at)="data">
@@ -93,11 +155,24 @@
 
                 <!-- Column: Actions -->
                 <template #cell(actions)="data">
-                    <b-button v-if="!data.item.charged && canAccess('checks.apply')"
-                        v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="warning" class="btn-icon" size="sm"
-                        @click="charged(data.item)" v-b-tooltip.hover.right="`${$t('checks.button_tooltip_apply')}`">
-                        <feather-icon icon="CheckSquareIcon" />
-                    </b-button>
+                    <div class="demo-inline-spacing">
+                        <b-button v-if="!data.item.charged && canAccess('checks.apply')"
+                            v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="warning" class="btn-icon" size="sm"
+                            @click="charged(data.item)" v-b-tooltip.hover.right="`${$t('checks.button_tooltip_apply')}`">
+                            <feather-icon icon="CheckSquareIcon" />
+                        </b-button>
+
+                        <b-button
+                            v-if="!data.item.deleted_at && canAccess('checks.destroy') && !data.item.charged"
+                            v-ripple.400="'rgba(255, 255, 255, 0.15)'"
+                            variant="danger"
+                            class="btn-icon"
+                            size="sm"
+                            @click="deleteCheck(data.item)">
+                            <feather-icon icon="Trash2Icon"/>
+                        </b-button>
+                    </div>
+
                 </template>
             </b-table>
 
@@ -124,6 +199,8 @@ import _ from "lodash";
 import * as moment from "moment";
 import {
     BCard,
+    BCardHeader,
+    BCardBody,
     BRow,
     BCol,
     BForm,
@@ -155,9 +232,15 @@ import vSelect from "vue-select";
 import "animate.css";
 import CheckProvider from "@/providers/Checks";
 const CheckResource = new CheckProvider();
+
+import BranchProvider from "@/providers/BranchOffices";
+const BranchResource = new BranchProvider();
+
 export default {
     components: {
         BCard,
+        BCardHeader,
+        BCardBody,
         BRow,
         BCol,
         BForm,
@@ -196,6 +279,10 @@ export default {
             currentPage: 1,
             totalCheck: 0,
             columns: [
+                 {
+                    key: "branch",
+                    label: this.$t("checks.table_branch"),
+                },
                 {
                     key: "payment_id",
                     label: this.$t("checks.table_payment_id"),
@@ -232,6 +319,21 @@ export default {
             from: 0,
             to: 0,
             loading: false,
+            branchs: [],
+            branch_id: null,
+            is_charged: null,
+            expires_on: 'expired',
+            chargedOptions: [
+                { value: 1, label: this.$t('payments.status_applied') },
+                { value: 0, label: this.$t('payments.status_pending') },
+            ],
+            expiredOptions: [                
+                { value: 'expired', label: this.$t('checks.expires_on.expired') },
+                { value: 'last_7_days', label: this.$t('checks.expires_on.last_7_days') },
+                { value: 'this_month', label: this.$t('checks.expires_on.this_month') },
+                { value: 'expired_last_7_days', label: this.$t('checks.expires_on.expired_last_7_days') },
+                { value: 'expired_this_month', label: this.$t('checks.expires_on.expired_this_month') }
+            ],
         };
     },
     computed: {
@@ -255,9 +357,16 @@ export default {
         },
     },
     async mounted() {
+        await this.getBranchs()
         await this.getChecks();
     },
     methods: {
+        async getBranchs () {
+            this.loading = true
+            const { data } = await BranchResource.getAll()
+            this.loading = false
+            this.branchs = data
+        },
         async getChecks() {
             const query = {
                 search: this.searchQuery,
@@ -265,6 +374,9 @@ export default {
                 sortDesc: this.sortDesc,
                 perPage: this.perPage,
                 page: this.currentPage,
+                branch_id: this.branch_id,
+                is_charged: this.is_charged,
+                expires_on: this.expires_on,
             };
             this.loading = true;
             const { data } = await CheckResource.getList(query);
@@ -274,10 +386,9 @@ export default {
         },
         charged(item) {
             this.check = { ...item }
-
             this.$swal({
                 title: this.$t('checks.confirm_charge_title'),
-                text: this.$t('checks.confirm_charge_help'),
+                html: `<div class="text-justify">${this.$t('checks.confirm_charge_help')}</div>`,
                 icon: "question",
                 showCancelButton: true,
                 confirmButtonText: this.$t('yes_continue'),
@@ -291,6 +402,12 @@ export default {
                 },
                 buttonsStyling: false,
                 showLoaderOnConfirm: true,
+                input: 'textarea',
+                inputLabel: this.$t('payments.confirm_comments_additional'),
+                inputPlaceholder: this.$t('payments.confirm_comments_additional_placeholder'),
+                inputAttributes: {
+                    autocapitalize: 'off',
+                },
                 preConfirm: async () => {
                     try {
                         this.loading = true
@@ -319,6 +436,51 @@ export default {
             })
 
         },
+        deleteCheck(item) {
+            this.$swal({
+                title: item.is_expired ? this.$t('checks.destroy.title_expire') : this.$t('checks.destroy.title_no_expire'),
+                html:`<div class="text-justify">${item.is_expired ? this.$t('checks.destroy.description') : this.$t('checks.destroy.description_no_expire')}</div>`,
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonText: this.$t('yes_continue'),
+                cancelButtonText: this.$t('cancel'),
+                customClass: {
+                    confirmButton: "btn btn-primary",
+                    cancelButton: "btn btn-outline-danger ml-1",
+                },
+                showClass: {
+                    popup: "animate__animated animate__flipInX",
+                },
+                buttonsStyling: false,
+                showLoaderOnConfirm: true,
+                input: 'textarea',
+                inputLabel: this.$t('confirm_comments'),
+                inputPlaceholder: this.$t('confirm_comments_placeholder'),
+                inputAttributes: {
+                    autocapitalize: 'off',
+                    required: 'true',
+                },
+                preConfirm: async (comments) => {
+                    try {
+                        this.loading = true
+                        const { data } = await CheckResource.destroy(item.id, { comments: comments})
+                        this.loading = false
+                        if (data.success) {
+                            this.success(data.message)
+                            this.checks = this.checks.filter(check => check.id !== item.id)
+                        } else {
+                            this.danger(data.message)
+                        }
+                    } catch (e) {
+                        this.loading = false
+                        this.$swal.showValidationMessage(
+                            `Request failed: ${e}`
+                        );
+                    }
+                },
+                allowOutsideClick: () => !Swal.isLoading(),
+            })
+        }
     },
 };
 </script>

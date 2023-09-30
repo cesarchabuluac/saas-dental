@@ -1,6 +1,7 @@
 <?php
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
 /**
@@ -142,6 +143,13 @@ function getAvailableLanguages()
 function checkIsCentral()
 {
     $host = $_SERVER['HTTP_HOST'];
+    $isTenant = substr_count($host, '.') > 1;
+    return !$isTenant;
+}
+
+function isTenant()
+{
+    $host = $_SERVER['HTTP_HOST'];    
     $isTenant = substr_count($host, '.') > 1;
     return !$isTenant;
 }

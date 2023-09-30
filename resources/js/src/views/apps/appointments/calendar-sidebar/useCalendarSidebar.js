@@ -38,8 +38,7 @@ export default function useCalendarSidebar() {
         // }
 
         isLoading.value = true;
-        const { data } = await UserResource.index({ criteria: "professionals", 'isCalendar': true, });
-        console.warn(data)
+        const { data } = await UserResource.index({ criteria: "professionals", isCalendar: true, ignoreSchedules: false, });
         isLoading.value = false;
         professionals.value = data
         store.commit('auth/SET_DOCTORS', data)

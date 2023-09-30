@@ -273,7 +273,7 @@ export default {
         async filterData() {
 
             if (!this.filter.start && !this.filter.end && !this.filter.name) {
-                this.danger(this.$t('locale.report_filter_required'), 'Error')
+                this.danger(this.$t('report_filter_required'), 'Error')
                 return false
             }
 

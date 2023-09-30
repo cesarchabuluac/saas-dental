@@ -26,6 +26,30 @@ const router = new VueRouter({
         ],
       },
     },
+
+    {
+      path: "/appointments",
+      name: "appointments",
+      component: () => import('@/views/apps/calendar/Calendar.vue'),
+      beforeEnter: SubscriptionGuard,
+      meta: {
+        permission: "appointments.index",
+        pageTitle: "appointments.desc",
+        breadcrumb: [
+          {
+            text: 'Dashboard',
+            to: "/",
+          },
+          {
+            text: "appointments.slug",
+            active: true,
+          },
+        ],
+      },
+    },
+    // *===============================================---*
+    // *--------- APPOINTMENT ----------------------------*
+    // *===============================================---*
     {
       path: "/appointments",
       name: "appointments",
@@ -47,8 +71,8 @@ const router = new VueRouter({
       },
     },
     {
-      path: "/appointment/add",
-      name: "appointment-add",
+      path: "/appointments/add",
+      name: "appointments-add",
       component: () => import("@/views/apps/appointments/calendar-add/AppointmentAdd.vue"),
       beforeEnter: SubscriptionGuard,
       meta: {
@@ -284,7 +308,7 @@ const router = new VueRouter({
       },
     },
     {
-      path: "/user/:id/profile",
+      path: "/users/:id/profile",
       name: "user-profile",
       component: () => import("@/views/settings/profile/Profile.vue"),
       beforeEnter: SubscriptionGuard,

@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Payment;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Prettus\Repository\Eloquent\BaseRepository;
 
 
@@ -46,42 +47,68 @@ class PaymentRepository extends BaseRepository
     {
         $start = Carbon::now()->startOfDay();
         $end = Carbon::now()->endOfDay();
-        return $this->model->join('action_payments', 'payments.id', '=', 'action_payments.payment_id')
-            ->whereBetween('action_payments.payment_date', [$start, $end])
-            ->where('payments.check_paid', 1)
-            ->sum('action_payments.amount');
+
+        $data = DB::select("SELECT SUM(action_payments.amount) as total
+            FROM payments
+            JOIN action_payments ON payments.id = action_payments.payment_id
+            WHERE action_payments.payment_date >= '{$start}' AND action_payments.payment_date <= '{$end}'
+            AND payments.deleted_at IS NULL
+            AND action_payments.deleted_at IS NULL
+            AND payments.check_paid = 1");
+
+        return $data[0]->total;
     }
 
     public function earningCurrentDayByUser()
     {
         $start = Carbon::now()->startOfDay();
         $end = Carbon::now()->endOfDay();
-        return $this->model->join('action_payments', 'payments.id', '=', 'action_payments.payment_id')
-            ->whereBetween('action_payments.payment_date', [$start, $end])
-            ->where('payments.check_paid', 1)
-            ->where('action_payments.professional_id', auth()->user()->id)
-            ->sum('action_payments.amount');
+        $user_id = auth()->id;
+
+        $data = DB::select("SELECT SUM(action_payments.amount) as total
+            FROM payments
+            JOIN action_payments ON payments.id = action_payments.payment_id
+            WHERE action_payments.payment_date >= '{$start}' AND action_payments.payment_date <= '{$end}'
+            AND action_payments.professional_id = $user_id
+            AND payments.deleted_at IS NULL
+            AND action_payments.deleted_at IS NULL
+            AND payments.check_paid = 1");
+
+        return $data[0]->total;
     }
 
     public function earningCurrentMonth()
     {
         $start = Carbon::now()->startOfMonth();
         $end = Carbon::now()->endOfMonth();
-        return $this->model->join('action_payments', 'payments.id', '=', 'action_payments.payment_id')
-            ->whereBetween('action_payments.payment_date', [$start, $end])
-            ->where('payments.check_paid', 1)
-            ->sum('action_payments.amount');
+
+        $data = DB::select("SELECT SUM(action_payments.amount) as total
+            FROM payments
+            JOIN action_payments ON payments.id = action_payments.payment_id
+            WHERE action_payments.payment_date >= '{$start}' AND action_payments.payment_date <= '{$end}'
+            AND payments.deleted_at IS NULL
+            AND action_payments.deleted_at IS NULL
+            AND payments.check_paid = 1");
+
+        return $data[0]->total;
     }
 
     public function earningCurrentMonthByUser()
     {
         $start = Carbon::now()->startOfMonth();
         $end = Carbon::now()->endOfMonth();
-        return $this->model->join('action_payments', 'payments.id', '=', 'action_payments.payment_id')
-            ->whereBetween('action_payments.payment_date', [$start, $end])
-            ->where('payments.check_paid', 1)
-            ->where('action_payments.professional_id', auth()->user()->id)
-            ->sum('action_payments.amount');
+        $user_id = auth()->id;
+
+        $data = DB::select("SELECT SUM(action_payments.amount) as total
+        FROM payments
+        JOIN action_payments ON payments.id = action_payments.payment_id
+        WHERE action_payments.payment_date >= '{$start}' AND action_payments.payment_date <= '{$end}'
+        AND action_payments.professional_id = $user_id
+        AND payments.deleted_at IS NULL
+        AND action_payments.deleted_at IS NULL
+        AND payments.check_paid = 1");
+
+        return $data[0]->total;
     }
 
     public function earningLastMonth()
@@ -89,20 +116,32 @@ class PaymentRepository extends BaseRepository
         $start = Carbon::now()->subMonth()->startOfMonth();
         $end = Carbon::now()->subMonth()->endOfMonth();
 
-        return $this->model->join('action_payments', 'payments.id', '=', 'action_payments.payment_id')
-            ->whereBetween('action_payments.payment_date', [$start, $end])
-            ->where('payments.check_paid', 1)
-            ->sum('action_payments.amount');
+        $data = DB::select("SELECT SUM(action_payments.amount) as total
+            FROM payments
+            JOIN action_payments ON payments.id = action_payments.payment_id
+            WHERE action_payments.payment_date >= '{$start}' and action_payments.payment_date <= '{$end}'
+            AND payments.check_paid = 1
+            and payments.deleted_at is null 
+            and action_payments.deleted_at is null ");
+
+        return $data[0]->total;
     }
 
     public function earningLastMonthByUser()
     {
         $start = Carbon::now()->subMonth()->startOfMonth();
         $end = Carbon::now()->subMonth()->endOfMonth();
-        return $this->model->join('action_payments', 'payments.id', '=', 'action_payments.payment_id')
-            ->whereBetween('action_payments.payment_date', [$start, $end])
-            ->where('payments.check_paid', 1)
-            ->where('action_payments.professional_id', auth()->user()->id)
-            ->sum('action_payments.amount');
+        $user_id = auth()->id;
+
+        $data = DB::select("SELECT SUM(action_payments.amount) as total
+            FROM payments
+            JOIN action_payments ON payments.id = action_payments.payment_id
+            WHERE action_payments.payment_date >= '{$start}' and action_payments.payment_date <= '{$end}'
+            AND action_payments.professional_id = $user_id
+            AND payments.check_paid = 1
+            and payments.deleted_at is null 
+            and action_payments.deleted_at is null ");
+
+        return $data[0]->total;
     }
 }

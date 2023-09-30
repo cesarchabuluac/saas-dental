@@ -221,7 +221,7 @@
                                     <template #cell(bons)="data">
                                         <div class="align-items-center">
                                             {{ data.item.method !== "cash" && data.item.method !== "check" ?
-                                                $t('locale.cash_register_detail_transfer') : "" }}
+                                                $t('cash_register_detail_transfer') : "" }}
                                         </div>
                                     </template>
 
@@ -344,7 +344,7 @@
                 <b-col cols="12" xl="6" md="6">
                     <b-card no-body class="card-company-table">
                         <b-card-header>
-                            <!-- <b-card-title>{{$t('locale.cash_register_detail_expense')}}</b-card-title>                                         -->
+                            <!-- <b-card-title>{{$t('cash_register_detail_expense')}}</b-card-title>                                         -->
                         </b-card-header>
                         <b-card-body class="invoice-padding pt-0">
                             <b-col cols="12">

@@ -442,6 +442,7 @@ return [
     "plan" => "Plan",
     "plan_associate_help" => "Este plan está asociado con un inquilino. No puedes eliminarlo.",
     "appointment" => "Cita",
+    "time_not_available" => "Horario no disponible para agendar cita",
     "invalid_date_format" => "Formato de fecha inválido",
     'appointment_reminder' => 'Recordatorio de Cita',
     "appointment_available" => "Fecha disponible para programar una cita",

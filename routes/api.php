@@ -4,6 +4,7 @@ use App\Http\Controllers\API\DashboardAPIController;
 use App\Http\Controllers\API\ImportAPIController;
 use App\Http\Controllers\API\NotificationAPIController;
 use App\Http\Controllers\API\UserAPIController;
+use App\Http\Controllers\API\V2\AppointmentAPIController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Central\TenantController;
 use App\Http\Controllers\DashboardController;
@@ -185,6 +186,8 @@ Route::group(['middleware' => 'auth:api', 'as' => 'tenant.'], function () {
 
   Route::prefix('v2')->group(function () {
     Route::get('budgets', 'App\Http\Controllers\API\V2\BudgetAPIController@index')->name('budgets.index');
+    Route::get('appointments', [AppointmentAPIController::class, 'index'])->name('appointments.index');
+    Route::get('appointments/available', 'App\Http\Controllers\API\AppointmentAPIController@availableEvent');
   });
 
   //NOTIFICATIONS

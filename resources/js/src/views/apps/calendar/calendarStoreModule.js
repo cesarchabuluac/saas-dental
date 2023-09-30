@@ -1,15 +1,37 @@
 import axios from '@axios'
 import moment from "moment";
+import createPersistedStore from 'vuex-persistedstate'
+import * as CryptoJS from 'crypto-js'
 
 // Providers
-import AppointmentProvider from "@/providers/Appointments";
-import UserProvider from "@/providers/Users";
-
+import AppointmentProvider from "@/providers/v2/Appointments";
 const AppointmentResource = new AppointmentProvider();
-const UserResource = new UserProvider();
+
 
 export default {
   namespaced: true,
+  plugins: [
+    createPersistedStore({
+      storage: {
+        getItem: key => {
+          const value = localStorage.getItem(key)
+          if (value) {
+            const bytes = CryptoJS.AES.decrypt(value, 'clave-secreta')
+            const decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8))
+            return decryptedData
+          }
+          return null
+        },
+        setItem: (key, value) => {
+          const encryptedData = CryptoJS.AES.encrypt(JSON.stringify(value), 'clave-secreta').toString()
+          localStorage.setItem(key, encryptedData)
+        },
+        removeItem: key => {
+          localStorage.removeItem(key)
+        },
+      },
+    }),
+  ],
   state: {
     calendarOptions: [
       {
@@ -33,8 +55,9 @@ export default {
         label: "unassisted",
       },
     ],
-    selectedCalendars: ["pending", "confirmed", "assisted", "unassisted", "canceled"],
     useProfessionals: [],
+    selectedCalendars: ["pending", "confirmed", "assisted", "unassisted", "canceled"],
+    selectedPatient: {},
     selectedProfessional: {},
     selectedDates: {},
     selectedCurrentDate: null,
@@ -44,26 +67,16 @@ export default {
     SET_SELECTED_EVENTS(state, val) {
       state.selectedCalendars = val
     },
-    SET_SELECTED_PROFESSIONAL(state, val) {
-      state.selectedProfessional = val;
-    },
-    SET_USE_PROFESSIONALS(state, val) {
-      state.useProfessionals = val
-    },
     SET_SELECTED_DATES(state, val) {
       state.selectedDates = val
     },
-    SET_SELECTED_CURRENT_DATE(state, val) {
-      state.selectedCurrentDate = val
+    SET_SELECTED_PROFESSIONAL(state, val) {
+      state.selectedProfessional = val;
     },
   },
   actions: {
-    fetchProfessional() {
-      return UserResource.index({
-        criteria: "professionals",
-      });
-    },
-    fetchEvents(ctx, { calendars, professional }) {
+    fetchEvents(ctx, { calendars }) {
+
       // Fetch Events from API endpoint
       const date = moment().toDate();
       const nextDay = moment().add(1, "day").toDate();
@@ -71,10 +84,21 @@ export default {
       const query = {
         start: ctx.state.selectedDates ? ctx.state.selectedDates.start : date,
         end: ctx.state.selectedDates ? ctx.state.selectedDates.end : nextDay,
-        state: calendars.join(","),
-        professional: ctx.state.selectedProfessional.id
+        state: calendars.calendar.join(","),
+        professional: calendars.profesional || ctx.state.selectedProfessional.id
       };
-      return AppointmentResource.getEvents(query);
+      return AppointmentResource.index(query);
+
+      // return new Promise((resolve, reject) => {
+      //   axios
+      //     .get('/apps/calendar/events', {
+      //       params: {
+      //         calendars: calendars.join(','),
+      //       },
+      //     })
+      //     .then(response => resolve(response))
+      //     .catch(error => reject(error))
+      // })
     },
     addEvent(ctx, { event }) {
       return new Promise((resolve, reject) => {

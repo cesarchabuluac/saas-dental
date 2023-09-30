@@ -327,7 +327,7 @@ export default {
                     status = `${this.$t('appointments.status.pending')} *${this.findSetting('app_name')}!* %0A%0A`;
                     break;
                 case 'confirmed':
-                    status = `${this.$t('appointments.status.confirm')} *${this.findSetting('app_name')}!* %0A%0A`;
+                    status = `${this.$t('appointments.status.confirmed')} *${this.findSetting('app_name')}!* %0A%0A`;
                     break;
                 case 'assisted':
                     status = `${this.$t('appointments.status.assisted')} *${this.findSetting('app_name')}!* %0A%0A`;

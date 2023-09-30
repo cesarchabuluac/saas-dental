@@ -58,18 +58,20 @@ class UserCriteria implements CriteriaInterface
         if ($this->request->has('criteria')) {
 
             $roleID = $this->myRoles()[$this->request->criteria] ?? 4;
-            return $model->whereHas("roles", function ($q) use ($roleID) {
-                $q->where("id", $roleID)
-                    ->where('is_active', true);
-            })
-                ->whereHas('schedules', function ($query) use ($selectedDateTime, $ignoreSchedules) {
-                    if (!$ignoreSchedules) {
-                        $dayOfWeek = $selectedDateTime->dayOfWeek;
-                        $query->where('day_of_week', $dayOfWeek)
-                            ->whereTime('start_time', '<=', $selectedDateTime->format('H:i:s'))
-                            ->whereTime('end_time', '>=', $selectedDateTime->format('H:i:s'));
-                    }
+            $model = $model->whereHas("roles", function ($q) use ($roleID) {
+                $q->where("id", $roleID);
+                // ->where('is_active', true);
+            });
+
+            if (!$this->request->has('ignoreSchedules')) {
+                $model = $model->whereHas('schedules', function ($query) use ($selectedDateTime, $ignoreSchedules) {
+                    $dayOfWeek = $selectedDateTime->dayOfWeek;
+                    $query->where('day_of_week', $dayOfWeek)
+                        ->whereTime('start_time', '<=', $selectedDateTime->format('H:i:s'))
+                        ->whereTime('end_time', '>=', $selectedDateTime->format('H:i:s'));
                 });
+            }
+            return $model;
         }
 
         return $model;

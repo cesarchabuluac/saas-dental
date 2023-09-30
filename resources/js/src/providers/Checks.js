@@ -8,4 +8,8 @@ export default class Checks {
     store(formData) {
         return axios.post("/api/checks", formData);
     }
+
+    destroy(id, comments) {
+        return axios.delete(`/api/checks/${id}`, { params: comments});
+    }
 }

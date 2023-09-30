@@ -213,8 +213,6 @@ export default {
     },
     async mounted() {
         await this.getSettings()
-
-        console.warn(window.location.hostname)
     },
     methods: {
         async getSettings () {

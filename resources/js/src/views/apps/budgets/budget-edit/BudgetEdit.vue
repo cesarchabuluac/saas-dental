@@ -66,7 +66,7 @@
                                 <!-- Col: Invoice To -->
                                 <b-col cols="12" xl="6" class="p-1">
                                     <!-- Branch Office -->
-                                    <b-form-group :label="$t('locale.branch_office')" label-for="branch_office_id">
+                                    <b-form-group :label="$t('branch_office')" label-for="branch_office_id">
                                         <v-select :disabled="true" v-model="selectedBranch" :options="branchs" label="name"
                                             input-id="branch_office_id" />
                                     </b-form-group>

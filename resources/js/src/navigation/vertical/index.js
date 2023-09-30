@@ -177,28 +177,42 @@ export default [
     permission: 'budgets.index',
   },
   {
-    title: 'cash_registers.menu',
-    route: 'apps-cash-register-list',
-    icon: 'BoxIcon',
-    permission: 'cash_registers.index',
+    title: "incomes.menu",
+    icon: "TrendingUpIcon",
+    permission: "payments.index",
+    children: [
+      {
+        title: 'payments.menu',
+        route: 'apps-payments-list',
+        icon: 'DollarSignIcon',
+        permission: 'payments.index',
+      },
+      {
+        title: 'checks.menu',
+        route: 'apps-checks-list',
+        icon: 'CheckCircleIcon',
+        permission: 'checks.index',
+      },
+      {
+        title: 'cash_registers.menu',
+        route: 'apps-cash-register-list',
+        icon: 'BoxIcon',
+        permission: 'cash_registers.index',
+      },
+    ],
   },
   {
-    title: 'payments.menu',
-    route: 'apps-payments-list',
-    icon: 'DollarSignIcon',
-    permission: 'payments.index',
-  },
-  {
-    title: 'expenses.menu',
-    route: 'apps-expenses-list',
-    icon: 'TrendingDownIcon',
-    permission: 'expenses.index',
-  },
-  {
-    title: 'checks.menu',
-    route: 'apps-checks-list',
-    icon: 'CheckCircleIcon',
-    permission: 'checks.index',
+    title: "expenses.menu",
+    icon: "TrendingDownIcon",
+    permission: "expenses.index",
+    children: [
+      {
+        title: 'expenses.menu',
+        route: 'apps-expenses-list',
+        icon: 'TrendingDownIcon',
+        permission: 'expenses.index',
+      },
+    ],
   },
   {
     header: 'reports.header.menu',

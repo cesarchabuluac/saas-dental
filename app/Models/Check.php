@@ -13,7 +13,7 @@ class Check extends Model
 
     protected $guarded = [];
 
-    protected $appends = ['amount', 'past_due', 'expiration_days'];
+    protected $appends = ['amount', 'past_due', 'expiration_days', 'is_expired'];
 
     /**
      * Forma Date Human
@@ -33,11 +33,21 @@ class Check extends Model
         return $this->payment->amount;
     }
 
-    public function getPastDueAttribute() {
+    public function getPastDueAttribute()
+    {
         return Carbon::createFromTimeStamp(strtotime($this->date))->diffForHumans(null, false, false, 3);
     }
 
-    public function getExpirationDaysAttribute() { 
+    public function getExpirationDaysAttribute()
+    {
         return Carbon::parse($this->date)->diffInDays(Carbon::now());
+    }
+
+    public function getIsExpiredAttribute()
+    {
+        // Compara solo las fechas sin tener en cuenta la hora
+        $dateExpired = $this->date;
+        $today = now()->toDateString();
+        return $dateExpired < $today && $this->charged == false;
     }
 }

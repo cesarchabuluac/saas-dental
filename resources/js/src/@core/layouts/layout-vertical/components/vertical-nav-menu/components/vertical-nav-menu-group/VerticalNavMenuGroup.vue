@@ -59,8 +59,6 @@ export default {
     const { t } = useI18nUtils()
     const { canViewVerticalNavMenuGroup } = useAclUtils()
 
-    console.warn(props.item)
-
     return {
       resolveNavItemComponent,
       isOpen,

@@ -40,15 +40,16 @@ class BudgetRepository extends BaseRepository
 
     public function totalPaidByDate($start, $end)
     {
-        return DB::table('action_payments')
-            ->join('payments', 'action_payments.payment_id', '=', 'payments.id')
-            ->join('budgets', 'payments.budget_id', '=', 'budgets.id')
-            ->whereNull('action_payments.deleted_at')
-            ->whereNull('payments.deleted_at')
-            ->whereNull('budgets.deleted_at')
-            ->whereBetween('action_payments.payment_date', [$start, $end])
-            ->where('payments.check_paid', 1)
-            ->sum('action_payments.amount');
+        $data = DB::select("SELECT SUM(action_payments.amount) as total
+            FROM action_payments
+            JOIN payments ON action_payments.payment_id = payments.id
+            JOIN budgets ON payments.budget_id = budgets.id
+            WHERE action_payments.deleted_at IS NULL
+            AND payments.deleted_at IS NULL
+            AND budgets.deleted_at IS NULL
+            AND action_payments.payment_date >= '{$start}' AND action_payments.payment_date <= '{$end}'
+            AND payments.check_paid = 1");
+        return $data[0]->total;
     }
 
     public function totalBudgetApproved($start, $end)

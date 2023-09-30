@@ -1,47 +1,26 @@
 <template>
-    <b-card class="profile-header mb-2" :img-src="headerData.coverImg" img-top alt="cover photo" body-class="p-0">
+    <b-card>
         <!-- profile picture -->
-        <div class="position-relative">
+        <div v-if="headerData.header" class="position-relative">
             <div class="profile-img-container d-flex align-items-center">
                 <div class="profile-img">
-                    <b-img :src="headerData.avatar" rounded fluid :alt="headerData.username" />
+                    <b-img class="d-none d-sm-block" :src="headerData.header.avatar" height="100" rounded :alt="headerData.header.username" />
                 </div>
                 <!-- profile title -->
                 <div class="profile-title ml-3">
-                    <h2 class="text-white">
-                        {{ headerData.username }}
+                    <h2 class="text-white_">
+                        {{ headerData.header.username }}<br>
+                        <small class="text-muted">{{ headerData.userAbout.email }}</small>
                     </h2>
-                    <p class="text-white">
-                        {{ headerData.designation }}
-                    </p>
+                    <p>
+                        {{$t('role')}}: {{ headerData.header.designation }}<br>                        
+                        {{$t('joined')}}: <span class="text-capitalize">{{ headerData.userAbout.joined }}</span>
+                    </p>                    
                 </div>
                 <!--/ profile title -->
             </div>
         </div>
         <!--/ profile picture -->
-
-        <!-- profile navbar -->
-        <div class="profile-header-nav">
-            <b-navbar toggleable="md" type="light">
-                <!-- toggle button -->
-                <b-navbar-toggle class="ml-auto" target="nav-text-collapse">
-                    <feather-icon icon="AlignJustifyIcon" size="21" />
-                </b-navbar-toggle>
-                <!--/ toggle button -->
-
-                <!-- collapse -->
-                <b-collapse id="nav-text-collapse" is-nav>
-                    <b-tabs pills class="profile-tabs mt-1 mt-md-0" nav-class="mb-0">
-                        <template #tabs-start>
-                            <b-nav-item role="presentation" class="font-weight-bold">
-                            </b-nav-item>
-                        </template>
-                    </b-tabs>
-                </b-collapse>
-                <!--/ collapse -->
-            </b-navbar>
-        </div>
-        <!--/ profile navbar -->
     </b-card>
 </template>
 

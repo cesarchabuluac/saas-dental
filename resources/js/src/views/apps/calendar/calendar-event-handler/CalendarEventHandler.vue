@@ -374,9 +374,7 @@ export default {
       guestsOptions,
     } = useCalendarEventHandler(toRefs(props), clearFormData, emit)
 
-    const {
-      refFormObserver, getValidationState, resetForm, clearForm,
-    } = formValidation(
+    const { refFormObserver, getValidationState, resetForm, clearForm } = formValidation(
       resetEventLocal,
       props.clearEventData,
     )

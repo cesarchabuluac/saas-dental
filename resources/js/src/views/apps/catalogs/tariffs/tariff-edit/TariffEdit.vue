@@ -13,7 +13,7 @@
                     <b-row>
                         <!-- laboratories -->
                         <b-col cols="12" md="4">
-                            <b-form-group label-for="LaboratoryList" :label="$t('locale.laboratory')">
+                            <b-form-group label-for="LaboratoryList" :label="$t('laboratory')">
                                 <v-select
                                     id="LaboratoryList"
                                     v-model="tariff.laboratory_id"
@@ -21,7 +21,7 @@
                                     :options="laboratories"
                                     @input="laboratoryChange"
                                     :reduce="laboratory => laboratory.id"
-                                    :placeholder="$t('locale.tariff_laboratory_placeholder')"
+                                    :placeholder="$t('tariff_laboratory_placeholder')"
                                     :clearable="false">
                                 </v-select>
 
@@ -30,26 +30,26 @@
 
                         <!-- Field: name -->
                         <b-col cols="12" md="4">
-                            <b-form-group :label="$t('locale.tariff_name')" label-for="name">
-                                <b-form-input id="name" v-model="tariff.name" :placeholder="$t('locale.tariff_name_placeholder')"/>
+                            <b-form-group :label="$t('tariff_name')" label-for="name">
+                                <b-form-input id="name" v-model="tariff.name" :placeholder="$t('tariff_name_placeholder')"/>
                             </b-form-group>
                         </b-col>
                     </b-row>
                     <b-row>
                         <!-- price -->
                         <b-col cols="12" md="4">
-                            <b-form-group :label="$t('locale.tariff_price')" label-for="price">
-                                <b-form-input id="price" v-model="tariff.price" :placeholder="$t('locale.tariff_price_placeholder')" type="number"/>
+                            <b-form-group :label="$t('tariff_price')" label-for="price">
+                                <b-form-input id="price" v-model="tariff.price" :placeholder="$t('tariff_price_placeholder')" type="number"/>
                             </b-form-group>
                         </b-col>
                     </b-row>
 
                     <!-- Action Buttons -->
                     <b-button v-if="canAccess('tariffs.update')" variant="primary" class="mb-1 mb-sm-0 mr-0 mr-sm-1" @click="update">
-                        {{ $t("locale.save") }}
+                        {{ $t("save") }}
                     </b-button>
                     <b-button variant="outline-secondary" @click="$router.push({ name: 'apps-tariff-list' })">
-                        {{ $t("locale.back") }}
+                        {{ $t("back") }}
                     </b-button>
                 </b-form>
             </div>

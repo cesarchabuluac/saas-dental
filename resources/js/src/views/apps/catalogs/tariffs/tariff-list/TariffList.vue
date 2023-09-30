@@ -7,18 +7,18 @@
                 <b-row>
                     <!-- Per Page -->
                     <b-col cols="12" md="6" class="d-flex align-items-center justify-content-start mb-1 mb-md-0">
-                        <label>{{ $t("locale.show") }}</label>
+                        <label>{{ $t("show") }}</label>
                         <v-select
                             v-model="perPage"
                             :options="perPageOptions"
                             :clearable="false"
                             class="per-page-selector d-inline-block mx-50"
                         />
-                        <!-- <label>{{ $t("locale.entries") }}</label> -->
+                        <!-- <label>{{ $t("entries") }}</label> -->
                         <b-button v-if="canAccess('tariffs.create')" variant="primary"
                             @click="$router.push({name: 'apps-tariff-add',})">
                             <span class="text-nowrap">
-                                {{ $t("locale.add") }}
+                                {{ $t("add") }}
                             </span>
                         </b-button>
                     </b-col>
@@ -27,7 +27,7 @@
                     <b-col cols="12" md="6">
                         <div class="d-flex align-items-center justify-content-end">
                             <b-input-group>
-                                <b-form-input v-model="searchQuery" class="d-inline-block _mr-1" :placeholder="$t('locale.tariff_search_options')"
+                                <b-form-input v-model="searchQuery" class="d-inline-block _mr-1" :placeholder="$t('tariff_search_options')"
                                 @keyup.enter="getTariffs"/>
                                 <b-input-group-prepend>
                                 <b-button variant="primary" @click="getTariffs">
@@ -192,25 +192,25 @@ export default {
             columns: [
                 {
                     key: "name",
-                    label: this.$t("locale.tariff_table_name"),
+                    label: this.$t("tariff_table_name"),
                 },
                 {
                     key: "laboratory",
-                    label: this.$t("locale.tariff_table_laboratory"),
+                    label: this.$t("tariff_table_laboratory"),
                 },
                 {
                     key: "price",
-                    label: this.$t("locale.tariff_table_price"),
+                    label: this.$t("tariff_table_price"),
                 },
                 {
                     key: "deleted_at",
-                    label: this.$t("locale.tariff_table_state"),
+                    label: this.$t("tariff_table_state"),
                 },
                 {
                     key: "updated_at",
-                    label: this.$t("locale.tariff_table_updated_at"),
+                    label: this.$t("tariff_table_updated_at"),
                 },
-                { key: "actions", label: this.$t("locale.actions") },
+                { key: "actions", label: this.$t("actions") },
             ],
             sortBy: "name",
             sortDesc: false,
@@ -263,28 +263,28 @@ export default {
         deleteTariff(item) {
             this.$swal({
                 title: item.deleted_at
-                    ? this.$t("locale.tariff_confirm_active_title")
-                    : this.$t("locale.tariff_confirm_inactive_title"),
+                    ? this.$t("tariff_confirm_active_title")
+                    : this.$t("tariff_confirm_inactive_title"),
                 text: item.deleted_at
-                    ? this.$t("locale.tariff_confirm_active_message")
+                    ? this.$t("tariff_confirm_active_message")
                     : this.$t(
-                          "locale.tariff_confirm_inactive_message"
+                          "tariff_confirm_inactive_message"
                       ),
                 icon: "question",
                 showCancelButton: true,
                 confirmButtonText: item.deleted_at
                     ? this.$t(
-                          "locale.tariff_confirm_active_button_ok"
+                          "tariff_confirm_active_button_ok"
                       )
                     : this.$t(
-                          "locale.tariff_confirm_inactive_button_ok"
+                          "tariff_confirm_inactive_button_ok"
                       ),
                 cancelButtonText: item.deleted_at
                     ? this.$t(
-                          "locale.tariff_confirm_active_button_cancel"
+                          "tariff_confirm_active_button_cancel"
                       )
                     : this.$t(
-                          "locale.tariff_confirm_inactive_button_cancel"
+                          "tariff_confirm_inactive_button_cancel"
                       ),
                 customClass: {
                     confirmButton: "btn btn-primary",
@@ -330,9 +330,9 @@ export default {
         },
         resolveActionStatusTranslate(status) {
             if (_.isEmpty(status)) {
-                return this.translate("locale.active");
+                return this.translate("active");
             }
-            return this.translate("locale.inactive");
+            return this.translate("inactive");
         },
 
     },

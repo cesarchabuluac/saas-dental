@@ -318,13 +318,13 @@ export default {
             if (data.success) {
                 this.success(
                     data.message,
-                    this.translate("locale.branch"),
+                    this.translate("branch"),
                     "UserIcon"
                 );
             } else {
                 this.danger(
                     data.message,
-                    this.translate("locale.branch"),
+                    this.translate("branch"),
                     "UserIcon"
                 );
             }

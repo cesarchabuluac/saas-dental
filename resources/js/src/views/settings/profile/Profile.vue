@@ -1,6 +1,6 @@
 <template>
 	<div v-if="Object.keys(profileData).length" id="user-profile">
-		<profile-header :header-data="profileData.header" />
+		<profile-header :header-data="profileData" />
 		<!-- profile info  -->
 		<section id="profile-info">
 
@@ -61,27 +61,24 @@
 				</b-col>
 			</b-row>			
 
-			<b-row>
-				<!-- about suggested page and twitter feed -->
-				<b-col lg="3" cols="12" order="2" order-lg="1">
-					<profile-about :about-data="profileData.userAbout" />
+			<b-row class="d-flex">
+				<!-- Profile About -->
+				<b-col lg="4" cols="12" order="2" order-lg="1">					
+					<profile-about :about-data="profileData" />
 				</b-col>
-				<!--/ about suggested page and twitter feed -->
 
 				<!-- Appointments -->
-				<b-col lg="9" cols="12" order="1" order-lg="2">
-					<profile-appointment ref="profileAppointment" :states="profileData.states"
-						:appointments="profileData.appointments" :start-at="startDates"
-						:end-at="endDates"></profile-appointment>
+				<b-col lg="8" cols="12" order="1" order-lg="2">
+					<profile-appointment ref="profileAppointment" :start-at="startDates" :end-at="endDates" :is-active="loading" />
 				</b-col>
 			</b-row>
 
-			<b-row>
-				<b-col lg="3" cols="12" order="2" order-lg="1">
+			<b-row class="d-flex">
+				<b-col lg="4" cols="12" order="2" order-lg="1">
 					<dashboard-card-transactions :data="profileData.transactionsData" :loading="loading" />
 				</b-col>
-				<b-col lg="9" cols="12" order="1" order-lg="2">
-					<profile-payment :payments="profileData.payments" :loading="loading"></profile-payment>
+				<b-col lg="8" cols="12" order="1" order-lg="2">
+					<profile-payment ref="profilePayments" :start-at="startDates" :end-at="endDates" :is-active="loading"></profile-payment>
 				</b-col>
 			</b-row>			
 		</section>
@@ -206,7 +203,8 @@ export default {
 						}
 					]
 				},
-				transactionsData: [],				
+				transactionsData: [],
+				schedules: [],				
 				assisted: 0,
 				canceled: 0,
 				confirmed: 0,
@@ -268,7 +266,8 @@ export default {
 				email,
 				payments,
 				revenue,
-				transactionsData
+				transactionsData,
+				schedules
 			} = data.data;
 
 			this.profileData.header.username = name;
@@ -280,8 +279,7 @@ export default {
 			this.profileData.userAbout.email = email ? email : ' -- ';
 			this.profileData.payments = payments;
 			this.profileData.transactionsData = transactionsData
-
-
+			this.profileData.schedules = schedules
 
 			const { assisted, canceled, confirmed, pending, unassisted, total } = revenue[0];
 			this.profileData.assisted = assisted;
@@ -290,9 +288,6 @@ export default {
 			this.profileData.pending = pending;
 			this.profileData.unassisted = unassisted;
 			this.profileData.total_earning = total;
-
-			console.log(this.profileData)
-
 
 			// this.profileData.appointments = data.data.appointments
 			// this.profileData.states = _.groupBy(data.data.appointments, 'state')

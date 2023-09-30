@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Patient;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Prettus\Repository\Eloquent\BaseRepository;
 
 /**
@@ -57,15 +58,25 @@ class PatientRepository extends BaseRepository
     {
         $start = Carbon::now()->startOfMonth()->startOfDay();
         $end = Carbon::now()->endOfMonth()->endOfDay();
-        return $this->model->whereBetween('created_at', [$start, $end])
-            ->count();
+
+        $data = DB::select("SELECT COUNT(*) as quantity
+            FROM patients
+            WHERE created_at >= '{$start}' AND created_at <= '{$end}'
+            AND deleted_at IS NULL");
+
+        return $data[0]->quantity;
     }
 
     public function countByDay()
     {
-        $now = Carbon::now();
+        $start = Carbon::now()->startOfDay();
+        $end = Carbon::now()->endOfDay();
 
-        return $this->model->whereDate('created_at', '>=', $now->startOfDay())
-            ->whereDate('created_at', '<=', $now->endOfDay())->count();
+        $data = DB::select("SELECT COUNT(*) as quantity
+            FROM patients
+            WHERE created_at >= '{$start}' AND created_at <= '{$end}'
+            AND deleted_at IS NULL");
+
+        return $data[0]->quantity;
     }
 }

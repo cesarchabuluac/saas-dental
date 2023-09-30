@@ -112,6 +112,9 @@ import AppCollapse from "@core/components/app-collapse/AppCollapse.vue";
 import AppCollapseItem from "@core/components/app-collapse/AppCollapseItem.vue";
 import Ripple from "vue-ripple-directive";
 
+import Swal from "sweetalert2";
+import "animate.css";
+
 // Notification
 import { useToast } from "vue-toastification/composition";
 import ToastificationContent from "@core/components/toastification/ToastificationContent.vue";
@@ -122,6 +125,8 @@ const SubscriptionResources = new SubscriptionProviders()
 import PlansProvider from "@/providers/Plans";
 import * as helper from '@/libs/helpers';
 const PlansResource = new PlansProvider();
+
+import { useUtils as useI18nUtils } from "@core/libs/i18n";
 
 export default {
     components: {
@@ -154,6 +159,8 @@ export default {
     },
     setup() {
 
+        const { t } = useI18nUtils();
+
         const loading = ref(false)
         const account = store.getters['auth/getCurrentAccount']
         const isWitchPlan = computed({
@@ -162,6 +169,13 @@ export default {
                 store.commit("auth/SET_SWITCH_PLAN", val);
             },
         });
+
+        const messageTranslates = {
+            cancelled_title: t('subscriptions.cancelled.modal_title'),
+            cancelled_body: t('subscriptions.cancelled.modal_html'),
+            button_continue: t('confirm'),
+            button_cancel: t('cancel')
+        }
 
         const resumeSubscription = async () => {
             try {
@@ -184,23 +198,47 @@ export default {
 
         const cancelSubscription = async () => {
 
-            try {
-                loading.value = true
-                const { data } = await SubscriptionResources.cancelSubscription({
-                    plan_id: account.plan_id
-                })
-                loading.value = false
+            Swal.fire({
+                title: messageTranslates.cancelled_title,
+                html: messageTranslates.cancelled_body,
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: messageTranslates.button_continue,
+                cancelButtonText: messageTranslates.button_cancel,
+                customClass: {
+                    confirmButton: "btn btn-primary",
+                    cancelButton: "btn btn-outline-danger ml-1",
+                },
+                showClass: {
+                    popup: "animate__animated animate__flipInX",
+                },
+                buttonsStyling: false,
+                showLoaderOnConfirm: true,
+                preConfirm: async () => {
+                    try {
+                        loading.value = true
+                        const { data } = await SubscriptionResources.cancelSubscription({
+                            plan_id: account.plan_id
+                        })
+                        loading.value = false
 
-                if (data.success) {
-                    store.commit('auth/SET_CURRENT_ACCOUNT', {...data.data})
-                    helper.success(data.message)
-                } else {
-                    helper.danger(data.message)
+                        if (data.success) {
+                            store.commit('auth/SET_CURRENT_ACCOUNT', {...data.data})
+                            helper.success(data.message)
+                        } else {
+                            helper.danger(data.message)
+                        }
+                    }catch(e) {
+                        loading.value = false
+                        helper.handleResponseErrors(e)
+                        Swal.showValidationMessage(
+                            `Request failed: ${e}`
+                        );
+                    }   
                 }
-            }catch(e) {
-                loading.value = false
-                helper.handleResponseErrors(e)
-            }       
+            })
+
+                
         }
 
         const switchPlan = () => {
@@ -223,6 +261,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import "~@resources/scss/vue/libs/vue-sweetalert.scss";
 @import "~@resources/scss/vue/pages/page-pricing.scss";
 @import '~@resources/scss/base/pages/app-ecommerce.scss';
 </style>

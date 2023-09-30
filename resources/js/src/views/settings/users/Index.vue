@@ -95,9 +95,9 @@
                         <template #aside>
                             <b-avatar size="32" :src="data.item.has_media ? data.item.avatar : null"
                                  :variant="`${resolveRoleVariant(data.item.roles)}`"
-                                :to="{ name: 'settings-users-edit', params: { id: data.item.id },}"/>
+                                :to="{ name: 'settings-user-edit', params: { id: data.item.id },}"/>
                         </template>
-                        <b-link :to="{ name: 'settings-users-edit', params: { id: data.item.id },}"
+                        <b-link :to="{ name: 'settings-user-edit', params: { id: data.item.id },}"
                             class="font-weight-bold d-block text-wrap">
                             {{ data.item.name }}
                         </b-link>

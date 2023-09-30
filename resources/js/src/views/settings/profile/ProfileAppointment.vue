@@ -32,15 +32,25 @@
                                     </b-col>
                                 </b-row>
 
-                                <b-row>
-                                    <b-table ref="refPaymentsListTable" class="position-relative" :items="listAppointments"
-                                        responsive :fields="columns" primary-key="id" show-empty :sticky-header="true"
-                                        :no-border-collapse="true" :empty-text="$t('datatables.sZeroRecords')">
+                                <b-row class="mt-2">
+                                    <b-table ref="refAppointmentsListTable" class="position-relative" 
+                                        :items="listAppointments"
+                                        responsive 
+                                        :fields="columns" 
+                                        primary-key="id" 
+                                        show-empty 
+                                        :sticky-header="true"
+                                        :no-border-collapse="true" 
+                                        :empty-text="$t('datatables.sZeroRecords')"
+                                        busy.sync="loading"
+                                        small
+                                        size="small">
 
                                         <!-- Column: Patient -->
                                         <template #cell(patient_id)="data">
-                                            <span class="text-capitalize">{{ `${data.item.name} ${data.item.last_name}
-                                                                                            ${data.item.mother_last_name}` }}</span><br>
+                                            <span class="text-capitalize">
+                                                {{ `${data.item.name} ${data.item.last_name} ${data.item.mother_last_name}` }}
+                                            </span><br>
                                             <small class="text-muted">
                                                 {{ data.item.document_type }}: {{ data.item.rut }}<br>
                                                 {{ $t('phone') }}: {{ data.item.phone }}<br>
@@ -130,13 +140,13 @@ export default {
     props: {
         startAt: null,
         endAt: null,
-        appointments: [],
-        states: [],
+        isActive: false,
     },
     data() {
         return {
             loading: false,
             search: null,
+            appointments: [],
             columns: [
                 {
                     key: "patient_id",
@@ -159,8 +169,7 @@ export default {
                     label: this.$t("appointments.table_observations"),
                 },
             ],
-            // appointments: [],
-            // states: [],
+            states: [],
         };
     },
     computed: {
@@ -175,7 +184,7 @@ export default {
         },
     },
     async mounted() {
-
+        // await this.getAppointments()
     },
     methods: {
         kFormatter,
@@ -184,12 +193,31 @@ export default {
             const query = {
                 start_at: this.startAt,
                 end_at: this.endAt,
+                only_appointments: true,
+                is_profile: true,
             }
-            const { data } = await UserResource.getAppointments(this.$route.params.id, query)
+            const { data } = await UserResource.getUserDetail(this.$route.params.id, query)
             this.loading = false
-            this.appointments = data.appointments
-            this.states = _.groupBy(this.appointments, 'state')
+
+            this.$nextTick(() => {
+                this.appointments = data
+                this.states = _.groupBy(this.appointments, 'state')
+            })
         }
     },
+    watch: {
+        isActive(value) {
+            if (value) {
+                this.getAppointments()
+            }
+        }
+    }
 };
 </script>
+
+<style lang="scss">
+.b-table-sticky-header {
+    overflow-y: auto;
+    max-height: 520px;
+}
+</style>

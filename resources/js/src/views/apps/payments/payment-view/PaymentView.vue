@@ -74,7 +74,7 @@
                 :current-page="currentPage"
                 busy.sync="loading"
                 stacked="md"
-                size="sm"
+                small
             >
 
                 <!-- Column: payment_id -->

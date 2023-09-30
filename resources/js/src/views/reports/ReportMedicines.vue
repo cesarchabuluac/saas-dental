@@ -46,7 +46,7 @@
                                     {{ $t("button_filter") }}
                                 </b-button>
 
-                                <b-button v-if="medicines.length" @click="donwloadPatient" variant="outline-success"
+                                <b-button v-if="medicines.length" @click="downloadPatient" variant="outline-success"
                                     v-ripple.400="'rgba(255, 255, 255, 0.15)'" :class="{ 'btn-block': isMobile }">
                                     <feather-icon icon="DownloadIcon" />
                                     {{ $t("download") }}
@@ -193,7 +193,7 @@ const WarehouseResource = new WarehouseProvider()
 
 if (store.state.auth.setting['language'] === "es") {
     flatpickr.localize(Spanish);
-    localize(store.state.auth.setting['language'] === "es");
+    //localize(store.state.auth.setting['language'] === "es");
 }
 export default {
     name: 'ReportMedicines',
@@ -334,48 +334,48 @@ export default {
     },
     methods: {
         async getUnits() {
-            if (store.state.inventory.units.length > 0) {
-                this.units = store.state.inventory.units
-            } else {
+            // if (store.state.inventory.units.length > 0) {
+            //     this.units = store.state.inventory.units
+            // } else {
                 this.loading = true
                 const { data } = await UnitResource.index({ all: true })
                 this.loading = false
                 this.units = data.data;
                 store.commit('inventory/SET_UNITS', data.data)
-            }
+            // }
         },
         async getBrands() {
-            if (store.state.inventory.brands.length > 0) {
-                this.brands = store.state.inventory.brands
-            } else {
+            // if (store.state.inventory.brands.length > 0) {
+            //     this.brands = store.state.inventory.brands
+            // } else {
                 this.loading = true
                 const { data } = await BrandResource.index({ all: true })
                 this.loading = false
                 this.brands = data.data;
                 store.commit('inventory/SET_BRANDS', data.data)
-            }
+            // }
         },
         async getWarehouses() {
-            if (store.state.inventory.warehouses.length > 0) {
-                this.warehouses = store.state.inventory.warehouses
-            } else {
+            // if (store.state.inventory.warehouses.length > 0) {
+            //     this.warehouses = store.state.inventory.warehouses
+            // } else {
                 this.loading = true
                 const { data } = await WarehouseResource.index({ all: true })
                 this.loading = false
                 this.warehouses = data.data;
                 store.commit('inventory/SET_WAREHOUSES', data.data)
-            }
+            // }
         },
         async getCategories() {
-            if (store.state.inventory.categories.length > 0) {
-                this.categories = store.state.inventory.categories
-            } else {
+            // if (store.state.inventory.categories.length > 0) {
+            //     this.categories = store.state.inventory.categories
+            // } else {
                 this.loading = true
                 const { data } = await CategoryResource.index({ all: true })
                 this.loading = false
                 this.categories = data.data;
                 store.commit('inventory/SET_CATEGORIES', data.data)
-            }
+            // }
         },
         async getMedicines() {
             this.loading = true
@@ -389,14 +389,13 @@ export default {
                 all: true,
             })
             this.loading = false
-            console.log(data.data)
             this.medicines = data.data;
             this.totalMedicines = data.total;
         },
         handleResize() {
             this.isMobile = window.innerWidth < 576;
         },
-        async donwloadPatient() {
+        async downloadPatient() {
 
             const query = {
                 ...this.filter,

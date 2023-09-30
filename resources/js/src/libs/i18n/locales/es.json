@@ -15,8 +15,10 @@
   "register": "Registrarse",
   "logout": "Cerrar sesión",
   "show": "Mostrar",
+  "to": "A",
   "table_show": "Mostrar",
   "table_entries": "Entradas",
+  "entries": "Entradas",
   "table_sZeroRecords": "No se encontraron registros coincidentes",
   "email": "Correo electrónico",
   "doctor": "Doctor",
@@ -1088,7 +1090,7 @@
   "users": "Usuarios",
   "user": "Usuario",
   "about": "Acerca de",
-  "joined": "Se unió",
+  "joined": "Se unió",  
   "lives": "Vive",
   "website": "Sitio Web",
   "user_title": "Gestión de Usuarios",
@@ -1156,6 +1158,7 @@
   "user_status": "Estado",
   "user_table": "Lista de Usuarios",
   "user_test": "Usuario de prueba",
+  "user_schedules": "Horarios de Trabajo",
   "user_updated_at": "Actualizado en",
   "user_updated_at_help": "Insertar fecha de actualización",
   "user_updated_at_placeholder": "Insertar fecha de actualización",
@@ -1173,6 +1176,7 @@
   },
   "incomes": {
     "title": "Ingresos",
+    "menu": "Ingresos",
     "plural": "Ingresos",
     "desc": "Gestión de Ingresos",
     "slug": "Ingresos",
@@ -1780,11 +1784,12 @@
     "status": {
       "active": "Activo",
       "inactive": "Inactivo",
-      "receivable": "Por Recibir",
-      "charged": "Cargado",
+      "receivable": "Por Cobrar",
+      "charged": "Cobrados",
       "all": "Todas las Entradas"
     }
   },
+  "charge_check_detail_tittle": "Registrar datos del cheque",
   "image_format_limit": "Formatos permitidos: JPG, GIF o PNG. Tamaño máximo de 5 MB",
   "image_format_limit_help": "El tamaño del archivo supera los 5 MB",
   "image_size_valid": "El archivo es demasiado grande. El tamaño máximo permitido es de 5 MB.",
@@ -1804,6 +1809,7 @@
   "patient_new": "Nuevos pacientes",
   "new_patients": "Nuevos pacientes",
   "existing_patients": "Pacientes existentes",
+  "no_options": "Lo sentimos, no coinciden los registros",
   "patients": {
     "patients": "Pacientes",
     "identifier": "Identificador",
@@ -2360,6 +2366,7 @@
     "balance_general": "Balance General",
     "details": "Detalles del Pago",
     "details_plural": "Detalles del Pago",
+    "payment_details_title": "Detalles de Pagos",
     "total_subscriber": "Total Pagado",
     "total_due": "Total Pendiente",
     "positive_balance": "Saldo a Favor",
@@ -2386,7 +2393,7 @@
     "dashboard_title": "Detalle de los Pagos realizados en el mes actual",
     "total_actions": "Total de Acciones",
     "table_payment_id": "ID de Pago",
-    "table_charged": "Cargado",
+    "table_charged": "Cobrado",
     "table_payment_date": "Fecha de Pago",
     "table_method": "Método",
     "table_patient": "Paciente",
@@ -2425,6 +2432,8 @@
     "confirm_delete_help": "¡No podrás revertir esto!",
     "confirm_comments": "Ingresar Comentario:",
     "confirm_comments_placeholder": "Describe la razón de la eliminación...",
+    "confirm_comments_additional": "Ingresar un comentario (opcional)",
+    "confirm_comments_additional_placeholder": "Describe un breve comentario...",
     "confirm_comments_help": "Describe la razón de la eliminación",
     "confirm_delete_button_ok": "¡Sí, eliminar!",
     "confirm_delete_button_cancel": "Cancelar",
@@ -2737,11 +2746,24 @@
     "modal_button_pay": "Pagar",
     "modal_button_close": "Cerrar",
     "modal_required": "Por favor, complete los campos importantes (*)",
-    "confirm_charge_title": "¿Deseas marcarlo como cobrado?",
-    "confirm_charge_help": "Marcarlo como aplicado afectará los pagos, ¡no podrás revertir esto!",
+    "confirm_charge_title": "Cobrar Cheque y Actualizar Estado",
+    "confirm_charge_help": "Al cobrar este cheque, se actualizará su estado en el sistema. Ten en cuenta lo siguiente: <br><br><ul><li>Una vez cobrado, este cheque se marcará como 'Cobrado' y ya no estará disponible para cambios.</li><li>Los movimientos relacionados con este cheque se registrarán y afectarán los estados de cuenta correspondientes.</li><li>Asegúrate de que este cheque esté en condiciones de ser cobrado.</li></ul><p>¿Estás seguro de que deseas continuar y cobrar este cheque?</p>",
     "confirm_charge_button_ok": "Sí, marcarlo!",
     "confirm_charge_button_cancel": "Cancelar",
-    "button_tooltip_apply": "Marcar como cobrado"
+    "button_tooltip_apply": "Marcar como cobrado",
+    "expires_on": {
+      "expired": "Vencidos",
+      "last_7_days": "Por vencer en 7 días",
+      "this_month": "Por vencer en este mes",
+      "expired_last_7_days": "Vencidos hace 7 días",
+      "expired_this_month": "Vencidos hace un mes"
+    },
+    "destroy": {
+      "title_expire": "Eliminar Pago con Cheque Vencido",
+      "description": "El pago que intentas eliminar no se ha cobrado y ya ha pasado la fecha de vencimiento. Por favor, ten en cuenta lo siguiente: <br><br><ul><li>Este pago ya no es válido y no se puede cobrar.</li><li>Afectara los movimientos en el sistema y estado de cuenta del paciente.</li></ul>",
+      "title_no_expire": "Eliminar Pago con Cheque Pendiente",
+      "description_no_expire": "El pago que deseas eliminar aún no se ha cobrado y no ha llegado a su fecha de vencimiento. Ten en cuenta lo siguiente: <br><br><ul><li>Si eliminas este pago, no podrás cobrarlo en el futuro.</li><li>Si tienes la intención de mantener este pago pendiente, considera mantenerlo en tus registros.</li><li>Afectar los movimientos en el sistema y estado de cuenta del paciente.</li></ul>"
+    }
   },
   "cash_registers": {
     "plural": "Cortes de Caja",
@@ -2894,7 +2916,9 @@
     "cancelled": {
       "button": "Cancelar Suscripción",
       "title": "¡Has Cancelado la Suscripción!",
-      "description": "Has cancelado tu suscripción y tu cuenta sigue activa hasta el :date"
+      "description": "Has cancelado tu suscripción y tu cuenta sigue activa hasta el :date",
+      "modal_title": "Si no quieres continuar con tu membresía, cancélala a continuación.",
+      "modal_html": "La cancelación se hara efectiva al finalizar tu actual periodo de facturación.<br><br> <p>Regresa cuando quieras. Si reinicias tu membresía dentro de los diez meces, tus perfiles, configuraciones y detalles de tu cuenta te estaran esperando.</p>"
     },
     "resumed": {
       "button": "O, Puedes Reanudar la Suscripción",
@@ -3116,5 +3140,9 @@
       "inventories": "Inventarios",
       "help": "Modificar la estructura de este archivo puede causar errores en la importación de datos. Por favor, utilice esta plantilla tal como se proporciona."
     }
-  }
+  },
+  "see_details": "Ver detalles",
+  "hi": "Hola"
+
+  
 }

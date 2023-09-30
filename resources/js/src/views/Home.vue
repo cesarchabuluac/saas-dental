@@ -207,23 +207,23 @@ export default {
             columns: [
                 {
                     key: "payment_id",
-                    label: this.$t("locale.payment_id"),
+                    label: this.$t("payment_id"),
                 },
                 {
                     key: "created_at",
-                    label: this.$t("locale.payment_table_created_at"),
+                    label: this.$t("payment_table_created_at"),
                 },
                 {
                     key: "budget",
-                    label: this.$t("locale.payment_table_budget"),
+                    label: this.$t("payment_table_budget"),
                 },
                 {
                     key: "method",
-                    label: this.$t("locale.payment_table_method"),
+                    label: this.$t("payment_table_method"),
                 },
                 {
                     key: "amount",
-                    label: this.$t("locale.payment_table_amount"),
+                    label: this.$t("payment_table_amount"),
                 },
             ],
             sortBy: "id",

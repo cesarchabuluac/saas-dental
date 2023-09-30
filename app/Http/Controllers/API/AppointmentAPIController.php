@@ -212,8 +212,6 @@ class AppointmentAPIController extends Controller
 
         $state = request('state') ?? null;
 
-        Log::warning($state);
-
         //Current month        
         $start = Carbon::now()->startOfMonth()->toDateString();
         $end = Carbon::now()->endOfMonth()->toDateString();
@@ -316,7 +314,7 @@ class AppointmentAPIController extends Controller
             // $appointment->user->notify(new RealTimeMessage("New appointment #".$appointment->id." to ".$appointment->patient->full_name,));
 
             $appointment->user->notify(new AppointmentNotification($appointment));
-            
+
             if (config('settings.enable_appointment_notification')) {
                 if (filter_var($appointment->patient->email, FILTER_VALIDATE_EMAIL)) {
                     dispatch(new SendEmail('appointment', $appointment->patient->email, $appointment));

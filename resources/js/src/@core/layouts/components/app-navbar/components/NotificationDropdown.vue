@@ -159,9 +159,7 @@ export default {
                             if (currentToken) {
                                 this.saveToken(currentToken);
                             } else {
-                                console.warn(
-                                    "Failed to get token."
-                                );
+                                console.warn("Failed to get token.");
                             }
                         });
                     }
@@ -171,7 +169,6 @@ export default {
 
 			window.Echo.private(`App.Models.User.${store.getters['auth/getUserId']}`)
 			.notification((e) => {
-                console.warn(e)
 				if (! ('Notification' in window)) {
 					alert('Web Notification is not supported');
 					return;
@@ -237,10 +234,6 @@ export default {
                 subtitle: item.data.message,
                 type: item.data.data?.typeTask,
             }))
-
-            console.log(notifications.value)
-
-
         };
 
         onMounted(async () => {

@@ -44,7 +44,7 @@ export default function userCalendar() {
 
     onMounted(async () => {
         refLoading.value = true
-        calendarApi = await refCalendar.value.getApi();
+        calendarApi = await refCalendar.value.getApi();  
         refLoading.value = false
     });
 
@@ -289,25 +289,49 @@ export default function userCalendar() {
     // refetchEvents
     // ------------------------------------------------
     const refetchEvents = (isFetch = false) => {
-        refLoading.value = true
-        if (isFetch) {
+        // refLoading.value = true
+        
+        console.warn(`is fetch ${isFetch}`)
+
+        if(isFetch) {
             _.debounce(function () {
                 calendarApi.refetchEvents();
+                // refLoading.value = false                
             }, 500)
+            return false
         } else {
-            const firstDate = store.state.calendar.selectedCurrentDate
-            const secondDate = store.state.calendar.selectedDates.start
-            if (firstDate && secondDate) {
-                if (firstDate.slice(0, 10) != secondDate.slice(0, 10)) {
-                    calendarApi.gotoDate(store.state.calendar.selectedCurrentDate)
-                } else {
-                    _.debounce(function () {
-                        calendarApi.refetchEvents();
-                    }, 100)
-                }
+            if (currentDate.value) {
+                calendarApi.gotoDate(currentDate.value)
+            } else {
+                console.log('is here')
+                _.debounce(function () {
+                    calendarApi.refetchEvents();
+                    // refLoading.value = false
+                }, 500)
             }
         }
-        refLoading.value = false
+        // refLoading.value = false
+
+        // refLoading.value = true        
+        // console.warn(`is fetch ${isFetch}`)
+        // if (isFetch) {
+        //     _.debounce(function () {
+        //         calendarApi.refetchEvents();
+        //     }, 500)
+        // } else {
+        //     const firstDate = store.state.calendar.selectedCurrentDate
+        //     const secondDate = store.state.calendar.selectedDates.start
+        //     if (firstDate && secondDate) {
+        //         if (firstDate.slice(0, 10) != secondDate.slice(0, 10)) {
+        //             calendarApi.gotoDate(store.state.calendar.selectedCurrentDate)
+        //         } else {
+        //             _.debounce(function () {
+        //                 calendarApi.refetchEvents();
+        //             }, 100)
+        //         }
+        //     }
+        // }
+        // refLoading.value = false
     };
 
     // ------------------------------------------------
@@ -353,6 +377,7 @@ export default function userCalendar() {
 
         store.commit("calendar/SET_SELECTED_CURRENT_DATE", info.startStr)
 
+        console.log(selectedProfessional.value)
 
         // if (!selectedProfessional.value.id) return false
 
@@ -404,7 +429,7 @@ export default function userCalendar() {
                 const params = {
                     date,
                 }
-                router.push({ name: 'appointment-add', params })
+                router.push({ name: 'appointments-add', params })
 
             } else {
                 toast({
@@ -451,8 +476,8 @@ export default function userCalendar() {
     }
 
     const  doctorSchedule =  [  // Ejemplo de horario de trabajo del doctor
-        { start: '2023-09-11T08:00:00', end: '2023-09-11T12:00:00' },
-        { start: '2023-09-11T13:00:00', end: '2023-09-11T22:00:00' }
+        { start: '2023-09-26T08:00:00', end: '2023-09-30T12:00:00', display: 'background' },
+        // { start: '2023-09-T13:00:00', end: '2023-09-11T22:00:00' }
         // Agrega más eventos para el horario de trabajo del doctor
     ];
 
@@ -484,14 +509,14 @@ export default function userCalendar() {
         slotMinTime: store.state.auth.setting['schedule_start_time'] || "09:00:00",
         slotMaxTime: store.state.auth.setting['schedule_end_time'] || "22:00:00",
         // nextDayThreshold: '09:00:00',
-        nowIndicator: true,
-        selectHelper: true,
+        nowIndicator: false,
+        selectHelper: false,
         eventLimit: false, // allow "more" link when too many events
         events: fetchEvents,
         eventSources: [
             // Puedes tener múltiples fuentes de eventos, en este caso solo una desde tu API
             {
-                // events: fetchEvents,
+                // events: doctorSchedule
             },
         ],
 

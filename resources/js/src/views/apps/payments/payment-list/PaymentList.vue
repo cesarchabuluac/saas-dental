@@ -126,9 +126,9 @@
 							<!-- Column: total  -->
 							<template #cell(total)="data">
 								<!-- {{ formatPrice(data.item.total)}} -->
-								<!-- <span class="badge badge-light-warning float-left">{{$t('locale.subtotal')}} {{formatPrice(data.item.subtotal)}} </span><br>
-								<span class="badge badge-light-warning float-left">{{$t('locale.discount')}} {{formatPrice(data.item.discount)}} </span><br>
-								<span v-if="setting.enable_tax" class="badge badge-light-warning float-left">{{$t('locale.tax')}} {{formatPrice(data.item.tax)}} </span><br> -->
+								<!-- <span class="badge badge-light-warning float-left">{{$t('subtotal')}} {{formatPrice(data.item.subtotal)}} </span><br>
+								<span class="badge badge-light-warning float-left">{{$t('discount')}} {{formatPrice(data.item.discount)}} </span><br>
+								<span v-if="setting.enable_tax" class="badge badge-light-warning float-left">{{$t('tax')}} {{formatPrice(data.item.tax)}} </span><br> -->
 								<p class="card-text text-wrap fw-bold mb-25">{{ formatPrice(data.item.total) }}</p>
 							</template>
 
@@ -201,14 +201,14 @@
 							<!-- Patients -->
 							<b-col cols="12">
 								<b-form-group :label="$t('patients.patient')"
-									:description="$t('patients.write_characteres')" label-for="patient">
+									:description="$t('patients.write_characters')" label-for="patient">
 									<v-select v-model="selectedPatient" :options="patients" label="full_name"
 										input-id="patient" @search="onSearch" :placeholder="$t('patients.search_options')"
-										:clearable="false">
+										:clearable="false"
+										no-options-text="No hay registros">
 										<template #option="{ full_name, rut }">
 											<span class="ml-50 align-middle"> {{ full_name }} ({{ rut }})</span>
 										</template>
-
 										<template #selected-option="{ full_name, rut }">
 											<span class="ml-50 align-middle"> {{ full_name }} ({{ rut }})</span>
 										</template>
@@ -422,7 +422,7 @@ export default {
 			modal: false,
 			modalTitle: "",
 			checkModalIsTransfer: false,
-			checkModalTitle: this.$t('locale.charge_check_detail_tittle'),
+			checkModalTitle: this.$t('charge_check_detail_tittle'),
 			totalEarningLastMonth: 0,
 			totalEarningMonth: 0,
 			totalEarningDay: 0,

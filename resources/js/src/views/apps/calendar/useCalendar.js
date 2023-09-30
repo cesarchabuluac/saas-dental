@@ -4,7 +4,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import listPlugin from '@fullcalendar/list'
 import interactionPlugin from '@fullcalendar/interaction'
-// import momentTimezone from "moment-timezone";
+
 import moment from "moment";
 import { toMoment, toMomentDuration } from '@fullcalendar/moment'; // only for formatting
 import momentTimezonePlugin from '@fullcalendar/moment-timezone';
@@ -13,9 +13,19 @@ import momentTimezonePlugin from '@fullcalendar/moment-timezone';
 import { useToast } from 'vue-toastification/composition'
 import ToastificationContent from '@core/components/toastification/ToastificationContent.vue'
 
+import Swal from "sweetalert2";
+import "animate.css";
+import _ from 'lodash'
+
 // eslint-disable-next-line object-curly-newline
-import { ref, computed, watch, onMounted, reactive } from '@vue/composition-api'
+import { ref, computed, watch, onMounted } from '@vue/composition-api'
 import store from '@/store'
+import router from "@/router";
+import * as helper from "@/libs/helpers";
+
+// Providers
+import AppointmentProvider from "@/providers/Appointments";
+const AppointmentResource = new AppointmentProvider();
 
 export default function userCalendar() {
   // Use toast
@@ -53,6 +63,7 @@ export default function userCalendar() {
     end: '',
     allDay: false,
     url: '',
+    disabled: false,
     extendedProps: {
       calendar: '',
       guests: [],
@@ -101,28 +112,28 @@ export default function userCalendar() {
       },
     })
 
-    const existingEvent = calendarApi.getEventById(updatedEventData.id)
+    // const existingEvent = calendarApi.getEventById(updatedEventData.id)
 
-    // --- Set event properties except date related ----- //
-    // ? Docs: https://fullcalendar.io/docs/Event-setProp
-    // dateRelatedProps => ['start', 'end', 'allDay']
-    // eslint-disable-next-line no-plusplus
-    for (let index = 0; index < propsToUpdate.length; index++) {
-      const propName = propsToUpdate[index]
-      existingEvent.setProp(propName, updatedEventData[propName])
-    }
+    // // --- Set event properties except date related ----- //
+    // // ? Docs: https://fullcalendar.io/docs/Event-setProp
+    // // dateRelatedProps => ['start', 'end', 'allDay']
+    // // eslint-disable-next-line no-plusplus
+    // for (let index = 0; index < propsToUpdate.length; index++) {
+    //   const propName = propsToUpdate[index]
+    //   existingEvent.setProp(propName, updatedEventData[propName])
+    // }
 
-    // --- Set date related props ----- //
-    // ? Docs: https://fullcalendar.io/docs/Event-setDates
-    existingEvent.setDates(updatedEventData.start, updatedEventData.end, { allDay: updatedEventData.allDay })
+    // // --- Set date related props ----- //
+    // // ? Docs: https://fullcalendar.io/docs/Event-setDates
+    // existingEvent.setDates(updatedEventData.start, updatedEventData.end, { allDay: updatedEventData.allDay })
 
-    // --- Set event's extendedProps ----- //
-    // ? Docs: https://fullcalendar.io/docs/Event-setExtendedProp
-    // eslint-disable-next-line no-plusplus
-    for (let index = 0; index < extendedPropsToUpdate.length; index++) {
-      const propName = extendedPropsToUpdate[index]
-      existingEvent.setExtendedProp(propName, updatedEventData.extendedProps[propName])
-    }
+    // // --- Set event's extendedProps ----- //
+    // // ? Docs: https://fullcalendar.io/docs/Event-setExtendedProp
+    // // eslint-disable-next-line no-plusplus
+    // for (let index = 0; index < extendedPropsToUpdate.length; index++) {
+    //   const propName = extendedPropsToUpdate[index]
+    //   existingEvent.setExtendedProp(propName, updatedEventData.extendedProps[propName])
+    // }
   }
 
   // ------------------------------------------------
@@ -152,7 +163,7 @@ export default function userCalendar() {
       start,
       end,
       // eslint-disable-next-line object-curly-newline
-      extendedProps: { calendar, guests, location, description },
+      extendedProps: { calendar, guests, location, description, disabled, },
       allDay,
     } = eventApi
 
@@ -166,6 +177,7 @@ export default function userCalendar() {
         guests,
         location,
         description,
+        disabled,
       },
       allDay,
     }
@@ -215,33 +227,26 @@ export default function userCalendar() {
   // ------------------------------------------------
   // selectedCalendars
   // ------------------------------------------------
-  const selectedCalendars = computed(() => store.state.calendar.selectedCalendars);
+  const selectedCalendars = computed(() => store.state.calendar.selectedCalendars)
+
+  watch(selectedCalendars, () => {
+    refetchEvents()
+  })
+
+  // ------------------------------------------------
+  // selectedProfessionals
+  // ------------------------------------------------
   const selectedProfessional = computed(() => store.state.calendar.selectedProfessional);
-  const selectedDates = computed(() => store.state.calendar.selectedDates);
 
-  const hasRequestedData = ref(false);
-
-  watch(
-    [selectedCalendars, selectedProfessional, selectedDates],
-    () => {
-      if (!hasRequestedData.value) {
-        refetchEvents();
-        hasRequestedData.value = true;
-
-        // Restablecer hasRequestedData a false después de un breve período de tiempo
-        // para permitir futuras solicitudes si es necesario
-        setTimeout(() => {
-          hasRequestedData.value = false;
-        }, 100); // 100 ms (ajusta el tiempo según tus necesidades)
-      }
-    }
-  );
+  watch([selectedProfessional], (value) => {   
+    refetchEvents();
+  });
 
   // --------------------------------------------------------------------------------------------------
   // AXIOS: fetchEvents
   // * This will be called by fullCalendar to fetch events. Also this can be used to refetch events.
   // --------------------------------------------------------------------------------------------------
-  const fetchEvents = (info, successCallback) => {
+  const fetchEvents = async (info, successCallback) => {
     // If there's no info => Don't make useless API call
     if (!info) return
 
@@ -251,50 +256,117 @@ export default function userCalendar() {
     });
 
     // Fetch Events from API endpoint
-    store
-      .dispatch('calendar/fetchEvents', {
-        calendars: selectedCalendars.value,
-        profesional: selectedProfessional.value,
-      })
-      .then(response => {
-        successCallback(response.data)
-      })
-      .catch(() => {
+    try {
+      const { data } = await store.dispatch("calendar/fetchEvents", {
+        calendars: {
+            calendar: selectedCalendars.value,
+            profesional: 9, //selectedProfessional.value.id,
+        },
+      });
+
+      if (data.success) {
+        successCallback(data.data);
+      } else {
         toast({
-          component: ToastificationContent,
-          props: {
-            title: 'Error fetching calendar events',
-            icon: 'AlertTriangleIcon',
-            variant: 'danger',
-          },
-        })
+            component: ToastificationContent,
+            props: {
+                title: data.message,
+                icon: "AlertTriangleIcon",
+                variant: "danger",
+            },
+        });
+      }
+
+    }catch(error) {
+      toast({
+        component: ToastificationContent,
+        props: {
+          title: 'Error fetching calendar events',
+          icon: 'AlertTriangleIcon',
+          variant: 'danger',
+        },
       })
+    }
   }
+
+  // --------------------------------------------------------------------------------------------------
+  // AXIOS: fetchAvailable
+  // * fullCalendar will call you to determine if the date is available to schedule
+  // --------------------------------------------------------------------------------------------------
+  const fetchAvailable = async (date) => {
+    const query = {
+      date: date,
+      user_id: store.state.calendar.selectedProfessional.id,
+    }
+    try {
+        const { data } = await AppointmentResource.available(query);
+        if (data.success) {
+            const params = {
+              date,
+            }
+            router.push({ name: 'appointments-add', params })
+        } else {
+            toast({
+                component: ToastificationContent,
+                props: {
+                    title: data.message,
+                    icon: "AlertTriangleIcon",
+                    variant: "danger",
+                },
+            });
+        }
+
+    } catch (e) {
+        if (e.response.status === 422) {
+            toast({
+                component: ToastificationContent,
+                props: {
+                    title: this.getFirstValidationError(e.response.data.errors),
+                    icon: "AlertTriangleIcon",
+                    variant: "danger",
+                },
+            });
+        } else {
+            toast({
+                component: ToastificationContent,
+                props: {
+                    title: e.message,
+                    icon: "AlertTriangleIcon",
+                    variant: "danger",
+                },
+            });
+        }
+    }
+}
 
   // ------------------------------------------------------------------------
   // calendarOptions
   // * This isn't considered in UI because this is the core of calendar app
   // ------------------------------------------------------------------------
+
+  const interval = store.state.auth.setting['scheduled_appointment_interval'] || 15; // Intervalo en minutos
+  const hours = Math.floor(interval / 60); // Obtenemos las horas (15 minutos = 0 horas)
+  const minutes = interval % 60; // Obtenemos los minutos (15 minutos)
+  const formattedInterval = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:00`;
+  const timezone = store.state.auth.setting['timezone'] || window._setting.timezone
+  const language = store.state.auth.setting['language'] || 'es'
+
   const calendarOptions = ref({
-    // plugins: [dayGridPlugin, interactionPlugin, timeGridPlugin, listPlugin],
-    plugins: [dayGridPlugin, interactionPlugin, timeGridPlugin, listPlugin, momentTimezonePlugin],
-    locale: store.state.auth.setting['language'] || 'es',
-    timeZone: store.state.auth.setting['timezone'] || window._setting.timezone,
+    plugins: [dayGridPlugin, interactionPlugin, timeGridPlugin, listPlugin, momentTimezonePlugin ],
+    locale: esLocale, //language,
+    timeZone: timezone,
     initialView: "timeGridDay",
-    // headerToolbar: {
-    //   start: 'sidebarToggle, prev,next, title',
-    //   end: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth',
-    // },
     headerToolbar: {
-      center: "title",
-      start: "sidebarToggle, prev,next, today",
-      end: "dayGridMonth,timeGridWeek,timeGridDay,listMonth",
+      center: 'title',
+      start: 'sidebarToggle, prev,next, today',
+      end: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth',
     },
     allDaySlot: false,
-    slotDuration: "00:15:00",
-    slotLabelInterval: "00:15:00",
-    slotMinTime: "09:00:00",
-    slotMaxTime: "22:00:00",
+    slotDuration: `${formattedInterval}`,
+    slotLabelInterval: `${formattedInterval}`,
+    slotMinTime: store.state.auth.setting['schedule_start_time'] || "09:00:00",
+    slotMaxTime: store.state.auth.setting['schedule_end_time'] || "22:00:00",
+    // nextDayThreshold: '09:00:00',
     nowIndicator: true,
     selectHelper: true,
     eventLimit: false, // allow "more" link when too many events
@@ -304,19 +376,19 @@ export default function userCalendar() {
       Enable dragging and resizing event
       ? Docs: https://fullcalendar.io/docs/editable
     */
-    editable: true,
+    editable: false,
 
     /*
       Enable resizing event from start
       ? Docs: https://fullcalendar.io/docs/eventResizableFromStart
     */
-    eventResizableFromStart: true,
+    eventResizableFromStart: false,
 
     /*
       Automatically scroll the scroll-containers during event drag-and-drop and date selecting
       ? Docs: https://fullcalendar.io/docs/dragScroll
     */
-    dragScroll: true,
+    dragScroll: false,
 
     /*
       Max number of events within a given day
@@ -328,7 +400,7 @@ export default function userCalendar() {
       Determines if day names and week names are clickable
       ? Docs: https://fullcalendar.io/docs/navLinks
     */
-    navLinks: true,
+    navLinks: false,
 
     eventClassNames({ event: calendarEvent }) {
       // eslint-disable-next-line no-underscore-dangle
@@ -343,9 +415,12 @@ export default function userCalendar() {
       // * Only grab required field otherwise it goes in infinity loop
       // ! Always grab all fields rendered by form (even if it get `undefined`) otherwise due to Vue3/Composition API you might get: "object is not extensible"
       event.value = grabEventDataFromEventApi(clickedEvent)
-
       // eslint-disable-next-line no-use-before-define
-      isEventHandlerSidebarActive.value = true
+      // isEventHandlerSidebarActive.value = true
+
+      if (event.value.extendedProps.disabled) {        
+        helper.danger(event.value.title);
+      }
     },
 
     customButtons: {
@@ -368,8 +443,14 @@ export default function userCalendar() {
         ```
       */
       event.value = JSON.parse(JSON.stringify(Object.assign(event.value, { start: info.date })))
-      // eslint-disable-next-line no-use-before-define
-      isEventHandlerSidebarActive.value = true
+      // isEventHandlerSidebarActive.value = true   
+      
+      if (store.getters['auth/getRoleId'] !== 4) {
+        const startDate = moment.tz(event.value.start, 'YYYY-MM-DDTHH:mm:ss', timezone).format('DD/MM/YYYY HH:mm');
+        fetchAvailable(startDate)
+      }
+
+      
     },
 
     /*
@@ -379,21 +460,6 @@ export default function userCalendar() {
     */
     eventDrop({ event: droppedEvent }) {
       updateEvent(grabEventDataFromEventApi(droppedEvent))
-    },
-
-    //Change event content
-    eventContent: function (arg, createElement) {
-      if (arg.view.type === "listMonth" || arg.view.type === "timeGridDay") {
-        const event = arg.event.extendedProps;
-        const info = `<b> Tel.: </b> ${event.cellphone} <b> OI: </b> ${event.intern_observation}`;
-        const customHtml =
-          arg.view.type === "timeGridDay" ? `${arg.event.title}` : `${arg.event.title}`;
-
-        if (store.state.auth.user.roles[0].id === 4) {
-          return { html: `<b>${arg.event.title}</b> <b> OI: </b> ${event.intern_observation}` };
-        }
-        return { html: customHtml + " <br> " + info };
-      }
     },
 
     /*

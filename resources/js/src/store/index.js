@@ -41,7 +41,7 @@ const store = new Vuex.Store({
     appConfig,
     verticalMenu,
     auth: authUser,
-    calendar,
+    // calendar,
     inventory: inventory,
   },
   strict: process.env.DEV,
