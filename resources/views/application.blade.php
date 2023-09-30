@@ -11,13 +11,13 @@
   <title>{{ config('settings.app_name') }} | {{ config('settings.app_short_description') }}</title>
 
   <!-- Splash Screen/Loader Styles -->
-  <link rel="stylesheet" type="text/css" href="/css/loader.css" />
+  <link rel="stylesheet" type="text/css" href="css/loader.css" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/css/core.css">
+  <link rel="stylesheet" href="css/core.css">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="/images/logo/logo.png">
+  <link rel="shortcut icon" href="images/logo/logo.png">
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -45,7 +45,7 @@
   <div id="app">
   </div>
 
-  <script src="/js/app.js"></script>
+  <script src="js/app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase.js"></script>
 
   <script>
