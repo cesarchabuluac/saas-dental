@@ -361,10 +361,13 @@ class PatientAPIController extends Controller
      */
     public function nextAppointment(Request $request)
     {
-        $searchTerm = '%' . $request->input('search') . '%';
 
-        return $this->appointmentRepository
-            ->where('date', '>=', date('Y-m-d H:i:s'))
+        $searchTerm = '%' . $request->input('search') . '%';
+        $now = now();
+
+        $appointments = $this->appointmentRepository
+            ->where('date', '>=', $now)
+            ->with(['patient', 'user'])
             ->whereHas('patient', function ($query) use ($searchTerm) {
                 $query->where(DB::raw("CONCAT(COALESCE(name,''),' ',COALESCE(last_name,''),' ',COALESCE(mother_last_name,''))"), 'LIKE', $searchTerm)
                     ->orWhere('rut', 'LIKE', $searchTerm)
@@ -372,23 +375,56 @@ class PatientAPIController extends Controller
                     ->orWhere('cellphone', 'LIKE', $searchTerm)
                     ->orWhere('email', 'LIKE', $searchTerm);
             })
-            ->get()->map(function ($item) {
-                return [
-                    'full_name' => $item->patient->getFullName(),
-                    'document_type' => $item->patient->document_type,
-                    'rut' => $item->patient->rut,
-                    'email' => $item->patient->email,
-                    'cellphone' => $item->patient->cellphone,
-                    'phone' => $item->patient->phone,
-                    'address' => $item->patient->address,
-                    'intern_observation' => $item->intern_observation,
-                    'date' => $item->date,
-                    'state' => $item->state,
-                    'name' => $item->user->name,
-                    'custom_date_diff_humans' => $item->custom_date_diff_humans,
-                    'next' => [] //$patient->getNextAppointments()->get(),
-                ];
-            });
+            ->get();
+
+        $result = $appointments->map(function ($item) {
+            return [
+                'full_name' => $item->patient->getFullName(),
+                'document_type' => $item->patient->document_type,
+                'rut' => $item->patient->rut,
+                'email' => $item->patient->email,
+                'cellphone' => $item->patient->cellphone,
+                'phone' => $item->patient->phone,
+                'address' => $item->patient->address,
+                'intern_observation' => $item->intern_observation,
+                'date' => $item->date,
+                'state' => $item->state,
+                'name' => $item->user->name,
+                'custom_date_diff_humans' => $item->custom_date_diff_humans,
+                'next' => [], //$patient->getNextAppointments()->get(),
+            ];
+        });
+
+        return $this->sendResponse($result, "Data retrievied successfully");
+
+        // $searchTerm = '%' . $request->input('search') . '%';
+
+        // return $this->appointmentRepository
+        //     ->where('date', '>=', date('Y-m-d H:i:s'))
+        //     ->whereHas('patient', function ($query) use ($searchTerm) {
+        //         $query->where(DB::raw("CONCAT(COALESCE(name,''),' ',COALESCE(last_name,''),' ',COALESCE(mother_last_name,''))"), 'LIKE', $searchTerm)
+        //             ->orWhere('rut', 'LIKE', $searchTerm)
+        //             ->orWhere('phone', 'LIKE', $searchTerm)
+        //             ->orWhere('cellphone', 'LIKE', $searchTerm)
+        //             ->orWhere('email', 'LIKE', $searchTerm);
+        //     })
+        //     ->get()->map(function ($item) {
+        //         return [
+        //             'full_name' => $item->patient->getFullName(),
+        //             'document_type' => $item->patient->document_type,
+        //             'rut' => $item->patient->rut,
+        //             'email' => $item->patient->email,
+        //             'cellphone' => $item->patient->cellphone,
+        //             'phone' => $item->patient->phone,
+        //             'address' => $item->patient->address,
+        //             'intern_observation' => $item->intern_observation,
+        //             'date' => $item->date,
+        //             'state' => $item->state,
+        //             'name' => $item->user->name,
+        //             'custom_date_diff_humans' => $item->custom_date_diff_humans,
+        //             'next' => [] //$patient->getNextAppointments()->get(),
+        //         ];
+        //     });
     }
 
     public function filter(Request $request)

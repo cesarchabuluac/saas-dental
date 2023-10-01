@@ -24,6 +24,7 @@
 
     <b-navbar-nav v-if="user" class="nav align-items-center ml-auto">
       <!-- <locale /> -->
+      <!-- <search-bar/> -->
       <notification-dropdown/>
       <b-nav-item-dropdown
         right
@@ -102,6 +103,7 @@ export default {
     Bookmarks,
     Locale,
     NotificationDropdown,
+    SearchBar,
   },
   props: {
     toggleVerticalMenuActive: {

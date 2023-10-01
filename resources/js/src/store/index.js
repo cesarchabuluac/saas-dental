@@ -8,7 +8,7 @@ import app from './app'
 import appConfig from './app-config'
 import verticalMenu from './vertical-menu'
 import authUser from './auth-user'
-import calendar from '../views/apps/appointments/calendarStoreModule'
+import calendar from '../views/apps/calendar/calendarStoreModule'
 import inventory from './inventories'
 
 Vue.use(Vuex)

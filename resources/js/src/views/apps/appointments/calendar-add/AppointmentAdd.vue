@@ -163,7 +163,6 @@ import Ripple from "vue-ripple-directive";
 import { ValidationProvider, ValidationObserver, localize } from "vee-validate";
 import { required, email, url } from "@validations";
 import formValidation from "@core/comp-functions/forms/form-validation";
-import calendarStoreModule from '../calendarStoreModule'
 import SidebarAddNewPatient from '@core/components/patients/SidebarAddNewPatient.vue'
 import SearchPatient from '@core/components/patients/SearchPatient.vue'
 
@@ -177,8 +176,6 @@ const UserResource = new UserProvider();
 const PatientResource = new PatientProvider();
 const AppointmentResource = new AppointmentProvider();
 const BranchOfficeResource = new BranchOfficeProvider();
-
-const CALENDAR_APP_STORE_MODULE_NAME = 'calendar'
 
 export default {
     components: {
@@ -383,7 +380,7 @@ export default {
         },
         async getDoctors() {
             this.loading = true
-            const { data } = await UserResource.index({ criteria: "professionals",});
+            const { data } = await UserResource.index({ criteria: "professionals", ignoreSchedules: false,});
             this.loading = false
             this.professionals = data.data
             store.commit('auth/SET_DOCTORS', data.data)

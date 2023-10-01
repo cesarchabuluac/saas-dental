@@ -27,6 +27,10 @@ import * as helper from "@/libs/helpers";
 import AppointmentProvider from "@/providers/Appointments";
 const AppointmentResource = new AppointmentProvider();
 
+import UserProvider from "@/providers/Users";
+const UserResource = new UserProvider();
+
+
 export default function userCalendar() {
   // Use toast
   const toast = useToast()
@@ -34,13 +38,16 @@ export default function userCalendar() {
   // refCalendar
   // ------------------------------------------------
   const refCalendar = ref(null)
-
+  const isLoading = ref(false)
+  
   // ------------------------------------------------
   // calendarApi
   // ------------------------------------------------
   let calendarApi = null
   onMounted(() => {
-    calendarApi = refCalendar.value.getApi()
+    isLoading.value = true
+    calendarApi = refCalendar.value.getApi()    
+    isLoading.value = false
   })
 
   // ------------------------------------------------
@@ -64,6 +71,7 @@ export default function userCalendar() {
     allDay: false,
     url: '',
     disabled: false,
+    doctor_name: null,
     extendedProps: {
       calendar: '',
       guests: [],
@@ -157,30 +165,7 @@ export default function userCalendar() {
   // ! You need to update below function as per your extendedProps
   // ------------------------------------------------
   const grabEventDataFromEventApi = eventApi => {
-    const {
-      id,
-      title,
-      start,
-      end,
-      // eslint-disable-next-line object-curly-newline
-      extendedProps: { calendar, guests, location, description, disabled, },
-      allDay,
-    } = eventApi
-
-    return {
-      id,
-      title,
-      start,
-      end,
-      extendedProps: {
-        calendar,
-        guests,
-        location,
-        description,
-        disabled,
-      },
-      allDay,
-    }
+    return eventApi
   }
 
   // ------------------------------------------------
@@ -221,7 +206,9 @@ export default function userCalendar() {
   // refetchEvents
   // ------------------------------------------------
   const refetchEvents = () => {
-    calendarApi.refetchEvents()
+    // _.debounce(function () {
+      calendarApi.refetchEvents();
+    // }, 500)
   }
 
   // ------------------------------------------------
@@ -229,18 +216,33 @@ export default function userCalendar() {
   // ------------------------------------------------
   const selectedCalendars = computed(() => store.state.calendar.selectedCalendars)
 
-  watch(selectedCalendars, () => {
+  watch(selectedCalendars, (value) => {
     refetchEvents()
   })
 
   // ------------------------------------------------
   // selectedProfessionals
   // ------------------------------------------------
-  const selectedProfessional = computed(() => store.state.calendar.selectedProfessional);
+  const selectedProfessional = computed({
+    get: () => store.state.calendar.selectedProfessional,
+    set: (val) => {
+        store.commit("calendar/SET_SELECTED_PROFESSIONAL", val);
+    },
+  });
 
   watch([selectedProfessional], (value) => {   
     refetchEvents();
   });
+
+  const selectedCurrentDate = computed(
+    () => store.state.calendar.selectedCurrentDate
+  )
+
+  watch([selectedCurrentDate], (newValue, oldValue) => {    
+    if (newValue !== oldValue) {
+      calendarApi.gotoDate(newValue[0])
+    }
+  })
 
   // --------------------------------------------------------------------------------------------------
   // AXIOS: fetchEvents
@@ -250,6 +252,8 @@ export default function userCalendar() {
     // If there's no info => Don't make useless API call
     if (!info) return
 
+     if (!selectedProfessional.value.id) return false
+
     store.commit("calendar/SET_SELECTED_DATES", {
       start: info.startStr,
       end: info.endStr,
@@ -257,12 +261,14 @@ export default function userCalendar() {
 
     // Fetch Events from API endpoint
     try {
+      isLoading.value = true
       const { data } = await store.dispatch("calendar/fetchEvents", {
         calendars: {
             calendar: selectedCalendars.value,
-            profesional: 9, //selectedProfessional.value.id,
+            profesional: selectedProfessional.value.id,
         },
       });
+      isLoading.value = false
 
       if (data.success) {
         successCallback(data.data);
@@ -276,8 +282,8 @@ export default function userCalendar() {
             },
         });
       }
-
     }catch(error) {
+      isLoading.value = false
       toast({
         component: ToastificationContent,
         props: {
@@ -296,10 +302,12 @@ export default function userCalendar() {
   const fetchAvailable = async (date) => {
     const query = {
       date: date,
-      user_id: store.state.calendar.selectedProfessional.id,
+      user_id: selectedProfessional.value.id,
     }
     try {
+        isLoading.value = true
         const { data } = await AppointmentResource.available(query);
+        isLoading.value = false
         if (data.success) {
             const params = {
               date,
@@ -317,25 +325,26 @@ export default function userCalendar() {
         }
 
     } catch (e) {
-        if (e.response.status === 422) {
-            toast({
-                component: ToastificationContent,
-                props: {
-                    title: this.getFirstValidationError(e.response.data.errors),
-                    icon: "AlertTriangleIcon",
-                    variant: "danger",
-                },
-            });
-        } else {
-            toast({
-                component: ToastificationContent,
-                props: {
-                    title: e.message,
-                    icon: "AlertTriangleIcon",
-                    variant: "danger",
-                },
-            });
-        }
+      isLoading.value = false
+      if (e.response.status === 422) {
+          toast({
+              component: ToastificationContent,
+              props: {
+                  title: this.getFirstValidationError(e.response.data.errors),
+                  icon: "AlertTriangleIcon",
+                  variant: "danger",
+              },
+          });
+      } else {
+          toast({
+              component: ToastificationContent,
+              props: {
+                  title: e.message,
+                  icon: "AlertTriangleIcon",
+                  variant: "danger",
+              },
+          });
+      }
     }
 }
 
@@ -359,7 +368,7 @@ export default function userCalendar() {
     headerToolbar: {
       center: 'title',
       start: 'sidebarToggle, prev,next, today',
-      end: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth',
+      end: 'dayGridMonth,timeGridWeek,timeGridDay',
     },
     allDaySlot: false,
     slotDuration: `${formattedInterval}`,
@@ -371,6 +380,7 @@ export default function userCalendar() {
     selectHelper: true,
     eventLimit: false, // allow "more" link when too many events
     events: fetchEvents,
+        
 
     /*
       Enable dragging and resizing event
@@ -415,11 +425,11 @@ export default function userCalendar() {
       // * Only grab required field otherwise it goes in infinity loop
       // ! Always grab all fields rendered by form (even if it get `undefined`) otherwise due to Vue3/Composition API you might get: "object is not extensible"
       event.value = grabEventDataFromEventApi(clickedEvent)
-      // eslint-disable-next-line no-use-before-define
-      // isEventHandlerSidebarActive.value = true
 
       if (event.value.extendedProps.disabled) {        
         helper.danger(event.value.title);
+      } else {
+        isEventHandlerSidebarActive.value = true
       }
     },
 
@@ -486,6 +496,7 @@ export default function userCalendar() {
   const isCalendarOverlaySidebarActive = ref(false)
 
   return {
+    isLoading,
     refCalendar,
     isCalendarOverlaySidebarActive,
     calendarOptions,
@@ -496,6 +507,7 @@ export default function userCalendar() {
     removeEvent,
     refetchEvents,
     fetchEvents,
+    selectedProfessional,
 
     // ----- UI ----- //
     isEventHandlerSidebarActive,

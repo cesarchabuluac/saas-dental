@@ -26,34 +26,39 @@ class AppointmentAPIController extends Controller
         // Parse las fechas de inicio y fin
         $startAt = Carbon::parse($request->start)->startOfDay();
         $endAt = Carbon::parse($request->end)->endOfDay();
+        $currentDay = Carbon::now();
         $professionalId = $request->input('professional');
 
         $user = $this->userRepository->with('schedules')->find($professionalId);
 
         // Verifica si el usuario tiene horarios disponibles para el día de la semana actual.
-        if (!$user->schedules || $user->schedules->where('day_of_week', $startAt->dayOfWeek)->isEmpty()) {
-            $interval = config('settings.scheduled_appointment_interval') ?? 15; // Intervalo en minutos
-            while ($startAt < $endAt) {
-                $intervalEnd = $startAt->copy()->addMinutes($interval);
-                $dataSchedule[] = [
-                    'start' => $startAt->toDateTimeString(),
-                    'end' => $intervalEnd->toDateTimeString(),
-                    'disabled' => true,
-                    'title' => __('lang.time_not_available'),
-                    'textColor' => '#000000',
-                    'allow' => false,
-                    'backgroundColor' => '#ea5455',
-                    'durationEditable' => false,
-                    'extendedProps' => [
-                        'calendar' => 'canceled'
-                    ]
-                ];
+        if ($startAt->isSameDay($currentDay) || $startAt->isAfter($currentDay)) {
+            if (!$user->schedules || $user->schedules->where('day_of_week', $startAt->dayOfWeek)->isEmpty()) {
+                $interval = config('settings.scheduled_appointment_interval') ?? 15; // Intervalo en minutos
+                while ($startAt < $endAt) {
+                    $intervalEnd = $startAt->copy()->addMinutes($interval);
+                    $dataSchedule[] = [
+                        'start' => $startAt->toDateTimeString(),
+                        'end' => $intervalEnd->toDateTimeString(),
+                        'disabled' => true,
+                        'title' => __('lang.time_not_available'),
+                        'textColor' => '#000000',
+                        'allow' => false,
+                        'backgroundColor' => '#ea5455',
+                        'durationEditable' => false,
+                        'doctor_name' => $user->name ?? null,
+                        'extendedProps' => [
+                            'calendar' => 'canceled',
+                            'doctor' => $user,
+                        ]
+                    ];
 
-                $startAt = $intervalEnd;
+                    $startAt = $intervalEnd;
+                }
+
+                // En caso de que no haya horario disponible, se envía una respuesta con un horario de fondo.
+                return $this->sendResponse($dataSchedule, "Horario no disponible v2");
             }
-
-            // En caso de que no haya horario disponible, se envía una respuesta con un horario de fondo.
-            return $this->sendResponse($dataSchedule, "Horario no disponible v2");
         }
 
         // Verifica si se proporciona el ID del profesional
@@ -114,7 +119,7 @@ class AppointmentAPIController extends Controller
             return [
                 // Propiedades de las citas
                 'id' => $a->id,
-                'disabled' => true,
+                'disabled' => false,
                 'title' => $a->patient_name,
                 'start' => $dateStart,
                 'end' => $dateEnd,
@@ -127,11 +132,25 @@ class AppointmentAPIController extends Controller
                 'branch_office_id' => $a->branch_office_id,
                 'duration' => $a->duration,
                 'logs' => $a->appointmentLogs,
+                'doctor_name' => $a->user->name ?? null,
                 // Propiedades extendidas
                 "extendedProps" => [
                     'appointment_id' => $a->id,
                     'date' => $a->date,
-                    // Otras propiedades aquí
+                    'calendar' => $onlyState,
+                    'patient' => null,
+                    'intern_observation' => $a->intern_observation,
+                    'user_id' => $a->user_id,
+                    'patient_id' => $a->patient_id,
+                    'doctor' => $a->user,
+                    'duration' => $a->duration,
+                    'start_at' => $dateStart,
+                    'end_at' => $dateEnd,
+                    'color' => $color,
+                    'message' => $message,
+                    'mobile' => $mobile,
+                    'folio' => __('lang.appointment_mail_number') . ": #" . $a->id,
+                    'status' => __('lang.status') . ": " . $onlyState,
                 ],
                 'appointment_swal_option' => __('lang.appointment_swal_option'),
                 'appointment_swal_whatsapp' => __('lang.appointment_swal_whatsapp'),

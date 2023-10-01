@@ -15,6 +15,7 @@ class AppointmentLog extends Model
         'professional_id',
         'patient_id',
         'user_id',
+        'state',
         'comments',
     ];
 

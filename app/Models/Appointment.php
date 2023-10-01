@@ -99,6 +99,7 @@ class Appointment extends Model
             'professional_id' => $this->user_id,
             'patient_id' => $this->patient_id,
             'user_id' => auth()->user()->id,
+            'state' => $this->state,
             'comments' => __('lang.appointment_log_comments', ['operator' => $logMessage]),
         ]);
     }

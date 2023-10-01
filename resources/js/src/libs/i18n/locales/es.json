@@ -2538,6 +2538,7 @@
     "swal_option": "¿Deseas notificar al paciente?",
     "swal_whatsapp": "Contactar vía WhatsApp",
     "swal_edit": "Editar Cita",
+    "search_doctor": "Buscar doctor",
     "management": "Gestión de Citas",
     "management_help": "Las citas se muestran por la fecha y hora actual",
     "appointment": "Cita",

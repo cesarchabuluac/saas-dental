@@ -67,12 +67,24 @@ export default {
     SET_SELECTED_EVENTS(state, val) {
       state.selectedCalendars = val
     },
+    SET_SELECTED_PATIENT(state, val) {
+      state.selectedPatient = val;
+    },
+    SET_SELECTED_PROFESSIONAL(state, val) {
+      state.selectedProfessional = val;
+    },
     SET_SELECTED_DATES(state, val) {
       state.selectedDates = val
     },
     SET_SELECTED_PROFESSIONAL(state, val) {
       state.selectedProfessional = val;
     },
+    SET_SELECTED_CURRENT_DATE(state, val) {
+      state.selectedCurrentDate = val
+    },
+    SET_USE_PROFESSIONALS(state, val) {
+      state.useProfessionals = val
+    }
   },
   actions: {
     fetchEvents(ctx, { calendars }) {
@@ -88,17 +100,6 @@ export default {
         professional: calendars.profesional || ctx.state.selectedProfessional.id
       };
       return AppointmentResource.index(query);
-
-      // return new Promise((resolve, reject) => {
-      //   axios
-      //     .get('/apps/calendar/events', {
-      //       params: {
-      //         calendars: calendars.join(','),
-      //       },
-      //     })
-      //     .then(response => resolve(response))
-      //     .catch(error => reject(error))
-      // })
     },
     addEvent(ctx, { event }) {
       return new Promise((resolve, reject) => {
@@ -124,5 +125,12 @@ export default {
           .catch(error => reject(error))
       })
     },
+    resetDatas({ commit }) {
+      commit('SET_USE_PROFESSIONALS', [])
+      commit('SET_SELECTED_CURRENT_DATE', null)
+      commit('SET_SELECTED_DATES', {})
+      commit('SET_SELECTED_PROFESSIONAL', {})
+      commit('SET_SELECTED_PATIENT', {})
+    }
   },
 }

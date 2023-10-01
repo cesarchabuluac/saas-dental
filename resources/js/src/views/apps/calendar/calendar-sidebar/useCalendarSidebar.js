@@ -1,8 +1,24 @@
 import store from '@/store'
 
-import { computed } from '@vue/composition-api'
+import { computed, ref, onMounted } from '@vue/composition-api'
+
+import UserProvider from "@/providers/Users";
+const UserResource = new UserProvider();
 
 export default function useCalendarSidebar() {
+
+
+  onMounted(async () => {
+    const { data } = await UserResource.index({ criteria: "professionals", isCalendar: true, ignoreSchedules: false, });    
+    store.commit('calendar/SET_USE_PROFESSIONALS', data)
+    store.commit("calendar/SET_USE_PROFESSIONALS", data);
+    if (store.getters['auth/getRoleId'] === 4) {
+      store.commit("calendar/SET_SELECTED_PROFESSIONAL", store.getters['auth/getUser']);
+    } else {
+      store.commit("calendar/SET_SELECTED_PROFESSIONAL", data[0]);
+    }
+  })
+
   // ------------------------------------------------
   // calendarOptions
   // ------------------------------------------------
@@ -37,9 +53,17 @@ export default function useCalendarSidebar() {
     },
   })
 
+  const selectedCurrentDate = computed({
+    get: () => store.state.calendar.selectedCurrentDate,
+      set: (val) => {
+          store.commit("calendar/SET_SELECTED_CURRENT_DATE", val);
+      },
+  })   
+
   return {
     calendarOptions,
     selectedCalendars,
     checkAll,
+    selectedCurrentDate,
   }
 }

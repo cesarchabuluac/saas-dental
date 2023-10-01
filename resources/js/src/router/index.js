@@ -46,30 +46,7 @@ const router = new VueRouter({
           },
         ],
       },
-    },
-    // *===============================================---*
-    // *--------- APPOINTMENT ----------------------------*
-    // *===============================================---*
-    {
-      path: "/appointments",
-      name: "appointments",
-      component: () => import("@/views/apps/appointments/Calendar.vue"),
-      beforeEnter: SubscriptionGuard,
-      meta: {
-        permission: "appointments.index",
-        pageTitle: "appointments.desc",
-        breadcrumb: [
-          {
-            text: 'Dashboard',
-            to: "/",
-          },
-          {
-            text: "appointments.slug",
-            active: true,
-          },
-        ],
-      },
-    },
+    },    
     {
       path: "/appointments/add",
       name: "appointments-add",

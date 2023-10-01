@@ -14,7 +14,7 @@
                         <b-card-body>
                             <!-- metting header -->
                             <div class="meetup-header d-flex align-items-center">
-                                <div class="meetup-day">
+                                <div class="meetup-day d-none">
                                     <h6 class="mb-0 text-uppercase">
                                         {{ $t('today') }}<br>
                                         {{ momentFormat(null, 'dddd') }}
@@ -67,13 +67,13 @@
                             </b-media>
 
                             <!-- avatar group -->
-                            <b-avatar-group class="mt-2 pt-50">
-                                <b-avatar v-b-tooltip.hover.bottom="eventLocal.extendedProps.doctor.name"
-                                    :src="eventLocal.extendedProps.doctor.has_media ? eventLocal.extendedProps.doctor.media[0].thumb : null"
-                                    class="pull-up" :text="avatarText(eventLocal.extendedProps.doctor.name)" />
+                            <b-avatar-group v-if="eventLocal.extendedProps.doctor_name" class="mt-2 pt-50">
+                                <b-avatar v-b-tooltip.hover.bottom="eventLocal.extendedProps.doctor_name"
+                                    :src="eventLocal.extendedProps.doctor.has_media ? eventLocal.extendedProps.doctor.avatar : null"
+                                    class="pull-up" :text="avatarText(eventLocal.extendedProps.doctor_name)" />
                                 <h6 class="align-self-center cursor-pointer ml-1 mb-0">
                                     <small>{{ $t('appointments.doctor_will_assist_you').replace(':doctor',
-                                        eventLocal.extendedProps.doctor.name) }}</small>
+                                        eventLocal.extendedProps.doctor_name) }}</small>
                                 </h6>
                             </b-avatar-group>
 
@@ -131,14 +131,14 @@
                     <b-card class="card-code">
                         <h6 class="text-center">{{ $t('appointments.dating_timeline') }}</h6>
                         <app-timeline class="mt-2">
-                            <app-timeline-item v-for="(item, index) in eventLocal.extendedProps.logs" :key="index">
+                            <app-timeline-item v-for="(item, index) in eventLocal.extendedProps.logs" :key="index" :variant="resolveStateAppointmentColor(item.state ? item.state : 'primary')">
                                 <div class="d-flex flex-sm-row flex-column flex-wrap justify-content-between mb-1 mb-sm-0">
                                     <small class="text-muted">{{ dateTimeFormat(item.created_at) }}</small>
                                 </div>
                                 <small>{{ item.comments }}</small>
                                 <b-media class="mt-1">
                                     <template #aside>
-                                        <b-avatar size="24" :src="item.user.has_media ? item.user.media[0].thumb : null"
+                                        <b-avatar size="24" :src="item.user.has_media ? item.user.avatar : null"
                                             :text="avatarText(item.user.name)" />
                                     </template>
                                     <small>{{ item.user.name }}</small>
@@ -263,15 +263,14 @@ export default {
         } = useCalendarEventHandler(toRefs(props), clearFormData, emit);
 
         clearFormData.value = null
-        isAdministrator.value = (store.state.auth.user.roles[0].id === 1 || store.state.auth.user.roles[0].id === 2) ? true : false
-        isDoctor.value = store.state.auth.user.roles[0].id === 4 ? true : false
+        isAdministrator.value = (store.getters['auth/getRoleId'] === 1 || store.getters['auth/getRoleId'] === 2) ? true : false
+        isDoctor.value = store.getters['auth/getRoleId'] === 4 ? true : false
 
         const youCanConfirm = computed(() => {
             moment.locale(store.state.auth.setting['language'])
             moment.tz.setDefault(store.state.auth.setting['timezone'])
             const currentDate = moment().tz(store.state.auth.setting['timezone']);
             const eventDate = moment.tz(props.event.extendedProps.date, store.state.auth.setting['timezone'])
-            console.log(!!currentDate.isSameOrBefore(eventDate))
             return currentDate.isSameOrBefore(eventDate)
         })
 

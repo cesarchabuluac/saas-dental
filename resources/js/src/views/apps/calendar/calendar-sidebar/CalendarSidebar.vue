@@ -25,12 +25,11 @@
       </div>
 
       <div class="mt-3">
-        <b-col cols="12" md="3">
-          <b-form-group>
-            <flat-pickr mode="single" size="sm" ref="miniCalendar" v-model="selectedCurrentDate" class="d-none"
-                :config="{ inline: true, dateFormat: 'Y-m-d' }" />
-          </b-form-group>
-        </b-col>
+        <b-form-group>
+          <flat-pickr small ref="miniCalendar" 
+            v-model="myDate" class="d-none"
+              :config="{ inline: true, dateFormat: 'Y-m-d' }" />
+        </b-form-group>
       </div>
     </div>
     <b-img :src="require('@/assets/images/pages/calendar-illustration.png')" />
@@ -38,6 +37,7 @@
 </template>
 
 <script>
+import moment from 'moment'
 import {
   BButton, BFormGroup, BFormCheckboxGroup, BFormCheckbox, BImg, BCol
 } from 'bootstrap-vue'
@@ -46,6 +46,7 @@ import useCalendarSidebar from './useCalendarSidebar'
 import flatPickr from "vue-flatpickr-component";
 import { Spanish } from "flatpickr/dist/l10n/es.js";
 import store from '@/store'
+import { computed, watch } from '@vue/composition-api';
 
 export default {
   directives: {
@@ -84,6 +85,29 @@ export default {
         selectedCurrentDate.value = new Date(val).toISOString();
       }
     }
+    
+    // const myDate = computed( () => store.state.calendar.selectedDates.start)
+
+    const myDate = computed({
+      get: () => store.state.calendar.selectedDates.start,
+      set: (val) => {
+            store.commit("calendar/SET_SELECTED_DATES", {
+              start: val,
+              end: moment(val).add('days', 1).format('YYY-MM-DD'),
+            });
+            if (!store.state.calendar.selectedCurrentDate) {
+              store.commit("calendar/SET_SELECTED_CURRENT_DATE", val);
+            } else {
+              if(store.state.calendar.selectedCalendars != store.state.calendar.selectedDates.start) {
+                store.commit("calendar/SET_SELECTED_CURRENT_DATE", val);
+              }
+            }
+        },
+    })
+
+    watch([myDate], (value) => {
+        console.warn(value)
+    })
 
     return {
       calendarOptions,
@@ -92,6 +116,7 @@ export default {
 
       changeDate,
       selectedCurrentDate,
+      myDate,
     }
   },
 }
@@ -99,9 +124,20 @@ export default {
 
 <style lang="scss" scoped>
 @import '@resources/scss/vue/libs/vue-flatpicker.scss';
+@import '~@resources/scss/vue/libs/vue-select.scss';
 </style>
 
 <style>
+
+.app-calendar .app-calendar-sidebar {
+    position: absolute;
+    width: 18rem;
+    height: 100%;
+    z-index: 5;
+    flex-basis: 20rem!important;
+    transition: all 0.2s, background 0s, border 0s;
+}
+
 /* Estilo CSS para el contenedor del calendario */
 .mini-calendar {
   max-width: 300px; /* Establece un ancho máximo */
@@ -113,8 +149,17 @@ export default {
   .mini-calendar {
     max-width: 100%; /* Ocupa todo el ancho en dispositivos móviles */
   }
+
+  .app-calendar .app-calendar-sidebar {
+    position: absolute;
+    width: 20rem!important;
+    height: 100%;
+    z-index: 5;
+    flex-basis: 20rem!important;
+    transition: all 0.2s, background 0s, border 0s;
+  }
 }
-/* .flatpickr-calendar {
+.flatpickr-calendar {
     background: transparent;
     opacity: 0;
     display: none;
@@ -139,10 +184,10 @@ export default {
     background: #fff;
     -webkit-box-shadow: 1px 0 0 #e6e6e6, -1px 0 0 #e6e6e6, 0 1px 0 #e6e6e6, 0 -1px 0 #e6e6e6, 0 3px 13px rgb(0 0 0 / 8%);
     box-shadow: 1px 0 0 #e6e6e6, -1px 0 0 #e6e6e6, 0 1px 0 #e6e6e6, 0 -1px 0 #e6e6e6, 0 3px 13px rgb(0 0 0 / 8%); 
-}*/
+}
 
 .dayContainer {
-    /* padding: 0;
+    padding: 0;
     outline: 0;
     text-align: left;
     width: 249px !important;
@@ -163,10 +208,10 @@ export default {
     justify-content: space-around;
     -webkit-transform: translate3d(0px, 0px, 0px);
     transform: translate3d(0px, 0px, 0px);
-    opacity: 1; */
+    opacity: 1; 
 }
 
-/* .flatpickr-current-month {
+ .flatpickr-current-month {
     font-size: 135%;
     line-height: inherit;
     font-weight: 300;
@@ -180,9 +225,9 @@ export default {
     text-align: center;
     -webkit-transform: translate3d(0px, 0px, 0px);
     transform: translate3d(0px, 0px, 0px);
-} */
+} 
 
-/* .flatpickr-days {
+.flatpickr-days {
     position: relative;
     overflow: hidden;
     display: -webkit-box;
@@ -194,9 +239,9 @@ export default {
     -ms-flex-align: start;
     align-items: flex-start;
     width: 100% !important;
-} */
+}
 
-/* .flatpickr-day {
+ .flatpickr-day {
     background: none;
     border: 1px solid transparent;
     border-radius: 150px;
@@ -226,5 +271,5 @@ export default {
     display: block;
     position: relative;
     top: -15px;
-} */
+}
 </style>
