@@ -19,6 +19,9 @@ return [
      */
     'central_domains' => [
         env('CENTRAL_DOMAIN', 'localhost'),
+        'fichadentales.com',
+        'localhost',
+        '127.0.0.1',
     ],
 
     /**

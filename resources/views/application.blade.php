@@ -56,7 +56,7 @@
       window.locale = `{{Auth()->user()->settings->locale}}`
     @else
       window.Permissions = [];
-      window.locale = `{{ config('settings.language') }}`,
+      window.locale = 'es',
     @endauth
 
     localStorage.setItem('vapid_key', `{!!config('settings.firebase_vapid_key')!!}`)
@@ -67,7 +67,7 @@
       app_name: `{{ config('settings.app_name') }}`,
       app_short_description: `{{ config('settings.app_short_description') }}`,
       timezone: `{{ config('settings.timezone') }}`,
-      locale: `{{ config('settings.language') }}`,
+      locale: 'es',
       dateFormat: `{{ config('settings.date_format') }}`,
       app_theme: `{{ config('settings.theme') }}`
     }
