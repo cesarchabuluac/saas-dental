@@ -17,22 +17,44 @@ use App\Http\Resources\Tenant\TenantResource;
 use App\Http\Requests\Tenant\StoreTenantRequest;
 use App\Http\Requests\Tenant\UpdateTenantRequest;
 use App\Repositories\TenantRepository;
+use App\Repositories\UserRepository;
 use Illuminate\Support\Facades\Log;
 use Spatie\Permission\Models\Role;
 
 class TenantController extends Controller
 {
-
+    protected $userRepository;
     protected $tenantRepository;
 
-    public function __construct(TenantRepository $tenantRepository)
+    public function __construct(TenantRepository $tenantRepository, UserRepository $userRepository)
     {
         $this->tenantRepository = $tenantRepository;
+        $this->userRepository = $userRepository;
     }
 
     public function me(Request $request)
     {
-        return $this->sendResponse(null, "Application central retrievied successfully");
+        Log::info($this->tenantRepository->isMainDomain());
+        Log::info(isTenant());
+        
+        if ($this->tenantRepository->isMainDomain()) {
+            return $this->sendResponse([
+                'is_subscribed' => true,
+            ], __('lang.retrievied_successfully', ['operator' => 'tenant']));
+        }
+
+        $tenant = tenant();
+        if ($tenant->manually_subscribed_by) {
+            $tenant->manually_subscribed_by = tenancy()->central(function () use ($tenant) {
+                return $this->userRepository->find($tenant->manually_subscribed_by)?->name ?? null;
+            });
+        }
+
+        $data = new TenantResource($tenant);
+        Log::info(json_encode($data));
+
+        return $this->sendResponse($data, __('lang.retrievied_successfully', ['operator' => 'tenant']));        
+        
     }
 
     /**
