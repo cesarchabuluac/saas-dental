@@ -29,7 +29,7 @@ class TenantAPIController extends Controller
         if ($this->tenantRepository->isMainDomain()) {
             return $this->sendResponse([
                 'is_subscribed' => true,
-            ], __('lang.retrievied_successfully', ['operator' => 'tenant']));
+            ], __('lang.retrievied_successfully', ['operator' => 'tenant central']));
         }
 
         $tenant = tenant();
