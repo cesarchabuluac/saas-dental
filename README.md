@@ -9,3 +9,6 @@
 
 -- Linux
 ```export NODE_OPTIONS=--openssl-legacy-provider```
+
+-- Use Compoer 
+```php /usr/local/bin/composer```
