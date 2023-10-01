@@ -23,7 +23,7 @@ class TenantAPIController extends Controller
 
     public function me()
     {
-        Log::info($tenantRepository->isMainDomain());
+        Log::info($this->tenantRepository->isMainDomain());
         Log::info(isTenant());
         
         if ($this->tenantRepository->isMainDomain()) {
