@@ -29,9 +29,9 @@
 </head>
 
 <body>
-  <noscript>
+  <!-- <noscript>
     <strong>We're sorry but Soft-Dental - Template doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-  </noscript>
+  </noscript> -->
   <div id="loading-bg">
     <div class="loading-logo">
       <!-- <img src="{{ global_asset('logo.png') }}" alt="Logo" /> -->
@@ -46,7 +46,7 @@
   </div>
 
   <script src="{{ asset(mix('js/app.js')) }}"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase.js"></script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase.js"></script> -->
 
   <script>
     @auth
