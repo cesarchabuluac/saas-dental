@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Tenant;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
 
@@ -28,6 +29,17 @@ class GenerateSiteConfig extends Command
      */
     public function handle()
     {
+        $command = 'sudo ls /etc/nginx/sites-available';
+        $output = shell_exec($command);
+        $files = explode("\n", trim($output));
+
+        
+
+        Tenant::all()->map(function ($tenant) {
+
+
+        });
+        
         $tenantSubdomain = "cchab";
         $mainDomain = "fichadentales.com";
         $nginxConfig = <<<EOL

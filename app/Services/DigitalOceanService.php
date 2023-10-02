@@ -22,7 +22,7 @@ class DigitalOceanService
     public function __construct()
     {
         $this->baseUri = "https://api.digitalocean.com";
-        $this->secret = "dop_v1_e425f78aad14243c9e1a3a0a0cf95713779d3e3140945f836b030c38c00f4f40";
+        $this->secret = env("API_TOKEN_DIGITAL_OCEAN");
         $this->ipv4 = "64.227.97.30"; //IP droplet
         $this->domainName = "fichadentales.com";
     }
