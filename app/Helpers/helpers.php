@@ -242,24 +242,23 @@ function generateSubDomainOnDO($subdomain, $domain = "fichadentales.com")
 
     // Crear un archivo temporal para la configuración de Nginx
     file_put_contents($nginxConfigFilePath, $nginxConfig);
+    Log::warning("generate file");
 
     // Copiar el archivo temporal a la ubicación de configuración de Nginx con sudo
-    exec("sudo cp $nginxConfigFilePath $tenantConfigPath");
-
-    // $tenantConfigPath = "/etc/nginx/sites-available/$tenantSubdomain";
-    // File::put($tenantConfigPath, $nginxConfig);
-
-    // $tenantConfigEnabledPath = "/etc/nginx/sites-enabled/$tenantSubdomain";
-    // File::link($tenantConfigPath, $tenantConfigEnabledPath);
+    exec("sudo cp /tmp/nginx_config /etc/nginx/sites-available/$tenantSubdomain");
+    Log::warning("use cp");
 
     exec("sudo ln -s /etc/nginx/sites-available/$tenantSubdomain /etc/nginx/sites-enabled/");
+    Log::warning("enabled sites");
 
     // Recargar la configuración de Nginx
     exec('sudo service nginx reload');
+    Log::warning("reload nginx");
 
 
     // Instalar el certificado SSL con Let's Encrypt
     exec("certbot certonly --webroot -w /var/www/fichadentales -d $tenantSubdomain.$mainDomain -d www.$tenantSubdomain.$mainDomain");
-
+    Log::warning("install ssl");
+    
     return true;
 }
