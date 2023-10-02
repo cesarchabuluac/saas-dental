@@ -88,7 +88,7 @@ export default {
             const parts = hostname.split('.');
 
             // Si la URL es localhost o una dirección IP, no hay subdominio.
-            if (parts.length === 1 || parts[0] === 'localhost') {
+            if (parts.length === 1 || parts[0] === 'localhost' || parts[0] === process.env.MIX_CENTRAL_DOMAIN) {
                 return false;
             }
 

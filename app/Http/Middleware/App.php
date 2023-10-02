@@ -26,13 +26,13 @@ class App
      * @return mixed
      */
     public function handle($request, Closure $next)
-    {        
+    {
         // if (auth()->check()) {
         //     Log::info($this->languages);   
         //     app()->setLocale(config()->get('settings.language'));
         // } else {
         //     app()->setLocale($request->getPreferredLanguage($this->languages));
-        // }        
+        // }  
 
         app()->setLocale($request->header('Accept-Language'));
 
