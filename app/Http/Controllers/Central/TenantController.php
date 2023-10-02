@@ -18,6 +18,7 @@ use App\Http\Requests\Tenant\StoreTenantRequest;
 use App\Http\Requests\Tenant\UpdateTenantRequest;
 use App\Repositories\TenantRepository;
 use App\Repositories\UserRepository;
+use App\Services\DigitalOceanService;
 use Illuminate\Support\Facades\Log;
 use Spatie\Permission\Models\Role;
 
@@ -25,18 +26,18 @@ class TenantController extends Controller
 {
     protected $userRepository;
     protected $tenantRepository;
+    protected $digitalOceanService;
 
-    public function __construct(TenantRepository $tenantRepository, UserRepository $userRepository)
+    public function __construct(TenantRepository $tenantRepository, UserRepository $userRepository, DigitalOceanService $digitalOceanService)
     {
         $this->tenantRepository = $tenantRepository;
         $this->userRepository = $userRepository;
+        $this->digitalOceanService = $digitalOceanService;
     }
 
     public function me(Request $request)
     {
-        Log::info($this->tenantRepository->isMainDomain());
-        Log::info(isTenant());
-        
+
         if ($this->tenantRepository->isMainDomain()) {
             return $this->sendResponse([
                 'is_subscribed' => true,
@@ -53,8 +54,7 @@ class TenantController extends Controller
         $data = new TenantResource($tenant);
         Log::info(json_encode($data));
 
-        return $this->sendResponse($data, __('lang.retrievied_successfully', ['operator' => 'tenant']));        
-        
+        return $this->sendResponse($data, __('lang.retrievied_successfully', ['operator' => 'tenant']));
     }
 
     /**
@@ -81,12 +81,12 @@ class TenantController extends Controller
     {
         $tenant->limitations = $tenant->run(function () use ($tenant) {
 
-            $roles = Role::withCount('users')->get();            
+            $roles = Role::withCount('users')->get();
 
             $doctorLimit = $tenant->plan->limit_doctor;
             $doctorCurrent = $roles->firstWhere('id', 4)->users_count;
 
-            
+
 
             $assistantLimit = $tenant->plan->limit_assistant;
             $assistantCurrent = $roles->firstWhere('id', 6)->users_count;
@@ -173,6 +173,16 @@ class TenantController extends Controller
     public function store(StoreTenantRequest $request, TenantService $tenantService)
     {
         $tenantService->createTenantAndDomainThenGetDomainWithHost($request);
+
+        //Register recors on digigital ocean        
+        $this->digitalOceanService->CreateNewDomainRecord([
+            'domina' => $request->domain,
+        ]);
+
+        $this->digitalOceanService->CreateNewDomainRecord([
+            'domina' => "www." . $request->domain,
+        ]);
+
         return $this->sendResponse([], 'Tenant created successfully');
     }
 

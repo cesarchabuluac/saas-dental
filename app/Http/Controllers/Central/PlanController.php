@@ -7,6 +7,7 @@ use App\Http\Requests\CreatePlanRequest;
 use App\Http\Requests\UpdatePlanRequest;
 use App\Repositories\CurrencyRepository;
 use App\Repositories\PlanRepository;
+use App\Services\DigitalOceanService;
 use App\Services\ImageService;
 use Illuminate\Http\Request;
 use Cartalyst\Stripe\Stripe;
@@ -22,11 +23,13 @@ class PlanController extends Controller
     protected $planRepository;
     protected $currencyRepository;
     protected $stripe;
+    protected $digitalOceanService;
 
-    public function __construct(PlanRepository $planRepository, CurrencyRepository $currencyRepository)
+    public function __construct(PlanRepository $planRepository, CurrencyRepository $currencyRepository, DigitalOceanService $digitalOceanService)
     {
         $this->planRepository = $planRepository;
         $this->currencyRepository = $currencyRepository;
+        $this->digitalOceanService = $digitalOceanService;
 
         // through stripe api, make plan in stripe.com
         if (boolval(config()->get('enable_stripe_mode'))) {
@@ -43,6 +46,10 @@ class PlanController extends Controller
      */
     public function index()
     {
+
+        $domains = $this->digitalOceanService->getDomains();
+        Log::warning($domains);
+
         return $this->planRepository->with('currency')
             ->withTrashed()
             ->paginate(request('perPage'));

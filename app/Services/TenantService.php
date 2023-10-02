@@ -81,7 +81,7 @@ class TenantService
         $trialDayCount = $setting->where('key', 'trial_day_count')->first()?->value ?? 14;
         $templateID = $setting->where('key', 'register_tenant_mailjet_template_id')->first()->value;
 
-        DB::beginTransaction();
+        // DB::beginTransaction();
 
         $tenant = Tenant::create(
             $request->safe()->except('password') +
@@ -101,8 +101,6 @@ class TenantService
 
         //Initialize tenant and set data
         tenancy()->initialize($tenant);
-
-
 
         $user = User::query()->firstOrCreate(['email' => $request->email], [
             'name' => $request->name,

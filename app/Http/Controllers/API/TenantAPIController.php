@@ -23,9 +23,6 @@ class TenantAPIController extends Controller
 
     public function me()
     {
-        Log::info($this->tenantRepository->isMainDomain());
-        Log::info(isTenant());
-        
         if ($this->tenantRepository->isMainDomain()) {
             return $this->sendResponse([
                 'is_subscribed' => true,
@@ -40,9 +37,6 @@ class TenantAPIController extends Controller
         }
 
         $data = new TenantResource($tenant);
-        Log::info(json_encode($data));
-
         return $this->sendResponse($data, __('lang.retrievied_successfully', ['operator' => 'tenant']));
-
     }
 }
