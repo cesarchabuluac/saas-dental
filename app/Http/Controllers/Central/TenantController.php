@@ -176,11 +176,10 @@ class TenantController extends Controller
 
         //Register recors on digigital ocean        
         $this->digitalOceanService->CreateNewDomainRecord($request->domain);
-        $this->digitalOceanService->CreateNewDomainRecord("www." . $request->domain);
-        
+        $this->digitalOceanService->CreateNewDomainRecord("www." . $request->domain);        
 
         //generate filec config on subdomain
-        generateSubDomainOnDO($request->domain);
+        // generateSubDomainOnDO($request->domain);
 
         return $this->sendResponse([], 'Tenant created successfully');
     }

@@ -17,6 +17,7 @@ use App\Notifications\TenantRegisterNotifyForAdmin;
 use App\Notifications\TenantVerificationNotification;
 use App\Notifications\TestNotification;
 use Exception;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -159,6 +160,11 @@ class TenantService
         ];
 
         $service->sendEmail($dataEmail);
+
+        Artisan::call("generate:site-config", [
+            'domain' => $request->domain,
+            'tenant_id' => $tenant->id,
+        ]);
 
         return [
             'domainWithHost' => $domainWithHost,

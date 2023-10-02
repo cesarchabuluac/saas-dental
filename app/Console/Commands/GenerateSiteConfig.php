@@ -20,7 +20,7 @@ class GenerateSiteConfig extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Generate and configure a website configuration file for a new domain or subdomain on the server';
 
     /**
      * Execute the console command.
@@ -33,10 +33,11 @@ class GenerateSiteConfig extends Command
         $output = shell_exec($command);
         $files = explode("\n", trim($output));
 
-        Log::info($files);
+        // $domain = $this->argument('domain');
+        // $tenant_id = $this->argument('tenant_id');
+        // $tenant = Tenant::find($tenant_id);
 
         Tenant::all()->map(function ($tenant) use ($files) {
-            Log::warning($tenant->domain);
             foreach ($files as $key => $file) {
                 if ($file !== $tenant->domain) {
 
