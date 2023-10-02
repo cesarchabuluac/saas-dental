@@ -248,9 +248,9 @@ export default {
         console.log(`is tenant: ${this.isTenant}`)  
         console.log(this.validaTenant)
         if (this.isTenant) {
-            await this.getIDashboardService()
+            // await this.getIDashboardService()
             if (this.isDoctor) {
-                await this.onCallPayments()
+                // await this.onCallPayments()
             }
         }
     },

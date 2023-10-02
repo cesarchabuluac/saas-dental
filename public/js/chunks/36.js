@@ -2082,20 +2082,13 @@ var AppointmentResource = new _providers_Appointments__WEBPACK_IMPORTED_MODULE_1
           case 0:
             console.log("is tenant: ".concat(_this.isTenant));
             console.log(_this.validaTenant);
-            if (!_this.isTenant) {
-              _context.next = 8;
-              break;
+            if (_this.isTenant) {
+              // await this.getIDashboardService()
+              if (_this.isDoctor) {
+                // await this.onCallPayments()
+              }
             }
-            _context.next = 5;
-            return _this.getIDashboardService();
-          case 5:
-            if (!_this.isDoctor) {
-              _context.next = 8;
-              break;
-            }
-            _context.next = 8;
-            return _this.onCallPayments();
-          case 8:
+          case 3:
           case "end":
             return _context.stop();
         }
