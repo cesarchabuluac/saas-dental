@@ -183,6 +183,9 @@ class TenantController extends Controller
             'domina' => "www." . $request->domain,
         ]);
 
+        //generate filec config on subdomain
+        generateSubDomainOnDO($request->domain);
+
         return $this->sendResponse([], 'Tenant created successfully');
     }
 

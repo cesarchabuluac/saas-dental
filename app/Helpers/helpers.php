@@ -243,4 +243,6 @@ function generateSubDomainOnDO($subdomain, $domain = "fichadentales.com")
 
     // Instalar el certificado SSL con Let's Encrypt
     exec("certbot certonly --webroot -w /var/www/fichadentales -d $tenantSubdomain.$mainDomain -d www.$tenantSubdomain.$mainDomain");
+
+    return true;
 }
