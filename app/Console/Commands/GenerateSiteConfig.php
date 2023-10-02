@@ -33,7 +33,10 @@ class GenerateSiteConfig extends Command
         $output = shell_exec($command);
         $files = explode("\n", trim($output));
 
+        Log::info($files);
+
         Tenant::all()->map(function ($tenant) use ($files) {
+            Log::warning($tenant->domain);
             foreach ($files as $key => $file) {
                 if ($file !== $tenant->domain) {
 
