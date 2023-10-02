@@ -54,7 +54,7 @@ class DigitalOceanService
     {
         return $this->makeRequest(
             'POST',
-            "/v2/domains{$this->domainName}/records",
+            "/v2/domains/{$this->domainName}/records",
             [],
             [
                 "type" => "A",
