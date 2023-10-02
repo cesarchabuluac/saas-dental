@@ -50,16 +50,15 @@ class DigitalOceanService
         );
     }
 
-    public function CreateNewDomainRecord($data)
+    public function CreateNewDomainRecord($domain)
     {
-        Log::info($data);
         return $this->makeRequest(
             'POST',
             "/v2/domains{$this->domainName}/records",
             [],
             [
                 "type" => "A",
-                "name" => $data->domain,
+                "name" => $domain,
                 "data" => $this->ipv4,
                 "priority" => null,
                 "port" => null,
