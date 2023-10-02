@@ -53,7 +53,7 @@
       window.Permissions = []
       window._authenticated = {!!json_encode(Auth::user(), true) !!}
       localStorage.setItem('authenticated', {!!json_encode(Auth::user(), true) !!})
-      window.locale = `{{Auth()->user()->settings->locale}}`
+      window.locale = 'es'
     @else
       window.Permissions = [];
       window.locale = 'es',
