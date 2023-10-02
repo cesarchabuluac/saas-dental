@@ -3,6 +3,7 @@
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 /**
  * @param $bytes
@@ -149,7 +150,7 @@ function checkIsCentral()
 
 function isTenant()
 {
-    $host = $_SERVER['HTTP_HOST'];    
+    $host = $_SERVER['HTTP_HOST'];
     $isTenant = substr_count($host, '.') > 1;
     return !$isTenant;
 }
@@ -197,4 +198,49 @@ function formatDate($date, $format = "j M Y (H:i)")
     // return $fecha->format('j M, Y (H:i)'); // Esto generará "4 de septiembre de 2023"
 
     return  ucwords(Carbon::parse($date)->translatedFormat($format));
+}
+
+
+function generateSubDomainOnDO($subdomain, $domain = "fichadentales.com")
+{
+    $tenantSubdomain = $subdomain;
+    $mainDomain = $domain;
+    $nginxConfig = <<<EOL
+    server {       
+        root /var/www/fichadentales/public;
+        index index.php index.html index.htm index.nginx-debian.html;
+
+        server_name $tenantSubdomain.$mainDomain www.$tenantSubdomain.$mainDomain;
+
+        location / {
+            try_files \$uri \$uri/ /index.php?\$query_string;
+        }
+
+        location ~ \.php$ {
+            include snippets/fastcgi-php.conf;
+            fastcgi_pass unix:/var/run/php/php8.2-fpm.sock;
+        }
+
+        location ~ /\.ht {
+            deny all;
+        }
+
+        location ~ /\.env {
+            deny all;
+        }
+    }
+    EOL;
+
+    $tenantConfigPath = "/etc/nginx/sites-available/$tenantSubdomain";
+    File::put($tenantConfigPath, $nginxConfig);
+
+    $tenantConfigEnabledPath = "/etc/nginx/sites-enabled/$tenantSubdomain";
+    File::link($tenantConfigPath, $tenantConfigEnabledPath);
+
+    // Recargar la configuración de Nginx
+    exec('sudo service nginx reload');
+
+
+    // Instalar el certificado SSL con Let's Encrypt
+    exec("certbot certonly --webroot -w /var/www/fichadentales -d $tenantSubdomain.$mainDomain -d www.$tenantSubdomain.$mainDomain");
 }
