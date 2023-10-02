@@ -224,30 +224,24 @@ export default {
         isTenant () {
             return this.checkIsTenant()
         },
-        validaTenant() {
-            const hostname = window.location.hostname;
-            const parts = hostname.split('.');
-            console.log(`hostname ${hostname}`)
-            console.log(`parts ${parts}`)
-            console.log(`Domain: ${process.env.MIX_CENTRAL_DOMAIN}`)
-
-            // Si la URL es localhost o una dirección IP, no hay subdominio.
-            if (parts.length === 1 || parts[0] === 'localhost' || parts[0] === process.env.MIX_CENTRAL_DOMAIN) {
-                return false;
-            }
-
-            // Si hay al menos dos partes en el nombre de host, el subdominio es la primera parte.
-            if (parts.length >= 2) {
-                return true;
-            }
-
-            return false
-        },
     },
     async mounted() {     
+
+        // const hostname = "https://fichadentales.com/login"
+        // const parts = hostname.split('.');
+        // console.log(`${hostname}`)
+        // console.log(parts)
+
+        const host = process.env.MIX_CENTRAL_DOMAIN
+        const domain = host.replace(/^(https?|ftp):\/\//, '').replace(/^www\./, '');
+        const parts = domain.split('.')
         
-        console.log(`is tenant: ${this.isTenant}`)  
-        console.log(this.validaTenant)
+        console.log(parts.length)
+        console.log(parts)
+        console.log(parts[0])
+        
+        // console.log(`is tenant: ${this.isTenant}`)  
+        // console.log(this.validaTenant)
         
         if (this.isTenant) {
             // await this.getIDashboardService()

@@ -85,12 +85,8 @@ export default {
         },
         checkIsTenant() {
             const hostname = window.location.hostname;
-            const parts = hostname.split('.');
-
-            console.log([parts, process.env.MIX_CENTRAL_DOMAIN])
-
-            // console.log(`parts ${parts}`)
-            // console.log(`Domain: ${process.env.MIX_CENTRAL_DOMAIN}`)
+            const domain = hostname.replace(/^(https?|ftp):\/\//, '').replace(/^www\./, '');
+            const parts = domain.split('.');
 
             // Si la URL es localhost o una dirección IP, no hay subdominio.
             if (parts.length === 1 || parts[0] === 'localhost' || parts[0] === process.env.MIX_CENTRAL_DOMAIN) {

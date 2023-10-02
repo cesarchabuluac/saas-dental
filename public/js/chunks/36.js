@@ -1823,166 +1823,163 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js */ "./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js");
 /* harmony import */ var D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/esm/index.js");
-/* harmony import */ var _themeConfig__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @themeConfig */ "./resources/js/themeConfig.js");
-/* harmony import */ var _core_components_dashboards_DashboardEarning_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @core/components/dashboards/DashboardEarning.vue */ "./resources/js/src/@core/components/dashboards/DashboardEarning.vue");
-/* harmony import */ var _core_components_dashboards_DashboardStatistics_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @core/components/dashboards/DashboardStatistics.vue */ "./resources/js/src/@core/components/dashboards/DashboardStatistics.vue");
-/* harmony import */ var _core_components_dashboards_DashboardCardBudget_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @core/components/dashboards/DashboardCardBudget.vue */ "./resources/js/src/@core/components/dashboards/DashboardCardBudget.vue");
-/* harmony import */ var _core_components_dashboards_DashboardCardAppointments_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @core/components/dashboards/DashboardCardAppointments.vue */ "./resources/js/src/@core/components/dashboards/DashboardCardAppointments.vue");
-/* harmony import */ var _core_components_dashboards_DashboardCardDoctors_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @core/components/dashboards/DashboardCardDoctors.vue */ "./resources/js/src/@core/components/dashboards/DashboardCardDoctors.vue");
-/* harmony import */ var _core_components_dashboards_DashboardCardNewPatients_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @core/components/dashboards/DashboardCardNewPatients.vue */ "./resources/js/src/@core/components/dashboards/DashboardCardNewPatients.vue");
-/* harmony import */ var _core_components_dashboards_DashboardCardTransactions_vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @core/components/dashboards/DashboardCardTransactions.vue */ "./resources/js/src/@core/components/dashboards/DashboardCardTransactions.vue");
-/* harmony import */ var _core_components_dashboards_CalendarDays_vue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @core/components/dashboards/CalendarDays.vue */ "./resources/js/src/@core/components/dashboards/CalendarDays.vue");
-/* harmony import */ var _DashboardCentral_vue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./DashboardCentral.vue */ "./resources/js/src/views/DashboardCentral.vue");
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @/store */ "./resources/js/src/store/index.js");
-/* harmony import */ var _providers_Payments__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @/providers/Payments */ "./resources/js/src/providers/Payments.js");
-/* harmony import */ var _providers_DashBoards__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @/providers/DashBoards */ "./resources/js/src/providers/DashBoards.js");
-/* harmony import */ var _providers_Appointments__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @/providers/Appointments */ "./resources/js/src/providers/Appointments.js");
-/* harmony import */ var _core_components_dashboards_DashboardAppointments_vue__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../@core/components/dashboards/DashboardAppointments.vue */ "./resources/js/src/@core/components/dashboards/DashboardAppointments.vue");
-/* harmony import */ var _core_components_dashboards_DashboardDoctor_vue__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../@core/components/dashboards/DashboardDoctor.vue */ "./resources/js/src/@core/components/dashboards/DashboardDoctor.vue");
-
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
+/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.string.replace.js */ "./node_modules/core-js/modules/es.string.replace.js");
+/* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/esm/index.js");
+/* harmony import */ var _themeConfig__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @themeConfig */ "./resources/js/themeConfig.js");
+/* harmony import */ var _core_components_dashboards_DashboardEarning_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @core/components/dashboards/DashboardEarning.vue */ "./resources/js/src/@core/components/dashboards/DashboardEarning.vue");
+/* harmony import */ var _core_components_dashboards_DashboardStatistics_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @core/components/dashboards/DashboardStatistics.vue */ "./resources/js/src/@core/components/dashboards/DashboardStatistics.vue");
+/* harmony import */ var _core_components_dashboards_DashboardCardBudget_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @core/components/dashboards/DashboardCardBudget.vue */ "./resources/js/src/@core/components/dashboards/DashboardCardBudget.vue");
+/* harmony import */ var _core_components_dashboards_DashboardCardAppointments_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @core/components/dashboards/DashboardCardAppointments.vue */ "./resources/js/src/@core/components/dashboards/DashboardCardAppointments.vue");
+/* harmony import */ var _core_components_dashboards_DashboardCardDoctors_vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @core/components/dashboards/DashboardCardDoctors.vue */ "./resources/js/src/@core/components/dashboards/DashboardCardDoctors.vue");
+/* harmony import */ var _core_components_dashboards_DashboardCardNewPatients_vue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @core/components/dashboards/DashboardCardNewPatients.vue */ "./resources/js/src/@core/components/dashboards/DashboardCardNewPatients.vue");
+/* harmony import */ var _core_components_dashboards_DashboardCardTransactions_vue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @core/components/dashboards/DashboardCardTransactions.vue */ "./resources/js/src/@core/components/dashboards/DashboardCardTransactions.vue");
+/* harmony import */ var _core_components_dashboards_CalendarDays_vue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @core/components/dashboards/CalendarDays.vue */ "./resources/js/src/@core/components/dashboards/CalendarDays.vue");
+/* harmony import */ var _DashboardCentral_vue__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./DashboardCentral.vue */ "./resources/js/src/views/DashboardCentral.vue");
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @/store */ "./resources/js/src/store/index.js");
+/* harmony import */ var _providers_Payments__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @/providers/Payments */ "./resources/js/src/providers/Payments.js");
+/* harmony import */ var _providers_DashBoards__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @/providers/DashBoards */ "./resources/js/src/providers/DashBoards.js");
+/* harmony import */ var _providers_Appointments__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @/providers/Appointments */ "./resources/js/src/providers/Appointments.js");
+/* harmony import */ var _core_components_dashboards_DashboardAppointments_vue__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../@core/components/dashboards/DashboardAppointments.vue */ "./resources/js/src/@core/components/dashboards/DashboardAppointments.vue");
+/* harmony import */ var _core_components_dashboards_DashboardDoctor_vue__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../@core/components/dashboards/DashboardDoctor.vue */ "./resources/js/src/@core/components/dashboards/DashboardDoctor.vue");
 
 
 
 
-
-
-
-
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -1992,28 +1989,37 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var DashboardResource = new _providers_DashBoards__WEBPACK_IMPORTED_MODULE_15__["default"]();
-var PaymentResource = new _providers_Payments__WEBPACK_IMPORTED_MODULE_14__["default"]();
-var AppointmentResource = new _providers_Appointments__WEBPACK_IMPORTED_MODULE_16__["default"]();
+
+
+
+
+
+
+
+
+
+var DashboardResource = new _providers_DashBoards__WEBPACK_IMPORTED_MODULE_17__["default"]();
+var PaymentResource = new _providers_Payments__WEBPACK_IMPORTED_MODULE_16__["default"]();
+var AppointmentResource = new _providers_Appointments__WEBPACK_IMPORTED_MODULE_18__["default"]();
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    BRow: bootstrap_vue__WEBPACK_IMPORTED_MODULE_2__["BRow"],
-    BCol: bootstrap_vue__WEBPACK_IMPORTED_MODULE_2__["BCol"],
-    BCard: bootstrap_vue__WEBPACK_IMPORTED_MODULE_2__["BCard"],
-    BTable: bootstrap_vue__WEBPACK_IMPORTED_MODULE_2__["BTable"],
-    BSpinner: bootstrap_vue__WEBPACK_IMPORTED_MODULE_2__["BSpinner"],
-    DashboardEarning: _core_components_dashboards_DashboardEarning_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-    DashboardStatistics: _core_components_dashboards_DashboardStatistics_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-    DashboardCardBudget: _core_components_dashboards_DashboardCardBudget_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
-    DashboardCardAppointments: _core_components_dashboards_DashboardCardAppointments_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
-    DashboardCardDoctors: _core_components_dashboards_DashboardCardDoctors_vue__WEBPACK_IMPORTED_MODULE_8__["default"],
-    DashboardCardNewPatients: _core_components_dashboards_DashboardCardNewPatients_vue__WEBPACK_IMPORTED_MODULE_9__["default"],
-    DashboardCardTransactions: _core_components_dashboards_DashboardCardTransactions_vue__WEBPACK_IMPORTED_MODULE_10__["default"],
-    DashboardCentral: _DashboardCentral_vue__WEBPACK_IMPORTED_MODULE_12__["default"],
+    BRow: bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__["BRow"],
+    BCol: bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__["BCol"],
+    BCard: bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__["BCard"],
+    BTable: bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__["BTable"],
+    BSpinner: bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__["BSpinner"],
+    DashboardEarning: _core_components_dashboards_DashboardEarning_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+    DashboardStatistics: _core_components_dashboards_DashboardStatistics_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
+    DashboardCardBudget: _core_components_dashboards_DashboardCardBudget_vue__WEBPACK_IMPORTED_MODULE_8__["default"],
+    DashboardCardAppointments: _core_components_dashboards_DashboardCardAppointments_vue__WEBPACK_IMPORTED_MODULE_9__["default"],
+    DashboardCardDoctors: _core_components_dashboards_DashboardCardDoctors_vue__WEBPACK_IMPORTED_MODULE_10__["default"],
+    DashboardCardNewPatients: _core_components_dashboards_DashboardCardNewPatients_vue__WEBPACK_IMPORTED_MODULE_11__["default"],
+    DashboardCardTransactions: _core_components_dashboards_DashboardCardTransactions_vue__WEBPACK_IMPORTED_MODULE_12__["default"],
+    DashboardCentral: _DashboardCentral_vue__WEBPACK_IMPORTED_MODULE_14__["default"],
     //
-    CalendarDays: _core_components_dashboards_CalendarDays_vue__WEBPACK_IMPORTED_MODULE_11__["default"],
-    DashboardAppointments: _core_components_dashboards_DashboardAppointments_vue__WEBPACK_IMPORTED_MODULE_17__["default"],
-    DashboardDoctor: _core_components_dashboards_DashboardDoctor_vue__WEBPACK_IMPORTED_MODULE_18__["default"]
+    CalendarDays: _core_components_dashboards_CalendarDays_vue__WEBPACK_IMPORTED_MODULE_13__["default"],
+    DashboardAppointments: _core_components_dashboards_DashboardAppointments_vue__WEBPACK_IMPORTED_MODULE_19__["default"],
+    DashboardDoctor: _core_components_dashboards_DashboardDoctor_vue__WEBPACK_IMPORTED_MODULE_20__["default"]
   },
   data: function data() {
     return {
@@ -2041,54 +2047,49 @@ var AppointmentResource = new _providers_Appointments__WEBPACK_IMPORTED_MODULE_1
   created: function created() {},
   computed: {
     isAdmin: function isAdmin() {
-      return _store__WEBPACK_IMPORTED_MODULE_13__["default"].getters['auth/getRoleId'] === 1;
+      return _store__WEBPACK_IMPORTED_MODULE_15__["default"].getters['auth/getRoleId'] === 1;
     },
     isDirector: function isDirector() {
-      return _store__WEBPACK_IMPORTED_MODULE_13__["default"].getters['auth/getRoleId'] === 2;
+      return _store__WEBPACK_IMPORTED_MODULE_15__["default"].getters['auth/getRoleId'] === 2;
     },
     isDoctor: function isDoctor() {
-      return _store__WEBPACK_IMPORTED_MODULE_13__["default"].getters['auth/getRoleId'] === 4;
+      return _store__WEBPACK_IMPORTED_MODULE_15__["default"].getters['auth/getRoleId'] === 4;
     },
     isPatient: function isPatient() {
-      return _store__WEBPACK_IMPORTED_MODULE_13__["default"].getters['auth/getRoleId'] === 5;
+      return _store__WEBPACK_IMPORTED_MODULE_15__["default"].getters['auth/getRoleId'] === 5;
     },
     isTenant: function isTenant() {
       return this.checkIsTenant();
-    },
-    validaTenant: function validaTenant() {
-      var hostname = window.location.hostname;
-      var parts = hostname.split('.');
-      console.log("hostname ".concat(hostname));
-      console.log("parts ".concat(parts));
-      console.log("Domain: ".concat("localhost"));
-
-      // Si la URL es localhost o una dirección IP, no hay subdominio.
-      if (parts.length === 1 || parts[0] === 'localhost' || parts[0] === "localhost") {
-        return false;
-      }
-
-      // Si hay al menos dos partes en el nombre de host, el subdominio es la primera parte.
-      if (parts.length >= 2) {
-        return true;
-      }
-      return false;
     }
   },
   mounted: function mounted() {
     var _this = this;
     return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee() {
+      var host, domain, parts;
       return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
-            console.log("is tenant: ".concat(_this.isTenant));
-            console.log(_this.validaTenant);
+            // const hostname = "https://fichadentales.com/login"
+            // const parts = hostname.split('.');
+            // console.log(`${hostname}`)
+            // console.log(parts)
+            host = "localhost";
+            domain = host.replace(/^(https?|ftp):\/\//, '').replace(/^www\./, '');
+            parts = domain.split('.');
+            console.log(parts.length);
+            console.log(parts);
+            console.log(parts[0]);
+
+            // console.log(`is tenant: ${this.isTenant}`)  
+            // console.log(this.validaTenant)
+
             if (_this.isTenant) {
               // await this.getIDashboardService()
               if (_this.isDoctor) {
                 // await this.onCallPayments()
               }
             }
-          case 3:
+          case 7:
           case "end":
             return _context.stop();
         }
