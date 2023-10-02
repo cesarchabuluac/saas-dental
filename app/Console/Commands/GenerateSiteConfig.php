@@ -77,17 +77,21 @@ class GenerateSiteConfig extends Command
                     // Crear un archivo temporal para la configuración de Nginx
                     file_put_contents($nginxConfigFilePath, $nginxConfig);
                     Log::warning("generate file");
+                    sleep(5);
 
                     // Copiar el archivo temporal a la ubicación de configuración de Nginx con sudo
                     exec("sudo cp /tmp/nginx_config /etc/nginx/sites-available/$tenantSubdomain");
                     Log::warning("use cp");
+                    sleep(5);
 
                     exec("sudo ln -s /etc/nginx/sites-available/$tenantSubdomain /etc/nginx/sites-enabled/");
                     Log::warning("enabled sites");
+                    sleep(5);
 
                     // Recargar la configuración de Nginx
                     exec('sudo service nginx reload');
                     Log::warning("reload nginx");
+                    sleep(5);
                 }
             }
         });
