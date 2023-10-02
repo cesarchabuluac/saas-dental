@@ -210,6 +210,12 @@ function generateSubDomainOnDO($subdomain, $domain = "fichadentales.com")
         root /var/www/fichadentales/public;
         index index.php index.html index.htm index.nginx-debian.html;
 
+        add_header X-Frame-Options "SAMEORIGIN";
+        add_header X-XSS-Protection "1; mode=block";
+        add_header X-Content-Type-Options "nosniff";
+
+        charset utf-8;
+
         server_name $tenantSubdomain.$mainDomain www.$tenantSubdomain.$mainDomain;
 
         location / {
@@ -232,10 +238,21 @@ function generateSubDomainOnDO($subdomain, $domain = "fichadentales.com")
     EOL;
 
     $tenantConfigPath = "/etc/nginx/sites-available/$tenantSubdomain";
-    File::put($tenantConfigPath, $nginxConfig);
+    $nginxConfigFilePath = '/tmp/nginx_config'; // Ruta temporal para el archivo de configuración
 
-    $tenantConfigEnabledPath = "/etc/nginx/sites-enabled/$tenantSubdomain";
-    File::link($tenantConfigPath, $tenantConfigEnabledPath);
+    // Crear un archivo temporal para la configuración de Nginx
+    file_put_contents($nginxConfigFilePath, $nginxConfig);
+
+    // Copiar el archivo temporal a la ubicación de configuración de Nginx con sudo
+    exec("sudo cp $nginxConfigFilePath $tenantConfigPath");
+
+    // $tenantConfigPath = "/etc/nginx/sites-available/$tenantSubdomain";
+    // File::put($tenantConfigPath, $nginxConfig);
+
+    // $tenantConfigEnabledPath = "/etc/nginx/sites-enabled/$tenantSubdomain";
+    // File::link($tenantConfigPath, $tenantConfigEnabledPath);
+
+    exec("sudo ln -s /etc/nginx/sites-available/$tenantSubdomain /etc/nginx/sites-enabled/");
 
     // Recargar la configuración de Nginx
     exec('sudo service nginx reload');
