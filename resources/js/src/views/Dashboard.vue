@@ -246,6 +246,7 @@ export default {
     },
     async mounted() {     
         console.log(`is tenant: ${this.isTenant}`)  
+        console.log(this.validaTenant)
         if (this.isTenant) {
             await this.getIDashboardService()
             if (this.isDoctor) {

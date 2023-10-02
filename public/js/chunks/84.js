@@ -1,1 +1,2586 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[84],{"08sT":function(t,e,n){"use strict";n.d(e,"a",(function(){return $})),n.d(e,"c",(function(){return P})),n.d(e,"b",(function(){return z}));var o,s,a=n("L3ns"),i=n("pyNs"),r=n("AFYn"),l=n("kGy3"),c=n("ex6f"),d=n("PCFI"),p=n("WPLV"),u=n("2C+6"),m=n("z3V6"),h=n("STsD"),w=n("3ec0"),f=n("qVMd"),b=n("rUdO"),g=n("1SAT"),v=n("kO/s"),_=n("jBgq");function y(t,e){var n=Object.keys(t);if(Object.getOwnPropertySymbols){var o=Object.getOwnPropertySymbols(t);e&&(o=o.filter((function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),n.push.apply(n,o)}return n}function x(t){for(var e=1;e<arguments.length;e++){var n=null!=arguments[e]?arguments[e]:{};e%2?y(Object(n),!0).forEach((function(e){k(t,e,n[e])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(n)):y(Object(n)).forEach((function(e){Object.defineProperty(t,e,Object.getOwnPropertyDescriptor(n,e))}))}return t}function k(t,e,n){return e in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}var O=Object(p.a)("checked",{defaultValue:null}),C=O.mixin,j=O.props,S=O.prop,$=O.event,P=Object(m.d)(Object(u.m)(x(x(x(x(x(x(x({},v.b),j),w.b),b.b),g.b),f.b),{},{ariaLabel:Object(m.c)(i.u),ariaLabelledby:Object(m.c)(i.u),button:Object(m.c)(i.g,!1),buttonVariant:Object(m.c)(i.u),inline:Object(m.c)(i.g,!1),value:Object(m.c)(i.a)})),"formRadioCheckControls"),z=Object(a.c)({mixins:[h.a,v.a,C,_.a,w.a,b.a,g.a,f.a],inheritAttrs:!1,props:P,data:function(){return{localChecked:this.isGroup?this.bvGroup[S]:this[S],hasFocus:!1}},computed:{computedLocalChecked:{get:function(){return this.isGroup?this.bvGroup.localChecked:this.localChecked},set:function(t){this.isGroup?this.bvGroup.localChecked=t:this.localChecked=t}},isChecked:function(){return Object(d.a)(this.value,this.computedLocalChecked)},isRadio:function(){return!0},isGroup:function(){return!!this.bvGroup},isBtnMode:function(){return this.isGroup?this.bvGroup.buttons:this.button},isPlain:function(){return!this.isBtnMode&&(this.isGroup?this.bvGroup.plain:this.plain)},isCustom:function(){return!this.isBtnMode&&!this.isPlain},isSwitch:function(){return!(this.isBtnMode||this.isRadio||this.isPlain)&&(this.isGroup?this.bvGroup.switches:this.switch)},isInline:function(){return this.isGroup?this.bvGroup.inline:this.inline},isDisabled:function(){return this.isGroup&&this.bvGroup.disabled||this.disabled},isRequired:function(){return this.computedName&&(this.isGroup?this.bvGroup.required:this.required)},computedName:function(){return(this.isGroup?this.bvGroup.groupName:this.name)||null},computedForm:function(){return(this.isGroup?this.bvGroup.form:this.form)||null},computedSize:function(){return(this.isGroup?this.bvGroup.size:this.size)||""},computedState:function(){return this.isGroup?this.bvGroup.computedState:Object(c.b)(this.state)?this.state:null},computedButtonVariant:function(){var t=this.buttonVariant;return t||(this.isGroup&&this.bvGroup.buttonVariant?this.bvGroup.buttonVariant:"secondary")},buttonClasses:function(){var t,e=this.computedSize;return["btn","btn-".concat(this.computedButtonVariant),(t={},k(t,"btn-".concat(e),e),k(t,"disabled",this.isDisabled),k(t,"active",this.isChecked),k(t,"focus",this.hasFocus),t)]},computedAttrs:function(){var t=this.isDisabled,e=this.isRequired;return x(x({},this.bvAttrs),{},{id:this.safeId(),type:this.isRadio?"radio":"checkbox",name:this.computedName,form:this.computedForm,disabled:t,required:e,"aria-required":e||null,"aria-label":this.ariaLabel||null,"aria-labelledby":this.ariaLabelledby||null})}},watch:(o={},k(o,S,(function(){this["".concat(S,"Watcher")].apply(this,arguments)})),k(o,"computedLocalChecked",(function(){this.computedLocalCheckedWatcher.apply(this,arguments)})),o),methods:(s={},k(s,"".concat(S,"Watcher"),(function(t){Object(d.a)(t,this.computedLocalChecked)||(this.computedLocalChecked=t)})),k(s,"computedLocalCheckedWatcher",(function(t,e){Object(d.a)(t,e)||this.$emit($,t)})),k(s,"handleChange",(function(t){var e=this,n=t.target.checked,o=this.value,s=n?o:null;this.computedLocalChecked=o,this.$nextTick((function(){e.$emit(r.d,s),e.isGroup&&e.bvGroup.$emit(r.d,s)}))})),k(s,"handleFocus",(function(t){t.target&&("focus"===t.type?this.hasFocus=!0:"blur"===t.type&&(this.hasFocus=!1))})),k(s,"focus",(function(){this.isDisabled||Object(l.d)(this.$refs.input)})),k(s,"blur",(function(){this.isDisabled||Object(l.c)(this.$refs.input)})),s),render:function(t){var e=this.isRadio,n=this.isBtnMode,o=this.isPlain,s=this.isCustom,a=this.isInline,i=this.isSwitch,r=this.computedSize,l=this.bvAttrs,c=this.normalizeSlot(),d=t("input",{class:[{"form-check-input":o,"custom-control-input":s,"position-static":o&&!c},n?"":this.stateClass],directives:[{name:"model",value:this.computedLocalChecked}],attrs:this.computedAttrs,domProps:{value:this.value,checked:this.isChecked},on:x({change:this.handleChange},n?{focus:this.handleFocus,blur:this.handleFocus}:{}),key:"input",ref:"input"});if(n){var p=t("label",{class:this.buttonClasses},[d,c]);return this.isGroup||(p=t("div",{class:["btn-group-toggle","d-inline-block"]},[p])),p}var u=t();return o&&!c||(u=t("label",{class:{"form-check-label":o,"custom-control-label":s},attrs:{for:this.safeId()}},c)),t("div",{class:[k({"form-check":o,"form-check-inline":o&&a,"custom-control":s,"custom-control-inline":s&&a,"custom-checkbox":s&&!e&&!i,"custom-switch":i,"custom-radio":s&&e},"b-custom-control-".concat(r),r&&!n),l.class],style:l.style},[d,u])}})},"38ta":function(t,e,n){var o=n("i9WM");"string"==typeof o&&(o=[[t.i,o,""]]);var s={hmr:!0,transform:void 0,insertInto:void 0};n("aET+")(o,s);o.locals&&(t.exports=o.locals)},"4AkS":function(t,e,n){"use strict";var o={bind:function(t,e){var n={event:"mousedown",transition:600};!function(t,e){t.forEach((function(t){isNaN(Number(t))?e.event=t:e.transition=t}))}(Object.keys(e.modifiers),n),t.addEventListener(n.event,(function(o){!function(t,e){var o=e,i=parseInt(getComputedStyle(o).borderWidth.replace("px","")),r=o.getBoundingClientRect(),l=r.left,c=r.top,d=o.offsetWidth,p=o.offsetHeight,u=t.clientX-l,m=t.clientY-c,h=Math.max(u,d-u),w=Math.max(m,p-m),f=window.getComputedStyle(o),b=Math.sqrt(h*h+w*w),g=i>0?i:0,v=document.createElement("div"),_=document.createElement("div");_.className="ripple-container",v.className="ripple",v.style.marginTop="0px",v.style.marginLeft="0px",v.style.width="1px",v.style.height="1px",v.style.transition="all "+n.transition+"ms cubic-bezier(0.4, 0, 0.2, 1)",v.style.borderRadius="50%",v.style.pointerEvents="none",v.style.position="relative",v.style.zIndex=a,v.style.backgroundColor=s,_.style.position="absolute",_.style.left=0-g+"px",_.style.top=0-g+"px",_.style.height="0",_.style.width="0",_.style.pointerEvents="none",_.style.overflow="hidden";var y=o.style.position.length>0?o.style.position:getComputedStyle(o).position;"relative"!==y&&(o.style.position="relative");function x(){setTimeout((function(){v.style.backgroundColor="rgba(0, 0, 0, 0)"}),250),setTimeout((function(){_.parentNode.removeChild(_)}),850),e.removeEventListener("mouseup",x,!1),setTimeout((function(){for(var t=!0,e=0;e<o.childNodes.length;e++)"ripple-container"===o.childNodes[e].className&&(t=!1);t&&(o.style.position="static"!==y?y:"")}),n.transition+250)}_.appendChild(v),o.appendChild(_),v.style.marginLeft=u+"px",v.style.marginTop=m+"px",_.style.width=d+"px",_.style.height=p+"px",_.style.borderTopLeftRadius=f.borderTopLeftRadius,_.style.borderTopRightRadius=f.borderTopRightRadius,_.style.borderBottomLeftRadius=f.borderBottomLeftRadius,_.style.borderBottomRightRadius=f.borderBottomRightRadius,_.style.direction="ltr",setTimeout((function(){v.style.width=2*b+"px",v.style.height=2*b+"px",v.style.marginLeft=u-b+"px",v.style.marginTop=m-b+"px"}),0),"mousedown"===t.type?e.addEventListener("mouseup",x,!1):x()}(o,t,e.value)}));var s=e.value||o.color||"rgba(0, 0, 0, 0.35)",a=o.zIndex||"9999"}};e.a=o},"ARq/":function(t,e,n){var o=n("nl3H");"string"==typeof o&&(o=[[t.i,o,""]]);var s={hmr:!0,transform:void 0,insertInto:void 0};n("aET+")(o,s);o.locals&&(t.exports=o.locals)},DlN5:function(t,e,n){"use strict";n.d(e,"a",(function(){return r}));var o=n("1OyB"),s=n("vuIU"),a=n("vDqi"),i=n.n(a),r=function(){function t(){Object(o.a)(this,t)}return Object(s.a)(t,[{key:"getList",value:function(t){return i.a.get("/api/payments",{params:t})}},{key:"dashboard",value:function(t){return i.a.get("/api/payments/dashboard",{params:t})}},{key:"store",value:function(t){return i.a.post("/api/payments",t)}},{key:"storeCollection",value:function(t){return i.a.post("/api/payments/collection",t)}},{key:"storePartial",value:function(t){return i.a.post("/api/payments/partial",t)}},{key:"detail",value:function(t){return i.a.get("/api/payments/".concat(t,"/preview"))}},{key:"deletePayment",value:function(t,e){return i.a.delete("/api/payments/".concat(t),{params:e})}},{key:"send",value:function(t){return i.a.post("/api/payments/send/",t)}},{key:"donwloadPDF",value:function(t,e){return i.a.post("/api/payments/pdf",{id:t},{responseType:"arraybuffer"},{params:e})}}]),t}()},MMM8:function(t,e,n){"use strict";n("38ta")},OOfG:function(t,e,n){"use strict";var o=n("KHd+"),s=Object(o.a)({},(function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("svg",{attrs:{viewBox:"0 0 139 95",version:"1.1",xmlns:"http://www.w3.org/2000/svg","xmlns:xlink":"http://www.w3.org/1999/xlink",height:"24"}},[n("defs",[n("linearGradient",{attrs:{id:"linearGradient-1",x1:"100%",y1:"10.5120544%",x2:"50%",y2:"89.4879456%"}},[n("stop",{attrs:{"stop-color":"#000000",offset:"0%"}}),t._v(" "),n("stop",{attrs:{"stop-color":"#FFFFFF",offset:"100%"}})],1),t._v(" "),n("linearGradient",{attrs:{id:"linearGradient-2",x1:"64.0437835%",y1:"46.3276743%",x2:"37.373316%",y2:"100%"}},[n("stop",{attrs:{"stop-color":"#EEEEEE","stop-opacity":"0",offset:"0%"}}),t._v(" "),n("stop",{attrs:{"stop-color":"#FFFFFF",offset:"100%"}})],1)],1),t._v(" "),n("g",{attrs:{id:"Page-1",stroke:"none","stroke-width":"1",fill:"none","fill-rule":"evenodd"}},[n("g",{attrs:{id:"Artboard",transform:"translate(-400.000000, -178.000000)"}},[n("g",{attrs:{id:"Group",transform:"translate(400.000000, 178.000000)"}},[n("path",{staticClass:"text-primary",staticStyle:{fill:"currentColor"},attrs:{id:"Path",d:"M-5.68434189e-14,2.84217094e-14 L39.1816085,2.84217094e-14 L69.3453773,32.2519224 L101.428699,2.84217094e-14 L138.784583,2.84217094e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L6.71554594,44.4188507 C2.46876683,39.9813776 0.345377275,35.1089553 0.345377275,29.8015838 C0.345377275,24.4942122 0.230251516,14.560351 -5.68434189e-14,2.84217094e-14 Z"}}),t._v(" "),n("path",{attrs:{id:"Path1",d:"M69.3453773,32.2519224 L101.428699,1.42108547e-14 L138.784583,1.42108547e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L32.8435758,70.5039241 L69.3453773,32.2519224 Z",fill:"url(#linearGradient-1)",opacity:"0.2"}}),t._v(" "),n("polygon",{attrs:{id:"Path-2",fill:"#000000",opacity:"0.049999997",points:"69.3922914 32.4202615 32.8435758 70.5039241 54.0490008 16.1851325"}}),t._v(" "),n("polygon",{attrs:{id:"Path-21",fill:"#000000",opacity:"0.099999994",points:"69.3922914 32.4202615 32.8435758 70.5039241 58.3683556 20.7402338"}}),t._v(" "),n("polygon",{attrs:{id:"Path-3",fill:"url(#linearGradient-2)",opacity:"0.099999994",points:"101.428699 0 83.0667527 94.1480575 130.378721 47.0740288"}})])])])])}),[],!1,null,null,null);e.a=s.exports},Obrr:function(t,e,n){"use strict";n.d(e,"a",(function(){return B}));var o=n("xjcK"),s=n("6GPe"),a=n("AFYn"),i=n("m/oX"),r=n("mS7b"),l=n("Iyau"),c=n("TlNa"),d=n("kGy3"),p=n("a3f1"),u=n("ex6f"),m=n("PCFI"),h=n("2C+6"),w=n("39rg"),f="__BV_toggle",b="".concat(f,"_HANDLER__"),g="".concat(f,"_CLICK__"),v="".concat(f,"_STATE__"),_="".concat(f,"_TARGETS__"),y=Object(p.d)(o.u,"toggle"),x=Object(p.e)(o.u,"state"),k=Object(p.e)(o.u,"sync-state"),O=Object(p.d)(o.u,"request-state"),C=[i.e,i.l],j=function(t){return!Object(l.a)(["button","a"],t.tagName.toLowerCase())},S=function(t){var e=t[g];e&&(Object(p.a)(t,"click",e,a.Z),Object(p.a)(t,"keydown",e,a.Z)),t[g]=null},$=function(t,e){t[b]&&e&&Object(w.a)(e).$off([x,k],t[b]),t[b]=null},P=function(t,e){e?(Object(d.y)(t,"collapsed"),Object(d.b)(t,"not-collapsed"),Object(d.E)(t,"aria-expanded","true")):(Object(d.y)(t,"not-collapsed"),Object(d.b)(t,"collapsed"),Object(d.E)(t,"aria-expanded","false"))},z=function(t,e){t[e]=null,delete t[e]},L=function(t,e,n){if(s.g&&Object(c.a)(n,e)){j(t)&&(Object(d.o)(t,"role")||Object(d.E)(t,"role","button"),Object(d.o)(t,"tabindex")||Object(d.E)(t,"tabindex","0")),P(t,t[v]);var o=function(t,e){var n=t.modifiers,o=t.arg,s=t.value,a=Object(h.h)(n||{});if(s=Object(u.n)(s)?s.split(r.u):s,Object(d.t)(e.tagName,"a")){var i=Object(d.h)(e,"href")||"";r.k.test(i)&&a.push(i.replace(r.j,""))}return Object(l.b)(o,s).forEach((function(t){return Object(u.n)(t)&&a.push(t)})),a.filter((function(t,e,n){return t&&n.indexOf(t)===e}))}(e,t);o.length>0?(Object(d.E)(t,"aria-controls",o.join(" ")),Object(d.F)(t,"overflow-anchor","none")):(Object(d.x)(t,"aria-controls"),Object(d.A)(t,"overflow-anchor")),Object(d.B)((function(){!function(t,e){if(S(t),e){var n=function(n){"keydown"===n.type&&!Object(l.a)(C,n.keyCode)||Object(d.r)(t)||(t[_]||[]).forEach((function(t){Object(w.a)(e).$emit(y,t)}))};t[g]=n,Object(p.b)(t,"click",n,a.Z),j(t)&&Object(p.b)(t,"keydown",n,a.Z)}}(t,Object(c.a)(n,e))})),Object(m.a)(o,t[_])||(t[_]=o,o.forEach((function(t){Object(w.a)(Object(c.a)(n,e)).$emit(O,t)})))}},B={bind:function(t,e,n){t[v]=!1,t[_]=[],function(t,e){if($(t,e),e){var n=function(e,n){Object(l.a)(t[_]||[],e)&&(t[v]=n,P(t,n))};t[b]=n,Object(w.a)(e).$on([x,k],n)}}(t,Object(c.a)(n,e)),L(t,e,n)},componentUpdated:L,updated:L,unbind:function(t,e,n){S(t),$(t,Object(c.a)(n,e)),z(t,b),z(t,g),z(t,v),z(t,_),Object(d.y)(t,"collapsed"),Object(d.y)(t,"not-collapsed"),Object(d.x)(t,"aria-expanded"),Object(d.x)(t,"aria-controls"),Object(d.x)(t,"role"),Object(d.A)(t,"overflow-anchor")}}},"Snq/":function(t,e,n){"undefined"!=typeof self&&self,t.exports=(()=>{var t={646:t=>{t.exports=function(t){if(Array.isArray(t)){for(var e=0,n=new Array(t.length);e<t.length;e++)n[e]=t[e];return n}}},713:t=>{t.exports=function(t,e,n){return e in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}},860:t=>{t.exports=function(t){if(Symbol.iterator in Object(t)||"[object Arguments]"===Object.prototype.toString.call(t))return Array.from(t)}},206:t=>{t.exports=function(){throw new TypeError("Invalid attempt to spread non-iterable instance")}},319:(t,e,n)=>{var o=n(646),s=n(860),a=n(206);t.exports=function(t){return o(t)||s(t)||a()}},8:t=>{function e(n){return"function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?t.exports=e=function(t){return typeof t}:t.exports=e=function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},e(n)}t.exports=e}},e={};function n(o){var s=e[o];if(void 0!==s)return s.exports;var a=e[o]={exports:{}};return t[o](a,a.exports,n),a.exports}n.n=t=>{var e=t&&t.__esModule?()=>t.default:()=>t;return n.d(e,{a:e}),e},n.d=(t,e)=>{for(var o in e)n.o(e,o)&&!n.o(t,o)&&Object.defineProperty(t,o,{enumerable:!0,get:e[o]})},n.o=(t,e)=>Object.prototype.hasOwnProperty.call(t,e),n.r=t=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})};var o={};return(()=>{"use strict";n.r(o),n.d(o,{VueSelect:()=>b,default:()=>v,mixins:()=>g});var t=n(319),e=n.n(t),s=n(8),a=n.n(s),i=n(713),r=n.n(i);const l={props:{autoscroll:{type:Boolean,default:!0}},watch:{typeAheadPointer:function(){this.autoscroll&&this.maybeAdjustScroll()},open:function(t){var e=this;this.autoscroll&&t&&this.$nextTick((function(){return e.maybeAdjustScroll()}))}},methods:{maybeAdjustScroll:function(){var t,e=(null===(t=this.$refs.dropdownMenu)||void 0===t?void 0:t.children[this.typeAheadPointer])||!1;if(e){var n=this.getDropdownViewport(),o=e.getBoundingClientRect(),s=o.top,a=o.bottom,i=o.height;if(s<n.top)return this.$refs.dropdownMenu.scrollTop=e.offsetTop;if(a>n.bottom)return this.$refs.dropdownMenu.scrollTop=e.offsetTop-(n.height-i)}},getDropdownViewport:function(){return this.$refs.dropdownMenu?this.$refs.dropdownMenu.getBoundingClientRect():{height:0,top:0,bottom:0}}}},c={data:function(){return{typeAheadPointer:-1}},watch:{filteredOptions:function(){for(var t=0;t<this.filteredOptions.length;t++)if(this.selectable(this.filteredOptions[t])){this.typeAheadPointer=t;break}},open:function(t){t&&this.typeAheadToLastSelected()},selectedValue:function(){this.open&&this.typeAheadToLastSelected()}},methods:{typeAheadUp:function(){for(var t=this.typeAheadPointer-1;t>=0;t--)if(this.selectable(this.filteredOptions[t])){this.typeAheadPointer=t;break}},typeAheadDown:function(){for(var t=this.typeAheadPointer+1;t<this.filteredOptions.length;t++)if(this.selectable(this.filteredOptions[t])){this.typeAheadPointer=t;break}},typeAheadSelect:function(){var t=this.filteredOptions[this.typeAheadPointer];t&&this.selectable(t)&&this.select(t)},typeAheadToLastSelected:function(){var t=0!==this.selectedValue.length?this.filteredOptions.indexOf(this.selectedValue[this.selectedValue.length-1]):-1;-1!==t&&(this.typeAheadPointer=t)}}},d={props:{loading:{type:Boolean,default:!1}},data:function(){return{mutableLoading:!1}},watch:{search:function(){this.$emit("search",this.search,this.toggleLoading)},loading:function(t){this.mutableLoading=t}},methods:{toggleLoading:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:null;return this.mutableLoading=null==t?!this.mutableLoading:t}}};function p(t,e,n,o,s,a,i,r){var l,c="function"==typeof t?t.options:t;if(e&&(c.render=e,c.staticRenderFns=n,c._compiled=!0),o&&(c.functional=!0),a&&(c._scopeId="data-v-"+a),i?(l=function(t){(t=t||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext)||"undefined"==typeof __VUE_SSR_CONTEXT__||(t=__VUE_SSR_CONTEXT__),s&&s.call(this,t),t&&t._registeredComponents&&t._registeredComponents.add(i)},c._ssrRegister=l):s&&(l=r?function(){s.call(this,(c.functional?this.parent:this).$root.$options.shadowRoot)}:s),l)if(c.functional){c._injectStyles=l;var d=c.render;c.render=function(t,e){return l.call(e),d(t,e)}}else{var p=c.beforeCreate;c.beforeCreate=p?[].concat(p,l):[l]}return{exports:t,options:c}}const u={Deselect:p({},(function(){var t=this.$createElement,e=this._self._c||t;return e("svg",{attrs:{xmlns:"http://www.w3.org/2000/svg",width:"10",height:"10"}},[e("path",{attrs:{d:"M6.895455 5l2.842897-2.842898c.348864-.348863.348864-.914488 0-1.263636L9.106534.261648c-.348864-.348864-.914489-.348864-1.263636 0L5 3.104545 2.157102.261648c-.348863-.348864-.914488-.348864-1.263636 0L.261648.893466c-.348864.348864-.348864.914489 0 1.263636L3.104545 5 .261648 7.842898c-.348864.348863-.348864.914488 0 1.263636l.631818.631818c.348864.348864.914773.348864 1.263636 0L5 6.895455l2.842898 2.842897c.348863.348864.914772.348864 1.263636 0l.631818-.631818c.348864-.348864.348864-.914489 0-1.263636L6.895455 5z"}})])}),[],!1,null,null,null).exports,OpenIndicator:p({},(function(){var t=this.$createElement,e=this._self._c||t;return e("svg",{attrs:{xmlns:"http://www.w3.org/2000/svg",width:"14",height:"10"}},[e("path",{attrs:{d:"M9.211364 7.59931l4.48338-4.867229c.407008-.441854.407008-1.158247 0-1.60046l-.73712-.80023c-.407008-.441854-1.066904-.441854-1.474243 0L7 5.198617 2.51662.33139c-.407008-.441853-1.066904-.441853-1.474243 0l-.737121.80023c-.407008.441854-.407008 1.158248 0 1.600461l4.48338 4.867228L7 10l2.211364-2.40069z"}})])}),[],!1,null,null,null).exports},m={inserted:function(t,e,n){var o=n.context;if(o.appendToBody){var s=o.$refs.toggle.getBoundingClientRect(),a=s.height,i=s.top,r=s.left,l=s.width,c=window.scrollX||window.pageXOffset,d=window.scrollY||window.pageYOffset;t.unbindPosition=o.calculatePosition(t,o,{width:l+"px",left:c+r+"px",top:d+i+a+"px"}),document.body.appendChild(t)}},unbind:function(t,e,n){n.context.appendToBody&&(t.unbindPosition&&"function"==typeof t.unbindPosition&&t.unbindPosition(),t.parentNode&&t.parentNode.removeChild(t))}};var h=0;function w(t,e){var n=Object.keys(t);if(Object.getOwnPropertySymbols){var o=Object.getOwnPropertySymbols(t);e&&(o=o.filter((function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),n.push.apply(n,o)}return n}function f(t){for(var e=1;e<arguments.length;e++){var n=null!=arguments[e]?arguments[e]:{};e%2?w(Object(n),!0).forEach((function(e){r()(t,e,n[e])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(n)):w(Object(n)).forEach((function(e){Object.defineProperty(t,e,Object.getOwnPropertyDescriptor(n,e))}))}return t}const b=p({components:f({},u),directives:{appendToBody:m},mixins:[l,c,d],props:{value:{},components:{type:Object,default:function(){return{}}},options:{type:Array,default:function(){return[]}},disabled:{type:Boolean,default:!1},clearable:{type:Boolean,default:!0},deselectFromDropdown:{type:Boolean,default:!1},searchable:{type:Boolean,default:!0},multiple:{type:Boolean,default:!1},placeholder:{type:String,default:""},transition:{type:String,default:"vs__fade"},clearSearchOnSelect:{type:Boolean,default:!0},closeOnSelect:{type:Boolean,default:!0},label:{type:String,default:"label"},autocomplete:{type:String,default:"off"},reduce:{type:Function,default:function(t){return t}},selectable:{type:Function,default:function(t){return!0}},getOptionLabel:{type:Function,default:function(t){return"object"===a()(t)?t.hasOwnProperty(this.label)?t[this.label]:console.warn('[vue-select warn]: Label key "option.'.concat(this.label,'" does not')+" exist in options object ".concat(JSON.stringify(t),".\n")+"https://vue-select.org/api/props.html#getoptionlabel"):t}},getOptionKey:{type:Function,default:function(t){if("object"!==a()(t))return t;try{return t.hasOwnProperty("id")?t.id:function(t){var e={};return Object.keys(t).sort().forEach((function(n){e[n]=t[n]})),JSON.stringify(e)}(t)}catch(e){return console.warn("[vue-select warn]: Could not stringify this option to generate unique key. Please provide'getOptionKey' prop to return a unique key for each option.\nhttps://vue-select.org/api/props.html#getoptionkey",t,e)}}},onTab:{type:Function,default:function(){this.selectOnTab&&!this.isComposing&&this.typeAheadSelect()}},taggable:{type:Boolean,default:!1},tabindex:{type:Number,default:null},pushTags:{type:Boolean,default:!1},filterable:{type:Boolean,default:!0},filterBy:{type:Function,default:function(t,e,n){return(e||"").toLocaleLowerCase().indexOf(n.toLocaleLowerCase())>-1}},filter:{type:Function,default:function(t,e){var n=this;return t.filter((function(t){var o=n.getOptionLabel(t);return"number"==typeof o&&(o=o.toString()),n.filterBy(t,o,e)}))}},createOption:{type:Function,default:function(t){return"object"===a()(this.optionList[0])?r()({},this.label,t):t}},resetOnOptionsChange:{default:!1,validator:function(t){return["function","boolean"].includes(a()(t))}},clearSearchOnBlur:{type:Function,default:function(t){var e=t.clearSearchOnSelect,n=t.multiple;return e&&!n}},noDrop:{type:Boolean,default:!1},inputId:{type:String},dir:{type:String,default:"auto"},selectOnTab:{type:Boolean,default:!1},selectOnKeyCodes:{type:Array,default:function(){return[13]}},searchInputQuerySelector:{type:String,default:"[type=search]"},mapKeydown:{type:Function,default:function(t,e){return t}},appendToBody:{type:Boolean,default:!1},calculatePosition:{type:Function,default:function(t,e,n){var o=n.width,s=n.top,a=n.left;t.style.top=s,t.style.left=a,t.style.width=o}},dropdownShouldOpen:{type:Function,default:function(t){var e=t.noDrop,n=t.open,o=t.mutableLoading;return!e&&n&&!o}},uid:{type:[String,Number],default:function(){return++h}}},data:function(){return{search:"",open:!1,isComposing:!1,pushedTags:[],_value:[]}},computed:{isTrackingValues:function(){return void 0===this.value||this.$options.propsData.hasOwnProperty("reduce")},selectedValue:function(){var t=this.value;return this.isTrackingValues&&(t=this.$data._value),null!=t&&""!==t?[].concat(t):[]},optionList:function(){return this.options.concat(this.pushTags?this.pushedTags:[])},searchEl:function(){return this.$scopedSlots.search?this.$refs.selectedOptions.querySelector(this.searchInputQuerySelector):this.$refs.search},scope:function(){var t=this,e={search:this.search,loading:this.loading,searching:this.searching,filteredOptions:this.filteredOptions};return{search:{attributes:f({disabled:this.disabled,placeholder:this.searchPlaceholder,tabindex:this.tabindex,readonly:!this.searchable,id:this.inputId,"aria-autocomplete":"list","aria-labelledby":"vs".concat(this.uid,"__combobox"),"aria-controls":"vs".concat(this.uid,"__listbox"),ref:"search",type:"search",autocomplete:this.autocomplete,value:this.search},this.dropdownOpen&&this.filteredOptions[this.typeAheadPointer]?{"aria-activedescendant":"vs".concat(this.uid,"__option-").concat(this.typeAheadPointer)}:{}),events:{compositionstart:function(){return t.isComposing=!0},compositionend:function(){return t.isComposing=!1},keydown:this.onSearchKeyDown,keypress:this.onSearchKeyPress,blur:this.onSearchBlur,focus:this.onSearchFocus,input:function(e){return t.search=e.target.value}}},spinner:{loading:this.mutableLoading},noOptions:{search:this.search,loading:this.mutableLoading,searching:this.searching},openIndicator:{attributes:{ref:"openIndicator",role:"presentation",class:"vs__open-indicator"}},listHeader:e,listFooter:e,header:f({},e,{deselect:this.deselect}),footer:f({},e,{deselect:this.deselect})}},childComponents:function(){return f({},u,{},this.components)},stateClasses:function(){return{"vs--open":this.dropdownOpen,"vs--single":!this.multiple,"vs--multiple":this.multiple,"vs--searching":this.searching&&!this.noDrop,"vs--searchable":this.searchable&&!this.noDrop,"vs--unsearchable":!this.searchable,"vs--loading":this.mutableLoading,"vs--disabled":this.disabled}},searching:function(){return!!this.search},dropdownOpen:function(){return this.dropdownShouldOpen(this)},searchPlaceholder:function(){return this.isValueEmpty&&this.placeholder?this.placeholder:void 0},filteredOptions:function(){var t=[].concat(this.optionList);if(!this.filterable&&!this.taggable)return t;var e=this.search.length?this.filter(t,this.search,this):t;if(this.taggable&&this.search.length){var n=this.createOption(this.search);this.optionExists(n)||e.unshift(n)}return e},isValueEmpty:function(){return 0===this.selectedValue.length},showClearButton:function(){return!this.multiple&&this.clearable&&!this.open&&!this.isValueEmpty}},watch:{options:function(t,e){var n=this;!this.taggable&&("function"==typeof n.resetOnOptionsChange?n.resetOnOptionsChange(t,e,n.selectedValue):n.resetOnOptionsChange)&&this.clearSelection(),this.value&&this.isTrackingValues&&this.setInternalValueFromOptions(this.value)},value:{immediate:!0,handler:function(t){this.isTrackingValues&&this.setInternalValueFromOptions(t)}},multiple:function(){this.clearSelection()},open:function(t){this.$emit(t?"open":"close")},search:function(t){t.length&&(this.open=!0)}},created:function(){this.mutableLoading=this.loading,this.$on("option:created",this.pushTag)},methods:{setInternalValueFromOptions:function(t){var e=this;Array.isArray(t)?this.$data._value=t.map((function(t){return e.findOptionFromReducedValue(t)})):this.$data._value=this.findOptionFromReducedValue(t)},select:function(t){this.$emit("option:selecting",t),this.isOptionSelected(t)?this.deselectFromDropdown&&(this.clearable||this.multiple&&this.selectedValue.length>1)&&this.deselect(t):(this.taggable&&!this.optionExists(t)&&this.$emit("option:created",t),this.multiple&&(t=this.selectedValue.concat(t)),this.updateValue(t),this.$emit("option:selected",t)),this.onAfterSelect(t)},deselect:function(t){var e=this;this.$emit("option:deselecting",t),this.updateValue(this.selectedValue.filter((function(n){return!e.optionComparator(n,t)}))),this.$emit("option:deselected",t)},clearSelection:function(){this.updateValue(this.multiple?[]:null)},onAfterSelect:function(t){var e=this;this.closeOnSelect&&(this.open=!this.open),this.clearSearchOnSelect&&(this.search=""),this.noDrop&&this.multiple&&this.$nextTick((function(){return e.$refs.search.focus()}))},updateValue:function(t){var e=this;void 0===this.value&&(this.$data._value=t),null!==t&&(t=Array.isArray(t)?t.map((function(t){return e.reduce(t)})):this.reduce(t)),this.$emit("input",t)},toggleDropdown:function(t){var n=t.target!==this.searchEl;n&&t.preventDefault();var o=[].concat(e()(this.$refs.deselectButtons||[]),e()([this.$refs.clearButton]||!1));void 0===this.searchEl||o.filter(Boolean).some((function(e){return e.contains(t.target)||e===t.target}))?t.preventDefault():this.open&&n?this.searchEl.blur():this.disabled||(this.open=!0,this.searchEl.focus())},isOptionSelected:function(t){var e=this;return this.selectedValue.some((function(n){return e.optionComparator(n,t)}))},isOptionDeselectable:function(t){return this.isOptionSelected(t)&&this.deselectFromDropdown},optionComparator:function(t,e){return this.getOptionKey(t)===this.getOptionKey(e)},findOptionFromReducedValue:function(t){var n=this,o=[].concat(e()(this.options),e()(this.pushedTags)).filter((function(e){return JSON.stringify(n.reduce(e))===JSON.stringify(t)}));return 1===o.length?o[0]:o.find((function(t){return n.optionComparator(t,n.$data._value)}))||t},closeSearchOptions:function(){this.open=!1,this.$emit("search:blur")},maybeDeleteValue:function(){if(!this.searchEl.value.length&&this.selectedValue&&this.selectedValue.length&&this.clearable){var t=null;this.multiple&&(t=e()(this.selectedValue.slice(0,this.selectedValue.length-1))),this.updateValue(t)}},optionExists:function(t){var e=this;return this.optionList.some((function(n){return e.optionComparator(n,t)}))},normalizeOptionForSlot:function(t){return"object"===a()(t)?t:r()({},this.label,t)},pushTag:function(t){this.pushedTags.push(t)},onEscape:function(){this.search.length?this.search="":this.open=!1},onSearchBlur:function(){if(!this.mousedown||this.searching){var t=this.clearSearchOnSelect,e=this.multiple;return this.clearSearchOnBlur({clearSearchOnSelect:t,multiple:e})&&(this.search=""),void this.closeSearchOptions()}this.mousedown=!1,0!==this.search.length||0!==this.options.length||this.closeSearchOptions()},onSearchFocus:function(){this.open=!0,this.$emit("search:focus")},onMousedown:function(){this.mousedown=!0},onMouseUp:function(){this.mousedown=!1},onSearchKeyDown:function(t){var e=this,n=function(t){return t.preventDefault(),!e.isComposing&&e.typeAheadSelect()},o={8:function(t){return e.maybeDeleteValue()},9:function(t){return e.onTab()},27:function(t){return e.onEscape()},38:function(t){if(t.preventDefault(),e.open)return e.typeAheadUp();e.open=!0},40:function(t){if(t.preventDefault(),e.open)return e.typeAheadDown();e.open=!0}};this.selectOnKeyCodes.forEach((function(t){return o[t]=n}));var s=this.mapKeydown(o,this);if("function"==typeof s[t.keyCode])return s[t.keyCode](t)},onSearchKeyPress:function(t){this.open||32!==t.keyCode||(t.preventDefault(),this.open=!0)}}},(function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",{staticClass:"v-select",class:t.stateClasses,attrs:{dir:t.dir}},[t._t("header",null,null,t.scope.header),t._v(" "),n("div",{ref:"toggle",staticClass:"vs__dropdown-toggle",attrs:{id:"vs"+t.uid+"__combobox",role:"combobox","aria-expanded":t.dropdownOpen.toString(),"aria-owns":"vs"+t.uid+"__listbox","aria-label":"Search for option"},on:{mousedown:function(e){return t.toggleDropdown(e)}}},[n("div",{ref:"selectedOptions",staticClass:"vs__selected-options"},[t._l(t.selectedValue,(function(e){return t._t("selected-option-container",[n("span",{key:t.getOptionKey(e),staticClass:"vs__selected"},[t._t("selected-option",[t._v("\n            "+t._s(t.getOptionLabel(e))+"\n          ")],null,t.normalizeOptionForSlot(e)),t._v(" "),t.multiple?n("button",{ref:"deselectButtons",refInFor:!0,staticClass:"vs__deselect",attrs:{disabled:t.disabled,type:"button",title:"Deselect "+t.getOptionLabel(e),"aria-label":"Deselect "+t.getOptionLabel(e)},on:{click:function(n){return t.deselect(e)}}},[n(t.childComponents.Deselect,{tag:"component"})],1):t._e()],2)],{option:t.normalizeOptionForSlot(e),deselect:t.deselect,multiple:t.multiple,disabled:t.disabled})})),t._v(" "),t._t("search",[n("input",t._g(t._b({staticClass:"vs__search"},"input",t.scope.search.attributes,!1),t.scope.search.events))],null,t.scope.search)],2),t._v(" "),n("div",{ref:"actions",staticClass:"vs__actions"},[n("button",{directives:[{name:"show",rawName:"v-show",value:t.showClearButton,expression:"showClearButton"}],ref:"clearButton",staticClass:"vs__clear",attrs:{disabled:t.disabled,type:"button",title:"Clear Selected","aria-label":"Clear Selected"},on:{click:t.clearSelection}},[n(t.childComponents.Deselect,{tag:"component"})],1),t._v(" "),t._t("open-indicator",[t.noDrop?t._e():n(t.childComponents.OpenIndicator,t._b({tag:"component"},"component",t.scope.openIndicator.attributes,!1))],null,t.scope.openIndicator),t._v(" "),t._t("spinner",[n("div",{directives:[{name:"show",rawName:"v-show",value:t.mutableLoading,expression:"mutableLoading"}],staticClass:"vs__spinner"},[t._v("Loading...")])],null,t.scope.spinner)],2)]),t._v(" "),n("transition",{attrs:{name:t.transition}},[t.dropdownOpen?n("ul",{directives:[{name:"append-to-body",rawName:"v-append-to-body"}],key:"vs"+t.uid+"__listbox",ref:"dropdownMenu",staticClass:"vs__dropdown-menu",attrs:{id:"vs"+t.uid+"__listbox",role:"listbox",tabindex:"-1"},on:{mousedown:function(e){return e.preventDefault(),t.onMousedown(e)},mouseup:t.onMouseUp}},[t._t("list-header",null,null,t.scope.listHeader),t._v(" "),t._l(t.filteredOptions,(function(e,o){return n("li",{key:t.getOptionKey(e),staticClass:"vs__dropdown-option",class:{"vs__dropdown-option--deselect":t.isOptionDeselectable(e)&&o===t.typeAheadPointer,"vs__dropdown-option--selected":t.isOptionSelected(e),"vs__dropdown-option--highlight":o===t.typeAheadPointer,"vs__dropdown-option--disabled":!t.selectable(e)},attrs:{id:"vs"+t.uid+"__option-"+o,role:"option","aria-selected":o===t.typeAheadPointer||null},on:{mouseover:function(n){t.selectable(e)&&(t.typeAheadPointer=o)},click:function(n){n.preventDefault(),n.stopPropagation(),t.selectable(e)&&t.select(e)}}},[t._t("option",[t._v("\n          "+t._s(t.getOptionLabel(e))+"\n        ")],null,t.normalizeOptionForSlot(e))],2)})),t._v(" "),0===t.filteredOptions.length?n("li",{staticClass:"vs__no-options"},[t._t("no-options",[t._v("\n          Sorry, no matching options.\n        ")],null,t.scope.noOptions)],2):t._e(),t._v(" "),t._t("list-footer",null,null,t.scope.listFooter)],2):n("ul",{staticStyle:{display:"none",visibility:"hidden"},attrs:{id:"vs"+t.uid+"__listbox",role:"listbox"}})]),t._v(" "),t._t("footer",null,null,t.scope.footer)],2)}),[],!1,null,null,null).exports,g={ajax:d,pointer:c,pointerScroll:l},v=b})(),o})()},i9WM:function(t,e,n){(e=n("JPst")(!1)).push([t.i,"@media print {\n[dir] body {\n    background-color: transparent !important;\n}\nnav.header-navbar {\n    display: none;\n}\n.main-menu {\n    display: none;\n}\n.header-navbar-shadow {\n    display: none !important;\n}\n[dir] .content.app-content {\n    padding-top: 2rem !important;\n}\n[dir=ltr] .content.app-content {\n    margin-left: 0;\n}\n[dir=rtl] .content.app-content {\n    margin-right: 0;\n}\nfooter.footer {\n    display: none;\n}\n[dir] .card {\n    background-color: transparent;\n    box-shadow: none;\n}\n.customizer-toggle {\n    display: none !important;\n}\n.invoice-preview-wrapper .row.invoice-preview .col-md-8 {\n    max-width: 100%;\n    flex-grow: 1;\n}\n.invoice-preview-wrapper .row.invoice-preview .invoice-preview-card .card-body:nth-of-type(2) .row > .col-12 {\n    max-width: 50% !important;\n}\n.invoice-preview-wrapper .row.invoice-preview .invoice-preview-card .card-body:nth-of-type(2) .row .col-12:nth-child(2) {\n    display: flex;\n    align-items: flex-start;\n    justify-content: flex-end;\n}\n[dir] .invoice-preview-wrapper .row.invoice-preview .invoice-preview-card .card-body:nth-of-type(2) .row .col-12:nth-child(2) {\n    margin-top: 0 !important;\n}\n.invoice-preview-wrapper .invoice-actions {\n    display: none;\n}\n}",""]),t.exports=e},nl3H:function(t,e,n){var o=n("JPst"),s=n("nm7J");(e=o(!1)).i(s),e.push([t.i,"[dir] .swal2-container .swal2-popup {\n  border-radius: 0.428rem;\n  padding-bottom: 1.5rem;\n}\n.swal2-container .swal2-popup .swal2-close:focus {\n  outline: none;\n}\n[dir] .swal2-container .swal2-popup .swal2-close:focus {\n  box-shadow: none;\n}\n.swal2-container .swal2-popup .swal2-content {\n  color: #6e6b7b;\n}\n.swal2-container .swal2-popup .swal2-title {\n  font-size: 1.5rem;\n  font-weight: inherit;\n  color: #5e5873;\n}\n[dir] .swal2-container .swal2-popup button.swal2-confirm:focus {\n  box-shadow: none;\n}\n.swal2-container .swal2-popup input.swal2-input {\n  height: 2.714rem;\n  font-size: 1rem;\n  color: #6e6b7b;\n  line-height: 1.45;\n}\n[dir] .swal2-container .swal2-popup input.swal2-input {\n  padding: 0.438rem 1rem;\n  border-color: #d8d6de;\n  border-radius: 0.357rem;\n}\n[dir] .swal2-container .swal2-popup input.swal2-input:focus {\n  border-color: #7367f0 !important;\n  box-shadow: 0 3px 10px 0 rgba(34, 41, 47, 0.1);\n}\n[dir] .swal2-container .swal2-popup .swal2-progress-steps .swal2-progress-step {\n  background-color: #7367f0;\n}\n[dir] .swal2-container .swal2-popup .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step ~ .swal2-progress-step-line, [dir] .swal2-container .swal2-popup .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step ~ .swal2-progress-step {\n  background-color: #b3adf7;\n}\n[dir] .swal2-container .swal2-popup .swal2-progress-steps .swal2-progress-step-line {\n  background-color: #7367f0;\n}\n.swal2-container .swal2-popup pre {\n  min-height: 1.35rem;\n}\n[dir] .swal2-container .swal2-popup pre {\n  margin-top: 0.5rem;\n}\n.swal2-container .swal2-popup .swal2-footer {\n  color: #6e6b7b;\n}\n[dir] .swal2-container .swal2-popup .swal2-footer {\n  border-color: #ebe9f1;\n}\n.dark-layout .swal2-container .swal2-popup .swal2-title {\n  color: #d0d2d6;\n}\n[dir] .dark-layout .swal2-container .swal2-modal {\n  background-color: #283046;\n}\n.dark-layout .swal2-container .swal2-modal .swal2-header .swal2-title {\n  color: #d0d2d6;\n}\n.dark-layout .swal2-container .swal2-modal .swal2-header .swal2-icon-text {\n  color: inherit;\n}\n[dir] .dark-layout .swal2-container .swal2-modal .swal2-header .swal2-success-circular-line-left, [dir] .dark-layout .swal2-container .swal2-modal .swal2-header .swal2-success-circular-line-right, [dir] .dark-layout .swal2-container .swal2-modal .swal2-header .swal2-success-fix, [dir] .dark-layout .swal2-container .swal2-modal .swal2-header .swal2-animate-success-icon {\n  background-color: #283046 !important;\n}\n.dark-layout .swal2-container .swal2-modal input.swal2-input {\n  color: #b4b7bd;\n}\n[dir] .dark-layout .swal2-container .swal2-modal input.swal2-input {\n  border-color: #3b4253;\n}\n.dark-layout .swal2-container .swal2-modal .swal2-content, .dark-layout .swal2-container .swal2-modal .swal2-html-container {\n  color: #b4b7bd;\n}\n.dark-layout .swal2-container .swal2-modal pre, .dark-layout .swal2-container .swal2-modal code {\n  color: #b4b7bd;\n}\n[dir] .dark-layout .swal2-container .swal2-modal .swal2-input {\n  background-color: #283046;\n}\n.dark-layout .swal2-container .swal2-modal .swal2-footer {\n  color: #b4b7bd;\n}\n[dir] .dark-layout .swal2-container .swal2-modal .swal2-footer {\n  border-color: #3b4253;\n}\n.dark-layout .swal2-container .swal2-validation-message {\n  color: #b4b7bd;\n}\n[dir] .dark-layout .swal2-container .swal2-validation-message {\n  background-color: #161d31;\n}\nhtml[dir=rtl] .swal2-rtl .swal2-close {\n  left: 0;\n  right: auto;\n}\n.v-select {\n  position: relative;\n  font-family: inherit;\n}\n.v-select, .v-select * {\n  box-sizing: border-box;\n}\n@-webkit-keyframes vSelectSpinner-ltr {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n@-webkit-keyframes vSelectSpinner-rtl {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(-360deg);\n}\n}\n@keyframes vSelectSpinner-ltr {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n@keyframes vSelectSpinner-rtl {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(-360deg);\n}\n}\n.vs__fade-enter-active, .vs__fade-leave-active {\n  pointer-events: none;\n  transition: opacity 0.15s cubic-bezier(1, 0.5, 0.8, 1);\n}\n.vs__fade-enter, .vs__fade-leave-to {\n  opacity: 0;\n}\n[dir] .vs--disabled .vs__dropdown-toggle, [dir] .vs--disabled .vs__clear, [dir] .vs--disabled .vs__search, [dir] .vs--disabled .vs__selected, [dir] .vs--disabled .vs__open-indicator {\n  cursor: not-allowed;\n  background-color: #f8f8f8;\n}\n.v-select[dir=rtl] .vs__actions {\n  padding: 0 3px 0 6px;\n}\n.v-select[dir=rtl] .vs__clear {\n  margin-left: 6px;\n  margin-right: 0;\n}\n.v-select[dir=rtl] .vs__deselect {\n  margin-left: 0;\n  margin-right: 2px;\n}\n.v-select[dir=rtl] .vs__dropdown-menu {\n  text-align: right;\n}\n.vs__dropdown-toggle {\n  appearance: none;\n  display: flex;\n  white-space: normal;\n}\n[dir] .vs__dropdown-toggle {\n  padding: 0 0 4px 0;\n  background: none;\n  border: 1px solid #d8d6de;\n  border-radius: 0.357rem;\n}\n.vs__selected-options {\n  display: flex;\n  flex-basis: 100%;\n  flex-grow: 1;\n  flex-wrap: wrap;\n  position: relative;\n}\n[dir] .vs__selected-options {\n  padding: 0 2px;\n}\n.vs__actions {\n  display: flex;\n  align-items: center;\n}\n[dir=ltr] .vs__actions {\n  padding: 4px 6px 0 3px;\n}\n[dir=rtl] .vs__actions {\n  padding: 4px 3px 0 6px;\n}\n[dir] .vs--searchable .vs__dropdown-toggle {\n  cursor: text;\n}\n[dir] .vs--unsearchable .vs__dropdown-toggle {\n  cursor: pointer;\n}\n[dir] .vs--open .vs__dropdown-toggle {\n  border-bottom-color: transparent;\n}\n[dir=ltr] .vs--open .vs__dropdown-toggle {\n  border-bottom-left-radius: 0;\n  border-bottom-right-radius: 0;\n}\n[dir=rtl] .vs--open .vs__dropdown-toggle {\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.vs__open-indicator {\n  fill: rgba(60, 60, 60, 0.5);\n  transition: transform 150ms cubic-bezier(1, -0.115, 0.975, 0.855);\n}\n[dir] .vs__open-indicator {\n  transform: scale(1);\n  transition-timing-function: cubic-bezier(1, -0.115, 0.975, 0.855);\n}\n[dir=ltr] .vs--open .vs__open-indicator {\n  transform: rotate(180deg) scale(1);\n}\n[dir=rtl] .vs--open .vs__open-indicator {\n  transform: rotate(-180deg) scale(1);\n}\n.vs--loading .vs__open-indicator {\n  opacity: 0;\n}\n.vs__clear {\n  fill: rgba(60, 60, 60, 0.5);\n}\n[dir] .vs__clear {\n  padding: 0;\n  border: 0;\n  background-color: transparent;\n  cursor: pointer;\n}\n[dir=ltr] .vs__clear {\n  margin-right: 8px;\n}\n[dir=rtl] .vs__clear {\n  margin-left: 8px;\n}\n.vs__dropdown-menu {\n  display: block;\n  box-sizing: border-box;\n  position: absolute;\n  top: calc(100% - 1px);\n  z-index: 1000;\n  width: 100%;\n  max-height: 350px;\n  min-width: 160px;\n  overflow-y: auto;\n  list-style: none;\n}\n[dir] .vs__dropdown-menu {\n  padding: 5px 0;\n  margin: 0;\n  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.1);\n  border: 1px solid #d8d6de;\n  border-top-style: none;\n  border-radius: 0 0 0.357rem 0.357rem;\n  background: #fff;\n}\n[dir=ltr] .vs__dropdown-menu {\n  left: 0;\n  text-align: left;\n}\n[dir=rtl] .vs__dropdown-menu {\n  right: 0;\n  text-align: right;\n}\n[dir] .vs__no-options {\n  text-align: center;\n}\n.vs__dropdown-option {\n  line-height: 1.42857143;\n  display: block;\n  color: #333;\n  white-space: nowrap;\n}\n[dir] .vs__dropdown-option {\n  padding: 3px 20px;\n  clear: both;\n  cursor: pointer;\n}\n.vs__dropdown-option--highlight {\n  color: #7367f0 !important;\n}\n[dir] .vs__dropdown-option--highlight {\n  background: rgba(115, 103, 240, 0.12);\n}\n.vs__dropdown-option--deselect {\n  color: #fff;\n}\n[dir] .vs__dropdown-option--deselect {\n  background: #fb5858;\n}\n.vs__dropdown-option--disabled {\n  color: rgba(60, 60, 60, 0.5);\n}\n[dir] .vs__dropdown-option--disabled {\n  background: inherit;\n  cursor: inherit;\n}\n.vs__selected {\n  display: flex;\n  align-items: center;\n  color: #333;\n  line-height: 1.8;\n  z-index: 0;\n}\n[dir] .vs__selected {\n  background-color: #7367f0;\n  border: 0 solid rgba(60, 60, 60, 0.26);\n  border-radius: 0.357rem;\n  margin: 4px 2px 0px 2px;\n  padding: 0 0.25em;\n}\n.vs__deselect {\n  display: inline-flex;\n  appearance: none;\n  fill: rgba(60, 60, 60, 0.5);\n}\n[dir] .vs__deselect {\n  padding: 0;\n  border: 0;\n  cursor: pointer;\n  background: none;\n  text-shadow: 0 1px 0 #fff;\n}\n[dir=ltr] .vs__deselect {\n  margin-left: 4px;\n}\n[dir=rtl] .vs__deselect {\n  margin-right: 4px;\n}\n[dir] .vs--single .vs__selected {\n  background-color: transparent;\n  border-color: transparent;\n}\n.vs--single.vs--open .vs__selected, .vs--single.vs--loading .vs__selected {\n  position: absolute;\n  opacity: 0.4;\n}\n.vs--single.vs--searching .vs__selected {\n  display: none;\n}\n.vs__search::-webkit-search-cancel-button {\n  display: none;\n}\n.vs__search::-webkit-search-decoration, .vs__search::-webkit-search-results-button, .vs__search::-webkit-search-results-decoration, .vs__search::-ms-clear {\n  display: none;\n}\n.vs__search, .vs__search:focus {\n  appearance: none;\n  line-height: 1.8;\n  font-size: 1em;\n  outline: none;\n  width: 0;\n  max-width: 100%;\n  flex-grow: 1;\n  z-index: 1;\n}\n[dir] .vs__search, [dir] .vs__search:focus {\n  border: 1px solid transparent;\n  margin: 4px 0 0 0;\n  padding: 0 7px;\n  background: none;\n  box-shadow: none;\n}\n[dir=ltr] .vs__search, [dir=ltr] .vs__search:focus {\n  border-left: none;\n}\n[dir=rtl] .vs__search, [dir=rtl] .vs__search:focus {\n  border-right: none;\n}\n.vs__search::placeholder {\n  color: #6e6b7b;\n}\n.vs--unsearchable .vs__search {\n  opacity: 1;\n}\n[dir] .vs--unsearchable:not(.vs--disabled) .vs__search {\n  cursor: pointer;\n}\n.vs--single.vs--searching:not(.vs--open):not(.vs--loading) .vs__search {\n  opacity: 0.2;\n}\n.vs__spinner {\n  align-self: center;\n  opacity: 0;\n  font-size: 5px;\n  text-indent: -9999em;\n  overflow: hidden;\n  transition: opacity 0.1s;\n}\n[dir] .vs__spinner {\n  border-top: 0.9em solid rgba(100, 100, 100, 0.1);\n  border-bottom: 0.9em solid rgba(100, 100, 100, 0.1);\n  transform: translateZ(0);\n}\n[dir=ltr] .vs__spinner {\n  border-right: 0.9em solid rgba(100, 100, 100, 0.1);\n  border-left: 0.9em solid rgba(60, 60, 60, 0.45);\n  animation:  vSelectSpinner-ltr 1.1s infinite linear;\n}\n[dir=rtl] .vs__spinner {\n  border-left: 0.9em solid rgba(100, 100, 100, 0.1);\n  border-right: 0.9em solid rgba(60, 60, 60, 0.45);\n  animation:  vSelectSpinner-rtl 1.1s infinite linear;\n}\n.vs__spinner, .vs__spinner:after {\n  width: 5em;\n  height: 5em;\n}\n[dir] .vs__spinner, [dir] .vs__spinner:after {\n  border-radius: 50%;\n}\n.vs--loading .vs__spinner {\n  opacity: 1;\n}\n.vs__open-indicator {\n  fill: none;\n}\n[dir] .vs__open-indicator {\n  margin-top: 0.15rem;\n}\n.vs__dropdown-toggle {\n  transition: all 0.25s ease-in-out;\n}\n[dir] .vs__dropdown-toggle {\n  padding: 0.59px 0 4px 0;\n}\n[dir=ltr] .vs--single .vs__dropdown-toggle {\n  padding-left: 6px;\n}\n[dir=rtl] .vs--single .vs__dropdown-toggle {\n  padding-right: 6px;\n}\n.vs__dropdown-option--disabled {\n  opacity: 0.5;\n}\n[dir] .vs__dropdown-option--disabled.vs__dropdown-option--selected {\n  background: #7367f0 !important;\n}\n.vs__dropdown-option {\n  color: #6e6b7b;\n}\n[dir] .vs__dropdown-option, [dir] .vs__no-options {\n  padding: 7px 20px;\n}\n.vs__dropdown-option--selected {\n  color: #fff;\n  position: relative;\n}\n[dir] .vs__dropdown-option--selected {\n  background-color: #7367f0;\n}\n.vs__dropdown-option--selected::after {\n  content: \"\";\n  height: 1.1rem;\n  width: 1.1rem;\n  display: inline-block;\n  position: absolute;\n  top: 50%;\n}\n[dir] .vs__dropdown-option--selected::after {\n  transform: translateY(-50%);\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E\");\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: 1.1rem;\n}\n[dir=ltr] .vs__dropdown-option--selected::after {\n  right: 20px;\n}\n[dir=rtl] .vs__dropdown-option--selected::after {\n  left: 20px;\n  right: unset;\n  left: 20px;\n}\n.vs__dropdown-option--selected.vs__dropdown-option--highlight {\n  color: #fff !important;\n}\n[dir] .vs__dropdown-option--selected.vs__dropdown-option--highlight {\n  background-color: #7367f0 !important;\n}\n.vs__clear svg {\n  color: #6e6b7b;\n}\n.vs__selected {\n  color: #fff;\n}\n.v-select.vs--single .vs__selected {\n  color: #6e6b7b;\n  transition: transform 0.2s ease;\n}\n[dir] .v-select.vs--single .vs__selected {\n  margin-top: 5px;\n}\n[dir=ltr] .v-select.vs--single .vs__selected input {\n  padding-left: 0;\n}\n[dir=rtl] .v-select.vs--single .vs__selected input {\n  padding-right: 0;\n}\n[dir=ltr] .vs--single.vs--open .vs__selected {\n  transform: translateX(5px);\n}\n[dir=rtl] .vs--single.vs--open .vs__selected {\n  transform: translateX(-5px);\n}\n.vs__selected .vs__deselect {\n  color: inherit;\n}\n.v-select:not(.vs--single) .vs__selected {\n  font-size: 0.9rem;\n}\n[dir] .v-select:not(.vs--single) .vs__selected {\n  border-radius: 3px;\n  padding: 0 0.6em;\n}\n[dir=ltr] .v-select:not(.vs--single) .vs__selected {\n  margin: 5px 2px 2px 5px;\n}\n[dir=rtl] .v-select:not(.vs--single) .vs__selected {\n  margin: 5px 5px 2px 2px;\n}\n.v-select:not(.vs--single) .vs__deselect svg {\n  vertical-align: text-top;\n}\n[dir] .v-select:not(.vs--single) .vs__deselect svg {\n  transform: scale(0.8);\n}\n.vs__dropdown-menu {\n  top: calc(100% + 1rem);\n}\n[dir] .vs__dropdown-menu {\n  border: none;\n  border-radius: 6px;\n  padding: 0;\n}\n[dir] .vs--open .vs__dropdown-toggle {\n  border-color: #7367f0;\n  border-bottom-color: #7367f0;\n  box-shadow: 0 3px 10px 0 rgba(34, 41, 47, 0.1);\n}\n[dir=ltr] .vs--open .vs__dropdown-toggle {\n  border-bottom-left-radius: 0.357rem;\n  border-bottom-right-radius: 0.357rem;\n}\n[dir=rtl] .vs--open .vs__dropdown-toggle {\n  border-bottom-right-radius: 0.357rem;\n  border-bottom-left-radius: 0.357rem;\n}\n.select-size-lg .vs__selected {\n  font-size: 1rem !important;\n}\n[dir] .select-size-lg.vs--single.vs--open .vs__selected {\n  margin-top: 6px;\n}\n.select-size-lg .vs__dropdown-toggle, .select-size-lg .vs__selected {\n  font-size: 1.25rem;\n}\n[dir] .select-size-lg .vs__dropdown-toggle {\n  padding: 5px;\n}\n[dir] .select-size-lg .vs__dropdown-toggle input {\n  margin-top: 0;\n}\n.select-size-lg .vs__deselect svg {\n  vertical-align: middle !important;\n}\n[dir] .select-size-lg .vs__deselect svg {\n  transform: scale(1) !important;\n}\n[dir] .select-size-sm .vs__dropdown-toggle {\n  padding-bottom: 0;\n  padding: 1px;\n}\n[dir] .select-size-sm.vs--single .vs__dropdown-toggle {\n  padding: 2px;\n}\n.select-size-sm .vs__dropdown-toggle, .select-size-sm .vs__selected {\n  font-size: 0.9rem;\n}\n[dir] .select-size-sm .vs__actions {\n  padding-top: 2px;\n  padding-bottom: 2px;\n}\n.select-size-sm .vs__deselect svg {\n  vertical-align: middle !important;\n}\n[dir] .select-size-sm .vs__search {\n  margin-top: 0;\n}\n.select-size-sm.v-select .vs__selected {\n  font-size: 0.75rem;\n}\n[dir] .select-size-sm.v-select .vs__selected {\n  padding: 0 0.3rem;\n}\n[dir] .select-size-sm.v-select:not(.vs--single) .vs__selected {\n  margin: 4px 5px;\n}\n[dir] .select-size-sm.v-select.vs--single .vs__selected {\n  margin-top: 1px;\n}\n[dir] .select-size-sm.vs--single.vs--open .vs__selected {\n  margin-top: 4px;\n}\n.dark-layout .vs__dropdown-toggle {\n  color: #b4b7bd;\n}\n[dir] .dark-layout .vs__dropdown-toggle {\n  background: #283046;\n  border-color: #404656;\n}\n.dark-layout .vs__selected-options input {\n  color: #b4b7bd;\n}\n.dark-layout .vs__selected-options input::placeholder {\n  color: #676d7d;\n}\n.dark-layout .vs__actions svg {\n  fill: #404656;\n}\n[dir] .dark-layout .vs__dropdown-menu {\n  background: #283046;\n}\n.dark-layout .vs__dropdown-menu li {\n  color: #b4b7bd;\n}\n.dark-layout .v-select:not(.vs--single) .vs__selected {\n  color: #7367f0;\n}\n[dir] .dark-layout .v-select:not(.vs--single) .vs__selected {\n  background-color: rgba(115, 103, 240, 0.12);\n}\n.dark-layout .v-select.vs--single .vs__selected {\n  color: #b4b7bd !important;\n}\n.dark-layout .vs--disabled .vs__dropdown-toggle, .dark-layout .vs--disabled .vs__clear, .dark-layout .vs--disabled .vs__search, .dark-layout .vs--disabled .vs__selected, .dark-layout .vs--disabled .vs__open-indicator {\n  opacity: 0.5;\n}\n[dir] .dark-layout .vs--disabled .vs__dropdown-toggle, [dir] .dark-layout .vs--disabled .vs__clear, [dir] .dark-layout .vs--disabled .vs__search, [dir] .dark-layout .vs--disabled .vs__selected, [dir] .dark-layout .vs--disabled .vs__open-indicator {\n  background-color: #283046;\n}",""]),t.exports=e},nm7J:function(t,e,n){(e=n("JPst")(!1)).push([t.i,'.swal2-popup.swal2-toast{flex-direction:column;align-items:stretch;width:auto;padding:1.25em;overflow-y:hidden;background:#fff;box-shadow:0 0 .625em #d9d9d9}.swal2-popup.swal2-toast .swal2-header{flex-direction:row;padding:0}.swal2-popup.swal2-toast .swal2-title{flex-grow:1;justify-content:flex-start;margin:0 .625em;font-size:1em}.swal2-popup.swal2-toast .swal2-loading{justify-content:center}.swal2-popup.swal2-toast .swal2-input{height:2em;margin:.3125em auto;font-size:1em}.swal2-popup.swal2-toast .swal2-validation-message{font-size:1em}.swal2-popup.swal2-toast .swal2-footer{margin:.5em 0 0;padding:.5em 0 0;font-size:.8em}.swal2-popup.swal2-toast .swal2-close{position:static;width:.8em;height:.8em;line-height:.8}.swal2-popup.swal2-toast .swal2-content{justify-content:flex-start;margin:0 .625em;padding:0;font-size:1em;text-align:initial}.swal2-popup.swal2-toast .swal2-html-container{padding:.625em 0 0}.swal2-popup.swal2-toast .swal2-html-container:empty{padding:0}.swal2-popup.swal2-toast .swal2-icon{width:2em;min-width:2em;height:2em;margin:0 .5em 0 0}.swal2-popup.swal2-toast .swal2-icon .swal2-icon-content{display:flex;align-items:center;font-size:1.8em;font-weight:700}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-popup.swal2-toast .swal2-icon .swal2-icon-content{font-size:.25em}}.swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line]{top:.875em;width:1.375em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:.3125em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:.3125em}.swal2-popup.swal2-toast .swal2-actions{flex:1;flex-basis:auto!important;align-self:stretch;width:auto;height:2.2em;height:auto;margin:0 .3125em;margin-top:.3125em;padding:0}.swal2-popup.swal2-toast .swal2-styled{margin:.125em .3125em;padding:.3125em .625em;font-size:1em}.swal2-popup.swal2-toast .swal2-styled:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(100,150,200,.5)}.swal2-popup.swal2-toast .swal2-success{border-color:#a5dc86}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line]{position:absolute;width:1.6em;height:3em;transform:rotate(45deg);border-radius:50%}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.8em;left:-.5em;transform:rotate(-45deg);transform-origin:2em 2em;border-radius:4em 0 0 4em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.25em;left:.9375em;transform-origin:0 1.5em;border-radius:0 4em 4em 0}.swal2-popup.swal2-toast .swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-success .swal2-success-fix{top:0;left:.4375em;width:.4375em;height:2.6875em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line]{height:.3125em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip]{top:1.125em;left:.1875em;width:.75em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long]{top:.9375em;right:.1875em;width:1.375em}.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-tip{-webkit-animation:swal2-toast-animate-success-line-tip .75s;animation:swal2-toast-animate-success-line-tip .75s}.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-long{-webkit-animation:swal2-toast-animate-success-line-long .75s;animation:swal2-toast-animate-success-line-long .75s}.swal2-popup.swal2-toast.swal2-show{-webkit-animation:swal2-toast-show .5s;animation:swal2-toast-show .5s}.swal2-popup.swal2-toast.swal2-hide{-webkit-animation:swal2-toast-hide .1s forwards;animation:swal2-toast-hide .1s forwards}.swal2-container{display:flex;position:fixed;z-index:1060;top:0;right:0;bottom:0;left:0;flex-direction:row;align-items:center;justify-content:center;padding:.625em;overflow-x:hidden;transition:background-color .1s;-webkit-overflow-scrolling:touch}.swal2-container.swal2-backdrop-show,.swal2-container.swal2-noanimation{background:rgba(0,0,0,.4)}.swal2-container.swal2-backdrop-hide{background:0 0!important}.swal2-container.swal2-top{align-items:flex-start}.swal2-container.swal2-top-left,.swal2-container.swal2-top-start{align-items:flex-start;justify-content:flex-start}.swal2-container.swal2-top-end,.swal2-container.swal2-top-right{align-items:flex-start;justify-content:flex-end}.swal2-container.swal2-center{align-items:center}.swal2-container.swal2-center-left,.swal2-container.swal2-center-start{align-items:center;justify-content:flex-start}.swal2-container.swal2-center-end,.swal2-container.swal2-center-right{align-items:center;justify-content:flex-end}.swal2-container.swal2-bottom{align-items:flex-end}.swal2-container.swal2-bottom-left,.swal2-container.swal2-bottom-start{align-items:flex-end;justify-content:flex-start}.swal2-container.swal2-bottom-end,.swal2-container.swal2-bottom-right{align-items:flex-end;justify-content:flex-end}.swal2-container.swal2-bottom-end>:first-child,.swal2-container.swal2-bottom-left>:first-child,.swal2-container.swal2-bottom-right>:first-child,.swal2-container.swal2-bottom-start>:first-child,.swal2-container.swal2-bottom>:first-child{margin-top:auto}.swal2-container.swal2-grow-fullscreen>.swal2-modal{display:flex!important;flex:1;align-self:stretch;justify-content:center}.swal2-container.swal2-grow-row>.swal2-modal{display:flex!important;flex:1;align-content:center;justify-content:center}.swal2-container.swal2-grow-column{flex:1;flex-direction:column}.swal2-container.swal2-grow-column.swal2-bottom,.swal2-container.swal2-grow-column.swal2-center,.swal2-container.swal2-grow-column.swal2-top{align-items:center}.swal2-container.swal2-grow-column.swal2-bottom-left,.swal2-container.swal2-grow-column.swal2-bottom-start,.swal2-container.swal2-grow-column.swal2-center-left,.swal2-container.swal2-grow-column.swal2-center-start,.swal2-container.swal2-grow-column.swal2-top-left,.swal2-container.swal2-grow-column.swal2-top-start{align-items:flex-start}.swal2-container.swal2-grow-column.swal2-bottom-end,.swal2-container.swal2-grow-column.swal2-bottom-right,.swal2-container.swal2-grow-column.swal2-center-end,.swal2-container.swal2-grow-column.swal2-center-right,.swal2-container.swal2-grow-column.swal2-top-end,.swal2-container.swal2-grow-column.swal2-top-right{align-items:flex-end}.swal2-container.swal2-grow-column>.swal2-modal{display:flex!important;flex:1;align-content:center;justify-content:center}.swal2-container.swal2-no-transition{transition:none!important}.swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right):not(.swal2-grow-fullscreen)>.swal2-modal{margin:auto}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-container .swal2-modal{margin:0!important}}.swal2-popup{display:none;position:relative;box-sizing:border-box;flex-direction:column;justify-content:center;width:32em;max-width:100%;padding:1.25em;border:none;border-radius:5px;background:#fff;font-family:inherit;font-size:1rem}.swal2-popup:focus{outline:0}.swal2-popup.swal2-loading{overflow-y:hidden}.swal2-header{display:flex;flex-direction:column;align-items:center;padding:0 1.8em}.swal2-title{position:relative;max-width:100%;margin:0 0 .4em;padding:0;color:#595959;font-size:1.875em;font-weight:600;text-align:center;text-transform:none;word-wrap:break-word}.swal2-actions{display:flex;z-index:1;box-sizing:border-box;flex-wrap:wrap;align-items:center;justify-content:center;width:100%;margin:1.25em auto 0;padding:0}.swal2-actions:not(.swal2-loading) .swal2-styled[disabled]{opacity:.4}.swal2-actions:not(.swal2-loading) .swal2-styled:hover{background-image:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1))}.swal2-actions:not(.swal2-loading) .swal2-styled:active{background-image:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2))}.swal2-loader{display:none;align-items:center;justify-content:center;width:2.2em;height:2.2em;margin:0 1.875em;-webkit-animation:swal2-rotate-loading 1.5s linear 0s infinite normal;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;border-width:.25em;border-style:solid;border-radius:100%;border-color:#2778c4 transparent #2778c4 transparent}.swal2-styled{margin:.3125em;padding:.625em 1.1em;box-shadow:none;font-weight:500}.swal2-styled:not([disabled]){cursor:pointer}.swal2-styled.swal2-confirm{border:0;border-radius:.25em;background:initial;background-color:#2778c4;color:#fff;font-size:1em}.swal2-styled.swal2-deny{border:0;border-radius:.25em;background:initial;background-color:#d14529;color:#fff;font-size:1em}.swal2-styled.swal2-cancel{border:0;border-radius:.25em;background:initial;background-color:#757575;color:#fff;font-size:1em}.swal2-styled:focus{outline:0;box-shadow:0 0 0 3px rgba(100,150,200,.5)}.swal2-styled::-moz-focus-inner{border:0}.swal2-footer{justify-content:center;margin:1.25em 0 0;padding:1em 0 0;border-top:1px solid #eee;color:#545454;font-size:1em}.swal2-timer-progress-bar-container{position:absolute;right:0;bottom:0;left:0;height:.25em;overflow:hidden;border-bottom-right-radius:5px;border-bottom-left-radius:5px}.swal2-timer-progress-bar{width:100%;height:.25em;background:rgba(0,0,0,.2)}.swal2-image{max-width:100%;margin:1.25em auto}.swal2-close{position:absolute;z-index:2;top:0;right:0;align-items:center;justify-content:center;width:1.2em;height:1.2em;padding:0;overflow:hidden;transition:color .1s ease-out;border:none;border-radius:5px;background:0 0;color:#ccc;font-family:serif;font-size:2.5em;line-height:1.2;cursor:pointer}.swal2-close:hover{transform:none;background:0 0;color:#f27474}.swal2-close:focus{outline:0;box-shadow:inset 0 0 0 3px rgba(100,150,200,.5)}.swal2-close::-moz-focus-inner{border:0}.swal2-content{z-index:1;justify-content:center;margin:0;padding:0 1.6em;color:#545454;font-size:1.125em;font-weight:400;line-height:normal;text-align:center;word-wrap:break-word}.swal2-checkbox,.swal2-file,.swal2-input,.swal2-radio,.swal2-select,.swal2-textarea{margin:1em auto}.swal2-file,.swal2-input,.swal2-textarea{box-sizing:border-box;width:100%;transition:border-color .3s,box-shadow .3s;border:1px solid #d9d9d9;border-radius:.1875em;background:inherit;box-shadow:inset 0 1px 1px rgba(0,0,0,.06);color:inherit;font-size:1.125em}.swal2-file.swal2-inputerror,.swal2-input.swal2-inputerror,.swal2-textarea.swal2-inputerror{border-color:#f27474!important;box-shadow:0 0 2px #f27474!important}.swal2-file:focus,.swal2-input:focus,.swal2-textarea:focus{border:1px solid #b4dbed;outline:0;box-shadow:0 0 0 3px rgba(100,150,200,.5)}.swal2-file::-moz-placeholder,.swal2-input::-moz-placeholder,.swal2-textarea::-moz-placeholder{color:#ccc}.swal2-file:-ms-input-placeholder,.swal2-input:-ms-input-placeholder,.swal2-textarea:-ms-input-placeholder{color:#ccc}.swal2-file::placeholder,.swal2-input::placeholder,.swal2-textarea::placeholder{color:#ccc}.swal2-range{margin:1em auto;background:#fff}.swal2-range input{width:80%}.swal2-range output{width:20%;color:inherit;font-weight:600;text-align:center}.swal2-range input,.swal2-range output{height:2.625em;padding:0;font-size:1.125em;line-height:2.625em}.swal2-input{height:2.625em;padding:0 .75em}.swal2-input[type=number]{max-width:10em}.swal2-file{background:inherit;font-size:1.125em}.swal2-textarea{height:6.75em;padding:.75em}.swal2-select{min-width:50%;max-width:100%;padding:.375em .625em;background:inherit;color:inherit;font-size:1.125em}.swal2-checkbox,.swal2-radio{align-items:center;justify-content:center;background:#fff;color:inherit}.swal2-checkbox label,.swal2-radio label{margin:0 .6em;font-size:1.125em}.swal2-checkbox input,.swal2-radio input{flex-shrink:0;margin:0 .4em}.swal2-input-label{display:flex;justify-content:center;margin:1em auto}.swal2-validation-message{align-items:center;justify-content:center;margin:0 -2.7em;padding:.625em;overflow:hidden;background:#f0f0f0;color:#666;font-size:1em;font-weight:300}.swal2-validation-message::before{content:"!";display:inline-block;width:1.5em;min-width:1.5em;height:1.5em;margin:0 .625em;border-radius:50%;background-color:#f27474;color:#fff;font-weight:600;line-height:1.5em;text-align:center}.swal2-icon{position:relative;box-sizing:content-box;justify-content:center;width:5em;height:5em;margin:1.25em auto 1.875em;border:.25em solid transparent;border-radius:50%;border-color:#000;font-family:inherit;line-height:5em;cursor:default;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.swal2-icon .swal2-icon-content{display:flex;align-items:center;font-size:3.75em}.swal2-icon.swal2-error{border-color:#f27474;color:#f27474}.swal2-icon.swal2-error .swal2-x-mark{position:relative;flex-grow:1}.swal2-icon.swal2-error [class^=swal2-x-mark-line]{display:block;position:absolute;top:2.3125em;width:2.9375em;height:.3125em;border-radius:.125em;background-color:#f27474}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:1.0625em;transform:rotate(45deg)}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:1em;transform:rotate(-45deg)}.swal2-icon.swal2-error.swal2-icon-show{-webkit-animation:swal2-animate-error-icon .5s;animation:swal2-animate-error-icon .5s}.swal2-icon.swal2-error.swal2-icon-show .swal2-x-mark{-webkit-animation:swal2-animate-error-x-mark .5s;animation:swal2-animate-error-x-mark .5s}.swal2-icon.swal2-warning{border-color:#facea8;color:#f8bb86}.swal2-icon.swal2-info{border-color:#9de0f6;color:#3fc3ee}.swal2-icon.swal2-question{border-color:#c9dae1;color:#87adbd}.swal2-icon.swal2-success{border-color:#a5dc86;color:#a5dc86}.swal2-icon.swal2-success [class^=swal2-success-circular-line]{position:absolute;width:3.75em;height:7.5em;transform:rotate(45deg);border-radius:50%}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.4375em;left:-2.0635em;transform:rotate(-45deg);transform-origin:3.75em 3.75em;border-radius:7.5em 0 0 7.5em}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.6875em;left:1.875em;transform:rotate(-45deg);transform-origin:0 3.75em;border-radius:0 7.5em 7.5em 0}.swal2-icon.swal2-success .swal2-success-ring{position:absolute;z-index:2;top:-.25em;left:-.25em;box-sizing:content-box;width:100%;height:100%;border:.25em solid rgba(165,220,134,.3);border-radius:50%}.swal2-icon.swal2-success .swal2-success-fix{position:absolute;z-index:1;top:.5em;left:1.625em;width:.4375em;height:5.625em;transform:rotate(-45deg)}.swal2-icon.swal2-success [class^=swal2-success-line]{display:block;position:absolute;z-index:2;height:.3125em;border-radius:.125em;background-color:#a5dc86}.swal2-icon.swal2-success [class^=swal2-success-line][class$=tip]{top:2.875em;left:.8125em;width:1.5625em;transform:rotate(45deg)}.swal2-icon.swal2-success [class^=swal2-success-line][class$=long]{top:2.375em;right:.5em;width:2.9375em;transform:rotate(-45deg)}.swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-tip{-webkit-animation:swal2-animate-success-line-tip .75s;animation:swal2-animate-success-line-tip .75s}.swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-long{-webkit-animation:swal2-animate-success-line-long .75s;animation:swal2-animate-success-line-long .75s}.swal2-icon.swal2-success.swal2-icon-show .swal2-success-circular-line-right{-webkit-animation:swal2-rotate-success-circular-line 4.25s ease-in;animation:swal2-rotate-success-circular-line 4.25s ease-in}.swal2-progress-steps{flex-wrap:wrap;align-items:center;max-width:100%;margin:0 0 1.25em;padding:0;background:inherit;font-weight:600}.swal2-progress-steps li{display:inline-block;position:relative}.swal2-progress-steps .swal2-progress-step{z-index:20;flex-shrink:0;width:2em;height:2em;border-radius:2em;background:#2778c4;color:#fff;line-height:2em;text-align:center}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step{background:#2778c4}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step{background:#add8e6;color:#fff}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step-line{background:#add8e6}.swal2-progress-steps .swal2-progress-step-line{z-index:10;flex-shrink:0;width:2.5em;height:.4em;margin:0 -1px;background:#2778c4}[class^=swal2]{-webkit-tap-highlight-color:transparent}.swal2-show{-webkit-animation:swal2-show .3s;animation:swal2-show .3s}.swal2-hide{-webkit-animation:swal2-hide .15s forwards;animation:swal2-hide .15s forwards}.swal2-noanimation{transition:none}.swal2-scrollbar-measure{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll}.swal2-rtl .swal2-close{right:auto;left:0}.swal2-rtl .swal2-timer-progress-bar{right:0;left:auto}@supports (-ms-accelerator:true){.swal2-range input{width:100%!important}.swal2-range output{display:none}}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-range input{width:100%!important}.swal2-range output{display:none}}@-webkit-keyframes swal2-toast-show{0%{transform:translateY(-.625em) rotateZ(2deg)}33%{transform:translateY(0) rotateZ(-2deg)}66%{transform:translateY(.3125em) rotateZ(2deg)}100%{transform:translateY(0) rotateZ(0)}}@keyframes swal2-toast-show{0%{transform:translateY(-.625em) rotateZ(2deg)}33%{transform:translateY(0) rotateZ(-2deg)}66%{transform:translateY(.3125em) rotateZ(2deg)}100%{transform:translateY(0) rotateZ(0)}}@-webkit-keyframes swal2-toast-hide{100%{transform:rotateZ(1deg);opacity:0}}@keyframes swal2-toast-hide{100%{transform:rotateZ(1deg);opacity:0}}@-webkit-keyframes swal2-toast-animate-success-line-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@keyframes swal2-toast-animate-success-line-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@-webkit-keyframes swal2-toast-animate-success-line-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@keyframes swal2-toast-animate-success-line-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@-webkit-keyframes swal2-show{0%{transform:scale(.7)}45%{transform:scale(1.05)}80%{transform:scale(.95)}100%{transform:scale(1)}}@keyframes swal2-show{0%{transform:scale(.7)}45%{transform:scale(1.05)}80%{transform:scale(.95)}100%{transform:scale(1)}}@-webkit-keyframes swal2-hide{0%{transform:scale(1);opacity:1}100%{transform:scale(.5);opacity:0}}@keyframes swal2-hide{0%{transform:scale(1);opacity:1}100%{transform:scale(.5);opacity:0}}@-webkit-keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.8125em;width:1.5625em}}@keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.8125em;width:1.5625em}}@-webkit-keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@-webkit-keyframes swal2-rotate-success-circular-line{0%{transform:rotate(-45deg)}5%{transform:rotate(-45deg)}12%{transform:rotate(-405deg)}100%{transform:rotate(-405deg)}}@keyframes swal2-rotate-success-circular-line{0%{transform:rotate(-45deg)}5%{transform:rotate(-45deg)}12%{transform:rotate(-405deg)}100%{transform:rotate(-405deg)}}@-webkit-keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;transform:scale(.4);opacity:0}50%{margin-top:1.625em;transform:scale(.4);opacity:0}80%{margin-top:-.375em;transform:scale(1.15)}100%{margin-top:0;transform:scale(1);opacity:1}}@keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;transform:scale(.4);opacity:0}50%{margin-top:1.625em;transform:scale(.4);opacity:0}80%{margin-top:-.375em;transform:scale(1.15)}100%{margin-top:0;transform:scale(1);opacity:1}}@-webkit-keyframes swal2-animate-error-icon{0%{transform:rotateX(100deg);opacity:0}100%{transform:rotateX(0);opacity:1}}@keyframes swal2-animate-error-icon{0%{transform:rotateX(100deg);opacity:0}100%{transform:rotateX(0);opacity:1}}@-webkit-keyframes swal2-rotate-loading{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes swal2-rotate-loading{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow:hidden}body.swal2-height-auto{height:auto!important}body.swal2-no-backdrop .swal2-container{top:auto;right:auto;bottom:auto;left:auto;max-width:calc(100% - .625em * 2);background-color:transparent!important}body.swal2-no-backdrop .swal2-container>.swal2-modal{box-shadow:0 0 10px rgba(0,0,0,.4)}body.swal2-no-backdrop .swal2-container.swal2-top{top:0;left:50%;transform:translateX(-50%)}body.swal2-no-backdrop .swal2-container.swal2-top-left,body.swal2-no-backdrop .swal2-container.swal2-top-start{top:0;left:0}body.swal2-no-backdrop .swal2-container.swal2-top-end,body.swal2-no-backdrop .swal2-container.swal2-top-right{top:0;right:0}body.swal2-no-backdrop .swal2-container.swal2-center{top:50%;left:50%;transform:translate(-50%,-50%)}body.swal2-no-backdrop .swal2-container.swal2-center-left,body.swal2-no-backdrop .swal2-container.swal2-center-start{top:50%;left:0;transform:translateY(-50%)}body.swal2-no-backdrop .swal2-container.swal2-center-end,body.swal2-no-backdrop .swal2-container.swal2-center-right{top:50%;right:0;transform:translateY(-50%)}body.swal2-no-backdrop .swal2-container.swal2-bottom{bottom:0;left:50%;transform:translateX(-50%)}body.swal2-no-backdrop .swal2-container.swal2-bottom-left,body.swal2-no-backdrop .swal2-container.swal2-bottom-start{bottom:0;left:0}body.swal2-no-backdrop .swal2-container.swal2-bottom-end,body.swal2-no-backdrop .swal2-container.swal2-bottom-right{right:0;bottom:0}@media print{body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow-y:scroll!important}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)>[aria-hidden=true]{display:none}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container{position:static!important}}body.swal2-toast-shown .swal2-container{background-color:transparent}body.swal2-toast-shown .swal2-container.swal2-top{top:0;right:auto;bottom:auto;left:50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-top-end,body.swal2-toast-shown .swal2-container.swal2-top-right{top:0;right:0;bottom:auto;left:auto}body.swal2-toast-shown .swal2-container.swal2-top-left,body.swal2-toast-shown .swal2-container.swal2-top-start{top:0;right:auto;bottom:auto;left:0}body.swal2-toast-shown .swal2-container.swal2-center-left,body.swal2-toast-shown .swal2-container.swal2-center-start{top:50%;right:auto;bottom:auto;left:0;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-center{top:50%;right:auto;bottom:auto;left:50%;transform:translate(-50%,-50%)}body.swal2-toast-shown .swal2-container.swal2-center-end,body.swal2-toast-shown .swal2-container.swal2-center-right{top:50%;right:0;bottom:auto;left:auto;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-left,body.swal2-toast-shown .swal2-container.swal2-bottom-start{top:auto;right:auto;bottom:0;left:0}body.swal2-toast-shown .swal2-container.swal2-bottom{top:auto;right:auto;bottom:0;left:50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-end,body.swal2-toast-shown .swal2-container.swal2-bottom-right{top:auto;right:0;bottom:0;left:auto}',""]),t.exports=e},qVMd:function(t,e,n){"use strict";n.d(e,"b",(function(){return i})),n.d(e,"a",(function(){return r}));var o=n("L3ns"),s=n("pyNs"),a=n("z3V6"),i=Object(a.d)({plain:Object(a.c)(s.g,!1)},"formControls"),r=Object(o.c)({props:i,computed:{custom:function(){return!this.plain}}})},sLwz:function(t,e,n){"use strict";n.r(e);var o=n("x+uP"),s=n("HaE+"),a=(n("qePV"),n("E9XD"),n("07d7"),n("PKPk"),n("3bBZ"),n("Kz25"),n("mGGf"),n("iKfx"),n("JxoU"),n("VJTV"),n("ma9I"),n("FNk8"),n("LvDl"),n("Obrr")),i=n("oVt+"),r=n("sove"),l=n("IF94"),c=n("YZfj"),d=n("1uQM"),p=n("GUe+"),u=n("X9p1"),m=n("qlm0"),h=n("mwM1"),w=n("AeMN"),f=n("KaE5"),b=n("zoCi"),g=n("w+YJ"),v=n("giZP"),_=n("R5cT"),y=(n("d+3G"),n("Snq/")),x=n.n(y),k=n("OOfG"),O=n("4AkS"),C=new(n("DlN5").a),j={name:"PaymentPreview",directives:{Ripple:O.a,"b-toggle":a.a},components:{BRow:i.a,BCol:r.a,BCard:l.a,BCardBody:c.a,BCardText:d.a,BButton:p.a,BAlert:u.a,BLink:m.a,BOverlay:h.a,BSpinner:w.a,BTable:f.a,BTableLite:b.a,Logo:k.a,vSelect:x.a,BFormCheckbox:g.a,BFormGroup:v.a,BFormInput:_.a},data:function(){return{columns:[{key:"action",label:this.$t("charges.table_description")},{key:"professional",label:this.$t("charges.table_profesional")},{key:"price",label:this.$t("charges.table_costo")},{key:"discount",label:this.$t("budgets.discount")},{key:"total",label:this.$t("budgets.total")},{key:"subtotal",label:this.$t("budgets.subtotal")},{key:"debt",label:this.$t("budgets.debt")}],payment_id:this.$route.params.payment_id,budget_id:this.$route.params.id,payment:{},loading:!1,income:0,remainingIncome:0,positiveBalance:0,budget_action_id:0,clinicalActions:[],laboratoryActions:[],profesional:{},budget:{},check:{},toPrint:!1,model:null,actions:[]}},computed:{totalIncome:function(){return Number(this.income)+Number(this.positiveBalance)},totalClinicalActions:function(){return this.clinicalActions.reduce((function(t,e){return t+e.debt}),0)},totalLaboratoryActions:function(){return this.laboratoryActions.reduce((function(t,e){return t+e.debt}),0)},isEnableNotification:function(){return this.findSetting("enable_email_notification")}},mounted:function(){var t=this;return Object(s.a)(Object(o.a)().mark((function e(){return Object(o.a)().wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return console.log(t.$route.params),e.next=3,t.paymentDetail();case 3:case"end":return e.stop()}}),e)})))()},methods:{paymentDetail:function(){var t=this;return Object(s.a)(Object(o.a)().mark((function e(){var n,s;return Object(o.a)().wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return e.prev=0,t.loading=!0,e.next=4,C.detail(t.payment_id);case 4:n=e.sent,s=n.data,t.loading=!1,t.payment=s.data,e.next=14;break;case 10:e.prev=10,e.t0=e.catch(0),t.loading=!1,t.payment=void 0;case 14:case"end":return e.stop()}}),e,null,[[0,10]])})))()},sendInvoice:function(){var t,e=this;this.$swal({title:this.$t("send_email_title"),text:this.$t("send_email_title_help"),icon:"question",showCancelButton:!0,confirmButtonText:this.$t("yes_continue"),cancelButtonText:this.$t("cancel"),customClass:{confirmButton:"btn btn-primary",cancelButton:"btn btn-outline-danger ml-1"},showClass:{popup:"animate__animated animate__flipInX"},buttonsStyling:!1,showLoaderOnConfirm:!0,input:"email",inputValue:this.payment.budget.patient.email,preConfirm:(t=Object(s.a)(Object(o.a)().mark((function t(n){var s,a;return Object(o.a)().wrap((function(t){for(;;)switch(t.prev=t.next){case 0:return t.prev=0,e.loading=!0,t.next=4,C.send({id:e.payment.id,email:n,isMail:!0});case 4:s=t.sent,a=s.data,e.loading=!1,a.success?e.success(a.message):e.danger(a.message),t.next=15;break;case 10:t.prev=10,t.t0=t.catch(0),e.loading=!1,e.handleResponseErrors(t.t0),e.$swal.showValidationMessage("Request failed: ".concat(t.t0));case 15:case"end":return t.stop()}}),t,null,[[0,10]])}))),function(e){return t.apply(this,arguments)}),allowOutsideClick:function(){return!Swal.isLoading()}})},donwloadPDF:function(){var t=arguments,e=this;return Object(s.a)(Object(o.a)().mark((function n(){var s,a,i,r,l,c,d,p,u;return Object(o.a)().wrap((function(n){for(;;)switch(n.prev=n.next){case 0:return s=t.length>0&&void 0!==t[0]&&t[0],a={isPrint:s},n.prev=2,e.loading=!0,n.next=6,C.donwloadPDF(e.payment.id,a);case 6:i=n.sent,r=i.data,e.loading=!1,s?(l=new Blob([r],{type:"application/pdf"}),c=URL.createObjectURL(l),window.open(c,"_blank")):(d=window.URL.createObjectURL(new Blob([r])),p=document.createElement("a"),u=e.$t("payments.card_payment"),p.href=d,p.setAttribute("download","".concat(u," ").concat(e.payment.id," ").concat(e.payment.budget.patient.full_name,".pdf")),p.click(),document.body.appendChild(p)),n.next=16;break;case 12:n.prev=12,n.t0=n.catch(2),e.loading=!1,e.handleResponseErrors(n.t0);case 16:case"end":return n.stop()}}),n,null,[[2,12]])})))()},redirect:function(){console.log(this.$route.params.model),this.$route.params.model?this.$router.push({name:this.$route.params.model}):this.$router.push({name:"apps-payments-list"})}}},S=(n("tdrg"),n("MMM8"),n("KHd+")),$=Object(S.a)(j,(function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("b-overlay",{attrs:{show:t.loading,blur:"2px",variant:"transparent",rounded:"lg",opacity:"0.85"},scopedSlots:t._u([{key:"overlay",fn:function(){return[n("div",{staticClass:"d-flex align-items-center"},[n("b-spinner",{attrs:{small:"",type:"grow",variant:"secondary"}}),t._v(" "),n("b-spinner",{attrs:{type:"grow",variant:"dark"}}),t._v(" "),n("b-spinner",{attrs:{small:"",type:"grow",variant:"secondary"}})],1)]},proxy:!0}])},[t._v(" "),n("b-alert",{attrs:{variant:"danger",show:null==t.payment}},[n("h4",{staticClass:"alert-heading"},[t._v("Error fetching payment data")]),t._v(" "),n("div",{staticClass:"alert-body"},[t._v("\n            No payment found with this payment #"+t._s(t.$route.params.payment_id)+". Check\n            "),n("b-link",{staticClass:"alert-link",attrs:{to:{name:"apps-payments-list"}}},[t._v("\n                Payment List\n            ")]),t._v("\n            for other payments.\n        ")],1)]),t._v(" "),n("section",{staticClass:"invoice-preview-wrapper"},[t.isEmpty(t.payment)?t._e():n("b-row",{staticClass:"invoice-preview"},[n("b-col",{attrs:{cols:"12",xl:"9",md:"8"}},[n("b-card",{staticClass:"invoice-preview-card",attrs:{"no-body":""}},[n("b-card-body",{staticClass:"invoice-padding pb-0"},[n("div",{staticClass:"d-flex justify-content-between flex-md-row flex-column invoice-spacing mt-0"},[n("div",[n("div",{staticClass:"logo-wrapper"},[n("h3",{staticClass:"text-primary invoice-logo"},[t._v("\n                                        "+t._s(t.findSetting("app_name"))+"\n                                    ")])]),t._v(" "),n("p",{staticClass:"card-text mb-25"},[n("strong",[t._v(t._s(t.payment.branch.name))])]),t._v(" "),n("p",{staticClass:"card-text mb-25"},[t._v("\n                                    "+t._s(t.payment.branch.address)+"\n                                ")]),t._v(" "),n("p",{staticClass:"card-text mb-0"},[t._v("\n                                    "+t._s(t.payment.branch.phone)+"\n                                ")]),t._v(" "),n("p",{staticClass:"card-text mb-0"},[t._v("\n                                    "+t._s(t.payment.branch.email)+"\n                                ")])]),t._v(" "),n("div",{staticClass:"mt-md-0 mt-2"},[n("h4",{staticClass:"invoice-title"},[t._v("\n                                    "+t._s(t.$t("payments.id"))+"\n                                    "),n("span",{staticClass:"invoice-number"},[t._v("#"+t._s(t.payment.id))])]),t._v(" "),n("div",{staticClass:"invoice-title"},[t._v("\n                                    "+t._s(t.$t("budgets.folio"))+"\n                                    "),n("span",{staticClass:"invoice-number"},[t._v(t._s(t.payment.budget.label))])]),t._v(" "),n("div",{staticClass:"invoice-date-wrapper"},[n("p",{staticClass:"invoice-date-title"},[t._v("\n                                        "+t._s(t.$t("payments.date_issued"))+" "+t._s(t.dateTimeFormat(t.payment.created_at))+"\n                                    ")])])])])]),t._v(" "),n("hr",{staticClass:"invoice-spacing"}),t._v(" "),n("b-card-body",{staticClass:"invoice-padding pt-0"},[n("b-row",{staticClass:"invoice-spacing"},[n("b-col",{staticClass:"p-1",attrs:{cols:"12",xl:"6"}},[n("h6",{staticClass:"mb-2"},[t._v(t._s(t.$t("patients.name")))]),t._v(" "),n("h6",{staticClass:"mb-25"},[t._v(t._s(t.payment.budget.patient.full_name))]),t._v(" "),n("p",{staticClass:"card-text mb-25"},[n("strong",[t._v(t._s(t.$t("patients.address"))+":")]),t._v("\n                                    "+t._s(t.payment.budget.patient.address)+"\n                                ")]),t._v(" "),n("p",{staticClass:"card-text mb-25"},[n("strong",[t._v(t._s(t.$t("patients.phone"))+":")]),t._v(" "+t._s(t.payment.budget.patient.phone)+",\n                                    "+t._s(t.payment.budget.patient.cellphone)+"\n                                ")]),t._v(" "),n("p",{staticClass:"card-text mb-25"},[n("strong",[t._v(t._s(t.$t("patients.email"))+":")]),t._v(" "+t._s(t.payment.budget.patient.email)+"\n                                ")])]),t._v(" "),n("b-col",{staticClass:"p-1 mt-xl-0 mt-2 d-flex justify-content-xl-end",attrs:{xl:"6",cols:"12"}},[n("div",[n("h6",{staticClass:"mb-2"},[t._v(t._s(t.$t("payments.details")))]),t._v(" "),n("table",[n("tbody",[n("tr",[n("td",{staticClass:"pr-1"},[t._v(t._s(t.$t("budgets.total")))]),t._v(" "),n("td",[n("span",{staticClass:"font-weight-bold"},[t._v(t._s(t.formatPrice(t.payment.budget.total_cost)))])])]),t._v(" "),n("tr",[n("td",{staticClass:"pr-1"},[t._v(t._s(t.$t("payments.total_due")))]),t._v(" "),n("td",[t._v(t._s(t.formatPrice(t.payment.budget.total_debt)))])]),t._v(" "),n("tr",[n("td",{staticClass:"pr-1"},[t._v(t._s(t.$t("payments.total_subscriber")))]),t._v(" "),n("td",[t._v(t._s(t.formatPrice(t.payment.budget.total_paid)))])]),t._v(" "),n("tr",[n("td",{staticClass:"pr-1"},[t._v(t._s(t.$t("payments.positive_balance")))]),t._v(" "),n("td",[t._v(t._s(t.formatPrice(t.positiveBalance)))])]),t._v(" "),n("tr",[n("td",{staticClass:"pr-1"},[n("strong",[t._v(t._s(t.$t("payments.amount_paid")))])]),t._v(" "),n("td",[t._v(t._s(t.formatPrice(t.payment.amount)))])])])])])]),t._v(" "),n("b-table-lite",{ref:"tableItems",attrs:{responsive:"",items:t.payment.action_payments,fields:t.columns},scopedSlots:t._u([{key:"cell(action)",fn:function(e){return[n("b-card-text",{staticClass:"font-weight-bold mb-25"},[t._v("\n                                        "+t._s(e.item.actions.action_name)+"\n                                    ")]),t._v(" "),n("b-card-text",{staticClass:"text-nowrap"},[t._v("\n                                        "+t._s(e.item.actions.action_group_name?e.item.actions.action_group_name:t.$t("budgets.laboratory"))+", "),n("strong",[t._v(t._s(t.$t("budgets.action_area"))+"\n                                            "+t._s(e.item.actions.area))])])]}},{key:"cell(professional)",fn:function(e){return[e.item.actions.has_previous_professional?n("b-card-text",{staticClass:"font-weight-bold mb-25"},[t._v("\n                                        "+t._s(e.item.actions.professional.name)+"\n                                    ")]):n("b-card-text",{staticClass:"font-weight-bold mb-25"},[t._v("\n                                        "+t._s(t.$t("budgets.laboratory"))+"\n                                    ")])]}},{key:"cell(price)",fn:function(e){return[t._v("\n                                    "+t._s(t.formatPrice(e.item.actions.price))+"\n                                ")]}},{key:"cell(discount)",fn:function(e){return[t._v("\n                                    "+t._s(t.formatPrice(e.item.actions.discount))+"\n                                ")]}},{key:"cell(total)",fn:function(e){return[t._v("\n                                    "+t._s(t.formatPrice(e.item.actions.subtotal))+"\n                                ")]}},{key:"cell(subtotal)",fn:function(e){return[t._v("\n                                    "+t._s(t.formatPrice(1*e.item.actions.paid))+"\n                                ")]}},{key:"cell(debt)",fn:function(e){return[t._v("\n                                    "+t._s(t.formatPrice(1*e.item.actions.debt))+"\n                                ")]}}],null,!1,3176262684)}),t._v(" "),n("b-card-body",{staticClass:"invoice-padding pb-0"},[n("b-row",[n("b-col",{staticClass:"mt-md-0 mt-3",attrs:{cols:"12",md:"6",order:"2","order-md":"1"}},[n("b-card-text",{staticClass:"mb-0"},[n("span",{staticClass:"font-weight-bold"},[t._v(t._s(t.$t("payments.method"))+":")]),t._v(" "),n("span",{staticClass:"ml-75"},[t._v(t._s(t.translatePaymentMethod(t.payment.method)))])]),t._v(" "),t.payment.check_id?n("div",[n("b-card-text",{staticClass:"mb-0"},[n("span",{staticClass:"font-weight-bold"},[t._v(t._s(t.$t("checks.modal_reference"))+":")]),t._v(" "),n("span",{staticClass:"ml-75"},[t._v(t._s(t.payment.check.reference))])]),t._v(" "),n("b-card-text",{staticClass:"mb-0"},[n("span",{staticClass:"font-weight-bold"},[t._v(t._s(t.$t("checks.modal_bank"))+":")]),t._v(" "),n("span",{staticClass:"ml-75"},[t._v(t._s(t.payment.check.bank))])]),t._v(" "),n("b-card-text",{staticClass:"mb-0"},[n("span",{staticClass:"font-weight-bold"},[t._v(t._s(t.$t("checks.modal_serie"))+":")]),t._v(" "),n("span",{staticClass:"ml-75"},[t._v(t._s(t.payment.check.serie))])]),t._v(" "),n("b-card-text",{staticClass:"mb-0"},[n("span",{staticClass:"font-weight-bold"},[t._v(t._s(t.$t("checks.modal_collection_date"))+":")]),t._v(" "),n("span",{staticClass:"ml-75"},[t._v(t._s(t.dateFormat(t.payment.check.date)))])])],1):t._e()],1),t._v(" "),n("b-col",{staticClass:"mt-md-6 d-flex justify-content-end",attrs:{cols:"12",md:"6",order:"1","order-md":"2"}},[n("b-card-text",{staticClass:"mb-0"},[n("h4",{staticClass:"font-weight-bolder"},[t._v(t._s(t.$t("total"))+"\n                                                "+t._s(t.formatPrice(t.payment.amount)))])])],1)],1)],1)],1)],1)],1)],1),t._v(" "),n("b-col",{staticClass:"invoice-actions",attrs:{cols:"12",md:"4",xl:"3"}},[n("b-card",[t.isEnableNotification?n("b-button",{directives:[{name:"ripple",rawName:"v-ripple.400",value:"rgba(255, 255, 255, 0.15)",expression:"'rgba(255, 255, 255, 0.15)'",modifiers:{400:!0}}],staticClass:"mb-75",attrs:{variant:"success",block:""},on:{click:t.sendInvoice}},[t._v("\n                        "+t._s(t.$t("button_send"))+"\n                    ")]):t._e(),t._v(" "),n("b-button",{directives:[{name:"ripple",rawName:"v-ripple.400",value:"rgba(186, 191, 199, 0.15)",expression:"'rgba(186, 191, 199, 0.15)'",modifiers:{400:!0}}],staticClass:"mb-75",attrs:{variant:"outline-primary",block:""},on:{click:function(e){return t.donwloadPDF(!1)}}},[t._v("\n                        "+t._s(t.$t("button_download"))+"\n                    ")]),t._v(" "),n("b-button",{directives:[{name:"ripple",rawName:"v-ripple.400",value:"rgba(186, 191, 199, 0.15)",expression:"'rgba(186, 191, 199, 0.15)'",modifiers:{400:!0}}],staticClass:"mb-75",attrs:{variant:"outline-primary",block:""},on:{click:function(e){return t.donwloadPDF(!0)}}},[t._v("\n                        "+t._s(t.$t("button_print"))+"\n                    ")]),t._v(" "),n("b-button",{directives:[{name:"ripple",rawName:"v-ripple.400",value:"rgba(186, 191, 199, 0.15)",expression:"'rgba(186, 191, 199, 0.15)'",modifiers:{400:!0}}],staticClass:"mb-75",attrs:{variant:"outline-danger",block:""},on:{click:t.redirect}},[t._v("\n                        "+t._s(t.$t("back"))+"\n                    ")])],1)],1)],1)],1)],1)}),[],!1,null,null,null);e.default=$.exports},tdrg:function(t,e,n){"use strict";n("ARq/")},"w+YJ":function(t,e,n){"use strict";n.d(e,"a",(function(){return v}));var o,s=n("L3ns"),a=n("xjcK"),i=n("AFYn"),r=n("pyNs"),l=n("ex6f"),c=n("PCFI"),d=function(t,e){for(var n=0;n<t.length;n++)if(Object(c.a)(t[n],e))return n;return-1},p=n("2C+6"),u=n("z3V6"),m=n("08sT");function h(t,e){var n=Object.keys(t);if(Object.getOwnPropertySymbols){var o=Object.getOwnPropertySymbols(t);e&&(o=o.filter((function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),n.push.apply(n,o)}return n}function w(t){for(var e=1;e<arguments.length;e++){var n=null!=arguments[e]?arguments[e]:{};e%2?h(Object(n),!0).forEach((function(e){f(t,e,n[e])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(n)):h(Object(n)).forEach((function(e){Object.defineProperty(t,e,Object.getOwnPropertyDescriptor(n,e))}))}return t}function f(t,e,n){return e in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}var b=i.cb+"indeterminate",g=Object(u.d)(Object(p.m)(w(w({},m.c),{},(f(o={},"indeterminate",Object(u.c)(r.g,!1)),f(o,"switch",Object(u.c)(r.g,!1)),f(o,"uncheckedValue",Object(u.c)(r.a,!1)),f(o,"value",Object(u.c)(r.a,!0)),o))),a.C),v=Object(s.c)({name:a.C,mixins:[m.b],inject:{getBvGroup:{from:"getBvCheckGroup",default:function(){return function(){return null}}}},props:g,computed:{bvGroup:function(){return this.getBvGroup()},isChecked:function(){var t=this.value,e=this.computedLocalChecked;return Object(l.a)(e)?d(e,t)>-1:Object(c.a)(e,t)},isRadio:function(){return!1}},watch:f({},"indeterminate",(function(t,e){Object(c.a)(t,e)||this.setIndeterminate(t)})),mounted:function(){this.setIndeterminate(this.indeterminate)},methods:{computedLocalCheckedWatcher:function(t,e){if(!Object(c.a)(t,e)){this.$emit(m.a,t);var n=this.$refs.input;n&&this.$emit(b,n.indeterminate)}},handleChange:function(t){var e=this,n=t.target,o=n.checked,s=n.indeterminate,a=this.value,r=this.uncheckedValue,c=this.computedLocalChecked;if(Object(l.a)(c)){var p=d(c,a);o&&p<0?c=c.concat(a):!o&&p>-1&&(c=c.slice(0,p).concat(c.slice(p+1)))}else c=o?a:r;this.computedLocalChecked=c,this.$nextTick((function(){e.$emit(i.d,c),e.isGroup&&e.bvGroup.$emit(i.d,c),e.$emit(b,s)}))},setIndeterminate:function(t){Object(l.a)(this.computedLocalChecked)&&(t=!1);var e=this.$refs.input;e&&(e.indeterminate=t,this.$emit(b,t))}}})},zoCi:function(t,e,n){"use strict";n.d(e,"a",(function(){return k}));var o=n("L3ns"),s=n("xjcK"),a=n("2C+6"),i=n("z3V6"),r=n("STsD"),l=n("Md8H"),c=n("kO/s"),d=n("jBgq"),p=n("PxWO"),u=n("1tTL"),m=n("Xg2j"),h=n("SPl0"),w=n("cSte"),f=n("OZ+h"),b=n("g47C"),g=n("wF1r");function v(t,e){var n=Object.keys(t);if(Object.getOwnPropertySymbols){var o=Object.getOwnPropertySymbols(t);e&&(o=o.filter((function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),n.push.apply(n,o)}return n}function _(t){for(var e=1;e<arguments.length;e++){var n=null!=arguments[e]?arguments[e]:{};e%2?v(Object(n),!0).forEach((function(e){y(t,e,n[e])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(n)):v(Object(n)).forEach((function(e){Object.defineProperty(t,e,Object.getOwnPropertyDescriptor(n,e))}))}return t}function y(t,e,n){return e in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}var x=Object(i.d)(Object(a.m)(_(_(_(_(_(_(_(_(_({},c.b),p.b),u.b),m.b),h.a),w.a),f.a),b.a),g.a)),s.Ab),k=Object(o.c)({name:s.Ab,mixins:[r.a,l.a,c.a,d.a,m.a,w.b,h.b,g.b,b.b,f.b,p.a,u.a],props:x})}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[84],{
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js */ "./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js");
+/* harmony import */ var D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var D_projects_dental_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/defineProperty.js */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.string.iterator.js */ "./node_modules/core-js/modules/es.string.iterator.js");
+/* harmony import */ var core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/web.dom-collections.iterator.js */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var core_js_modules_web_url_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! core-js/modules/web.url.js */ "./node_modules/core-js/modules/web.url.js");
+/* harmony import */ var core_js_modules_web_url_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var core_js_modules_web_url_search_params_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! core-js/modules/web.url-search-params.js */ "./node_modules/core-js/modules/web.url-search-params.js");
+/* harmony import */ var core_js_modules_web_url_search_params_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_search_params_js__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var core_js_modules_web_url_search_params_delete_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! core-js/modules/web.url-search-params.delete.js */ "./node_modules/core-js/modules/web.url-search-params.delete.js");
+/* harmony import */ var core_js_modules_web_url_search_params_delete_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_search_params_delete_js__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var core_js_modules_web_url_search_params_has_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! core-js/modules/web.url-search-params.has.js */ "./node_modules/core-js/modules/web.url-search-params.has.js");
+/* harmony import */ var core_js_modules_web_url_search_params_has_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_search_params_has_js__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var core_js_modules_web_url_search_params_size_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! core-js/modules/web.url-search-params.size.js */ "./node_modules/core-js/modules/web.url-search-params.size.js");
+/* harmony import */ var core_js_modules_web_url_search_params_size_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_search_params_size_js__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! core-js/modules/es.array.concat.js */ "./node_modules/core-js/modules/es.array.concat.js");
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! core-js/modules/es.array.filter.js */ "./node_modules/core-js/modules/es.array.filter.js");
+/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! core-js/modules/es.array.reduce.js */ "./node_modules/core-js/modules/es.array.reduce.js");
+/* harmony import */ var core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/esm/index.js");
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @/router */ "./resources/js/src/router/index.js");
+/* harmony import */ var vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! vue-flatpickr-component */ "./node_modules/vue-flatpickr-component/dist/vue-flatpickr.min.js");
+/* harmony import */ var vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var vue_ripple_directive__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! vue-ripple-directive */ "./node_modules/vue-ripple-directive/src/ripple.js");
+/* harmony import */ var _providers_CashRegisters__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @/providers/CashRegisters */ "./resources/js/src/providers/CashRegisters.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+var CashRegisterResource = new _providers_CashRegisters__WEBPACK_IMPORTED_MODULE_18__["default"]();
+/* harmony default export */ __webpack_exports__["default"] = ({
+  directives: {
+    Ripple: vue_ripple_directive__WEBPACK_IMPORTED_MODULE_17__["default"],
+    'b-modal': bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["VBModal"],
+    'b-toggle': bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["VBToggle"]
+  },
+  components: {
+    BRow: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["BRow"],
+    BCol: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["BCol"],
+    BCard: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["BCard"],
+    BCardBody: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["BCardBody"],
+    BCardText: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["BCardText"],
+    BButton: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["BButton"],
+    BAlert: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["BAlert"],
+    BLink: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["BLink"],
+    BOverlay: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["BOverlay"],
+    BSpinner: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["BSpinner"],
+    BTable: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["BTable"],
+    BTableLite: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["BTableLite"],
+    flatPickr: vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_16___default.a,
+    BFormCheckbox: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["BFormCheckbox"],
+    BFormGroup: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["BFormGroup"],
+    BFormInput: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["BFormInput"],
+    BModal: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["BModal"],
+    BMediaAside: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["BMediaAside"],
+    BMedia: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["BMedia"],
+    BAvatar: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["BAvatar"],
+    BImg: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["BImg"],
+    BCardHeader: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["BCardHeader"],
+    BMediaBody: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["BMediaBody"],
+    BFormTextarea: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["BFormTextarea"],
+    BCardTitle: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["BCardTitle"],
+    VBModal: bootstrap_vue__WEBPACK_IMPORTED_MODULE_14__["VBModal"]
+  },
+  data: function data() {
+    var _ref;
+    return _ref = {
+      loading: false,
+      cashRegister_id: _router__WEBPACK_IMPORTED_MODULE_15__["default"].currentRoute.params.id
+    }, Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ref, "loading", false), Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ref, "cashRegister", {}), Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ref, "columnsPayments", [{
+      key: 'updated_at',
+      label: this.$t('cash_registers.detail_date'),
+      sortable: true
+    }, {
+      key: 'doctor',
+      label: this.$t('cash_registers.detail_professional'),
+      sortable: true
+    }, {
+      key: 'patient',
+      label: this.$t('cash_registers.detail_patient'),
+      sortable: true
+    }, {
+      key: 'cash',
+      label: this.$t('cash_registers.detail_cash')
+    }, {
+      key: 'bons',
+      label: this.$t('cash_registers.detail_bonus')
+    }, {
+      key: 'check',
+      label: this.$t('cash_registers.detail_check')
+    }, {
+      key: 'type',
+      label: this.$t('cash_registers.detail_type')
+    }, {
+      key: 'bank',
+      label: this.$t('cash_registers.detail_bank')
+    }, {
+      key: 'bank_num',
+      label: this.$t('cash_registers.detail_bank_num')
+    }, {
+      key: 'check_date',
+      label: this.$t('cash_registers.detail_check_date')
+    }, {
+      key: 'check_owner',
+      label: this.$t('cash_registers.detail_check_owner')
+    }, {
+      key: 'check_amount',
+      label: this.$t('cash_registers.detail_check_amount')
+    }]), Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ref, "columnsXrays", [{
+      key: 'updated_at',
+      label: this.$t('cash_registers.detail_date'),
+      sortable: true
+    }, {
+      key: 'patient',
+      label: this.$t('cash_registers.detail_patient'),
+      sortable: true
+    }, {
+      key: 'action_name',
+      label: this.$t('cash_registers.detail_action'),
+      sortable: true
+    }, {
+      key: 'total',
+      label: this.$t('cash_registers.detail_amount')
+    }]), Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ref, "columnsExpenses", [{
+      key: 'reference',
+      label: this.$t('expenses.table_reference'),
+      sortable: true
+    }, {
+      key: 'note',
+      label: this.$t('expenses.table_note')
+    }, {
+      key: 'total',
+      label: this.$t('expenses.table_amount')
+    }]), _ref;
+  },
+  computed: {
+    totalIncomes: function totalIncomes() {
+      if (!_.isEmpty(this.cashRegister)) {
+        return this.cashRegister.totalCash + this.cashRegister.totalDebitCard + this.cashRegister.totalCreditCard + this.cashRegister.totalCheck + this.cashRegister.totalTransfer;
+      } else {
+        return 0;
+      }
+    },
+    totalExpenses: function totalExpenses() {
+      return this.cashRegister.totalExpenses;
+    }
+  },
+  mounted: function mounted() {
+    var _this = this;
+    return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee() {
+      return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee$(_context) {
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return _this.getCashRegister();
+          case 2:
+          case "end":
+            return _context.stop();
+        }
+      }, _callee);
+    }))();
+  },
+  methods: {
+    downloadCashRegister: function downloadCashRegister() {
+      var _this2 = this;
+      return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee2() {
+        var _yield$CashRegisterRe, data, blob, link, fileName;
+        return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee2$(_context2) {
+          while (1) switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.prev = 0;
+              _this2.loading = true;
+              _context2.next = 4;
+              return CashRegisterResource.download(_this2.cashRegister_id);
+            case 4:
+              _yield$CashRegisterRe = _context2.sent;
+              data = _yield$CashRegisterRe.data;
+              _this2.loading = false;
+              blob = new Blob([data], {
+                type: "application/vnd.ms-excel"
+              });
+              link = document.createElement("a");
+              link.href = window.URL.createObjectURL(blob);
+              fileName = "".concat(_this2.$t('cash_registers.export_name'), "-").concat(_this2.cashRegister.detail.closing_date, "-").concat(_this2.cashRegister.detail.closing_end_date);
+              link.download = "".concat(fileName, ".xls");
+              link.click();
+              _context2.next = 19;
+              break;
+            case 15:
+              _context2.prev = 15;
+              _context2.t0 = _context2["catch"](0);
+              _this2.loading = false;
+              if (_context2.t0.response.status === 422) {
+                _this2.danger(_this2.getFirstValidationError(_context2.t0.response.data.errors), "Error", "AlertCircleIcon");
+              } else {
+                _this2.danger(_context2.t0.message, "Error", "AlertCircleIcon");
+              }
+            case 19:
+            case "end":
+              return _context2.stop();
+          }
+        }, _callee2, null, [[0, 15]]);
+      }))();
+    },
+    getCashRegister: function getCashRegister() {
+      var _this3 = this;
+      return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee3() {
+        var _yield$CashRegisterRe2, data;
+        return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee3$(_context3) {
+          while (1) switch (_context3.prev = _context3.next) {
+            case 0:
+              _this3.cashRegister.totalExpenses = 0;
+              _this3.cashRegister.totalCash = 0;
+              _this3.cashRegister.totalDebitCard = 0;
+              _this3.cashRegister.totalCreditCard = 0;
+              _this3.cashRegister.totalCheck = 0;
+              _this3.cashRegister.totalTransfer = 0;
+              _this3.cashRegister.expenses = null;
+              _this3.cashRegister.payments = null;
+              _this3.cashRegister.xrays = null;
+              _this3.loading = true;
+              _context3.next = 12;
+              return CashRegisterResource.getDetail(_this3.cashRegister_id);
+            case 12:
+              _yield$CashRegisterRe2 = _context3.sent;
+              data = _yield$CashRegisterRe2.data;
+              _this3.loading = false;
+              _this3.cashRegister = {};
+              _this3.cashRegister.expenses = data.data.expenses;
+              _this3.cashRegister.payments = data.data.payments;
+              _this3.cashRegister.detail = data.data.register;
+
+              //Filter by xrays
+              _this3.cashRegister.xrays = _.filter(_this3.cashRegister.payments, function (item) {
+                return item.action_group === 'Radiología Oral';
+              });
+              _this3.cashRegister.totalExpenses = _this3.cashRegister.expenses.reduce(function (carry, expense) {
+                return carry + expense.amount * 1;
+              }, 0);
+              _this3.cashRegister.totalCash = _this3.cashRegister.payments.reduce(function (carry, payment) {
+                return carry + (payment.method === 'cash' ? payment.ap_amount * 1 : 0);
+              }, 0);
+              _this3.cashRegister.totalDebitCard = _this3.cashRegister.payments.reduce(function (carry, payment) {
+                return carry + (payment.method === 'debit_card' ? payment.ap_amount * 1 : 0);
+              }, 0);
+              _this3.cashRegister.totalCreditCard = _this3.cashRegister.payments.reduce(function (carry, payment) {
+                return carry + (payment.method === 'credit_card' ? payment.ap_amount * 1 : 0);
+              }, 0);
+              _this3.cashRegister.totalCheck = _this3.cashRegister.payments.reduce(function (carry, payment) {
+                return carry + (payment.method === 'check' ? payment.ap_amount * 1 : 0);
+              }, 0);
+              _this3.cashRegister.totalTransfer = _this3.cashRegister.payments.reduce(function (carry, payment) {
+                return carry + (payment.method === 'transfer' ? payment.ap_amount * 1 : 0);
+              }, 0);
+            case 26:
+            case "end":
+              return _context3.stop();
+          }
+        }, _callee3);
+      }))();
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=style&index=0&id=7351aedf&lang=scss&scoped=true&":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=style&index=0&id=7351aedf&lang=scss&scoped=true& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+var ___CSS_LOADER_AT_RULE_IMPORT_0___ = __webpack_require__(/*! -!../../../../../../../node_modules/css-loader/dist/cjs.js!flatpickr/dist/flatpickr.css */ "./node_modules/css-loader/dist/cjs.js!./node_modules/flatpickr/dist/flatpickr.css");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+exports.i(___CSS_LOADER_AT_RULE_IMPORT_0___);
+// Module
+exports.push([module.i, ".flatpickr-calendar .flatpickr-day[data-v-7351aedf] {\n  color: #6e6b7b;\n}\n[dir] .flatpickr-calendar .flatpickr-day.today[data-v-7351aedf] {\n  border-color: #7367f0;\n}\n.flatpickr-calendar .flatpickr-day.today[data-v-7351aedf]:hover {\n  color: #6e6b7b;\n}\n[dir] .flatpickr-calendar .flatpickr-day.today[data-v-7351aedf]:hover {\n  background: transparent;\n}\n.flatpickr-calendar .flatpickr-day.selected[data-v-7351aedf], .flatpickr-calendar .flatpickr-day.selected[data-v-7351aedf]:hover {\n  color: #fff;\n}\n[dir] .flatpickr-calendar .flatpickr-day.selected[data-v-7351aedf], [dir] .flatpickr-calendar .flatpickr-day.selected[data-v-7351aedf]:hover {\n  background: #7367f0;\n  border-color: #7367f0;\n}\n[dir] .flatpickr-calendar .flatpickr-day.inRange[data-v-7351aedf], [dir] .flatpickr-calendar .flatpickr-day.inRange[data-v-7351aedf]:hover {\n  background: #f3f2fe;\n  border-color: #f3f2fe;\n}\n[dir=ltr] .flatpickr-calendar .flatpickr-day.inRange[data-v-7351aedf], [dir=ltr] .flatpickr-calendar .flatpickr-day.inRange[data-v-7351aedf]:hover {\n  box-shadow: -5px 0 0 #f3f2fe, 5px 0 0 #f3f2fe;\n}\n[dir=rtl] .flatpickr-calendar .flatpickr-day.inRange[data-v-7351aedf], [dir=rtl] .flatpickr-calendar .flatpickr-day.inRange[data-v-7351aedf]:hover {\n  box-shadow: 5px 0 0 #f3f2fe, -5px 0 0 #f3f2fe;\n}\n.flatpickr-calendar .flatpickr-day.startRange[data-v-7351aedf], .flatpickr-calendar .flatpickr-day.endRange[data-v-7351aedf], .flatpickr-calendar .flatpickr-day.startRange[data-v-7351aedf]:hover, .flatpickr-calendar .flatpickr-day.endRange[data-v-7351aedf]:hover {\n  color: #fff;\n}\n[dir] .flatpickr-calendar .flatpickr-day.startRange[data-v-7351aedf], [dir] .flatpickr-calendar .flatpickr-day.endRange[data-v-7351aedf], [dir] .flatpickr-calendar .flatpickr-day.startRange[data-v-7351aedf]:hover, [dir] .flatpickr-calendar .flatpickr-day.endRange[data-v-7351aedf]:hover {\n  background: #7367f0;\n  border-color: #7367f0;\n}\n[dir=ltr] .flatpickr-calendar .flatpickr-day.selected.startRange + .endRange[data-v-7351aedf]:not(:nth-child(7n+1)), [dir=ltr] .flatpickr-calendar .flatpickr-day.startRange.startRange + .endRange[data-v-7351aedf]:not(:nth-child(7n+1)), [dir=ltr] .flatpickr-calendar .flatpickr-day.endRange.startRange + .endRange[data-v-7351aedf]:not(:nth-child(7n+1)) {\n  box-shadow: -10px 0 0 #7367f0;\n}\n[dir=rtl] .flatpickr-calendar .flatpickr-day.selected.startRange + .endRange[data-v-7351aedf]:not(:nth-child(7n+1)), [dir=rtl] .flatpickr-calendar .flatpickr-day.startRange.startRange + .endRange[data-v-7351aedf]:not(:nth-child(7n+1)), [dir=rtl] .flatpickr-calendar .flatpickr-day.endRange.startRange + .endRange[data-v-7351aedf]:not(:nth-child(7n+1)) {\n  box-shadow: 10px 0 0 #7367f0;\n}\n.flatpickr-calendar .flatpickr-day.flatpickr-disabled[data-v-7351aedf], .flatpickr-calendar .flatpickr-day.prevMonthDay[data-v-7351aedf], .flatpickr-calendar .flatpickr-day.nextMonthDay[data-v-7351aedf] {\n  color: #dae1e7;\n}\n[dir] .flatpickr-calendar .flatpickr-day[data-v-7351aedf]:hover {\n  background: #f6f6f6;\n}\n.flatpickr-calendar[data-v-7351aedf]:after, .flatpickr-calendar[data-v-7351aedf]:before {\n  display: none;\n}\n.flatpickr-calendar .flatpickr-months .flatpickr-prev-month[data-v-7351aedf],\n.flatpickr-calendar .flatpickr-months .flatpickr-next-month[data-v-7351aedf] {\n  top: -5px;\n}\n.flatpickr-calendar .flatpickr-months .flatpickr-prev-month:hover i[data-v-7351aedf], .flatpickr-calendar .flatpickr-months .flatpickr-prev-month:hover svg[data-v-7351aedf],\n.flatpickr-calendar .flatpickr-months .flatpickr-next-month:hover i[data-v-7351aedf],\n.flatpickr-calendar .flatpickr-months .flatpickr-next-month:hover svg[data-v-7351aedf] {\n  fill: #7367f0;\n}\n.flatpickr-calendar .flatpickr-current-month span.cur-month[data-v-7351aedf] {\n  font-weight: 300;\n}\n.flatpickr-calendar.open[data-v-7351aedf] {\n  z-index: 1051;\n}\n.flatpickr-calendar.hasTime.open .flatpickr-time[data-v-7351aedf] {\n  height: auto;\n}\n[dir] .flatpickr-time input[data-v-7351aedf]:hover, [dir] .flatpickr-time .flatpickr-am-pm[data-v-7351aedf]:hover, [dir] .flatpickr-time input[data-v-7351aedf]:focus, [dir] .flatpickr-time .flatpickr-am-pm[data-v-7351aedf]:focus {\n  background: #fff;\n}\n[dir] .dark-layout .flatpickr-calendar[data-v-7351aedf] {\n  background: #161d31;\n  border-color: #161d31;\n  box-shadow: none;\n}\n.dark-layout .flatpickr-calendar .flatpickr-months i[data-v-7351aedf],\n.dark-layout .flatpickr-calendar .flatpickr-months svg[data-v-7351aedf] {\n  fill: #b4b7bd;\n}\n.dark-layout .flatpickr-calendar .flatpickr-month[data-v-7351aedf] {\n  color: #b4b7bd;\n}\n[dir=ltr] .dark-layout .flatpickr-calendar .flatpickr-weekwrapper .flatpickr-weeks[data-v-7351aedf] {\n  box-shadow: 1px 0 0 #3b4253;\n}\n[dir=rtl] .dark-layout .flatpickr-calendar .flatpickr-weekwrapper .flatpickr-weeks[data-v-7351aedf] {\n  box-shadow: -1px 0 0 #3b4253;\n}\n.dark-layout .flatpickr-calendar .flatpickr-weekday[data-v-7351aedf] {\n  color: #b4b7bd;\n}\n.dark-layout .flatpickr-calendar .flatpickr-day[data-v-7351aedf], .dark-layout .flatpickr-calendar .flatpickr-day.today[data-v-7351aedf]:hover {\n  color: #b4b7bd;\n}\n.dark-layout .flatpickr-calendar .flatpickr-day.selected[data-v-7351aedf] {\n  color: #fff;\n}\n.dark-layout .flatpickr-calendar .flatpickr-day.prevMonthDay[data-v-7351aedf], .dark-layout .flatpickr-calendar .flatpickr-day.nextMonthDay[data-v-7351aedf], .dark-layout .flatpickr-calendar .flatpickr-day.flatpickr-disabled[data-v-7351aedf] {\n  color: #4e5154 !important;\n}\n[dir] .dark-layout .flatpickr-calendar .flatpickr-day.inRange[data-v-7351aedf], [dir] .dark-layout .flatpickr-calendar .flatpickr-day.inRange[data-v-7351aedf]:hover {\n  background: #283046;\n  border-color: #283046;\n}\n[dir=ltr] .dark-layout .flatpickr-calendar .flatpickr-day.inRange[data-v-7351aedf], [dir=ltr] .dark-layout .flatpickr-calendar .flatpickr-day.inRange[data-v-7351aedf]:hover {\n  box-shadow: -5px 0 0 #283046, 5px 0 0 #283046;\n}\n[dir=rtl] .dark-layout .flatpickr-calendar .flatpickr-day.inRange[data-v-7351aedf], [dir=rtl] .dark-layout .flatpickr-calendar .flatpickr-day.inRange[data-v-7351aedf]:hover {\n  box-shadow: 5px 0 0 #283046, -5px 0 0 #283046;\n}\n.dark-layout .flatpickr-calendar .flatpickr-day[data-v-7351aedf]:hover:not(.selected):not(.today):not(.startRange):not(.endRange) {\n  color: #b4b7bd;\n}\n[dir] .dark-layout .flatpickr-calendar .flatpickr-day[data-v-7351aedf]:hover:not(.selected):not(.today):not(.startRange):not(.endRange) {\n  border-color: #283046;\n}\n[dir] .dark-layout .flatpickr-calendar .flatpickr-days .flatpickr-day[data-v-7351aedf]:hover:not(.selected):not(.today):not(.startRange):not(.endRange), [dir] .dark-layout .flatpickr-calendar .flatpickr-days .flatpickr-day[data-v-7351aedf]:focus:not(.selected):not(.today):not(.startRange):not(.endRange) {\n  background: #283046;\n}\n[dir] .dark-layout .flatpickr-calendar .flatpickr-time[data-v-7351aedf] {\n  border-color: #161d31 !important;\n}\n.dark-layout .flatpickr-calendar .flatpickr-time .numInput[data-v-7351aedf],\n.dark-layout .flatpickr-calendar .flatpickr-time .flatpickr-am-pm[data-v-7351aedf] {\n  color: #b4b7bd;\n}\n[dir] .dark-layout .flatpickr-calendar .flatpickr-time .numInput[data-v-7351aedf]:hover, [dir] .dark-layout .flatpickr-calendar .flatpickr-time .flatpickr-am-pm[data-v-7351aedf]:hover {\n  background: #161d31;\n}\n[dir] .dark-layout .flatpickr-calendar .flatpickr-time .arrowUp[data-v-7351aedf]:after {\n  border-bottom-color: #b4b7bd;\n}\n[dir] .dark-layout .flatpickr-calendar .flatpickr-time .arrowDown[data-v-7351aedf]:after {\n  border-top-color: #b4b7bd;\n}\n[dir] .dark-layout .flatpickr-time input[data-v-7351aedf]:hover, [dir] .dark-layout .flatpickr-time .flatpickr-am-pm[data-v-7351aedf]:hover, [dir] .dark-layout .flatpickr-time input[data-v-7351aedf]:focus, [dir] .dark-layout .flatpickr-time .flatpickr-am-pm[data-v-7351aedf]:focus {\n  background: #161d31;\n}\n.flatpickr-input[readonly][data-v-7351aedf],\n.flatpickr-input ~ .form-control[readonly][data-v-7351aedf],\n.flatpickr-human-friendly[readonly][data-v-7351aedf] {\n  opacity: 1 !important;\n}\n[dir] .flatpickr-input[readonly][data-v-7351aedf], [dir] .flatpickr-input ~ .form-control[readonly][data-v-7351aedf], [dir] .flatpickr-human-friendly[readonly][data-v-7351aedf] {\n  background-color: inherit;\n}\n[dir] .flatpickr-weekdays[data-v-7351aedf] {\n  margin-top: 8px;\n}\n.flatpickr-current-month .flatpickr-monthDropdown-months[data-v-7351aedf] {\n  -webkit-appearance: none;\n}\n.flatpickr-current-month .flatpickr-monthDropdown-months[data-v-7351aedf],\n.flatpickr-current-month .numInputWrapper[data-v-7351aedf] {\n  font-size: 1.1rem;\n  transition: all 0.15s ease-out;\n}\n[dir] .flatpickr-current-month .flatpickr-monthDropdown-months[data-v-7351aedf], [dir] .flatpickr-current-month .numInputWrapper[data-v-7351aedf] {\n  border-radius: 4px;\n  padding: 2px;\n}\n.flatpickr-current-month .flatpickr-monthDropdown-months span[data-v-7351aedf],\n.flatpickr-current-month .numInputWrapper span[data-v-7351aedf] {\n  display: none;\n}\nhtml[dir=rtl] .flatpickr-calendar .flatpickr-prev-month svg[data-v-7351aedf],\nhtml[dir=rtl] .flatpickr-calendar .flatpickr-next-month svg[data-v-7351aedf] {\n  transform: rotate(180deg);\n}\n.per-page-selector[data-v-7351aedf] {\n  width: 90px;\n}\n.text-decoration-line-through[data-v-7351aedf] {\n  text-decoration: line-through;\n}\n[dir] .dark-layout .card-company-table[data-v-7351aedf]  td .b-avatar.badge-light-company {\n  background: #161d31 !important;\n}", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=style&index=1&id=7351aedf&lang=scss&":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=style&index=1&id=7351aedf&lang=scss& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+var ___CSS_LOADER_AT_RULE_IMPORT_0___ = __webpack_require__(/*! -!../../../../../../../node_modules/css-loader/dist/cjs.js!sweetalert2/dist/sweetalert2.min.css */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sweetalert2/dist/sweetalert2.min.css");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+exports.i(___CSS_LOADER_AT_RULE_IMPORT_0___);
+// Module
+exports.push([module.i, "[dir] .swal2-container .swal2-popup {\n  border-radius: 0.428rem;\n  padding-bottom: 1.5rem;\n}\n.swal2-container .swal2-popup .swal2-close:focus {\n  outline: none;\n}\n[dir] .swal2-container .swal2-popup .swal2-close:focus {\n  box-shadow: none;\n}\n.swal2-container .swal2-popup .swal2-content {\n  color: #6e6b7b;\n}\n.swal2-container .swal2-popup .swal2-title {\n  font-size: 1.5rem;\n  font-weight: inherit;\n  color: #5e5873;\n}\n[dir] .swal2-container .swal2-popup button.swal2-confirm:focus {\n  box-shadow: none;\n}\n.swal2-container .swal2-popup input.swal2-input {\n  height: 2.714rem;\n  font-size: 1rem;\n  color: #6e6b7b;\n  line-height: 1.45;\n}\n[dir] .swal2-container .swal2-popup input.swal2-input {\n  padding: 0.438rem 1rem;\n  border-color: #d8d6de;\n  border-radius: 0.357rem;\n}\n[dir] .swal2-container .swal2-popup input.swal2-input:focus {\n  border-color: #7367f0 !important;\n  box-shadow: 0 3px 10px 0 rgba(34, 41, 47, 0.1);\n}\n[dir] .swal2-container .swal2-popup .swal2-progress-steps .swal2-progress-step {\n  background-color: #7367f0;\n}\n[dir] .swal2-container .swal2-popup .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step ~ .swal2-progress-step-line, [dir] .swal2-container .swal2-popup .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step ~ .swal2-progress-step {\n  background-color: #b3adf7;\n}\n[dir] .swal2-container .swal2-popup .swal2-progress-steps .swal2-progress-step-line {\n  background-color: #7367f0;\n}\n.swal2-container .swal2-popup pre {\n  min-height: 1.35rem;\n}\n[dir] .swal2-container .swal2-popup pre {\n  margin-top: 0.5rem;\n}\n.swal2-container .swal2-popup .swal2-footer {\n  color: #6e6b7b;\n}\n[dir] .swal2-container .swal2-popup .swal2-footer {\n  border-color: #ebe9f1;\n}\n.dark-layout .swal2-container .swal2-popup .swal2-title {\n  color: #d0d2d6;\n}\n[dir] .dark-layout .swal2-container .swal2-modal {\n  background-color: #283046;\n}\n.dark-layout .swal2-container .swal2-modal .swal2-header .swal2-title {\n  color: #d0d2d6;\n}\n.dark-layout .swal2-container .swal2-modal .swal2-header .swal2-icon-text {\n  color: inherit;\n}\n[dir] .dark-layout .swal2-container .swal2-modal .swal2-header .swal2-success-circular-line-left, [dir] .dark-layout .swal2-container .swal2-modal .swal2-header .swal2-success-circular-line-right, [dir] .dark-layout .swal2-container .swal2-modal .swal2-header .swal2-success-fix, [dir] .dark-layout .swal2-container .swal2-modal .swal2-header .swal2-animate-success-icon {\n  background-color: #283046 !important;\n}\n.dark-layout .swal2-container .swal2-modal input.swal2-input {\n  color: #b4b7bd;\n}\n[dir] .dark-layout .swal2-container .swal2-modal input.swal2-input {\n  border-color: #3b4253;\n}\n.dark-layout .swal2-container .swal2-modal .swal2-content,\n.dark-layout .swal2-container .swal2-modal .swal2-html-container {\n  color: #b4b7bd;\n}\n.dark-layout .swal2-container .swal2-modal pre,\n.dark-layout .swal2-container .swal2-modal code {\n  color: #b4b7bd;\n}\n[dir] .dark-layout .swal2-container .swal2-modal .swal2-input {\n  background-color: #283046;\n}\n.dark-layout .swal2-container .swal2-modal .swal2-footer {\n  color: #b4b7bd;\n}\n[dir] .dark-layout .swal2-container .swal2-modal .swal2-footer {\n  border-color: #3b4253;\n}\n.dark-layout .swal2-container .swal2-validation-message {\n  color: #b4b7bd;\n}\n[dir] .dark-layout .swal2-container .swal2-validation-message {\n  background-color: #161d31;\n}\nhtml[dir=rtl] .swal2-rtl .swal2-close {\n  left: 0;\n  right: auto;\n}\n\n/**\n    Support for SASS is deprecated as of v3.18.\n\n    The files remain here if your build is dependent on them\n    but they will not receive updates in future releases. All\n    SASS variables have been translated into CSS variables, so\n    migration should be quite simple if you'd like to move over.\n\n    In v4, these files will be removed.\n */\n.v-select {\n  position: relative;\n  font-family: inherit;\n}\n.v-select,\n.v-select * {\n  box-sizing: border-box;\n}\n\n/* KeyFrames */\n@-webkit-keyframes vSelectSpinner-ltr {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n@-webkit-keyframes vSelectSpinner-rtl {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(-360deg);\n}\n}\n@keyframes vSelectSpinner-ltr {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n@keyframes vSelectSpinner-rtl {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(-360deg);\n}\n}\n/* Dropdown Default Transition */\n.vs__fade-enter-active,\n.vs__fade-leave-active {\n  pointer-events: none;\n  transition: opacity 0.15s cubic-bezier(1, 0.5, 0.8, 1);\n}\n.vs__fade-enter,\n.vs__fade-leave-to {\n  opacity: 0;\n}\n\n/** Component States */\n/*\n * Disabled\n *\n * When the component is disabled, all interaction\n * should be prevented. Here we modify the bg color,\n * and change the cursor displayed on the interactive\n * components.\n */\n[dir] .vs--disabled .vs__dropdown-toggle, [dir] .vs--disabled .vs__clear, [dir] .vs--disabled .vs__search, [dir] .vs--disabled .vs__selected, [dir] .vs--disabled .vs__open-indicator {\n  cursor: not-allowed;\n  background-color: #f8f8f8;\n}\n\n/*\n *  RTL - Right to Left Support\n *\n *  Because we're using a flexbox layout, the `dir=\"rtl\"`\n *  HTML attribute does most of the work for us by\n *  rearranging the child elements visually.\n */\n.v-select[dir=rtl] .vs__actions {\n  padding: 0 3px 0 6px;\n}\n.v-select[dir=rtl] .vs__clear {\n  margin-left: 6px;\n  margin-right: 0;\n}\n.v-select[dir=rtl] .vs__deselect {\n  margin-left: 0;\n  margin-right: 2px;\n}\n.v-select[dir=rtl] .vs__dropdown-menu {\n  text-align: right;\n}\n\n/**\n    Dropdown Toggle\n\n    The dropdown toggle is the primary wrapper of the component. It\n    has two direct descendants: .vs__selected-options, and .vs__actions.\n\n    .vs__selected-options holds the .vs__selected's as well as the\n    main search input.\n\n    .vs__actions holds the clear button and dropdown toggle.\n */\n.vs__dropdown-toggle {\n  appearance: none;\n  display: flex;\n  white-space: normal;\n}\n[dir] .vs__dropdown-toggle {\n  padding: 0 0 4px 0;\n  background: none;\n  border: 1px solid #d8d6de;\n  border-radius: 0.357rem;\n}\n.vs__selected-options {\n  display: flex;\n  flex-basis: 100%;\n  flex-grow: 1;\n  flex-wrap: wrap;\n  position: relative;\n}\n[dir] .vs__selected-options {\n  padding: 0 2px;\n}\n.vs__actions {\n  display: flex;\n  align-items: center;\n}\n[dir=ltr] .vs__actions {\n  padding: 4px 6px 0 3px;\n}\n[dir=rtl] .vs__actions {\n  padding: 4px 3px 0 6px;\n}\n\n/* Dropdown Toggle States */\n[dir] .vs--searchable .vs__dropdown-toggle {\n  cursor: text;\n}\n[dir] .vs--unsearchable .vs__dropdown-toggle {\n  cursor: pointer;\n}\n[dir] .vs--open .vs__dropdown-toggle {\n  border-bottom-color: transparent;\n}\n[dir=ltr] .vs--open .vs__dropdown-toggle {\n  border-bottom-left-radius: 0;\n  border-bottom-right-radius: 0;\n}\n[dir=rtl] .vs--open .vs__dropdown-toggle {\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.vs__open-indicator {\n  fill: rgba(60, 60, 60, 0.5);\n  transition: transform 150ms cubic-bezier(1, -0.115, 0.975, 0.855);\n}\n[dir] .vs__open-indicator {\n  transform: scale(1);\n  transition-timing-function: cubic-bezier(1, -0.115, 0.975, 0.855);\n}\n[dir=ltr] .vs--open .vs__open-indicator {\n  transform: rotate(180deg) scale(1);\n}\n[dir=rtl] .vs--open .vs__open-indicator {\n  transform: rotate(-180deg) scale(1);\n}\n.vs--loading .vs__open-indicator {\n  opacity: 0;\n}\n\n/* Clear Button */\n.vs__clear {\n  fill: rgba(60, 60, 60, 0.5);\n}\n[dir] .vs__clear {\n  padding: 0;\n  border: 0;\n  background-color: transparent;\n  cursor: pointer;\n}\n[dir=ltr] .vs__clear {\n  margin-right: 8px;\n}\n[dir=rtl] .vs__clear {\n  margin-left: 8px;\n}\n\n/* Dropdown Menu */\n.vs__dropdown-menu {\n  display: block;\n  box-sizing: border-box;\n  position: absolute;\n  top: calc(100% - 1px);\n  z-index: 1000;\n  width: 100%;\n  max-height: 350px;\n  min-width: 160px;\n  overflow-y: auto;\n  list-style: none;\n}\n[dir] .vs__dropdown-menu {\n  padding: 5px 0;\n  margin: 0;\n  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.1);\n  border: 1px solid #d8d6de;\n  border-top-style: none;\n  border-radius: 0 0 0.357rem 0.357rem;\n  background: #fff;\n}\n[dir=ltr] .vs__dropdown-menu {\n  left: 0;\n  text-align: left;\n}\n[dir=rtl] .vs__dropdown-menu {\n  right: 0;\n  text-align: right;\n}\n[dir] .vs__no-options {\n  text-align: center;\n}\n\n/* List Items */\n.vs__dropdown-option {\n  line-height: 1.42857143;\n  /* Normalize line height */\n  display: block;\n  color: #333;\n  /* Overrides most CSS frameworks */\n  white-space: nowrap;\n}\n[dir] .vs__dropdown-option {\n  padding: 3px 20px;\n  clear: both;\n  cursor: pointer;\n}\n.vs__dropdown-option--highlight {\n  color: #7367f0 !important;\n}\n[dir] .vs__dropdown-option--highlight {\n  background: rgba(115, 103, 240, 0.12);\n}\n.vs__dropdown-option--deselect {\n  color: #fff;\n}\n[dir] .vs__dropdown-option--deselect {\n  background: #fb5858;\n}\n.vs__dropdown-option--disabled {\n  color: rgba(60, 60, 60, 0.5);\n}\n[dir] .vs__dropdown-option--disabled {\n  background: inherit;\n  cursor: inherit;\n}\n\n/* Selected Tags */\n.vs__selected {\n  display: flex;\n  align-items: center;\n  color: #333;\n  line-height: 1.8;\n  z-index: 0;\n}\n[dir] .vs__selected {\n  background-color: #7367f0;\n  border: 0 solid rgba(60, 60, 60, 0.26);\n  border-radius: 0.357rem;\n  margin: 4px 2px 0px 2px;\n  padding: 0 0.25em;\n}\n.vs__deselect {\n  display: inline-flex;\n  appearance: none;\n  fill: rgba(60, 60, 60, 0.5);\n}\n[dir] .vs__deselect {\n  padding: 0;\n  border: 0;\n  cursor: pointer;\n  background: none;\n  text-shadow: 0 1px 0 #fff;\n}\n[dir=ltr] .vs__deselect {\n  margin-left: 4px;\n}\n[dir=rtl] .vs__deselect {\n  margin-right: 4px;\n}\n\n/* States */\n[dir] .vs--single .vs__selected {\n  background-color: transparent;\n  border-color: transparent;\n}\n.vs--single.vs--open .vs__selected, .vs--single.vs--loading .vs__selected {\n  position: absolute;\n  opacity: 0.4;\n}\n.vs--single.vs--searching .vs__selected {\n  display: none;\n}\n\n/* Search Input */\n/**\n * Super weird bug... If this declaration is grouped\n * below, the cancel button will still appear in chrome.\n * If it's up here on it's own, it'll hide it.\n */\n.vs__search::-webkit-search-cancel-button {\n  display: none;\n}\n.vs__search::-webkit-search-decoration,\n.vs__search::-webkit-search-results-button,\n.vs__search::-webkit-search-results-decoration,\n.vs__search::-ms-clear {\n  display: none;\n}\n.vs__search,\n.vs__search:focus {\n  appearance: none;\n  line-height: 1.8;\n  font-size: 1em;\n  outline: none;\n  width: 0;\n  max-width: 100%;\n  flex-grow: 1;\n  z-index: 1;\n}\n[dir] .vs__search, [dir] .vs__search:focus {\n  border: 1px solid transparent;\n  margin: 4px 0 0 0;\n  padding: 0 7px;\n  background: none;\n  box-shadow: none;\n}\n[dir=ltr] .vs__search, [dir=ltr] .vs__search:focus {\n  border-left: none;\n}\n[dir=rtl] .vs__search, [dir=rtl] .vs__search:focus {\n  border-right: none;\n}\n.vs__search::placeholder {\n  color: #6e6b7b;\n}\n\n/**\n    States\n */\n.vs--unsearchable .vs__search {\n  opacity: 1;\n}\n[dir] .vs--unsearchable:not(.vs--disabled) .vs__search {\n  cursor: pointer;\n}\n.vs--single.vs--searching:not(.vs--open):not(.vs--loading) .vs__search {\n  opacity: 0.2;\n}\n\n/* Loading Spinner */\n.vs__spinner {\n  align-self: center;\n  opacity: 0;\n  font-size: 5px;\n  text-indent: -9999em;\n  overflow: hidden;\n  transition: opacity 0.1s;\n}\n[dir] .vs__spinner {\n  border-top: 0.9em solid rgba(100, 100, 100, 0.1);\n  border-bottom: 0.9em solid rgba(100, 100, 100, 0.1);\n  transform: translateZ(0);\n}\n[dir=ltr] .vs__spinner {\n  border-right: 0.9em solid rgba(100, 100, 100, 0.1);\n  border-left: 0.9em solid rgba(60, 60, 60, 0.45);\n  animation:  vSelectSpinner-ltr 1.1s infinite linear;\n}\n[dir=rtl] .vs__spinner {\n  border-left: 0.9em solid rgba(100, 100, 100, 0.1);\n  border-right: 0.9em solid rgba(60, 60, 60, 0.45);\n  animation:  vSelectSpinner-rtl 1.1s infinite linear;\n}\n.vs__spinner,\n.vs__spinner:after {\n  width: 5em;\n  height: 5em;\n}\n[dir] .vs__spinner, [dir] .vs__spinner:after {\n  border-radius: 50%;\n}\n\n/* Loading Spinner States */\n.vs--loading .vs__spinner {\n  opacity: 1;\n}\n.vs__open-indicator {\n  fill: none;\n}\n[dir] .vs__open-indicator {\n  margin-top: 0.15rem;\n}\n.vs__dropdown-toggle {\n  transition: all 0.25s ease-in-out;\n}\n[dir] .vs__dropdown-toggle {\n  padding: 0.59px 0 4px 0;\n}\n[dir=ltr] .vs--single .vs__dropdown-toggle {\n  padding-left: 6px;\n}\n[dir=rtl] .vs--single .vs__dropdown-toggle {\n  padding-right: 6px;\n}\n.vs__dropdown-option--disabled {\n  opacity: 0.5;\n}\n[dir] .vs__dropdown-option--disabled.vs__dropdown-option--selected {\n  background: #7367f0 !important;\n}\n.vs__dropdown-option {\n  color: #6e6b7b;\n}\n[dir] .vs__dropdown-option, [dir] .vs__no-options {\n  padding: 7px 20px;\n}\n.vs__dropdown-option--selected {\n  background-color: #7367f0;\n  color: #fff;\n  position: relative;\n}\n.vs__dropdown-option--selected::after {\n  content: \"\";\n  height: 1.1rem;\n  width: 1.1rem;\n  display: inline-block;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  right: 20px;\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E\");\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: 1.1rem;\n}\n[dir=rtl] .vs__dropdown-option--selected::after {\n  left: 20px;\n  right: unset;\n}\n.vs__dropdown-option--selected.vs__dropdown-option--highlight {\n  color: #fff !important;\n  background-color: #7367f0 !important;\n}\n.vs__clear svg {\n  color: #6e6b7b;\n}\n.vs__selected {\n  color: #fff;\n}\n.v-select.vs--single .vs__selected {\n  color: #6e6b7b;\n  transition: transform 0.2s ease;\n}\n[dir] .v-select.vs--single .vs__selected {\n  margin-top: 5px;\n}\n[dir=ltr] .v-select.vs--single .vs__selected input {\n  padding-left: 0;\n}\n[dir=rtl] .v-select.vs--single .vs__selected input {\n  padding-right: 0;\n}\n[dir=ltr] .vs--single.vs--open .vs__selected {\n  transform: translateX(5px);\n}\n[dir=rtl] .vs--single.vs--open .vs__selected {\n  transform: translateX(-5px);\n}\n.vs__selected .vs__deselect {\n  color: inherit;\n}\n.v-select:not(.vs--single) .vs__selected {\n  font-size: 0.9rem;\n}\n[dir] .v-select:not(.vs--single) .vs__selected {\n  border-radius: 3px;\n  padding: 0 0.6em;\n}\n[dir=ltr] .v-select:not(.vs--single) .vs__selected {\n  margin: 5px 2px 2px 5px;\n}\n[dir=rtl] .v-select:not(.vs--single) .vs__selected {\n  margin: 5px 5px 2px 2px;\n}\n.v-select:not(.vs--single) .vs__deselect svg {\n  vertical-align: text-top;\n}\n[dir] .v-select:not(.vs--single) .vs__deselect svg {\n  transform: scale(0.8);\n}\n.vs__dropdown-menu {\n  top: calc(100% + 1rem);\n}\n[dir] .vs__dropdown-menu {\n  border: none;\n  border-radius: 6px;\n  padding: 0;\n}\n[dir] .vs--open .vs__dropdown-toggle {\n  border-color: #7367f0;\n  border-bottom-color: #7367f0;\n  box-shadow: 0 3px 10px 0 rgba(34, 41, 47, 0.1);\n}\n[dir=ltr] .vs--open .vs__dropdown-toggle {\n  border-bottom-left-radius: 0.357rem;\n  border-bottom-right-radius: 0.357rem;\n}\n[dir=rtl] .vs--open .vs__dropdown-toggle {\n  border-bottom-right-radius: 0.357rem;\n  border-bottom-left-radius: 0.357rem;\n}\n.select-size-lg .vs__selected {\n  font-size: 1rem !important;\n}\n[dir] .select-size-lg.vs--single.vs--open .vs__selected {\n  margin-top: 6px;\n}\n.select-size-lg .vs__dropdown-toggle,\n.select-size-lg .vs__selected {\n  font-size: 1.25rem;\n}\n[dir] .select-size-lg .vs__dropdown-toggle {\n  padding: 5px;\n}\n[dir] .select-size-lg .vs__dropdown-toggle input {\n  margin-top: 0;\n}\n.select-size-lg .vs__deselect svg {\n  vertical-align: middle !important;\n}\n[dir] .select-size-lg .vs__deselect svg {\n  transform: scale(1) !important;\n}\n[dir] .select-size-sm .vs__dropdown-toggle {\n  padding-bottom: 0;\n  padding: 1px;\n}\n[dir] .select-size-sm.vs--single .vs__dropdown-toggle {\n  padding: 2px;\n}\n.select-size-sm .vs__dropdown-toggle,\n.select-size-sm .vs__selected {\n  font-size: 0.9rem;\n}\n[dir] .select-size-sm .vs__actions {\n  padding-top: 2px;\n  padding-bottom: 2px;\n}\n.select-size-sm .vs__deselect svg {\n  vertical-align: middle !important;\n}\n[dir] .select-size-sm .vs__search {\n  margin-top: 0;\n}\n.select-size-sm.v-select .vs__selected {\n  font-size: 0.75rem;\n}\n[dir] .select-size-sm.v-select .vs__selected {\n  padding: 0 0.3rem;\n}\n[dir] .select-size-sm.v-select:not(.vs--single) .vs__selected {\n  margin: 4px 5px;\n}\n[dir] .select-size-sm.v-select.vs--single .vs__selected {\n  margin-top: 1px;\n}\n[dir] .select-size-sm.vs--single.vs--open .vs__selected {\n  margin-top: 4px;\n}\n.dark-layout .vs__dropdown-toggle {\n  color: #b4b7bd;\n}\n[dir] .dark-layout .vs__dropdown-toggle {\n  background: #283046;\n  border-color: #404656;\n}\n.dark-layout .vs__selected-options input {\n  color: #b4b7bd;\n}\n.dark-layout .vs__selected-options input::placeholder {\n  color: #676d7d;\n}\n.dark-layout .vs__actions svg {\n  fill: #404656;\n}\n[dir] .dark-layout .vs__dropdown-menu {\n  background: #283046;\n}\n.dark-layout .vs__dropdown-menu li {\n  color: #b4b7bd;\n}\n.dark-layout .v-select:not(.vs--single) .vs__selected {\n  color: #7367f0;\n}\n[dir] .dark-layout .v-select:not(.vs--single) .vs__selected {\n  background-color: rgba(115, 103, 240, 0.12);\n}\n.dark-layout .v-select.vs--single .vs__selected {\n  color: #b4b7bd !important;\n}\n.dark-layout .vs--disabled .vs__dropdown-toggle,\n.dark-layout .vs--disabled .vs__clear,\n.dark-layout .vs--disabled .vs__search,\n.dark-layout .vs--disabled .vs__selected,\n.dark-layout .vs--disabled .vs__open-indicator {\n  opacity: 0.5;\n}\n[dir] .dark-layout .vs--disabled .vs__dropdown-toggle, [dir] .dark-layout .vs--disabled .vs__clear, [dir] .dark-layout .vs--disabled .vs__search, [dir] .dark-layout .vs--disabled .vs__selected, [dir] .dark-layout .vs--disabled .vs__open-indicator {\n  background-color: #283046;\n}", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=style&index=0&id=7351aedf&lang=scss&scoped=true&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=style&index=0&id=7351aedf&lang=scss&scoped=true& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CashRegisterShow.vue?vue&type=style&index=0&id=7351aedf&lang=scss&scoped=true& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=style&index=0&id=7351aedf&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=style&index=1&id=7351aedf&lang=scss&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=style&index=1&id=7351aedf&lang=scss& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CashRegisterShow.vue?vue&type=style&index=1&id=7351aedf&lang=scss& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=style&index=1&id=7351aedf&lang=scss&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=template&id=7351aedf&scoped=true&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=template&id=7351aedf&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "b-overlay",
+    {
+      attrs: {
+        show: _vm.loading,
+        blur: "2px",
+        variant: "transparent",
+        rounded: "lg",
+        opacity: "0.85",
+      },
+      scopedSlots: _vm._u([
+        {
+          key: "overlay",
+          fn: function () {
+            return [
+              _c(
+                "div",
+                { staticClass: "d-flex align-items-center" },
+                [
+                  _c("b-spinner", {
+                    attrs: { small: "", type: "grow", variant: "secondary" },
+                  }),
+                  _vm._v(" "),
+                  _c("b-spinner", { attrs: { type: "grow", variant: "dark" } }),
+                  _vm._v(" "),
+                  _c("b-spinner", {
+                    attrs: { small: "", type: "grow", variant: "secondary" },
+                  }),
+                ],
+                1
+              ),
+            ]
+          },
+          proxy: true,
+        },
+      ]),
+    },
+    [
+      _vm._v(" "),
+      _vm.cashRegister.detail
+        ? _c(
+            "section",
+            [
+              _c(
+                "b-row",
+                { staticClass: "match-height" },
+                [
+                  _c(
+                    "b-col",
+                    [
+                      _c(
+                        "b-card",
+                        [
+                          _c(
+                            "b-row",
+                            [
+                              _c(
+                                "b-col",
+                                {
+                                  staticClass:
+                                    "d-flex justify-content-between flex-column",
+                                  attrs: { cols: "12", xl: "8" },
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "d-flex justify-content-start",
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "d-flex flex-column ml-1",
+                                        },
+                                        [
+                                          _c("div", { staticClass: "mb-1" }, [
+                                            _c("h4", { staticClass: "mb-0" }, [
+                                              _vm._v(
+                                                "\n                                            " +
+                                                  _vm._s(
+                                                    _vm.$t(
+                                                      "cash_registers.table_closing_id"
+                                                    )
+                                                  ) +
+                                                  ": " +
+                                                  _vm._s(
+                                                    _vm.cashRegister.detail.id
+                                                  ) +
+                                                  "\n                                        "
+                                              ),
+                                            ]),
+                                            _vm._v(" "),
+                                            _c(
+                                              "p",
+                                              { staticClass: "card-text mt-2" },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    _vm.$t(
+                                                      "cash_registers.generated_by"
+                                                    )
+                                                  ) +
+                                                    ":\n                                            " +
+                                                    _vm._s(
+                                                      _vm.cashRegister.detail
+                                                        .user.name
+                                                    )
+                                                ),
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "p",
+                                              { staticClass: "card-text" },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    _vm.$t(
+                                                      "cash_registers.court_date"
+                                                    )
+                                                  ) +
+                                                    ":\n                                            " +
+                                                    _vm._s(
+                                                      _vm.formatDate(
+                                                        _vm.cashRegister.detail
+                                                          .closing_date
+                                                      )
+                                                    ) +
+                                                    " " +
+                                                    _vm._s(_vm.$t("to")) +
+                                                    "\n                                            " +
+                                                    _vm._s(
+                                                      _vm.formatDate(
+                                                        _vm.cashRegister.detail
+                                                          .closing_end_date
+                                                      )
+                                                    )
+                                                ),
+                                              ]
+                                            ),
+                                          ]),
+                                        ]
+                                      ),
+                                    ]
+                                  ),
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("b-col", { attrs: { cols: "12", xl: "4" } }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "d-flex mt-2" },
+                                  [
+                                    _c(
+                                      "b-button",
+                                      {
+                                        staticClass: "mr-1",
+                                        attrs: {
+                                          disabled: _vm.loading,
+                                          variant: "primary",
+                                        },
+                                        on: { click: _vm.downloadCashRegister },
+                                      },
+                                      [
+                                        _c("feather-icon", {
+                                          staticClass: "mr-50",
+                                          attrs: { icon: "DownloadIcon" },
+                                        }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "span",
+                                          { staticClass: "align-middle" },
+                                          [
+                                            _vm._v(
+                                              _vm._s(_vm.$t("button_download"))
+                                            ),
+                                          ]
+                                        ),
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "b-button",
+                                      {
+                                        attrs: { variant: "outline-danger" },
+                                        on: {
+                                          click: function ($event) {
+                                            return _vm.$router.back()
+                                          },
+                                        },
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                    " +
+                                            _vm._s(_vm.$t("back")) +
+                                            "\n                                "
+                                        ),
+                                      ]
+                                    ),
+                                  ],
+                                  1
+                                ),
+                              ]),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+            ],
+            1
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.cashRegister.payments
+        ? _c(
+            "section",
+            { attrs: { id: "dashboard-ecommerce" } },
+            [
+              _c(
+                "b-row",
+                { staticClass: "match-height" },
+                [
+                  _c(
+                    "b-col",
+                    { attrs: { xl: "8", md: "6" } },
+                    [
+                      _c(
+                        "b-card",
+                        {
+                          staticClass: "card-statistics",
+                          attrs: { "no-body": "" },
+                        },
+                        [
+                          _c(
+                            "b-card-header",
+                            [
+                              _c("b-card-title", [
+                                _vm._v(_vm._s(_vm.$t("transactions"))),
+                              ]),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-card-body",
+                            { staticClass: "statistics-body" },
+                            [
+                              _c(
+                                "b-row",
+                                [
+                                  _c(
+                                    "b-col",
+                                    {
+                                      staticClass: "mb-2 mb-xl-0",
+                                      attrs: { xl: "3", sm: "6" },
+                                    },
+                                    [
+                                      _c(
+                                        "b-media",
+                                        { attrs: { "no-body": "" } },
+                                        [
+                                          _c(
+                                            "b-media-aside",
+                                            { staticClass: "mr-2" },
+                                            [
+                                              _c(
+                                                "b-avatar",
+                                                {
+                                                  attrs: {
+                                                    size: "48",
+                                                    variant: "light-primary",
+                                                  },
+                                                },
+                                                [
+                                                  _c("feather-icon", {
+                                                    attrs: {
+                                                      size: "24",
+                                                      icon: "DollarSignIcon",
+                                                    },
+                                                  }),
+                                                ],
+                                                1
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "b-media-body",
+                                            { staticClass: "my-auto" },
+                                            [
+                                              _c(
+                                                "h5",
+                                                {
+                                                  staticClass:
+                                                    "font-weight-bolder mb-0",
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                            " +
+                                                      _vm._s(
+                                                        _vm.formatPrice(
+                                                          _vm.cashRegister
+                                                            .totalCash
+                                                        )
+                                                      ) +
+                                                      "\n                                        "
+                                                  ),
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "b-card-text",
+                                                {
+                                                  staticClass:
+                                                    "font-small-3 mb-0",
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                            " +
+                                                      _vm._s(
+                                                        _vm.$t(
+                                                          "payments.method_cash"
+                                                        )
+                                                      ) +
+                                                      "\n                                        "
+                                                  ),
+                                                ]
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                        ],
+                                        1
+                                      ),
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "b-col",
+                                    {
+                                      staticClass: "mb-2 mb-xl-0",
+                                      attrs: { xl: "3", sm: "6" },
+                                    },
+                                    [
+                                      _c(
+                                        "b-media",
+                                        { attrs: { "no-body": "" } },
+                                        [
+                                          _c(
+                                            "b-media-aside",
+                                            { staticClass: "mr-2" },
+                                            [
+                                              _c(
+                                                "b-avatar",
+                                                {
+                                                  attrs: {
+                                                    size: "48",
+                                                    variant: "light-warning",
+                                                  },
+                                                },
+                                                [
+                                                  _c("feather-icon", {
+                                                    attrs: {
+                                                      size: "24",
+                                                      icon: "CreditCardIcon",
+                                                    },
+                                                  }),
+                                                ],
+                                                1
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "b-media-body",
+                                            { staticClass: "my-auto" },
+                                            [
+                                              _c(
+                                                "h5",
+                                                {
+                                                  staticClass:
+                                                    "font-weight-bolder mb-0",
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                            " +
+                                                      _vm._s(
+                                                        _vm.formatPrice(
+                                                          _vm.cashRegister
+                                                            .totalCreditCard +
+                                                            _vm.cashRegister
+                                                              .totalDebitCard
+                                                        )
+                                                      ) +
+                                                      "\n                                        "
+                                                  ),
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "b-card-text",
+                                                {
+                                                  staticClass:
+                                                    "font-small-3 mb-0",
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                            " +
+                                                      _vm._s(
+                                                        _vm.$t("payments.cards")
+                                                      ) +
+                                                      "\n                                        "
+                                                  ),
+                                                ]
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                        ],
+                                        1
+                                      ),
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "b-col",
+                                    {
+                                      staticClass: "mb-2 mb-xl-0",
+                                      attrs: { xl: "3", sm: "6" },
+                                    },
+                                    [
+                                      _c(
+                                        "b-media",
+                                        { attrs: { "no-body": "" } },
+                                        [
+                                          _c(
+                                            "b-media-aside",
+                                            { staticClass: "mr-2" },
+                                            [
+                                              _c(
+                                                "b-avatar",
+                                                {
+                                                  attrs: {
+                                                    size: "48",
+                                                    variant: "light-success",
+                                                  },
+                                                },
+                                                [
+                                                  _c("feather-icon", {
+                                                    attrs: {
+                                                      size: "24",
+                                                      icon: "CheckIcon",
+                                                    },
+                                                  }),
+                                                ],
+                                                1
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "b-media-body",
+                                            { staticClass: "my-auto" },
+                                            [
+                                              _c(
+                                                "h5",
+                                                {
+                                                  staticClass:
+                                                    "font-weight-bolder mb-0",
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                            " +
+                                                      _vm._s(
+                                                        _vm.formatPrice(
+                                                          _vm.cashRegister
+                                                            .totalCheck
+                                                        )
+                                                      ) +
+                                                      "\n                                        "
+                                                  ),
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "b-card-text",
+                                                {
+                                                  staticClass:
+                                                    "font-small-3 mb-0",
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                            " +
+                                                      _vm._s(
+                                                        _vm.$t(
+                                                          "payments.method_check"
+                                                        )
+                                                      ) +
+                                                      "\n                                        "
+                                                  ),
+                                                ]
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                        ],
+                                        1
+                                      ),
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "b-col",
+                                    {
+                                      staticClass: "mb-2 mb-xl-0",
+                                      attrs: { xl: "3", sm: "6" },
+                                    },
+                                    [
+                                      _c(
+                                        "b-media",
+                                        { attrs: { "no-body": "" } },
+                                        [
+                                          _c(
+                                            "b-media-aside",
+                                            { staticClass: "mr-2" },
+                                            [
+                                              _c(
+                                                "b-avatar",
+                                                {
+                                                  attrs: {
+                                                    size: "48",
+                                                    variant: "light-info",
+                                                  },
+                                                },
+                                                [
+                                                  _c("feather-icon", {
+                                                    attrs: {
+                                                      size: "24",
+                                                      icon: "TrendingUpIcon",
+                                                    },
+                                                  }),
+                                                ],
+                                                1
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "b-media-body",
+                                            { staticClass: "my-auto" },
+                                            [
+                                              _c(
+                                                "h5",
+                                                {
+                                                  staticClass:
+                                                    "font-weight-bolder mb-0",
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                            " +
+                                                      _vm._s(
+                                                        _vm.formatPrice(
+                                                          _vm.cashRegister
+                                                            .totalTransfer
+                                                        )
+                                                      ) +
+                                                      "\n                                        "
+                                                  ),
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "b-card-text",
+                                                {
+                                                  staticClass:
+                                                    "font-small-3 mb-0",
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                            " +
+                                                      _vm._s(
+                                                        _vm.$t(
+                                                          "payments.method_transfer"
+                                                        )
+                                                      ) +
+                                                      "\n                                        "
+                                                  ),
+                                                ]
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                        ],
+                                        1
+                                      ),
+                                    ],
+                                    1
+                                  ),
+                                ],
+                                1
+                              ),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "b-col",
+                    { attrs: { xl: "4", md: "6" } },
+                    [
+                      _c(
+                        "b-card",
+                        { staticClass: "earnings-card" },
+                        [
+                          _c(
+                            "b-row",
+                            [
+                              _c(
+                                "b-col",
+                                { attrs: { cols: "6" } },
+                                [
+                                  _c(
+                                    "b-card-title",
+                                    { staticClass: "mb-1 text-primary" },
+                                    [
+                                      _c("feather-icon", {
+                                        attrs: {
+                                          size: "24",
+                                          icon: "TrendingUpIcon",
+                                        },
+                                      }),
+                                      _vm._v(
+                                        "\n                                " +
+                                          _vm._s(_vm.$t("incomes.plural")) +
+                                          "\n                            "
+                                      ),
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("h5", { staticClass: "mb-1" }, [
+                                    _c("strong", [
+                                      _vm._v(
+                                        _vm._s(
+                                          _vm.formatPrice(_vm.totalIncomes)
+                                        )
+                                      ),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "b-card-title",
+                                    { staticClass: "mb-1 text-danger" },
+                                    [
+                                      _c("feather-icon", {
+                                        attrs: {
+                                          size: "24",
+                                          icon: "TrendingDownIcon",
+                                        },
+                                      }),
+                                      _vm._v(
+                                        "\n                                " +
+                                          _vm._s(_vm.$t("expenses.plural")) +
+                                          "\n                            "
+                                      ),
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("h5", { staticClass: "mb-1" }, [
+                                    _c("strong", [
+                                      _vm._v(
+                                        _vm._s(
+                                          _vm.formatPrice(
+                                            _vm.cashRegister.totalExpenses
+                                          )
+                                        )
+                                      ),
+                                    ]),
+                                  ]),
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "b-col",
+                                { attrs: { cols: "6" } },
+                                [
+                                  _c(
+                                    "b-card-title",
+                                    { staticClass: "mb-1 text-success" },
+                                    [
+                                      _c("feather-icon", {
+                                        attrs: {
+                                          size: "24",
+                                          icon: "DollarSignIcon",
+                                        },
+                                      }),
+                                      _vm._v(
+                                        "\n                                " +
+                                          _vm._s(
+                                            _vm.$t(
+                                              "earnings.lable_total_earnings"
+                                            )
+                                          ) +
+                                          "\n                            "
+                                      ),
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("h4", { staticClass: "mb-1" }, [
+                                    _c("strong", [
+                                      _vm._v(
+                                        _vm._s(
+                                          _vm.formatPrice(
+                                            _vm.totalIncomes - _vm.totalExpenses
+                                          )
+                                        )
+                                      ),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "b-card-text",
+                                    { staticClass: "text-muted font-small-2" },
+                                    [
+                                      _c(
+                                        "span",
+                                        { staticClass: "font-weight-bolder" },
+                                        [
+                                          _vm._v(
+                                            _vm._s(_vm.$t("earnings.label"))
+                                          ),
+                                        ]
+                                      ),
+                                    ]
+                                  ),
+                                ],
+                                1
+                              ),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+            ],
+            1
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.cashRegister.payments
+        ? _c(
+            "section",
+            { attrs: { id: "dashboard-ecommerce" } },
+            [
+              _c(
+                "b-row",
+                { staticClass: "match-height" },
+                [
+                  _c(
+                    "b-col",
+                    { attrs: { cols: "12", xl: "12", md: "12" } },
+                    [
+                      _c(
+                        "b-card",
+                        {
+                          staticClass: "card-company-table",
+                          attrs: { "no-body": "" },
+                        },
+                        [
+                          _c(
+                            "b-card-header",
+                            [
+                              _c("b-card-title", [
+                                _vm._v(_vm._s(_vm.$t("incomes.detail"))),
+                              ]),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-card-body",
+                            { staticClass: "invoice-padding pt-0" },
+                            [
+                              _vm.cashRegister.payments
+                                ? _c(
+                                    "b-row",
+                                    { staticClass: "invoice-spacing" },
+                                    [
+                                      _c("b-table", {
+                                        staticClass: "mb-0",
+                                        attrs: {
+                                          items: _vm.cashRegister.payments,
+                                          responsive: "",
+                                          fields: _vm.columnsPayments,
+                                          "sticky-header": true,
+                                          "no-border-collapse": false,
+                                        },
+                                        scopedSlots: _vm._u(
+                                          [
+                                            {
+                                              key: "cell(updated_at)",
+                                              fn: function (data) {
+                                                return [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "align-items-center",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "\n                                        " +
+                                                          _vm._s(
+                                                            _vm.dateTimeFormat(
+                                                              data.item
+                                                                .updated_at
+                                                            )
+                                                          ) +
+                                                          "\n                                    "
+                                                      ),
+                                                    ]
+                                                  ),
+                                                ]
+                                              },
+                                            },
+                                            {
+                                              key: "cell(doctor)",
+                                              fn: function (data) {
+                                                return [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "align-items-center",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "\n                                        " +
+                                                          _vm._s(
+                                                            data.item.doctor
+                                                          ) +
+                                                          "\n                                    "
+                                                      ),
+                                                    ]
+                                                  ),
+                                                ]
+                                              },
+                                            },
+                                            {
+                                              key: "cell(patient)",
+                                              fn: function (data) {
+                                                return [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "align-items-center",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "\n                                        " +
+                                                          _vm._s(
+                                                            data.item.patient
+                                                          ) +
+                                                          "\n                                    "
+                                                      ),
+                                                    ]
+                                                  ),
+                                                ]
+                                              },
+                                            },
+                                            {
+                                              key: "cell(cash)",
+                                              fn: function (data) {
+                                                return [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "align-items-center",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "\n                                        " +
+                                                          _vm._s(
+                                                            data.item.method ===
+                                                              "cash"
+                                                              ? _vm.formatPrice(
+                                                                  data.item
+                                                                    .ap_amount
+                                                                )
+                                                              : 0.0
+                                                          ) +
+                                                          "\n                                    "
+                                                      ),
+                                                    ]
+                                                  ),
+                                                ]
+                                              },
+                                            },
+                                            {
+                                              key: "cell(bons)",
+                                              fn: function (data) {
+                                                return [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "align-items-center",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "\n                                        " +
+                                                          _vm._s(
+                                                            data.item.method !==
+                                                              "cash" &&
+                                                              data.item
+                                                                .method !==
+                                                                "check"
+                                                              ? _vm.$t(
+                                                                  "cash_register_detail_transfer"
+                                                                )
+                                                              : ""
+                                                          ) +
+                                                          "\n                                    "
+                                                      ),
+                                                    ]
+                                                  ),
+                                                ]
+                                              },
+                                            },
+                                            {
+                                              key: "cell(type)",
+                                              fn: function (data) {
+                                                return [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "align-items-center",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "\n                                        " +
+                                                          _vm._s(
+                                                            data.item.method ===
+                                                              "check"
+                                                              ? data.item.serie
+                                                              : ""
+                                                          ) +
+                                                          "\n                                    "
+                                                      ),
+                                                    ]
+                                                  ),
+                                                ]
+                                              },
+                                            },
+                                            {
+                                              key: "cell(bank)",
+                                              fn: function (data) {
+                                                return [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "align-items-center",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "\n                                        " +
+                                                          _vm._s(
+                                                            data.item.method ===
+                                                              "check"
+                                                              ? data.item.bank
+                                                              : ""
+                                                          ) +
+                                                          "\n                                    "
+                                                      ),
+                                                    ]
+                                                  ),
+                                                ]
+                                              },
+                                            },
+                                            {
+                                              key: "cell(bank_num)",
+                                              fn: function (data) {
+                                                return [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "align-items-center",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "\n                                        " +
+                                                          _vm._s(
+                                                            data.item.method ===
+                                                              "check"
+                                                              ? data.item.serie
+                                                              : ""
+                                                          ) +
+                                                          "\n                                    "
+                                                      ),
+                                                    ]
+                                                  ),
+                                                ]
+                                              },
+                                            },
+                                            {
+                                              key: "cell(check_date)",
+                                              fn: function (data) {
+                                                return [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "align-items-center",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "\n                                        " +
+                                                          _vm._s(
+                                                            data.item.method ===
+                                                              "check"
+                                                              ? data.item.date
+                                                              : ""
+                                                          ) +
+                                                          "\n                                    "
+                                                      ),
+                                                    ]
+                                                  ),
+                                                ]
+                                              },
+                                            },
+                                            {
+                                              key: "cell(check_owner)",
+                                              fn: function (data) {
+                                                return [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "align-items-center",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "\n                                        " +
+                                                          _vm._s(
+                                                            data.item.method ===
+                                                              "check"
+                                                              ? data.item
+                                                                  .reference
+                                                              : ""
+                                                          ) +
+                                                          "\n                                    "
+                                                      ),
+                                                    ]
+                                                  ),
+                                                ]
+                                              },
+                                            },
+                                            {
+                                              key: "cell(check_amount)",
+                                              fn: function (data) {
+                                                return [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "align-items-center",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "\n                                        " +
+                                                          _vm._s(
+                                                            data.item.method ===
+                                                              "check"
+                                                              ? _vm.formatPrice(
+                                                                  data.item
+                                                                    .ap_amount
+                                                                )
+                                                              : data.item
+                                                                  .method !==
+                                                                  "cash" &&
+                                                                data.item
+                                                                  .ap_method !==
+                                                                  "check"
+                                                              ? _vm.formatPrice(
+                                                                  data.item
+                                                                    .ap_amount
+                                                                )
+                                                              : 0.0
+                                                          ) +
+                                                          "\n                                    "
+                                                      ),
+                                                    ]
+                                                  ),
+                                                ]
+                                              },
+                                            },
+                                          ],
+                                          null,
+                                          false,
+                                          1870969488
+                                        ),
+                                      }),
+                                    ],
+                                    1
+                                  )
+                                : _vm._e(),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "b-col",
+                    { attrs: { cols: "12", xl: "6", md: "6" } },
+                    [
+                      _c(
+                        "b-card",
+                        {
+                          staticClass: "card-company-table",
+                          attrs: { "no-body": "" },
+                        },
+                        [
+                          _c(
+                            "b-card-header",
+                            [
+                              _c("b-card-title", [
+                                _vm._v(_vm._s(_vm.$t("expenses.detail"))),
+                              ]),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _vm.cashRegister.payments
+                            ? _c(
+                                "b-card-body",
+                                { staticClass: "invoice-padding pt-0" },
+                                [
+                                  _c("b-table", {
+                                    staticClass: "mb-0",
+                                    attrs: {
+                                      items: _vm.cashRegister.expenses,
+                                      responsive: "",
+                                      fields: _vm.columnsExpenses,
+                                      "sticky-header": true,
+                                      "no-border-collapse": false,
+                                    },
+                                    scopedSlots: _vm._u(
+                                      [
+                                        {
+                                          key: "cell(reference)",
+                                          fn: function (data) {
+                                            return [
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "align-items-center",
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                    " +
+                                                      _vm._s(
+                                                        data.item.reference
+                                                      ) +
+                                                      "\n                                "
+                                                  ),
+                                                ]
+                                              ),
+                                            ]
+                                          },
+                                        },
+                                        {
+                                          key: "cell(note)",
+                                          fn: function (data) {
+                                            return [
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "align-items-center",
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                    " +
+                                                      _vm._s(data.item.note) +
+                                                      "\n                                "
+                                                  ),
+                                                ]
+                                              ),
+                                            ]
+                                          },
+                                        },
+                                        {
+                                          key: "cell(total)",
+                                          fn: function (data) {
+                                            return [
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    " align-items-center",
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                    " +
+                                                      _vm._s(
+                                                        _vm.formatPrice(
+                                                          data.item.amount
+                                                        )
+                                                      ) +
+                                                      "\n                                "
+                                                  ),
+                                                ]
+                                              ),
+                                            ]
+                                          },
+                                        },
+                                      ],
+                                      null,
+                                      false,
+                                      783069093
+                                    ),
+                                  }),
+                                ],
+                                1
+                              )
+                            : _vm._e(),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "b-col",
+                    { attrs: { cols: "12", xl: "6", md: "6" } },
+                    [
+                      _c(
+                        "b-card",
+                        {
+                          staticClass: "card-company-table",
+                          attrs: { "no-body": "" },
+                        },
+                        [
+                          _c(
+                            "b-card-header",
+                            [
+                              _c("b-card-title", [
+                                _vm._v(
+                                  _vm._s(_vm.$t("cash_registers.detail_xrays"))
+                                ),
+                              ]),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _vm.cashRegister.xrays
+                            ? _c(
+                                "b-card-body",
+                                { staticClass: "invoice-padding pt-0" },
+                                [
+                                  _c("b-table", {
+                                    staticClass: "mb-0",
+                                    attrs: {
+                                      items: _vm.cashRegister.xrays,
+                                      responsive: "",
+                                      fields: _vm.columnsXrays,
+                                      "sticky-header": true,
+                                      "no-border-collapse": false,
+                                    },
+                                    scopedSlots: _vm._u(
+                                      [
+                                        {
+                                          key: "cell(updated_at)",
+                                          fn: function (data) {
+                                            return [
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    " align-items-center",
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                    " +
+                                                      _vm._s(
+                                                        _vm.dateTimeFormat(
+                                                          data.item.updated_at
+                                                        )
+                                                      ) +
+                                                      "\n                                "
+                                                  ),
+                                                ]
+                                              ),
+                                            ]
+                                          },
+                                        },
+                                        {
+                                          key: "cell(total)",
+                                          fn: function (data) {
+                                            return [
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    " align-items-center",
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                    " +
+                                                      _vm._s(
+                                                        _vm.formatPrice(
+                                                          data.item.amount
+                                                        )
+                                                      ) +
+                                                      "\n                                "
+                                                  ),
+                                                ]
+                                              ),
+                                            ]
+                                          },
+                                        },
+                                      ],
+                                      null,
+                                      false,
+                                      3348856363
+                                    ),
+                                  }),
+                                ],
+                                1
+                              )
+                            : _vm._e(),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("b-col", { attrs: { cols: "12", xl: "6", md: "6" } }),
+                  _vm._v(" "),
+                  _c(
+                    "b-col",
+                    { attrs: { cols: "12", xl: "6", md: "6" } },
+                    [
+                      _c(
+                        "b-card",
+                        {
+                          staticClass: "card-company-table",
+                          attrs: { "no-body": "" },
+                        },
+                        [
+                          _c("b-card-header"),
+                          _vm._v(" "),
+                          _c(
+                            "b-card-body",
+                            { staticClass: "invoice-padding pt-0" },
+                            [
+                              _c(
+                                "b-col",
+                                { attrs: { cols: "12" } },
+                                [
+                                  _c(
+                                    "b-form-group",
+                                    {
+                                      attrs: {
+                                        label: _vm.$t(
+                                          "cash_registers.comments"
+                                        ),
+                                        description: _vm.$t(
+                                          "cash_registers.comments_help"
+                                        ),
+                                        "label-for": "comments",
+                                      },
+                                    },
+                                    [
+                                      _c("b-form-textarea", {
+                                        attrs: {
+                                          disabled: "",
+                                          id: "comments",
+                                          placeholder: _vm.$t(
+                                            "cash_registers.comments_placeholder"
+                                          ),
+                                          rows: "3",
+                                        },
+                                        model: {
+                                          value:
+                                            _vm.cashRegister.detail.comments,
+                                          callback: function ($$v) {
+                                            _vm.$set(
+                                              _vm.cashRegister.detail,
+                                              "comments",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "cashRegister.detail.comments",
+                                        },
+                                      }),
+                                    ],
+                                    1
+                                  ),
+                                ],
+                                1
+                              ),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+            ],
+            1
+          )
+        : _vm._e(),
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-ripple-directive/src/ripple.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/vue-ripple-directive/src/ripple.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var Ripple = {
+    bind: function(el, binding){
+
+        // Default values.
+        var props = {
+            event: 'mousedown',
+            transition: 600
+        };
+
+        setProps(Object.keys(binding.modifiers),props);
+
+        el.addEventListener(props.event, function(event) {
+            rippler(event, el, binding.value);
+        });
+
+        var bg = binding.value || Ripple.color || 'rgba(0, 0, 0, 0.35)';
+        var zIndex = Ripple.zIndex || '9999';
+
+        function rippler(event, el) {
+            var target = el;
+            // Get border to avoid offsetting on ripple container position
+            var targetBorder = parseInt((getComputedStyle(target).borderWidth).replace('px', ''));
+
+            // Get necessary variables
+            var rect        = target.getBoundingClientRect(),
+                left        = rect.left,
+                top         = rect.top,
+                width       = target.offsetWidth,
+                height      = target.offsetHeight,
+                dx          = event.clientX - left,
+                dy          = event.clientY - top,
+                maxX        = Math.max(dx, width - dx),
+                maxY        = Math.max(dy, height - dy),
+                style       = window.getComputedStyle(target),
+                radius      = Math.sqrt((maxX * maxX) + (maxY * maxY)),
+                border      = (targetBorder > 0 ) ? targetBorder : 0;
+
+            // Create the ripple and its container
+            var ripple = document.createElement("div"),
+                rippleContainer = document.createElement("div");
+                rippleContainer.className = 'ripple-container';
+                ripple.className = 'ripple';
+
+            //Styles for ripple
+            ripple.style.marginTop= '0px';
+            ripple.style.marginLeft= '0px';
+            ripple.style.width= '1px';
+            ripple.style.height= '1px';
+            ripple.style.transition= 'all ' + props.transition + 'ms cubic-bezier(0.4, 0, 0.2, 1)';
+            ripple.style.borderRadius= '50%';
+            ripple.style.pointerEvents= 'none';
+            ripple.style.position= 'relative';
+            ripple.style.zIndex= zIndex;
+            ripple.style.backgroundColor  = bg;
+
+            //Styles for rippleContainer
+            rippleContainer.style.position= 'absolute';
+            rippleContainer.style.left = 0 - border + 'px';
+            rippleContainer.style.top = 0 - border + 'px';
+            rippleContainer.style.height = '0';
+            rippleContainer.style.width = '0';
+            rippleContainer.style.pointerEvents = 'none';
+            rippleContainer.style.overflow = 'hidden';
+
+            // Store target position to change it after
+            var storedTargetPosition =  ((target.style.position).length > 0) ? target.style.position : getComputedStyle(target).position;
+            // Change target position to relative to guarantee ripples correct positioning
+            if (storedTargetPosition !== 'relative') {
+                target.style.position = 'relative';
+            }
+
+            rippleContainer.appendChild(ripple);
+            target.appendChild(rippleContainer);
+
+            ripple.style.marginLeft   = dx + "px";
+            ripple.style.marginTop    = dy + "px";
+
+            // No need to set positioning because ripple should be child of target and to it's relative position.
+            // rippleContainer.style.left    = left + (((window.pageXOffset || document.scrollLeft) - (document.clientLeft || 0)) || 0) + "px";
+            // rippleContainer.style.top     = top + (((window.pageYOffset || document.scrollTop) - (document.clientTop || 0)) || 0) + "px";
+            rippleContainer.style.width   = width + "px";
+            rippleContainer.style.height  = height + "px";
+            rippleContainer.style.borderTopLeftRadius  = style.borderTopLeftRadius;
+            rippleContainer.style.borderTopRightRadius  = style.borderTopRightRadius;
+            rippleContainer.style.borderBottomLeftRadius  = style.borderBottomLeftRadius;
+            rippleContainer.style.borderBottomRightRadius  = style.borderBottomRightRadius;
+
+            rippleContainer.style.direction = 'ltr';
+
+            setTimeout(function() {
+                ripple.style.width  = radius * 2 + "px";
+                ripple.style.height = radius * 2 + "px";
+                ripple.style.marginLeft   = dx - radius + "px";
+                ripple.style.marginTop    = dy - radius + "px";
+            }, 0);
+
+            function clearRipple() {
+                setTimeout(function() {
+                    ripple.style.backgroundColor = "rgba(0, 0, 0, 0)";
+                }, 250);
+
+                // Timeout set to get a smooth removal of the ripple
+                setTimeout(function() {
+                    rippleContainer.parentNode.removeChild(rippleContainer);
+                }, 850);
+
+                el.removeEventListener('mouseup', clearRipple, false);
+
+                // After removing event set position to target to it's original one
+                // Timeout it's needed to avoid jerky effect of ripple jumping out parent target
+                setTimeout(function () {
+
+                    var clearPosition = true;
+                    for(var i = 0; i < target.childNodes.length; i++) {
+                        if(target.childNodes[i].className === 'ripple-container') {
+                            clearPosition = false;
+                        }
+                    }
+
+                    if(clearPosition) {
+                        if(storedTargetPosition !== 'static') {
+                            target.style.position = storedTargetPosition;
+                        } else {
+                            target.style.position = '';
+                        }
+                    }
+
+                }, props.transition + 250)
+            }
+
+            if(event.type === 'mousedown') {
+                el.addEventListener('mouseup', clearRipple, false);
+            } else {
+                clearRipple();
+            }
+        }
+    }
+};
+
+function setProps(modifiers,props) {
+    modifiers.forEach(function(item) {
+        if(isNaN(Number(item)))
+            props.event = item;
+        else
+            props.transition = item;
+    });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Ripple);
+
+/***/ }),
+
+/***/ "./resources/js/src/providers/CashRegisters.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/src/providers/CashRegisters.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CashRegisters; });
+/* harmony import */ var D_projects_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var D_projects_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+var CashRegisters = /*#__PURE__*/function () {
+  function CashRegisters() {
+    Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, CashRegisters);
+  }
+  Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__["default"])(CashRegisters, [{
+    key: "getList",
+    value: function getList(query) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/cash-registers', {
+        params: query
+      });
+    }
+  }, {
+    key: "generate",
+    value: function generate(query) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/cash-registers/generate', {
+        params: query
+      });
+    }
+  }, {
+    key: "store",
+    value: function store(payload) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/api/cash-registers', payload);
+    }
+  }, {
+    key: "getDetail",
+    value: function getDetail(id) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/cash-registers/".concat(id));
+    }
+  }, {
+    key: "download",
+    value: function download(id) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/cash-registers/export/".concat(id), {
+        responseType: "arraybuffer"
+      });
+    }
+  }, {
+    key: "downloadPreview",
+    value: function downloadPreview(query) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/cash-registers/generate', {
+        responseType: "arraybuffer",
+        params: query
+      });
+    }
+  }]);
+  return CashRegisters;
+}();
+
+
+/***/ }),
+
+/***/ "./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue ***!
+  \********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CashRegisterShow_vue_vue_type_template_id_7351aedf_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CashRegisterShow.vue?vue&type=template&id=7351aedf&scoped=true& */ "./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=template&id=7351aedf&scoped=true&");
+/* harmony import */ var _CashRegisterShow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CashRegisterShow.vue?vue&type=script&lang=js& */ "./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _CashRegisterShow_vue_vue_type_style_index_0_id_7351aedf_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CashRegisterShow.vue?vue&type=style&index=0&id=7351aedf&lang=scss&scoped=true& */ "./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=style&index=0&id=7351aedf&lang=scss&scoped=true&");
+/* harmony import */ var _CashRegisterShow_vue_vue_type_style_index_1_id_7351aedf_lang_scss___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CashRegisterShow.vue?vue&type=style&index=1&id=7351aedf&lang=scss& */ "./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=style&index=1&id=7351aedf&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_4__["default"])(
+  _CashRegisterShow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CashRegisterShow_vue_vue_type_template_id_7351aedf_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CashRegisterShow_vue_vue_type_template_id_7351aedf_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "7351aedf",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterShow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CashRegisterShow.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterShow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=style&index=0&id=7351aedf&lang=scss&scoped=true&":
+/*!******************************************************************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=style&index=0&id=7351aedf&lang=scss&scoped=true& ***!
+  \******************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterShow_vue_vue_type_style_index_0_id_7351aedf_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/style-loader!../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CashRegisterShow.vue?vue&type=style&index=0&id=7351aedf&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=style&index=0&id=7351aedf&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterShow_vue_vue_type_style_index_0_id_7351aedf_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterShow_vue_vue_type_style_index_0_id_7351aedf_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterShow_vue_vue_type_style_index_0_id_7351aedf_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterShow_vue_vue_type_style_index_0_id_7351aedf_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=style&index=1&id=7351aedf&lang=scss&":
+/*!******************************************************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=style&index=1&id=7351aedf&lang=scss& ***!
+  \******************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterShow_vue_vue_type_style_index_1_id_7351aedf_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/style-loader!../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CashRegisterShow.vue?vue&type=style&index=1&id=7351aedf&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=style&index=1&id=7351aedf&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterShow_vue_vue_type_style_index_1_id_7351aedf_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterShow_vue_vue_type_style_index_1_id_7351aedf_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterShow_vue_vue_type_style_index_1_id_7351aedf_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterShow_vue_vue_type_style_index_1_id_7351aedf_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=template&id=7351aedf&scoped=true&":
+/*!***************************************************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=template&id=7351aedf&scoped=true& ***!
+  \***************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterShow_vue_vue_type_template_id_7351aedf_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CashRegisterShow.vue?vue&type=template&id=7351aedf&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue?vue&type=template&id=7351aedf&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterShow_vue_vue_type_template_id_7351aedf_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterShow_vue_vue_type_template_id_7351aedf_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ })
+
+}]);
