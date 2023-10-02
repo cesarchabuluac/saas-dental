@@ -161,10 +161,7 @@ class TenantService
 
         $service->sendEmail($dataEmail);
 
-        Artisan::call("generate:site-config", [
-            'domain' => $request->domain,
-            'tenant_id' => $tenant->id,
-        ]);
+        Artisan::call("generate:site-config");
 
         return [
             'domainWithHost' => $domainWithHost,
