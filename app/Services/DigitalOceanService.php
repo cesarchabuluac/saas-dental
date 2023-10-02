@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Traits\ConsumesExternalServices;
+use Illuminate\Support\Facades\Log;
 
 class DigitalOceanService
 {
@@ -51,13 +52,14 @@ class DigitalOceanService
 
     public function CreateNewDomainRecord($data)
     {
+        Log::info($data);
         return $this->makeRequest(
             'POST',
             "/v2/domains{$this->domainName}/records",
             [],
             [
                 "type" => "A",
-                "name" => $data['domain'],
+                "name" => $data->domain,
                 "data" => $this->ipv4,
                 "priority" => null,
                 "port" => null,
