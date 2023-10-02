@@ -223,9 +223,29 @@ export default {
         },
         isTenant () {
             return this.checkIsTenant()
-        }
+        },
+        validaTenant() {
+            const hostname = window.location.hostname;
+            const parts = hostname.split('.');
+            console.log(`hostname ${hostname}`)
+            console.log(`parts ${parts}`)
+            console.log(`Domain: ${process.env.MIX_CENTRAL_DOMAIN}`)
+
+            // Si la URL es localhost o una dirección IP, no hay subdominio.
+            if (parts.length === 1 || parts[0] === 'localhost' || parts[0] === process.env.MIX_CENTRAL_DOMAIN) {
+                return false;
+            }
+
+            // Si hay al menos dos partes en el nombre de host, el subdominio es la primera parte.
+            if (parts.length >= 2) {
+                return true;
+            }
+
+            return false
+        },
     },
-    async mounted() {       
+    async mounted() {     
+        console.log(`is tenant: ${this.isTenant}`)  
         if (this.isTenant) {
             await this.getIDashboardService()
             if (this.isDoctor) {
@@ -233,7 +253,7 @@ export default {
             }
         }
     },
-    methods: {
+    methods: {        
         async getIDashboardService() {
             this.loading = true
             const { data } = await DashboardResource.index({})
