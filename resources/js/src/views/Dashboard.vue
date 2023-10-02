@@ -226,27 +226,10 @@ export default {
         },
     },
     async mounted() {     
-
-        // const hostname = "https://fichadentales.com/login"
-        // const parts = hostname.split('.');
-        // console.log(`${hostname}`)
-        // console.log(parts)
-
-        const host = process.env.MIX_CENTRAL_DOMAIN
-        const domain = host.replace(/^(https?|ftp):\/\//, '').replace(/^www\./, '');
-        const parts = domain.split('.')
-        
-        console.log(parts.length)
-        console.log(parts)
-        console.log(parts[0])
-        
-        // console.log(`is tenant: ${this.isTenant}`)  
-        // console.log(this.validaTenant)
-        
         if (this.isTenant) {
-            // await this.getIDashboardService()
+            await this.getIDashboardService()
             if (this.isDoctor) {
-                // await this.onCallPayments()
+                await this.onCallPayments()
             }
         }
     },
