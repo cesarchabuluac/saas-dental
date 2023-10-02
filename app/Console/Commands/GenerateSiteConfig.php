@@ -28,8 +28,8 @@ class GenerateSiteConfig extends Command
      */
     public function handle()
     {
-        $tenantSubdomain = $subdomain;
-        $mainDomain = $domain;
+        $tenantSubdomain = "cchab";
+        $mainDomain = "fichadentales.com";
         $nginxConfig = <<<EOL
         server {       
             root /var/www/fichadentales/public;
