@@ -87,6 +87,9 @@ export default {
             const hostname = window.location.hostname;
             const parts = hostname.split('.');
 
+            console.log(`parts ${parts}`)
+            console.log(`Domain: ${process.env.MIX_CENTRAL_DOMAIN}`)
+
             // Si la URL es localhost o una dirección IP, no hay subdominio.
             if (parts.length === 1 || parts[0] === 'localhost' || parts[0] === process.env.MIX_CENTRAL_DOMAIN) {
                 return false;
