@@ -209,7 +209,7 @@ class TenantController extends Controller
 
                 //Check file config on sites-available
                 $serverIpAddress = $request->server('SERVER_ADDR');
-                if ($serverIpAddress === '64.227.97.30') {
+                if ($serverIpAddress === env('IP_SERVER_DIGITAL_OCEAN')) {
                     $command = 'sudo ls /etc/nginx/sites-available';
                     $output = shell_exec($command);
                     $files = explode("\n", trim($output));

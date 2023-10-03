@@ -92,6 +92,12 @@ class GenerateSiteConfig extends Command
                     exec('sudo service nginx reload');
                     Log::warning("reload nginx");
                     sleep(5);
+
+                    // Instalar el certificado SSL con Let's Encrypt
+                    exec("sudo certbot certonly --webroot -w /var/www/fichadentales -d $tenantSubdomain.$mainDomain -d www.$tenantSubdomain.$mainDomain");
+
+                    // Eliminar el archivo temporal
+                    unlink($nginxConfigFilePath);
                 }
             }
         });
