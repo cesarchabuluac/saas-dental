@@ -98,7 +98,6 @@ class GenerateSiteConfig extends Command
                     // exec("sudo certbot --nginx -d $tenantSubdomain.$mainDomain -d www.$tenantSubdomain.$mainDomain");
                     exec("sudo certbot --non-interactive --nginx --redirect --force-renewal -d $tenantSubdomain.$mainDomain -d www.$tenantSubdomain.$mainDomain");
 
-
                     // Eliminar el archivo temporal
                     unlink($nginxConfigFilePath);
                 }

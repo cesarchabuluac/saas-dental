@@ -16,6 +16,7 @@ use App\Notifications\OwnerWelcome;
 use App\Notifications\TenantRegisterNotifyForAdmin;
 use App\Notifications\TenantVerificationNotification;
 use App\Notifications\TestNotification;
+use App\Repositories\DoDomainRepository;
 use Exception;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
@@ -26,10 +27,12 @@ class TenantService
     use ApiResponse;
 
     protected $digitalOceanService;
+    protected $doDomainRepository;
 
-    public function __construct(DigitalOceanService $digitalOceanService)
+    public function __construct(DigitalOceanService $digitalOceanService, DoDomainRepository $doDomainRepository)
     {
         $this->digitalOceanService = $digitalOceanService;
+        $this->doDomainRepository = $doDomainRepository;
     }
 
     /**
@@ -169,12 +172,7 @@ class TenantService
         $service->sendEmail($dataEmail);
 
         // Artisan::call("generate:site-config");
-        // $do = $this->digitalOceanService->CreateNewDomainRecord($request->domain);
-        // $dowww = $this->digitalOceanService->CreateNewDomainRecord("www." . $request->domain);
-
-        // $do->tenant_id = $tenant->id;
-        // $dowww->tenant_id = $tenant->id;
-
+        $this->createDigitalOceanRecords($tenant->domain, $tenant->id);
 
         return [
             'domainWithHost' => $domainWithHost,
@@ -264,5 +262,23 @@ class TenantService
                 'redirect_url' => $domainWithHost . '/impersonate/' . $token
             ]
         );
+    }
+
+    private function createDigitalOceanRecords($domain, $tenantId)
+    {
+        $doDomainRecord = $this->createDigitalOceanRecord($domain, $tenantId);
+        $doWWWDomainRecord = $this->createDigitalOceanRecord("www." . $domain, $tenantId);
+
+        $this->doDomainRepository->create($doDomainRecord);
+        $this->doDomainRepository->create($doWWWDomainRecord);
+    }
+
+    private function createDigitalOceanRecord($domain, $tenantId)
+    {
+        $do = $this->digitalOceanService->CreateNewDomainRecord($domain);
+        $do = json_decode($do, true);
+        $do['domain_record']['tenant_id'] = $tenantId;
+
+        return $do['domain_record'];
     }
 }
