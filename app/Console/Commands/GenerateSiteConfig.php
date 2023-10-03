@@ -95,7 +95,9 @@ class GenerateSiteConfig extends Command
 
                     // Instalar el certificado SSL con Let's Encrypt
                     // exec("sudo certbot certonly --webroot -w /var/www/fichadentales -d $tenantSubdomain.$mainDomain -d www.$tenantSubdomain.$mainDomain");
-                    exec("sudo certbot --nginx -d $tenantSubdomain.$mainDomain -d www.$tenantSubdomain.$mainDomain");
+                    // exec("sudo certbot --nginx -d $tenantSubdomain.$mainDomain -d www.$tenantSubdomain.$mainDomain");
+                    exec("sudo certbot --non-interactive --nginx --redirect --force-renewal -d $tenantSubdomain.$mainDomain -d www.$tenantSubdomain.$mainDomain");
+
 
                     // Eliminar el archivo temporal
                     unlink($nginxConfigFilePath);
