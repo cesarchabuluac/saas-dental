@@ -20,6 +20,10 @@ export default class Tenants {
         return axios.post(`/api/tenants`, payload)
     }
 
+    update (id, payload) {
+        return axios.put(`/api/tenants/${id}`, payload)
+    }
+
     destroy (id) {
         return axios.delete(`/api/tenants/${id}`)
     }

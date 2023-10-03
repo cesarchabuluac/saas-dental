@@ -25,6 +25,13 @@ class TenantService
 {
     use ApiResponse;
 
+    protected $digitalOceanService;
+
+    public function __construct(DigitalOceanService $digitalOceanService)
+    {
+        $this->digitalOceanService = $digitalOceanService;
+    }
+
     /**
      * @param $request
      * @param $trialDayCount
@@ -161,7 +168,13 @@ class TenantService
 
         $service->sendEmail($dataEmail);
 
-        Artisan::call("generate:site-config");
+        // Artisan::call("generate:site-config");
+        // $do = $this->digitalOceanService->CreateNewDomainRecord($request->domain);
+        // $dowww = $this->digitalOceanService->CreateNewDomainRecord("www." . $request->domain);
+
+        // $do->tenant_id = $tenant->id;
+        // $dowww->tenant_id = $tenant->id;
+
 
         return [
             'domainWithHost' => $domainWithHost,

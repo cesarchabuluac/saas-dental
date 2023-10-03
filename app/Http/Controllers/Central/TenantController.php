@@ -16,9 +16,13 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\Tenant\TenantResource;
 use App\Http\Requests\Tenant\StoreTenantRequest;
 use App\Http\Requests\Tenant\UpdateTenantRequest;
+use App\Models\DoDomain;
+use App\Repositories\DoDomainRepository;
 use App\Repositories\TenantRepository;
 use App\Repositories\UserRepository;
 use App\Services\DigitalOceanService;
+use Exception;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Spatie\Permission\Models\Role;
 
@@ -27,12 +31,15 @@ class TenantController extends Controller
     protected $userRepository;
     protected $tenantRepository;
     protected $digitalOceanService;
+    protected $doDomainRepository;
 
-    public function __construct(TenantRepository $tenantRepository, UserRepository $userRepository, DigitalOceanService $digitalOceanService)
+
+    public function __construct(TenantRepository $tenantRepository, UserRepository $userRepository, DigitalOceanService $digitalOceanService, DoDomainRepository $doDomainRepository)
     {
         $this->tenantRepository = $tenantRepository;
         $this->userRepository = $userRepository;
         $this->digitalOceanService = $digitalOceanService;
+        $this->doDomainRepository = $doDomainRepository;
     }
 
     public function me(Request $request)
@@ -175,8 +182,8 @@ class TenantController extends Controller
         $tenantService->createTenantAndDomainThenGetDomainWithHost($request);
 
         //Register recors on digigital ocean        
-        $this->digitalOceanService->CreateNewDomainRecord($request->domain);
-        $this->digitalOceanService->CreateNewDomainRecord("www." . $request->domain);        
+        // $this->digitalOceanService->CreateNewDomainRecord($request->domain);
+        // $this->digitalOceanService->CreateNewDomainRecord("www." . $request->domain);
 
         //generate filec config on subdomain
         // generateSubDomainOnDO($request->domain);
@@ -194,9 +201,81 @@ class TenantController extends Controller
      */
     public function update(UpdateTenantRequest $request, Tenant $tenant)
     {
-        $tenant->update($request->validated());
+        Log::info($request->server('SERVER_ADDR'));
+        try {
 
-        return $this->responseWithSuccess('Tenant updated successfully');
+            if ($tenant->doDomains()->count() <= 0) {
+                $this->createDigitalOceanRecords($tenant->domain, $tenant->id);
+
+                //Check file config on sites-available
+                $serverIpAddress = $request->server('SERVER_ADDR');
+                if ($serverIpAddress === '64.227.97.30') {
+                    $command = 'sudo ls /etc/nginx/sites-available';
+                    $output = shell_exec($command);
+                    $files = explode("\n", trim($output));
+
+                    foreach ($files as $key => $file) {
+                        if ($file !== $tenant->domain) {
+                            $tenantSubdomain = $tenant->domain;
+                            $mainDomain = "fichadentales.com";
+                            $nginxConfig = <<<EOL
+                                server {       
+                                    root /var/www/fichadentales/public;
+                                    index index.php index.html index.htm index.nginx-debian.html;
+
+                                    add_header X-Frame-Options "SAMEORIGIN";
+                                    add_header X-XSS-Protection "1; mode=block";
+                                    add_header X-Content-Type-Options "nosniff";
+
+                                    charset utf-8;
+
+                                    server_name $tenantSubdomain.$mainDomain www.$tenantSubdomain.$mainDomain;
+
+                                    location / {
+                                        try_files \$uri \$uri/ /index.php?\$query_string;
+                                    }
+
+                                    location ~ \.php$ {
+                                        include snippets/fastcgi-php.conf;
+                                        fastcgi_pass unix:/var/run/php/php8.2-fpm.sock;
+                                    }
+
+                                    location ~ /\.ht {
+                                        deny all;
+                                    }
+
+                                    location ~ /\.env {
+                                        deny all;
+                                    }
+                                }
+                                EOL;
+
+                            $tenantConfigPath = "/etc/nginx/sites-available/$tenantSubdomain";
+                            $nginxConfigFilePath = '/tmp/nginx_config'; // Ruta temporal para el archivo de configuración
+
+                            // Crear un archivo temporal para la configuración de Nginx
+                            file_put_contents($nginxConfigFilePath, $nginxConfig);
+                            Log::warning("generate file");
+
+                            // Copiar el archivo temporal a la ubicación de configuración de Nginx con sudo
+                            exec("sudo cp /tmp/nginx_config /etc/nginx/sites-available/$tenantSubdomain");
+                            Log::warning("use cp");
+
+                            exec("sudo ln -s /etc/nginx/sites-available/$tenantSubdomain /etc/nginx/sites-enabled/");
+                            Log::warning("enabled sites");
+
+                            // Recargar la configuración de Nginx
+                            exec('sudo service nginx reload');
+                            Log::warning("reload nginx");
+                        }
+                    }
+                }
+            }
+
+            return $this->sendResponse($tenant, 'Tenant updated successfully');
+        } catch (Exception $ex) {
+            return $this->sendError($ex->getMessage());
+        }
     }
 
     /**
@@ -266,5 +345,23 @@ class TenantController extends Controller
         }
 
         return $tenantService->impersonateAsTenant($tenant);
+    }
+
+    private function createDigitalOceanRecords($domain, $tenantId)
+    {
+        $doDomainRecord = $this->createDigitalOceanRecord($domain, $tenantId);
+        $doWWWDomainRecord = $this->createDigitalOceanRecord("www." . $domain, $tenantId);
+
+        $this->doDomainRepository->create($doDomainRecord);
+        $this->doDomainRepository->create($doWWWDomainRecord);
+    }
+
+    private function createDigitalOceanRecord($domain, $tenantId)
+    {
+        $do = $this->digitalOceanService->CreateNewDomainRecord($domain);
+        $do = json_decode($do, true);
+        $do['domain_record']['tenant_id'] = $tenantId;
+
+        return $do['domain_record'];
     }
 }

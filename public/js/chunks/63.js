@@ -372,7 +372,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -640,103 +639,190 @@ var TenantsResource = new _providers_Tenants__WEBPACK_IMPORTED_MODULE_15__["defa
         }, _callee4);
       }))();
     },
-    deleteTenant: function deleteTenant(item) {
+    syncDnsOnDigitalOcean: function syncDnsOnDigitalOcean(item) {
       var _this5 = this;
-      this.loading = true;
-      this.$swal({
-        title: this.$t("are_you_sure"),
-        text: item.deleted_at ? this.$t("you_will_be_able_to_revert_this") : this.$t("you_wont_be_able_to_revert_this"),
-        icon: "question",
-        showCancelButton: true,
-        confirmButtonText: this.$t("yes_continue"),
-        cancelButtonText: this.$t("cancel"),
-        customClass: {
-          confirmButton: "btn btn-primary",
-          cancelButton: "btn btn-outline-danger ml-1"
-        },
-        showClass: {
-          popup: "animate__animated animate__flipInX"
-        },
-        buttonsStyling: false,
-        showLoaderOnConfirm: true,
-        preConfirm: function () {
-          var _preConfirm = Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee5() {
-            var _yield$TenantsResourc4, data;
-            return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee5$(_context5) {
-              while (1) switch (_context5.prev = _context5.next) {
-                case 0:
-                  _context5.prev = 0;
-                  _this5.loading = true;
-                  _context5.next = 4;
-                  return TenantsResource.destroy(item.id);
-                case 4:
-                  _yield$TenantsResourc4 = _context5.sent;
-                  data = _yield$TenantsResourc4.data;
-                  _this5.loading = false;
-                  if (data.success) {
-                    _this5.success(data.message);
-                    _this5.tenants = _this5.tenants.filter(function (tenant) {
-                      return tenant.id !== item.id;
-                    });
-                  } else {
-                    _this5.danger(data.message);
-                  }
-                  _context5.next = 15;
-                  break;
-                case 10:
-                  _context5.prev = 10;
-                  _context5.t0 = _context5["catch"](0);
-                  _this5.loading = false;
-                  _this5.handleResponseErrors(_context5.t0);
-                  _this5.$swal.showValidationMessage("Request failed: ".concat(_context5.t0));
-                case 15:
-                case "end":
-                  return _context5.stop();
-              }
-            }, _callee5, null, [[0, 10]]);
-          }));
-          function preConfirm() {
-            return _preConfirm.apply(this, arguments);
-          }
-          return preConfirm;
-        }(),
-        allowOutsideClick: function allowOutsideClick() {
-          return !Swal.isLoading();
-        }
-      });
-    },
-    setImpersonate: function setImpersonate(item) {
-      var _this6 = this;
       return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee6() {
-        var _yield$TenantsResourc5, data;
         return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee6$(_context6) {
           while (1) switch (_context6.prev = _context6.next) {
             case 0:
-              _context6.prev = 0;
-              _this6.loading = true;
-              _context6.next = 4;
-              return TenantsResource.impersonate(item.id);
-            case 4:
-              _yield$TenantsResourc5 = _context6.sent;
-              data = _yield$TenantsResourc5.data;
-              _this6.loading = false;
-              if (data.success) {
-                window.open(data.data.redirect_url, '_blank');
-              } else {
-                _this6.danger(data.message);
-              }
-              _context6.next = 14;
-              break;
-            case 10:
-              _context6.prev = 10;
-              _context6.t0 = _context6["catch"](0);
-              _this6.loading = false;
-              _this6.handleResponseErrors(_context6.t0);
-            case 14:
+              _this5.$swal({
+                title: "\xBFEst\xE1s seguro de querer ejecutar esta acci\xF3n en Digital Ocean?",
+                text: "Por favor, confirma que deseas ejecutar esta acci\xF3n en Digital Ocean. Esta acci\xF3n sincronizar\xE1 los registros DNS en el servidor central y crear\xE1 los archivos de configuraci\xF3n y certificados de seguridad para el dominio \"".concat(item.domain, "\"."),
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonText: _this5.$t("yes_continue"),
+                cancelButtonText: _this5.$t("cancel"),
+                customClass: {
+                  confirmButton: "btn btn-primary",
+                  cancelButton: "btn btn-outline-danger ml-1"
+                },
+                showClass: {
+                  popup: "animate__animated animate__flipInX"
+                },
+                buttonsStyling: false,
+                showLoaderOnConfirm: true,
+                preConfirm: function () {
+                  var _preConfirm = Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee5() {
+                    var _yield$TenantsResourc4, data;
+                    return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee5$(_context5) {
+                      while (1) switch (_context5.prev = _context5.next) {
+                        case 0:
+                          _context5.prev = 0;
+                          _this5.loading = true;
+                          _context5.next = 4;
+                          return TenantsResource.update(item.id, item);
+                        case 4:
+                          _yield$TenantsResourc4 = _context5.sent;
+                          data = _yield$TenantsResourc4.data;
+                          _this5.loading = false;
+                          console.log(data);
+                          if (data.success) {
+                            _this5.success(data.message);
+                            _this5.tenants = _this5.tenants.map(function (tenant) {
+                              if (tenant.id === item.id) {
+                                return data.data;
+                              }
+                              return tenant;
+                            });
+                          } else {
+                            _this5.danger(data.message);
+                          }
+                          _context5.next = 16;
+                          break;
+                        case 11:
+                          _context5.prev = 11;
+                          _context5.t0 = _context5["catch"](0);
+                          _this5.loading = false;
+                          _this5.handleResponseErrors(_context5.t0);
+                          _this5.$swal.showValidationMessage("Request failed: ".concat(_context5.t0));
+                        case 16:
+                        case "end":
+                          return _context5.stop();
+                      }
+                    }, _callee5, null, [[0, 11]]);
+                  }));
+                  function preConfirm() {
+                    return _preConfirm.apply(this, arguments);
+                  }
+                  return preConfirm;
+                }(),
+                allowOutsideClick: function allowOutsideClick() {
+                  return !Swal.isLoading();
+                }
+              });
+            case 1:
             case "end":
               return _context6.stop();
           }
-        }, _callee6, null, [[0, 10]]);
+        }, _callee6);
+      }))();
+    },
+    deleteTenant: function deleteTenant(item) {
+      var _this6 = this;
+      return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee8() {
+        return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee8$(_context8) {
+          while (1) switch (_context8.prev = _context8.next) {
+            case 0:
+              _this6.$swal({
+                title: _this6.$t("are_you_sure"),
+                text: item.deleted_at ? _this6.$t("you_will_be_able_to_revert_this") : _this6.$t("you_wont_be_able_to_revert_this"),
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonText: _this6.$t("yes_continue"),
+                cancelButtonText: _this6.$t("cancel"),
+                customClass: {
+                  confirmButton: "btn btn-primary",
+                  cancelButton: "btn btn-outline-danger ml-1"
+                },
+                showClass: {
+                  popup: "animate__animated animate__flipInX"
+                },
+                buttonsStyling: false,
+                showLoaderOnConfirm: true,
+                preConfirm: function () {
+                  var _preConfirm2 = Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee7() {
+                    var _yield$TenantsResourc5, data;
+                    return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee7$(_context7) {
+                      while (1) switch (_context7.prev = _context7.next) {
+                        case 0:
+                          _context7.prev = 0;
+                          _this6.loading = true;
+                          _context7.next = 4;
+                          return TenantsResource.destroy(item.id);
+                        case 4:
+                          _yield$TenantsResourc5 = _context7.sent;
+                          data = _yield$TenantsResourc5.data;
+                          _this6.loading = false;
+                          if (data.success) {
+                            _this6.success(data.message);
+                            _this6.tenants = _this6.tenants.filter(function (tenant) {
+                              return tenant.id !== item.id;
+                            });
+                          } else {
+                            _this6.danger(data.message);
+                          }
+                          _context7.next = 15;
+                          break;
+                        case 10:
+                          _context7.prev = 10;
+                          _context7.t0 = _context7["catch"](0);
+                          _this6.loading = false;
+                          _this6.handleResponseErrors(_context7.t0);
+                          _this6.$swal.showValidationMessage("Request failed: ".concat(_context7.t0));
+                        case 15:
+                        case "end":
+                          return _context7.stop();
+                      }
+                    }, _callee7, null, [[0, 10]]);
+                  }));
+                  function preConfirm() {
+                    return _preConfirm2.apply(this, arguments);
+                  }
+                  return preConfirm;
+                }(),
+                allowOutsideClick: function allowOutsideClick() {
+                  return !Swal.isLoading();
+                }
+              });
+            case 1:
+            case "end":
+              return _context8.stop();
+          }
+        }, _callee8);
+      }))();
+    },
+    setImpersonate: function setImpersonate(item) {
+      var _this7 = this;
+      return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee9() {
+        var _yield$TenantsResourc6, data;
+        return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee9$(_context9) {
+          while (1) switch (_context9.prev = _context9.next) {
+            case 0:
+              _context9.prev = 0;
+              _this7.loading = true;
+              _context9.next = 4;
+              return TenantsResource.impersonate(item.id);
+            case 4:
+              _yield$TenantsResourc6 = _context9.sent;
+              data = _yield$TenantsResourc6.data;
+              _this7.loading = false;
+              if (data.success) {
+                window.open(data.data.redirect_url, '_blank');
+              } else {
+                _this7.danger(data.message);
+              }
+              _context9.next = 14;
+              break;
+            case 10:
+              _context9.prev = 10;
+              _context9.t0 = _context9["catch"](0);
+              _this7.loading = false;
+              _this7.handleResponseErrors(_context9.t0);
+            case 14:
+            case "end":
+              return _context9.stop();
+          }
+        }, _callee9, null, [[0, 10]]);
       }))();
     }
   }
@@ -1216,6 +1302,41 @@ var render = function () {
                         "div",
                         { staticClass: "demo-inline-spacing" },
                         [
+                          _c(
+                            "b-button",
+                            {
+                              directives: [
+                                {
+                                  name: "ripple",
+                                  rawName: "v-ripple.400",
+                                  value: "rgba(255, 255, 255, 0.15)",
+                                  expression: "'rgba(255, 255, 255, 0.15)'",
+                                  modifiers: { 400: true },
+                                },
+                                {
+                                  name: "b-tooltip",
+                                  rawName: "v-b-tooltip.hover.right",
+                                  value: "Sincronizar Servidor",
+                                  expression: "`Sincronizar Servidor`",
+                                  modifiers: { hover: true, right: true },
+                                },
+                              ],
+                              staticClass: "btn-icon",
+                              attrs: { variant: "outline-warning", size: "sm" },
+                              on: {
+                                click: function ($event) {
+                                  return _vm.syncDnsOnDigitalOcean(data.item)
+                                },
+                              },
+                            },
+                            [
+                              _c("feather-icon", {
+                                attrs: { icon: "RefreshCcwIcon" },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
                           _c(
                             "b-button",
                             {

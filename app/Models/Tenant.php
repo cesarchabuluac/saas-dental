@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Log;
 use Stancl\Tenancy\Contracts\TenantWithDatabase;
 use Stancl\Tenancy\Database\Concerns\HasDatabase;
@@ -20,6 +21,7 @@ class Tenant extends BaseTenant implements TenantWithDatabase
 
     protected $with = [
         'domains',
+        'doDomains',
     ];
 
     /**
@@ -144,5 +146,10 @@ class Tenant extends BaseTenant implements TenantWithDatabase
     public static function isMainDomain()
     {
         return request()->getHost() === config('tenancy.central_domains')[0];
+    }
+
+    public function doDomains () : HasMany
+    {
+        return $this->hasMany(DoDomain::class, 'tenant_id', 'id');
     }
 }

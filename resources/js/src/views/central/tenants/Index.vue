@@ -114,6 +114,15 @@
                 <!-- Column: Actions -->
                 <template #cell(actions)="data">
                     <div class="demo-inline-spacing">
+                        <b-button
+                            v-ripple.400="'rgba(255, 255, 255, 0.15)'"
+                            variant="outline-warning"
+                            class="btn-icon"
+                            size="sm"
+                            @click="syncDnsOnDigitalOcean(data.item)"
+                             v-b-tooltip.hover.right="`Sincronizar Servidor`">
+                            <feather-icon icon="RefreshCcwIcon"/>
+                        </b-button>
                         
                         <b-button
                             v-ripple.400="'rgba(255, 255, 255, 0.15)'"
@@ -134,16 +143,6 @@
                             @click="setImpersonate(data.item)">
                             <feather-icon icon="LogInIcon"/>
                         </b-button>
-
-                        <!-- <b-button
-                            v-if="!data.item.deleted_at && canAccess('tenants.edit')"
-                            v-ripple.400="'rgba(255, 255, 255, 0.15)'"
-                            variant="primary"
-                            class="btn-icon"
-                            size="sm"
-                            @click="$router.push({name: 'tenants-edit',params: { id: data.item.id }})">
-                            <feather-icon icon="EditIcon"/>
-                        </b-button> -->
 
                         <b-button                            
                             v-ripple.400="'rgba(255, 255, 255, 0.15)'"
@@ -565,8 +564,52 @@ export default {
             }
 
         },
-        deleteTenant (item) {
-            this.loading = true;
+        async syncDnsOnDigitalOcean(item) {            
+            this.$swal({
+                title: `¿Estás seguro de querer ejecutar esta acción en Digital Ocean?`,
+                text: `Por favor, confirma que deseas ejecutar esta acción en Digital Ocean. Esta acción sincronizará los registros DNS en el servidor central y creará los archivos de configuración y certificados de seguridad para el dominio "${item.domain}".`,
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonText: this.$t("yes_continue"),
+                cancelButtonText: this.$t("cancel"),
+                customClass: {
+                    confirmButton: "btn btn-primary",
+                    cancelButton: "btn btn-outline-danger ml-1",
+                },
+                showClass: {
+                    popup: "animate__animated animate__flipInX",
+                },
+                buttonsStyling: false,
+                showLoaderOnConfirm: true,
+                preConfirm: async () => {
+                    try {
+                        this.loading = true;
+                        const { data } = await TenantsResource.update(item.id, item)
+                        this.loading = false
+                        console.log(data)
+                        if (data.success) {
+                            this.success(data.message)
+                            this.tenants = this.tenants.map(tenant => {
+                                if (tenant.id === item.id) {
+                                    return data.data
+                                }
+                                return tenant
+                            })
+                        } else {
+                            this.danger(data.message)
+                        }
+                    } catch (error) {
+                        this.loading = false;
+                        this.handleResponseErrors(error);
+                        this.$swal.showValidationMessage(
+                            `Request failed: ${error}`
+                        );
+                    }
+                },
+                allowOutsideClick: () => !Swal.isLoading(),
+            });
+        },
+        async deleteTenant (item) {            
             this.$swal({
                 title: this.$t("are_you_sure"),
                 text: item.deleted_at

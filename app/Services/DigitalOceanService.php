@@ -52,6 +52,7 @@ class DigitalOceanService
 
     public function CreateNewDomainRecord($domain)
     {
+        Log::info($domain);
         return $this->makeRequest(
             'POST',
             "/v2/domains/{$this->domainName}/records",
@@ -68,7 +69,6 @@ class DigitalOceanService
                 "tag" => null
             ],
             [
-                'Content-Type' => 'application/json',
             ],
             $isJsonRequest = true
         );
