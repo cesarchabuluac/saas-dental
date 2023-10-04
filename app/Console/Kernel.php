@@ -16,18 +16,17 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $settings = GeneralSetting::whereIn('key', ['scheduled_appointment_interval'])
-            ->pluck('value', 'key')
-            ->toArray();
-        $interval = (int)$settings['scheduled_appointment_interval'] ?? 15;
+        // $settings = GeneralSetting::whereIn('key', ['scheduled_appointment_interval'])
+        //     ->pluck('value', 'key')
+        //     ->toArray();
+        // $interval = (int)$settings['scheduled_appointment_interval'] ?? 15;
 
         // $schedule->command('inspire')->hourly();
         
         // telescope daily data pruner
-        $schedule->command('telescope:prune')->daily();
-        
+        $schedule->command('telescope:prune')->daily();        
         $schedule->command('notification:clear')->weekly();
-        $schedule->command('check:appointments')->everyNMinutes($interval);
+        $schedule->command('check:appointments')->everyNMinutes(15);
         $schedule->command('trial-ends-email:send')->hourly();
         $schedule->command('upcoming-invoice-email:send')->lastDayOfMonth();
         $schedule->command('reminder-appointment:send')->everyMinute()->runInBackground();
