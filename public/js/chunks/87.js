@@ -239,10 +239,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -1249,9 +1245,9 @@ var render = function () {
                         },
                         [
                           _vm._v(
-                            "\n                             " +
+                            "\n                         " +
                               _vm._s(_vm.$t("cancel")) +
-                              "\n                         "
+                              "\n                     "
                           ),
                         ]
                       ),
@@ -1273,9 +1269,9 @@ var render = function () {
                         },
                         [
                           _vm._v(
-                            "\n                             " +
+                            "\n                         " +
                               _vm._s(_vm.$t("save")) +
-                              "\n                         "
+                              "\n                     "
                           ),
                         ]
                       ),

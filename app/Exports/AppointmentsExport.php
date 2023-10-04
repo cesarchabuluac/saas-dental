@@ -37,19 +37,19 @@ class AppointmentsExport implements FromCollection, WithHeadings, WithStyles, /*
     public function headings(): array
     {
         return [
-            __('lang.appointment_table_id'),
-            __('lang.appointment_table_date'),
-            __('lang.appointment_table_user_id'),
-            __('lang.appointment_table_patient_id'),
-            __('lang.patients.email'),
-            __('lang.patients.phone'),
-            __('lang.patients.cellphone'),
-            __('lang.patients.document_type'),
-            __('lang.patients.document_number'),
-            __('lang.appointment_table_duration'),
-            __('lang.appointment_table_state'),
-            __('lang.appointment_table_observations'),
-        ];        
+            "Folio", //__('lang.appointment_table_id'),
+            "Fecha", //__('lang.appointment_table_date'),
+            "Especialista", //__('lang.appointment_table_user_id'),
+            "Paciente", //__('lang.appointment_table_patient_id'),
+            "Correo", //__('lang.patients.email'),
+            "Teléfono", //__('lang.patients.phone'),
+            "Celular", //__('lang.patients.cellphone'),
+            "Tipo de Documento", //__('lang.patients.document_type'),
+            "Número de Documento", //__('lang.patients.document_number'),
+            "Duración", //__('lang.appointment_table_duration'),
+            "Estado", //__('lang.appointment_table_state'),
+            "Observaciones", //__('lang.appointment_table_observations'),
+        ];
     }
 
     public function columnWidths(): array
@@ -66,14 +66,14 @@ class AppointmentsExport implements FromCollection, WithHeadings, WithStyles, /*
             'I' => 30,
             'J' => 30,
             'K' => 30,
-            'L' => 100,            
+            'L' => 100,
         ];
     }
 
-    
+
     public function styles(Worksheet $sheet)
     {
-        $sheet->setAutoFilter('A1:L1');        
+        $sheet->setAutoFilter('A1:L1');
         $sheet->getStyle('A1:L1')->applyFromArray([
             'font' => [
                 'bold' => true,
@@ -108,7 +108,7 @@ class AppointmentsExport implements FromCollection, WithHeadings, WithStyles, /*
         $user_id = $this->params['user_id'] ?? null;
         $state = $this->params['state'] ?? null;
         $patient_id = $this->params['patient_id'] ?? null;
-        
+
         $query = "SELECT 
             a.id,
             a.`date` AS appointment_date,
@@ -137,7 +137,23 @@ class AppointmentsExport implements FromCollection, WithHeadings, WithStyles, /*
 
         $appointments = DB::select($query);
         return collect($appointments)->map(function ($appointment) {
-            $appointment->state = __('lang.appointment_state_' . $appointment->state);
+            switch ($appointment->state) {
+                case 'confirmed':
+                    $appointment->state = "Confirmada";
+                    break;
+                case 'pending':
+                    $appointment->state = "Pendiente";
+                    break;
+                case 'canceled':
+                    $appointment->state = "Cancelada";
+                    break;
+                case 'assisted':
+                    $appointment->state = "Asistida";
+                    break;
+                case 'unassisted':
+                    $appointment->state = "No Asistida";
+                    break;
+            }
             return $appointment;
         });
     }

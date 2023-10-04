@@ -39,4 +39,8 @@ export default class Tenants {
     impersonate(tenant) {
         return axios.get(`/api/impersonate/${tenant}`)
     }
+
+    billingHistories () {
+        return axios.get(`/api/billing/history`)
+    }
 }

@@ -6,76 +6,7 @@
                 <b-spinner type="grow" variant="dark" />
                 <b-spinner small type="grow" variant="secondary" />
             </div>
-        </template>
-
-        <!-- Add new expenses -->
-        <b-sidebar id="add-new-user-sidebar" :visible="isAddNewExpenseSidebarActive" bg-variant="white"
-            sidebar-class="sidebar-lg" shadow backdrop no-header right
-            @change="(val) => isAddNewExpenseSidebarActive = val">
-            <template #default="{ hide }">
-                <!-- Header -->
-                <div class="d-flex justify-content-between align-items-center content-sidebar-header px-2 py-1">
-                    <h5 class="mb-0">{{ $t('expenses.modal_title') }}</h5>
-                    <feather-icon class="ml-1 cursor-pointer" icon="XIcon" size="16" @click="hide" />
-                </div>
-
-                <!-- form -->
-                <validation-observer ref="expensesRules">
-                    <b-form class="p-2">
-                        <b-row>
-                            <!-- reference -->
-                            <b-col cols="12">
-                                <b-form-group :label="$t('expenses.modal_date')" label-for="reference">
-                                    <flat-pickr id="reference" v-model="expense.date" class="form-control"
-                                        :config="{ dateFormat: 'Y-m-d' }" />
-                                </b-form-group>
-                            </b-col>
-
-                            <!-- reference -->
-                            <b-col cols="12">
-                                <b-form-group :label="$t('expenses.modal_reference')" label-for="reference">
-                                    <validation-provider #default="{ errors }" :name="$t('expenses.modal_reference')"
-                                        rules="required">
-                                        <b-form-input id="reference" v-model="expense.reference"
-                                            :state="errors.length > 0 ? false : null"
-                                            :placeholder="$t('expenses.modal_reference_placeholder')" />
-                                    </validation-provider>
-                                </b-form-group>
-                            </b-col>
-
-                            <b-col cols="12">
-                                <b-form-group :label="$t('expenses.modal_amount')" label-for="amount">
-                                    <cleave id="amount" v-model="expense.amount" class="form-control" :raw="false" :options="{
-                                        numeral: true,
-                                        numeralThousandsGroupStyle: 'thousand',
-                                    }" placeholder="10,000" />
-                                </b-form-group>
-                            </b-col>
-
-                            <b-col cols="12">
-                                <b-form-group :label="$t('expenses.modal_note')" label-for="note">
-                                    <b-form-textarea v-model="expense.note" :label="$t('expenses.modal_note')"
-                                        label-for="note" rows="3" :placeholder="$t('expenses.modal_note_placeholder')" />
-                                </b-form-group>
-                            </b-col>
-
-                            <!-- button -->
-                            <b-col cols="12">
-                                <b-button :disabled="loading" v-if="canAccess('expenses.store')" variant="primary"
-                                    type="submit" @click.prevent="store">
-                                    {{ $t('save') }}
-                                </b-button>
-
-                                <b-button v-ripple.400="'rgba(186, 191, 199, 0.15)'" type="button"
-                                    variant="outline-secondary" @click="hide">
-                                    {{ $t("cancel") }}
-                                </b-button>
-                            </b-col>
-                        </b-row>
-                    </b-form>
-                </validation-observer>
-            </template>
-        </b-sidebar>
+        </template>        
 
         <!-- Table Container Card -->
         <b-card no-body class="mb-0">
@@ -121,9 +52,14 @@
                     </div>
                 </template>
 
+                <!-- Column: Category -->
+                <template #cell(category)="data">
+                    {{ data.item.category.name }}
+                </template>
+
                 <!-- Column: amount -->
                 <template #cell(date)="data">
-                    {{ dateFormat(data.item.date) }}
+                    <span class="text-capitalize">{{ formatDate(data.item.date) }}</span>
                 </template>
 
                 <!-- Column: amount -->
@@ -141,6 +77,14 @@
                 <!-- Column: Actions -->
                 <template #cell(actions)="data">
                     <div class="demo-inline-spacing">
+
+                        <b-button v-if="data.item.file"
+                            v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="secondary" class="btn-icon" size="sm"
+                            @click="detailFile(data.item)" v-b-tooltip.hover.right="`${$t('button_tooltip_see_file')}`">
+                            <feather-icon icon="EyeIcon" />
+                        </b-button>
+
+
                         <b-button v-if="!data.item.deleted_at && canAccess('expenses.edit')"
                             v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="primary" class="btn-icon" size="sm"
                             @click="editExpense(data.item)" v-b-tooltip.hover.right="`${$t('button_tooltip_edit')}`">
@@ -177,6 +121,147 @@
                 </b-row>
             </div>
         </b-card>
+
+
+        <!-- Modal CreateUpdate Expenses -->
+        <b-modal
+            ref="refModalCreateUpdateExpense"
+            id="modalCreateUpdateExpense"
+            :title="sidebarTitle"
+            no-close-on-backdrop
+            :ok-title="$t('save')"
+            :cancel-title="$t('cancel')"
+            hide-footer            
+            @cancel="isAddNewExpenseSidebarActive=false"
+            @hidden="isAddNewExpenseSidebarActive=false"
+            :visible="isAddNewExpenseSidebarActive"
+            size="lg"
+            >
+
+            <validation-observer ref="expensesRules">
+                <b-form ref="form" @submit.prevent>
+                    <b-row class="mt-2">
+
+                        <!-- Branch offices -->
+                        <b-col md="8">
+                            <validation-provider #default="{ errors }" name="branch_office_id" rules="required">
+                                <b-form-group :state="errors.length > 0 ? false:null"
+                                    :label="$t('expenses.modal_branch_office')" label-for="branch_office_id">
+                                    <v-select
+                                        id="branch_office_id"
+                                        v-model="expense.branch_office_id"
+                                        :options="branchOffices"
+                                        :reduce="option => option.id"
+                                        :clearable="false"
+                                        :searchable="false"
+                                        label="name"
+                                        :placeholder="$t('expenses.modal_branch_office_placeholder')"
+                                    />
+                                </b-form-group>
+                            </validation-provider>
+                        </b-col>
+
+                        <!-- Date -->
+                        <b-col cols="4">
+                            <b-form-group :label="$t('expenses.modal_date')" label-for="reference">
+                                <flat-pickr id="reference" v-model="expense.date" class="form-control"
+                                    :config="{ dateFormat: 'Y-m-d' }" />
+                            </b-form-group>
+                        </b-col>
+
+                        <!-- Reason -->
+                        <b-col cols="6">
+                            <b-form-group :label="$t('expenses.reason')" label-for="reason">
+                                <validation-provider #default="{ errors }" :name="$t('expenses.reason')" rules="required">
+                                    <b-form-input id="reason" v-model="expense.reason" :state="errors.length > 0 ? false : null"
+                                        :placeholder="$t('expenses.reason_placeholder')" />
+                                </validation-provider>
+                            </b-form-group>
+                        </b-col>                        
+
+                        <!-- Category -->
+                        <b-col md="6">
+                            <validation-provider #default="{ errors }" name="category_id" rules="required">
+                                <b-form-group :state="errors.length > 0 ? false:null"
+                                    :label="$t('expenses.categories.name')" label-for="category_id">
+                                    <v-select
+                                        id="category_id"
+                                        v-model="expense.expense_category_id"
+                                        :options="categories"
+                                        :reduce="option => option.id"
+                                        :clearable="false"
+                                        :searchable="false"
+                                        label="name"
+                                        :placeholder="$t('expenses.categories.name_placeholder')"
+                                    />
+                                </b-form-group>
+                            </validation-provider>
+                        </b-col>
+
+                        
+
+                        <!-- Reference -->
+                        <b-col cols="6">
+                            <b-form-group :label="$t('expenses.modal_reference')" label-for="reference">
+                                <validation-provider #default="{ errors }" :name="$t('expenses.modal_reference')"
+                                    rules="required">
+                                    <b-form-input id="reference" v-model="expense.reference"
+                                        :state="errors.length > 0 ? false : null"
+                                        :placeholder="$t('expenses.modal_reference_placeholder')" />
+                                </validation-provider>
+                            </b-form-group>
+                        </b-col>
+
+                        <!-- Amount -->
+                        <b-col cols="6">
+                            <b-form-group :label="$t('expenses.modal_amount')" label-for="reference">
+                                <validation-provider #default="{ errors }" :name="$t('expenses.modal_amount')"
+                                    rules="required">
+                                    <b-form-input type="number" step="any" id="amount" v-model="expense.amount"
+                                        :state="errors.length > 0 ? false : null"
+                                        :placeholder="$t('expenses.modal_amount_placeholder')" />
+                                </validation-provider>
+                            </b-form-group>
+                        </b-col>
+
+                        <!-- Notes -->
+                        <b-col cols="12">
+                            <b-form-group :label="$t('expenses.modal_note')" label-for="note">
+                                <b-form-textarea v-model="expense.note" :label="$t('expenses.modal_note')"
+                                    label-for="note" rows="3" :placeholder="$t('expenses.modal_note_placeholder')" />
+                            </b-form-group>
+                        </b-col>
+
+                        <!-- File -->
+                        <b-col cols="12">
+                            <b-form-group :label="$t('expenses.file')" label-for="file" :description="$t('image_format_limit')">
+                               <b-form-file id="file" accept="image/*" @change="handleImageUpload"/>
+                            </b-form-group>
+                        </b-col>
+                    </b-row>
+
+                    <b-row class="mt-3 text-right">
+                        <b-col cols="12">
+                            <b-button
+                                :disabled="loading"
+                                class="mr-1"
+                                variant="danger" 
+                                type="button"                               
+                                @click="isAddNewExpenseSidebarActive=false">
+                                {{$t('cancel')}}
+                            </b-button>
+                            <b-button
+                                variant="primary"    
+                                type="submit"                          
+                                :disabled="loading" v-if="canAccess('expenses.store')"
+                                @click="validateForm">
+                                {{$t('save')}}
+                            </b-button>
+                        </b-col>
+                    </b-row>
+                </b-form>
+            </validation-observer>
+        </b-modal>
     </b-overlay>
 </template>
 
@@ -207,7 +292,8 @@ import {
     BSidebar,
     BFormInvalidFeedback,
     BFormTextarea,
-    BTooltip, VBTooltip
+    BTooltip, VBTooltip,
+    BFormFile,
 } from "bootstrap-vue";
 import { ValidationProvider, ValidationObserver, localize } from 'vee-validate'
 import { required, alphaNum } from "@validations";
@@ -218,6 +304,9 @@ import store from "@/store";
 import Cleave from 'vue-cleave-component'
 import flatPickr from "vue-flatpickr-component";
 import { Spanish } from "flatpickr/dist/l10n/es.js";
+
+import BranchProvider from "@/providers/BranchOffices";
+const BranchResource = new BranchProvider();
 
 import ExpensesProvider from "@/providers/Expenses";
 const ExpenseResource = new ExpensesProvider();
@@ -253,10 +342,14 @@ export default {
         flatPickr,
         Cleave,
         BFormInvalidFeedback,
+        BFormTextarea,
+        BTooltip, 
+        VBTooltip,
+        BFormFile,
+
+        //
         ValidationProvider,
         ValidationObserver,
-        BFormTextarea,
-        BTooltip, VBTooltip
     },
     directives: {
         'b-tooltip': VBTooltip,
@@ -264,9 +357,13 @@ export default {
     },
     data() {
         return {
+            branchOffices: [],
+            categories: [],
             expenses: [],
             expense: {
                 date: moment().format('YYYY-MM-DD'),
+                reason: null,
+                branch_office_id: null,
             },
             perPageOptions: [10, 25, 50, 100],
             perPage: 10,
@@ -276,6 +373,14 @@ export default {
                 {
                     key: "date",
                     label: this.$t("expenses.table_date"),
+                },
+                {
+                    key: "category",
+                    label: this.$t("expenses.categories.name"),
+                },
+                {
+                    key: "reason",
+                    label: this.$t("expenses.reason"),
                 },
                 {
                     key: "reference",
@@ -302,7 +407,7 @@ export default {
             to: 0,
             loading: false,
             isAddNewExpenseSidebarActive: false,
-            sidebarTitle: this.$t("expense_add_title"),
+            sidebarTitle: this.$t("expenses.add_title"),
             isEdit: false,
         };
     },
@@ -319,9 +424,42 @@ export default {
         },
     },
     async mounted() {
+        await this.getBranchOffices()
+        await this.getExpenseCategories()
         await this.getExpenses();
     },
     methods: {
+        handleImageUpload(event) {
+            const file = event.target.files[0]; // Obtiene el primer archivo seleccionado
+            this.expense.file = null
+            if (file) {
+                // Verifica el tamaño del archivo (en bytes)
+                if (file.size <= 5 * 1024 * 1024) {                
+                    // Si el archivo es válido, crea la vista previa
+                    this.imagePreview = URL.createObjectURL(file);
+                    this.expense.file = file
+                } else {
+                    // Si el archivo es demasiado grande, muestra un mensaje de error
+                    this.danger(this.$t('image_size_valid'))
+                    event.target.value = null; // Limpia la selección de archivo en el input
+                }
+            }
+        },
+        detailFile(item) {
+            window.open(item.file)
+        },
+        async getBranchOffices () {
+            this.loading = true
+            const { data } = await BranchResource.getAll()
+            this.loading = false
+            this.branchOffices = data
+        },
+        async getExpenseCategories () {
+            this.loading = true
+            const { data } = await ExpenseResource.listCategories()
+            this.loading = false
+            this.categories = data.data
+        },
         async getExpenses() {
             const query = {
                 search: this.searchQuery,
@@ -336,20 +474,33 @@ export default {
             this.expenses = data.data;
             this.totalExpense = data.total;
         },
+        validateForm () {
+            this.$refs.expensesRules.validate().then((success) => {
+                if(success) {
+                    this.store()
+                }
+            })
+        },
         async store() {
 
-            try {
-                if (!this.isEdit) {
-                    this.expense.branch_office_id = 1
-                    this.expense.user_id = store.state.auth.user.id
+            const formData = new FormData()
+            for (const key in this.expense) {
+                if (this.expense.hasOwnProperty(key) && this.expense[key] !== null && this.expense[key] !== undefined) {
+                    formData.append(key, this.expense[key]);
                 }
-                this.expense.amount = this.expense.amount.replace(/,/g, '');
+            }   
+            
+            if (this.isEdit) {
+                formData.append('_method', 'PUT')
+            }
+
+            try {
+
                 this.loading = true
-                const { data } = (this.isEdit) ? await ExpenseResource.update(this.expense.id, this.expense) : await ExpenseResource.save(this.expense)
+                const { data } = this.isEdit ? await ExpenseResource.update(this.expense.id, formData) : await ExpenseResource.save(formData)
                 this.loading = false
                 if (data.success) {
-                    this.success(data.message);
-                    this.isAddNewExpenseSidebarActive = false
+                    this.success(data.message);                    
                     if (this.isEdit) {
                         this.expenses = this.expenses.map(expense => {
                             if (expense.id === this.expense.id) {
@@ -360,6 +511,7 @@ export default {
                     } else {
                         this.expenses.push(data.data)
                     }
+                    this.isAddNewExpenseSidebarActive = false
                     this.isEdit = false
                 } else {
                     this.danger(data.message);
@@ -371,7 +523,7 @@ export default {
         },
         editExpense(item) {
             this.isEdit = true
-            this.sidebarTitle = this.$t('expense_edit_title')
+            this.sidebarTitle = this.$t("expenses.edit_title"),
             this.expense = { ...item }
             this.isAddNewExpenseSidebarActive = true
         },
@@ -430,12 +582,13 @@ export default {
             if (!this.isEdit) {
                 this.expense = {
                     reference: this.generateReference('GA'),
-                    date: moment().format('YYYY-MM-DD')
+                    date: moment().format('YYYY-MM-DD'),
+                    reason: null,
                 }
             }
             if (!value) {
                 this.isEdit = false
-                this.sidebarTitle = this.$t("expense_add_title")
+                this.sidebarTitle = this.$t("expenses.add_title")
             }
         }
     },

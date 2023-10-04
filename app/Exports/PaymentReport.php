@@ -43,16 +43,16 @@ class PaymentReport implements FromCollection, WithHeadings, WithStyles, WithCol
     public function headings(): array
     {
         return [
-            __("lang.payments.id"),  //A      
-            __("lang.payments.payment_date"), //B    
-            __("lang.payments.budget"), //C
-            __("lang.payments.patient"), //D
-            __("lang.payments.amount"), //E
-            __("lang.payments.method"), //F
-            __("lang.payments.bank"), //G
-            __("lang.payments.reference"), //H
-            __("lang.payments.serie"), //I           
-            __("lang.payments.charged"), //J            
+            "ID de Pago", //__("lang.payments.id"),  //A      
+            "Fecha de Pago", //__("lang.payments.payment_date"), //B    
+            "Presupuesto", //__("lang.payments.budget"), //C
+            "Paciente", //__("lang.payments.patient"), //D
+            "Monto", //__("lang.payments.amount"), //E
+            "Método", //__("lang.payments.method"), //F
+            "Banco", //__("lang.payments.bank"), //G
+            "Referencia", //__("lang.payments.reference"), //H
+            "Serie", //__("lang.payments.serie"), //I           
+            "Marcado Como Pagado", //__("lang.payments.charged"), //J            
         ];
     }
 
@@ -139,12 +139,12 @@ class PaymentReport implements FromCollection, WithHeadings, WithStyles, WithCol
                 "budget" => $payment["budget"]["label"],
                 "patient" => $payment["budget"]["patient"]["full_name"],
                 "amount" => $payment["amount"],
-                "method" => $payment["method_label"],
+                "method" => $payment["method"],
                 "bank" => !empty($payment["check"]) ? $payment["check"]["bank"] : "",
                 "reference" => !empty($payment["check"]) ? $payment["check"]["reference"] : "",
                 "serie" => !empty($payment["check"]) ? $payment["check"]["serie"] : "",
-                "charged" => $payment["check_paid"] == 1 ? __("lang.yes") : __("lang.no"),
-            ];
+                "charged" => $payment["check_paid"] == 1 ? "Si" : "No",
+            ];            
         });
     }
 }

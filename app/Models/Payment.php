@@ -19,20 +19,19 @@ class Payment extends Model
         'method_label',
     ];
 
-    public function getMethodLabelAttribute () {
-        switch ($this->method) {
-            case "cash":
-                return __('lang.payments.methods.cash');
-            case "debit_card":
-                return __('lang.payments.methods.debit_card');
-            case "credit_card":
-                return __('lang.payments.methods.credit_card');
-            case "check":
-                return __('lang.payments.methods.check');
-            case "transfer":
-                return __('lang.payments.methods.transfer');
-        }
+    public function getMethodLabelAttribute()
+    {
+        $methodTranslations = [
+            'cash' => "Efectivo",
+            'debit_card' => "Tarjeta de Débito',
+            'credit_card' => Tarjeta de Crédito",
+            'check' => "Cheque",
+            'transfer' => "Transferencia",
+        ];
+
+        return $methodTranslations[$this->method] ?? "Desconocido";
     }
+
 
     public function partial_payments()
     {
@@ -44,7 +43,7 @@ class Payment extends Model
         return $this->belongsTo(BranchOffice::class, 'branch_office_id', 'id');
     }
 
-    public function budget() : BelongsTo
+    public function budget(): BelongsTo
     {
         return $this->belongsTo(Budget::class, 'budget_id', 'id');
     }
@@ -65,40 +64,10 @@ class Payment extends Model
     }
 
 
-    /**
-     * Forma Date Human
-     **/
-    // public function getUpdatedAtAttribute($value)
-    // {
-    //     return Carbon::createFromTimeStamp($value)->diffForHumans();
-    // }
 
     public function getTimeElapsedAttribute()
     {
-    //    return $this->updated_at->diffForHumans(null, false, false, 3);
+        //    return $this->updated_at->diffForHumans(null, false, false, 3);
     }
-
-    // public function getMethodAttribute($value)
-    // {
-    //     switch ($value) {
-    //         case "cash":
-    //             return __('lang.payment_method_cash');
-    //         case "debit_card":
-    //             return __('lang.payment_method_debit_card');
-    //         case "credit_card":
-    //             return __('lang.payment_method_credit_card');
-    //         case "check":
-    //             return __('lang.payment_method_check');
-    //         case "transfer":
-    //             return __('lang.payment_method_transfer');
-    //     }
-    // }
-
-    // public function getCheckPaidAttribute($value) {
-    //     if ($value == true) {
-    //         return "<span class='badge rounded-pill badge-light-success text-capitalized'>" . __('lang.yes') . "</span>";
-    //     } else {
-    //         return "<span class='badge rounded-pill badge-light-danger text-capitalized'>" . __('lang.no') . "</span>";
-    //     }
-    // }
+   
 }

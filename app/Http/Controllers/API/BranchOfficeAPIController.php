@@ -33,7 +33,6 @@ class BranchOfficeAPIController extends Controller
         return $this->branchOfficeRepository->all();
     }
 
-
     /**
      * Display a listing of the resource.
      *
@@ -41,11 +40,14 @@ class BranchOfficeAPIController extends Controller
      */
     public function index()
     {
+        $searchTerm = '%' . request('search') . '%';
         return $this->branchOfficeRepository->query()
-            ->where('name', 'LIKE', '%' . request('search') . '%')
-            ->orWhere('email', 'LIKE', '%' . request('search') . '%')
-            ->orWhere('phone', 'LIKE', '%' . request('search') . '%')
-            ->orWhere('address', 'LIKE', '%' . request('search') . '%')
+            ->where(function ($query) use ($searchTerm) {
+                $query->where('name', 'LIKE', $searchTerm)
+                    ->orWhere('email', 'LIKE', $searchTerm)
+                    ->orWhere('phone', 'LIKE', $searchTerm)
+                    ->orWhere('address', 'LIKE', $searchTerm);
+            })
             ->orderBy(request('sortBy'), request('sortDesc') ? 'asc' : 'desc')
             ->withTrashed()
             ->paginate(request('perPage'));
@@ -60,28 +62,21 @@ class BranchOfficeAPIController extends Controller
     public function store(CreateBranchOfficeRequest $request)
     {
         $input = $request->except('file', 'file2');
+
         try {
-
-            DB::beginTransaction();
-            $branchOffice = $this->branchOfficeRepository->create($input);
-            DB::commit();
-
-            if ($request->hasFile('file')) {
-                $this->storageService->setTenant(tenant());
-                $path = $this->storageService->saveFile($request, "file", "letterhead", $branchOffice->id);
-                $branchOffice->update(['letterhead_1' => global_asset("/storage/" . $path)]);
-            }
-
-            if ($request->hasFile('file2')) {
-                $this->storageService->setTenant(tenant());
-                $path = $this->storageService->saveFile($request, "file2", "letterhead", $branchOffice->id);
-                $branchOffice->update(['letterhead_2' => global_asset("/storage/" . $path)]);
-            }
-        } catch (Exception $e) {
-            DB::rollBack();
-            return $this->sendError($e->getMessage());
+            return DB::transaction(function () use ($input, $request) {
+                $branchOffice = $this->branchOfficeRepository->create($input);
+                if ($request->has('file')) {
+                    $this->handleLetterheadFile($request, $branchOffice, 'file', 'letterhead_1', null);
+                }
+                if ($request->has('file2')) {
+                    $this->handleLetterheadFile($request, $branchOffice, 'file2', 'letterhead_2', null);
+                }
+                return $this->sendResponse($branchOffice, __('lang.saved_successfully', ['operator' => __('lang.branch_office')]));
+            });
+        } catch (Exception $ex) {
+            return $this->sendError($ex->getMessage());
         }
-        return $this->sendResponse($branchOffice, __('lang.saved_successfully', ['operator' => __('lang.branch_office')]));
     }
 
     /**
@@ -118,9 +113,7 @@ class BranchOfficeAPIController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Log::info($request->all());
         $input = $request->only('address', 'country', 'email', 'name', 'phone', 'postal_code');
-
         $oldBranchOffice = $this->branchOfficeRepository->find($id);
 
         if (empty($oldBranchOffice)) {
@@ -128,32 +121,17 @@ class BranchOfficeAPIController extends Controller
         }
 
         try {
-
-            DB::beginTransaction();
-            $branchOffice = $this->branchOfficeRepository->update($input, $id);
-            DB::commit();
-
-            if ($request->hasFile('file')) {
-                $this->storageService->setTenant(tenant());
-                $path = $this->storageService->saveFile($request, "file", "letterhead", $branchOffice->id);
-                $branchOffice->update(['letterhead_1' => global_asset("/storage/" . $path)]);
-                if ($oldBranchOffice->letterhead_1) {
-                    $this->storageService->removeFile($oldBranchOffice->letterhead_1);                    
+            return DB::transaction(function () use ($input, $request, $id, $oldBranchOffice) {
+                $branchOffice = $this->branchOfficeRepository->update($input, $id);
+                if ($request->has('file')) {
+                    $this->handleLetterheadFile($request, $branchOffice, 'file', 'letterhead_1', $oldBranchOffice);
                 }
-            }
-
-            if ($request->hasFile('file2')) {
-                $this->storageService->setTenant(tenant());
-                $path = $this->storageService->saveFile($request, "file2", "letterhead", $branchOffice->id);
-                $branchOffice->update(['letterhead_2' => global_asset("/storage/" . $path)]);
-                if ($oldBranchOffice->letterhead_2) {
-                    $this->storageService->removeFile($oldBranchOffice->letterhead_2);
+                if ($request->has('file2')) {
+                    $this->handleLetterheadFile($request, $branchOffice, 'file2', 'letterhead_2', $oldBranchOffice);
                 }
-            }
-
-            return $this->sendResponse($branchOffice, __('lang.updated_successfully', ['operator' => __('lang.branch_office')]));
+                return $this->sendResponse($branchOffice, __('lang.updated_successfully', ['operator' => __('lang.branch_office')]));
+            });
         } catch (Exception $e) {
-            DB::rollBack();
             return $this->sendError($e->getMessage());
         }
     }
@@ -181,6 +159,21 @@ class BranchOfficeAPIController extends Controller
             return $this->sendResponse($branchOffice, $message);
         } catch (Exception $e) {
             return $this->sendError($e->getMessage());
+        }
+    }
+
+    private function handleLetterheadFile($request, $branchOffice, $fileFieldName, $updateField, $oldBranchOffice = null)
+    {
+        if ($request->hasFile($fileFieldName)) {
+            $this->storageService->setTenant(tenant());
+            $path = $this->storageService->saveFile($request, $fileFieldName, "letterhead", $branchOffice->id);
+            $branchOffice->update([$updateField => global_asset("/storage/" . $path)]);
+
+            if (!empty($oldBranchOffice)) {
+                if ($oldBranchOffice->$updateField) {
+                    $this->storageService->removeFile($oldBranchOffice->$updateField);
+                }
+            }
         }
     }
 }

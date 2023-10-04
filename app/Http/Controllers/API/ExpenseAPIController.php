@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\API;
 
 use App\Exports\ExpenseReport;
+use App\Exports\UserExport;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateExpenseRequest;
 use App\Http\Requests\UpdateExpenseRequest;
+use App\Repositories\ExpenseCategoryRepository;
 use App\Repositories\ExpenseRepository;
+use App\Services\StorageService;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
@@ -18,10 +21,14 @@ class ExpenseAPIController extends Controller
 {
     /** @var  ExpenseRepository */
     private $expenseRepository;
+    protected $expenseCategoryRepository;
+    protected $storageService;
 
-    public function __construct(ExpenseRepository $expenseRepo)
+    public function __construct(ExpenseRepository $expenseRepo, ExpenseCategoryRepository $expenseCategoryRepository, StorageService $storageService)
     {
         $this->expenseRepository = $expenseRepo;
+        $this->expenseCategoryRepository = $expenseCategoryRepository;
+        $this->storageService = $storageService;
     }
 
     /**
@@ -31,24 +38,28 @@ class ExpenseAPIController extends Controller
      */
     public function index(Request $request)
     {
+
         $searchTerm = '%' . $request->search . '%';
-        $startAt = $request->filled('start') ? Carbon::parse($request->start) : null;
-        $endAt = $request->filled('end') ? Carbon::parse($request->end) : null;
 
         $query = $this->expenseRepository->query()
-            ->with(['user', 'branch'])
+            ->with(['user', 'branch', 'category'])
             ->where(function ($query) use ($searchTerm) {
                 $query->where('date', 'LIKE', $searchTerm)
                     ->orWhere('reference', 'LIKE', $searchTerm)
                     ->orWhere('note', 'LIKE', $searchTerm);
+            })
+            ->when($request->filled('expense_category_id'), function ($query) use ($request) {
+                return $query->where('expense_category_id', $request->expense_category_id);
+            })
+            ->when($request->filled('start') && $request->filled('end'), function ($query) use ($request) {
+                $startAt = Carbon::parse($request->start);
+                $endAt = Carbon::parse($request->end);
+                return $query->whereBetween('date', [$startAt, $endAt]);
             });
 
-        if ($startAt && $endAt) {
-            $query->whereBetween('date', [$startAt, $endAt]);
-        }
-
         if (request()->filled('isDownload')) {
-            return Excel::download(new ExpenseReport($request), 'Expenses.xlsx');
+            $expenses = $query->get();
+            return Excel::download(new ExpenseReport($expenses), 'Expenses.xlsx');
         }
 
         $expenses = $query->orderBy('date', 'DESC')
@@ -65,17 +76,27 @@ class ExpenseAPIController extends Controller
      */
     public function store(CreateExpenseRequest $request)
     {
-        $input = $request->all();
+        $input = $request->except('file');
+        $input['user_id'] = $request->user()->id;
+        $input['slug'] = \Str::slug($request->reason);
+
         try {
-            DB::beginTransaction();
-            $expense = $this->expenseRepository->create($input);
-            DB::commit();
-            return $this->sendResponse($expense, __('lang.saved_successfully', ['operator' => __('lang.expense')]));
+            return DB::transaction(function () use ($input, $request) {
+                $expense = $this->expenseRepository->create($input);
+
+                if ($request->hasFile('file')) {
+                    $this->storageService->setTenant(tenant());
+                    $path = $this->storageService->saveFile($request, "file", "expenses", $expense->id);
+                    $expense->update(['file' => global_asset("/storage/" . $path)]);
+                }
+
+                return $this->sendResponse($expense->load('category'), __('lang.saved_successfully', ['operator' => __('lang.expense')]));
+            });
         } catch (Exception $e) {
-            DB::rollBack();
             return $this->sendError($e->getMessage());
         }
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -86,18 +107,29 @@ class ExpenseAPIController extends Controller
      */
     public function update(UpdateExpenseRequest $request, $id)
     {
-        $expense = $this->expenseRepository->find($id);
-        $input = $request->only('branch_office_id', 'user_id', 'date', 'reference', 'amount', 'note');
+        $oldExpense = $this->expenseRepository->find($id);
+        $input = $request->except('created_at', 'updated_at', 'user', 'branch', '_method');
+        $input['slug'] = \Str::slug($request->reason);
 
-        if (empty($expense)) {
+        if (empty($oldExpense)) {
             return $this->sendError(__('lang.not_found', ['operator' => __('lang.expense')]));
         }
 
         try {
-            DB::beginTransaction();
-            $expense->update($input);
-            DB::commit();
-            return $this->sendResponse($expense, __('lang.saved_successfully', ['operator' => __('lang.expense')]));
+            return DB::transaction(function () use ($input, $request, $id, $oldExpense) {
+                if ($request->hasFile('file')) {
+                    $this->storageService->setTenant(tenant());
+                    $path = $this->storageService->saveFile($request, "file", "expenses", $id);
+                    $input['file'] = global_asset("/storage/" . $path);
+                    if (!empty($oldExpense)) {
+                        if ($oldExpense->file) {
+                            $this->storageService->removeFile($oldExpense->file);
+                        }
+                    }
+                }
+                $expense = $this->expenseRepository->update($input, $id);
+                return $this->sendResponse($expense->load('category'), __('lang.saved_successfully', ['operator' => __('lang.expense')]));
+            });
         } catch (Exception $e) {
             DB::rollBack();
             return $this->sendError($e->getMessage());
@@ -118,20 +150,21 @@ class ExpenseAPIController extends Controller
             if (empty($expense)) {
                 return $this->sendError(__('lang.not_found', ['operator' => __('lang.expense')]));
             }
-
+            if ($expense->file) {
+                $this->storageService->removeFile($expense->file);
+            }
             $expense->delete();
 
-            // $message = "";
-            // if (empty($expense->deleted_at)) {
-            //     $expense->delete($id);
-            //     $message = "lang.inactived_successfully";
-            // } else {
-            //     $expense->restore();
-            //     $message = "lang.activated_successfully";
-            // }
+
             return $this->sendResponse($expense, __("lang.deleted_successfully", ['operator' => __('lang.expense')]));
         } catch (Exception $e) {
             return $this->sendError($e->getMessage());
         }
+    }
+
+    public function categoriesAll(Request $request)
+    {
+        $categories = $this->expenseCategoryRepository->whereIsActive(1)->get(['id', 'name']);
+        return $this->sendResponse($categories, "Expense categories retrievied successfully");
     }
 }

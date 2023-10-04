@@ -56,7 +56,7 @@
                                 <b-button v-if="patients.length" @click="donwloadPatient" variant="outline-success"
                                     v-ripple.400="'rgba(255, 255, 255, 0.15)'" :class="{ 'btn-block': isMobile }">
                                     <feather-icon icon="DownloadIcon" />
-                                    {{ $t("download") }}
+                                    {{ $t("button_download") }}
                                 </b-button>
 
                                 <b-button v-if="filter.start" @click="clearFilter" variant="outline-danger"

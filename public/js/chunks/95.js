@@ -927,7 +927,7 @@ var render = function () {
                                     }),
                                     _vm._v(
                                       "\n                                " +
-                                        _vm._s(_vm.$t("download")) +
+                                        _vm._s(_vm.$t("button_download")) +
                                         "\n                            "
                                     ),
                                   ],

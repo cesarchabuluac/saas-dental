@@ -8819,6 +8819,11 @@ __webpack_require__.r(__webpack_exports__);
   route: "tenants",
   permission: 'tenants.index'
 }, {
+  title: "billings.histories.menu",
+  icon: 'DollarSignIcon',
+  route: "billing-history",
+  permission: 'tenants.index'
+}, {
   title: 'catalog_actions',
   icon: 'ActivityIcon',
   permission: 'catalog.action',

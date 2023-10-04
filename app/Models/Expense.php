@@ -12,7 +12,22 @@ class Expense extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $guarded = [];
+    protected $fillable = [
+        'id',
+        'reason',
+        'slug',
+        'expense_category_id',
+        'branch_office_id',
+        'user_id',
+        'date',
+        'reference',
+        'amount',
+        'note',
+        'file',
+        'is_closed',
+        'closed_by',
+        'closed_at',
+    ];
 
     protected $dates = ['date'];
 
@@ -26,7 +41,6 @@ class Expense extends Model
         return $this->belongsTo(BranchOffice::class, 'branch_office_id');
     }
 
-
     /*
     * Forma Date Human
     */
@@ -35,8 +49,8 @@ class Expense extends Model
         return Carbon::createFromTimeStamp(strtotime($value))->diffForHumans(null, false, false, 3);
     }
 
-    public function category () : BelongsTo
+    public function category(): BelongsTo
     {
-        return $this->belongsTo(ExpenseCategory::class);
+        return $this->belongsTo(ExpenseCategory::class, 'expense_category_id');
     }
 }

@@ -16,6 +16,6 @@ class ExpenseCategory extends Model
     ];
 
     protected $casts = [
-        'is_active' => 'Boolean',
+        'is_active' => 'boolean',
     ];
 }

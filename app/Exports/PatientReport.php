@@ -35,25 +35,25 @@ class PatientReport implements FromCollection, WithHeadings, WithStyles, WithCol
     public function headings(): array
     {
         return [
-            __('lang.patients.table_name'),  //A          
-            __('lang.patients.table_email'),//B
-            __('lang.patients.document_type'), //C
-            __('lang.patients.document'),//D
-            __('lang.patients.table_cellphone'), //E
-            __('lang.patients.table_phone'), //F
-            __('lang.patients.table_created_at'),//G
-            __('lang.patients.appointment_pending'), //H
-            __('lang.patients.appointment_confirmed'), //I
-            __('lang.patients.appointment_cancelled'), //J
-            __('lang.patients.appointment_asissted'), //K
-            __('lang.patients.appointment_unasissted'), //L
-            __('lang.patients.budget_approved'), //M
-            __('lang.patients.budget_pending'), //N
-            __("lang.patients.table_debt"), //Ñ
-            __("lang.patients.table_paid"), //O
-            __("lang.patients.table_balance"), //P            
-            __("lang.patients.total_last_paid"),
-            __("lang.patients.table_status"), //S
+            "Nombre", //__('lang.patients.table_name'),  //A          
+            "Correo", //__('lang.patients.table_email'),//B
+            "Tipo de Documento", //__('lang.patients.document_type'), //C
+            "Documento", //__('lang.patients.document'),//D
+            "Celular", //__('lang.patients.table_cellphone'), //E
+            "Teléfono", //__('lang.patients.table_phone'), //F
+            "Creado en", //__('lang.patients.table_created_at'),//G
+            "Citas Pendientes", //__('lang.patients.appointment_pending'), //H
+            "Citas Confirmadas", //__('lang.patients.appointment_confirmed'), //I
+            "Citas Canceladas", //__('lang.patients.appointment_cancelled'), //J
+            "Citas Asistidas", //__('lang.patients.appointment_asissted'), //K
+            "Citas No Atendidas", //__('lang.patients.appointment_unasissted'), //L
+            "Presupuestos Aprobados", //__('lang.patients.budget_approved'), //M
+            "Presupuestos Pendientes", //__('lang.patients.budget_pending'), //N
+            "Deuda Total", //__("lang.patients.table_debt"), //Ñ
+            "Total Pagado", //__("lang.patients.table_paid"), //O
+            "Saldo", //__("lang.patients.table_balance"), //P            
+            "Último Pago", //__("lang.patients.total_last_paid"),
+            "Estatus", //__("lang.patients.table_status"), //S
         ];        
     }
 
@@ -187,7 +187,7 @@ class PatientReport implements FromCollection, WithHeadings, WithStyles, WithCol
                 'total_paid' => $patient['total_paid'] ?? 0,
                 'total_debt' => $patient['total_debt' ?? 0],
                 'last_paid' => $patient['last_paid'],
-                'status' => empty($patient['deleted_at']) ? __('lang.active') : __('lang.inactive'),
+                'status' => empty($patient['deleted_at']) ? "Activo" : "Inactivo",
             ];
         });
     }

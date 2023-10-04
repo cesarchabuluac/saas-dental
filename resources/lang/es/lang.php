@@ -237,6 +237,8 @@ return [
             "id" => "ID",
             "id_help" => "ID de Gasto",
             "id_placeholder" => "ID de Gasto",
+            "expense_category_id" => "Categoría",
+            "reason" => "Motivo del gasto",
             "concept" => "Concepto",
             "concept_help" => "Concepto",
             "concept_placeholder" => "Concepto",

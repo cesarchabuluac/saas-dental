@@ -69,6 +69,12 @@ export default [
     permission: 'tenants.index',
   },
   {
+    title: "billings.histories.menu",
+    icon: 'DollarSignIcon',
+    route: "billing-history",
+    permission: 'tenants.index',
+  },
+  {
     title: 'catalog_actions',
     icon: 'ActivityIcon',
     permission: 'catalog.action',

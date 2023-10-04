@@ -48,8 +48,6 @@ class PlanController extends Controller
     {
 
         $domains = $this->digitalOceanService->getDomains();
-        Log::warning($domains);
-
         return $this->planRepository->with('currency')
             ->withTrashed()
             ->paginate(request('perPage'));

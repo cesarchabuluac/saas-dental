@@ -147,7 +147,7 @@
             >
             <validation-observer ref="simpleRules">
                 <b-form-group :label="$t('inventories.categories.fields.name')" :description="$t('inventories.categories.fields.name_help')">
-                        <validation-provider
+                    <validation-provider
                         #default="{ errors }"
                         :name="$t('inventories.categories.fields.title_field')"
                         rules="required"
@@ -161,36 +161,32 @@
                         />
                     </validation-provider>
                 </b-form-group>
-                    <b-form-group :label="$t('inventories.categories.fields.description')" :description="$t('inventories.categories.fields.description_help')">                        
-                        <b-form-input
-                            v-model="category.description"
-                            id="categoryDescription"
-                            type="text"
-                            :placeholder="$t('inventories.categories.fields.description_placeholder')"
-                        />
-                    </b-form-group>
+                <b-form-group :label="$t('inventories.categories.fields.description')" :description="$t('inventories.categories.fields.description_help')">                        
+                    <b-form-input
+                        v-model="category.description"
+                        id="categoryDescription"
+                        type="text"
+                        :placeholder="$t('inventories.categories.fields.description_placeholder')"
+                    />
+                </b-form-group>
 
-                    <b-row class="mt-3 text-right">
-                        <b-col cols="12">
-                            <b-button
-                                class="mr-1"
-                                variant="danger"
-                                @click="onShowModalCreateUpdateCategory=false">
-                                {{$t('cancel')}}
-                            </b-button>
-                            <b-button
-                                :disabled="loading"
-                                variant="primary"
-                                type="submit"
-                                @click.prevent="validationForm">
-                                {{$t('save')}}
-                            </b-button>
-                        </b-col>
-                    </b-row>
-
-                    
-                    
-                </b-form>
+                <b-row class="mt-3 text-right">
+                    <b-col cols="12">
+                        <b-button
+                            class="mr-1"
+                            variant="danger"
+                            @click="onShowModalCreateUpdateCategory=false">
+                            {{$t('cancel')}}
+                        </b-button>
+                        <b-button
+                            :disabled="loading"
+                            variant="primary"
+                            type="submit"
+                            @click.prevent="validationForm">
+                            {{$t('save')}}
+                        </b-button>
+                    </b-col>
+                </b-row>
             </validation-observer>
         </b-modal>
     </div>

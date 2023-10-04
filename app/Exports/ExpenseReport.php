@@ -23,26 +23,28 @@ use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 use Maatwebsite\Excel\Sheet;
 
 
-class ExpenseReport implements FromCollection, WithHeadings, WithStyles, WithColumnWidths, ShouldAutoSize
+class ExpenseReport implements FromCollection, WithHeadings, WithColumnWidths, WithStyles, ShouldAutoSize
 {
     use Exportable;
 
-    private $params;
+    private $data;
 
-    public function __construct(Request $request)
+    public function __construct($data)
     {
-        $this->params = $request->all();
+        $this->data = $data;
     }
 
     public function headings(): array
     {
         return [
-            __("lang.expenses.fields.date"),  //A          
-            __("lang.expenses.fields.reference"), //B
-            __("lang.expenses.fields.amount"), //C
-            __("lang.expenses.fields.comments"), //D
-            __("lang.expenses.fields.created_at"), //E
-            __("lang.expenses.fields.status"), //F            
+            "Fecha", // __("lang.expenses.fields.date"),  //A  
+            "Categoria", // __("lang.expenses.fields.expense_category_id"),  //B  
+            "Motivo", // __("lang.expenses.fields.reason"),  //C      
+            "Referencia", // __("lang.expenses.fields.reference"), //D
+            "Importe", // __("lang.expenses.fields.amount"), //E
+            "Comentarios", // __("lang.expenses.fields.comments"), //F
+            "Fecha de Creación", // __("lang.expenses.fields.created_at"), //G
+            "Estatus", // __("lang.expenses.fields.status"), //H
         ];
     }
 
@@ -55,13 +57,15 @@ class ExpenseReport implements FromCollection, WithHeadings, WithStyles, WithCol
             "D" => 30,
             "E" => 30,
             "F" => 30,
+            "G" => 30,
+            "H" => 30,
         ];
     }
 
     public function styles(Worksheet $sheet)
     {
-        $sheet->setAutoFilter("A1:F1");
-        $sheet->getStyle("A1:F1")->applyFromArray([
+        $sheet->setAutoFilter("A1:H1");
+        $sheet->getStyle("A1:H1")->applyFromArray([
             "font" => [
                 "bold" => true,
                 "size" => 12,
@@ -77,7 +81,7 @@ class ExpenseReport implements FromCollection, WithHeadings, WithStyles, WithCol
             ]
         ]);
 
-        $sheet->getStyle("A1:F" . ($sheet->getHighestRow()))->applyFromArray([
+        $sheet->getStyle("A1:H" . ($sheet->getHighestRow()))->applyFromArray([
             "borders" => [
                 "allBorders" => [
                     "borderStyle" => Border::BORDER_THIN,
@@ -92,20 +96,16 @@ class ExpenseReport implements FromCollection, WithHeadings, WithStyles, WithCol
      */
     public function collection()
     {
-        $start = Carbon::parse($this->params["start"])->startOfDay();
-        $end = Carbon::parse($this->params["end"])->endOfDay();
-
-        $expenses = Expense::with(["user", "branch"])
-            ->whereBetween("date", [$start, $end]);
-
-        return $expenses->get()->map(function ($expense) {
+        return  $this->data->map(function ($expense) {
             return [
                 "date" => $expense["date"],
+                "category" => $expense["category"]['name'],
+                "reason" => empty($expense["reason"]) ? " -- " : $expense["reason"],
                 "reference" => $expense["reference"],
                 "amount" => $expense["amount"],
                 "comments" => $expense["note"],
                 "created_at" => $expense["created_at"],
-                "status" => empty($expense["deleted_at"]) ? __("lang.active") : __("lang.inactive"),
+                "status" => empty($expense["deleted_at"]) ? "Activo" : "Inactivo",
             ];
         });
     }

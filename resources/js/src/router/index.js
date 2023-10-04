@@ -412,6 +412,25 @@ const router = new VueRouter({
         ],
       },
     },
+    //Billings
+    {
+      path: "/billing/history",
+      name: "billing-history",
+      component: () => import("@/views/central/billings/Index.vue"),
+      meta: {
+        permission: "tenants.index",
+        pageTitle: "billings.histories.desc",
+        breadcrumb: [
+          {
+            text: "dashboard",
+          },
+          {
+            text: "billings.histories.slug",
+            active: true,
+          },
+        ],
+      },
+    },
 
     //APPS
 

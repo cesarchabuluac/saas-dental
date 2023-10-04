@@ -39,16 +39,16 @@ class MedicineReport implements FromCollection, WithHeadings, WithStyles, WithCo
     public function headings(): array
     {
         return [
-            __("lang.inventories.medicines.sku"),  //A      
-            __("lang.inventories.medicines.medicine"), //B    
-            __("lang.inventories.medicines.description"), //C
-            __("lang.inventories.medicines.unit"), //D
-            __("lang.inventories.medicines.category"), //E
-            __("lang.inventories.medicines.brand"), //F
-            __("lang.inventories.medicines.price"), //G
-            __("lang.inventories.medicines.stock"), //H
-            __("lang.inventories.medicines.expiration_date"), //I           
-            __("lang.inventories.medicines.status"), //J            
+            "SKU", //__("lang.inventories.medicines.sku"),  //A      
+            "Medicamento", //__("lang.inventories.medicines.medicine"), //B    
+            "Descripción", //__("lang.inventories.medicines.description"), //C
+            "Unidad", //__("lang.inventories.medicines.unit"), //D
+            "Categoría", //__("lang.inventories.medicines.category"), //E
+            "Marca", //__("lang.inventories.medicines.brand"), //F
+            "Precio", //__("lang.inventories.medicines.price"), //G
+            "Inventario", //__("lang.inventories.medicines.stock"), //H
+            "Fecha de Vencimiento", //__("lang.inventories.medicines.expiration_date"), //I           
+            "Estado", //__("lang.inventories.medicines.status"), //J            
         ];
     }
 
@@ -128,7 +128,7 @@ class MedicineReport implements FromCollection, WithHeadings, WithStyles, WithCo
                 "price" => $medicine['price'],
                 "stock" => $medicine['current_stock'],
                 "expiration_date" => $medicine['expiration_date'],
-                "status" => empty($medicine["deleted_at"]) ? __("lang.active") : __("lang.inactive"),
+                "status" => empty($medicine["deleted_at"]) ? "Activo" : "Inactivo",
             ];
         });
     }

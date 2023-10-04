@@ -25,8 +25,9 @@ class CreateExpenseRequest extends FormRequest
     {
         return [
             'branch_office_id' => 'required|exists:branch_offices,id',
-            'user_id' => 'required|exists:users,id',
             'date' => 'required',
+            'reason' => 'required|string|min:3',
+            'expense_category_id' => 'required|exists:expense_categories,id',                        
             'reference' => 'required|string|max:255|unique:expenses,reference',
             'amount' => 'required|numeric|min:0',
             'note' => 'required'
@@ -37,10 +38,11 @@ class CreateExpenseRequest extends FormRequest
     {
         return [
             'branch_office_id' => __('lang.expense_modal_branch'),
+            'expense_category_id' => __('lang.expenses.fields.expense_category_id'),
+            'reason' => __('lang.expenses.fields.reason'),
             'reference' => __('lang.expense_modal_reference'),
             'amount' => __('lang.expense_modal_amount'),
             'note' => __('lang.expense_modal_note'),
-            
         ];
     }
 }

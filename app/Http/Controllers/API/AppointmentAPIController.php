@@ -531,10 +531,6 @@ class AppointmentAPIController extends Controller
         // Get current date
         $currentDate = date('Y-m-d H:i:s');
 
-
-        Log::info($request->all());
-
-
         //Apply the one hour adjustment in case of daylight saving time
         if ($isDST) {
             $currentDate = date('Y-m-d H:i:s', strtotime($currentDate) - 3600);

@@ -106,6 +106,7 @@
   "button_tooltip_impersonate": "Suplantar",
   "button_tooltip_lock": "Bloquear",
   "button_tooltip_unlock": "Desbloquear",
+  "button_tooltip_see_file": "Ver archivo",
   "button_cancel": "Cancelar",
   "button_confirm": "Confirmar",
   "button_create": "Crear",
@@ -1810,6 +1811,9 @@
   "new_patients": "Nuevos pacientes",
   "existing_patients": "Pacientes existentes",
   "no_options": "Lo sentimos, no coinciden los registros",
+  "file": "Archivo",
+  "file_help": "Elige un archivo",
+  "file_placeholder": "Elige un archivo o arrástralo aqui...",
   "patients": {
     "patients": "Pacientes",
     "identifier": "Identificador",
@@ -2694,6 +2698,9 @@
     "modal_title": "Agregar / Editar Gasto",
     "modal_branch": "Sucursal",
     "modal_date": "Fecha",
+    "modal_branch_office": "Sucursal",
+    "modal_branch_office_help": "Selecciona una sucursal",
+    "modal_branch_office_placeholder": "Selecciona una sucursal",
     "modal_reference": "Referencia",
     "modal_reference_required": "Debes ingresar una referencia",
     "modal_reference_help": "Insertar Referencia",
@@ -2706,7 +2713,18 @@
     "modal_note_help": "Insertar Nota / Comentarios",
     "modal_note_placeholder": "Insertar Nota / Comentarios",
     "modal_updated_at": "Actualizado en",
-    "modal_user_id": "Actualizado por"
+    "modal_user_id": "Actualizado por",
+    "reason": "Motivo del Gasto",
+    "reason_help": "Inserta el motivo del gasto",
+    "reason_placeholder": "Inserta el motivo del gasto",
+    "file": "Imagen",
+    "file_help": "Elige un archivo correspondiente al gasto",
+    "file_placeholder": "Elige un archivo o arrástralo aqui...",
+    "categories": {
+      "name": "Categoría",
+      "name_help": "Selecciona una categoría",
+      "name_placeholder": "Selecciona una categoría"
+    }
   },
   "checks": {
     "plural": "Cheques",
@@ -3143,7 +3161,23 @@
     }
   },
   "see_details": "Ver detalles",
-  "hi": "Hola"
-
-  
+  "hi": "Hola",
+  "billings": {
+    "histories": {
+      "menu": "Facturación",
+      "desc": "Historial de Facturación",
+      "slug": "Historial de Facturación",
+      "table": {
+        "id": "S.No",
+        "net": "Total Neto",
+        "type": "Tipo de Transactión",
+        "description": "Descripción de la transacción",
+        "amount": "Monto",
+        "currency": "Divisa",
+        "created_at": "Creado en",
+        "status": "Estado de Pago",
+        "stripe_fee": "Tarifa de banda"
+      }
+    }
+  }
 }

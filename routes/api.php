@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\API\DashboardAPIController;
+use App\Http\Controllers\API\ExpenseAPIController;
 use App\Http\Controllers\API\ImportAPIController;
 use App\Http\Controllers\API\NotificationAPIController;
 use App\Http\Controllers\API\UserAPIController;
 use App\Http\Controllers\API\V2\AppointmentAPIController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Central\BillingHistoryController;
 use App\Http\Controllers\Central\TenantController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TenantImpersonationController;
@@ -69,6 +71,12 @@ Route::group(['middleware' => 'auth:api', 'as' => 'central.'], function () {
 
   // client means tenants here
   Route::get('/dashboard/top-clients', [DashboardController::class, 'topClients']);
+
+  // Billing History Routes
+  Route::get('/billing/history', [BillingHistoryController::class, 'index'])->name('billing-history');
+
+  // database backup
+  Route::post('/backup', [DashboardController::class, 'databaseBackup']);
 });
 
 Route::group(['middleware' => 'auth:api', 'as' => 'tenant.'], function () {
@@ -153,6 +161,8 @@ Route::group(['middleware' => 'auth:api', 'as' => 'tenant.'], function () {
   Route::post('payments/partial', 'App\Http\Controllers\API\PaymentAPIController@storePartial')->name('payments.partial');
   Route::post('payments/pdf', 'App\Http\Controllers\API\PaymentAPIController@donwloadPDF')->name('payments.pdf');
   Route::resource('payments', 'App\Http\Controllers\API\PaymentAPIController')->except('show');
+  Route::get('expenses/categories-all', [ExpenseAPIController::class, 'categoriesAll'])->name('expenses.categories-all');
+  Route::post('expenses/{id}', [ExpenseAPIController::class, 'update'])->name('expenses.update');
   Route::resource('expenses', 'App\Http\Controllers\API\ExpenseAPIController');
   Route::resource('checks', 'App\Http\Controllers\API\CheckAPIController');
 

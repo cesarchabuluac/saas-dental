@@ -90,7 +90,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        Cashier::ignoreMigrations();
+        // if ($this->app->environment('local', 'testing') && class_exists(DuskServiceProvider::class)) {
+        //     $this->app->register(DuskServiceProvider::class);
+        // }
+
     }
 
     /**
@@ -124,7 +128,7 @@ class AppServiceProvider extends ServiceProvider
                 config(['mail.password' => config()->get('settings.mail_password')]);
                 config(['mail.from.address' => config()->get('settings.mail_from_address')]);
                 config(['mail.from.name' => config()->get('settings.mail_from_name')]);
-                 
+
                 config(['mailgun.domain' => config()->get('settings.mailgun_domain')]);
                 config(['mailgun.secret' => config()->get('settings.mailgun_secret')]);
                 config(['sparkpost.secret' => config()->get('settings.sparkpost_secret')]);
@@ -187,5 +191,10 @@ class AppServiceProvider extends ServiceProvider
         Builder::macro('toRawSql', function () {
             return vsprintf(str_replace(['?'], ['\'%s\''], $this->toSql()), $this->getBindings());
         });
+
+        // if ($this->app->environment('local')) {
+        //     $this->app->register(\Laravel\Telescope\TelescopeServiceProvider::class);
+        //     $this->app->register(TelescopeServiceProvider::class);
+        // }
     }
 }

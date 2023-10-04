@@ -16,17 +16,31 @@
                 <b-card-body>
                     <b-row class="mt-2">
                         <b-col cols="12" md="3">
-                            <label>{{ $t('start_at') }}</label>
-                            <flat-pickr v-model="filter.start" class="form-control" :config="{ dateFormat: 'Y-m-d' }"
+                            <label for="date_start">{{ $t('start_at') }}</label>
+                            <flat-pickr id="date_start" v-model="filter.start" class="form-control" :config="{ dateFormat: 'Y-m-d' }"
                                 placeholder="DD/MM/YYYY" />
                         </b-col>
 
                         <b-col cols="12" md="3">
-                            <label>{{ $t('end_at') }}</label>
-                            <flat-pickr v-model="filter.end" class="form-control" :config="{
+                            <label for="date_end">{{ $t('end_at') }}</label>
+                            <flat-pickr id="date_end" v-model="filter.end" class="form-control" :config="{
                                 minDate: filter.start,
                                 dateFormat: 'Y-m-d'
                             }" placeholder="DD/MM/YYYY" />
+                        </b-col>
+
+                        <b-col cols="12" md="3">
+                            <label for="category_id">{{$t('expenses.categories.name')}}</label>
+                                <v-select
+                                    id="category_id"
+                                    v-model="filter.expense_category_id"
+                                    :options="categories"
+                                    :reduce="option => option.id"
+                                    :searchable="false"
+                                    label="name"
+                                    :placeholder="$t('expenses.categories.name_placeholder')"
+                                />
+                            
                         </b-col>
 
                         <b-col cols="12" md="12">
@@ -37,10 +51,10 @@
                                     {{ $t("button_filter") }}
                                 </b-button>
 
-                                <b-button v-if="expenses.length" @click="donwloadPatient" variant="outline-success"
+                                <b-button v-if="expenses.length" @click="donwloadExpenses" variant="outline-success"
                                     v-ripple.400="'rgba(255, 255, 255, 0.15)'" :class="{ 'btn-block': isMobile }">
                                     <feather-icon icon="DownloadIcon" />
-                                    {{ $t("download") }}
+                                    {{ $t("button_download") }}
                                 </b-button>
 
                                 <b-button v-if="filter.start" @click="clearFilter" variant="outline-danger"
@@ -59,18 +73,24 @@
                     </b-row>
                 </b-card-body>
             </b-card>
+
             <b-card no-body class="mb-0">
                 <div class="table-responsive">
                     <b-table ref="refExpenseListTable" striped hover :items="expenses" :fields="columns" responsive
                         primary-key="id" show-empty :empty-text="$t('datatables.sZeroRecords')" class="position-relative"
                         :current-page="currentPage" busy.sync="loading" stacked="md">
 
-                        <!-- Column: amount -->
+                        <!-- Column: Date -->
                         <template #cell(date)="data">
-                            {{ dateFormat(data.item.date) }}
+                            <span class="text-capitalize">{{ formatDate(data.item.date) }}</span>
                         </template>
 
-                        <!-- Column: amount -->
+                         <!-- Column: Category -->
+                        <template #cell(category)="data">
+                            {{ data.item.category.name }}
+                        </template>
+
+                        <!-- Column: Amount -->
                         <template #cell(amount)="data">
                             {{ formatPrice(data.item.amount) }}
                         </template>
@@ -125,12 +145,15 @@ import vSelect from "vue-select";
 import Ripple from 'vue-ripple-directive'
 import "animate.css";
 import { saveAs } from 'file-saver';
+
 import ExpensesProvider from "@/providers/Expenses";
 const ExpensesResource = new ExpensesProvider();
 
+import BranchProvider from "@/providers/BranchOffices";
+const BranchResource = new BranchProvider();
+
 if (store.state.auth.setting['language'] === "es") {
     flatpickr.localize(Spanish);
-    localize(store.state.auth.setting['language'] === "es");
 }
 export default {
     name: 'ReportExpenses',
@@ -177,10 +200,20 @@ export default {
         return {
             loading: false,
             expenses: [],
+            branchOffices: [],
+            categories: [],
             columns: [
                 {
                     key: "date",
                     label: this.$t("expenses.table_date"),
+                },
+                {
+                    key: "category",
+                    label: this.$t("expenses.categories.name"),
+                },
+                {
+                    key: "reason",
+                    label: this.$t("expenses.reason"),
                 },
                 {
                     key: "reference",
@@ -218,6 +251,7 @@ export default {
                 start: null,
                 end: null,
                 name: null,
+                expense_category_id: null,
             },
             isMobile: false,
             isFilterApplied: false
@@ -238,15 +272,30 @@ export default {
     async mounted() {
         window.addEventListener('resize', this.handleResize);
         this.handleResize();
+
+        await this.getBranchOffices()
+        await this.getExpenseCategories()
     },
     beforeDestroy() {
         window.removeEventListener('resize', this.handleResize);
     },
     methods: {
+        async getBranchOffices () {
+            this.loading = true
+            const { data } = await BranchResource.getAll()
+            this.loading = false
+            this.branchOffices = data
+        },
+        async getExpenseCategories () {
+            this.loading = true
+            const { data } = await ExpensesResource.listCategories()
+            this.loading = false
+            this.categories = data.data
+        },
         handleResize() {
             this.isMobile = window.innerWidth < 576;
         },
-        async donwloadPatient() {
+        async donwloadExpenses() {
 
             const query = {
                 ...this.filter,
@@ -260,7 +309,6 @@ export default {
                     this.loading = false
                     const blob = new Blob([response.data], { type: 'application/vnd.ms-excel' });
                     saveAs(blob, `${this.$t('reports.expenses.excel_name')}-${this.filter.start}-${this.filter.end}.xlsx`);
-
                 }).catch(e => {
                     this.loading = false
                     this.handleResponseErrors(e)
@@ -317,7 +365,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@import "~@resources/scss/vue/libs/vue-sweetalert.scss";
 @import "~@resources/scss/vue/libs/vue-select.scss";
 @import '~@resources/scss/vue/libs/vue-flatpicker.scss';
 
@@ -328,5 +377,14 @@ export default {
     .dark-layout & {
         background: $theme-dark-body-bg !important;
     }
+}
+
+.swal2-select {
+    min-width: 100%!important;
+    max-width: 100%!important;
+    padding: 0.375em 0.625em;
+    background: inherit;
+    color: inherit;
+    font-size: 1.125em;
 }
 </style>
