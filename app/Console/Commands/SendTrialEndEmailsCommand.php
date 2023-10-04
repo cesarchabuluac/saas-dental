@@ -30,39 +30,64 @@ class SendTrialEndEmailsCommand extends Command
      *
      * @return int
      */
-    public function handle()
+    public function handle(MailService $mailService)
     {
-        $service = app()->make(MailService::class);
-        
+        // $service = app()->make(MailService::class);
+
         $setting = GeneralSetting::where('key', 'trials_end_tenant_mailjet_template_id')->first();
 
-        // Send trial end emails to tenants who have a trial ending in the next 24 hours.
-        Tenant::whereNotNull('trial_ends_at')
+        $tenants = Tenant::whereNotNull('trial_ends_at')
             ->whereNull('data->trial_ends_email_sent_at')
             ->whereDate('trial_ends_at', Carbon::tomorrow())
-            ->chunk(200, function ($tenants) use ($service, $setting) {
-                foreach ($tenants as $tenant) {
+            ->get();
 
-                    if ($tenant->trial_ends_at->isTomorrow()) {
-                        $tenant->update(['trial_ends_email_sent_at' => now()]);
-                        $dataEmail = [
-                            'to' => [
-                                [
-                                    'name' => $tenant->name,
-                                    'email' => $tenant->email,
-                                ],
-                            ],
-                            'subject' => "¡Tu prueba termina mañana!",
-                            'template_id' => $setting->value,
-                            'vars' => [
-                                "name" => $tenant->name,
-                                "domain_link" => $tenant->domain_url,
-                            ],
-                        ];
-                        $service->sendEmail($dataEmail);
-                    }
-                }
-            });
+        // Send trial end emails to tenants who have a trial ending in the next 24 hours.
+        $tenants->each(function ($tenant) use ($mailService, $setting) {
+            $tenant->update(['trial_ends_email_sent_at' => now()]);
+            $dataEmail = [
+                'to' => [
+                    [
+                        'name' => $tenant->name,
+                        'email' => $tenant->email,
+                    ],
+                ],
+                'subject' => "¡Tu prueba termina mañana!",
+                'template_id' => $setting->value,
+                'vars' => [
+                    "name" => $tenant->name,
+                    "domain_link" => $tenant->domain_url,
+                ],
+            ];
+            $mailService->sendEmail($dataEmail);
+        });
+
+
+        // Tenant::whereNotNull('trial_ends_at')
+        //     ->whereNull('data->trial_ends_email_sent_at')
+        //     ->whereDate('trial_ends_at', Carbon::tomorrow())
+        //     ->chunk(200, function ($tenants) use ($service, $setting) {
+        //         foreach ($tenants as $tenant) {
+
+        //             if ($tenant->trial_ends_at->isTomorrow()) {
+        //                 $tenant->update(['trial_ends_email_sent_at' => now()]);
+        //                 $dataEmail = [
+        //                     'to' => [
+        //                         [
+        //                             'name' => $tenant->name,
+        //                             'email' => $tenant->email,
+        //                         ],
+        //                     ],
+        //                     'subject' => "¡Tu prueba termina mañana!",
+        //                     'template_id' => $setting->value,
+        //                     'vars' => [
+        //                         "name" => $tenant->name,
+        //                         "domain_link" => $tenant->domain_url,
+        //                     ],
+        //                 ];
+        //                 $service->sendEmail($dataEmail);
+        //             }
+        //         }
+        //     });
 
         $this->info('Trial end emails queued.');
 

@@ -49,16 +49,12 @@ class SendAppointmentCommand extends Command
             $language = $settings['language'] ?? 'es';
             app()->setLocale($language);
             if ($enabled === 1) {
-
-                $dates = $this->getScheduleFrequency($frequency);
-                Appointment::whereIn('state', ['pending', 'confirmed'])
-                    ->whereBetween('date', $dates)
-                    ->where('notified', 0)
-                    ->chunk(100, function ($appointments) {
-                        foreach ($appointments as $appointment) {
-                            $this->sendAppointmentReminder($appointment);
-                        }
+                $appointments = $this->getAppointmentsForReminder($frequency);
+                $appointments->chunk(100, function ($chunkedAppointments) {
+                    $chunkedAppointments->each(function ($appointment) {
+                        $this->sendAppointmentReminder($appointment);
                     });
+                });
             }
 
             tenancy()->end();
