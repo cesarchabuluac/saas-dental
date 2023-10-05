@@ -45,11 +45,12 @@ class SendAppointmentCommand extends Command
                 ->toArray();
 
             $enabled = (int)$settings['enable_appointment_notification'] ?? 0;
-            $frequency = $settings['app_appointment_reminder_every'] ?? 'daily';
-            $language = $settings['language'] ?? 'es';
-            app()->setLocale($language);
+            $frequency = $settings['app_appointment_reminder_every'] ?? 'daily';           
             if ($enabled === 1) {
+                $language = $settings['language'] ?? 'es';
+                app()->setLocale($language);
                 $appointments = $this->getAppointmentsForReminder($frequency);
+                Log::info($appointments);
                 $appointments->chunk(100, function ($chunkedAppointments) {
                     $chunkedAppointments->each(function ($appointment) {
                         $this->sendAppointmentReminder($appointment);
