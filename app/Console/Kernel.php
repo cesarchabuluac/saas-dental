@@ -25,10 +25,10 @@ class Kernel extends ConsoleKernel
 
         // telescope daily data pruner
         $schedule->command('telescope:prune')->daily()->timezone(config('app.timezone'));
-        $schedule->command('notification:clear')->weekly()->timezone(config('app.timezone'));;
-        $schedule->command('check:appointments')->everyNMinutes(15)->timezone(config('app.timezone'));;
-        $schedule->command('trial-ends-email:send')->hourly()->timezone(config('app.timezone'));;
-        $schedule->command('upcoming-invoice-email:send')->lastDayOfMonth()->timezone(config('app.timezone'));;
+        $schedule->command('notification:clear')->weekly()->timezone(config('app.timezone'));
+        $schedule->command('check:appointments')->everyFifteenMinutes()->timezone(config('app.timezone'));
+        $schedule->command('trial-ends-email:send')->hourly()->timezone(config('app.timezone'));
+        $schedule->command('upcoming-invoice-email:send')->lastDayOfMonth()->timezone(config('app.timezone'));
         $schedule->command('reminder-appointment:send')->everyMinute()->runInBackground()->timezone(config('app.timezone'));
     }
 
