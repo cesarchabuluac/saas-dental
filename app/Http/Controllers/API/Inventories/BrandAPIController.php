@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateBrandRequest;
 use App\Repositories\Inventories\BrandRepository;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class BrandAPIController extends Controller
 {
@@ -18,7 +19,7 @@ class BrandAPIController extends Controller
     {
         $this->brandRepository = $brandRepository;
     }
-     
+
 
     /**
      * Display a listing of the resource.
@@ -28,7 +29,7 @@ class BrandAPIController extends Controller
     public function index()
     {
 
-        if(request('all')) {
+        if (request('all')) {
             return $this->sendResponse($this->brandRepository->orderBy('name', 'ASC')->get(['id', 'name']), 'Brands retrieved successfully.');
         }
 
@@ -61,7 +62,7 @@ class BrandAPIController extends Controller
     {
         try {
             $brand = $this->brandRepository->create($request->all());
-            return $this->sendResponse($brand, 'Brand saved successfully.');
+            return $this->sendResponse($brand, __('lang.saved_successfully', ['operator' => __('lang.inventories.medicines.brand')]));
         } catch (Exception $e) {
             return $this->sendError($e->getMessage());
         }
@@ -100,12 +101,12 @@ class BrandAPIController extends Controller
     {
         $brand = $this->brandRepository->find($id);
         if (empty($brand)) {
-            return $this->sendError('Brand not found.');
+            return $this->sendError(__('lang.not_found', ['operator' => __('lang.inventories.medicines.brand')]), 201);
         }
 
         try {
             $brand = $this->brandRepository->update($request->except('id'), $id);
-            return $this->sendResponse($brand, 'Brand updated successfully.');
+            return $this->sendResponse($brand, __('lang.updated_successfully', ['operator' => __('lang.inventories.medicines.brand')]));
         } catch (Exception $e) {
             return $this->sendError($e->getMessage());
         }
@@ -121,18 +122,22 @@ class BrandAPIController extends Controller
     {
         $brand = $this->brandRepository->withTrashed()->find($id);
         if (empty($brand)) {
-            return $this->sendError('Brand not found.');
+            return $this->sendError(__('lang.not_found', ['operator' => __('lang.inventories.medicines.brand')]), 201);
         }
 
         try {
             if ($brand->trashed()) {
                 $brand->restore();
-                return $this->sendResponse($brand, 'Brand restored successfully.');
+                return $this->sendResponse($brand, __('lang.restored_successfully', ['operator' => __('lang.inventories.medicines.brand')]));
             } else {
+
+                if ($brand->medicines()->exists()) {
+                    return $this->sendError(__('lang.item_associate', ['operator' => __('lang.inventories.medicines.brand'), 'model' => __('lang.inventories.medicines.medicine')]), 201);
+                }
+
                 $brand->delete();
-                return $this->sendResponse($brand, 'Brand deleted successfully.');
+                return $this->sendResponse($brand, __('lang.deleted_successfully', ['operator' => __('lang.inventories.medicines.brand')]));
             }
-            
         } catch (Exception $e) {
             return $this->sendError($e->getMessage());
         }

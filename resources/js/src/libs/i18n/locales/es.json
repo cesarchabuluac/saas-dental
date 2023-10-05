@@ -2723,7 +2723,14 @@
     "categories": {
       "name": "Categoría",
       "name_help": "Selecciona una categoría",
-      "name_placeholder": "Selecciona una categoría"
+      "name_placeholder": "Selecciona una categoría",
+      "description": "Descripción",
+      "description_help": "Ingresa una descripción",
+      "description_placeholder": "Ingresa una descripción",
+      "modal_title_add": "Agregar Categoría",
+      "modal_title_edit": "Actualizar Categoría",
+      "disabled_deleted_at": "Al desactivar la categoría no se podrá utilizar en los gastos.",
+      "enabled_deleted_at": "Al activar la categoría se puede utilizar en los gastos."
     }
   },
   "checks": {

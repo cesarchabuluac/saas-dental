@@ -8935,6 +8935,11 @@ __webpack_require__.r(__webpack_exports__);
   icon: "TrendingDownIcon",
   permission: "expenses.index",
   children: [{
+    title: 'inventories.categories.title_menu',
+    route: 'apps-expense-categories',
+    icon: 'GitBranchIcon',
+    permission: 'expenses.index'
+  }, {
     title: 'expenses.menu',
     route: 'apps-expenses-list',
     icon: 'TrendingDownIcon',

@@ -18,13 +18,13 @@ class SubCategoryAPIController extends Controller
 
     /** @var  SubCategoryRepository */
     private $subCategoryRepository;
-        
 
-     public function __construct(CategoryRepository $categoryRepository, SubCategoryRepository $subCategoryRepository)
-     {
+
+    public function __construct(CategoryRepository $categoryRepository, SubCategoryRepository $subCategoryRepository)
+    {
         $this->categoryRepository = $categoryRepository;
         $this->subCategoryRepository = $subCategoryRepository;
-     }
+    }
 
     /**
      * Display a listing of the resource.
@@ -41,7 +41,6 @@ class SubCategoryAPIController extends Controller
             ->withTrashed()
             ->paginate(request('perPage'));
         return $this->sendResponse($subcategory, 'SubCategories retrieved successfully.');
-        
     }
 
     /**
@@ -66,7 +65,7 @@ class SubCategoryAPIController extends Controller
             $input = $request->all();
             $subcategory = $this->subCategoryRepository->create($input);
             $subcategory->load('category');
-            return $this->sendResponse($subcategory, 'SubCategory saved successfully.');
+            return $this->sendResponse($subcategory, __('lang.saved_successfully', ['operator' => __('lang.inventories.medicines.subcategory')]));
         } catch (Exception $e) {
             return $this->sendError($e->getMessage());
         }
@@ -105,16 +104,15 @@ class SubCategoryAPIController extends Controller
     {
         $input = $request->except('id');
         $subcategory = $this->subCategoryRepository->find($id);
-        if(empty($subcategory)) {
-            return $this->sendError('SubCategory not found');
+        if (empty($subcategory)) {
+            return $this->sendError(__('lang.not_found', ['operator' => __('lang.inventories.medicines.subcategory')]), 201);
         }
 
         try {
-            
+
             $subcategory = $this->subCategoryRepository->update($input, $id);
             $subcategory->load('category');
-            return $this->sendResponse($subcategory, 'SubCategory updated successfully.');
-
+            return $this->sendResponse($subcategory, __('lang.updated_successfully', ['operator' => __('lang.inventories.medicines.subcategory')]), 201);
         } catch (Exception $e) {
             return $this->sendError($e->getMessage());
         }
@@ -129,18 +127,23 @@ class SubCategoryAPIController extends Controller
     public function destroy($id)
     {
         $subcategory = $this->subCategoryRepository->withTrashed()->find($id);
-        if(empty($subcategory)) {
-            return $this->sendError('SubCategory not found');
+        if (empty($subcategory)) {
+            return $this->sendError(__('lang.not_found', ['operator' => __('lang.inventories.medicines.subcategory')]), 201);
         }
-        
+
         try {
-            if($subcategory->deleted_at) {
+            if ($subcategory->deleted_at) {
                 $subcategory->restore();
-                return $this->sendResponse($subcategory->load('category'), 'SubCategory restored successfully.');
+                return $this->sendResponse($subcategory->load('category'), __('lang.restored_successfully', ['operator' => __('lang.inventories.medicines.subcategory')]));
             } else {
+
+                if ($subcategory->medicines()->exists()) {
+                    return $this->sendError(__('lang.item_associate', ['operator' => __('lang.inventories.medicines.brand'), 'model' => __('lang.inventories.medicines.medicine')]), 201);
+                }
+
                 $subcategory->delete();
-                return $this->sendResponse($subcategory->load('category'), 'SubCategory deleted successfully.');
-            }            
+                return $this->sendResponse($subcategory->load('category'), __('lang.deleted_successfully', ['operator' => __('lang.inventories.medicines.subcategory')]));
+            }
         } catch (Exception $e) {
             return $this->sendError($e->getMessage());
         }

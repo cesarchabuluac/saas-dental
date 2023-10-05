@@ -15,10 +15,10 @@ class UnitAPIController extends Controller
     /** @var  UnitRepository */
     private $unitRepository;
 
-     public function __construct(UnitRepository $unitRepository)
-     {
+    public function __construct(UnitRepository $unitRepository)
+    {
         $this->unitRepository = $unitRepository;
-     }
+    }
 
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class UnitAPIController extends Controller
      */
     public function index()
     {
-        if(request('all')) {
+        if (request('all')) {
             return $this->sendResponse($this->unitRepository->orderBy('name', 'ASC')->get(['id', 'name']), 'Units retrieved successfully.');
         }
 
@@ -39,7 +39,6 @@ class UnitAPIController extends Controller
             ->withTrashed()
             ->paginate(request('perPage'));
         return $this->sendResponse($units, 'Units retrieved successfully.');
-
     }
 
     /**
@@ -63,7 +62,7 @@ class UnitAPIController extends Controller
         try {
             $input = $request->all();
             $unit = $this->unitRepository->create($input);
-            return $this->sendResponse($unit, 'Unit saved successfully.');
+            return $this->sendResponse($unit, __('lang.saved_successfully', ['operator' => __('lang.inventories.medicines.unit')]));
         } catch (Exception $e) {
             return $this->sendError($e->getMessage());
         }
@@ -101,15 +100,15 @@ class UnitAPIController extends Controller
     public function update(UpdateUnitRequest $request, $id)
     {
         $unit = $this->unitRepository->find($id);
-        
+
         if (empty($unit)) {
-            return $this->sendError('Unit not found.');
+            return $this->sendError(__('lang.not_found', ['operator' => __('lang.inventories.medicines.unit')]), 201);
         }
 
         try {
             $input = $request->except('id');
             $unit = $this->unitRepository->update($input, $id);
-            return $this->sendResponse($unit, 'Unit updated successfully.');
+            return $this->sendResponse($unit, __('lang.updated_successfully', ['operator' => __('lang.inventories.medicines.unit')]));
         } catch (Exception $e) {
             return $this->sendError($e->getMessage());
         }
@@ -124,23 +123,26 @@ class UnitAPIController extends Controller
     public function destroy($id)
     {
         $unit = $this->unitRepository->withTrashed()->find($id);
-        if(empty($unit)){
-            return $this->sendError('Unit not found');
+        if (empty($unit)) {
+            return $this->sendError(__('lang.not_found', ['operator' => __('lang.inventories.medicines.unit')]), 201);
         }
 
         try {
 
-            if($unit->deleted_at) {
+            if ($unit->deleted_at) {
                 $unit->restore();
-                return $this->sendResponse($unit, 'Unit restored successfully.');                
+                return $this->sendResponse($unit, __('lang.restored_successfully', ['operator' => __('lang.inventories.medicines.unit')]));
             } else {
-                $unit->delete();
-                return $this->sendResponse($unit, 'Unit deleted successfully.');
-            }            
 
+                if ($unit->medicines()->exists()) {
+                    return $this->sendError(__('lang.item_associate', ['operator' => __('lang.inventories.medicines.unit'), 'model' => __('lang.inventories.medicines.medicine')]), 201);
+                }
+
+                $unit->delete();
+                return $this->sendResponse($unit, __('lang.deleted_successfully', ['operator' => __('lang.inventories.medicines.unit')]));
+            }
         } catch (Exception $e) {
             return $this->sendError($e->getMessage());
         }
-
     }
 }

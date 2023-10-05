@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\DashboardAPIController;
 use App\Http\Controllers\API\ExpenseAPIController;
+use App\Http\Controllers\API\ExpenseCategoryAPIController;
 use App\Http\Controllers\API\ImportAPIController;
 use App\Http\Controllers\API\NotificationAPIController;
 use App\Http\Controllers\API\UserAPIController;
@@ -164,6 +165,7 @@ Route::group(['middleware' => 'auth:api', 'as' => 'tenant.'], function () {
   Route::get('expenses/categories-all', [ExpenseAPIController::class, 'categoriesAll'])->name('expenses.categories-all');
   Route::post('expenses/{id}', [ExpenseAPIController::class, 'update'])->name('expenses.update');
   Route::resource('expenses', 'App\Http\Controllers\API\ExpenseAPIController');
+  Route::resource('expenses_categories', ExpenseCategoryAPIController::class);
   Route::resource('checks', 'App\Http\Controllers\API\CheckAPIController');
 
   #Dashboards

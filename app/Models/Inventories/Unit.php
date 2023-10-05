@@ -4,6 +4,7 @@ namespace App\Models\Inventories;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Unit extends Model
@@ -18,4 +19,8 @@ class Unit extends Model
         'description',
     ];
 
+    public function medicines(): HasMany
+    {
+        return $this->hasMany(Medicine::class);
+    }
 }

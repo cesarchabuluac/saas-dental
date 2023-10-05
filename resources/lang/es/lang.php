@@ -225,14 +225,19 @@ return [
             "credit_card_desc" => "Pagos con tarjeta de débito",
         ],
     ],
+    "categories" => [
+        "category" => "Categoría",
+    ],
+    "item_associate" => "Esta :operator está asociado con un :model, No puedes dehabilitarlo, eliminarlo o desactivarlo",
     "expense" => "Gasto",
-    'expenses' => [
+    "expenses" => [
         "title" => "Informe de Gastos",
         "title_menu" => "Gastos",
         "title_singular" => "Gasto",
         "search_help" => "Buscar por concepto, fecha",
         "descriptions" => "Un informe que muestra todos los gastos registrados en el sistema.",
         "excel_name" => "Informe-de-Gastos",
+        "category_associate" => "Esta categoría está asociado con un gasto. No puedes deshabilitarlo.",
         "fields" => [
             "id" => "ID",
             "id_help" => "ID de Gasto",
@@ -513,6 +518,7 @@ return [
             "unit" => "Unidad",
             "brand" => "Marca",
             "category" => "Categoría",
+            "subcategory" => "Sub categoría",
             "description" => "Descripción",
             "current_stock" => "Inventario Actual",
             "price" => "Precio",
@@ -579,5 +585,5 @@ return [
     "notification_user_id_help" => "Insertar ID de Usuario",
     "notification_user_id_placeholder" => "Insertar ID de Usuario",
     "notification_your_order" => "Tu orden #:order_id está en estado :order_status",
-    
+
 ];

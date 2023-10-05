@@ -18,6 +18,11 @@ class Category extends Model
         'description',
     ];
 
+    public function medicines () : HasMany
+    {
+        return $this->hasMany(Medicine::class);
+    }
+
     public function subcategories() : HasMany
     {
         return $this->hasMany(SubCategory::class);

@@ -1443,6 +1443,26 @@ const router = new VueRouter({
       },
     },
     {
+      path: "/apps/expense-categories/list",
+      name: "apps-expense-categories",
+      component: () => import("@/views/apps/expenses/Categories.vue"),
+      beforeEnter: SubscriptionGuard,
+      meta: {
+        permission: "expenses.index",
+        pageTitle: "expenses.desc",
+        breadcrumb: [
+          {
+            text: "dashboard",
+            to: "/",
+          },
+          {
+            text: "expenses.slug",
+            active: true,
+          },
+        ],
+      },
+    },
+    {
       path: "/apps/expenses/list",
       name: "apps-expenses-list",
       component: () => import("@/views/apps/expenses/expense-list/ExpenseList.vue"),

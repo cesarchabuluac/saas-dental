@@ -4,6 +4,7 @@ namespace App\Models\Inventories;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class SubCategory extends Model
@@ -15,11 +16,16 @@ class SubCategory extends Model
     protected $fillable = [
         'category_id',
         'name',
-        'description',        
+        'description',
     ];
 
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function medicines(): HasMany
+    {
+        return $this->hasMany(Medicine::class);
     }
 }

@@ -13,13 +13,13 @@ use Illuminate\Http\Request;
 class CategoryAPIController extends Controller
 {
 
-     /** @var  CategoryRepository */
-     private $categoryRepository;
+    /** @var  CategoryRepository */
+    private $categoryRepository;
 
-     public function __construct(CategoryRepository $categoryRepository)
-     {
+    public function __construct(CategoryRepository $categoryRepository)
+    {
         $this->categoryRepository = $categoryRepository;
-     }
+    }
 
     /**
      * Display a listing of the resource.
@@ -28,8 +28,8 @@ class CategoryAPIController extends Controller
      */
     public function index()
     {
-        
-        if(request('all')) {
+
+        if (request('all')) {
             $categories = $this->categoryRepository->with('subcategories')
                 ->orderBy('name', 'ASC')->get(['id', 'name']);
             return $this->sendResponse($categories, 'Categories retrieved successfully.');
@@ -42,7 +42,6 @@ class CategoryAPIController extends Controller
             ->withTrashed()
             ->paginate(request('perPage'));
         return $this->sendResponse($categories, 'Categories retrieved successfully.');
-        
     }
 
     /**
@@ -65,10 +64,9 @@ class CategoryAPIController extends Controller
     {
         $input = $request->all();
         try {
-            
-            $category = $this->categoryRepository->create($input);
-            return $this->sendResponse($category, 'Category saved successfully.');
 
+            $category = $this->categoryRepository->create($input);
+            return $this->sendResponse($category, __('lang.saved_successfully', ['operator' => __('lang.inventories.medicines.category')]));
         } catch (Exception $e) {
             return $this->sendError($e->getMessage());
         }
@@ -108,15 +106,14 @@ class CategoryAPIController extends Controller
         $input = $request->except('id');
         $categorie = $this->categoryRepository->find($id);
 
-        if(empty($categorie)){
-            return $this->sendError('Category not found');
+        if (empty($categorie)) {
+            return $this->sendError(__('lang.not_found', ['operator' => __('lang.inventories.medicines.category')]), 201);
         }
 
         try {
             $categorie = $this->categoryRepository->update($input, $id);
-            return $this->sendResponse($categorie, 'Category updated successfully.');
-
-        }catch (Exception $e) {
+            return $this->sendResponse($categorie, __('lang.updated_successfully', ['operator' => __('lang.inventories.medicines.category')]));
+        } catch (Exception $e) {
             return $this->sendError($e->getMessage());
         }
     }
@@ -130,20 +127,24 @@ class CategoryAPIController extends Controller
     public function destroy($id)
     {
         $categorie = $this->categoryRepository->withTrashed()->find($id);
-        if(empty($categorie)){
-            return $this->sendError('Category not found');
+        if (empty($categorie)) {
+            return $this->sendError(__('lang.not_found', ['operator' => __('lang.inventories.medicines.category')]), 201);
         }
 
         try {
 
-            if($categorie->deleted_at) {
+            if ($categorie->deleted_at) {
                 $categorie->restore();
-                return $this->sendResponse($categorie, 'Category restored successfully.');                
+                return $this->sendResponse($categorie, __('lang.restored_successfully', ['operator' => __('lang.inventories.medicines.category')]));
             } else {
-                $categorie->delete();
-                return $this->sendResponse($categorie, 'Category deleted successfully.');
-            }            
 
+                if ($categorie->medicines()->exists()) {
+                    return $this->sendError(__('lang.item_associate', ['operator' => __('lang.inventories.medicines.category'), 'model' => __('lang.inventories.medicines.medicine')]), 201);
+                }
+
+                $categorie->delete();
+                return $this->sendResponse($categorie, __('lang.deleted_successfully', ['operator' => __('lang.inventories.medicines.category')]));
+            }
         } catch (Exception $e) {
             return $this->sendError($e->getMessage());
         }
