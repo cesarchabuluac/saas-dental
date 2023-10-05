@@ -22,14 +22,14 @@ class Kernel extends ConsoleKernel
         // $interval = (int)$settings['scheduled_appointment_interval'] ?? 15;
 
         // $schedule->command('inspire')->hourly();
-        
+
         // telescope daily data pruner
-        $schedule->command('telescope:prune')->daily();        
-        $schedule->command('notification:clear')->weekly();
-        $schedule->command('check:appointments')->everyNMinutes(15);
-        $schedule->command('trial-ends-email:send')->hourly();
-        $schedule->command('upcoming-invoice-email:send')->lastDayOfMonth();
-        $schedule->command('reminder-appointment:send')->everyMinute()->runInBackground();
+        $schedule->command('telescope:prune')->daily()->timezone(config('app.timezone'));
+        $schedule->command('notification:clear')->weekly()->timezone(config('app.timezone'));;
+        $schedule->command('check:appointments')->everyNMinutes(15)->timezone(config('app.timezone'));;
+        $schedule->command('trial-ends-email:send')->hourly()->timezone(config('app.timezone'));;
+        $schedule->command('upcoming-invoice-email:send')->lastDayOfMonth()->timezone(config('app.timezone'));;
+        $schedule->command('reminder-appointment:send')->everyMinute()->runInBackground()->timezone(config('app.timezone'));
     }
 
     /**
