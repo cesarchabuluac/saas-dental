@@ -17,6 +17,7 @@
         "guzzlehttp/guzzle": "^7.2",
         "intervention/image": "2.7",
         "laravel/cashier": "13.16",
+        "laravel/cashier-paddle": "^1.9",
         "laravel/framework": "^9.0",
         "laravel/passport": "^11.8",
         "laravel/sanctum": "^2.14",
