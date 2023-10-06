@@ -5,6 +5,8 @@ declare(strict_types=1);
 use App\Http\Controllers\API\TenantAPIController;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Central\FaqController;
+use App\Http\Controllers\CentralController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\TenantImpersonationController;
 use App\Http\Controllers\WebNotificationController;
@@ -47,13 +49,16 @@ Route::middleware([
     'read_only',
     'initial_setup',
 ])->group(function () {
-    
+
     // Tenant details routes
-    Route::group(['middleware' => ['auth:api'], 'prefix' => 'api', 'as' => 'tenant.'], function () {        
+    Route::group(['middleware' => ['auth:api'], 'prefix' => 'api', 'as' => 'tenant.'], function () {
         Route::get('tenant/me', [TenantAPIController::class, 'me']);
-        
+
         // Plans routes
         Route::get('/plans', [SubscriptionController::class, 'plans']);
+
+        // Faqs routes
+        Route::get('/faqs', [CentralController::class, 'faqs']);
 
         Route::get('push-notificaiton', [WebNotificationController::class, 'index'])->name('push-notificaiton');
         Route::post('store-token', [WebNotificationController::class, 'storeToken'])->name('store.token');
@@ -73,15 +78,7 @@ Route::middleware([
         // invoices routes
         Route::get('subscriptions/invoices', [SubscriptionController::class, 'getInvoices']);
         Route::post('subscriptions/invoices', [SubscriptionController::class, 'downloadInvoice']);
-    });    
-
-
-    // Route::get('/', [ApplicationController::class, 'index']);
-    // Route::get('/login', [ApplicationController::class, 'index']);
-    // Route::get('/profile', [ApplicationController::class, 'index']);
-    // Route::get('/tenants/{tenant}', [ApplicationController::class, 'index']);
-    // Route::get('/plans', [ApplicationController::class, 'index']);
-    // Route::get('/tenant/me', [ApplicationController::class, 'index']);
+    });
 
     // Route::get('{path}', ApplicationController::class)->where('path', '^(?!.*api).*$');
     Route::get('{path}', [ApplicationController::class, 'index'])->where('path', '^(?!.*api).*$');

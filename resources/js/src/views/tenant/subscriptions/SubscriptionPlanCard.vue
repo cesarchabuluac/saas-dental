@@ -50,9 +50,7 @@
                     <li>
                         <span class="align-middle">{{ $t('subscriptions.plans.limit_patient') }}: {{ account.plan.label_limit_patient }}</span>
                     </li>
-                </ul> 
-
-               
+                </ul>
             </b-card-body>
         </b-card>
     </b-overlay>

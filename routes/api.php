@@ -9,6 +9,7 @@ use App\Http\Controllers\API\UserAPIController;
 use App\Http\Controllers\API\V2\AppointmentAPIController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Central\BillingHistoryController;
+use App\Http\Controllers\Central\FaqController;
 use App\Http\Controllers\Central\TenantController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TenantImpersonationController;
@@ -60,6 +61,7 @@ Route::group(['middleware' => 'auth:api', 'as' => 'central.'], function () {
   Route::get('/impersonate/{tenant}', [TenantController::class, 'impersonate'])->name('tenant.impersonate');
   Route::resource('settings', 'App\Http\Controllers\Central\GeneralSettingController');
   Route::resource('plans', 'App\Http\Controllers\Central\PlanController');
+  Route::resource('faqs', FaqController::class);
   Route::post('plans/update/{id}', 'App\Http\Controllers\Central\PlanController@update')->name('plans.update');
   Route::resource('currencies', 'App\Http\Controllers\Central\CurrencyController');
 

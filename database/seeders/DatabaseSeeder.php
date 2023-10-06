@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Database\Seeders\Central\CentralSettingSeeder;
 use Database\Seeders\Central\CountrySeeder;
 use Database\Seeders\Central\CurrencySeeder;
+use Database\Seeders\Central\FaqSeeder;
 use Database\Seeders\Central\FeaturePlanSeeder;
 use Database\Seeders\Central\FeatureSeeder;
 use Database\Seeders\Central\PlanSeeder;
@@ -37,6 +38,7 @@ class DatabaseSeeder extends Seeder
             PlanSeeder::class,
             FeatureSeeder::class,
             FeaturePlanSeeder::class,
+            FaqSeeder::class,
         ]);
     }
 }

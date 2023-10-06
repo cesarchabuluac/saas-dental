@@ -27,6 +27,12 @@ export default [
         permission: 'settings.index',
       },
       {
+        title: "faqs.menu",
+        icon: 'HelpCircleIcon',
+        route: "setting-faqs",
+        permission: 'settings.index',
+      },
+      {
         title: "importer",
         icon: 'UploadCloudIcon',
         route: "settings-imports",

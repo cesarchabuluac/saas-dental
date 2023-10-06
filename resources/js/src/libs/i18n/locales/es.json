@@ -115,6 +115,7 @@
   "button_upgrade": "Actualizar",
   "button_change_plan": "Cambiar Plan",
   "button_subscribe": "Suscribir",
+  "button_to_subscribe": "Suscribirse",
   "button_edit": "Editar",
   "button_show": "Mostrar",
   "button_update": "Actualizar",
@@ -3185,6 +3186,48 @@
         "status": "Estado de Pago",
         "stripe_fee": "Tarifa de banda"
       }
+    }
+  },  
+  "modal_title_add": "Agregar :operator",
+  "modal_title_edit": "Editar :operator",
+  "faqs": {
+    "faq": "FAQ",
+    "menu": "FAQs",
+    "desc": "FAQs",
+    "slug": "FAQs",
+    "fields": {
+      "icon": "Icono",
+      "icon_help": "Insertar Icono",
+      "icon_placeholder": "Insertar Icono",
+      "title": "Titulo",
+      "title_help": "Insertar Titulo",
+      "title_placeholder": "Insertar Titulo",
+      "subtitle": "Subtitulo",
+      "subtitle_help": "Insertar Subtitulo",
+      "subtitle_placeholder": "Insertar Subtitulo",
+      "items": {
+        "question": "Pregunta",
+        "question_help": "Inserta una pregunta",
+        "question_placeholder": "Inserta una pregunta",
+        "answer": "Respuesta",
+        "answer_help": "Inserta una respuesta",
+        "answer_placeholder": "Inserta una respuesta"
+      }
+    },
+    "table": {
+      "id": "S.No",
+      "icon": "Icono",
+      "icon_help": "Insertat Icono",
+      "icon_placeholder": "Insertar Icono",
+      "title": "Titulo",
+      "title_help": "Insertar Titulo",
+      "title_placeholder": "Insertar Titulo",
+      "subtitle": "Subtitulo",
+      "subtitle_help": "Insertar Subtitulo",
+      "subtitle_placeholder": "Insertar Subtitulo",
+      "created_at":"Creado en",
+      "updated_at": "Actualizado en",
+      "status": "Estado"
     }
   }
 }

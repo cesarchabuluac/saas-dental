@@ -222,6 +222,44 @@ const router = new VueRouter({
         ],
       },
     },
+    {
+      path: '/setting/faqs',
+      name: 'setting-faqs',
+      component: () => import('@/views/central/faqs/Index.vue'),
+      meta: {
+        permission: 'dashboards.index',
+        pageTitle: 'FAQ',
+        breadcrumb: [
+          {
+            text: 'Pages',
+            to: "/",
+          },
+          {
+            text: 'FAQ',
+            active: true,
+          },
+        ],
+      },
+    },
+    {
+      path: '/pages/faq',
+      name: 'pages-faq',
+      component: () => import('@/views/pages/faq/Faq.vue'),
+      meta: {
+        permission: 'dashboards.index',
+        pageTitle: 'FAQ',
+        breadcrumb: [
+          {
+            text: 'Pages',
+            to: "/",
+          },
+          {
+            text: 'FAQ',
+            active: true,
+          },
+        ],
+      },
+    },
 
     //USERS
     {
@@ -1576,6 +1614,7 @@ const router = new VueRouter({
         permission: "todos.index",
         contentRenderer: 'sidebar-left',
         contentClass: 'todo-application',
+        navActiveLink: 'apps-todo',
       },
     },
     {

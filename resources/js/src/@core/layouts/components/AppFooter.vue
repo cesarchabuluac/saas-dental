@@ -2,7 +2,7 @@
   <p class="clearfix mb-0">
     <span class="float-md-left d-block d-md-inline-block mt-25">
       COPYRIGHT  © {{ new Date().getFullYear() }}
-      <b-link class="ml-25" href="https://cesarchabuluac.com" target="_blank">Cesar Chab</b-link>
+      <b-link class="ml-25" href="https://soft-dental.com" target="_blank">Soft-Dental</b-link>
       <span class="d-none d-sm-inline-block">, All rights Reserved</span>
     </span>
 

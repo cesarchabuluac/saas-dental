@@ -75,7 +75,7 @@ class Tenant extends BaseTenant implements TenantWithDatabase
     public function getEndOnTrialAttribute(): String
     {
         if (!is_null($this->trial_ends_at)) {
-            return Carbon::createFromTimeStamp(strtotime($this->trial_ends_at))->diffForHumans(null, false, false);
+            return Carbon::createFromTimeStamp(strtotime($this->trial_ends_at))->diffForHumans(null, false, false, 2);
         }
 
         return "";

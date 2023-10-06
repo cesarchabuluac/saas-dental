@@ -1,6 +1,6 @@
 <template>
   <!-- Need to add height inherit because Vue 2 don't support multiple root ele -->
-  <div style="height: inherit">
+  <div >
     <div
       class="body-content-overlay"
       :class="{'show': mqShallShowLeftSidebar}"

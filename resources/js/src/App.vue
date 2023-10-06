@@ -3,6 +3,11 @@
     <component :is="layout">
       <router-view />
     </component>
+
+    <!-- BuyNow -->
+    <buy-now />
+    <!-- Scroll to top -->
+    <scroll-to-top v-if="enableScrollToTop" />
   </div>
 </template>
 
@@ -11,6 +16,9 @@ import {
   BCard, BCardText, BAlert,
   BLink, BButton
 } from 'bootstrap-vue'
+
+import ScrollToTop from '@core/components/scroll-to-top/ScrollToTop.vue'
+import BuyNow from '@/components/BuyNow.vue'
 
 // This will be populated in `beforeCreate` hook
 import { $themeColors, $themeBreakpoints, $themeConfig } from '@themeConfig'
@@ -35,6 +43,10 @@ export default {
     BAlert,
     BLink,
     BButton,
+    
+    //
+    ScrollToTop,
+    BuyNow,
 
     // Layouts
     LayoutHorizontal,
@@ -77,6 +89,7 @@ export default {
   },
   setup() {
     const { skin, skinClasses } = useAppConfig()
+    const { enableScrollToTop } = $themeConfig.layout
 
     // If skin is dark when initialized => Add class to body
     if (skin.value === 'dark') document.body.classList.add('dark-layout')
@@ -120,6 +133,7 @@ export default {
 
     return {
       skinClasses,
+      enableScrollToTop,
     }
   },
 }

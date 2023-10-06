@@ -60,7 +60,6 @@ class TenantController extends Controller
         }
 
         $data = new TenantResource($tenant);
-        Log::info(json_encode($data));
 
         return $this->sendResponse($data, __('lang.retrievied_successfully', ['operator' => 'tenant']));
     }
