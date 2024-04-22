@@ -1,65 +1,45 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[83],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js */ "./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js");
-/* harmony import */ var D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.string.iterator.js */ "./node_modules/core-js/modules/es.string.iterator.js");
-/* harmony import */ var core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/web.dom-collections.iterator.js */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
-/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var core_js_modules_web_url_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/web.url.js */ "./node_modules/core-js/modules/web.url.js");
-/* harmony import */ var core_js_modules_web_url_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var core_js_modules_web_url_search_params_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! core-js/modules/web.url-search-params.js */ "./node_modules/core-js/modules/web.url-search-params.js");
-/* harmony import */ var core_js_modules_web_url_search_params_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_search_params_js__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var core_js_modules_web_url_search_params_delete_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! core-js/modules/web.url-search-params.delete.js */ "./node_modules/core-js/modules/web.url-search-params.delete.js");
-/* harmony import */ var core_js_modules_web_url_search_params_delete_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_search_params_delete_js__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var core_js_modules_web_url_search_params_has_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! core-js/modules/web.url-search-params.has.js */ "./node_modules/core-js/modules/web.url-search-params.has.js");
-/* harmony import */ var core_js_modules_web_url_search_params_has_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_search_params_has_js__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var core_js_modules_web_url_search_params_size_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! core-js/modules/web.url-search-params.size.js */ "./node_modules/core-js/modules/web.url-search-params.size.js");
-/* harmony import */ var core_js_modules_web_url_search_params_size_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_search_params_size_js__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! core-js/modules/es.array.concat.js */ "./node_modules/core-js/modules/es.array.concat.js");
-/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! core-js/modules/es.array.filter.js */ "./node_modules/core-js/modules/es.array.filter.js");
-/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! core-js/modules/es.array.reduce.js */ "./node_modules/core-js/modules/es.array.reduce.js");
-/* harmony import */ var core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
-/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! core-js/modules/es.string.replace.js */ "./node_modules/core-js/modules/es.string.replace.js");
-/* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/esm/index.js");
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @/store */ "./resources/js/src/store/index.js");
-/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @/router */ "./resources/js/src/router/index.js");
-/* harmony import */ var vee_validate__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! vee-validate */ "./node_modules/vee-validate/dist/vee-validate.esm.js");
-/* harmony import */ var vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! vue-flatpickr-component */ "./node_modules/vue-flatpickr-component/dist/vue-flatpickr.min.js");
-/* harmony import */ var vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_19__);
-/* harmony import */ var flatpickr_dist_l10n_es_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! flatpickr/dist/l10n/es.js */ "./node_modules/flatpickr/dist/l10n/es.js");
-/* harmony import */ var flatpickr_dist_l10n_es_js__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(flatpickr_dist_l10n_es_js__WEBPACK_IMPORTED_MODULE_20__);
-/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
-/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_21__);
-/* harmony import */ var vue_ripple_directive__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! vue-ripple-directive */ "./node_modules/vue-ripple-directive/src/ripple.js");
-/* harmony import */ var _core_utils_filter__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @core/utils/filter */ "./resources/js/src/@core/utils/filter.js");
-/* harmony import */ var animate_css__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! animate.css */ "./node_modules/animate.css/animate.css");
-/* harmony import */ var animate_css__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(animate_css__WEBPACK_IMPORTED_MODULE_24__);
-/* harmony import */ var _core_components_dashboards_DashboardCardTransactions_vue__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @core/components/dashboards/DashboardCardTransactions.vue */ "./resources/js/src/@core/components/dashboards/DashboardCardTransactions.vue");
-/* harmony import */ var _providers_CashRegisters__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @/providers/CashRegisters */ "./resources/js/src/providers/CashRegisters.js");
-/* harmony import */ var _providers_Users__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @/providers/Users */ "./resources/js/src/providers/Users.js");
-/* harmony import */ var vue_apexcharts__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! vue-apexcharts */ "./node_modules/vue-apexcharts/dist/vue-apexcharts.js");
-/* harmony import */ var vue_apexcharts__WEBPACK_IMPORTED_MODULE_28___default = /*#__PURE__*/__webpack_require__.n(vue_apexcharts__WEBPACK_IMPORTED_MODULE_28__);
-/* harmony import */ var _themeConfig__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @themeConfig */ "./resources/js/themeConfig.js");
-
-
-
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js */ "./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js");
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.array.filter.js */ "./node_modules/core-js/modules/es.array.filter.js");
+/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.string.iterator.js */ "./node_modules/core-js/modules/es.string.iterator.js");
+/* harmony import */ var core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/web.dom-collections.iterator.js */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var core_js_modules_web_url_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! core-js/modules/web.url.js */ "./node_modules/core-js/modules/web.url.js");
+/* harmony import */ var core_js_modules_web_url_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var core_js_modules_web_url_search_params_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! core-js/modules/web.url-search-params.js */ "./node_modules/core-js/modules/web.url-search-params.js");
+/* harmony import */ var core_js_modules_web_url_search_params_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_search_params_js__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var core_js_modules_web_url_search_params_delete_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! core-js/modules/web.url-search-params.delete.js */ "./node_modules/core-js/modules/web.url-search-params.delete.js");
+/* harmony import */ var core_js_modules_web_url_search_params_delete_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_search_params_delete_js__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var core_js_modules_web_url_search_params_has_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! core-js/modules/web.url-search-params.has.js */ "./node_modules/core-js/modules/web.url-search-params.has.js");
+/* harmony import */ var core_js_modules_web_url_search_params_has_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_search_params_has_js__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var core_js_modules_web_url_search_params_size_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! core-js/modules/web.url-search-params.size.js */ "./node_modules/core-js/modules/web.url-search-params.size.js");
+/* harmony import */ var core_js_modules_web_url_search_params_size_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_search_params_size_js__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! core-js/modules/es.array.map.js */ "./node_modules/core-js/modules/es.array.map.js");
+/* harmony import */ var core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/esm/index.js");
+/* harmony import */ var vue_ripple_directive__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! vue-ripple-directive */ "./node_modules/vue-ripple-directive/src/ripple.js");
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var animate_css__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! animate.css */ "./node_modules/animate.css/animate.css");
+/* harmony import */ var animate_css__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(animate_css__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var _providers_Budgets__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @/providers/Budgets */ "./resources/js/src/providers/Budgets.js");
 
 
 
@@ -363,120 +343,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -484,166 +350,142 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-
-
-
-
-
-
-var CashRegisterResource = new _providers_CashRegisters__WEBPACK_IMPORTED_MODULE_26__["default"]();
-var UserResource = new _providers_Users__WEBPACK_IMPORTED_MODULE_27__["default"]();
-if (_store__WEBPACK_IMPORTED_MODULE_16__["default"].state.auth.setting['language'] === "es") {
-  flatpickr.localize(flatpickr_dist_l10n_es_js__WEBPACK_IMPORTED_MODULE_20__["Spanish"]);
-  Object(vee_validate__WEBPACK_IMPORTED_MODULE_18__["localize"])(_store__WEBPACK_IMPORTED_MODULE_16__["default"].state.auth.setting['language'] === "es");
-}
+var BudgetResource = new _providers_Budgets__WEBPACK_IMPORTED_MODULE_17__["default"]();
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'CashRegisterAdd',
-  directives: {
-    Ripple: vue_ripple_directive__WEBPACK_IMPORTED_MODULE_22__["default"],
-    'b-modal': bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["VBModal"],
-    'b-toggle': bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["VBToggle"]
-  },
   components: {
-    BRow: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["BRow"],
-    BCol: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["BCol"],
-    BCard: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["BCard"],
-    BCardBody: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["BCardBody"],
-    BCardText: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["BCardText"],
-    BButton: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["BButton"],
-    BAlert: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["BAlert"],
-    BLink: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["BLink"],
-    BOverlay: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["BOverlay"],
-    BSpinner: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["BSpinner"],
-    BTable: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["BTable"],
-    BTableLite: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["BTableLite"],
-    vSelect: vue_select__WEBPACK_IMPORTED_MODULE_21___default.a,
-    flatPickr: vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_19___default.a,
-    BFormCheckbox: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["BFormCheckbox"],
-    BFormGroup: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["BFormGroup"],
-    BFormInput: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["BFormInput"],
-    BModal: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["BModal"],
-    BMediaAside: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["BMediaAside"],
-    BMedia: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["BMedia"],
-    BAvatar: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["BAvatar"],
-    BImg: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["BImg"],
-    BCardHeader: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["BCardHeader"],
-    BMediaBody: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["BMediaBody"],
-    BFormTextarea: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["BFormTextarea"],
-    BCardTitle: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["BCardTitle"],
-    VBModal: bootstrap_vue__WEBPACK_IMPORTED_MODULE_15__["VBModal"],
-    DashboardCardTransactions: _core_components_dashboards_DashboardCardTransactions_vue__WEBPACK_IMPORTED_MODULE_25__["default"],
-    VueApexCharts: vue_apexcharts__WEBPACK_IMPORTED_MODULE_28___default.a
+    BCard: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BCard"],
+    BRow: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BRow"],
+    BCol: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BCol"],
+    BInputGroupPrepend: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BInputGroupPrepend"],
+    BInputGroupAppend: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BInputGroupAppend"],
+    BInputGroup: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BInputGroup"],
+    BFormInput: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BFormInput"],
+    BFormGroup: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BFormGroup"],
+    BButton: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BButton"],
+    BTable: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BTable"],
+    BMedia: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BMedia"],
+    BAvatar: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BAvatar"],
+    BLink: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BLink"],
+    BBadge: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BBadge"],
+    BDropdown: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BDropdown"],
+    BDropdownItem: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BDropdownItem"],
+    BPagination: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BPagination"],
+    BOverlay: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BOverlay"],
+    BSpinner: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BSpinner"],
+    vSelect: vue_select__WEBPACK_IMPORTED_MODULE_15___default.a,
+    BTooltip: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BTooltip"],
+    VBTooltip: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["VBTooltip"],
+    BTableLite: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BTableLite"],
+    BFormCheckbox: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BFormCheckbox"],
+    BFormRadioGroup: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BFormRadioGroup"]
+  },
+  directives: {
+    'b-tooltip': bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["VBTooltip"],
+    Ripple: vue_ripple_directive__WEBPACK_IMPORTED_MODULE_14__["default"]
   },
   data: function data() {
     return {
+      avatarDefault: __webpack_require__(/*! @/assets/images/avatar_default.png */ "./resources/js/src/assets/images/avatar_default.png"),
+      budgets: [],
+      perPageOptions: [10, 25, 50, 100],
+      perPage: 10,
+      currentPage: 1,
+      totalBudget: 0,
+      columns: [{
+        key: "label",
+        label: this.$t("budgets.table_number")
+      }, {
+        key: "patient",
+        label: this.$t("budgets.table_patient_name")
+      }, {
+        key: "branch",
+        label: this.$t("budgets.table_branch_office")
+      }, {
+        key: "created_at",
+        label: this.$t("budgets.table_created_at")
+      }, {
+        key: "approved",
+        label: this.$t("budgets.table_approved")
+      }, {
+        key: "total",
+        label: this.$t("budgets.table_action_total")
+      }, {
+        key: "actions",
+        label: this.$t("actions")
+      }],
+      sortBy: "id",
+      sortDesc: false,
+      searchQuery: null,
+      from: 0,
+      to: 0,
       loading: false,
-      cashRegister: {
-        totalExpenses: 0,
-        totalCash: 0,
-        totalDebitCard: 0,
-        totalCreditCard: 0,
-        totalCheck: 0,
-        totalTransfer: 0,
-        expenses: null,
-        payments: null,
-        xrays: null,
-        user_id: null
-      },
-      columnsPayments: [{
-        key: 'updated_at',
-        label: this.$t('cash_registers.detail_date'),
-        sortable: true
+      columnsDetail: [{
+        key: "type",
+        label: this.$t('budgets.details.action_type')
       }, {
-        key: 'doctor',
-        label: this.$t('cash_registers.detail_professional'),
-        sortable: true
+        key: "action",
+        label: this.$t('budgets.details.action')
       }, {
-        key: 'patient',
-        label: this.$t('cash_registers.detail_patient'),
-        sortable: true
+        key: "group",
+        label: this.$t('budgets.details.group')
       }, {
-        key: 'cash',
-        label: this.$t('cash_registers.detail_cash')
+        key: "area",
+        label: this.$t('budgets.details.area')
       }, {
-        key: 'bons',
-        label: this.$t('cash_registers.detail_bonus')
+        key: "price",
+        label: this.$t("budgets.details.cost")
       }, {
-        key: 'check',
-        label: this.$t('cash_registers.detail_check')
+        key: "discount",
+        label: this.$t("budgets.details.discount")
       }, {
-        key: 'type',
-        label: this.$t('cash_registers.detail_type')
+        key: "total",
+        label: this.$t("budgets.details.total")
       }, {
-        key: 'bank',
-        label: this.$t('cash_registers.detail_bank')
+        key: "paid",
+        label: this.$t("budgets.details.paid")
       }, {
-        key: 'bank_num',
-        label: this.$t('cash_registers.detail_bank_num')
-      }, {
-        key: 'check_date',
-        label: this.$t('cash_registers.detail_check_date')
-      }, {
-        key: 'check_owner',
-        label: this.$t('cash_registers.detail_check_owner')
-      }, {
-        key: 'check_amount',
-        label: this.$t('cash_registers.detail_check_amount')
+        key: "debt",
+        label: this.$t("budgets.details.balance")
       }],
-      columnsXrays: [{
-        key: 'updated_at',
-        label: this.$t('cash_registers.detail_date'),
-        sortable: true
+      optionsFilters: [{
+        value: 'approved',
+        text: this.$t('budgets.status.approved')
       }, {
-        key: 'patient',
-        label: this.$t('cash_registers.detail_patient'),
-        sortable: true
+        value: 'not_approved',
+        text: this.$t('budgets.status.not_approved')
       }, {
-        key: 'action_name',
-        label: this.$t('cash_registers.detail_action'),
-        sortable: true
-      }, {
-        key: 'total',
-        label: this.$t('cash_registers.detail_amount')
+        value: 'all',
+        text: this.$t('budgets.status.all')
       }],
-      columnsExpenses: [{
-        key: 'reference',
-        label: this.$t('expenses.table_reference'),
-        sortable: true
-      }, {
-        key: 'note',
-        label: this.$t('expenses.table_note')
-      }, {
-        key: 'total',
-        label: this.$t('expenses.table_amount')
-      }],
-      isRange: false,
-      professionals: [],
-      selectDoctor: null
+      filter_by: 'approved'
     };
   },
   computed: {
-    totalIncomes: function totalIncomes() {
-      if (!_.isEmpty(this.cashRegister)) {
-        return this.cashRegister.totalCash + this.cashRegister.totalDebitCard + this.cashRegister.totalCreditCard + this.cashRegister.totalCheck + this.cashRegister.totalTransfer;
-      } else {
-        return 0;
-      }
+    dataMeta: function dataMeta() {
+      var localItemsCount = lodash__WEBPACK_IMPORTED_MODULE_12___default.a.size(this.budgets);
+      return {
+        from: this.perPage * (this.currentPage - 1) + (localItemsCount ? 1 : 0),
+        to: this.perPage * (this.currentPage - 1) + localItemsCount,
+        of: this.totalBudget
+      };
+    }
+  },
+  watch: {
+    currentPage: function currentPage(value) {
+      this.getBudgets();
     },
-    totalExpenses: function totalExpenses() {
-      return this.cashRegister.totalExpenses;
+    perPage: function perPage(value) {
+      this.getBudgets();
     }
   },
   mounted: function mounted() {
     var _this = this;
-    return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee() {
-      return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee$(_context) {
+    return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee() {
+      return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return _this.getProfessionals();
+            return _this.getBudgets();
           case 2:
           case "end":
             return _context.stop();
@@ -652,158 +494,58 @@ if (_store__WEBPACK_IMPORTED_MODULE_16__["default"].state.auth.setting['language
     }))();
   },
   methods: {
-    kFormatter: _core_utils_filter__WEBPACK_IMPORTED_MODULE_23__["kFormatter"],
-    getProfessionals: function getProfessionals() {
+    filterOptions: function filterOptions() {
       var _this2 = this;
-      return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee2() {
-        var query, _yield$UserResource$i, data;
-        return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee2$(_context2) {
+      return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee2() {
+        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee2$(_context2) {
           while (1) switch (_context2.prev = _context2.next) {
             case 0:
-              _this2.loading = true;
-              query = {
-                criteria: 'professional'
-              };
-              _context2.next = 4;
-              return UserResource.index(query);
-            case 4:
-              _yield$UserResource$i = _context2.sent;
-              data = _yield$UserResource$i.data;
-              _this2.loading = false;
-              _this2.professionals = data.data;
-            case 8:
+              _context2.next = 2;
+              return _this2.getBudgets();
+            case 2:
             case "end":
               return _context2.stop();
           }
         }, _callee2);
       }))();
     },
-    downloadCashRegister: function downloadCashRegister() {
+    getBudgets: function getBudgets() {
       var _this3 = this;
-      return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee3() {
-        var params, _yield$CashRegisterRe, data, blob, link, fileName;
-        return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee3$(_context3) {
+      return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee3() {
+        var query, _yield$BudgetResource, data;
+        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee3$(_context3) {
           while (1) switch (_context3.prev = _context3.next) {
             case 0:
-              _context3.prev = 0;
-              params = {
-                donwload: true,
-                date: _this3.cashRegister.date,
-                date_end: _this3.cashRegister.date_end,
-                user_id: _this3.selectDoctor ? _this3.selectDoctor.id : null
+              query = {
+                search: _this3.searchQuery,
+                sortBy: _this3.sortBy,
+                sortDesc: _this3.sortDesc,
+                perPage: _this3.perPage,
+                page: _this3.currentPage,
+                isBudget: true,
+                filter_by: _this3.filter_by
               };
               _this3.loading = true;
-              _context3.next = 5;
-              return CashRegisterResource.downloadPreview(params);
-            case 5:
-              _yield$CashRegisterRe = _context3.sent;
-              data = _yield$CashRegisterRe.data;
+              _context3.next = 4;
+              return BudgetResource.getList(query);
+            case 4:
+              _yield$BudgetResource = _context3.sent;
+              data = _yield$BudgetResource.data;
               _this3.loading = false;
-              blob = new Blob([data], {
-                type: "application/vnd.ms-excel"
-              });
-              link = document.createElement("a");
-              link.href = window.URL.createObjectURL(blob);
-              fileName = "".concat(_this3.$t('cash_registers.pre_export_name'), "-").concat(_this3.cashRegister.date);
-              link.download = "".concat(fileName, ".xls");
-              link.click();
-              _context3.next = 20;
-              break;
-            case 16:
-              _context3.prev = 16;
-              _context3.t0 = _context3["catch"](0);
-              _this3.loading = false;
-              _this3.handleResponseErrors(_context3.t0);
-            case 20:
+              _this3.budgets = data.data;
+              _this3.totalBudget = data.total;
+            case 9:
             case "end":
               return _context3.stop();
           }
-        }, _callee3, null, [[0, 16]]);
+        }, _callee3);
       }))();
     },
-    generateCashRegister: function generateCashRegister() {
+    deleteBudget: function deleteBudget(item) {
       var _this4 = this;
-      return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee4() {
-        var _yield$CashRegisterRe2, data;
-        return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee4$(_context4) {
-          while (1) switch (_context4.prev = _context4.next) {
-            case 0:
-              if (!_.isEmpty(_this4.cashRegister)) {
-                _context4.next = 2;
-                break;
-              }
-              return _context4.abrupt("return", false);
-            case 2:
-              if (!_.isEmpty(_this4.cashRegister.date)) {
-                _context4.next = 4;
-                break;
-              }
-              return _context4.abrupt("return", false);
-            case 4:
-              _this4.cashRegister.totalExpenses = 0;
-              _this4.cashRegister.totalCash = 0;
-              _this4.cashRegister.totalDebitCard = 0;
-              _this4.cashRegister.totalCreditCard = 0;
-              _this4.cashRegister.totalCheck = 0;
-              _this4.cashRegister.totalTransfer = 0;
-              _this4.cashRegister.expenses = null;
-              _this4.cashRegister.payments = null;
-              _this4.cashRegister.xrays = null;
-              _this4.cashRegister.user_id = _this4.selectDoctor ? _this4.selectDoctor.id : null;
-              _context4.prev = 14;
-              _this4.loading = true;
-              _context4.next = 18;
-              return CashRegisterResource.generate(_this4.cashRegister);
-            case 18:
-              _yield$CashRegisterRe2 = _context4.sent;
-              data = _yield$CashRegisterRe2.data;
-              _this4.loading = false;
-              _this4.cashRegister.expenses = data.data.expenses;
-              _this4.cashRegister.payments = data.data.payments;
-
-              //Filter by xrays
-              _this4.cashRegister.xrays = _.filter(_this4.cashRegister.payments, function (item) {
-                return item.action_group === 'Radiología Oral';
-              });
-              _this4.cashRegister.totalExpenses = _this4.cashRegister.expenses.reduce(function (carry, expense) {
-                return carry + expense.amount * 1;
-              }, 0);
-              _this4.cashRegister.totalCash = _this4.cashRegister.payments.reduce(function (carry, payment) {
-                return carry + (payment.method === 'cash' ? payment.ap_amount * 1 : 0);
-              }, 0);
-              _this4.cashRegister.totalDebitCard = _this4.cashRegister.payments.reduce(function (carry, payment) {
-                return carry + (payment.method === 'debit_card' ? payment.ap_amount * 1 : 0);
-              }, 0);
-              _this4.cashRegister.totalCreditCard = _this4.cashRegister.payments.reduce(function (carry, payment) {
-                return carry + (payment.method === 'credit_card' ? payment.ap_amount * 1 : 0);
-              }, 0);
-              _this4.cashRegister.totalCheck = _this4.cashRegister.payments.reduce(function (carry, payment) {
-                return carry + (payment.method === 'check' ? payment.ap_amount * 1 : 0);
-              }, 0);
-              _this4.cashRegister.totalTransfer = _this4.cashRegister.payments.reduce(function (carry, payment) {
-                return carry + (payment.method === 'transfer' ? payment.ap_amount * 1 : 0);
-              }, 0);
-              _context4.next = 36;
-              break;
-            case 32:
-              _context4.prev = 32;
-              _context4.t0 = _context4["catch"](14);
-              _this4.loading = false;
-              _this4.handleResponseErrors(_context4.t0);
-            case 36:
-            case "end":
-              return _context4.stop();
-          }
-        }, _callee4, null, [[14, 32]]);
-      }))();
-    },
-    saveCashRegister: function saveCashRegister() {
-      var _this5 = this;
-      var replace = this.isRange ? "".concat(this.cashRegister.date, ", ").concat(this.cashRegister.date_end) : this.cashRegister.date;
-      var html = "".concat(this.$t("cash_registers.alert_description").replace(':dates', '<strong>' + replace + '</strong>'));
       this.$swal({
-        title: this.$t("cash_registers.alert_title"),
-        html: html,
+        title: this.$t("are_you_sure"),
+        text: this.$t("you_wont_be_able_to_revert_this"),
         icon: "question",
         showCancelButton: true,
         confirmButtonText: this.$t("yes_continue"),
@@ -818,39 +560,40 @@ if (_store__WEBPACK_IMPORTED_MODULE_16__["default"].state.auth.setting['language
         buttonsStyling: false,
         showLoaderOnConfirm: true,
         preConfirm: function () {
-          var _preConfirm = Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee5() {
-            var _yield$CashRegisterRe3, data;
-            return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee5$(_context5) {
-              while (1) switch (_context5.prev = _context5.next) {
+          var _preConfirm = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee4() {
+            var _yield$BudgetResource2, data;
+            return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee4$(_context4) {
+              while (1) switch (_context4.prev = _context4.next) {
                 case 0:
-                  _context5.prev = 0;
-                  _this5.cashRegister.isRange = _this5.isRange;
-                  _this5.loading = true;
-                  _context5.next = 5;
-                  return CashRegisterResource.store(_this5.cashRegister);
-                case 5:
-                  _yield$CashRegisterRe3 = _context5.sent;
-                  data = _yield$CashRegisterRe3.data;
-                  _this5.loading = false;
+                  _context4.prev = 0;
+                  _this4.loading = true;
+                  _context4.next = 4;
+                  return BudgetResource.deleteBudget(item.id);
+                case 4:
+                  _yield$BudgetResource2 = _context4.sent;
+                  data = _yield$BudgetResource2.data;
+                  _this4.loading = false;
                   if (data.success) {
-                    _this5.success(data.message, '', 'CheckIcon');
-                    _this5.$router.back();
+                    _this4.success(data.message);
+                    _this4.budgets = _this4.budgets.filter(function (budget) {
+                      return budget.id !== item.id;
+                    });
                   } else {
-                    _this5.danger(data.message, "Error", "AlertCircleIcon");
+                    _this4.danger(data.message);
                   }
-                  _context5.next = 16;
+                  _context4.next = 15;
                   break;
-                case 11:
-                  _context5.prev = 11;
-                  _context5.t0 = _context5["catch"](0);
-                  _this5.loading = false;
-                  _this5.handleResponseErrors(_context5.t0);
-                  _this5.$swal.showValidationMessage("Request failed: ".concat(_context5.t0));
-                case 16:
+                case 10:
+                  _context4.prev = 10;
+                  _context4.t0 = _context4["catch"](0);
+                  _this4.loading = false;
+                  _this4.handleResponseErrors(_context4.t0);
+                  _this4.$swal.showValidationMessage("Request failed: ".concat(_context4.t0));
+                case 15:
                 case "end":
-                  return _context5.stop();
+                  return _context4.stop();
               }
-            }, _callee5, null, [[0, 11]]);
+            }, _callee4, null, [[0, 10]]);
           }));
           function preConfirm() {
             return _preConfirm.apply(this, arguments);
@@ -862,103 +605,219 @@ if (_store__WEBPACK_IMPORTED_MODULE_16__["default"].state.auth.setting['language
         }
       });
     },
-    fetchCashRegister: function fetchCashRegister() {
+    donwloadBudget: function donwloadBudget(item) {
+      var _this5 = this;
+      return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee5() {
+        var _yield$BudgetResource3, data, url, link;
+        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee5$(_context5) {
+          while (1) switch (_context5.prev = _context5.next) {
+            case 0:
+              _context5.prev = 0;
+              _this5.loading = true;
+              _context5.next = 4;
+              return BudgetResource.donwloadPDF(item.id);
+            case 4:
+              _yield$BudgetResource3 = _context5.sent;
+              data = _yield$BudgetResource3.data;
+              _this5.loading = false;
+              url = window.URL.createObjectURL(new Blob([data]));
+              link = document.createElement('a');
+              link.href = url;
+              link.setAttribute('download', "".concat(item.label, ".pdf"));
+              link.click();
+              document.body.appendChild(link);
+              _context5.next = 19;
+              break;
+            case 15:
+              _context5.prev = 15;
+              _context5.t0 = _context5["catch"](0);
+              _this5.loading = false;
+              _this5.handleResponseErrors(_context5.t0);
+            case 19:
+            case "end":
+              return _context5.stop();
+          }
+        }, _callee5, null, [[0, 15]]);
+      }))();
+    },
+    sendEmail: function sendEmail(item) {
       var _this6 = this;
-      return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee6() {
-        return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee6$(_context6) {
-          while (1) switch (_context6.prev = _context6.next) {
-            case 0:
-              if (!(_.isEmpty(_this6.cashRegister) || _.isEmpty(_this6.cashRegister.date))) {
-                _context6.next = 3;
-                break;
+      this.$swal({
+        title: this.$t('budgets.send_email_tittle'),
+        text: this.$t('budgets.send_email_tittle_help'),
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: this.$t('yes_continue'),
+        cancelButtonText: this.$t('cancel'),
+        customClass: {
+          confirmButton: "btn btn-primary",
+          cancelButton: "btn btn-outline-danger ml-1"
+        },
+        showClass: {
+          popup: "animate__animated animate__flipInX"
+        },
+        buttonsStyling: false,
+        showLoaderOnConfirm: true,
+        input: 'email',
+        inputValue: item.patient.email,
+        inputAttributes: {
+          autocapitalize: 'off'
+        },
+        preConfirm: function () {
+          var _preConfirm2 = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee6(value) {
+            var _yield$BudgetResource4, data;
+            return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee6$(_context6) {
+              while (1) switch (_context6.prev = _context6.next) {
+                case 0:
+                  _context6.prev = 0;
+                  _this6.loading = true;
+                  _context6.next = 4;
+                  return BudgetResource.sendEmail(item.id, {
+                    email: value
+                  });
+                case 4:
+                  _yield$BudgetResource4 = _context6.sent;
+                  data = _yield$BudgetResource4.data;
+                  _this6.loading = false;
+                  if (data.success) {
+                    _this6.success(data.message);
+                  } else {
+                    _this6.danger(data.message);
+                  }
+                  _context6.next = 15;
+                  break;
+                case 10:
+                  _context6.prev = 10;
+                  _context6.t0 = _context6["catch"](0);
+                  _this6.loading = false;
+                  _this6.handleResponseErrors(_context6.t0);
+                  _this6.$swal.showValidationMessage("Request failed: ".concat(_context6.t0));
+                case 15:
+                case "end":
+                  return _context6.stop();
               }
-              if (_this6.isRange) {
-                _this6.danger(_this6.$t('cash_register_date_start_help'), "Error", "AlertOctagonIcon");
-              } else {
-                _this6.danger(_this6.$t('cash_register_close_help'), "Error", "AlertOctagonIcon");
-              }
-              return _context6.abrupt("return", false);
-            case 3:
-              if (!_this6.isRange) {
-                _context6.next = 7;
-                break;
-              }
-              if (!_.isEmpty(_this6.cashRegister.date_end)) {
-                _context6.next = 7;
-                break;
-              }
-              _this6.danger(_this6.$t('cash_register_date_end_help'), "Error", "AlertOctagonIcon");
-              return _context6.abrupt("return", false);
-            case 7:
-              _context6.next = 9;
-              return _this6.generateCashRegister();
-            case 9:
-            case "end":
-              return _context6.stop();
+            }, _callee6, null, [[0, 10]]);
+          }));
+          function preConfirm(_x) {
+            return _preConfirm2.apply(this, arguments);
           }
-        }, _callee6);
-      }))();
+          return preConfirm;
+        }(),
+        allowOutsideClick: function allowOutsideClick() {
+          return !Swal.isLoading();
+        }
+      });
     },
-    selectedDoctor: function selectedDoctor() {
-      return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee7() {
-        return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee7$(_context7) {
-          while (1) switch (_context7.prev = _context7.next) {
-            case 0:
-            case "end":
-              return _context7.stop();
+    setApproved: function setApproved(item) {
+      var _this7 = this;
+      this.$swal({
+        title: this.$t("are_you_sure"),
+        text: this.$t("you_wont_be_able_to_revert_this"),
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: this.$t('yes_continue'),
+        cancelButtonText: this.$t('cancel'),
+        customClass: {
+          confirmButton: "btn btn-primary",
+          cancelButton: "btn btn-outline-danger ml-1"
+        },
+        showClass: {
+          popup: "animate__animated animate__flipInX"
+        },
+        buttonsStyling: false,
+        showLoaderOnConfirm: true,
+        preConfirm: function () {
+          var _preConfirm3 = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee7() {
+            var _yield$BudgetResource5, data;
+            return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee7$(_context7) {
+              while (1) switch (_context7.prev = _context7.next) {
+                case 0:
+                  _context7.prev = 0;
+                  _this7.loading = true;
+                  _context7.next = 4;
+                  return BudgetResource.approve(item.id);
+                case 4:
+                  _yield$BudgetResource5 = _context7.sent;
+                  data = _yield$BudgetResource5.data;
+                  _this7.loading = false;
+                  if (data.success) {
+                    _this7.success(data.message);
+                    if (_this7.filter_by == 'not_approved') {
+                      _this7.budgets = _this7.budgets.filter(function (budget) {
+                        return budget.id != item.id;
+                      });
+                    } else if (_this7.filter_by == 'approved') {
+                      _this7.budgets = _this7.budgets.map(function (budget) {
+                        if (budget.id == item.id) {
+                          return data.data;
+                        }
+                        return budget;
+                      });
+                    } else {
+                      _this7.budgets = _this7.budgets.map(function (budget) {
+                        if (budget.id == item.id) {
+                          return data.data;
+                        }
+                        return budget;
+                      });
+                    }
+                    if (_this7.findSetting('enable_email_notification')) {
+                      _this7.sendEmail(item);
+                    }
+                  } else {
+                    _this7.danger(data.message);
+                  }
+                  _context7.next = 15;
+                  break;
+                case 10:
+                  _context7.prev = 10;
+                  _context7.t0 = _context7["catch"](0);
+                  _this7.loading = false;
+                  _this7.handleResponseErrors(_context7.t0);
+                  _this7.$swal.showValidationMessage("Request failed: ".concat(_context7.t0));
+                case 15:
+                case "end":
+                  return _context7.stop();
+              }
+            }, _callee7, null, [[0, 10]]);
+          }));
+          function preConfirm() {
+            return _preConfirm3.apply(this, arguments);
           }
-        }, _callee7);
-      }))();
-    } // await this.generateCashRegister()
-    ,
-    clearFilter: function clearFilter() {
-      this.cashRegister = {};
-      this.selectDoctor = null;
-      this.isRange = false;
-    },
-    initializeRegister: function initializeRegister() {
-      if (!_.isEmpty(this.cashRegister.payments) || !_.isEmpty(this.cashRegister.expenses)) {
-        this.cashRegister = {};
-      }
-      return true;
-    }
-  },
-  watch: {
-    isRange: function isRange(value) {
-      if (!value) {
-        this.cashRegister.date_end = null;
-        // this.fetchCashRegister()
-      }
+          return preConfirm;
+        }(),
+        allowOutsideClick: function allowOutsideClick() {
+          return !Swal.isLoading();
+        }
+      });
     }
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=style&index=0&id=698ac8d2&lang=scss&scoped=true&":
-/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=style&index=0&id=698ac8d2&lang=scss&scoped=true& ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=style&index=0&id=39eed3b0&lang=scss&scoped=true&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=style&index=0&id=39eed3b0&lang=scss&scoped=true& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-var ___CSS_LOADER_AT_RULE_IMPORT_0___ = __webpack_require__(/*! -!../../../../../../../node_modules/css-loader/dist/cjs.js!flatpickr/dist/flatpickr.css */ "./node_modules/css-loader/dist/cjs.js!./node_modules/flatpickr/dist/flatpickr.css");
 exports = ___CSS_LOADER_API_IMPORT___(false);
-exports.i(___CSS_LOADER_AT_RULE_IMPORT_0___);
 // Module
-exports.push([module.i, ".flatpickr-calendar .flatpickr-day[data-v-698ac8d2] {\n  color: #6e6b7b;\n}\n[dir] .flatpickr-calendar .flatpickr-day.today[data-v-698ac8d2] {\n  border-color: #7367f0;\n}\n.flatpickr-calendar .flatpickr-day.today[data-v-698ac8d2]:hover {\n  color: #6e6b7b;\n}\n[dir] .flatpickr-calendar .flatpickr-day.today[data-v-698ac8d2]:hover {\n  background: transparent;\n}\n.flatpickr-calendar .flatpickr-day.selected[data-v-698ac8d2], .flatpickr-calendar .flatpickr-day.selected[data-v-698ac8d2]:hover {\n  color: #fff;\n}\n[dir] .flatpickr-calendar .flatpickr-day.selected[data-v-698ac8d2], [dir] .flatpickr-calendar .flatpickr-day.selected[data-v-698ac8d2]:hover {\n  background: #7367f0;\n  border-color: #7367f0;\n}\n[dir] .flatpickr-calendar .flatpickr-day.inRange[data-v-698ac8d2], [dir] .flatpickr-calendar .flatpickr-day.inRange[data-v-698ac8d2]:hover {\n  background: #f3f2fe;\n  border-color: #f3f2fe;\n}\n[dir=ltr] .flatpickr-calendar .flatpickr-day.inRange[data-v-698ac8d2], [dir=ltr] .flatpickr-calendar .flatpickr-day.inRange[data-v-698ac8d2]:hover {\n  box-shadow: -5px 0 0 #f3f2fe, 5px 0 0 #f3f2fe;\n}\n[dir=rtl] .flatpickr-calendar .flatpickr-day.inRange[data-v-698ac8d2], [dir=rtl] .flatpickr-calendar .flatpickr-day.inRange[data-v-698ac8d2]:hover {\n  box-shadow: 5px 0 0 #f3f2fe, -5px 0 0 #f3f2fe;\n}\n.flatpickr-calendar .flatpickr-day.startRange[data-v-698ac8d2], .flatpickr-calendar .flatpickr-day.endRange[data-v-698ac8d2], .flatpickr-calendar .flatpickr-day.startRange[data-v-698ac8d2]:hover, .flatpickr-calendar .flatpickr-day.endRange[data-v-698ac8d2]:hover {\n  color: #fff;\n}\n[dir] .flatpickr-calendar .flatpickr-day.startRange[data-v-698ac8d2], [dir] .flatpickr-calendar .flatpickr-day.endRange[data-v-698ac8d2], [dir] .flatpickr-calendar .flatpickr-day.startRange[data-v-698ac8d2]:hover, [dir] .flatpickr-calendar .flatpickr-day.endRange[data-v-698ac8d2]:hover {\n  background: #7367f0;\n  border-color: #7367f0;\n}\n[dir=ltr] .flatpickr-calendar .flatpickr-day.selected.startRange + .endRange[data-v-698ac8d2]:not(:nth-child(7n+1)), [dir=ltr] .flatpickr-calendar .flatpickr-day.startRange.startRange + .endRange[data-v-698ac8d2]:not(:nth-child(7n+1)), [dir=ltr] .flatpickr-calendar .flatpickr-day.endRange.startRange + .endRange[data-v-698ac8d2]:not(:nth-child(7n+1)) {\n  box-shadow: -10px 0 0 #7367f0;\n}\n[dir=rtl] .flatpickr-calendar .flatpickr-day.selected.startRange + .endRange[data-v-698ac8d2]:not(:nth-child(7n+1)), [dir=rtl] .flatpickr-calendar .flatpickr-day.startRange.startRange + .endRange[data-v-698ac8d2]:not(:nth-child(7n+1)), [dir=rtl] .flatpickr-calendar .flatpickr-day.endRange.startRange + .endRange[data-v-698ac8d2]:not(:nth-child(7n+1)) {\n  box-shadow: 10px 0 0 #7367f0;\n}\n.flatpickr-calendar .flatpickr-day.flatpickr-disabled[data-v-698ac8d2], .flatpickr-calendar .flatpickr-day.prevMonthDay[data-v-698ac8d2], .flatpickr-calendar .flatpickr-day.nextMonthDay[data-v-698ac8d2] {\n  color: #dae1e7;\n}\n[dir] .flatpickr-calendar .flatpickr-day[data-v-698ac8d2]:hover {\n  background: #f6f6f6;\n}\n.flatpickr-calendar[data-v-698ac8d2]:after, .flatpickr-calendar[data-v-698ac8d2]:before {\n  display: none;\n}\n.flatpickr-calendar .flatpickr-months .flatpickr-prev-month[data-v-698ac8d2],\n.flatpickr-calendar .flatpickr-months .flatpickr-next-month[data-v-698ac8d2] {\n  top: -5px;\n}\n.flatpickr-calendar .flatpickr-months .flatpickr-prev-month:hover i[data-v-698ac8d2], .flatpickr-calendar .flatpickr-months .flatpickr-prev-month:hover svg[data-v-698ac8d2],\n.flatpickr-calendar .flatpickr-months .flatpickr-next-month:hover i[data-v-698ac8d2],\n.flatpickr-calendar .flatpickr-months .flatpickr-next-month:hover svg[data-v-698ac8d2] {\n  fill: #7367f0;\n}\n.flatpickr-calendar .flatpickr-current-month span.cur-month[data-v-698ac8d2] {\n  font-weight: 300;\n}\n.flatpickr-calendar.open[data-v-698ac8d2] {\n  z-index: 1051;\n}\n.flatpickr-calendar.hasTime.open .flatpickr-time[data-v-698ac8d2] {\n  height: auto;\n}\n[dir] .flatpickr-time input[data-v-698ac8d2]:hover, [dir] .flatpickr-time .flatpickr-am-pm[data-v-698ac8d2]:hover, [dir] .flatpickr-time input[data-v-698ac8d2]:focus, [dir] .flatpickr-time .flatpickr-am-pm[data-v-698ac8d2]:focus {\n  background: #fff;\n}\n[dir] .dark-layout .flatpickr-calendar[data-v-698ac8d2] {\n  background: #161d31;\n  border-color: #161d31;\n  box-shadow: none;\n}\n.dark-layout .flatpickr-calendar .flatpickr-months i[data-v-698ac8d2],\n.dark-layout .flatpickr-calendar .flatpickr-months svg[data-v-698ac8d2] {\n  fill: #b4b7bd;\n}\n.dark-layout .flatpickr-calendar .flatpickr-month[data-v-698ac8d2] {\n  color: #b4b7bd;\n}\n[dir=ltr] .dark-layout .flatpickr-calendar .flatpickr-weekwrapper .flatpickr-weeks[data-v-698ac8d2] {\n  box-shadow: 1px 0 0 #3b4253;\n}\n[dir=rtl] .dark-layout .flatpickr-calendar .flatpickr-weekwrapper .flatpickr-weeks[data-v-698ac8d2] {\n  box-shadow: -1px 0 0 #3b4253;\n}\n.dark-layout .flatpickr-calendar .flatpickr-weekday[data-v-698ac8d2] {\n  color: #b4b7bd;\n}\n.dark-layout .flatpickr-calendar .flatpickr-day[data-v-698ac8d2], .dark-layout .flatpickr-calendar .flatpickr-day.today[data-v-698ac8d2]:hover {\n  color: #b4b7bd;\n}\n.dark-layout .flatpickr-calendar .flatpickr-day.selected[data-v-698ac8d2] {\n  color: #fff;\n}\n.dark-layout .flatpickr-calendar .flatpickr-day.prevMonthDay[data-v-698ac8d2], .dark-layout .flatpickr-calendar .flatpickr-day.nextMonthDay[data-v-698ac8d2], .dark-layout .flatpickr-calendar .flatpickr-day.flatpickr-disabled[data-v-698ac8d2] {\n  color: #4e5154 !important;\n}\n[dir] .dark-layout .flatpickr-calendar .flatpickr-day.inRange[data-v-698ac8d2], [dir] .dark-layout .flatpickr-calendar .flatpickr-day.inRange[data-v-698ac8d2]:hover {\n  background: #283046;\n  border-color: #283046;\n}\n[dir=ltr] .dark-layout .flatpickr-calendar .flatpickr-day.inRange[data-v-698ac8d2], [dir=ltr] .dark-layout .flatpickr-calendar .flatpickr-day.inRange[data-v-698ac8d2]:hover {\n  box-shadow: -5px 0 0 #283046, 5px 0 0 #283046;\n}\n[dir=rtl] .dark-layout .flatpickr-calendar .flatpickr-day.inRange[data-v-698ac8d2], [dir=rtl] .dark-layout .flatpickr-calendar .flatpickr-day.inRange[data-v-698ac8d2]:hover {\n  box-shadow: 5px 0 0 #283046, -5px 0 0 #283046;\n}\n.dark-layout .flatpickr-calendar .flatpickr-day[data-v-698ac8d2]:hover:not(.selected):not(.today):not(.startRange):not(.endRange) {\n  color: #b4b7bd;\n}\n[dir] .dark-layout .flatpickr-calendar .flatpickr-day[data-v-698ac8d2]:hover:not(.selected):not(.today):not(.startRange):not(.endRange) {\n  border-color: #283046;\n}\n[dir] .dark-layout .flatpickr-calendar .flatpickr-days .flatpickr-day[data-v-698ac8d2]:hover:not(.selected):not(.today):not(.startRange):not(.endRange), [dir] .dark-layout .flatpickr-calendar .flatpickr-days .flatpickr-day[data-v-698ac8d2]:focus:not(.selected):not(.today):not(.startRange):not(.endRange) {\n  background: #283046;\n}\n[dir] .dark-layout .flatpickr-calendar .flatpickr-time[data-v-698ac8d2] {\n  border-color: #161d31 !important;\n}\n.dark-layout .flatpickr-calendar .flatpickr-time .numInput[data-v-698ac8d2],\n.dark-layout .flatpickr-calendar .flatpickr-time .flatpickr-am-pm[data-v-698ac8d2] {\n  color: #b4b7bd;\n}\n[dir] .dark-layout .flatpickr-calendar .flatpickr-time .numInput[data-v-698ac8d2]:hover, [dir] .dark-layout .flatpickr-calendar .flatpickr-time .flatpickr-am-pm[data-v-698ac8d2]:hover {\n  background: #161d31;\n}\n[dir] .dark-layout .flatpickr-calendar .flatpickr-time .arrowUp[data-v-698ac8d2]:after {\n  border-bottom-color: #b4b7bd;\n}\n[dir] .dark-layout .flatpickr-calendar .flatpickr-time .arrowDown[data-v-698ac8d2]:after {\n  border-top-color: #b4b7bd;\n}\n[dir] .dark-layout .flatpickr-time input[data-v-698ac8d2]:hover, [dir] .dark-layout .flatpickr-time .flatpickr-am-pm[data-v-698ac8d2]:hover, [dir] .dark-layout .flatpickr-time input[data-v-698ac8d2]:focus, [dir] .dark-layout .flatpickr-time .flatpickr-am-pm[data-v-698ac8d2]:focus {\n  background: #161d31;\n}\n.flatpickr-input[readonly][data-v-698ac8d2],\n.flatpickr-input ~ .form-control[readonly][data-v-698ac8d2],\n.flatpickr-human-friendly[readonly][data-v-698ac8d2] {\n  opacity: 1 !important;\n}\n[dir] .flatpickr-input[readonly][data-v-698ac8d2], [dir] .flatpickr-input ~ .form-control[readonly][data-v-698ac8d2], [dir] .flatpickr-human-friendly[readonly][data-v-698ac8d2] {\n  background-color: inherit;\n}\n[dir] .flatpickr-weekdays[data-v-698ac8d2] {\n  margin-top: 8px;\n}\n.flatpickr-current-month .flatpickr-monthDropdown-months[data-v-698ac8d2] {\n  -webkit-appearance: none;\n}\n.flatpickr-current-month .flatpickr-monthDropdown-months[data-v-698ac8d2],\n.flatpickr-current-month .numInputWrapper[data-v-698ac8d2] {\n  font-size: 1.1rem;\n  transition: all 0.15s ease-out;\n}\n[dir] .flatpickr-current-month .flatpickr-monthDropdown-months[data-v-698ac8d2], [dir] .flatpickr-current-month .numInputWrapper[data-v-698ac8d2] {\n  border-radius: 4px;\n  padding: 2px;\n}\n.flatpickr-current-month .flatpickr-monthDropdown-months span[data-v-698ac8d2],\n.flatpickr-current-month .numInputWrapper span[data-v-698ac8d2] {\n  display: none;\n}\nhtml[dir=rtl] .flatpickr-calendar .flatpickr-prev-month svg[data-v-698ac8d2],\nhtml[dir=rtl] .flatpickr-calendar .flatpickr-next-month svg[data-v-698ac8d2] {\n  transform: rotate(180deg);\n}\n.per-page-selector[data-v-698ac8d2] {\n  width: 90px;\n}\n.text-decoration-line-through[data-v-698ac8d2] {\n  text-decoration: line-through;\n}\n[dir] .dark-layout .card-company-table[data-v-698ac8d2]  td .b-avatar.badge-light-company {\n  background: #161d31 !important;\n}", ""]);
+exports.push([module.i, ".per-page-selector[data-v-39eed3b0] {\n  width: 90px;\n}\n.text-decoration-line-through[data-v-39eed3b0] {\n  text-decoration: line-through;\n}", ""]);
 // Exports
 module.exports = exports;
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=style&index=1&id=698ac8d2&lang=scss&":
-/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=style&index=1&id=698ac8d2&lang=scss& ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=style&index=1&id=39eed3b0&lang=scss&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=style&index=1&id=39eed3b0&lang=scss& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -975,15 +834,15 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=style&index=0&id=698ac8d2&lang=scss&scoped=true&":
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=style&index=0&id=698ac8d2&lang=scss&scoped=true& ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=style&index=0&id=39eed3b0&lang=scss&scoped=true&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=style&index=0&id=39eed3b0&lang=scss&scoped=true& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CashRegisterAdd.vue?vue&type=style&index=0&id=698ac8d2&lang=scss&scoped=true& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=style&index=0&id=698ac8d2&lang=scss&scoped=true&");
+var content = __webpack_require__(/*! !../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./BudgetList.vue?vue&type=style&index=0&id=39eed3b0&lang=scss&scoped=true& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=style&index=0&id=39eed3b0&lang=scss&scoped=true&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -1005,15 +864,15 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=style&index=1&id=698ac8d2&lang=scss&":
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=style&index=1&id=698ac8d2&lang=scss& ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=style&index=1&id=39eed3b0&lang=scss&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=style&index=1&id=39eed3b0&lang=scss& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CashRegisterAdd.vue?vue&type=style&index=1&id=698ac8d2&lang=scss& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=style&index=1&id=698ac8d2&lang=scss&");
+var content = __webpack_require__(/*! !../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./BudgetList.vue?vue&type=style&index=1&id=39eed3b0&lang=scss& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=style&index=1&id=39eed3b0&lang=scss&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -1035,10 +894,10 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=template&id=698ac8d2&scoped=true&":
-/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=template&id=698ac8d2&scoped=true& ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=template&id=39eed3b0&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=template&id=39eed3b0&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1090,295 +949,50 @@ var render = function () {
     [
       _vm._v(" "),
       _c(
-        "section",
-        { attrs: { id: "dashboard-ecommerce" } },
+        "b-card",
+        { staticClass: "mb-0", attrs: { "no-body": "" } },
         [
           _c(
-            "b-row",
-            { staticClass: "match-height" },
+            "div",
+            { staticClass: "m-2" },
             [
               _c(
-                "b-col",
-                { attrs: { xl: "12", md: "12" } },
+                "b-row",
                 [
                   _c(
-                    "b-card",
-                    {
-                      staticClass: "card-statistics",
-                      attrs: { "no-body": "" },
-                    },
+                    "b-col",
+                    { staticClass: "p-1", attrs: { cols: "12", md: "8" } },
                     [
                       _c(
-                        "b-card-body",
-                        { staticClass: "statistics-body" },
+                        "b-form-group",
+                        {
+                          attrs: {
+                            label: _vm.$t("filters.title"),
+                            "label-cols": "12",
+                            "label-class": "font-weight-bolder",
+                            "label-align": "left",
+                          },
+                        },
                         [
-                          _c(
-                            "b-row",
-                            [
-                              _c(
-                                "b-col",
-                                { attrs: { cols: "12", xl: "12" } },
-                                [
-                                  _c(
-                                    "b-form-checkbox",
-                                    {
-                                      attrs: {
-                                        name: "check-button",
-                                        switch: "",
-                                        inline: "",
-                                      },
-                                      model: {
-                                        value: _vm.isRange,
-                                        callback: function ($$v) {
-                                          _vm.isRange = $$v
-                                        },
-                                        expression: "isRange",
-                                      },
-                                    },
-                                    [
-                                      _vm._v(
-                                        "\n                                    " +
-                                          _vm._s(
-                                            _vm.$t(
-                                              "cash_registers.active_range"
-                                            )
-                                          ) +
-                                          "\n                                "
-                                      ),
-                                    ]
-                                  ),
-                                ],
-                                1
-                              ),
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "b-row",
-                            { staticClass: "mt-3" },
-                            [
-                              _c(
-                                "b-col",
-                                { attrs: { cols: "12", md: "2" } },
-                                [
-                                  _c("label", [
-                                    _vm._v(
-                                      "\n                                    " +
-                                        _vm._s(
-                                          _vm.isRange
-                                            ? _vm.$t("start_at")
-                                            : _vm.$t(
-                                                "cash_registers.add.cut_date"
-                                              )
-                                        ) +
-                                        "\n                                "
-                                    ),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("flat-pickr", {
-                                    staticClass: "form-control",
-                                    attrs: {
-                                      config: { dateFormat: "d/m/Y" },
-                                      placeholder: "DD/MM/YYYY",
-                                    },
-                                    model: {
-                                      value: _vm.cashRegister.date,
-                                      callback: function ($$v) {
-                                        _vm.$set(_vm.cashRegister, "date", $$v)
-                                      },
-                                      expression: "cashRegister.date",
-                                    },
-                                  }),
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _vm.isRange
-                                ? _c(
-                                    "b-col",
-                                    { attrs: { cols: "12", md: "2" } },
-                                    [
-                                      _c("label", [
-                                        _vm._v(_vm._s(_vm.$t("end_at"))),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("flat-pickr", {
-                                        staticClass: "form-control",
-                                        attrs: {
-                                          config: {
-                                            dateFormat: "d/m/Y",
-                                            minDate: _vm.cashRegister.date,
-                                          },
-                                          placeholder: "DD/MM/YYYY",
-                                        },
-                                        model: {
-                                          value: _vm.cashRegister.date_end,
-                                          callback: function ($$v) {
-                                            _vm.$set(
-                                              _vm.cashRegister,
-                                              "date_end",
-                                              $$v
-                                            )
-                                          },
-                                          expression: "cashRegister.date_end",
-                                        },
-                                      }),
-                                    ],
-                                    1
-                                  )
-                                : _vm._e(),
-                              _vm._v(" "),
-                              _c(
-                                "b-col",
-                                { attrs: { cols: "12", md: "4" } },
-                                [
-                                  _c(
-                                    "b-form-group",
-                                    {
-                                      attrs: {
-                                        label: _vm.$t("professional"),
-                                        "label-for": "add-professional",
-                                      },
-                                    },
-                                    [
-                                      _c("v-select", {
-                                        attrs: {
-                                          options: _vm.professionals,
-                                          label: "name",
-                                          "input-id": "add-professional",
-                                          placeholder:
-                                            _vm.$t("select_an_option"),
-                                        },
-                                        on: { input: _vm.selectedDoctor },
-                                        model: {
-                                          value: _vm.selectDoctor,
-                                          callback: function ($$v) {
-                                            _vm.selectDoctor = $$v
-                                          },
-                                          expression: "selectDoctor",
-                                        },
-                                      }),
-                                    ],
-                                    1
-                                  ),
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "b-col",
-                                { attrs: { cols: "12", xl: "4" } },
-                                [
-                                  _vm.cashRegister.payments
-                                    ? _c(
-                                        "b-button",
-                                        {
-                                          staticClass: "mt-2",
-                                          attrs: { variant: "primary" },
-                                          on: { click: _vm.fetchCashRegister },
-                                        },
-                                        [
-                                          _vm._v(
-                                            "\n                                    " +
-                                              _vm._s(_vm.$t("button_filter")) +
-                                              "\n                                "
-                                          ),
-                                        ]
-                                      )
-                                    : _vm._e(),
-                                  _vm._v(" "),
-                                  !_vm.cashRegister.payments
-                                    ? _c(
-                                        "b-button",
-                                        {
-                                          staticClass: "mt-2",
-                                          attrs: { variant: "primary" },
-                                          on: { click: _vm.fetchCashRegister },
-                                        },
-                                        [
-                                          _vm._v(
-                                            "\n                                    " +
-                                              _vm._s(
-                                                _vm.$t("cash_registers.preview")
-                                              ) +
-                                              "\n                                "
-                                          ),
-                                        ]
-                                      )
-                                    : _vm._e(),
-                                  _vm._v(" "),
-                                  _vm.cashRegister.payments
-                                    ? _c(
-                                        "b-button",
-                                        {
-                                          staticClass: "mt-2",
-                                          attrs: { variant: "secondary" },
-                                          on: {
-                                            click: _vm.downloadCashRegister,
-                                          },
-                                        },
-                                        [
-                                          _vm._v(
-                                            "\n                                    " +
-                                              _vm._s(
-                                                _vm.$t(
-                                                  "cash_registers.download"
-                                                )
-                                              ) +
-                                              "\n                                "
-                                          ),
-                                        ]
-                                      )
-                                    : _vm._e(),
-                                  _vm._v(" "),
-                                  !_vm.cashRegister.payments
-                                    ? _c(
-                                        "b-button",
-                                        {
-                                          staticClass: "mt-2",
-                                          attrs: {
-                                            variant: "outline-secondary",
-                                          },
-                                          on: {
-                                            click: function ($event) {
-                                              return _vm.$router.back()
-                                            },
-                                          },
-                                        },
-                                        [
-                                          _vm._v(
-                                            "\n                                    " +
-                                              _vm._s(_vm.$t("back")) +
-                                              "\n                                "
-                                          ),
-                                        ]
-                                      )
-                                    : _vm._e(),
-                                  _vm._v(" "),
-                                  _vm.cashRegister.payments
-                                    ? _c(
-                                        "b-button",
-                                        {
-                                          staticClass: "mt-2",
-                                          attrs: { variant: "danger" },
-                                          on: { click: _vm.clearFilter },
-                                        },
-                                        [
-                                          _vm._v(
-                                            "\n                                    " +
-                                              _vm._s(_vm.$t("cancel")) +
-                                              "\n                                "
-                                          ),
-                                        ]
-                                      )
-                                    : _vm._e(),
-                                ],
-                                1
-                              ),
-                            ],
-                            1
-                          ),
+                          _c("b-form-radio-group", {
+                            staticClass: "groupselect",
+                            attrs: {
+                              id: "radio-group-1",
+                              options: _vm.optionsFilters,
+                              reduce: function (option) {
+                                return option.value
+                              },
+                              name: "radio-options",
+                            },
+                            on: { change: _vm.filterOptions },
+                            model: {
+                              value: _vm.filter_by,
+                              callback: function ($$v) {
+                                _vm.filter_by = $$v
+                              },
+                              expression: "filter_by",
+                            },
+                          }),
                         ],
                         1
                       ),
@@ -1391,1294 +1005,1042 @@ var render = function () {
             ],
             1
           ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _vm.cashRegister.payments
-        ? _c(
-            "section",
-            { attrs: { id: "dashboard-ecommerce" } },
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "m-2" },
             [
               _c(
                 "b-row",
-                { staticClass: "match-height" },
                 [
                   _c(
                     "b-col",
-                    { attrs: { xl: "8", md: "6" } },
+                    {
+                      staticClass:
+                        "d-flex align-items-center justify-content-start mb-1 mb-md-0",
+                      attrs: { cols: "12", md: "6" },
+                    },
                     [
-                      _c(
-                        "b-card",
-                        {
-                          staticClass: "card-statistics",
-                          attrs: { "no-body": "" },
+                      _c("label", [_vm._v(_vm._s(_vm.$t("show")))]),
+                      _vm._v(" "),
+                      _c("v-select", {
+                        staticClass: "per-page-selector d-inline-block mx-50",
+                        attrs: {
+                          options: _vm.perPageOptions,
+                          clearable: false,
                         },
-                        [
-                          _c(
-                            "b-card-header",
+                        model: {
+                          value: _vm.perPage,
+                          callback: function ($$v) {
+                            _vm.perPage = $$v
+                          },
+                          expression: "perPage",
+                        },
+                      }),
+                      _vm._v(" "),
+                      _vm.canAccess("budgets.create")
+                        ? _c(
+                            "b-button",
+                            {
+                              attrs: { variant: "primary" },
+                              on: {
+                                click: function ($event) {
+                                  return _vm.$router.push({
+                                    name: "apps-budgets-add",
+                                  })
+                                },
+                              },
+                            },
                             [
-                              _c("b-card-title", [
-                                _vm._v(_vm._s(_vm.$t("transactions"))),
+                              _c("span", { staticClass: "text-nowrap" }, [
+                                _vm._v(
+                                  "\n                            " +
+                                    _vm._s(_vm.$t("add")) +
+                                    "\n                        "
+                                ),
                               ]),
-                            ],
-                            1
+                            ]
+                          )
+                        : _vm._e(),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("b-col", { attrs: { cols: "12", md: "6" } }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "d-flex align-items-center justify-content-end",
+                      },
+                      [
+                        _c(
+                          "b-input-group",
+                          [
+                            _c("b-form-input", {
+                              staticClass: "d-inline-block _mr-1",
+                              attrs: {
+                                placeholder: _vm.$t("budgets.search_options"),
+                              },
+                              on: {
+                                keyup: function ($event) {
+                                  if (
+                                    !$event.type.indexOf("key") &&
+                                    _vm._k(
+                                      $event.keyCode,
+                                      "enter",
+                                      13,
+                                      $event.key,
+                                      "Enter"
+                                    )
+                                  ) {
+                                    return null
+                                  }
+                                  return _vm.getBudgets($event)
+                                },
+                              },
+                              model: {
+                                value: _vm.searchQuery,
+                                callback: function ($$v) {
+                                  _vm.searchQuery = $$v
+                                },
+                                expression: "searchQuery",
+                              },
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "b-input-group-prepend",
+                              [
+                                _c(
+                                  "b-button",
+                                  {
+                                    attrs: { variant: "primary" },
+                                    on: { click: _vm.getBudgets },
+                                  },
+                                  [
+                                    _c("feather-icon", {
+                                      attrs: { icon: "SearchIcon" },
+                                    }),
+                                  ],
+                                  1
+                                ),
+                              ],
+                              1
+                            ),
+                          ],
+                          1
+                        ),
+                      ],
+                      1
+                    ),
+                  ]),
+                ],
+                1
+              ),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("b-table", {
+            ref: "refBugdetsListTable",
+            staticClass: "position-relative",
+            attrs: {
+              items: _vm.budgets,
+              responsive: "",
+              striped: "",
+              hover: "",
+              fields: _vm.columns,
+              "primary-key": "id",
+              "sort-by": _vm.sortBy,
+              "show-empty": "",
+              "empty-text": _vm.$t("datatables.sZeroRecords"),
+              "sort-desc": _vm.sortDesc,
+              "current-page": _vm.currentPage,
+              "busy.sync": "loading",
+              stacked: "md",
+            },
+            on: {
+              "update:sortBy": function ($event) {
+                _vm.sortBy = $event
+              },
+              "update:sort-by": function ($event) {
+                _vm.sortBy = $event
+              },
+              "update:sortDesc": function ($event) {
+                _vm.sortDesc = $event
+              },
+              "update:sort-desc": function ($event) {
+                _vm.sortDesc = $event
+              },
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "cell(label)",
+                fn: function (data) {
+                  return [
+                    _c(
+                      "b-link",
+                      {
+                        directives: [
+                          {
+                            name: "b-tooltip",
+                            rawName: "v-b-tooltip.hover",
+                            modifiers: { hover: true },
+                          },
+                        ],
+                        staticClass: "text-wrap",
+                        attrs: {
+                          id: "invoice-row-" + data.item.id + "-detail-icon",
+                          title: _vm.$t("budgets.options_show_detail_tooltip"),
+                        },
+                        on: { click: data.toggleDetails },
+                      },
+                      [
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(data.item.label) +
+                            "\n                "
+                        ),
+                      ]
+                    ),
+                  ]
+                },
+              },
+              {
+                key: "cell(branch)",
+                fn: function (data) {
+                  return [
+                    !data.item.branch.is_active
+                      ? _c(
+                          "span",
+                          {
+                            staticClass:
+                              "text-danger text-decoration-line-through",
+                          },
+                          [
+                            _vm._v(
+                              "\n                    " +
+                                _vm._s(data.item.branch.name) +
+                                "\n                "
+                            ),
+                          ]
+                        )
+                      : _c("span", [
+                          _vm._v(
+                            "\n                    " +
+                              _vm._s(data.item.branch.name) +
+                              "\n                "
                           ),
-                          _vm._v(" "),
-                          _c(
-                            "b-card-body",
-                            { staticClass: "statistics-body" },
-                            [
-                              _c(
-                                "b-row",
+                        ]),
+                  ]
+                },
+              },
+              {
+                key: "cell(patient)",
+                fn: function (data) {
+                  return [
+                    _vm.canAccess("patients.budget")
+                      ? [
+                          _vm.canAccess("patients.show")
+                            ? _c(
+                                "div",
                                 [
                                   _c(
-                                    "b-col",
+                                    "b-link",
                                     {
-                                      staticClass: "mb-2 mb-xl-0",
-                                      attrs: { xl: "3", sm: "6" },
+                                      staticClass:
+                                        "font-weight-bold d-block text-wrap",
+                                      attrs: {
+                                        to: {
+                                          name: "apps-patients-view",
+                                          params: { id: data.item.patient.id },
+                                        },
+                                      },
                                     },
                                     [
-                                      _c(
-                                        "b-media",
-                                        { attrs: { "no-body": "" } },
-                                        [
-                                          _c(
-                                            "b-media-aside",
-                                            { staticClass: "mr-2" },
-                                            [
-                                              _c(
-                                                "b-avatar",
-                                                {
-                                                  attrs: {
-                                                    size: "48",
-                                                    variant: "light-primary",
-                                                  },
-                                                },
-                                                [
-                                                  _c("feather-icon", {
-                                                    attrs: {
-                                                      size: "24",
-                                                      icon: "DollarSignIcon",
-                                                    },
-                                                  }),
-                                                ],
-                                                1
-                                              ),
-                                            ],
-                                            1
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "b-media-body",
-                                            { staticClass: "my-auto" },
-                                            [
-                                              _c(
-                                                "h5",
-                                                {
-                                                  staticClass:
-                                                    "font-weight-bolder mb-0",
-                                                },
-                                                [
-                                                  _vm._v(
-                                                    "\n                                            " +
-                                                      _vm._s(
-                                                        _vm.formatPrice(
-                                                          _vm.cashRegister
-                                                            .totalCash
-                                                        )
-                                                      ) +
-                                                      "\n                                        "
-                                                  ),
-                                                ]
-                                              ),
-                                              _vm._v(" "),
-                                              _c(
-                                                "b-card-text",
-                                                {
-                                                  staticClass:
-                                                    "font-small-3 mb-0",
-                                                },
-                                                [
-                                                  _vm._v(
-                                                    "\n                                            " +
-                                                      _vm._s(
-                                                        _vm.$t(
-                                                          "payments.method_cash"
-                                                        )
-                                                      ) +
-                                                      "\n                                        "
-                                                  ),
-                                                ]
-                                              ),
-                                            ],
-                                            1
-                                          ),
-                                        ],
-                                        1
+                                      _vm._v(
+                                        "\n                            " +
+                                          _vm._s(data.item.patient.full_name) +
+                                          "\n                        "
                                       ),
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "b-col",
-                                    {
-                                      staticClass: "mb-2 mb-xl-0",
-                                      attrs: { xl: "3", sm: "6" },
-                                    },
-                                    [
-                                      _c(
-                                        "b-media",
-                                        { attrs: { "no-body": "" } },
-                                        [
-                                          _c(
-                                            "b-media-aside",
-                                            { staticClass: "mr-2" },
-                                            [
-                                              _c(
-                                                "b-avatar",
-                                                {
-                                                  attrs: {
-                                                    size: "48",
-                                                    variant: "light-warning",
-                                                  },
-                                                },
-                                                [
-                                                  _c("feather-icon", {
-                                                    attrs: {
-                                                      size: "24",
-                                                      icon: "CreditCardIcon",
-                                                    },
-                                                  }),
-                                                ],
-                                                1
-                                              ),
-                                            ],
-                                            1
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "b-media-body",
-                                            { staticClass: "my-auto" },
-                                            [
-                                              _c(
-                                                "h5",
-                                                {
-                                                  staticClass:
-                                                    "font-weight-bolder mb-0",
-                                                },
-                                                [
-                                                  _vm._v(
-                                                    "\n                                            " +
-                                                      _vm._s(
-                                                        _vm.formatPrice(
-                                                          _vm.cashRegister
-                                                            .totalCreditCard +
-                                                            _vm.cashRegister
-                                                              .totalDebitCard
-                                                        )
-                                                      ) +
-                                                      "\n                                        "
-                                                  ),
-                                                ]
-                                              ),
-                                              _vm._v(" "),
-                                              _c(
-                                                "b-card-text",
-                                                {
-                                                  staticClass:
-                                                    "font-small-3 mb-0",
-                                                },
-                                                [
-                                                  _vm._v(
-                                                    "\n                                            " +
-                                                      _vm._s(
-                                                        _vm.$t("payments.cards")
-                                                      ) +
-                                                      "\n                                        "
-                                                  ),
-                                                ]
-                                              ),
-                                            ],
-                                            1
-                                          ),
-                                        ],
-                                        1
-                                      ),
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "b-col",
-                                    {
-                                      staticClass: "mb-2 mb-xl-0",
-                                      attrs: { xl: "3", sm: "6" },
-                                    },
-                                    [
-                                      _c(
-                                        "b-media",
-                                        { attrs: { "no-body": "" } },
-                                        [
-                                          _c(
-                                            "b-media-aside",
-                                            { staticClass: "mr-2" },
-                                            [
-                                              _c(
-                                                "b-avatar",
-                                                {
-                                                  attrs: {
-                                                    size: "48",
-                                                    variant: "light-success",
-                                                  },
-                                                },
-                                                [
-                                                  _c("feather-icon", {
-                                                    attrs: {
-                                                      size: "24",
-                                                      icon: "CheckIcon",
-                                                    },
-                                                  }),
-                                                ],
-                                                1
-                                              ),
-                                            ],
-                                            1
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "b-media-body",
-                                            { staticClass: "my-auto" },
-                                            [
-                                              _c(
-                                                "h5",
-                                                {
-                                                  staticClass:
-                                                    "font-weight-bolder mb-0",
-                                                },
-                                                [
-                                                  _vm._v(
-                                                    "\n                                            " +
-                                                      _vm._s(
-                                                        _vm.formatPrice(
-                                                          _vm.cashRegister
-                                                            .totalCheck
-                                                        )
-                                                      ) +
-                                                      "\n                                        "
-                                                  ),
-                                                ]
-                                              ),
-                                              _vm._v(" "),
-                                              _c(
-                                                "b-card-text",
-                                                {
-                                                  staticClass:
-                                                    "font-small-3 mb-0",
-                                                },
-                                                [
-                                                  _vm._v(
-                                                    "\n                                            " +
-                                                      _vm._s(
-                                                        _vm.$t(
-                                                          "payments.method_check"
-                                                        )
-                                                      ) +
-                                                      "\n                                        "
-                                                  ),
-                                                ]
-                                              ),
-                                            ],
-                                            1
-                                          ),
-                                        ],
-                                        1
-                                      ),
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "b-col",
-                                    {
-                                      staticClass: "mb-2 mb-xl-0",
-                                      attrs: { xl: "3", sm: "6" },
-                                    },
-                                    [
-                                      _c(
-                                        "b-media",
-                                        { attrs: { "no-body": "" } },
-                                        [
-                                          _c(
-                                            "b-media-aside",
-                                            { staticClass: "mr-2" },
-                                            [
-                                              _c(
-                                                "b-avatar",
-                                                {
-                                                  attrs: {
-                                                    size: "48",
-                                                    variant: "light-info",
-                                                  },
-                                                },
-                                                [
-                                                  _c("feather-icon", {
-                                                    attrs: {
-                                                      size: "24",
-                                                      icon: "TrendingUpIcon",
-                                                    },
-                                                  }),
-                                                ],
-                                                1
-                                              ),
-                                            ],
-                                            1
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "b-media-body",
-                                            { staticClass: "my-auto" },
-                                            [
-                                              _c(
-                                                "h5",
-                                                {
-                                                  staticClass:
-                                                    "font-weight-bolder mb-0",
-                                                },
-                                                [
-                                                  _vm._v(
-                                                    "\n                                            " +
-                                                      _vm._s(
-                                                        _vm.formatPrice(
-                                                          _vm.cashRegister
-                                                            .totalTransfer
-                                                        )
-                                                      ) +
-                                                      "\n                                        "
-                                                  ),
-                                                ]
-                                              ),
-                                              _vm._v(" "),
-                                              _c(
-                                                "b-card-text",
-                                                {
-                                                  staticClass:
-                                                    "font-small-3 mb-0",
-                                                },
-                                                [
-                                                  _vm._v(
-                                                    "\n                                            " +
-                                                      _vm._s(
-                                                        _vm.$t(
-                                                          "payments.method_transfer"
-                                                        )
-                                                      ) +
-                                                      "\n                                        "
-                                                  ),
-                                                ]
-                                              ),
-                                            ],
-                                            1
-                                          ),
-                                        ],
-                                        1
-                                      ),
-                                    ],
-                                    1
+                                    ]
                                   ),
                                 ],
                                 1
+                              )
+                            : _c("div", [
+                                _vm._v(
+                                  "\n                        " +
+                                    _vm._s(data.item.patient.full_name) +
+                                    "\n                    "
+                                ),
+                              ]),
+                          _vm._v(" "),
+                          _c("small", { staticClass: "text-muted" }, [
+                            _vm._v(_vm._s(data.item.patient.email)),
+                            _c("br"),
+                            _vm._v(
+                              "\n                        " +
+                                _vm._s(_vm.$t("patients.document_type")) +
+                                " (" +
+                                _vm._s(data.item.patient.document_type) +
+                                "): " +
+                                _vm._s(data.item.patient.rut) +
+                                "\n                    "
+                            ),
+                          ]),
+                        ]
+                      : [
+                          _c(
+                            "span",
+                            { staticClass: "text-wrap" },
+                            [
+                              _c(
+                                "b-media",
+                                {
+                                  attrs: { "vertical-align": "center" },
+                                  scopedSlots: _vm._u(
+                                    [
+                                      {
+                                        key: "aside",
+                                        fn: function () {
+                                          return [
+                                            _c("b-avatar", {
+                                              attrs: {
+                                                size: "32",
+                                                src: data.item.patient.has_media
+                                                  ? data.item.patient.avatar
+                                                  : null,
+                                                text: _vm.avatarText(
+                                                  data.item.patient.name
+                                                ),
+                                                variant: "light-primary",
+                                              },
+                                            }),
+                                          ]
+                                        },
+                                        proxy: true,
+                                      },
+                                    ],
+                                    null,
+                                    true
+                                  ),
+                                },
+                                [
+                                  _vm._v(" "),
+                                  _c(
+                                    "span",
+                                    {
+                                      staticClass:
+                                        "font-weight-bold d-block text-wrap",
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                                " +
+                                          _vm._s(data.item.patient.full_name) +
+                                          "\n                            "
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("small", { staticClass: "text-muted" }, [
+                                    _vm._v(_vm._s(data.item.patient.email)),
+                                    _c("br"),
+                                    _vm._v(
+                                      _vm._s(data.item.patient.document_type) +
+                                        ": " +
+                                        _vm._s(data.item.patient.rut)
+                                    ),
+                                  ]),
+                                ]
                               ),
                             ],
                             1
                           ),
                         ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-col",
-                    { attrs: { xl: "4", md: "6" } },
-                    [
-                      _c(
-                        "b-card",
-                        { staticClass: "earnings-card" },
-                        [
-                          _c(
-                            "b-row",
+                  ]
+                },
+              },
+              {
+                key: "cell(created_at)",
+                fn: function (data) {
+                  return [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(_vm.formatDateTime(data.item.created_at)) +
+                        "\n            "
+                    ),
+                  ]
+                },
+              },
+              {
+                key: "cell(approved)",
+                fn: function (data) {
+                  return [
+                    _c(
+                      "b-badge",
+                      {
+                        staticClass: "text-capitalize",
+                        attrs: {
+                          pill: "",
+                          variant: _vm.resolveStatusBadge(data.item.approved),
+                        },
+                      },
+                      [
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(_vm.formatActive(data.item.approved)) +
+                            "\n                "
+                        ),
+                      ]
+                    ),
+                  ]
+                },
+              },
+              {
+                key: "cell(total)",
+                fn: function (data) {
+                  return [
+                    _c(
+                      "span",
+                      { staticClass: "badge badge-light-primary float-left" },
+                      [
+                        _vm._v(
+                          _vm._s(_vm.$t("total")) +
+                            " " +
+                            _vm._s(_vm.formatPrice(data.item.total))
+                        ),
+                      ]
+                    ),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c(
+                      "span",
+                      {
+                        staticClass:
+                          "badge badge-light-success float-left mt-1",
+                      },
+                      [
+                        _vm._v(
+                          _vm._s(_vm.$t("budgets.table_action_paid")) +
+                            "\n                    " +
+                            _vm._s(_vm.formatPrice(data.item.total_paid)) +
+                            " "
+                        ),
+                      ]
+                    ),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c(
+                      "span",
+                      {
+                        staticClass: "badge badge-light-danger float-left mt-1",
+                      },
+                      [
+                        _vm._v(
+                          _vm._s(_vm.$t("budgets.table_action_balance")) +
+                            "\n                    " +
+                            _vm._s(_vm.formatPrice(data.item.total_debt)) +
+                            " "
+                        ),
+                      ]
+                    ),
+                    _c("br"),
+                  ]
+                },
+              },
+              {
+                key: "row-details",
+                fn: function (data) {
+                  return [
+                    data.item.comments
+                      ? _c(
+                          "b-row",
+                          { staticClass: "invoice-spacing" },
+                          [
+                            _c(
+                              "b-col",
+                              {
+                                staticClass: "p-1",
+                                attrs: { cols: "12", xl: "12" },
+                              },
+                              [
+                                _c("p", [
+                                  _vm._v(
+                                    _vm._s(_vm.$t("budgets.comments")) + ": "
+                                  ),
+                                  _c("small", [
+                                    _vm._v(_vm._s(data.item.comments)),
+                                  ]),
+                                ]),
+                              ]
+                            ),
+                          ],
+                          1
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c(
+                      "b-card",
+                      [
+                        _c("b-table", {
+                          ref: "tableItems",
+                          attrs: {
+                            responsive: "",
+                            items: data.item.budget_actions,
+                            fields: _vm.columnsDetail,
+                            small: true,
+                            stacked: "md",
+                          },
+                          scopedSlots: _vm._u(
                             [
-                              _c(
-                                "b-col",
-                                { attrs: { cols: "6" } },
-                                [
-                                  _c(
-                                    "b-card-title",
-                                    { staticClass: "mb-1 text-primary" },
-                                    [
-                                      _c("feather-icon", {
-                                        attrs: {
-                                          size: "24",
-                                          icon: "TrendingUpIcon",
-                                        },
-                                      }),
-                                      _vm._v(
-                                        "\n                                " +
-                                          _vm._s(_vm.$t("incomes.plural")) +
-                                          "\n                            "
-                                      ),
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c("h5", { staticClass: "mb-1" }, [
-                                    _c("strong", [
-                                      _vm._v(
+                              {
+                                key: "cell(type)",
+                                fn: function (data) {
+                                  return [
+                                    _vm._v(
+                                      "\n                            " +
                                         _vm._s(
-                                          _vm.formatPrice(_vm.totalIncomes)
-                                        )
-                                      ),
-                                    ]),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "b-card-title",
-                                    { staticClass: "mb-1 text-danger" },
-                                    [
-                                      _c("feather-icon", {
-                                        attrs: {
-                                          size: "24",
-                                          icon: "TrendingDownIcon",
-                                        },
-                                      }),
-                                      _vm._v(
-                                        "\n                                " +
-                                          _vm._s(_vm.$t("expenses.plural")) +
-                                          "\n                            "
-                                      ),
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c("h5", { staticClass: "mb-1" }, [
-                                    _c("strong", [
-                                      _vm._v(
-                                        _vm._s(
-                                          _vm.formatPrice(
-                                            _vm.cashRegister.totalExpenses
-                                          )
-                                        )
-                                      ),
-                                    ]),
-                                  ]),
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "b-col",
-                                { attrs: { cols: "6" } },
-                                [
-                                  _c(
-                                    "b-card-title",
-                                    { staticClass: "mb-1 text-success" },
-                                    [
-                                      _c("feather-icon", {
-                                        attrs: {
-                                          size: "24",
-                                          icon: "DollarSignIcon",
-                                        },
-                                      }),
+                                          data.item.action_type === "clinical"
+                                            ? _vm.$t("budgets.clinical_actions")
+                                            : _vm.$t(
+                                                "budgets.laboratory_actions"
+                                              )
+                                        ) +
+                                        "\n                        "
+                                    ),
+                                  ]
+                                },
+                              },
+                              {
+                                key: "cell(action)",
+                                fn: function (data) {
+                                  return [
+                                    _vm._v(
+                                      "\n                            " +
+                                        _vm._s(data.item.action_name) +
+                                        "\n                        "
+                                    ),
+                                  ]
+                                },
+                              },
+                              {
+                                key: "cell(group)",
+                                fn: function (data) {
+                                  return [
+                                    _vm._v(
+                                      "\n                            " +
+                                        _vm._s(data.item.action_group_name)
+                                    ),
+                                    _c("br"),
+                                  ]
+                                },
+                              },
+                              {
+                                key: "cell(area)",
+                                fn: function (data) {
+                                  return [
+                                    _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "badge badge-light-warning",
+                                      },
+                                      [_vm._v(_vm._s(data.item.area))]
+                                    ),
+                                  ]
+                                },
+                              },
+                              {
+                                key: "cell(price)",
+                                fn: function (data) {
+                                  return [
+                                    _c("span", { staticClass: "text-wrap" }, [
                                       _vm._v(
                                         "\n                                " +
                                           _vm._s(
-                                            _vm.$t(
-                                              "earnings.lable_total_earnings"
+                                            _vm.formatPrice(data.item.price)
+                                          ) +
+                                          "\n                            "
+                                      ),
+                                    ]),
+                                  ]
+                                },
+                              },
+                              {
+                                key: "cell(discount)",
+                                fn: function (data) {
+                                  return [
+                                    _c("span", { staticClass: "text-wrap" }, [
+                                      _vm._v(
+                                        "\n                                " +
+                                          _vm._s(
+                                            _vm.formatPrice(data.item.discount)
+                                          ) +
+                                          "\n                            "
+                                      ),
+                                    ]),
+                                  ]
+                                },
+                              },
+                              {
+                                key: "cell(total)",
+                                fn: function (data) {
+                                  return [
+                                    _c("span", { staticClass: "text-wrap" }, [
+                                      _vm._v(
+                                        "\n                                " +
+                                          _vm._s(
+                                            _vm.formatPrice(
+                                              parseFloat(data.item.price) -
+                                                parseFloat(data.item.discount)
                                             )
                                           ) +
                                           "\n                            "
                                       ),
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c("h4", { staticClass: "mb-1" }, [
-                                    _c("strong", [
-                                      _vm._v(
-                                        _vm._s(
-                                          _vm.formatPrice(
-                                            _vm.totalIncomes - _vm.totalExpenses
-                                          )
-                                        )
-                                      ),
                                     ]),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "b-card-text",
-                                    { staticClass: "text-muted font-small-2" },
-                                    [
-                                      _c(
-                                        "span",
-                                        { staticClass: "font-weight-bolder" },
-                                        [
-                                          _vm._v(
-                                            _vm._s(_vm.$t("earnings.label"))
-                                          ),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                ],
-                                1
-                              ),
-                            ],
-                            1
-                          ),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                ],
-                1
-              ),
-            ],
-            1
-          )
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.cashRegister.payments
-        ? _c(
-            "section",
-            { attrs: { id: "dashboard-ecommerce" } },
-            [
-              _c(
-                "b-row",
-                { staticClass: "match-height" },
-                [
-                  _c(
-                    "b-col",
-                    { attrs: { cols: "12", xl: "12", md: "12" } },
-                    [
-                      _c(
-                        "b-card",
-                        {
-                          staticClass: "card-company-table",
-                          attrs: { "no-body": "" },
-                        },
-                        [
-                          _c(
-                            "b-card-header",
-                            [
-                              _c("b-card-title", [
-                                _vm._v(_vm._s(_vm.$t("incomes.detail"))),
-                              ]),
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "b-card-body",
-                            { staticClass: "invoice-padding pt-0" },
-                            [
-                              _vm.cashRegister.payments
-                                ? _c(
-                                    "b-row",
-                                    { staticClass: "invoice-spacing" },
-                                    [
-                                      _c("b-table", {
-                                        staticClass: "mb-0",
-                                        attrs: {
-                                          items: _vm.cashRegister.payments,
-                                          responsive: "",
-                                          fields: _vm.columnsPayments,
-                                          "sticky-header": true,
-                                          "no-border-collapse": false,
-                                        },
-                                        scopedSlots: _vm._u(
-                                          [
-                                            {
-                                              key: "cell(updated_at)",
-                                              fn: function (data) {
-                                                return [
-                                                  _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "align-items-center",
-                                                    },
-                                                    [
-                                                      _vm._v(
-                                                        "\n                                        " +
-                                                          _vm._s(
-                                                            _vm.dateTimeFormat(
-                                                              data.item
-                                                                .updated_at
-                                                            )
-                                                          ) +
-                                                          "\n                                    "
-                                                      ),
-                                                    ]
-                                                  ),
-                                                ]
-                                              },
-                                            },
-                                            {
-                                              key: "cell(doctor)",
-                                              fn: function (data) {
-                                                return [
-                                                  _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "align-items-center",
-                                                    },
-                                                    [
-                                                      _vm._v(
-                                                        "\n                                        " +
-                                                          _vm._s(
-                                                            data.item.doctor
-                                                          ) +
-                                                          "\n                                    "
-                                                      ),
-                                                    ]
-                                                  ),
-                                                ]
-                                              },
-                                            },
-                                            {
-                                              key: "cell(patient)",
-                                              fn: function (data) {
-                                                return [
-                                                  _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "align-items-center",
-                                                    },
-                                                    [
-                                                      _vm._v(
-                                                        "\n                                        " +
-                                                          _vm._s(
-                                                            data.item.patient
-                                                          ) +
-                                                          "\n                                    "
-                                                      ),
-                                                    ]
-                                                  ),
-                                                ]
-                                              },
-                                            },
-                                            {
-                                              key: "cell(cash)",
-                                              fn: function (data) {
-                                                return [
-                                                  _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "align-items-center",
-                                                    },
-                                                    [
-                                                      _vm._v(
-                                                        "\n                                        " +
-                                                          _vm._s(
-                                                            data.item.method ===
-                                                              "cash"
-                                                              ? _vm.formatPrice(
-                                                                  data.item
-                                                                    .ap_amount
-                                                                )
-                                                              : 0.0
-                                                          ) +
-                                                          "\n                                    "
-                                                      ),
-                                                    ]
-                                                  ),
-                                                ]
-                                              },
-                                            },
-                                            {
-                                              key: "cell(bons)",
-                                              fn: function (data) {
-                                                return [
-                                                  _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "align-items-center",
-                                                    },
-                                                    [
-                                                      _vm._v(
-                                                        "\n                                        " +
-                                                          _vm._s(
-                                                            data.item.method !==
-                                                              "cash" &&
-                                                              data.item
-                                                                .method !==
-                                                                "check"
-                                                              ? _vm.$t(
-                                                                  "cash_register_detail_transfer"
-                                                                )
-                                                              : ""
-                                                          ) +
-                                                          "\n                                    "
-                                                      ),
-                                                    ]
-                                                  ),
-                                                ]
-                                              },
-                                            },
-                                            {
-                                              key: "cell(type)",
-                                              fn: function (data) {
-                                                return [
-                                                  _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "align-items-center",
-                                                    },
-                                                    [
-                                                      _vm._v(
-                                                        "\n                                        " +
-                                                          _vm._s(
-                                                            data.item.method ===
-                                                              "check"
-                                                              ? data.item.serie
-                                                              : ""
-                                                          ) +
-                                                          "\n                                    "
-                                                      ),
-                                                    ]
-                                                  ),
-                                                ]
-                                              },
-                                            },
-                                            {
-                                              key: "cell(bank)",
-                                              fn: function (data) {
-                                                return [
-                                                  _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "align-items-center",
-                                                    },
-                                                    [
-                                                      _vm._v(
-                                                        "\n                                        " +
-                                                          _vm._s(
-                                                            data.item.method ===
-                                                              "check"
-                                                              ? data.item.bank
-                                                              : ""
-                                                          ) +
-                                                          "\n                                    "
-                                                      ),
-                                                    ]
-                                                  ),
-                                                ]
-                                              },
-                                            },
-                                            {
-                                              key: "cell(bank_num)",
-                                              fn: function (data) {
-                                                return [
-                                                  _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "align-items-center",
-                                                    },
-                                                    [
-                                                      _vm._v(
-                                                        "\n                                        " +
-                                                          _vm._s(
-                                                            data.item.method ===
-                                                              "check"
-                                                              ? data.item.serie
-                                                              : ""
-                                                          ) +
-                                                          "\n                                    "
-                                                      ),
-                                                    ]
-                                                  ),
-                                                ]
-                                              },
-                                            },
-                                            {
-                                              key: "cell(check_date)",
-                                              fn: function (data) {
-                                                return [
-                                                  _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "align-items-center",
-                                                    },
-                                                    [
-                                                      _vm._v(
-                                                        "\n                                        " +
-                                                          _vm._s(
-                                                            data.item.method ===
-                                                              "check"
-                                                              ? data.item.date
-                                                              : ""
-                                                          ) +
-                                                          "\n                                    "
-                                                      ),
-                                                    ]
-                                                  ),
-                                                ]
-                                              },
-                                            },
-                                            {
-                                              key: "cell(check_owner)",
-                                              fn: function (data) {
-                                                return [
-                                                  _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "align-items-center",
-                                                    },
-                                                    [
-                                                      _vm._v(
-                                                        "\n                                        " +
-                                                          _vm._s(
-                                                            data.item.method ===
-                                                              "check"
-                                                              ? data.item
-                                                                  .reference
-                                                              : ""
-                                                          ) +
-                                                          "\n                                    "
-                                                      ),
-                                                    ]
-                                                  ),
-                                                ]
-                                              },
-                                            },
-                                            {
-                                              key: "cell(check_amount)",
-                                              fn: function (data) {
-                                                return [
-                                                  _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "align-items-center",
-                                                    },
-                                                    [
-                                                      _vm._v(
-                                                        "\n                                        " +
-                                                          _vm._s(
-                                                            data.item.method ===
-                                                              "check"
-                                                              ? _vm.formatPrice(
-                                                                  data.item
-                                                                    .ap_amount
-                                                                )
-                                                              : data.item
-                                                                  .method !==
-                                                                  "cash" &&
-                                                                data.item
-                                                                  .ap_method !==
-                                                                  "check"
-                                                              ? _vm.formatPrice(
-                                                                  data.item
-                                                                    .ap_amount
-                                                                )
-                                                              : 0.0
-                                                          ) +
-                                                          "\n                                    "
-                                                      ),
-                                                    ]
-                                                  ),
-                                                ]
-                                              },
-                                            },
-                                          ],
-                                          null,
-                                          false,
-                                          1870969488
-                                        ),
-                                      }),
-                                    ],
-                                    1
-                                  )
-                                : _vm._e(),
-                            ],
-                            1
-                          ),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-col",
-                    { attrs: { cols: "12", xl: "6", md: "6" } },
-                    [
-                      _c(
-                        "b-card",
-                        {
-                          staticClass: "card-company-table",
-                          attrs: { "no-body": "" },
-                        },
-                        [
-                          _c(
-                            "b-card-header",
-                            [
-                              _c("b-card-title", [
-                                _vm._v(_vm._s(_vm.$t("expenses.detail"))),
-                              ]),
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _vm.cashRegister.payments
-                            ? _c(
-                                "b-card-body",
-                                { staticClass: "invoice-padding pt-0" },
-                                [
-                                  _c("b-table", {
-                                    staticClass: "mb-0",
-                                    attrs: {
-                                      items: _vm.cashRegister.expenses,
-                                      responsive: "",
-                                      fields: _vm.columnsExpenses,
-                                      "sticky-header": true,
-                                      "no-border-collapse": false,
-                                    },
-                                    scopedSlots: _vm._u(
-                                      [
-                                        {
-                                          key: "cell(reference)",
-                                          fn: function (data) {
-                                            return [
-                                              _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    "align-items-center",
-                                                },
-                                                [
-                                                  _vm._v(
-                                                    "\n                                    " +
-                                                      _vm._s(
-                                                        data.item.reference
-                                                      ) +
-                                                      "\n                                "
-                                                  ),
-                                                ]
-                                              ),
-                                            ]
-                                          },
-                                        },
-                                        {
-                                          key: "cell(note)",
-                                          fn: function (data) {
-                                            return [
-                                              _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    "align-items-center",
-                                                },
-                                                [
-                                                  _vm._v(
-                                                    "\n                                    " +
-                                                      _vm._s(data.item.note) +
-                                                      "\n                                "
-                                                  ),
-                                                ]
-                                              ),
-                                            ]
-                                          },
-                                        },
-                                        {
-                                          key: "cell(total)",
-                                          fn: function (data) {
-                                            return [
-                                              _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    " align-items-center",
-                                                },
-                                                [
-                                                  _vm._v(
-                                                    "\n                                    " +
-                                                      _vm._s(
-                                                        _vm.formatPrice(
-                                                          data.item.amount
-                                                        )
-                                                      ) +
-                                                      "\n                                "
-                                                  ),
-                                                ]
-                                              ),
-                                            ]
-                                          },
-                                        },
-                                      ],
-                                      null,
-                                      false,
-                                      783069093
-                                    ),
-                                  }),
-                                ],
-                                1
-                              )
-                            : _vm._e(),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-col",
-                    { attrs: { cols: "12", xl: "6", md: "6" } },
-                    [
-                      _c(
-                        "b-card",
-                        {
-                          staticClass: "card-company-table",
-                          attrs: { "no-body": "" },
-                        },
-                        [
-                          _c(
-                            "b-card-header",
-                            [
-                              _c("b-card-title", [
-                                _vm._v(
-                                  _vm._s(_vm.$t("cash_registers.detail_xrays"))
-                                ),
-                              ]),
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _vm.cashRegister.xrays
-                            ? _c(
-                                "b-card-body",
-                                { staticClass: "invoice-padding pt-0" },
-                                [
-                                  _c("b-table", {
-                                    staticClass: "mb-0",
-                                    attrs: {
-                                      items: _vm.cashRegister.xrays,
-                                      responsive: "",
-                                      fields: _vm.columnsXrays,
-                                      "sticky-header": true,
-                                      "no-border-collapse": false,
-                                    },
-                                    scopedSlots: _vm._u(
-                                      [
-                                        {
-                                          key: "cell(updated_at)",
-                                          fn: function (data) {
-                                            return [
-                                              _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    " align-items-center",
-                                                },
-                                                [
-                                                  _vm._v(
-                                                    "\n                                    " +
-                                                      _vm._s(
-                                                        _vm.dateTimeFormat(
-                                                          data.item.updated_at
-                                                        )
-                                                      ) +
-                                                      "\n                                "
-                                                  ),
-                                                ]
-                                              ),
-                                            ]
-                                          },
-                                        },
-                                        {
-                                          key: "cell(total)",
-                                          fn: function (data) {
-                                            return [
-                                              _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    " align-items-center",
-                                                },
-                                                [
-                                                  _vm._v(
-                                                    "\n                                    " +
-                                                      _vm._s(
-                                                        _vm.formatPrice(
-                                                          data.item.amount
-                                                        )
-                                                      ) +
-                                                      "\n                                "
-                                                  ),
-                                                ]
-                                              ),
-                                            ]
-                                          },
-                                        },
-                                      ],
-                                      null,
-                                      false,
-                                      3348856363
-                                    ),
-                                  }),
-                                ],
-                                1
-                              )
-                            : _vm._e(),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("b-col", { attrs: { cols: "12", xl: "6", md: "6" } }),
-                  _vm._v(" "),
-                  _c(
-                    "b-col",
-                    { attrs: { cols: "12", xl: "6", md: "6" } },
-                    [
-                      _c(
-                        "b-card",
-                        {
-                          staticClass: "card-company-table",
-                          attrs: { "no-body": "" },
-                        },
-                        [
-                          _c("b-card-header"),
-                          _vm._v(" "),
-                          _c(
-                            "b-card-body",
-                            { staticClass: "invoice-padding pt-0" },
-                            [
-                              _c(
-                                "b-col",
-                                { attrs: { cols: "12" } },
-                                [
-                                  _c(
-                                    "b-form-group",
-                                    {
-                                      attrs: {
-                                        label: _vm.$t(
-                                          "cash_registers.comments"
-                                        ),
-                                        description: _vm.$t(
-                                          "cash_registers.comments_help"
-                                        ),
-                                        "label-for": "comments",
-                                      },
-                                    },
-                                    [
-                                      _c("b-form-textarea", {
-                                        attrs: {
-                                          id: "comments",
-                                          placeholder: _vm.$t(
-                                            "cash_registers.comments_placeholder"
-                                          ),
-                                          rows: "3",
-                                        },
-                                        model: {
-                                          value: _vm.cashRegister.comments,
-                                          callback: function ($$v) {
-                                            _vm.$set(
-                                              _vm.cashRegister,
-                                              "comments",
-                                              $$v
-                                            )
-                                          },
-                                          expression: "cashRegister.comments",
-                                        },
-                                      }),
-                                    ],
-                                    1
-                                  ),
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "b-col",
-                                { attrs: { cols: "12" } },
-                                [
-                                  _vm.canAccess("cash_registers.store") &&
-                                  _vm.cashRegister.totalCash +
-                                    _vm.cashRegister.totalDebitCard +
-                                    _vm.cashRegister.totalCreditCard +
-                                    _vm.cashRegister.totalCheck +
-                                    _vm.cashRegister.totalTransfer
-                                    ? _c(
-                                        "b-button",
-                                        {
-                                          staticClass: "mt-2",
-                                          attrs: { variant: "primary" },
-                                          on: { click: _vm.saveCashRegister },
-                                        },
-                                        [
-                                          _vm._v(
-                                            "\n                                " +
-                                              _vm._s(_vm.$t("generate")) +
-                                              "\n                            "
-                                          ),
-                                        ]
-                                      )
-                                    : _vm._e(),
-                                  _vm._v(" "),
-                                  _c(
-                                    "b-button",
-                                    {
-                                      staticClass: "mt-2",
-                                      attrs: { variant: "danger" },
-                                      on: { click: _vm.clearFilter },
-                                    },
-                                    [
+                                  ]
+                                },
+                              },
+                              {
+                                key: "cell(paid)",
+                                fn: function (data) {
+                                  return [
+                                    _c("span", { staticClass: "text-wrap" }, [
                                       _vm._v(
                                         "\n                                " +
-                                          _vm._s(_vm.$t("cancel")) +
+                                          _vm._s(
+                                            _vm.formatPrice(data.item.paid)
+                                          ) +
                                           "\n                            "
                                       ),
-                                    ]
-                                  ),
+                                    ]),
+                                  ]
+                                },
+                              },
+                              {
+                                key: "cell(debt)",
+                                fn: function (data) {
+                                  return [
+                                    _c("span", { staticClass: "text-wrap" }, [
+                                      _vm._v(
+                                        "\n                                " +
+                                          _vm._s(
+                                            _vm.formatPrice(data.item.debt)
+                                          ) +
+                                          "\n                            "
+                                      ),
+                                    ]),
+                                  ]
+                                },
+                              },
+                            ],
+                            null,
+                            true
+                          ),
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "b-button",
+                          {
+                            staticClass: "mt-3",
+                            attrs: { size: "sm", variant: "outline-warning" },
+                            on: { click: data.toggleDetails },
+                          },
+                          [
+                            _vm._v(
+                              "\n                        " +
+                                _vm._s(_vm.$t("budgets.options_hide_detail")) +
+                                "\n                    "
+                            ),
+                          ]
+                        ),
+                      ],
+                      1
+                    ),
+                  ]
+                },
+              },
+              {
+                key: "cell(actions)",
+                fn: function (data) {
+                  return [
+                    _c(
+                      "div",
+                      { staticClass: "demo-inline-spacing" },
+                      [
+                        data.item.total_debt > 0 &&
+                        data.item.approved &&
+                        _vm.canAccess("payments.create")
+                          ? _c(
+                              "b-button",
+                              {
+                                directives: [
+                                  {
+                                    name: "ripple",
+                                    rawName: "v-ripple.400",
+                                    value: "rgba(255, 255, 255, 0.15)",
+                                    expression: "'rgba(255, 255, 255, 0.15)'",
+                                    modifiers: { 400: true },
+                                  },
+                                  {
+                                    name: "b-tooltip",
+                                    rawName: "v-b-tooltip.hover.right",
+                                    value:
+                                      "" +
+                                      _vm.$t("budgets.options_paid_tooltip"),
+                                    expression:
+                                      "`${$t('budgets.options_paid_tooltip')}`",
+                                    modifiers: { hover: true, right: true },
+                                  },
                                 ],
-                                1
-                              ),
+                                staticClass: "btn-icon",
+                                attrs: { variant: "primary", size: "sm" },
+                                on: {
+                                  click: function ($event) {
+                                    return _vm.$router.push({
+                                      name: "payments.budgets.charge",
+                                      params: { id: data.item.id },
+                                    })
+                                  },
+                                },
+                              },
+                              [
+                                _c("feather-icon", {
+                                  attrs: { icon: "DollarSignIcon" },
+                                }),
+                              ],
+                              1
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.findSetting("enable_email_notification") &&
+                        _vm.canAccess("budgets.send")
+                          ? _c(
+                              "b-button",
+                              {
+                                directives: [
+                                  {
+                                    name: "ripple",
+                                    rawName: "v-ripple.400",
+                                    value: "rgba(255, 255, 255, 0.15)",
+                                    expression: "'rgba(255, 255, 255, 0.15)'",
+                                    modifiers: { 400: true },
+                                  },
+                                  {
+                                    name: "b-tooltip",
+                                    rawName: "v-b-tooltip.hover.right",
+                                    value: "" + _vm.$t("button_tooltip_send"),
+                                    expression:
+                                      "`${$t('button_tooltip_send')}`",
+                                    modifiers: { hover: true, right: true },
+                                  },
+                                ],
+                                staticClass: "btn-icon",
+                                attrs: { variant: "warning", size: "sm" },
+                                on: {
+                                  click: function ($event) {
+                                    return _vm.sendEmail(data.item)
+                                  },
+                                },
+                              },
+                              [
+                                _c("feather-icon", {
+                                  attrs: { icon: "SendIcon" },
+                                }),
+                              ],
+                              1
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c(
+                          "b-button",
+                          {
+                            directives: [
+                              {
+                                name: "ripple",
+                                rawName: "v-ripple.400",
+                                value: "rgba(255, 255, 255, 0.15)",
+                                expression: "'rgba(255, 255, 255, 0.15)'",
+                                modifiers: { 400: true },
+                              },
+                              {
+                                name: "b-tooltip",
+                                rawName: "v-b-tooltip.hover.right",
+                                value: "" + _vm.$t("button_tooltip_detail"),
+                                expression: "`${$t('button_tooltip_detail')}`",
+                                modifiers: { hover: true, right: true },
+                              },
+                            ],
+                            staticClass: "btn-icon",
+                            attrs: { variant: "info", size: "sm" },
+                            on: {
+                              click: function ($event) {
+                                return _vm.$router.push({
+                                  name: "apps-budgets-show",
+                                  params: { id: data.item.id },
+                                })
+                              },
+                            },
+                          },
+                          [_c("feather-icon", { attrs: { icon: "EyeIcon" } })],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "b-button",
+                          {
+                            directives: [
+                              {
+                                name: "ripple",
+                                rawName: "v-ripple.400",
+                                value: "rgba(255, 255, 255, 0.15)",
+                                expression: "'rgba(255, 255, 255, 0.15)'",
+                                modifiers: { 400: true },
+                              },
+                              {
+                                name: "b-tooltip",
+                                rawName: "v-b-tooltip.hover.right",
+                                value: "" + _vm.$t("button_tooltip_download"),
+                                expression:
+                                  "`${$t('button_tooltip_download')}`",
+                                modifiers: { hover: true, right: true },
+                              },
+                            ],
+                            staticClass: "btn-icon",
+                            attrs: { variant: "dark", size: "sm" },
+                            on: {
+                              click: function ($event) {
+                                return _vm.donwloadBudget(data.item)
+                              },
+                            },
+                          },
+                          [
+                            _c("feather-icon", {
+                              attrs: { icon: "DownloadIcon" },
+                            }),
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        !data.item.deleted_at && !data.item.approved
+                          ? _c(
+                              "b-dropdown",
+                              {
+                                attrs: {
+                                  variant: "link",
+                                  "toggle-class": "p-0",
+                                  "no-caret": "",
+                                  right: _vm.$store.state.appConfig.isRTL,
+                                },
+                                scopedSlots: _vm._u(
+                                  [
+                                    {
+                                      key: "button-content",
+                                      fn: function () {
+                                        return [
+                                          _c("feather-icon", {
+                                            staticClass:
+                                              "align-middle text-body",
+                                            attrs: {
+                                              icon: "MoreVerticalIcon",
+                                              size: "22",
+                                            },
+                                          }),
+                                        ]
+                                      },
+                                      proxy: true,
+                                    },
+                                  ],
+                                  null,
+                                  true
+                                ),
+                              },
+                              [
+                                _vm._v(" "),
+                                !data.item.approved &&
+                                _vm.canAccess("budgets.approve")
+                                  ? _c(
+                                      "b-dropdown-item",
+                                      {
+                                        on: {
+                                          click: function ($event) {
+                                            return _vm.setApproved(data.item)
+                                          },
+                                        },
+                                      },
+                                      [
+                                        _c("feather-icon", {
+                                          attrs: { icon: "CheckSquareIcon" },
+                                        }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "span",
+                                          { staticClass: "align-middle ml-50" },
+                                          [
+                                            _vm._v(
+                                              _vm._s(
+                                                _vm.$t(
+                                                  "budgets.options_approve"
+                                                )
+                                              )
+                                            ),
+                                          ]
+                                        ),
+                                      ],
+                                      1
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                !data.item.deleted_at &&
+                                !data.item.approved &&
+                                _vm.canAccess("budgets.edit")
+                                  ? _c(
+                                      "b-dropdown-item",
+                                      {
+                                        attrs: {
+                                          to: {
+                                            name: "apps-budgets-edit",
+                                            params: { id: data.item.id },
+                                          },
+                                        },
+                                      },
+                                      [
+                                        _c("feather-icon", {
+                                          attrs: { icon: "EditIcon" },
+                                        }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "span",
+                                          { staticClass: "align-middle ml-50" },
+                                          [
+                                            _vm._v(
+                                              _vm._s(
+                                                _vm.$t("budgets.options_edit")
+                                              )
+                                            ),
+                                          ]
+                                        ),
+                                      ],
+                                      1
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                !data.item.deleted_at &&
+                                data.item.total_paid <= 0 &&
+                                !data.item.approved &&
+                                _vm.canAccess("budgets.destroy")
+                                  ? _c(
+                                      "b-dropdown-item",
+                                      {
+                                        on: {
+                                          click: function ($event) {
+                                            return _vm.deleteBudget(data.item)
+                                          },
+                                        },
+                                      },
+                                      [
+                                        _c("feather-icon", {
+                                          attrs: { icon: "TrashIcon" },
+                                        }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "span",
+                                          { staticClass: "align-middle ml-50" },
+                                          [
+                                            _vm._v(
+                                              _vm._s(
+                                                _vm.$t("budgets.options_delete")
+                                              )
+                                            ),
+                                          ]
+                                        ),
+                                      ],
+                                      1
+                                    )
+                                  : _vm._e(),
+                              ],
+                              1
+                            )
+                          : _vm._e(),
+                      ],
+                      1
+                    ),
+                  ]
+                },
+              },
+            ]),
+          }),
+          _vm._v(" "),
+          _vm.budgets
+            ? _c(
+                "div",
+                { staticClass: "mx-2 mb-2" },
+                [
+                  _c(
+                    "b-row",
+                    [
+                      _c(
+                        "b-col",
+                        {
+                          staticClass:
+                            "d-flex align-items-center justify-content-center justify-content-sm-start",
+                          attrs: { cols: "12", sm: "6" },
+                        },
+                        [
+                          _c("span", { staticClass: "text-muted" }, [
+                            _vm._v(
+                              _vm._s(
+                                _vm.resolvePaginationTranslate(_vm.dataMeta)
+                              )
+                            ),
+                          ]),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-col",
+                        {
+                          staticClass:
+                            "d-flex align-items-center justify-content-center justify-content-sm-end",
+                          attrs: { cols: "12", sm: "6" },
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "mt-2 demo-spacing-0" },
+                            [
+                              _c("b-pagination", {
+                                attrs: {
+                                  "total-rows": _vm.totalBudget,
+                                  "per-page": _vm.perPage,
+                                  size: "lg",
+                                },
+                                model: {
+                                  value: _vm.currentPage,
+                                  callback: function ($$v) {
+                                    _vm.currentPage = $$v
+                                  },
+                                  expression: "currentPage",
+                                },
+                              }),
                             ],
                             1
                           ),
-                        ],
-                        1
+                        ]
                       ),
                     ],
                     1
                   ),
                 ],
                 1
-              ),
-            ],
-            1
-          )
-        : _vm._e(),
-    ]
+              )
+            : _vm._e(),
+        ],
+        1
+      ),
+    ],
+    1
   )
 }
 var staticRenderFns = []
@@ -2688,231 +2050,134 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./resources/js/src/providers/CashRegisters.js":
-/*!*****************************************************!*\
-  !*** ./resources/js/src/providers/CashRegisters.js ***!
-  \*****************************************************/
+/***/ "./resources/js/src/assets/images/avatar_default.png":
+/*!***********************************************************!*\
+  !*** ./resources/js/src/assets/images/avatar_default.png ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/_/_/_/_/saas-dental/resources/js/src/assets/images/avatar_default.png";
+
+/***/ }),
+
+/***/ "./resources/js/src/providers/Budgets.js":
+/*!***********************************************!*\
+  !*** ./resources/js/src/providers/Budgets.js ***!
+  \***********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CashRegisters; });
-/* harmony import */ var D_projects_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
-/* harmony import */ var D_projects_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Budgets; });
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
-var CashRegisters = /*#__PURE__*/function () {
-  function CashRegisters() {
-    Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, CashRegisters);
+var Budgets = /*#__PURE__*/function () {
+  function Budgets() {
+    Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Budgets);
   }
-  Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__["default"])(CashRegisters, [{
-    key: "getList",
-    value: function getList(query) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/cash-registers', {
-        params: query
-      });
-    }
-  }, {
-    key: "generate",
-    value: function generate(query) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/cash-registers/generate', {
-        params: query
-      });
-    }
-  }, {
-    key: "store",
-    value: function store(payload) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/api/cash-registers', payload);
-    }
-  }, {
-    key: "getDetail",
-    value: function getDetail(id) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/cash-registers/".concat(id));
-    }
-  }, {
-    key: "download",
-    value: function download(id) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/cash-registers/export/".concat(id), {
-        responseType: "arraybuffer"
-      });
-    }
-  }, {
-    key: "downloadPreview",
-    value: function downloadPreview(query) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/cash-registers/generate', {
-        responseType: "arraybuffer",
-        params: query
-      });
-    }
-  }]);
-  return CashRegisters;
-}();
-
-
-/***/ }),
-
-/***/ "./resources/js/src/providers/Users.js":
-/*!*********************************************!*\
-  !*** ./resources/js/src/providers/Users.js ***!
-  \*********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Users; });
-/* harmony import */ var D_projects_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
-/* harmony import */ var D_projects_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
-/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.array.concat.js */ "./node_modules/core-js/modules/es.array.concat.js");
-/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
-
-
-
-/* eslint-disable class-methods-use-this */
-
-var Users = /*#__PURE__*/function () {
-  function Users() {
-    Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Users);
-  }
-  Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__["default"])(Users, [{
-    key: "index",
+  Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__["default"])(Budgets, [{
+    key: "save",
     value:
     /**
-    * Function to get all users without pagination
+    * Function to update a branch
+    * @param {Object} formdata
+    * @return AxiosPromise
     */
-    function index(query) {
-      return axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("/api/users", {
-        params: query
-      });
+    function save(formdata) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/api/budgets', formdata);
     }
 
     /**
-     * Function to permissions
-     * @return Promise
-     */
-  }, {
-    key: "permissions",
-    value: function permissions() {
-      return axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("api/permissions");
-    }
-
-    /**
-     * Function to create new user
-     * @param {Object} formdata
-     * @return AxiosPromise
-     */
-  }, {
-    key: "store",
-    value: function store(formdata) {
-      return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post("/api/users", formdata);
-    }
-
-    /**
-     * Function to update a user
-     * @param {Object} formdata
-     * @return AxiosPromise
-     */
+    * Function to update a branch
+    * @param {Object} formdata
+    * @return AxiosPromise
+    */
   }, {
     key: "update",
     value: function update(id, formdata) {
-      return axios__WEBPACK_IMPORTED_MODULE_3___default.a.put("/api/users/".concat(id), formdata, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      });
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("/api/budgets/".concat(id), formdata);
     }
-
-    /**
-     * Function to get information by user
-     * @param {Number} id
-     * @return AxiosPromise
-     */
   }, {
-    key: "getUserDetail",
-    value: function getUserDetail(id, query) {
-      return axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("/api/users/".concat(id), {
-        params: query
-      });
+    key: "approve",
+    value: function approve(id) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("/api/budgets/".concat(id, "/approve"));
     }
-
-    /**
-     * Funtion to delete multi users
-     * @param {Array} users
-     * @return AxiosPromise
-     */
   }, {
-    key: "destroy",
-    value: function destroy(id) {
-      return axios__WEBPACK_IMPORTED_MODULE_3___default.a["delete"]("/api/users/".concat(id));
+    key: "sendEmail",
+    value: function sendEmail(id, formData) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/budgets/".concat(id, "/send"), formData);
     }
 
     /**
-     * Function to get all users without pagination
-     */
+    * Function to get information by budget
+    * @param {Number} id
+    * @return AxiosPromise
+    */
+  }, {
+    key: "getBudgetDetail",
+    value: function getBudgetDetail(id) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/budgets/".concat(id));
+    }
+
+    /**
+    * Funtion to delete actions
+    * @param {Array} users
+    * @return AxiosPromise
+    */
+  }, {
+    key: "deleteBudget",
+    value: function deleteBudget(id) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a["delete"]("/api/budgets/".concat(id));
+    }
+
+    /**
+    * Function to get all budgets without pagination
+    */
   }, {
     key: "getList",
     value: function getList(query) {
-      return axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("/api/users", {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/budgets', {
         params: query
       });
     }
-
-    /**
-     * Function to active an user
-     * @param {Object} formdata
-     * @return AxiosPromise
-     */
   }, {
-    key: "activeUser",
-    value: function activeUser(contactId, userId, formdata) {
-      return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post("".concat(process.env.API_URL, "/contacts/").concat(contactId, "/user/").concat(userId), formdata);
-    }
-
-    /**
-     * Function to request password change
-     * @return Promise
-     */
-  }, {
-    key: "passwordChange",
-    value: function passwordChange(formdata) {
-      return axios__WEBPACK_IMPORTED_MODULE_3___default.a.put("api/change-password", formdata);
-    }
-  }, {
-    key: "getUserByCriteria",
-    value: function getUserByCriteria(criteria) {
-      return axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("/api/users/criteria", {
-        params: {
-          criteria: criteria
-        }
+    key: "donwloadPDF",
+    value: function donwloadPDF(id, query) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/api/budgets/pdf', {
+        id: id
+      }, {
+        responseType: 'arraybuffer'
+      }, {
+        params: query
       });
     }
   }]);
-  return Users;
+  return Budgets;
 }();
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue":
-/*!******************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue ***!
-  \******************************************************************************************/
+/***/ "./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue":
+/*!************************************************************************!*\
+  !*** ./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue ***!
+  \************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _CashRegisterAdd_vue_vue_type_template_id_698ac8d2_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CashRegisterAdd.vue?vue&type=template&id=698ac8d2&scoped=true& */ "./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=template&id=698ac8d2&scoped=true&");
-/* harmony import */ var _CashRegisterAdd_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CashRegisterAdd.vue?vue&type=script&lang=js& */ "./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _CashRegisterAdd_vue_vue_type_style_index_0_id_698ac8d2_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CashRegisterAdd.vue?vue&type=style&index=0&id=698ac8d2&lang=scss&scoped=true& */ "./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=style&index=0&id=698ac8d2&lang=scss&scoped=true&");
-/* harmony import */ var _CashRegisterAdd_vue_vue_type_style_index_1_id_698ac8d2_lang_scss___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CashRegisterAdd.vue?vue&type=style&index=1&id=698ac8d2&lang=scss& */ "./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=style&index=1&id=698ac8d2&lang=scss&");
+/* harmony import */ var _BudgetList_vue_vue_type_template_id_39eed3b0_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BudgetList.vue?vue&type=template&id=39eed3b0&scoped=true& */ "./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=template&id=39eed3b0&scoped=true&");
+/* harmony import */ var _BudgetList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BudgetList.vue?vue&type=script&lang=js& */ "./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _BudgetList_vue_vue_type_style_index_0_id_39eed3b0_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BudgetList.vue?vue&type=style&index=0&id=39eed3b0&lang=scss&scoped=true& */ "./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=style&index=0&id=39eed3b0&lang=scss&scoped=true&");
+/* harmony import */ var _BudgetList_vue_vue_type_style_index_1_id_39eed3b0_lang_scss___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./BudgetList.vue?vue&type=style&index=1&id=39eed3b0&lang=scss& */ "./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=style&index=1&id=39eed3b0&lang=scss&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -2924,82 +2189,82 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_4__["default"])(
-  _CashRegisterAdd_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _CashRegisterAdd_vue_vue_type_template_id_698ac8d2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _CashRegisterAdd_vue_vue_type_template_id_698ac8d2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _BudgetList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _BudgetList_vue_vue_type_template_id_39eed3b0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _BudgetList_vue_vue_type_template_id_39eed3b0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "698ac8d2",
+  "39eed3b0",
   null
   
 )
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue"
+component.options.__file = "resources/js/src/views/apps/budgets/budget-list/BudgetList.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************************************************/
+/***/ "./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterAdd_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CashRegisterAdd.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterAdd_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BudgetList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./BudgetList.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BudgetList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=style&index=0&id=698ac8d2&lang=scss&scoped=true&":
-/*!****************************************************************************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=style&index=0&id=698ac8d2&lang=scss&scoped=true& ***!
-  \****************************************************************************************************************************************************/
+/***/ "./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=style&index=0&id=39eed3b0&lang=scss&scoped=true&":
+/*!**********************************************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=style&index=0&id=39eed3b0&lang=scss&scoped=true& ***!
+  \**********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterAdd_vue_vue_type_style_index_0_id_698ac8d2_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/style-loader!../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CashRegisterAdd.vue?vue&type=style&index=0&id=698ac8d2&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=style&index=0&id=698ac8d2&lang=scss&scoped=true&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterAdd_vue_vue_type_style_index_0_id_698ac8d2_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterAdd_vue_vue_type_style_index_0_id_698ac8d2_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterAdd_vue_vue_type_style_index_0_id_698ac8d2_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterAdd_vue_vue_type_style_index_0_id_698ac8d2_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BudgetList_vue_vue_type_style_index_0_id_39eed3b0_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/style-loader!../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./BudgetList.vue?vue&type=style&index=0&id=39eed3b0&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=style&index=0&id=39eed3b0&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BudgetList_vue_vue_type_style_index_0_id_39eed3b0_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BudgetList_vue_vue_type_style_index_0_id_39eed3b0_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BudgetList_vue_vue_type_style_index_0_id_39eed3b0_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BudgetList_vue_vue_type_style_index_0_id_39eed3b0_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=style&index=1&id=698ac8d2&lang=scss&":
-/*!****************************************************************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=style&index=1&id=698ac8d2&lang=scss& ***!
-  \****************************************************************************************************************************************/
+/***/ "./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=style&index=1&id=39eed3b0&lang=scss&":
+/*!**********************************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=style&index=1&id=39eed3b0&lang=scss& ***!
+  \**********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterAdd_vue_vue_type_style_index_1_id_698ac8d2_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/style-loader!../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CashRegisterAdd.vue?vue&type=style&index=1&id=698ac8d2&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=style&index=1&id=698ac8d2&lang=scss&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterAdd_vue_vue_type_style_index_1_id_698ac8d2_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterAdd_vue_vue_type_style_index_1_id_698ac8d2_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterAdd_vue_vue_type_style_index_1_id_698ac8d2_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterAdd_vue_vue_type_style_index_1_id_698ac8d2_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BudgetList_vue_vue_type_style_index_1_id_39eed3b0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/style-loader!../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./BudgetList.vue?vue&type=style&index=1&id=39eed3b0&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=style&index=1&id=39eed3b0&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BudgetList_vue_vue_type_style_index_1_id_39eed3b0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BudgetList_vue_vue_type_style_index_1_id_39eed3b0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BudgetList_vue_vue_type_style_index_1_id_39eed3b0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BudgetList_vue_vue_type_style_index_1_id_39eed3b0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=template&id=698ac8d2&scoped=true&":
-/*!*************************************************************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=template&id=698ac8d2&scoped=true& ***!
-  \*************************************************************************************************************************************/
+/***/ "./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=template&id=39eed3b0&scoped=true&":
+/*!*******************************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=template&id=39eed3b0&scoped=true& ***!
+  \*******************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterAdd_vue_vue_type_template_id_698ac8d2_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CashRegisterAdd.vue?vue&type=template&id=698ac8d2&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue?vue&type=template&id=698ac8d2&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterAdd_vue_vue_type_template_id_698ac8d2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BudgetList_vue_vue_type_template_id_39eed3b0_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./BudgetList.vue?vue&type=template&id=39eed3b0&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/budgets/budget-list/BudgetList.vue?vue&type=template&id=39eed3b0&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BudgetList_vue_vue_type_template_id_39eed3b0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterAdd_vue_vue_type_template_id_698ac8d2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BudgetList_vue_vue_type_template_id_39eed3b0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

@@ -419,7 +419,7 @@ module.exports = function (url, options) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/_/_/_/_/dental/node_modules/vue-phone-number-input/dist/img/flags.9c96e0ed.png";
+module.exports = "/images/_/_/_/_/saas-dental/node_modules/vue-phone-number-input/dist/img/flags.9c96e0ed.png";
 
 /***/ }),
 

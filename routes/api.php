@@ -40,6 +40,7 @@ Route::group(['prefix' => 'auth'], function () {
 
 
 Route::post('/tenants/register', [TenantRegisterController::class, 'store'])->name('tenants.store');
+
 Route::get("settings/general", "App\Http\Controllers\Central\GeneralSettingController@index")->name('settings.general');
 
 Route::group(['middleware' => 'auth:api'], function () {

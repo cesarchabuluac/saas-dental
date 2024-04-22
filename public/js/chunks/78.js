@@ -1,16 +1,16 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[78],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Warehouses.vue?vue&type=script&lang=js&":
-/*!*************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/inventories/Warehouses.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/SubCategories.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/inventories/SubCategories.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js */ "./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js");
-/* harmony import */ var D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js */ "./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js");
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
 /* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
 /* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var core_js_modules_es_string_search_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.string.search.js */ "./node_modules/core-js/modules/es.string.search.js");
@@ -35,8 +35,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var animate_css__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(animate_css__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var vee_validate__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! vee-validate */ "./node_modules/vee-validate/dist/vee-validate.esm.js");
 /* harmony import */ var _validations__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @validations */ "./resources/js/src/@core/utils/validations/validations.js");
-/* harmony import */ var _providers_inventories_Warehouses__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @/providers/inventories/Warehouses */ "./resources/js/src/providers/inventories/Warehouses.js");
-/* harmony import */ var _providers_BranchOffices__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @/providers/BranchOffices */ "./resources/js/src/providers/BranchOffices.js");
+/* harmony import */ var _providers_inventories_SubCategories__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @/providers/inventories/SubCategories */ "./resources/js/src/providers/inventories/SubCategories.js");
+/* harmony import */ var _providers_inventories_Categories__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @/providers/inventories/Categories */ "./resources/js/src/providers/inventories/Categories.js");
 
 
 
@@ -273,10 +273,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var WarehouseResource = new _providers_inventories_Warehouses__WEBPACK_IMPORTED_MODULE_16__["default"]();
-var BranchOfficeResource = new _providers_BranchOffices__WEBPACK_IMPORTED_MODULE_17__["default"]();
+var SubCategoriesResource = new _providers_inventories_SubCategories__WEBPACK_IMPORTED_MODULE_16__["default"]();
+var CategoriesResource = new _providers_inventories_Categories__WEBPACK_IMPORTED_MODULE_17__["default"]();
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Warehouses',
+  name: 'SubCategories',
   components: {
     BCard: bootstrap_vue__WEBPACK_IMPORTED_MODULE_10__["BCard"],
     BRow: bootstrap_vue__WEBPACK_IMPORTED_MODULE_10__["BRow"],
@@ -312,8 +312,8 @@ var BranchOfficeResource = new _providers_BranchOffices__WEBPACK_IMPORTED_MODULE
         key: "name",
         label: this.$t('name')
       }, {
-        key: "branch_office_id",
-        label: this.$t('branch_office')
+        key: "category_id",
+        label: this.$t('category')
       }, {
         key: "description",
         label: this.$t('description')
@@ -330,48 +330,49 @@ var BranchOfficeResource = new _providers_BranchOffices__WEBPACK_IMPORTED_MODULE
         key: "actions",
         label: this.$t("actions")
       }],
-      warehouses: [],
-      branchOffices: [],
-      warehouse: {
+      categories: [],
+      subCategories: [],
+      subCategory: {
         name: '',
-        branch_office_id: '',
+        category_id: '',
         description: ''
       },
       perPageOptions: [10, 25, 50, 100],
       perPage: 10,
       currentPage: 1,
-      totalWarehouses: 0,
+      totalSubCategories: 0,
       sortBy: "name",
       sortDesc: false,
       search: null,
       from: 0,
       to: 0,
       loading: false,
-      onShowModalCreateUpdateWarehouse: false
+      onShowModalCreateUpdateSubCategory: false,
+      modalTitle: 'Crear/Actualizar SubCategoría'
     };
   },
   computed: {
     dataMeta: function dataMeta() {
-      var localItemsCount = lodash__WEBPACK_IMPORTED_MODULE_9___default.a.size(this.warehouses);
+      var localItemsCount = lodash__WEBPACK_IMPORTED_MODULE_9___default.a.size(this.subCategories);
       return {
         from: this.perPage * (this.currentPage - 1) + (localItemsCount ? 1 : 0),
         to: this.perPage * (this.currentPage - 1) + localItemsCount,
-        of: this.totalWarehouses
+        of: this.totalSubCategories
       };
     }
   },
   watch: {
     currentPage: function currentPage(value) {
-      this.getWarehouses();
+      this.getSubCategories();
     },
     perPage: function perPage(value) {
-      this.getWarehouses();
+      this.getSubCategories();
     },
-    onShowModalCreateUpdateWarehouse: function onShowModalCreateUpdateWarehouse(value) {
+    onShowModalCreateUpdateSubCategory: function onShowModalCreateUpdateSubCategory(value) {
       if (!value) {
         this.subCategory = {
           name: '',
-          branch_office_id: '',
+          category_id: '',
           description: ''
         };
       }
@@ -379,15 +380,15 @@ var BranchOfficeResource = new _providers_BranchOffices__WEBPACK_IMPORTED_MODULE
   },
   mounted: function mounted() {
     var _this = this;
-    return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee() {
-      return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee$(_context) {
+    return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee() {
+      return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return _this.getBranchOffices();
+            return _this.getCategories();
           case 2:
             _context.next = 4;
-            return _this.getWarehouses();
+            return _this.getSubCategories();
           case 4:
           case "end":
             return _context.stop();
@@ -400,25 +401,27 @@ var BranchOfficeResource = new _providers_BranchOffices__WEBPACK_IMPORTED_MODULE
       var _this2 = this;
       this.$refs.simpleRules.validate().then(function (success) {
         if (success) {
-          _this2.onCreateUpdateWarehouse();
+          _this2.onCreateUpdateSubCategory();
         }
       });
     },
-    getBranchOffices: function getBranchOffices() {
+    getCategories: function getCategories() {
       var _this3 = this;
-      return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee2() {
-        var _yield$BranchOfficeRe, data;
-        return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee2$(_context2) {
+      return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee2() {
+        var _yield$CategoriesReso, data;
+        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee2$(_context2) {
           while (1) switch (_context2.prev = _context2.next) {
             case 0:
               _this3.loading = true;
               _context2.next = 3;
-              return BranchOfficeResource.getAll();
+              return CategoriesResource.index({
+                all: true
+              });
             case 3:
-              _yield$BranchOfficeRe = _context2.sent;
-              data = _yield$BranchOfficeRe.data;
+              _yield$CategoriesReso = _context2.sent;
+              data = _yield$CategoriesReso.data;
               _this3.loading = false;
-              _this3.branchOffices = data;
+              _this3.categories = data.data;
             case 7:
             case "end":
               return _context2.stop();
@@ -426,16 +429,16 @@ var BranchOfficeResource = new _providers_BranchOffices__WEBPACK_IMPORTED_MODULE
         }, _callee2);
       }))();
     },
-    getWarehouses: function getWarehouses() {
+    getSubCategories: function getSubCategories() {
       var _this4 = this;
-      return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee3() {
-        var _yield$WarehouseResou, data;
-        return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee3$(_context3) {
+      return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee3() {
+        var _yield$SubCategoriesR, data;
+        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee3$(_context3) {
           while (1) switch (_context3.prev = _context3.next) {
             case 0:
               _this4.loading = true;
               _context3.next = 3;
-              return WarehouseResource.index({
+              return SubCategoriesResource.index({
                 page: _this4.currentPage,
                 perPage: _this4.perPage,
                 sortBy: _this4.sortBy,
@@ -443,46 +446,47 @@ var BranchOfficeResource = new _providers_BranchOffices__WEBPACK_IMPORTED_MODULE
                 search: _this4.search
               });
             case 3:
-              _yield$WarehouseResou = _context3.sent;
-              data = _yield$WarehouseResou.data;
+              _yield$SubCategoriesR = _context3.sent;
+              data = _yield$SubCategoriesR.data;
               _this4.loading = false;
-              _this4.warehouses = data.data.data;
-              _this4.totalWarehouses = data.data.total;
-            case 8:
+              _this4.subCategories = data.data.data;
+              _this4.totalSubCategories = data.data.total;
+              console.log(_this4.totalSubCategories);
+            case 9:
             case "end":
               return _context3.stop();
           }
         }, _callee3);
       }))();
     },
-    onCreateUpdateWarehouse: function onCreateUpdateWarehouse() {
-      if (this.warehouse.id) {
-        this.updateWarehouse();
+    onCreateUpdateSubCategory: function onCreateUpdateSubCategory() {
+      if (this.subCategory.id) {
+        this.updateSubCategory();
       } else {
-        this.addWarehouse();
+        this.addSubCategory();
       }
     },
-    addWarehouse: function addWarehouse() {
+    addSubCategory: function addSubCategory() {
       var _this5 = this;
-      return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee4() {
-        var _yield$WarehouseResou2, data;
-        return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee4$(_context4) {
+      return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee4() {
+        var _yield$SubCategoriesR2, data;
+        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee4$(_context4) {
           while (1) switch (_context4.prev = _context4.next) {
             case 0:
               _context4.prev = 0;
               _this5.loading = true;
               _context4.next = 4;
-              return WarehouseResource.store(_this5.warehouse);
+              return SubCategoriesResource.store(_this5.subCategory);
             case 4:
-              _yield$WarehouseResou2 = _context4.sent;
-              data = _yield$WarehouseResou2.data;
+              _yield$SubCategoriesR2 = _context4.sent;
+              data = _yield$SubCategoriesR2.data;
               _this5.loading = false;
               _this5.success(data.message);
-              _this5.warehouses.push(data.data);
-              _this5.onShowModalCreateUpdateWarehouse = false;
-              _this5.warehouse = {
+              _this5.subCategories.push(data.data);
+              _this5.onShowModalCreateUpdateSubCategory = false;
+              _this5.subCategory = {
                 name: '',
-                branch_office_id: '',
+                category_id: '',
                 description: ''
               };
               _context4.next = 17;
@@ -499,41 +503,42 @@ var BranchOfficeResource = new _providers_BranchOffices__WEBPACK_IMPORTED_MODULE
         }, _callee4, null, [[0, 13]]);
       }))();
     },
-    editWarehouse: function editWarehouse(warehouse) {
-      this.warehouse = {
-        id: warehouse.id,
-        name: warehouse.name,
-        branch_office_id: warehouse.branch_office_id,
-        description: warehouse.description
+    editSubCategory: function editSubCategory(subCategory) {
+      this.subCategory = {
+        id: subCategory.id,
+        name: subCategory.name,
+        category_id: subCategory.category_id,
+        description: subCategory.description
       };
-      this.onShowModalCreateUpdateWarehouse = true;
+      this.onShowModalCreateUpdateSubCategory = true;
     },
-    updateWarehouse: function updateWarehouse() {
+    updateSubCategory: function updateSubCategory() {
       var _this6 = this;
-      return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee5() {
-        var _yield$WarehouseResou3, data;
-        return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee5$(_context5) {
+      return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee5() {
+        var _yield$SubCategoriesR3, data;
+        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee5$(_context5) {
           while (1) switch (_context5.prev = _context5.next) {
             case 0:
               _context5.prev = 0;
               _this6.loading = true;
               _context5.next = 4;
-              return WarehouseResource.update(_this6.warehouse.id, _this6.warehouse);
+              return SubCategoriesResource.update(_this6.subCategory.id, _this6.subCategory);
             case 4:
-              _yield$WarehouseResou3 = _context5.sent;
-              data = _yield$WarehouseResou3.data;
+              _yield$SubCategoriesR3 = _context5.sent;
+              data = _yield$SubCategoriesR3.data;
               _this6.loading = false;
               _this6.success(data.message);
-              _this6.onShowModalCreateUpdateWarehouse = false;
-              _this6.warehouses = _this6.warehouses.map(function (warehouse) {
-                if (warehouse.id === _this6.warehouse.id) {
+              _this6.onShowModalCreateUpdateSubCategory = false;
+              _this6.subCategories = _this6.subCategories.map(function (category) {
+                console.log(category.id, _this6.subCategory.id);
+                if (category.id === _this6.subCategory.id) {
                   return data.data;
                 }
-                return warehouse;
+                return category;
               });
-              _this6.warehouse = {
+              _this6.subCategory = {
                 name: '',
-                branch_office_id: '',
+                category_id: '',
                 description: ''
               };
               _context5.next = 17;
@@ -550,11 +555,11 @@ var BranchOfficeResource = new _providers_BranchOffices__WEBPACK_IMPORTED_MODULE
         }, _callee5, null, [[0, 13]]);
       }))();
     },
-    deleteWarehouse: function deleteWarehouse(warehouse) {
+    deleteSubCategory: function deleteSubCategory(subCategory) {
       var _this7 = this;
       this.$swal({
         title: this.$t('are_you_sure'),
-        text: !warehouse.deleted_at ? this.$t('inventories.warehouses.disabled_deleted_at') : this.$t('inventories.warehouses.enabled_deleted_at'),
+        text: !subCategory.deleted_at ? this.$t('inventories.subcategories.disabled_deleted_at') : this.$t('inventories.subcategories.enabled_deleted_at'),
         icon: "question",
         showCancelButton: true,
         confirmButtonText: this.$t('yes_continue'),
@@ -569,26 +574,26 @@ var BranchOfficeResource = new _providers_BranchOffices__WEBPACK_IMPORTED_MODULE
         buttonsStyling: false,
         showLoaderOnConfirm: true,
         preConfirm: function () {
-          var _preConfirm = Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee6() {
-            var _yield$WarehouseResou4, data;
-            return Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee6$(_context6) {
+          var _preConfirm = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee6() {
+            var _yield$SubCategoriesR4, data;
+            return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee6$(_context6) {
               while (1) switch (_context6.prev = _context6.next) {
                 case 0:
                   _context6.prev = 0;
                   _this7.loading = true;
                   _context6.next = 4;
-                  return WarehouseResource.destroy(warehouse.id);
+                  return SubCategoriesResource.destroy(subCategory.id);
                 case 4:
-                  _yield$WarehouseResou4 = _context6.sent;
-                  data = _yield$WarehouseResou4.data;
+                  _yield$SubCategoriesR4 = _context6.sent;
+                  data = _yield$SubCategoriesR4.data;
                   _this7.loading = false;
                   if (data.success) {
                     _this7.success(data.message);
-                    _this7.warehouses = _this7.warehouses.map(function (warehouse) {
-                      if (warehouse.id === data.data.id) {
+                    _this7.subCategories = _this7.subCategories.map(function (category) {
+                      if (category.id === data.data.id) {
                         return data.data;
                       }
-                      return warehouse;
+                      return category;
                     });
                   } else {
                     _this7.danger(data.message);
@@ -689,10 +694,10 @@ fixRegExpWellKnownSymbolLogic('search', function (SEARCH, nativeSearch, maybeCal
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Warehouses.vue?vue&type=style&index=0&id=d79126f0&lang=scss&":
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/inventories/Warehouses.vue?vue&type=style&index=0&id=d79126f0&lang=scss& ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/SubCategories.vue?vue&type=style&index=0&id=331cf534&lang=scss&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/inventories/SubCategories.vue?vue&type=style&index=0&id=331cf534&lang=scss& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -709,15 +714,15 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Warehouses.vue?vue&type=style&index=0&id=d79126f0&lang=scss&":
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/inventories/Warehouses.vue?vue&type=style&index=0&id=d79126f0&lang=scss& ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/SubCategories.vue?vue&type=style&index=0&id=331cf534&lang=scss&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/inventories/SubCategories.vue?vue&type=style&index=0&id=331cf534&lang=scss& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Warehouses.vue?vue&type=style&index=0&id=d79126f0&lang=scss& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Warehouses.vue?vue&type=style&index=0&id=d79126f0&lang=scss&");
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SubCategories.vue?vue&type=style&index=0&id=331cf534&lang=scss& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/SubCategories.vue?vue&type=style&index=0&id=331cf534&lang=scss&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -739,10 +744,10 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Warehouses.vue?vue&type=template&id=d79126f0&":
-/*!*****************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/inventories/Warehouses.vue?vue&type=template&id=d79126f0& ***!
-  \*****************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/SubCategories.vue?vue&type=template&id=331cf534&":
+/*!********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/inventories/SubCategories.vue?vue&type=template&id=331cf534& ***!
+  \********************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -793,14 +798,14 @@ var render = function () {
                         },
                       }),
                       _vm._v(" "),
-                      _vm.canAccess("inventories.warehouses.create")
+                      _vm.canAccess("inventories.subcategories.create")
                         ? _c(
                             "b-button",
                             {
                               attrs: { variant: "primary" },
                               on: {
                                 click: function ($event) {
-                                  _vm.onShowModalCreateUpdateWarehouse = true
+                                  _vm.onShowModalCreateUpdateSubCategory = true
                                 },
                               },
                             },
@@ -834,7 +839,7 @@ var render = function () {
                               staticClass: "d-inline-block _mr-1",
                               attrs: {
                                 placeholder: _vm.$t(
-                                  "inventories.warehouses.search_help"
+                                  "inventories.subcategories.search_help"
                                 ),
                               },
                               on: {
@@ -851,7 +856,7 @@ var render = function () {
                                   ) {
                                     return null
                                   }
-                                  return _vm.getWarehouses($event)
+                                  return _vm.getSubCategories($event)
                                 },
                               },
                               model: {
@@ -870,7 +875,7 @@ var render = function () {
                                   "b-button",
                                   {
                                     attrs: { variant: "primary" },
-                                    on: { click: _vm.getWarehouses },
+                                    on: { click: _vm.getSubCategories },
                                   },
                                   [
                                     _c("feather-icon", {
@@ -899,10 +904,10 @@ var render = function () {
           _c(
             "b-table",
             {
-              ref: "refWarehousesListTable",
+              ref: "refSubCategoriesListTable",
               staticClass: "position-relative",
               attrs: {
-                items: _vm.warehouses,
+                items: _vm.subCategories,
                 responsive: "",
                 fields: _vm.columns,
                 "primary-key": "id",
@@ -929,12 +934,12 @@ var render = function () {
               },
               scopedSlots: _vm._u([
                 {
-                  key: "cell(branch_office_id)",
+                  key: "cell(category_id)",
                   fn: function (data) {
                     return [
                       _vm._v(
                         "\n                 " +
-                          _vm._s(data.item.branch_office.name) +
+                          _vm._s(data.item.category.name) +
                           "\n             "
                       ),
                     ]
@@ -1001,7 +1006,7 @@ var render = function () {
                         { staticClass: "demo-inline-spacing" },
                         [
                           !data.item.deleted_at &&
-                          _vm.canAccess("inventories.warehouses.edit")
+                          _vm.canAccess("inventories.subcategories.edit")
                             ? _c(
                                 "b-button",
                                 {
@@ -1018,7 +1023,7 @@ var render = function () {
                                   attrs: { variant: "primary", size: "sm" },
                                   on: {
                                     click: function ($event) {
-                                      return _vm.editWarehouse(data.item)
+                                      return _vm.editSubCategory(data.item)
                                     },
                                   },
                                 },
@@ -1032,7 +1037,7 @@ var render = function () {
                             : _vm._e(),
                           _vm._v(" "),
                           !data.item.deleted_at &&
-                          _vm.canAccess("inventories.warehouses.destroy")
+                          _vm.canAccess("inventories.subcategories.destroy")
                             ? _c(
                                 "b-button",
                                 {
@@ -1049,7 +1054,7 @@ var render = function () {
                                   attrs: { variant: "danger", size: "sm" },
                                   on: {
                                     click: function ($event) {
-                                      return _vm.deleteWarehouse(data.item)
+                                      return _vm.deleteSubCategory(data.item)
                                     },
                                   },
                                 },
@@ -1063,7 +1068,7 @@ var render = function () {
                             : _vm._e(),
                           _vm._v(" "),
                           data.item.deleted_at &&
-                          _vm.canAccess("inventories.warehouses.active")
+                          _vm.canAccess("inventories.subcategories.active")
                             ? _c(
                                 "b-button",
                                 {
@@ -1080,7 +1085,7 @@ var render = function () {
                                   attrs: { variant: "warning", size: "sm" },
                                   on: {
                                     click: function ($event) {
-                                      return _vm.deleteWarehouse(data.item)
+                                      return _vm.deleteSubCategory(data.item)
                                     },
                                   },
                                 },
@@ -1121,7 +1126,7 @@ var render = function () {
             2
           ),
           _vm._v(" "),
-          _vm.warehouses.length
+          _vm.subCategories.length
             ? _c(
                 "div",
                 { staticClass: "mx-2 mb-2" },
@@ -1161,7 +1166,7 @@ var render = function () {
                             [
                               _c("b-pagination", {
                                 attrs: {
-                                  "total-rows": _vm.totalWarehouses,
+                                  "total-rows": _vm.totalSubCategories,
                                   "per-page": _vm.perPage,
                                   size: "lg",
                                 },
@@ -1192,22 +1197,22 @@ var render = function () {
       _c(
         "b-modal",
         {
-          ref: "refModalCreateUpdateWarehouse",
+          ref: "refModalCreateUpdateCategory",
           attrs: {
-            id: "modalCreateUpdateWarehouse",
-            title: _vm.$t("inventories.warehouses.title_modal_add_update"),
+            id: "modalCreateUpdateCategory",
+            title: _vm.$t("inventories.subcategories.title_modal_add_update"),
             "no-close-on-backdrop": "",
             "ok-title": _vm.$t("save"),
             "cancel-title": _vm.$t("cancel"),
             "hide-footer": "",
-            visible: _vm.onShowModalCreateUpdateWarehouse,
+            visible: _vm.onShowModalCreateUpdateSubCategory,
           },
           on: {
             cancel: function ($event) {
-              _vm.onShowModalCreateUpdateWarehouse = false
+              _vm.onShowModalCreateUpdateSubCategory = false
             },
             hidden: function ($event) {
-              _vm.onShowModalCreateUpdateWarehouse = false
+              _vm.onShowModalCreateUpdateSubCategory = false
             },
           },
         },
@@ -1221,7 +1226,7 @@ var render = function () {
                 { ref: "form" },
                 [
                   _c("validation-provider", {
-                    attrs: { name: "category_id", rules: "required" },
+                    attrs: { rules: "required" },
                     scopedSlots: _vm._u([
                       {
                         key: "default",
@@ -1234,38 +1239,38 @@ var render = function () {
                                 attrs: {
                                   state: errors.length > 0 ? false : null,
                                   label: _vm.$t(
-                                    "inventories.warehouses.fields.branch_office"
+                                    "inventories.subcategories.fields.category"
                                   ),
                                   description: _vm.$t(
-                                    "inventories.warehouses.fields.branch_office_help"
+                                    "inventories.subcategories.fields.category_help"
                                   ),
                                 },
                               },
                               [
                                 _c("v-select", {
                                   attrs: {
-                                    id: "branch_office_id",
-                                    options: _vm.branchOffices,
-                                    reduce: function (branchOffice) {
-                                      return branchOffice.id
+                                    id: "category_id",
+                                    options: _vm.categories,
+                                    reduce: function (category) {
+                                      return category.id
                                     },
                                     clearable: false,
                                     label: "name",
                                     searchable: false,
                                     placeholder: _vm.$t(
-                                      "inventories.warehouses.fields.branch_office_placeholder"
+                                      "inventories.subcategories.fields.category_placeholder"
                                     ),
                                   },
                                   model: {
-                                    value: _vm.warehouse.branch_office_id,
+                                    value: _vm.subCategory.category_id,
                                     callback: function ($$v) {
                                       _vm.$set(
-                                        _vm.warehouse,
-                                        "branch_office_id",
+                                        _vm.subCategory,
+                                        "category_id",
                                         $$v
                                       )
                                     },
-                                    expression: "warehouse.branch_office_id",
+                                    expression: "subCategory.category_id",
                                   },
                                 }),
                               ],
@@ -1281,15 +1286,15 @@ var render = function () {
                     "b-form-group",
                     {
                       attrs: {
-                        label: _vm.$t("inventories.warehouses.fields.name"),
+                        label: _vm.$t("inventories.subcategories.fields.name"),
                         description: _vm.$t(
-                          "inventories.warehouses.fields.name_help"
+                          "inventories.subcategories.fields.name_help"
                         ),
                       },
                     },
                     [
                       _c("validation-provider", {
-                        attrs: { name: "warehouseName", rules: "required" },
+                        attrs: { name: "subCategoryName", rules: "required" },
                         scopedSlots: _vm._u([
                           {
                             key: "default",
@@ -1298,19 +1303,19 @@ var render = function () {
                               return [
                                 _c("b-form-input", {
                                   attrs: {
-                                    id: "warehouseName",
+                                    id: "subCategoryName",
                                     type: "text",
                                     placeholder: _vm.$t(
-                                      "inventories.warehouses.fields.name_placeholder"
+                                      "inventories.subcategories.fields.name_placeholder"
                                     ),
                                     state: errors.length > 0 ? false : null,
                                   },
                                   model: {
-                                    value: _vm.warehouse.name,
+                                    value: _vm.subCategory.name,
                                     callback: function ($$v) {
-                                      _vm.$set(_vm.warehouse, "name", $$v)
+                                      _vm.$set(_vm.subCategory, "name", $$v)
                                     },
-                                    expression: "warehouse.name",
+                                    expression: "subCategory.name",
                                   },
                                 }),
                               ]
@@ -1327,28 +1332,28 @@ var render = function () {
                     {
                       attrs: {
                         label: _vm.$t(
-                          "inventories.warehouses.fields.description"
+                          "inventories.subcategories.fields.description"
                         ),
                         description: _vm.$t(
-                          "inventories.warehouses.fields.description_help"
+                          "inventories.subcategories.fields.description_help"
                         ),
                       },
                     },
                     [
                       _c("b-form-input", {
                         attrs: {
-                          id: "warehouseDescription",
+                          id: "subCategoryDescription",
                           type: "text",
                           placeholder: _vm.$t(
-                            "inventories.warehouses.fields.description_placeholder"
+                            "inventories.subcategories.fields.description"
                           ),
                         },
                         model: {
-                          value: _vm.warehouse.description,
+                          value: _vm.subCategory.description,
                           callback: function ($$v) {
-                            _vm.$set(_vm.warehouse, "description", $$v)
+                            _vm.$set(_vm.subCategory, "description", $$v)
                           },
-                          expression: "warehouse.description",
+                          expression: "subCategory.description",
                         },
                       }),
                     ],
@@ -1370,7 +1375,7 @@ var render = function () {
                               attrs: { variant: "danger" },
                               on: {
                                 click: function ($event) {
-                                  _vm.onShowModalCreateUpdateWarehouse = false
+                                  _vm.onShowModalCreateUpdateSubCategory = false
                                 },
                               },
                             },
@@ -1663,169 +1668,128 @@ var validatorUrlValidator = function validatorUrlValidator(val) {
 
 /***/ }),
 
-/***/ "./resources/js/src/providers/BranchOffices.js":
-/*!*****************************************************!*\
-  !*** ./resources/js/src/providers/BranchOffices.js ***!
-  \*****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return BranchOffices; });
-/* harmony import */ var D_projects_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
-/* harmony import */ var D_projects_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-var BranchOffices = /*#__PURE__*/function () {
-  function BranchOffices() {
-    Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, BranchOffices);
-  }
-  Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__["default"])(BranchOffices, [{
-    key: "store",
-    value:
-    /**
-     * Function to update a branch
-     * @param {Object} formdata
-     * @return AxiosPromise
-     */
-    function store(formdata) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/branch-offices", formdata, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      });
-    }
-
-    /**
-     * Function to update a branch
-     * @param {Object} formdata
-     * @return AxiosPromise
-     */
-  }, {
-    key: "update",
-    value: function update(id, formdata) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/branch-offices/".concat(id), formdata, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      });
-    }
-
-    /**
-     * Function to get information by branch
-     * @param {Number} id
-     * @return AxiosPromise
-     */
-  }, {
-    key: "getBranchDetail",
-    value: function getBranchDetail(id) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/branch-offices/".concat(id));
-    }
-
-    /**
-     * Funtion to delete branchs-offices
-     * @param {Array} users
-     * @return AxiosPromise
-     */
-  }, {
-    key: "deleteBranch",
-    value: function deleteBranch(id) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a["delete"]("/api/branch-offices/".concat(id));
-    }
-
-    /**
-     * Function to get all branchs-offices without pagination
-     */
-  }, {
-    key: "getList",
-    value: function getList(query) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/branch-offices", {
-        params: query
-      });
-    }
-  }, {
-    key: "getAll",
-    value: function getAll() {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/branch-offices/all");
-    }
-  }]);
-  return BranchOffices;
-}();
-
-
-/***/ }),
-
-/***/ "./resources/js/src/providers/inventories/Warehouses.js":
+/***/ "./resources/js/src/providers/inventories/Categories.js":
 /*!**************************************************************!*\
-  !*** ./resources/js/src/providers/inventories/Warehouses.js ***!
+  !*** ./resources/js/src/providers/inventories/Categories.js ***!
   \**************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Warehouses; });
-/* harmony import */ var D_projects_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
-/* harmony import */ var D_projects_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Categories; });
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
-var Warehouses = /*#__PURE__*/function () {
-  function Warehouses() {
-    Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Warehouses);
+var Categories = /*#__PURE__*/function () {
+  function Categories() {
+    Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Categories);
   }
-  Object(D_projects_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__["default"])(Warehouses, [{
+  Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__["default"])(Categories, [{
     key: "index",
     value: function index(query) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/inventories/warehouses", {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/inventories/categories", {
         params: query
       });
     }
   }, {
     key: "store",
     value: function store(payload) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/inventories/warehouses", payload);
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/inventories/categories", payload);
     }
   }, {
     key: "destroy",
     value: function destroy(id) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a["delete"]("/api/inventories/warehouses/".concat(id));
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a["delete"]("/api/inventories/categories/".concat(id));
     }
   }, {
     key: "update",
     value: function update(id, payload) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("/api/inventories/warehouses/".concat(id), payload);
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("/api/inventories/categories/".concat(id), payload);
     }
   }, {
     key: "show",
     value: function show(id) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/inventories/warehouses/".concat(id));
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/inventories/categories/".concat(id));
     }
   }]);
-  return Warehouses;
+  return Categories;
 }();
 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/inventories/Warehouses.vue":
-/*!****************************************************************!*\
-  !*** ./resources/js/src/views/apps/inventories/Warehouses.vue ***!
-  \****************************************************************/
+/***/ "./resources/js/src/providers/inventories/SubCategories.js":
+/*!*****************************************************************!*\
+  !*** ./resources/js/src/providers/inventories/SubCategories.js ***!
+  \*****************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Warehouses_vue_vue_type_template_id_d79126f0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Warehouses.vue?vue&type=template&id=d79126f0& */ "./resources/js/src/views/apps/inventories/Warehouses.vue?vue&type=template&id=d79126f0&");
-/* harmony import */ var _Warehouses_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Warehouses.vue?vue&type=script&lang=js& */ "./resources/js/src/views/apps/inventories/Warehouses.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _Warehouses_vue_vue_type_style_index_0_id_d79126f0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Warehouses.vue?vue&type=style&index=0&id=d79126f0&lang=scss& */ "./resources/js/src/views/apps/inventories/Warehouses.vue?vue&type=style&index=0&id=d79126f0&lang=scss&");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SubCategories; });
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+var SubCategories = /*#__PURE__*/function () {
+  function SubCategories() {
+    Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, SubCategories);
+  }
+  Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__["default"])(SubCategories, [{
+    key: "index",
+    value: function index(query) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/inventories/subcategories", {
+        params: query
+      });
+    }
+  }, {
+    key: "store",
+    value: function store(payload) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/inventories/subcategories", payload);
+    }
+  }, {
+    key: "destroy",
+    value: function destroy(id) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a["delete"]("/api/inventories/subcategories/".concat(id));
+    }
+  }, {
+    key: "update",
+    value: function update(id, payload) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("/api/inventories/subcategories/".concat(id), payload);
+    }
+  }, {
+    key: "show",
+    value: function show(id) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/inventories/subcategories/".concat(id));
+    }
+  }]);
+  return SubCategories;
+}();
+
+
+/***/ }),
+
+/***/ "./resources/js/src/views/apps/inventories/SubCategories.vue":
+/*!*******************************************************************!*\
+  !*** ./resources/js/src/views/apps/inventories/SubCategories.vue ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SubCategories_vue_vue_type_template_id_331cf534___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SubCategories.vue?vue&type=template&id=331cf534& */ "./resources/js/src/views/apps/inventories/SubCategories.vue?vue&type=template&id=331cf534&");
+/* harmony import */ var _SubCategories_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SubCategories.vue?vue&type=script&lang=js& */ "./resources/js/src/views/apps/inventories/SubCategories.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _SubCategories_vue_vue_type_style_index_0_id_331cf534_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SubCategories.vue?vue&type=style&index=0&id=331cf534&lang=scss& */ "./resources/js/src/views/apps/inventories/SubCategories.vue?vue&type=style&index=0&id=331cf534&lang=scss&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -1836,9 +1800,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
-  _Warehouses_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Warehouses_vue_vue_type_template_id_d79126f0___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Warehouses_vue_vue_type_template_id_d79126f0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _SubCategories_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SubCategories_vue_vue_type_template_id_331cf534___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SubCategories_vue_vue_type_template_id_331cf534___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -1848,54 +1812,54 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/src/views/apps/inventories/Warehouses.vue"
+component.options.__file = "resources/js/src/views/apps/inventories/SubCategories.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/inventories/Warehouses.vue?vue&type=script&lang=js&":
-/*!*****************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/inventories/Warehouses.vue?vue&type=script&lang=js& ***!
-  \*****************************************************************************************/
+/***/ "./resources/js/src/views/apps/inventories/SubCategories.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/inventories/SubCategories.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Warehouses_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Warehouses.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Warehouses.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Warehouses_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SubCategories_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SubCategories.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/SubCategories.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SubCategories_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/inventories/Warehouses.vue?vue&type=style&index=0&id=d79126f0&lang=scss&":
-/*!**************************************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/inventories/Warehouses.vue?vue&type=style&index=0&id=d79126f0&lang=scss& ***!
-  \**************************************************************************************************************/
+/***/ "./resources/js/src/views/apps/inventories/SubCategories.vue?vue&type=style&index=0&id=331cf534&lang=scss&":
+/*!*****************************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/inventories/SubCategories.vue?vue&type=style&index=0&id=331cf534&lang=scss& ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Warehouses_vue_vue_type_style_index_0_id_d79126f0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/style-loader!../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Warehouses.vue?vue&type=style&index=0&id=d79126f0&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Warehouses.vue?vue&type=style&index=0&id=d79126f0&lang=scss&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Warehouses_vue_vue_type_style_index_0_id_d79126f0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Warehouses_vue_vue_type_style_index_0_id_d79126f0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Warehouses_vue_vue_type_style_index_0_id_d79126f0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Warehouses_vue_vue_type_style_index_0_id_d79126f0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SubCategories_vue_vue_type_style_index_0_id_331cf534_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/style-loader!../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SubCategories.vue?vue&type=style&index=0&id=331cf534&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/SubCategories.vue?vue&type=style&index=0&id=331cf534&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SubCategories_vue_vue_type_style_index_0_id_331cf534_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SubCategories_vue_vue_type_style_index_0_id_331cf534_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SubCategories_vue_vue_type_style_index_0_id_331cf534_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SubCategories_vue_vue_type_style_index_0_id_331cf534_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/inventories/Warehouses.vue?vue&type=template&id=d79126f0&":
-/*!***********************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/inventories/Warehouses.vue?vue&type=template&id=d79126f0& ***!
-  \***********************************************************************************************/
+/***/ "./resources/js/src/views/apps/inventories/SubCategories.vue?vue&type=template&id=331cf534&":
+/*!**************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/inventories/SubCategories.vue?vue&type=template&id=331cf534& ***!
+  \**************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Warehouses_vue_vue_type_template_id_d79126f0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Warehouses.vue?vue&type=template&id=d79126f0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Warehouses.vue?vue&type=template&id=d79126f0&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Warehouses_vue_vue_type_template_id_d79126f0___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SubCategories_vue_vue_type_template_id_331cf534___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SubCategories.vue?vue&type=template&id=331cf534& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/SubCategories.vue?vue&type=template&id=331cf534&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SubCategories_vue_vue_type_template_id_331cf534___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Warehouses_vue_vue_type_template_id_d79126f0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SubCategories_vue_vue_type_template_id_331cf534___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
