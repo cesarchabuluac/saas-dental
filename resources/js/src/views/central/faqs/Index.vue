@@ -40,7 +40,7 @@
 
             <b-table
                 ref="refFaqsListTable"
-                class="position-relative"
+                class="position-relative table-small text-small small"
                 :items="faqs"
                 responsive
                 :fields="columns"
@@ -52,6 +52,7 @@
                 :current-page="currentPage"
                 busy.sync="loading"
                 stacked="md"
+                small
             >
                 <!-- Empty -->
                 <template slot="empty">

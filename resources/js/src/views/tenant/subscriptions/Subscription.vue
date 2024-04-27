@@ -15,7 +15,6 @@
             
                 <!-- general tab -->
                 <b-tab active :disabled="account.plan_ends_at !== null" lazy>
-                    <!-- title -->
                     <template #title>
                         <feather-icon icon="DollarSignIcon" size="18" class="mr-50"/>
                         <span class="font-weight-bold">{{ $t('subscriptions.plans.title') }}</span>
@@ -27,8 +26,6 @@
                 </b-tab>
 
                 <b-tab lazy>
-
-                    <!-- title -->
                     <template #title>
                         <feather-icon icon="FileTextIcon" size="18" class="mr-50"/>
                         <span class="font-weight-bold">{{$t('tenants.invoices.title')}}</span>

@@ -8,6 +8,7 @@
     >
         <b-card>
             <b-row>
+
                <!-- Enable tax -->
                 <b-col md="6">
                     <b-form-group :label="$t('app_setting_enable_tax')" label-for="app_setting_enable_tax">
@@ -52,13 +53,21 @@
 
                 <!-- Position currency -->
                 <b-col md="6">
-                    <b-form-group :label="$t('app_setting_currency_right')" label-for="app_setting_currency_right_help">
+                    <b-form-group :label="$t('app_setting_currency_right')" label-for="app_setting_currency_right">
                         <b-form-checkbox
                             id="app_setting_currency_right"
                             v-model="config.enable_currency_right"
                             name="app_setting_currency_right">
                             {{$t("app_setting_currency_right_help")}}
                         </b-form-checkbox>
+                    </b-form-group>
+                </b-col>
+
+                <b-col md="6">
+                    <b-form-group :label="$t('app_setting_delete_payments_after')" :description="$t('app_setting_delete_payments_after_help')" label-for="app_delete_payments_after">
+                        <b-form-input v-model="config.app_delete_payments_after" id="app_setting_date_format" type="number" step="1" min="0"
+                            :placeholder="$t('app_setting_delete_payments_after_placeholder')"
+                            @input="validateInputDeletePayment"/>
                     </b-form-group>
                 </b-col>
             </b-row>
@@ -215,6 +224,12 @@ export default {
             currencies.value = store.getters["auth/getCurrencies"].map(item => ({value: item.id, label: item.label}));
         });
 
+        const validateInputDeletePayment = () => {
+            if (config.value.app_delete_payments_after < 0) {
+               config.value.app_delete_payments_after = 0; // Si es negativo, establece el valor en 0
+            }
+        }
+
         const updateSettings = async () => {
             const oldSettings = JSON.parse(localStorage.getItem("oldSettings"));
             const changedData = {};
@@ -227,6 +242,10 @@ export default {
             if (Object.keys(changedData).length === 0) {                
                 helper.danger(translateMessages.setting_required);
                 return false;
+            }
+
+            if (!changedData.app_delete_payments_after) {
+                changedData.app_delete_payments_after = 0
             }
 
             try {
@@ -254,6 +273,7 @@ export default {
 
             //
             updateSettings,
+            validateInputDeletePayment,
 
             //i18n
             t,

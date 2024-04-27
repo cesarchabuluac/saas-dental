@@ -12,7 +12,11 @@
 
             <b-row v-if="!isEmpty(budget)" class="invoice-preview">
                 <!-- Col: Left (Invoice Container) -->
-                <b-col cols="12" xl="10" md="9">
+                <b-col
+                        cols="12"
+                        xl="9"
+                        md="8"
+                    >
                     <b-card no-body class="invoice-preview-card">
                         <!-- Header -->
                         <b-card-body class="invoice-padding pb-0">
@@ -46,9 +50,9 @@
                                         <span class="invoice-number">{{ budget.label }}</span>
                                     </h4>
                                     <div class="invoice-date-wrapper">
-                                        <p class="invoice-date-title">
+                                        <p class="invoice-date-title text-capitalize">
                                             <strong>{{ $t('budgets.date_issued') }}</strong>
-                                            {{ formatDate(budget.created_at) }}
+                                            {{ dateTimeFormat(budget.created_at) }}
                                         </p>
                                     </div>
                                     <div class="invoice-date-wrapper">
@@ -119,7 +123,7 @@
                         <b-card-body class="invoice-padding pt-0">
                             <b-row class="invoice-spacing">
                                 <b-col cols="12" xl="4" class="p-1">
-                                    <label class="mb-2 fw-bolder">{{ $t('payments.method') }}</label>
+                                    <label class="mb-2 fw-bolder select-size-sm">{{ $t('payments.method') }}</label>
                                     <v-select v-model="paymentType" :options="paymentTypes" label="label"
                                         :disabled="hasPreviousPayments" :clearable="false" :searchable="false"
                                         @input="selectPaymentTypes" :selectable="option => option.disabled"
@@ -130,7 +134,7 @@
 
                         <!-- Invoice Description: Table -->
                         <b-table id="table-items" ref="tableItems" stacked="sm" responsive :items="budget.budget_actions"
-                            :fields="columns" size="sm">
+                            :fields="columns" small class="text-small small table-small">
                             <!-- Description -->
                             <template #cell(action)="data">
                                 <b-card-text class="font-weight-bold mb-25">
@@ -150,13 +154,9 @@
                                 {{ formatPrice(data.item.price) }}
                             </template>
 
-                            <!-- Discount -->
-                            <template #cell(discount)="data">
-                                {{ formatPrice(data.item.discount) }}
-                            </template>
-
                             <!-- Subtotal -->
                             <template #cell(subtotal)="data">
+                                <span v-if="data.item.discount > 0">Desc. {{ formatPrice(data.item.discount) }}</span>
                                 {{ formatPrice(data.item.subtotal) }}
                             </template>
 
@@ -173,7 +173,7 @@
                             <template #cell(options)="data">
                                 <!-- checkbox -->
                                 <b-form-group>
-                                    <b-form-checkbox v-model="data.item.is_selected" @input="updateTable"
+                                    <b-form-checkbox size="xl" v-model="data.item.is_selected" @input="updateTable"
                                         @change="data.toggleDetails"
                                         :disabled="!allowModifications || data.item.is_disabled" />
                                 </b-form-group>
@@ -187,11 +187,11 @@
                                         <!-- :disabled="data.item.has_previous_professional" -->
                                         <v-select v-show="data.item.is_selected || data.item.has_previous_professional"
                                             v-model="data.item.professional" label="name" :options="professionals"
-                                            :clearable="false" :searchable="false" />
+                                            :clearable="false" :searchable="false" class="select-size-sm" />
                                     </b-col>
                                     <b-col cols="12" xl="4" class="p-1" v-if="!budget.has_partials">
                                         <label class="mb-2 fw-bolder">{{ $t('charges.assigned_amount') }}</label>
-                                        <b-form-input class="d-inline-block mr-1" disabled
+                                        <b-form-input size="sm" class="d-inline-block mr-1" disabled
                                             :value="`${(data.item.assigned_income) ? formatPrice(data.item.assigned_income) : 0}`" />
                                     </b-col>
                                 </b-row>
@@ -201,7 +201,12 @@
                 </b-col>
 
                 <!-- Right Col: Card -->
-                <b-col cols="12" md="3" xl="2" class="invoice-actions">
+                <b-col
+                        cols="12"
+                        md="4"
+                        xl="3"
+                        class="invoice-actions"
+                    >
                     <b-card>
 
                         <b-row class="invoice-spacing"
@@ -318,7 +323,6 @@ import BudgetProvider from '@/providers/Budgets'
 import UserProvider from "@/providers/Users";
 import PaymentProvider from '@/providers/Payments'
 import CheckInfoModal from "./CheckInfoModal";
-
 const BudgetResource = new BudgetProvider()
 const UserResource = new UserProvider();
 const PaymentResource = new PaymentProvider();
@@ -366,10 +370,10 @@ export default {
                     key: "price",
                     label: this.$t("charges.table_costo"),
                 },
-                {
-                    key: "discount",
-                    label: this.$t("charges.table_discount"),
-                },
+                // {
+                //     key: "discount",
+                //     label: this.$t("charges.table_discount"),
+                // },
                 {
                     key: "subtotal",
                     label: this.$t("charges.table_total"),
@@ -426,6 +430,7 @@ export default {
             printPayment: {},
             showPrintPayment: false,
             isTransfer: false,
+            branches: [],
         }
     },
     computed: {
@@ -503,15 +508,26 @@ export default {
 
 
         },
+        async getBranches () {
+            this.branches = []
+
+            if (store.getters['auth/getBranches'].length > 0) {
+
+            }
+        },
         async getProfessionals() {
             this.professionals = [];
-            this.loading = true
-            const { data } = await UserResource.index({
-                criteria: 'professional',
-                ignoreSchedules: true,
-            });
-            this.loading = false
-            this.professionals = data.data
+            if (store.getters['auth/getDoctors'].length > 0) {
+                this.professionals = store.getters['auth/getDoctors']
+            } else {
+                this.loading = true
+                const { data } = await UserResource.index({
+                    criteria: 'professional',
+                    ignoreSchedules: true,
+                });
+                this.loading = false
+                this.professionals = data.data
+            }
         },
         updateTable() {
             this.clinicalActions = this.clinicalActions.map((action) => action);

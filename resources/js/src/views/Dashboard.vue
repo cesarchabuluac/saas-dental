@@ -75,7 +75,7 @@
                             <h3 class="text-capitalize">{{ $t('payments.dashboard_title')}}</h3>
 
                             <b-table :sticky-header="true" :no-border-collapse="true" ref="refPaymentListTable"
-                                class="position-relative" :items="dashboard.payments" responsive :fields="columnPayments"
+                                class="position-relative table-small text-small small" :items="dashboard.payments" responsive :fields="columnPayments"
                                 primary-key="id" show-empty
                                 :empty-text="$t('datatables.sZeroRecords')"
                                 :busy.sync="loading" small>

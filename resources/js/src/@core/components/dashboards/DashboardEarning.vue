@@ -9,10 +9,10 @@
     </template>
     <b-card v-if="data" class="card-congratulation-medal">
       <h5>{{ $t('payments.dashboard_earnings') }}</h5>
-      <b-card-text class="font-small-3">
+      <b-card-text class="font-small-2">
         {{ $t('this_month') }} <span class="font-weight-bold">{{ currentDate('MMMM') }}</span>
       </b-card-text>
-      <h3 class="mb-75 mt-2 pt-50">
+      <h3 class="mb-75 pt-50">
         <b-link>{{ formatPrice(data.totalEarningCurrentMonth) }}</b-link>
       </h3>
       <p class="card-text text-muted font-small-2_">
@@ -21,7 +21,7 @@
       </p>
       <b-img v-if="data.amountCurrentMonthEarning > 0" :src="require('@/assets/images/illustration/badge.svg')"
         class="congratulation-medal" alt="Earnings" />
-      <br>
+      <!-- <br> -->
     </b-card>
   </b-overlay>
 </template>

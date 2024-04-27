@@ -58,7 +58,7 @@
 
                         <!-- Right Col: Table -->
                         <b-col cols="12" xl="6">
-                            <table class="mt-2 mt-xl-0 w-100">
+                            <table class="mt-2 mt-xl-0 w-100 text-small small">
                                 <tr>
                                     <th class="pb-50">
                                         <feather-icon icon="UserIcon" class="mr-75"/>
@@ -84,7 +84,7 @@
                                     </th>
                                     <td class="pb-50 text-capitalize">
                                         <b-badge pill :variant="`${resolveStatusBadge(tenant.on_trial)}`" class="text-capitalize">
-                                            {{ tenant.on_trial }}
+                                            {{ tenant.on_trial ? $t('yes') : $t('no') }}
                                         </b-badge>
                                     </td>
                                 </tr>
@@ -95,7 +95,7 @@
                                     </th>
                                     <td class="pb-50 text-capitalize">
                                         <b-badge pill :variant="`${resolveStatusBadge(tenant.is_subscribed)}`" class="text-capitalize">
-                                            {{ tenant.is_subscribed }}
+                                            {{ tenant.is_subscribed ? $t('yes') : $t('no') }}
                                         </b-badge>
                                     </td>
                                 </tr>
@@ -106,7 +106,7 @@
                                     </th>
                                     <td class="pb-50">
                                         <b-badge pill :variant="`${resolveStatusBadge(tenant.is_banned)}`" class="text-capitalize">
-                                            {{ tenant.is_banned }}
+                                            {{ tenant.is_banned ? $t('yes') : $t('no') }}
                                         </b-badge>
                                     </td>
                                 </tr>
@@ -136,7 +136,7 @@
                     </b-card-header>
 
                     <b-card-body>
-                        <ul class="list-unstyled my-1">
+                        <ul class="list-unstyled my-1 text-small small">
                             <li v-for="(item, index) in tenant.limitations" :key="index">
                                 <span class="align-middle"><strong>{{ $t(item.name) }}:</strong> {{ item.limit }}</span>
                             </li>
@@ -154,6 +154,7 @@
                     :icon="item.icon"
                     :statistic="$t(item.name)"
                     :color="item.bgColor"
+                    size="h6"
                     :statistic-text="`${$t(`tenants.used`)}: ${item.current}`"
                     :statistic-description="`${$t(`tenants.remaining`)}: ${item.limit}`"
                     :statistic-title="`${$t('tenants.limit')} ${item.limit}`"
@@ -174,7 +175,8 @@
                         primary-key="id"
                         show-empty
                         :empty-text="$t('datatables.sZeroRecords')"
-                        class="position-relative">
+                        class="position-relative text-small table-small small"
+                        small>
 
                         <!-- Empty -->
                         <template slot="empty">

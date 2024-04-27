@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="{{ mix('css/core.css') }}">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="{{ asset('logo.png') }}">
+  <link rel="shortcut icon" href="{{ asset('images/logo/SoftDental.png') }}">
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"
@@ -30,7 +30,7 @@
   </noscript>
   <div id="loading-bg">
     <div class="loading-logo">
-      <img src="{{ global_asset('logo.png') }}" alt="Logo" />
+      <img src="{{ global_asset('images/logo/logo.png') }}" alt="Logo" />
     </div>
     <div class="loading">
       <div class="effect-1 effects"></div>

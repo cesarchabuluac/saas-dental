@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[103],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -11,118 +11,32 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js */ "./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js");
 /* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.array.map.js */ "./node_modules/core-js/modules/es.array.map.js");
-/* harmony import */ var core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/esm/index.js");
-/* harmony import */ var vue_ripple_directive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-ripple-directive */ "./node_modules/vue-ripple-directive/src/ripple.js");
-/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
-/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var animate_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! animate.css */ "./node_modules/animate.css/animate.css");
-/* harmony import */ var animate_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(animate_css__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _providers_Laboratories__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/providers/Laboratories */ "./resources/js/src/providers/Laboratories.js");
-
-
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.string.iterator.js */ "./node_modules/core-js/modules/es.string.iterator.js");
+/* harmony import */ var core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/web.dom-collections.iterator.js */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var core_js_modules_web_url_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/web.url.js */ "./node_modules/core-js/modules/web.url.js");
+/* harmony import */ var core_js_modules_web_url_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var core_js_modules_web_url_search_params_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! core-js/modules/web.url-search-params.js */ "./node_modules/core-js/modules/web.url-search-params.js");
+/* harmony import */ var core_js_modules_web_url_search_params_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_search_params_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var core_js_modules_web_url_search_params_delete_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! core-js/modules/web.url-search-params.delete.js */ "./node_modules/core-js/modules/web.url-search-params.delete.js");
+/* harmony import */ var core_js_modules_web_url_search_params_delete_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_search_params_delete_js__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var core_js_modules_web_url_search_params_has_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! core-js/modules/web.url-search-params.has.js */ "./node_modules/core-js/modules/web.url-search-params.has.js");
+/* harmony import */ var core_js_modules_web_url_search_params_has_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_search_params_has_js__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var core_js_modules_web_url_search_params_size_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! core-js/modules/web.url-search-params.size.js */ "./node_modules/core-js/modules/web.url-search-params.size.js");
+/* harmony import */ var core_js_modules_web_url_search_params_size_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_search_params_size_js__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! core-js/modules/es.array.concat.js */ "./node_modules/core-js/modules/es.array.concat.js");
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/esm/index.js");
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var vue_ripple_directive__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! vue-ripple-directive */ "./node_modules/vue-ripple-directive/src/ripple.js");
+/* harmony import */ var vue_good_table__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! vue-good-table */ "./node_modules/vue-good-table/dist/vue-good-table.esm.js");
+/* harmony import */ var animate_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! animate.css */ "./node_modules/animate.css/animate.css");
+/* harmony import */ var animate_css__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(animate_css__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _providers_CashRegisters__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @/providers/CashRegisters */ "./resources/js/src/providers/CashRegisters.js");
 
 
 
@@ -130,64 +44,194 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var LaboratoryResource = new _providers_Laboratories__WEBPACK_IMPORTED_MODULE_8__["default"]();
+
+
+
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+var CashRegisterResource = new _providers_CashRegisters__WEBPACK_IMPORTED_MODULE_16__["default"]();
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'LaboratoryList',
   components: {
-    BCard: bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__["BCard"],
-    BRow: bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__["BRow"],
-    BCol: bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__["BCol"],
-    BInputGroupPrepend: bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__["BInputGroupPrepend"],
-    BInputGroupAppend: bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__["BInputGroupAppend"],
-    BInputGroup: bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__["BInputGroup"],
-    BFormInput: bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__["BFormInput"],
-    BButton: bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__["BButton"],
-    BTable: bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__["BTable"],
-    BMedia: bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__["BMedia"],
-    BAvatar: bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__["BAvatar"],
-    BLink: bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__["BLink"],
-    BBadge: bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__["BBadge"],
-    BDropdown: bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__["BDropdown"],
-    BDropdownItem: bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__["BDropdownItem"],
-    BPagination: bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__["BPagination"],
-    BSpinner: bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__["BSpinner"],
-    vSelect: vue_select__WEBPACK_IMPORTED_MODULE_6___default.a,
-    BTooltip: bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__["BTooltip"],
-    VBTooltip: bootstrap_vue__WEBPACK_IMPORTED_MODULE_4__["VBTooltip"]
+    VueGoodTable: vue_good_table__WEBPACK_IMPORTED_MODULE_14__["VueGoodTable"],
+    BOverlay: bootstrap_vue__WEBPACK_IMPORTED_MODULE_11__["BOverlay"],
+    BInputGroupPrepend: bootstrap_vue__WEBPACK_IMPORTED_MODULE_11__["BInputGroupPrepend"],
+    BInputGroupAppend: bootstrap_vue__WEBPACK_IMPORTED_MODULE_11__["BInputGroupAppend"],
+    BInputGroup: bootstrap_vue__WEBPACK_IMPORTED_MODULE_11__["BInputGroup"],
+    BFormInput: bootstrap_vue__WEBPACK_IMPORTED_MODULE_11__["BFormInput"],
+    BCard: bootstrap_vue__WEBPACK_IMPORTED_MODULE_11__["BCard"],
+    BTable: bootstrap_vue__WEBPACK_IMPORTED_MODULE_11__["BTable"],
+    BRow: bootstrap_vue__WEBPACK_IMPORTED_MODULE_11__["BRow"],
+    BCol: bootstrap_vue__WEBPACK_IMPORTED_MODULE_11__["BCol"],
+    BButton: bootstrap_vue__WEBPACK_IMPORTED_MODULE_11__["BButton"],
+    BSpinner: bootstrap_vue__WEBPACK_IMPORTED_MODULE_11__["BSpinner"],
+    vSelect: vue_select__WEBPACK_IMPORTED_MODULE_12___default.a,
+    BTooltip: bootstrap_vue__WEBPACK_IMPORTED_MODULE_11__["BTooltip"],
+    VBTooltip: bootstrap_vue__WEBPACK_IMPORTED_MODULE_11__["VBTooltip"],
+    BPagination: bootstrap_vue__WEBPACK_IMPORTED_MODULE_11__["BPagination"]
   },
   directives: {
-    Ripple: vue_ripple_directive__WEBPACK_IMPORTED_MODULE_5__["default"]
+    'b-tooltip': bootstrap_vue__WEBPACK_IMPORTED_MODULE_11__["VBTooltip"],
+    Ripple: vue_ripple_directive__WEBPACK_IMPORTED_MODULE_13__["default"]
   },
   data: function data() {
     return {
-      laboratories: [],
+      cashRegisters: [],
       perPageOptions: [10, 25, 50, 100],
       perPage: 10,
       currentPage: 1,
-      totalLaboratories: 0,
+      totalCashRegister: 0,
       columns: [{
-        key: "name",
-        label: this.$t("laboratories.table_name")
+        key: 'id',
+        label: this.$t('cash_registers.table_closing_id')
       }, {
-        key: "rut",
-        label: 'Documento'
+        key: 'closing_date',
+        label: this.$t('cash_registers.table_closing_date')
       }, {
-        key: "phone",
-        label: this.$t("laboratories.table_phone")
+        key: 'comments',
+        label: this.$t('cash_registers.table_note')
       }, {
-        key: "address",
-        label: this.$t("laboratories.table_address")
+        key: 'total_income',
+        label: this.$t('cash_registers.table_income')
       }, {
-        key: "deleted_at",
-        label: this.$t("laboratories.table_state")
+        key: 'total_expenses',
+        label: this.$t('cash_registers.table_expenses')
       }, {
-        key: "updated_at",
-        label: this.$t("laboratories.table_updated_at")
+        key: 'total_balance',
+        label: this.$t('cash_registers.table_total')
       }, {
-        key: "actions",
-        label: this.$t("actions")
+        key: 'actions',
+        label: this.$t('actions')
       }],
-      sortBy: "name",
+      sortBy: 'id',
       sortDesc: false,
       searchQuery: null,
       from: 0,
@@ -197,20 +241,20 @@ var LaboratoryResource = new _providers_Laboratories__WEBPACK_IMPORTED_MODULE_8_
   },
   computed: {
     dataMeta: function dataMeta() {
-      var localItemsCount = lodash__WEBPACK_IMPORTED_MODULE_3___default.a.size(this.actions);
+      var localItemsCount = _.size(this.cashRegisters);
       return {
         from: this.perPage * (this.currentPage - 1) + (localItemsCount ? 1 : 0),
         to: this.perPage * (this.currentPage - 1) + localItemsCount,
-        of: this.totalAction
+        of: this.totalCashRegister
       };
     }
   },
   watch: {
     currentPage: function currentPage(value) {
-      this.getLaboratories();
+      this.getCashRegisters();
     },
     perPage: function perPage(value) {
-      this.getLaboratories();
+      this.getCashRegisters();
     }
   },
   mounted: function mounted() {
@@ -220,7 +264,7 @@ var LaboratoryResource = new _providers_Laboratories__WEBPACK_IMPORTED_MODULE_8_
         while (1) switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return _this.getLaboratories();
+            return _this.getCashRegisters();
           case 2:
           case "end":
             return _context.stop();
@@ -229,136 +273,107 @@ var LaboratoryResource = new _providers_Laboratories__WEBPACK_IMPORTED_MODULE_8_
     }))();
   },
   methods: {
-    getLaboratories: function getLaboratories() {
+    downloadCashRegister: function downloadCashRegister(item) {
       var _this2 = this;
       return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee2() {
-        var query, _yield$LaboratoryReso, data;
+        var _yield$CashRegisterRe, data, blob, link, fileName;
         return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee2$(_context2) {
           while (1) switch (_context2.prev = _context2.next) {
             case 0:
-              query = {
-                search: _this2.searchQuery,
-                sortBy: _this2.sortBy,
-                sortDesc: _this2.sortDesc,
-                perPage: _this2.perPage,
-                page: _this2.currentPage
-              };
+              console.log(item);
+              _context2.prev = 1;
               _this2.loading = true;
-              _context2.next = 4;
-              return LaboratoryResource.getList(query);
-            case 4:
-              _yield$LaboratoryReso = _context2.sent;
-              data = _yield$LaboratoryReso.data;
+              _context2.next = 5;
+              return CashRegisterResource.download(item.id);
+            case 5:
+              _yield$CashRegisterRe = _context2.sent;
+              data = _yield$CashRegisterRe.data;
               _this2.loading = false;
-              _this2.laboratories = data.data;
-              _this2.totalLaboratories = data.total;
-            case 9:
+              blob = new Blob([data], {
+                type: 'application/vnd.ms-excel'
+              });
+              link = document.createElement('a');
+              link.href = window.URL.createObjectURL(blob);
+              fileName = "".concat(_this2.$t('cash_registers.export_name'), "-").concat(item.closing_date, "-").concat(item.closing_end_date);
+              link.download = "".concat(fileName, ".xls");
+              link.click();
+              _context2.next = 20;
+              break;
+            case 16:
+              _context2.prev = 16;
+              _context2.t0 = _context2["catch"](1);
+              _this2.loading = false;
+              _this2.handleResponseErrors(_context2.t0);
+            case 20:
             case "end":
               return _context2.stop();
           }
-        }, _callee2);
+        }, _callee2, null, [[1, 16]]);
       }))();
     },
-    deleteLaboratory: function deleteLaboratory(item) {
+    getCashRegisters: function getCashRegisters() {
       var _this3 = this;
-      this.$swal({
-        title: this.$t("are_you_sure"),
-        text: item.is_active ? this.$t("you_wont_be_able_to_revert_this") : this.$t("you_will_be_able_to_revert_this"),
-        icon: "question",
-        showCancelButton: true,
-        confirmButtonText: this.$t("yes_continue"),
-        cancelButtonText: this.$t("cancel"),
-        customClass: {
-          confirmButton: "btn btn-primary",
-          cancelButton: "btn btn-outline-danger ml-1"
-        },
-        showClass: {
-          popup: "animate__animated animate__flipInX"
-        },
-        buttonsStyling: false,
-        showLoaderOnConfirm: true,
-        preConfirm: function () {
-          var _preConfirm = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee3() {
-            var _yield$LaboratoryReso2, data;
-            return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee3$(_context3) {
-              while (1) switch (_context3.prev = _context3.next) {
-                case 0:
-                  _context3.prev = 0;
-                  _this3.loading = true;
-                  _context3.next = 4;
-                  return LaboratoryResource.deleteLaboratory(item.id);
-                case 4:
-                  _yield$LaboratoryReso2 = _context3.sent;
-                  data = _yield$LaboratoryReso2.data;
-                  _this3.loading = false;
-                  if (data.success) {
-                    _this3.success(data.message);
-                    _this3.laboratories = _this3.laboratories.map(function (laboratory) {
-                      if (laboratory.id === item.id) {
-                        return data.data;
-                      }
-                      return laboratory;
-                    });
-                  } else {
-                    _this3.danger(data.message);
-                  }
-                  _context3.next = 15;
-                  break;
-                case 10:
-                  _context3.prev = 10;
-                  _context3.t0 = _context3["catch"](0);
-                  _this3.loading = false;
-                  _this3.handleResponseErrors(_context3.t0);
-                  _this3.$swal.showValidationMessage("Request failed: ".concat(error));
-                case 15:
-                case "end":
-                  return _context3.stop();
-              }
-            }, _callee3, null, [[0, 10]]);
-          }));
-          function preConfirm() {
-            return _preConfirm.apply(this, arguments);
+      return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee3() {
+        var query, _yield$CashRegisterRe2, data;
+        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee3$(_context3) {
+          while (1) switch (_context3.prev = _context3.next) {
+            case 0:
+              query = {
+                search: _this3.searchQuery,
+                sortBy: _this3.sortBy,
+                sortDesc: _this3.sortDesc,
+                perPage: _this3.perPage,
+                page: _this3.currentPage
+              };
+              _this3.loading = true;
+              _context3.next = 4;
+              return CashRegisterResource.getList(query);
+            case 4:
+              _yield$CashRegisterRe2 = _context3.sent;
+              data = _yield$CashRegisterRe2.data;
+              _this3.loading = false;
+              _this3.cashRegisters = data.data;
+              _this3.totalCashRegister = data.total;
+            case 9:
+            case "end":
+              return _context3.stop();
           }
-          return preConfirm;
-        }(),
-        allowOutsideClick: function allowOutsideClick() {
-          return !Swal.isLoading();
-        }
-      });
+        }, _callee3);
+      }))();
     }
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=style&index=0&id=686b6f94&lang=scss&scoped=true&":
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=style&index=0&id=686b6f94&lang=scss&scoped=true& ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=style&index=0&id=68c51602&lang=scss&scoped=true&":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=style&index=0&id=68c51602&lang=scss&scoped=true& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".per-page-selector[data-v-686b6f94] {\n  width: 90px;\n}", ""]);
+exports.push([module.i, ".per-page-selector[data-v-68c51602] {\n  width: 90px;\n}\n.text-decoration-line-through[data-v-68c51602] {\n  text-decoration: line-through;\n}", ""]);
 // Exports
 module.exports = exports;
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=style&index=1&id=686b6f94&lang=scss&":
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=style&index=1&id=686b6f94&lang=scss& ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=style&index=1&id=68c51602&lang=scss&":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=style&index=1&id=68c51602&lang=scss& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-var ___CSS_LOADER_AT_RULE_IMPORT_0___ = __webpack_require__(/*! -!../../../../../../../../node_modules/css-loader/dist/cjs.js!sweetalert2/dist/sweetalert2.min.css */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sweetalert2/dist/sweetalert2.min.css");
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+var ___CSS_LOADER_AT_RULE_IMPORT_0___ = __webpack_require__(/*! -!../../../../../../../node_modules/css-loader/dist/cjs.js!sweetalert2/dist/sweetalert2.min.css */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sweetalert2/dist/sweetalert2.min.css");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 exports.i(___CSS_LOADER_AT_RULE_IMPORT_0___);
 // Module
@@ -369,15 +384,15 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=style&index=0&id=686b6f94&lang=scss&scoped=true&":
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=style&index=0&id=686b6f94&lang=scss&scoped=true& ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=style&index=0&id=68c51602&lang=scss&scoped=true&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=style&index=0&id=68c51602&lang=scss&scoped=true& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./LaboratoryList.vue?vue&type=style&index=0&id=686b6f94&lang=scss&scoped=true& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=style&index=0&id=686b6f94&lang=scss&scoped=true&");
+var content = __webpack_require__(/*! !../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CashRegisterList.vue?vue&type=style&index=0&id=68c51602&lang=scss&scoped=true& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=style&index=0&id=68c51602&lang=scss&scoped=true&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -391,7 +406,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(/*! ../../../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+var update = __webpack_require__(/*! ../../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -399,15 +414,15 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=style&index=1&id=686b6f94&lang=scss&":
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=style&index=1&id=686b6f94&lang=scss& ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=style&index=1&id=68c51602&lang=scss&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=style&index=1&id=68c51602&lang=scss& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./LaboratoryList.vue?vue&type=style&index=1&id=686b6f94&lang=scss& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=style&index=1&id=686b6f94&lang=scss&");
+var content = __webpack_require__(/*! !../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CashRegisterList.vue?vue&type=style&index=1&id=68c51602&lang=scss& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=style&index=1&id=68c51602&lang=scss&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -421,7 +436,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(/*! ../../../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+var update = __webpack_require__(/*! ../../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -429,10 +444,10 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=template&id=686b6f94&scoped=true&":
-/*!***********************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=template&id=686b6f94&scoped=true& ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=template&id=68c51602&scoped=true&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=template&id=68c51602&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -445,8 +460,44 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
+    "b-overlay",
+    {
+      attrs: {
+        show: _vm.loading,
+        blur: "2px",
+        variant: "transparent",
+        rounded: "lg",
+        opacity: "0.85",
+      },
+      scopedSlots: _vm._u([
+        {
+          key: "overlay",
+          fn: function () {
+            return [
+              _c(
+                "div",
+                { staticClass: "d-flex align-items-center" },
+                [
+                  _c("b-spinner", {
+                    attrs: { small: "", type: "grow", variant: "secondary" },
+                  }),
+                  _vm._v(" "),
+                  _c("b-spinner", { attrs: { type: "grow", variant: "dark" } }),
+                  _vm._v(" "),
+                  _c("b-spinner", {
+                    attrs: { small: "", type: "grow", variant: "secondary" },
+                  }),
+                ],
+                1
+              ),
+            ]
+          },
+          proxy: true,
+        },
+      ]),
+    },
     [
+      _vm._v(" "),
       _c(
         "b-card",
         { staticClass: "mb-0", attrs: { "no-body": "" } },
@@ -462,7 +513,7 @@ var render = function () {
                     "b-col",
                     {
                       staticClass:
-                        "d-flex align-items-center justify-content-start mb-1 mb-md-0",
+                        " d-flex align-items-center justify-content-start mb-1 mb-md-0 ",
                       attrs: { cols: "12", md: "6" },
                     },
                     [
@@ -483,7 +534,7 @@ var render = function () {
                         },
                       }),
                       _vm._v(" "),
-                      _vm.canAccess("laboratories.create")
+                      _vm.canAccess("cash_registers.create")
                         ? _c(
                             "b-button",
                             {
@@ -491,7 +542,7 @@ var render = function () {
                               on: {
                                 click: function ($event) {
                                   return _vm.$router.push({
-                                    name: "apps-laboratory-add",
+                                    name: "apps-cash-register-add",
                                   })
                                 },
                               },
@@ -499,9 +550,9 @@ var render = function () {
                             [
                               _c("span", { staticClass: "text-nowrap" }, [
                                 _vm._v(
-                                  "\n                            " +
+                                  "\n              " +
                                     _vm._s(_vm.$t("add")) +
-                                    "\n                        "
+                                    "\n            "
                                 ),
                               ]),
                             ]
@@ -526,7 +577,7 @@ var render = function () {
                               staticClass: "d-inline-block _mr-1",
                               attrs: {
                                 placeholder: _vm.$t(
-                                  "laboratories.search_options"
+                                  "cash_registers.search_options"
                                 ),
                               },
                               on: {
@@ -543,7 +594,7 @@ var render = function () {
                                   ) {
                                     return null
                                   }
-                                  return _vm.getLaboratories($event)
+                                  return _vm.getCashRegisters($event)
                                 },
                               },
                               model: {
@@ -562,7 +613,7 @@ var render = function () {
                                   "b-button",
                                   {
                                     attrs: { variant: "primary" },
-                                    on: { click: _vm.getLaboratories },
+                                    on: { click: _vm.getCashRegisters },
                                   },
                                   [
                                     _c("feather-icon", {
@@ -591,62 +642,86 @@ var render = function () {
           _c(
             "b-table",
             {
-              ref: "refLaboratoriesListTable",
+              ref: "refCashRegisterListTable",
               staticClass: "position-relative",
               attrs: {
-                items: _vm.laboratories,
+                items: _vm.cashRegisters,
                 responsive: "",
                 fields: _vm.columns,
                 "primary-key": "id",
-                "sort-by": _vm.sortBy,
                 "show-empty": "",
                 "empty-text": _vm.$t("datatables.sZeroRecords"),
-                "sort-desc": _vm.sortDesc,
                 "current-page": _vm.currentPage,
                 "busy.sync": "loading",
                 stacked: "md",
               },
-              on: {
-                "update:sortBy": function ($event) {
-                  _vm.sortBy = $event
-                },
-                "update:sort-by": function ($event) {
-                  _vm.sortBy = $event
-                },
-                "update:sortDesc": function ($event) {
-                  _vm.sortDesc = $event
-                },
-                "update:sort-desc": function ($event) {
-                  _vm.sortDesc = $event
-                },
-              },
               scopedSlots: _vm._u([
                 {
-                  key: "cell(deleted_at)",
+                  key: "cell(id)",
                   fn: function (data) {
                     return [
-                      _c(
-                        "b-badge",
-                        {
-                          staticClass: "text-capitalize",
-                          attrs: {
-                            pill: "",
-                            variant:
-                              "light-" +
-                              _vm.resolveStatusBadge(data.item.is_active),
-                          },
-                        },
-                        [
-                          _vm._v(
-                            "\n                    " +
-                              _vm._s(
-                                _vm.resolveTranlateStatusActive(
-                                  data.item.is_active
-                                )
-                              ) +
-                              "\n                "
-                          ),
-                        ]
+                      _vm._v("\n        " + _vm._s(data.item.id) + "\n      "),
+                    ]
+                  },
+                },
+                {
+                  key: "cell(closing_date)",
+                  fn: function (data) {
+                    return [
+                      _vm._v(
+                        "\n        " +
+                          _vm._s(_vm.dateFormat(data.item.closing_date)) +
+                          "\n      "
+                      ),
+                    ]
+                  },
+                },
+                {
+                  key: "cell(comments)",
+                  fn: function (data) {
+                    return [
+                      _vm._v(
+                        "\n        " + _vm._s(data.item.comments) + "\n      "
+                      ),
+                    ]
+                  },
+                },
+                {
+                  key: "cell(total_income)",
+                  fn: function (data) {
+                    return [
+                      _vm._v(
+                        "\n        " +
+                          _vm._s(_vm.formatPrice(data.item.total_income)) +
+                          "\n      "
+                      ),
+                    ]
+                  },
+                },
+                {
+                  key: "cell(total_expenses)",
+                  fn: function (data) {
+                    return [
+                      _vm._v(
+                        "\n        " +
+                          _vm._s(_vm.formatPrice(data.item.total_expenses)) +
+                          "\n      "
+                      ),
+                    ]
+                  },
+                },
+                {
+                  key: "cell(total_balance)",
+                  fn: function (data) {
+                    return [
+                      _vm._v(
+                        "\n        " +
+                          _vm._s(
+                            _vm.formatPrice(
+                              data.item.total_income - data.item.total_expenses
+                            )
+                          ) +
+                          "\n      "
                       ),
                     ]
                   },
@@ -659,8 +734,7 @@ var render = function () {
                         "div",
                         { staticClass: "demo-inline-spacing" },
                         [
-                          data.item.is_active &&
-                          _vm.canAccess("laboratories.edit")
+                          _vm.canAccess("cash_registers.show")
                             ? _c(
                                 "b-button",
                                 {
@@ -671,6 +745,15 @@ var render = function () {
                                       value: "rgba(255, 255, 255, 0.15)",
                                       expression: "'rgba(255, 255, 255, 0.15)'",
                                       modifiers: { 400: true },
+                                    },
+                                    {
+                                      name: "b-tooltip",
+                                      rawName: "v-b-tooltip.hover.right",
+                                      value:
+                                        "" + _vm.$t("button_tooltip_detail"),
+                                      expression:
+                                        "`${$t('button_tooltip_detail')}`",
+                                      modifiers: { hover: true, right: true },
                                     },
                                   ],
                                   staticClass: "btn-icon",
@@ -678,7 +761,7 @@ var render = function () {
                                   on: {
                                     click: function ($event) {
                                       return _vm.$router.push({
-                                        name: "apps-laboratory-edit",
+                                        name: "apps-cash-register-show",
                                         params: { id: data.item.id },
                                       })
                                     },
@@ -686,15 +769,14 @@ var render = function () {
                                 },
                                 [
                                   _c("feather-icon", {
-                                    attrs: { icon: "EditIcon" },
+                                    attrs: { icon: "EyeIcon" },
                                   }),
                                 ],
                                 1
                               )
                             : _vm._e(),
                           _vm._v(" "),
-                          data.item.is_active &&
-                          _vm.canAccess("laboratories.destroy")
+                          _vm.canAccess("cash_registers.download")
                             ? _c(
                                 "b-button",
                                 {
@@ -706,49 +788,27 @@ var render = function () {
                                       expression: "'rgba(255, 255, 255, 0.15)'",
                                       modifiers: { 400: true },
                                     },
-                                  ],
-                                  staticClass: "btn-icon",
-                                  attrs: { variant: "danger", size: "sm" },
-                                  on: {
-                                    click: function ($event) {
-                                      return _vm.deleteLaboratory(data.item)
-                                    },
-                                  },
-                                },
-                                [
-                                  _c("feather-icon", {
-                                    attrs: { icon: "Trash2Icon" },
-                                  }),
-                                ],
-                                1
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          !data.item.is_active &&
-                          _vm.canAccess("laboratories.active")
-                            ? _c(
-                                "b-button",
-                                {
-                                  directives: [
                                     {
-                                      name: "ripple",
-                                      rawName: "v-ripple.400",
-                                      value: "rgba(255, 255, 255, 0.15)",
-                                      expression: "'rgba(255, 255, 255, 0.15)'",
-                                      modifiers: { 400: true },
+                                      name: "b-tooltip",
+                                      rawName: "v-b-tooltip.hover.right",
+                                      value:
+                                        "" + _vm.$t("button_tooltip_download"),
+                                      expression:
+                                        "`${$t('button_tooltip_download')}`",
+                                      modifiers: { hover: true, right: true },
                                     },
                                   ],
                                   staticClass: "btn-icon",
-                                  attrs: { variant: "warning", size: "sm" },
+                                  attrs: { variant: "secondary", size: "sm" },
                                   on: {
                                     click: function ($event) {
-                                      return _vm.deleteLaboratory(data.item)
+                                      return _vm.downloadCashRegister(data.item)
                                     },
                                   },
                                 },
                                 [
                                   _c("feather-icon", {
-                                    attrs: { icon: "CheckIcon" },
+                                    attrs: { icon: "DownloadIcon" },
                                   }),
                                 ],
                                 1
@@ -783,7 +843,7 @@ var render = function () {
             2
           ),
           _vm._v(" "),
-          _vm.laboratories
+          _vm.cashRegisters
             ? _c(
                 "div",
                 { staticClass: "mx-2 mb-2" },
@@ -823,7 +883,7 @@ var render = function () {
                             [
                               _c("b-pagination", {
                                 attrs: {
-                                  "total-rows": _vm.totalLaboratories,
+                                  "total-rows": _vm.totalCashRegister,
                                   "per-page": _vm.perPage,
                                   size: "lg",
                                 },
@@ -861,16 +921,16 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./resources/js/src/providers/Laboratories.js":
-/*!****************************************************!*\
-  !*** ./resources/js/src/providers/Laboratories.js ***!
-  \****************************************************/
+/***/ "./resources/js/src/providers/CashRegisters.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/src/providers/CashRegisters.js ***!
+  \*****************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Laboratories; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CashRegisters; });
 /* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
 /* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
@@ -878,95 +938,70 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var Laboratories = /*#__PURE__*/function () {
-  function Laboratories() {
-    Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Laboratories);
+var CashRegisters = /*#__PURE__*/function () {
+  function CashRegisters() {
+    Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, CashRegisters);
   }
-  Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__["default"])(Laboratories, [{
+  Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__["default"])(CashRegisters, [{
     key: "getList",
-    value:
-    /**
-     * Function to get all laboratory without pagination
-     */
-    function getList(query) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/laboratories", {
+    value: function getList(query) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/cash-registers', {
         params: query
       });
     }
-
-    /**
-     * Function to save a laboratory
-     * @param {Object} formdata
-     * @return AxiosPromise
-     */
   }, {
-    key: "save",
-    value: function save(formdata) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/laboratories", formdata);
+    key: "generate",
+    value: function generate(query) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/cash-registers/generate', {
+        params: query
+      });
     }
-
-    /**
-     * Function to get information by laboratory
-     * @param {Number} id
-     * @return AxiosPromise
-     */
   }, {
-    key: "getLaboratoryDetail",
-    value: function getLaboratoryDetail(id) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/laboratories/".concat(id));
+    key: "store",
+    value: function store(payload) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/api/cash-registers', payload);
     }
-
-    /**
-     * Function to update a branch
-     * @param {Object} formdata
-     * @return AxiosPromise
-     */
   }, {
-    key: "update",
-    value: function update(id, formdata) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("/api/laboratories/".concat(id), formdata);
+    key: "getDetail",
+    value: function getDetail(id) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/cash-registers/".concat(id));
     }
-
-    /**
-     * Funtion to delete laboratory
-     * @param {Array} users
-     * @return AxiosPromise
-     */
   }, {
-    key: "deleteLaboratory",
-    value: function deleteLaboratory(id) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a["delete"]("/api/laboratories/".concat(id));
+    key: "download",
+    value: function download(id) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/cash-registers/export/".concat(id), {
+        responseType: "arraybuffer"
+      });
     }
-
-    /**
-     * Function to get all laboratories without pagination
-     */
   }, {
-    key: "getAll",
-    value: function getAll() {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/laboratories/all");
+    key: "downloadPreview",
+    value: function downloadPreview(query) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/cash-registers/generate', {
+        responseType: "arraybuffer",
+        params: query
+      });
     }
   }]);
-  return Laboratories;
+  return CashRegisters;
 }();
 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue":
-/*!**********************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue ***!
-  \**********************************************************************************************/
+/***/ "./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue ***!
+  \********************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _LaboratoryList_vue_vue_type_template_id_686b6f94_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LaboratoryList.vue?vue&type=template&id=686b6f94&scoped=true& */ "./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=template&id=686b6f94&scoped=true&");
-/* harmony import */ var _LaboratoryList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./LaboratoryList.vue?vue&type=script&lang=js& */ "./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _LaboratoryList_vue_vue_type_style_index_0_id_686b6f94_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./LaboratoryList.vue?vue&type=style&index=0&id=686b6f94&lang=scss&scoped=true& */ "./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=style&index=0&id=686b6f94&lang=scss&scoped=true&");
-/* harmony import */ var _LaboratoryList_vue_vue_type_style_index_1_id_686b6f94_lang_scss___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./LaboratoryList.vue?vue&type=style&index=1&id=686b6f94&lang=scss& */ "./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=style&index=1&id=686b6f94&lang=scss&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _CashRegisterList_vue_vue_type_template_id_68c51602_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CashRegisterList.vue?vue&type=template&id=68c51602&scoped=true& */ "./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=template&id=68c51602&scoped=true&");
+/* harmony import */ var _CashRegisterList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CashRegisterList.vue?vue&type=script&lang=js& */ "./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _CashRegisterList_vue_vue_type_style_index_0_id_68c51602_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CashRegisterList.vue?vue&type=style&index=0&id=68c51602&lang=scss&scoped=true& */ "./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=style&index=0&id=68c51602&lang=scss&scoped=true&");
+/* harmony import */ var _CashRegisterList_vue_vue_type_style_index_1_id_68c51602_lang_scss___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CashRegisterList.vue?vue&type=style&index=1&id=68c51602&lang=scss& */ "./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=style&index=1&id=68c51602&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -977,82 +1012,82 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_4__["default"])(
-  _LaboratoryList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _LaboratoryList_vue_vue_type_template_id_686b6f94_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _LaboratoryList_vue_vue_type_template_id_686b6f94_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _CashRegisterList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CashRegisterList_vue_vue_type_template_id_68c51602_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CashRegisterList_vue_vue_type_template_id_68c51602_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "686b6f94",
+  "68c51602",
   null
   
 )
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue"
+component.options.__file = "resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************/
+/***/ "./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_LaboratoryList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./LaboratoryList.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_LaboratoryList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CashRegisterList.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=style&index=0&id=686b6f94&lang=scss&scoped=true&":
-/*!********************************************************************************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=style&index=0&id=686b6f94&lang=scss&scoped=true& ***!
-  \********************************************************************************************************************************************************/
+/***/ "./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=style&index=0&id=68c51602&lang=scss&scoped=true&":
+/*!******************************************************************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=style&index=0&id=68c51602&lang=scss&scoped=true& ***!
+  \******************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_LaboratoryList_vue_vue_type_style_index_0_id_686b6f94_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/style-loader!../../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./LaboratoryList.vue?vue&type=style&index=0&id=686b6f94&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=style&index=0&id=686b6f94&lang=scss&scoped=true&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_LaboratoryList_vue_vue_type_style_index_0_id_686b6f94_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_LaboratoryList_vue_vue_type_style_index_0_id_686b6f94_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_LaboratoryList_vue_vue_type_style_index_0_id_686b6f94_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_LaboratoryList_vue_vue_type_style_index_0_id_686b6f94_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterList_vue_vue_type_style_index_0_id_68c51602_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/style-loader!../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CashRegisterList.vue?vue&type=style&index=0&id=68c51602&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=style&index=0&id=68c51602&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterList_vue_vue_type_style_index_0_id_68c51602_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterList_vue_vue_type_style_index_0_id_68c51602_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterList_vue_vue_type_style_index_0_id_68c51602_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterList_vue_vue_type_style_index_0_id_68c51602_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=style&index=1&id=686b6f94&lang=scss&":
-/*!********************************************************************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=style&index=1&id=686b6f94&lang=scss& ***!
-  \********************************************************************************************************************************************/
+/***/ "./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=style&index=1&id=68c51602&lang=scss&":
+/*!******************************************************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=style&index=1&id=68c51602&lang=scss& ***!
+  \******************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_LaboratoryList_vue_vue_type_style_index_1_id_686b6f94_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/style-loader!../../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./LaboratoryList.vue?vue&type=style&index=1&id=686b6f94&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=style&index=1&id=686b6f94&lang=scss&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_LaboratoryList_vue_vue_type_style_index_1_id_686b6f94_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_LaboratoryList_vue_vue_type_style_index_1_id_686b6f94_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_LaboratoryList_vue_vue_type_style_index_1_id_686b6f94_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_LaboratoryList_vue_vue_type_style_index_1_id_686b6f94_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterList_vue_vue_type_style_index_1_id_68c51602_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/style-loader!../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CashRegisterList.vue?vue&type=style&index=1&id=68c51602&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=style&index=1&id=68c51602&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterList_vue_vue_type_style_index_1_id_68c51602_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterList_vue_vue_type_style_index_1_id_68c51602_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterList_vue_vue_type_style_index_1_id_68c51602_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterList_vue_vue_type_style_index_1_id_68c51602_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=template&id=686b6f94&scoped=true&":
-/*!*****************************************************************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=template&id=686b6f94&scoped=true& ***!
-  \*****************************************************************************************************************************************/
+/***/ "./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=template&id=68c51602&scoped=true&":
+/*!***************************************************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=template&id=68c51602&scoped=true& ***!
+  \***************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LaboratoryList_vue_vue_type_template_id_686b6f94_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./LaboratoryList.vue?vue&type=template&id=686b6f94&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue?vue&type=template&id=686b6f94&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LaboratoryList_vue_vue_type_template_id_686b6f94_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterList_vue_vue_type_template_id_68c51602_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CashRegisterList.vue?vue&type=template&id=68c51602&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/cash-registers/cash-register-list/CashRegisterList.vue?vue&type=template&id=68c51602&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterList_vue_vue_type_template_id_68c51602_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LaboratoryList_vue_vue_type_template_id_686b6f94_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CashRegisterList_vue_vue_type_template_id_68c51602_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

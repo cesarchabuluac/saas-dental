@@ -18,13 +18,13 @@
                         <calendar-days v-model="currentDay" />
                     </b-col>
                     <b-col cols="12" md="10" class="mt-2">
-                        <h3>
+                        <h4>
                             {{ $t('appointments.management') }}
                             <small><br>{{ $t('appointments.management_help') }}</small>
-                        </h3>
+                        </h4>
                         <b-row>
                             <b-col cols="12" md="3" class="mt-2">
-                                <v-select v-model="state" :options="calendarOptions" label="label"
+                                <v-select v-model="state" :options="calendarOptions" label="label" class="select-size-sm"
                                     :reduce="(calendar) => calendar.label" input-id="calendar" :clearable="false"
                                     :searchable="false" :placeholder="$t('appointments.state_placeholder')">
                                     <template #option="{ color, label }">
@@ -43,10 +43,10 @@
                             <b-col cols="12" md="9" class="mt-2">
                                 <div class="_d-flex align-items-center justify-content-end">
                                     <b-input-group>
-                                        <b-form-input v-model="searchQuery" class="d-inline-block _mr-1"
+                                        <b-form-input size="sm" v-model="searchQuery" class="d-inline-block _mr-1"
                                             :placeholder="$t('appointments.input_search')" @keyup.enter="getAppointments" />
                                         <b-input-group-prepend>
-                                            <b-button variant="primary" @click="getAppointments">
+                                            <b-button size="sm" variant="primary" @click="getAppointments">
                                                 <feather-icon icon="SearchIcon" />
                                             </b-button>
                                         </b-input-group-prepend>
@@ -59,7 +59,7 @@
             </div>
 
             <b-table ref="refAppointmentsListTable" striped hover :items="appointments" :fields="columns" responsive
-                primary-key="id" show-empty :empty-text="$t('datatables.sZeroRecords')" class="position-relative"
+                primary-key="id" show-empty :empty-text="$t('datatables.sZeroRecords')" class="position-relative table-small text-small small"
                 :current-page="currentPage" :busy.sync="loading" small stacked="md">
 
                 <!-- Hour -->

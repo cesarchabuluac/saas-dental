@@ -11,22 +11,22 @@
             <b-row class="mx-0">
                 <b-col md="12" class="revenue-report-wrapper">
                     <div class="d-sm-flex justify-content-between align-items-center mb-3">
-                        <h4 class="card-title mb-50 mb-sm-0">
+                        <h5 class="card-title mb-50 mb-sm-0">
                             {{ $t('users_revenue.title') }}
-                        </h4>
+                        </h5>
                         <div class="d-flex justify-content-center">
-                            <h4 class="mb-25 mt-1">{{ $t('total_commissions') }} {{ formatPrice(totalCommission) }}</h4>
+                            <h6 class="mb-25 mt-1">{{ $t('total_commissions') }} <br>{{ formatPrice(totalCommission) }}</h6>
                         </div>
                         <div class="d-flex align-items-center">
                             <b-input-group>
-                                <flat-pickr sm v-model="rangePicker" :config="{
+                                <flat-pickr v-model="rangePicker" :config="{
                                     mode: 'range',
                                     dateFormat: 'Y-m-d',
 
-                                }" class="form-control _flat-picker _bg-transparent border-1 _shadow-none"
+                                }" class="form-control _flat-picker _bg-transparent border-1 _shadow-none flatpickr-small"
                                     placeholder="YYYY-MM-DD" @on-change="handleChange" @on-ValueUpdate="handleChange" />
                                 <b-input-group-prepend>
-                                    <b-button @click="getDashboard(null)" sm round variant="primary">
+                                    <b-button size="sm" @click="getDashboard(null)" sm round variant="primary">
                                         <feather-icon icon="SearchIcon" />
                                     </b-button>
                                 </b-input-group-prepend>
@@ -47,7 +47,7 @@
                         height="230" :options="chartOptions" :series="series" @dataPointSelection="handleDataPointClick" /> -->
                     <b-table
                         ref="refProfessionalListTable" 
-                        class="position-relative b-table-responsive" 
+                        class="position-relative b-table-responsive table-small small text-small" 
                         :items="professionals" 
                         responsive
                         :sticky-header="true" 
@@ -222,30 +222,44 @@ export default {
                 {
                     key: "name",
                     label: this.$t('doctor'),
+                    tdStyle: 'font-size: 9px!important;',
+                    thStyle: 'font-size: 9px!important;'
                 },
                 {
                     key: "total",
                     label: this.$t('earnings.title'),
+                    tdStyle: 'font-size: 9px!important;',
+                    thStyle: 'font-size: 9px!important;'
                 },
                 {
                     key: "confirmed",
-                    label: this.$t('appointments.table_state_confirmed')
+                    label: this.$t('appointments.table_state_confirmed'),
+                    tdStyle: 'font-size: 9px!important;',
+                    thStyle: 'font-size: 9px!important;'
                 },
                 {
                     key: "pending",
-                    label: this.$t('appointments.table_state_pending')
+                    label: this.$t('appointments.table_state_pending'),
+                    tdStyle: 'font-size: 9px!important;',
+                    thStyle: 'font-size: 9px!important;'
                 },
                 {
                     key: "assisted",
-                    label: this.$t('appointments.table_state_assisted')
+                    label: this.$t('appointments.table_state_assisted'),
+                    tdStyle: 'font-size: 9px!important;',
+                    thStyle: 'font-size: 9px!important;'
                 },
                 {
                     key: "unassisted",
-                    label: this.$t('appointments.table_state_unassisted')
+                    label: this.$t('appointments.table_state_unassisted'),
+                    tdStyle: 'font-size: 9px!important;',
+                    thStyle: 'font-size: 9px!important;'
                 },
                 {
                     key: "canceled",
-                    label: this.$t('appointments.table_state_canceled')
+                    label: this.$t('appointments.table_state_canceled'),
+                    tdStyle: 'font-size: 9px!important;',
+                    thStyle: 'font-size: 9px!important;'
                 }
             ],
         }
@@ -358,11 +372,23 @@ export default {
 
 .b-table-responsive::-webkit-scrollbar-thumb {
   background-color: #888;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 .b-table-responsive::-webkit-scrollbar-thumb:hover {
   background-color: #555;
+}
+
+.flatpickr-small .flatpickr-input {
+    /*font-size: 8px!important; /* Ajusta el tamaño del texto del input */
+    padding: 5px; /* Ajusta el padding del input */
+    /*width: 120px; /* Ajusta el ancho del input */
+}
+
+.flatpickr-input {
+    /*width: 150px!important; /* Ajusta el ancho del input */
+    height: 30px!important; /* Ajusta la altura del input */
+    /*font-size: 7px!important; /* Ajusta el tamaño del texto del input */
 }
 </style>
   

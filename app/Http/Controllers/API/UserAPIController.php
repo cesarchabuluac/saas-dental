@@ -59,6 +59,7 @@ class UserAPIController extends Controller
      */
     public function index(Request $request)
     {
+        Log::info($request->all());
         $this->userRepository->pushCriteria(new TenantCriteria());
         $this->userRepository->pushCriteria(new UserCriteria($request));
 
@@ -94,7 +95,9 @@ class UserAPIController extends Controller
      */
     public function store(CreateUserRequest $request)
     {
-        $this->checkSubscriptionLimitByModelName($request->role_id);
+        if (tenant()) {
+            $this->checkSubscriptionLimitByModelName($request->role_id);
+        }
 
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
@@ -118,8 +121,10 @@ class UserAPIController extends Controller
             $user = $this->userRepository->create($input);
             $user->syncRoles($role->name);
 
-            if ($role->id === 4) { //Doctor
-                $user->schedules()->createMany($request->schedules);
+            if (tenant()) {
+                if ($role->id === 4) { //Doctor
+                    $user->schedules()->createMany($request->schedules);
+                }
             }
             DB::commit();
 
@@ -138,7 +143,6 @@ class UserAPIController extends Controller
      */
     public function show($id, Request $request)
     {
-
         $user = $this->userRepository;
 
         $totalMethods = [
@@ -254,8 +258,10 @@ class UserAPIController extends Controller
             $user['transactionsData'] = $transactionsData;
         }
 
-        if (isTenant()) {
+        if (isTenant() && tenant()) {
             $user = $user->load('schedules');
+        } else {
+            $user['schedules'] = [];
         }
 
         return $this->sendResponse($user, __('lang.retrieved_successfully', ['operator' => __('lang.user')]));
@@ -312,36 +318,40 @@ class UserAPIController extends Controller
             DB::beginTransaction();
             $user = $this->userRepository->update($input, $id);
             $user->syncRoles($role->name);
-            $user->load(['roles', 'schedules']);
-            if ($role->id === 4) {
-                $requestSchedules = $request->schedules;
-                $existingSchedules = $user->schedules()->get(); // Obtiene los días existentes
 
-                // Recorre los días existentes y verifica si no están en la selección actual
-                $existingSchedules->each(function ($schedule) use (&$requestSchedules) {
-                    $found = false;
-                    foreach ($requestSchedules as $key => $requestSchedule) {
-                        if ($schedule->day_of_week == $requestSchedule['day_of_week']) {
-                            $found = true;
-                            // Actualiza los campos personalizados como "start_time" y "end_time"
-                            $schedule->start_time = $requestSchedule['start_time'];
-                            $schedule->end_time = $requestSchedule['end_time'];
-                            $schedule->save();
-                            // Quita el día del arreglo $requestSchedules para evitar duplicados
-                            unset($requestSchedules[$key]);
-                            break;
+            if (tenant()) {
+                $user->load(['roles', 'schedules']);
+
+                if ($role->id === 4) {
+                    $requestSchedules = $request->schedules;
+                    $existingSchedules = $user->schedules()->get(); // Obtiene los días existentes
+    
+                    // Recorre los días existentes y verifica si no están en la selección actual
+                    $existingSchedules->each(function ($schedule) use (&$requestSchedules) {
+                        $found = false;
+                        foreach ($requestSchedules as $key => $requestSchedule) {
+                            if ($schedule->day_of_week == $requestSchedule['day_of_week']) {
+                                $found = true;
+                                // Actualiza los campos personalizados como "start_time" y "end_time"
+                                $schedule->start_time = $requestSchedule['start_time'];
+                                $schedule->end_time = $requestSchedule['end_time'];
+                                $schedule->save();
+                                // Quita el día del arreglo $requestSchedules para evitar duplicados
+                                unset($requestSchedules[$key]);
+                                break;
+                            }
                         }
-                    }
-
-                    // Si no se encontró el día en la selección actual, elimínalo
-                    if (!$found) {
-                        $schedule->delete();
-                    }
-                });
-
-                // Luego, agrega los nuevos días que quedan en $requestSchedules
-                $user->schedules()->createMany($requestSchedules);
-            }
+    
+                        // Si no se encontró el día en la selección actual, elimínalo
+                        if (!$found) {
+                            $schedule->delete();
+                        }
+                    });
+    
+                    // Luego, agrega los nuevos días que quedan en $requestSchedules
+                    $user->schedules()->createMany($requestSchedules);
+                }
+            }          
 
             if (isset($request->change_avatar) && $request->avatar) {
 

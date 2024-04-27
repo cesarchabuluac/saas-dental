@@ -7,7 +7,8 @@ export default class ImportFiles {
      */
     donwload(query) {
         return axios.get("/api/imports/donwload", {
-            responseType: "arraybuffer",
+            // responseType: "arraybuffer",
+            responseType: 'blob',
             params: query,
         });
     }

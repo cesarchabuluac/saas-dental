@@ -121,13 +121,23 @@ class SettingServiceProvider extends ServiceProvider
             config(['google.redirect' => url('login/google/callback')]);
             config(['fcm.key' => config()->get('settings.fcm_key', '')]);
 
-            config(['stripe.mode' => config()->get('settings.stripe_sandbox_key')]);
-            config(['stripe.sandbox.url' => config()->get('settings.stripe_sandbox_key')]);
-            config(['stripe.sandbox.key' => config()->get('settings.stripe_sandbox_key')]);
-            config(['stripe.sandbox.secret' => config()->get('settings.stripe_sandbox_secret')]);
-            config(['stripe.live.url' => config()->get('settings.stripe_live_key')]);
-            config(['stripe.live.key' => config()->get('settings.stripe_live_key')]);
-            config(['stripe.live.secret' => config()->get('settings.stripe_live_secret')]);
+            if (config()->get('settings.stripe_mode') == 'sandbox') {
+                config(['services.stripe.key' => config()->get('settings.stripe_sandbox_key')]);
+                config(['services.stripe.secret' => config()->get('settings.stripe_sandbox_secret')]);
+            } else {
+                config(['services.stripe.key' => config()->get('settings.stripe_live_key')]);
+                config(['services.stripe.secret' => config()->get('settings.stripe_live_secret')]);
+            }
+
+            \Log::warning(config()->get('services'));
+
+            // config(['stripe.mode' => config()->get('settings.stripe_sandbox_key')]);
+            // config(['stripe.sandbox.url' => config()->get('settings.stripe_sandbox_key')]);
+            // config(['stripe.sandbox.key' => config()->get('settings.stripe_sandbox_key')]);
+            // config(['stripe.sandbox.secret' => config()->get('settings.stripe_sandbox_secret')]);
+            // config(['stripe.live.url' => config()->get('settings.stripe_live_key')]);
+            // config(['stripe.live.key' => config()->get('settings.stripe_live_key')]);
+            // config(['stripe.live.secret' => config()->get('settings.stripe_live_secret')]);
 
             config(['paypal.mode' => config()->get('settings.paypal_mode', 'sandbox')]);
             config(['paypal.currency' => \Str::upper(config()->get('settings.default_currency_code', 'MXN'))]);

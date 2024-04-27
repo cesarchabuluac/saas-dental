@@ -20,6 +20,6 @@ class Brand extends Model
 
     public function medicines(): HasMany
     {
-        return $this->hasMany(Medicine::class);
+        return $this->hasMany(Medicine::class, 'unit_id', 'id');
     }
 }

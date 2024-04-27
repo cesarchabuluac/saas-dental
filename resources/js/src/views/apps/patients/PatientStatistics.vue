@@ -16,7 +16,7 @@
                             <h5>{{ $t('patients.statistics.new_statistics') }}</h5>
                         </b-col>
                     </b-row>
-                    <b-row class="mt-3">
+                    <b-row>
                         <b-col cols="12" md="2">
                             <label>{{ $t('start_at') }}</label>
                             <flat-pickr v-model="filter.start" class="form-control" :config="{ dateFormat: 'Y-m-d' }"
@@ -33,18 +33,18 @@
 
                         <b-col cols="12" md="8">
                             <div class="demo-inline-spacing">
-                                <b-button @click="getPatients" variant="primary" :class="{ 'btn-block': isMobile }">
+                                <b-button size="sm" @click="getPatients" variant="primary" :class="{ 'btn-block': isMobile }">
                                     <feather-icon icon="SearchIcon" />
                                     {{ $t("button_filter") }}
                                 </b-button>
 
-                                <b-button @click="downloadReport" variant="outline-warning"
+                                <b-button size="sm" @click="downloadReport" variant="outline-warning"
                                     :class="{ 'btn-block': isMobile }">
                                     <feather-icon icon="DownloadIcon" />
                                     {{ $t('download') }}
                                 </b-button>
 
-                                <b-button @click="$router.push({ name: 'home' })" variant="outline-secondary"
+                                <b-button size="sm" @click="$router.push({ name: 'home' })" variant="outline-secondary"
                                     :class="{ 'btn-block': isMobile }">
                                     <feather-icon icon="ChevronLeftIcon" />
                                     {{ $t("back_to_dashboard") }}
@@ -53,10 +53,17 @@
                         </b-col>
                     </b-row>
                 </div>
+            </b-card>
+
+            <b-card no-body>
+           
                 <div class="table-responsive">
-                    <b-table id="refPatientsListTable" ref="refPatientsListTable" class="position-relative"
+                    <b-table id="refPatientsListTable" ref="refPatientsListTable" class="position-relative table-small text-small small"
                         :items="patients" responsive :fields="column" primary-key="id" show-empty
-                        :empty-text="$t('datatables.sZeroRecords')" stacked="md">
+                        :empty-text="$t('datatables.sZeroRecords')" stacked="md" small
+                        :sticky-header="true"
+                        :no-border-collapse="true"
+                        >
 
                         <!-- Column: name -->
                         <template #cell(name)="data">
@@ -379,6 +386,20 @@ export default {
     }
 };
 </script>
+
+<style lang="scss" scoped>
+.flatpickr-small .flatpickr-input {
+    /*font-size: 8px!important; /* Ajusta el tamaño del texto del input */
+    padding: 5px; /* Ajusta el padding del input */
+    /*width: 120px; /* Ajusta el ancho del input */
+}
+
+.flatpickr-input {
+    /*width: 150px!important; /* Ajusta el ancho del input */
+    height: 30px!important; /* Ajusta la altura del input */
+    /*font-size: 7px!important; /* Ajusta el tamaño del texto del input */
+}
+</style>
 
 <style lang="scss">
 @import "~@resources/scss/vue/libs/vue-flatpicker.scss";

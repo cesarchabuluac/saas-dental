@@ -181,6 +181,7 @@
   "success_record": "Éxito",
   "name": "Nombre",
   "created_at": "Creado en",
+  "updated_at": "Actualizado en",
   "description": "Descripción",
   "verify_email_address": "Se ha enviado un nuevo enlace de verificación a tu dirección de correo electrónico.",
   "before_proceeding": "Antes de continuar, por favor revisa tu correo electrónico para encontrar un enlace de verificación.",
@@ -445,7 +446,8 @@
           "store": "Guardar marcas",
           "show": "Mostrar detalle de marcas",
           "destroy": "Eliminar/Desactivar marcas",
-          "update": "Actualizar marcas"
+          "update": "Actualizar marcas",
+          "updated_at":"Actualizado en"
         },
         "medicines": {
           "index": "Ver medicamentos",
@@ -647,8 +649,16 @@
   "app_setting_clear": "Limpiar",
   "app_setting_clear_cache": "Limpiar caché",
   "app_setting_colors": "Tema de la Aplicación",
+
+  "app_setting_delete_payments_after": "Eliminar Pagos Despúes de (días)",
+  "app_setting_delete_payments_after_help": "El intervalo debe ser por días (0 significa sin limite de días)",
+  "app_setting_delete_payments_after_placeholder": "Intervalo en días",
+
   "app_setting_currency_right": "Moneda a la Derecha",
   "app_setting_currency_right_help": "Mostrar la moneda a la derecha del precio",
+
+  
+
   "app_setting_custom_field_models": "Modelos de Campos Personalizados",
   "app_setting_custom_field_models_help": "Selecciona los modelos en los que habilitar campos personalizados",
   "app_setting_theme": "Tema / Diseño",
@@ -720,6 +730,9 @@
   "app_setting_fixed_header": "Encabezado Fijo",
   "app_setting_fixed_header_help": "Fijar el encabezado en la parte superior",
   "app_setting_fr": "Francés",
+  "app_setting_currency": "Configuraciones de Moneda",
+  "app_setting_currencies": "Configuraciones de Monedas",
+
   "app_setting_global": "Configuraciones Globales",
   "app_setting_globals": "Configuraciones Globales",
   "app_setting_google": "Autenticación usando Google",
@@ -851,6 +864,19 @@
   "app_setting_appointment_footer": "Descripción del Pie de Página",
   "app_setting_appointment_footer_placeholder": "Agrega una descripción para el pie de página del correo electrónico",
   "app_setting_appointment_footer_help": "No elimines las propiedades o valores que están dentro de las llaves: {specialist}, {app_name}",
+  "app_setting_diary": "Agenda",
+  "app_setting_diary_title": "Configuración de Agenda",
+  "app_setting_diary_subtitle": "Configuración del horario de la Agenda",
+  "app_setting_diary_start_time": "Hora de inicio",
+  "app_setting_diary_start_time_help": "Ingrese la hora de inicio de la agenda en formato HH:MM:SS",
+  "app_setting_diary_start_time_placeholder": "Hora de inicio",
+  "app_setting_diary_end_time": "Hora de fin",
+  "app_setting_diary_end_time_help": "Ingrese la hora de fin de la agenda en formato HH:MM:SS",
+  "app_setting_diary_end_time_placeholder": "Hora de fin",
+  "app_setting_diary_interval": "Intervalo por cita",
+  "app_setting_diary_interval_help": "Ingrese el intervalo de tiempo entre citas en minutos.",
+  "app_setting_diary_interval_placeholder": "15",
+
   "reminder_frecuency_ten_minute": "Cada 10 minutos",
   "reminder_frecuency_fifteen_minute": "Cada 15 minutos",
   "reminder_frecuency_thirty_minute": "Cada 30 minutos",
@@ -1781,6 +1807,8 @@
   },
   "filters": {
     "title": "Filtros por",
+    "start_at": "Fecha Inicio",
+    "end_at": "Fecha Fin",
     "required_description": "Debes aplicar al menos un filtro",
     "required_dates": "Debes seleccionar al menos una fecha",
     "status": {
@@ -2912,6 +2940,10 @@
     "welcome": "Bienvenido a la Aplicación :system",
     "title": "Tu sistema aún no está configurado.",
     "description": "Por favor, completa la configuración antes de continuar.",
+    "global": {
+      "title": "Configuración Global",
+      "description": "Debe definir los parametros y/o configuraciones principales de la cuenta"
+    },
     "accounts": {
       "title": "Detalles de la Cuenta",
       "description": "Configura las cuentas principales de: Doctor, Asistente, Recepcionista. Si aún no tienes la información, se crearán cuentas predeterminadas y luego podrás hacer los ajustes necesarios."

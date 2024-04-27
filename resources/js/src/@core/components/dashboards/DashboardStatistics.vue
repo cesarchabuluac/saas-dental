@@ -8,9 +8,11 @@
 					<b-spinner small type="grow" variant="secondary" />
 				</div>
 			</template>
-			<b-card v-if="data" class="card-statistics">
+			<b-card no-body v-if="data" class="card-statistics">
 				<b-card-header>
-					<b-card-title>{{ $t('dashboard_statistics.title').replace(':month', currentDate('MMMM [,] Y') ) }}</b-card-title>
+					<b-card-title>
+						{{ $t('dashboard_statistics.title').replace(':month', currentDate('MMMM [,] Y') ) }}
+					</b-card-title>
 				</b-card-header>
 
 				<b-card-body class="statistics-body">
@@ -18,15 +20,15 @@
 						<b-col xl="3" sm="6" class="mb-2 mb-xl-0">
 							<b-media no-body>
 								<b-media-aside class="mr-2">
-									<b-avatar size="48" variant="light-primary">
-										<feather-icon size="24" icon="TrendingUpIcon" />
+									<b-avatar variant="light-primary">
+										<feather-icon icon="TrendingUpIcon" />
 									</b-avatar>
 								</b-media-aside>
 								<b-media-body class="my-auto">
 									<h4 class="font-weight-bolder mb-0">
 										{{ kFormatter(data.amountEarningCurrentMonth) }}
 									</h4>
-									<b-card-text class="font-small-3 mb-0">
+									<b-card-text class="font-small-2 mb-0">
 										{{ $t('payments.dashboard_income') }}
 									</b-card-text>
 								</b-media-body>
@@ -36,15 +38,15 @@
 						<b-col xl="3" sm="6" class="mb-2 mb-xl-0">
 							<b-media no-body>
 								<b-media-aside class="mr-2">
-									<b-avatar size="48" variant="light-danger">
-										<feather-icon size="24" icon="TrendingDownIcon" />
+									<b-avatar variant="light-danger">
+										<feather-icon icon="TrendingDownIcon" />
 									</b-avatar>
 								</b-media-aside>
 								<b-media-body class="my-auto">
 									<h4 class="font-weight-bolder mb-0">
 										{{ kFormatter(data.amountExpenseCurrentMonth) }}
 									</h4>
-									<b-card-text class="font-small-3 mb-0">
+									<b-card-text class="font-small-2 mb-0">
 										{{ $t('payments.dashboard_expenses') }}
 									</b-card-text>
 								</b-media-body>
@@ -54,15 +56,15 @@
 						<b-col xl="3" sm="6" class="mb-2 mb-xl-0">
 							<b-media no-body>
 								<b-media-aside class="mr-2">
-									<b-avatar size="48" variant="light-success">
-										<feather-icon size="24" icon="DollarSignIcon" />
+									<b-avatar variant="light-success">
+										<feather-icon icon="DollarSignIcon" />
 									</b-avatar>
 								</b-media-aside>
 								<b-media-body class="my-auto">
 									<h4 class="font-weight-bolder mb-0">
 										{{ kFormatter(data.totalEarningCurrentMonth) }}
 									</h4>
-									<b-card-text class="font-small-3 mb-0">
+									<b-card-text class="font-small-2 mb-0">
 										{{ $t('payments.dashboard_earnings') }}
 									</b-card-text>
 								</b-media-body>
@@ -72,15 +74,15 @@
 						<b-col xl="3" sm="6" class="mb-2 mb-xl-0">
 							<b-media no-body>
 								<b-media-aside class="mr-2">
-									<b-avatar size="48" variant="light-info">
-										<feather-icon size="24" icon="UserIcon" />
+									<b-avatar variant="light-info">
+										<feather-icon icon="UserIcon" />
 									</b-avatar>
 								</b-media-aside>
 								<b-media-body class="my-auto">
 									<h4 class="font-weight-bolder mb-0">
 										{{ kFormatter(data.totalPatientCountCurrentMonth) }}
 									</h4>
-									<b-card-text class="font-small-3 mb-0">
+									<b-card-text class="font-small-2 mb-0">
 										{{ $t('patient_new') }}
 									</b-card-text>
 								</b-media-body>

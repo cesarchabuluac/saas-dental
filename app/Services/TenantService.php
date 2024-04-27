@@ -172,7 +172,7 @@ class TenantService
         $service->sendEmail($dataEmail);
 
         // Artisan::call("generate:site-config");
-        $this->createDigitalOceanRecords($tenant->domain, $tenant->id);
+        //$this->createDigitalOceanRecords($tenant->domain, $tenant->id);
 
         return [
             'domainWithHost' => $domainWithHost,

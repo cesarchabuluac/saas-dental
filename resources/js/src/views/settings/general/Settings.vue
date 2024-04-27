@@ -48,10 +48,18 @@
 
             <b-tab v-if="isTenant">
                 <template #title>
-                    <feather-icon icon="CalendarIcon" size="18" class="mr-50"/>
+                    <feather-icon icon="BellIcon" size="18" class="mr-50"/>
                     <span class="font-weight-bold">{{$t("app_setting_appointment")}}</span>
                 </template>
                 <setting-appointment />
+            </b-tab>
+
+            <b-tab v-if="isTenant">
+                <template #title>
+                    <feather-icon icon="CalendarIcon" size="18" class="mr-50"/>
+                    <span class="font-weight-bold">{{$t("app_setting_diary")}}</span>
+                </template>
+                <setting-diary />
             </b-tab>
         </b-tabs>
     </b-overlay>
@@ -93,9 +101,11 @@ import SettingPaymentCentral from "./SettingPaymentCentral.vue"
 import SettingMail from "./SettingMail.vue"
 import SettingBudget from "./SettingBudget.vue"
 import SettingAppointment from "./SettingAppointment.vue"
+import SettingDiary from './SettingDiary.vue';
 
 import SettingProvider from "@/providers/Settings";
 import SettingPaymentVue from './SettingPayment.vue';
+
 const SettingResource = new SettingProvider();
 
 export default {
@@ -131,6 +141,7 @@ export default {
         SettingMail,
         SettingBudget,
         SettingAppointment,
+        SettingDiary,
     },
     directives: {
         Ripple,

@@ -2,7 +2,7 @@
   <b-card no-body>
     <b-card-body class="d-flex justify-content-between align-items-center">
       <div class="truncate">
-        <h2 class="mb-25 font-weight-bolder">
+        <h2 class="mb-25 font-weight-bolder" :class="size">
           {{ statistic }}
         </h2>
         <span>{{ statisticTitle }}</span><br>
@@ -50,6 +50,10 @@ export default {
       type: String,
       default: 'primary',
     },
+    size: {
+      type: String,
+      default: () => 'h2',
+    }
   },
 }
 </script>

@@ -17,7 +17,7 @@ class VerifyTenantInitialConfiguration
      */
     public function handle(Request $request, Closure $next)
     {
-        $tenant = tenant();
+        // $tenant = tenant();
         return $next($request);
     }
 }

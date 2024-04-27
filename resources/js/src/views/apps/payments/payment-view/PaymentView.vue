@@ -7,13 +7,11 @@
                 <b-spinner small type="grow" variant="secondary" />
             </div>
         </template>
-        
-        <!-- Table Container Card -->
-        <b-card no-body class="mb-0">
 
-            <div class="m-2">
+        <b-card no-body>
+            <div class="m-1">
                 <b-row>
-                    <b-col cols="12" md="8" class="p-1">
+                    <b-col cols="12" md="10">
                         <b-form-group
                             :label="$t('filters.title')" 
                             label-cols="12" 
@@ -26,20 +24,53 @@
                                 :reduce="option => option.value"
                                 name="radio-options"
                                 class="groupselect"
-                                @change="getPayments"
                             ></b-form-radio-group>
                         </b-form-group>
                     </b-col>
+
+                    <b-col cols="12" md="2">
+                        <b-button @click="$router.back()" size="sm" variant="outline-danger" class="float-right">
+                            Regresar
+                        </b-button>
+                    </b-col>
+
+                    <b-col cols="12" md="3">
+                        <label for="date_start">{{ $t('start_at') }}</label>
+                        <flat-pickr id="date_end" v-model="start_at" class="form-control" :config="{
+                                dateFormat: 'Y-m-d'
+                            }" placeholder="DD/MM/YYYY" />
+                    </b-col>
+
+                    <b-col cols="12" md="3">
+                        <label for="date_start">{{ $t('end_at') }}</label>
+                        <flat-pickr id="date_end" v-model="end_at" class="form-control" :config="{
+                                dateFormat: 'Y-m-d'
+                            }" placeholder="DD/MM/YYYY" />
+                    </b-col>
+
+                    <b-col cols="12" md="3">
+                        <div class="demo-inline-spacing">
+                            <b-button size="sm" @click="getPayments" variant="outline-primary"
+                                v-ripple.400="'rgba(255, 255, 255, 0.15)'">
+                                <feather-icon icon="SearchIcon" />
+                                {{ $t("button_filter") }}
+                            </b-button>
+                        </div>
+                    </b-col>
                 </b-row>
-            </div>
+            </div>      
+        </b-card>
+        
+        <!-- Table Container Card -->
+        <b-card no-body class="mb-0">
 
             <div class="m-2">
-                <!-- Table Top -->
-                <b-row>
+            <!-- Table Top -->
+            <b-row>
                     <!-- Per Page -->
                     <b-col cols="12" md="6" class=" d-flex align-items-center justify-content-start mb-1 mb-md-0">
                         <label>{{ $t("show") }}</label>
-                        <v-select v-model="perPage" :options="perPageOptions" :clearable="false" class="per-page-selector d-inline-block mx-50"/>
+                        <v-select v-model="perPage" :options="perPageOptions" :clearable="false" class="per-page-selector d-inline-block mx-50 select-size-sm"/>
                         <label>{{ $t("entries") }}</label>
                     </b-col>
 
@@ -47,10 +78,10 @@
                     <b-col cols="12" md="6">
                         <div class="d-flex align-items-center justify-content-end">
                             <b-input-group>
-                                <b-form-input v-model="searchQuery" class="d-inline-block _mr-1" :placeholder="$t('payments.input_search')" 
+                                <b-form-input size="sm" v-model="searchQuery" class="d-inline-block _mr-1" :placeholder="$t('payments.input_search')" 
                                 @keyup.enter="getPayments"/>
                                 <b-input-group-prepend>
-                                <b-button variant="primary" @click="getPayments">
+                                <b-button size="sm" variant="primary" @click="getPayments">
                                     <feather-icon icon="SearchIcon" />
                                 </b-button>
                                 </b-input-group-prepend>                                
@@ -60,9 +91,11 @@
                 </b-row>
             </div>
 
+                 
+
             <b-table
                 ref="refPaymentListTable"
-                class="position-relative"
+                class="position-relative table-small small text-small"
                 :items="payments"
                 responsive
                 :fields="columns"
@@ -117,7 +150,7 @@
 
                     <!-- Column: created at -->
                 <template #cell(created_at)="data">
-                    {{ dateTimeFormat(data.item.payment_date) }}
+                    <span class="text-capitalize">{{ dateTimeFormat(data.item.payment_date) }}</span>
                 </template>
 
                 <!-- Column: check_paid -->
@@ -129,12 +162,12 @@
 
                 <!-- Column: Method -->
                 <template #cell(method)="data">
-                    <span>{{translatePaymentMethod(data.item.method)}}</span>
-                    <p v-if="data.item.check" class="card-text mb-25">
-                        <label><strong>{{$t('checks.table_bank')}}:</strong> {{data.item.check.reference}}</label>
-                        <label><strong>{{$t('checks.table_bank')}}:</strong> {{data.item.check.bank}}</label>
-                        <label><strong>{{$t('checks.table_serie')}}:</strong> {{data.item.check.serie}}</label>
-                    </p>
+                    <span>{{translatePaymentMethod(data.item.method)}}</span><br>
+                    <span v-if="data.item.check" class="card-text mb-25">
+                        <strong>{{$t('checks.table_reference')}}:</strong> {{data.item.check.reference}}<br>
+                        <strong>{{$t('checks.table_bank')}}:</strong> {{data.item.check.bank}}<br>
+                        <strong>{{$t('checks.table_serie')}}:</strong> {{data.item.check.serie}}
+                    </span>
                 </template>
 
                 <!-- Column: Actions -->
@@ -205,9 +238,18 @@ import {
 import Ripple from "vue-ripple-directive";
 import vSelect from "vue-select";
 import "animate.css";
+import flatPickr from "vue-flatpickr-component";
+import { Spanish } from "flatpickr/dist/l10n/es.js";
+import store from "@/store";
 import PaymentProvider from "@/providers/Payments";
 const PaymentResource = new PaymentProvider();
+
+if (store.state.auth.setting['language'] === "es") {
+    flatpickr.localize(Spanish);
+}
+
 export default {
+    name: 'PaymentView',
     components: {
         BCard,
         BRow,
@@ -235,6 +277,7 @@ export default {
         BFormTextarea,
         BTooltip, VBTooltip,
         BFormCheckbox, BFormRadioGroup, BFormRadio,
+        flatPickr,
     },
     directives: {
         'b-tooltip': VBTooltip,
@@ -290,7 +333,9 @@ export default {
                 { value: 'unpaid', text: this.$t('filters.status.receivable') },
                 { value: 'all', text: this.$t('filters.status.all') },
             ],
-            filter_by: 'all',
+            filter_by: 'unpaid',
+            start_at: moment().startOf('month').format('YYYY-MM-DD'),
+            end_at: moment().format('YYYY-MM-DD')
         };
     },
     computed: {
@@ -304,6 +349,10 @@ export default {
                 of: this.totalPayment,
             };
         },
+        canDeletePayment() {
+
+           
+        }
     },
     watch: {
         currentPage(value) {
@@ -325,6 +374,8 @@ export default {
                 perPage: this.perPage,
                 page: this.currentPage,
                 filter_by: this.filter_by,
+                start: this.start_at,
+                end: this.end_at,
             };
             this.loading = true;
             const { data } = await PaymentResource.getList(query);
@@ -333,6 +384,29 @@ export default {
             this.totalPayment = data.total;
         },
         deletePayment (item) {
+
+            const configDay = this.findSetting('app_delete_payments_after')
+            if (!configDay || !item.payment_date) {
+                this.danger(`No se puede eliminar el pago`)
+                return false; // Si la configuración o la fecha de pago no están definidas, no se puede eliminar
+            }
+
+            const currentDate = new Date();
+            const deleteDate = new Date(item.payment_date);
+            deleteDate.setDate(deleteDate.getDate() + configDay);
+
+            console.log([deleteDate, currentDate])
+
+            const canDeleted = deleteDate <= currentDate
+
+            
+            if(!canDeleted) // Retorna verdadero si la fecha de eliminación es anterior o igual a la fecha actual
+            {
+                this.danger(`Este pago no se puede eliminar`);
+                return false
+            }
+
+
             this.$swal({
                 title: this.$t('are_you_sure'),
                 text: this.$t('you_wont_be_able_to_revert_this'),
@@ -389,6 +463,18 @@ export default {
 <style lang="scss" scoped>
 .per-page-selector {
     width: 90px;
+}
+
+.flatpickr-small .flatpickr-input {
+    /*font-size: 8px!important; /* Ajusta el tamaño del texto del input */
+    padding: 5px; /* Ajusta el padding del input */
+    /*width: 120px; /* Ajusta el ancho del input */
+}
+
+.flatpickr-input {
+    /*width: 150px!important; /* Ajusta el ancho del input */
+    height: 30px!important; /* Ajusta la altura del input */
+    /*font-size: 7px!important; /* Ajusta el tamaño del texto del input */
 }
 </style>
 

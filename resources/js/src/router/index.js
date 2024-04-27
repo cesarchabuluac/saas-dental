@@ -150,13 +150,13 @@ const router = new VueRouter({
       // beforeEnter: SubscriptionGuard,        
       meta: {
         layout: 'full',
-        pageTitle: 'subscriptions.desc',
-        breadcrumb: [
-          {
-            text: 'subscriptions.slug',
-            active: true,
-          },
-        ],
+        // pageTitle: 'subscriptions.desc',
+        // breadcrumb: [
+        //   {
+        //     text: 'subscriptions.slug',
+        //     active: true,
+        //   },
+        // ],
       },
     },
 

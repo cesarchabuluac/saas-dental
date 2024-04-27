@@ -42,7 +42,7 @@ class TenantSettingSeeder extends Seeder
         GeneralSetting::query()->firstOrCreate(['key' => 'enable_facebook', 'value' => '0']);
         GeneralSetting::query()->firstOrCreate(['key' => 'enable_google', 'value' => '0']);
         GeneralSetting::query()->firstOrCreate(['key' => 'enable_human_date_format', 'value' => '1']);
-        GeneralSetting::query()->firstOrCreate(['key' => 'enable_mail_socials', 'value' => '1']);
+        GeneralSetting::query()->firstOrCreate(['key' => 'enable_mail_socials', 'value' => '0']);
         GeneralSetting::query()->firstOrCreate(['key' => 'enable_mercadopago', 'value' => '1']);
         GeneralSetting::query()->firstOrCreate(['key' => 'enable_notifications', 'value' => '0']);
         GeneralSetting::query()->firstOrCreate(['key' => 'enable_paypal', 'value' => 1]);
@@ -67,16 +67,16 @@ class TenantSettingSeeder extends Seeder
         GeneralSetting::query()->firstOrCreate(['key' => 'google_app_secret', 'value' => '']);
         GeneralSetting::query()->firstOrCreate(['key' => 'language', 'value' => 'es']);
         GeneralSetting::query()->firstOrCreate(['key' => 'mail_driver', 'value' => 'smtp']);
-        GeneralSetting::query()->firstOrCreate(['key' => 'mail_from_address', 'value' => 'cesarchabuluac@gmail.com']);
+        GeneralSetting::query()->firstOrCreate(['key' => 'mail_from_address', 'value' => '']);
         GeneralSetting::query()->firstOrCreate(['key' => 'mail_from_name', 'value' => 'Soft-Dental']);
-        GeneralSetting::query()->firstOrCreate(['key' => 'mail_host', 'value' => 'in-v3.mailjet.com']);
+        GeneralSetting::query()->firstOrCreate(['key' => 'mail_host', 'value' => '']);
         GeneralSetting::query()->firstOrCreate(['key' => 'mail_mailjet_key', 'value' => '']);
         GeneralSetting::query()->firstOrCreate(['key' => 'mail_mailjet_secret', 'value' => '']);
-        GeneralSetting::query()->firstOrCreate(['key' => 'mail_password', 'value' => 'e74d3d47b5d95f67489042632916cf37']);
-        GeneralSetting::query()->firstOrCreate(['key' => 'mail_port', 'value' => '465']);
+        GeneralSetting::query()->firstOrCreate(['key' => 'mail_password', 'value' => '']);
+        GeneralSetting::query()->firstOrCreate(['key' => 'mail_port', 'value' => '']);
         GeneralSetting::query()->firstOrCreate(['key' => 'mail_encryption', 'value' => 'ssl']);        
-        GeneralSetting::query()->firstOrCreate(['key' => 'mail_support', 'value' => 'info@cesarchabuluac.com']);
-        GeneralSetting::query()->firstOrCreate(['key' => 'mail_username', 'value' => 'd1dd62bd23ac1cfbd6e572a1cf2472ec']);
+        GeneralSetting::query()->firstOrCreate(['key' => 'mail_support', 'value' => '']);
+        GeneralSetting::query()->firstOrCreate(['key' => 'mail_username', 'value' => '']);
         GeneralSetting::query()->firstOrCreate(['key' => 'mercadopago_live_key', 'value' => '']);
         GeneralSetting::query()->firstOrCreate(['key' => 'mercadopago_live_secret', 'value' => '']);
         GeneralSetting::query()->firstOrCreate(['key' => 'mercadopago_live_url', 'value' => 'https://api.mercadopago.com']);
@@ -137,5 +137,7 @@ class TenantSettingSeeder extends Seeder
         GeneralSetting::query()->firstOrCreate(['key' => 'schedule_start_time', 'value' => '09:00:00']);
         GeneralSetting::query()->firstOrCreate(['key' => 'schedule_end_time', 'value' => '22:00:00']);
         GeneralSetting::query()->firstOrCreate(['key' => 'scheduled_appointment_interval', 'value' => 15]);
+        GeneralSetting::query()->firstOrCreate(['key' => 'app_delete_payments_after', 'value' => 1]);
+
     }
 }

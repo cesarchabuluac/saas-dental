@@ -56,7 +56,8 @@ class BudgetAPIController extends Controller
             })
             ->leftJoin('action_payments', 'payments.id', '=', 'action_payments.payment_id')
             ->groupBy('budgets.id')
-            ->havingRaw('budgets.total - IFNULL(SUM(action_payments.amount), 0) > 0');
+            ->havingRaw('(budgets.total - total_paid) > 0')
+            ->orderBy('budgets.created_at', 'desc');
         return $budgets->paginate(request('perPage'));
     }
 }

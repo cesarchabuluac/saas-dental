@@ -23,35 +23,35 @@
 					<!-- <b-card-code> -->
 					<b-card class="mb-0">
 						<div class="demo-inline-spacing">
-							<b-button v-if="canAccess('expenses.index')" v-ripple.400="'rgba(255, 255, 255, 0.15)'"
+							<b-button size="sm" v-if="canAccess('expenses.index')" v-ripple.400="'rgba(255, 255, 255, 0.15)'"
 								variant="danger" pill @click="$router.push({ name: 'apps-expenses-list' })"
 								:class="{ 'btn-block': isMobile }">
 								<feather-icon icon="TrendingDownIcon" class="mr-50" />
 								<span class="align-middle">{{ $t('expenses.plural') }}</span>
 							</b-button>
 
-							<b-button v-if="canAccess('checks.index')" v-ripple.400="'rgba(255, 255, 255, 0.15)'"
+							<b-button size="sm" v-if="canAccess('checks.index')" v-ripple.400="'rgba(255, 255, 255, 0.15)'"
 								variant="warning" pill @click="$router.push({ name: 'apps-checks-list' })"
 								:class="{ 'btn-block': isMobile }">
 								<feather-icon icon="CheckCircleIcon" class="mr-50" />
 								<span class="align-middle">{{ $t('checks.plural') }}</span>
 							</b-button>
 
-							<b-button v-if="canAccess('payments.view')" v-ripple.400="'rgba(255, 255, 255, 0.15)'"
+							<b-button size="sm" v-if="canAccess('payments.view')" v-ripple.400="'rgba(255, 255, 255, 0.15)'"
 								variant="dark" pill @click="$router.push({ name: 'apps-payments-view' })"
 								:class="{ 'btn-block': isMobile }">
 								<feather-icon icon="EyeIcon" class="mr-50" />
 								<span class="align-middle">{{ $t('payments.views') }}</span>
 							</b-button>
 
-							<b-button v-if="canAccess('payments.create')" class="float-end"
+							<b-button size="sm" v-if="canAccess('payments.create')" class="float-end"
 								v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="primary" pill
 								@click="isAddNewPaymentSidebarActive = true" :class="{ 'btn-block': isMobile }">
 								<feather-icon icon="PlusIcon" class="mr-50" />
 								<span class="align-middle">{{ $t('payments.create') }}</span>
 							</b-button>
 
-							<b-button v-if="canAccess('cash_registers.index')" class="float-end"
+							<b-button size="sm" v-if="canAccess('cash_registers.index')" class="float-end"
 								v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="success" pill
 								@click="$router.push({ name: 'apps-cash-register-list' })"
 								:class="{ 'btn-block': isMobile }">
@@ -68,25 +68,25 @@
 			<b-row class="match-height mt-4">
 				<!-- payment card  -->
 				<b-col cols="12" xl="9" lg="8" md="7">
-					<b-card no-body class="mb-0">
+					<b-card no-body>
 						<div class="m-2">
 							<!-- Table Top -->
 							<b-row>
 								<!-- Per Page -->
-								<b-col cols="12" md="6"
+								<b-col cols="12" md="4"
 									class="d-flex align-items-center justify-content-start mb-1 mb-md-0">
 									<label>{{ $t("show") }}</label>
 									<v-select v-model="perPage" :options="perPageOptions" :clearable="false"
-										class="per-page-selector d-inline mx-50" />
+										class="per-page-selector d-inline mx-50 select-size-sm" />
 									<label>{{ $t("entries") }}</label>
 								</b-col>
 
 								<!-- Search -->
-								<b-col cols="12" md="6">
+								<b-col cols="12" md="8">
 									<div class="d-flex align-items-center justify-content-end">
-										<b-form-input v-model="searchQuery" class="d-inline-block mr-1"
+										<b-form-input size="sm" v-model="searchQuery" class="d-inline-block mr-1"
 											:placeholder="$t('budgets.search_options')" @keyup.enter="filter" />
-										<b-button variant="primary" @click="filter">
+										<b-button size="sm" variant="primary" @click="filter">
 											<span class="text-nowrap">
 												{{ $t("search") }}
 											</span>
@@ -95,10 +95,10 @@
 								</b-col>
 							</b-row>
 						</div>
-						<b-table ref="refPaymentsListTable" class="position-relative" :items="budgets" responsive
+						<b-table ref="refPaymentsListTable" class="position-relative text-small small" :items="budgets" responsive
 							:fields="columns" primary-key="id" :sort-by.sync="sortBy" show-empty
 							:empty-text="$t('datatables.sZeroRecords')" :sort-desc.sync="sortDesc"
-							:current-page="currentPage" busy.sync="loading" stacked="md">
+							:current-page="currentPage" busy.sync="loading" stacked="md" small>
 
 							<!-- Column: label -->
 							<template #cell(label)="data">
@@ -115,12 +115,15 @@
 									params: { id: data.item.patient_id }
 								}" class="font-weight-bold">
 									{{ (data.item.patient.full_name) }}
+									<small class="help-block">
+										{{data.item.patient.document_type}}-{{ data.item.patient.rut}}
+									</small>
 								</b-link>
 							</template>
 
 							<!-- Column: created at  -->
 							<template #cell(created_at)="data">
-								{{ formatDate(data.item.created_at) }}
+								<span class="text-capitalize">{{ formatDate(data.item.created_at) }}</span>
 							</template>
 
 							<!-- Column: total  -->
@@ -148,7 +151,7 @@
 
 							<!-- Column: Actions -->
 							<template #cell(actions)="data">
-								<b-button v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="primary"
+								<b-button size="sm" v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="primary"
 									v-if="data.item.total_debt > 0" pill @click="$router.push({
 										name: 'payments.budgets.charge',
 										params: {
@@ -586,7 +589,7 @@ export default {
 			}
 		}, 300), // 300ms es el tiempo de espera para ejecutar la función después del último evento 'onSearch'
 		async getBudgets() {
-			this.loading = true;
+			
 			const query = {
 				search: this.searchQuery,
 				sortBy: this.sortBy,
@@ -595,10 +598,17 @@ export default {
 				page: this.currentPage,
 				filter_by: 'approved'
 			};
-			const { data } = await BudgetResource.index(query);
-			this.loading = false;
-			this.totalBudget = data.total;
-			this.budgets = data.data
+
+			try {
+				this.loading = true;
+				const { data } = await BudgetResource.index(query);
+				this.loading = false;
+				this.totalBudget = data.total;
+				this.budgets = data.data
+			}catch(e) {
+				this.loading = false
+				this.handleResponseErrors(e)
+			}
 		},
 		async getDashboard() {
 			this.loading = true

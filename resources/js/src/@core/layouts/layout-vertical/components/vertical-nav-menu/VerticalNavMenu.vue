@@ -24,12 +24,12 @@
               class="navbar-brand"
               to="/"
             >
-              <span class="brand-logo">
+              <!-- <span class="brand-logo">
                 <b-img
                   :src="system_logo"
                   alt="logo"
                 />
-              </span>
+              </span> -->
               <h2 class="brand-text">
                 {{ system_name }}
               </h2>
@@ -119,6 +119,8 @@ export default {
 
     const { skin } = useAppConfig()
 
+    const defaultLogo = require('@/assets/images/logo/SoftDental.png')
+
     // Shadow bottom is UI specific and can be removed by user => It's not in `useVerticalNavMenu`
     const shallShadowBottom = ref(false)
 
@@ -140,10 +142,10 @@ export default {
     })
 
     const system_logo = computed(() => {
-      if(store.state.auth.user) {
-        return store.state.auth.logo
+      if(store.state.auth.user && store.state.auth.logo) {
+        return store.state.auth.logo 
       } else{
-        return window._setting.app_logo
+        return require('@/assets/images/logo/SoftDental.png') //window._setting.app_logo
       }
     })
 

@@ -2049,6 +2049,7 @@ __webpack_require__.r(__webpack_exports__);
       updateMouseHovered = _useVerticalNavMenu.updateMouseHovered;
     var _useAppConfig = Object(_core_app_config_useAppConfig__WEBPACK_IMPORTED_MODULE_4__["default"])(),
       skin = _useAppConfig.skin;
+    var defaultLogo = __webpack_require__(/*! @/assets/images/logo/SoftDental.png */ "./resources/js/src/assets/images/logo/SoftDental.png");
 
     // Shadow bottom is UI specific and can be removed by user => It's not in `useVerticalNavMenu`
     var shallShadowBottom = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_3__["ref"])(false);
@@ -2068,10 +2069,10 @@ __webpack_require__.r(__webpack_exports__);
       }
     });
     var system_logo = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_3__["computed"])(function () {
-      if (_store__WEBPACK_IMPORTED_MODULE_8__["default"].state.auth.user) {
+      if (_store__WEBPACK_IMPORTED_MODULE_8__["default"].state.auth.user && _store__WEBPACK_IMPORTED_MODULE_8__["default"].state.auth.logo) {
         return _store__WEBPACK_IMPORTED_MODULE_8__["default"].state.auth.logo;
       } else {
-        return window._setting.app_logo;
+        return __webpack_require__(/*! @/assets/images/logo/SoftDental.png */ "./resources/js/src/assets/images/logo/SoftDental.png"); //window._setting.app_logo
       }
     });
 
@@ -4579,17 +4580,6 @@ var render = function () {
                       "b-link",
                       { staticClass: "navbar-brand", attrs: { to: "/" } },
                       [
-                        _c(
-                          "span",
-                          { staticClass: "brand-logo" },
-                          [
-                            _c("b-img", {
-                              attrs: { src: _vm.system_logo, alt: "logo" },
-                            }),
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
                         _c("h2", { staticClass: "brand-text" }, [
                           _vm._v(
                             "\n              " +
@@ -8614,6 +8604,17 @@ module.exports = "/images/_/_/_/_/saas-dental/resources/js/src/assets/images/ico
 
 /***/ }),
 
+/***/ "./resources/js/src/assets/images/logo/SoftDental.png":
+/*!************************************************************!*\
+  !*** ./resources/js/src/assets/images/logo/SoftDental.png ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/_/_/_/_/saas-dental/resources/js/src/assets/images/logo/SoftDental.png";
+
+/***/ }),
+
 /***/ "./resources/js/src/assets/images/portrait/small/avatar-s-10.jpg":
 /*!***********************************************************************!*\
   !*** ./resources/js/src/assets/images/portrait/small/avatar-s-10.jpg ***!
@@ -9033,7 +9034,7 @@ __webpack_require__.r(__webpack_exports__);
     title: "faqs.menu",
     icon: 'HelpCircleIcon',
     route: "setting-faqs",
-    permission: 'settings.index'
+    permission: 'faqs.index'
   }, {
     title: "importer",
     icon: 'UploadCloudIcon',

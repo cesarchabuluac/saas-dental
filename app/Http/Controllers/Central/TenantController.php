@@ -186,7 +186,7 @@ class TenantController extends Controller
         // $this->digitalOceanService->CreateNewDomainRecord("www." . $request->domain);
 
         //generate file config on subdomain & cert
-        Artisan::call("generate:site-config");
+        // Artisan::call("generate:site-config");
 
         return $this->sendResponse([], 'Tenant created successfully');
     }

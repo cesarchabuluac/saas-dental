@@ -150,7 +150,7 @@
                     <b-form-group :label="$t('inventories.units.fields.name')" :description="$t('inventories.units.fields.name_help')">                        
                           <validation-provider
                             #default="{ errors }"
-                            :name="$t('inventories.units.fields.title_field')"
+                            :name="$t('inventories.units.title_field')"
                             rules="required"
                             >
                                 <b-form-input

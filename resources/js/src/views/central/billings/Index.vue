@@ -5,7 +5,7 @@
 
             <b-table
                 ref="refBillinListTable"
-                class="position-relative"
+                class="position-relative table-small text-small small"
                 :items="billings"
                 responsive
                 :fields="columns"
@@ -14,6 +14,7 @@
                 :empty-text="$t('datatables.sZeroRecords')"             
                 busy.sync="loading"
                 stacked="md"
+                small
             >
                 <!-- Empty -->
                 <template slot="empty">

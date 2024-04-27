@@ -14,6 +14,7 @@
                     :icon="item.icon"
                     :statistic="$t(item.name)"
                     :color="item.bgColor"
+                    size="h6"
                     :statistic-text="`${$t(`tenants.used`)}: ${item.current}`"
                     :statistic-description="`${$t(`tenants.remaining`)}: ${item.remaining}`"
                     :statistic-title="`${$t('tenants.limit')} ${item.limit}`"
@@ -63,7 +64,7 @@
 
             <b-table
                 ref="refUserListTable"
-                class="position-relative"
+                class="position-relative table-small small"
                 :items="users"
                 responsive
                 :fields="columns"
@@ -75,6 +76,7 @@
                 :current-page="currentPage"
                 :busy.sync="loading"
                 stacked="md"
+                small
             >
 
                 <!-- Empty -->
@@ -118,6 +120,16 @@
                     </div>
                 </template>
 
+                <!-- Column: Created at -->
+                <template #cell(created_at)="data">
+                    {{ formatDate(data.item.created_at) }}
+                </template>
+
+                <!-- Column: Updated at -->
+                <template #cell(updated_at)="data">
+                    {{ formatDate(data.item.updated_at) }}
+                </template>
+
                 <!-- Column: Status -->
                 <template #cell(status)="data">
                     <b-badge pill :variant="`light-${resolveStatusVariant(data.item.deleted_at)}`" class="text-capitalize">
@@ -139,13 +151,13 @@
                         </b-button>
 
                         <b-button
-                            v-if="!data.item.deleted_at && canAccess('users.destroy') && data.item.id !== 1 && data.item.id !== 2"
+                            v-if="!data.item.deleted_at && canAccess('users.destroy') && data.item.id !== 1 && (data.item.id !== 2 || !checkIsTenant())"
                             v-ripple.400="'rgba(255, 255, 255, 0.15)'"
                             variant="danger"
                             class="btn-icon"
                             size="sm"
                             @click="deleteUser(data.item)">
-                            <feather-icon icon="Trash2Icon"/>
+                            <feather-icon icon="SlashIcon"/>
                         </b-button>
 
                         <b-button
@@ -212,6 +224,7 @@ import UserProvider from "@/providers/Users";
 const UserResource = new UserProvider();
 
 import TenantsProvider from "@/providers/Tenants";
+import { formatDate } from "@fullcalendar/vue";
 const TenantsResource = new TenantsProvider();
 
 export default {
@@ -271,6 +284,14 @@ export default {
                     key: "status",
                     label: this.$t("user_status"),
                 },
+                {
+                    key: "created_at",
+                    label: this.$t("created_at"),
+                },
+                {
+                    key: "updated_at",
+                    label: this.$t("updated_at"),
+                },
                 { key: "actions", label: this.$t("actions") },
             ],
             sortBy: "name",
@@ -317,6 +338,9 @@ export default {
         },
     },
     async mounted() {
+
+        console.error(this.checkIsTenant())
+
         await this.getTenant()
         await this.getUsers();
         this.mapRoles();
@@ -328,7 +352,6 @@ export default {
                 const { data } = await TenantsResource.show(store.state.auth.account.id)
                 this.loading = false
                 this.tenant = data
-                console.log(this.tenant)
             }
         },
         async getUsers() {

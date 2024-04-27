@@ -11,13 +11,13 @@
   <title>{{ config('settings.app_name') }} | {{ config('settings.app_short_description') }}</title>
 
   <!-- Splash Screen/Loader Styles -->
-  <link rel="stylesheet" type="text/css" href="{{ mix('css/loader.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ global_asset('css/loader.css') }}" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="{{ mix('css/core.css') }}">
+  <link rel="stylesheet" href="{{ global_asset('css/core.css') }}">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="{{ global_asset('logo.png') }}">
+  <link rel="shortcut icon" href="{{ global_asset('images/logo/SoftDental.png') }}">
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -34,7 +34,7 @@
   </noscript> -->
   <div id="loading-bg">
     <div class="loading-logo">
-      <!-- <img src="{{ global_asset('logo.png') }}" alt="Logo" /> -->
+      <!-- <img src="{{ global_asset('images/logo/SoftDental.png') }}" alt="Logo" /> -->
     </div>
     <div class="loading">
       <div class="effect-1 effects"></div>
@@ -45,7 +45,7 @@
   <div id="app">
   </div>
 
-  <script src="{{ mix('js/app.js') }}"></script>
+  <script src="{{ global_asset('js/app.js') }}"></script>
   <!-- <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase.js"></script> -->
 
   <script>

@@ -16,7 +16,7 @@
                         size="104px"
                         rounded
                     />
-                    <div class="d-flex flex-column ml-1">
+                    <div class="d-flex flex-column ml-1 text-small small">
                         <div class="mb-1">
                             <h4 class="mb-0">
                                 {{ account.name }}
@@ -57,7 +57,7 @@
 
             <!-- Right Col: Table -->
             <b-col cols="12" xl="6">
-                <table class="mt-2 mt-xl-0 w-100">
+                <table class="mt-2 mt-xl-0 w-100 text-small small">
                     <tr>
                         <th class="pb-50">
                             <feather-icon icon="UserIcon" class="mr-75" />

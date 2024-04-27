@@ -64,7 +64,7 @@
                                     :searchable="false"
                                     input-id="import"
                                     label="text"
-                                     @input="selectCatalog"
+                                    @input="selectCatalog"
                                     :placeholder="$t('imports.import_input_template_placeholder')"
                                 />
                             </b-form-group>
@@ -120,7 +120,8 @@ import {
 import Ripple from "vue-ripple-directive";
 import vSelect from "vue-select";
 import "animate.css";
-
+import { saveAs } from 'file-saver';
+import axios from 'axios'
 import ImportFileProvider from '@/providers/ImportFiles'
 const ImportFileResource = new ImportFileProvider()
 
@@ -182,19 +183,31 @@ export default {
                 this.danger(this.$t('imports.import_template_help'))
                 return false
             }
-
+           
             try {
+
+                this.loading = true
+                // axios.get(`/api/imports/donwload`, { responseType: 'blob', params: { ...this.catalog } }).then(response => {
+                //     this.loading = false
+                //     const blob = new Blob([response.data], { type: 'application/vnd.ms-excel' });
+                //     saveAs(blob, this.catalog.file);
+                // }).catch(eror => {
+                //     console.log(JSON.stringify(eror))
+                //     this.loading = false
+                //     this.handleResponseErrors(eror)
+                // });
+
                 this.loading = true
                 const { data } = await ImportFileResource.donwload({...this.catalog})
-                this.loading = false
-                let blob = new Blob([data], {
-                    type: "application/vnd.ms-excel",
-                });
-                let link = document.createElement("a");
-                link.href = window.URL.createObjectURL(blob);
-                link.download = this.catalog.file;                
-                link.click();
-                window.URL.revokeObjectURL(link);
+                this.loading = false                
+                const blob = new Blob([data], { type: 'application/vnd.ms-excel' });
+                saveAs(blob, this.catalog.file)
+
+                // let link = document.createElement("a");
+                // link.href = window.URL.createObjectURL(blob);
+                // link.download = this.catalog.file;                
+                // link.click();
+                // window.URL.revokeObjectURL(link);
             } catch (e) {               
                 this.loading = false
                 if (e.response.status === 422) {

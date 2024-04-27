@@ -45,8 +45,8 @@ class GeneralSettingController extends Controller
 
     public function store(Request $request)
     {
-        $input = $request->except(['_method', '_token', 'change_logo', 'logo']);
 
+        $input = $request->except(['_method', '_token', 'change_logo', 'logo','initial_setup']);
         $input = array_map(function ($value) {
             return !is_null($value) ? $value : '';
         }, $input);
@@ -100,6 +100,15 @@ class GeneralSettingController extends Controller
                         ELSE `value` END";
 
             DB::statement($sql, $bindings);
+
+
+            if(isset($request->initial_setup)) {
+                $tenant = tenant();
+                $tenant->update([
+                    //'company' => $input['app_name'],
+                    'initial_setup' => true,
+                ]);
+            }
 
             DB::commit();
 

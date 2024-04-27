@@ -30,7 +30,7 @@ export default [
         title: "faqs.menu",
         icon: 'HelpCircleIcon',
         route: "setting-faqs",
-        permission: 'settings.index',
+        permission: 'faqs.index',
       },
       {
         title: "importer",

@@ -1,51 +1,49 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[60],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=script&lang=js&":
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=script&lang=js& ***!
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=script&lang=js& ***!
   \*******************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js */ "./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js");
-/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.array.find-index.js */ "./node_modules/core-js/modules/es.array.find-index.js");
-/* harmony import */ var core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var core_js_modules_es_array_push_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.array.push.js */ "./node_modules/core-js/modules/es.array.push.js");
-/* harmony import */ var core_js_modules_es_array_push_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_push_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
-/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var core_js_modules_es_symbol_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.symbol.js */ "./node_modules/core-js/modules/es.symbol.js");
-/* harmony import */ var core_js_modules_es_symbol_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_symbol_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var core_js_modules_es_symbol_description_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! core-js/modules/es.symbol.description.js */ "./node_modules/core-js/modules/es.symbol.description.js");
-/* harmony import */ var core_js_modules_es_symbol_description_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_symbol_description_js__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! core-js/modules/es.array.splice.js */ "./node_modules/core-js/modules/es.array.splice.js");
-/* harmony import */ var core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! core-js/modules/es.array.filter.js */ "./node_modules/core-js/modules/es.array.filter.js");
-/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var core_js_modules_es_object_values_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! core-js/modules/es.object.values.js */ "./node_modules/core-js/modules/es.object.values.js");
-/* harmony import */ var core_js_modules_es_object_values_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_values_js__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var core_js_modules_es_array_flat_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! core-js/modules/es.array.flat.js */ "./node_modules/core-js/modules/es.array.flat.js");
-/* harmony import */ var core_js_modules_es_array_flat_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_flat_js__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var core_js_modules_es_array_unscopables_flat_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! core-js/modules/es.array.unscopables.flat.js */ "./node_modules/core-js/modules/es.array.unscopables.flat.js");
-/* harmony import */ var core_js_modules_es_array_unscopables_flat_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_unscopables_flat_js__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _core_layouts_components_Logo_vue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @core/layouts/components/Logo.vue */ "./resources/js/src/@core/layouts/components/Logo.vue");
-/* harmony import */ var _vue_composition_api__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @vue/composition-api */ "./node_modules/@vue/composition-api/dist/vue-composition-api.mjs");
-/* harmony import */ var _core_mixins_ui_transition__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @core/mixins/ui/transition */ "./resources/js/src/@core/mixins/ui/transition.js");
-/* harmony import */ var vue_ripple_directive__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! vue-ripple-directive */ "./node_modules/vue-ripple-directive/src/ripple.js");
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @/store */ "./resources/js/src/store/index.js");
-/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @/router */ "./resources/js/src/router/index.js");
-/* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/esm/index.js");
-/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
-/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_20__);
-/* harmony import */ var vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! vue-flatpickr-component */ "./node_modules/vue-flatpickr-component/dist/vue-flatpickr.min.js");
-/* harmony import */ var vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_21__);
-/* harmony import */ var _core_components_medicines_SearchMedicine_vue__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @core/components/medicines/SearchMedicine.vue */ "./resources/js/src/@core/components/medicines/SearchMedicine.vue");
-/* harmony import */ var _providers_inventories_Transfers__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @/providers/inventories/Transfers */ "./resources/js/src/providers/inventories/Transfers.js");
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/defineProperty.js */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js */ "./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js");
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.array.find-index.js */ "./node_modules/core-js/modules/es.array.find-index.js");
+/* harmony import */ var core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_find_index_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_es_array_push_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.array.push.js */ "./node_modules/core-js/modules/es.array.push.js");
+/* harmony import */ var core_js_modules_es_array_push_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_push_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! core-js/modules/es.array.splice.js */ "./node_modules/core-js/modules/es.array.splice.js");
+/* harmony import */ var core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! core-js/modules/es.array.reduce.js */ "./node_modules/core-js/modules/es.array.reduce.js");
+/* harmony import */ var core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var core_js_modules_es_object_values_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! core-js/modules/es.object.values.js */ "./node_modules/core-js/modules/es.object.values.js");
+/* harmony import */ var core_js_modules_es_object_values_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_values_js__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var core_js_modules_es_array_flat_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! core-js/modules/es.array.flat.js */ "./node_modules/core-js/modules/es.array.flat.js");
+/* harmony import */ var core_js_modules_es_array_flat_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_flat_js__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var core_js_modules_es_array_unscopables_flat_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! core-js/modules/es.array.unscopables.flat.js */ "./node_modules/core-js/modules/es.array.unscopables.flat.js");
+/* harmony import */ var core_js_modules_es_array_unscopables_flat_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_unscopables_flat_js__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _core_layouts_components_Logo_vue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @core/layouts/components/Logo.vue */ "./resources/js/src/@core/layouts/components/Logo.vue");
+/* harmony import */ var _vue_composition_api__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @vue/composition-api */ "./node_modules/@vue/composition-api/dist/vue-composition-api.mjs");
+/* harmony import */ var _core_mixins_ui_transition__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @core/mixins/ui/transition */ "./resources/js/src/@core/mixins/ui/transition.js");
+/* harmony import */ var vue_ripple_directive__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! vue-ripple-directive */ "./node_modules/vue-ripple-directive/src/ripple.js");
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @/store */ "./resources/js/src/store/index.js");
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @/router */ "./resources/js/src/router/index.js");
+/* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/esm/index.js");
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! vue-flatpickr-component */ "./node_modules/vue-flatpickr-component/dist/vue-flatpickr.min.js");
+/* harmony import */ var vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_20__);
+/* harmony import */ var _core_components_medicines_SearchMedicine_vue__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @core/components/medicines/SearchMedicine.vue */ "./resources/js/src/@core/components/medicines/SearchMedicine.vue");
+/* harmony import */ var _providers_inventories_Purchases__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @/providers/inventories/Purchases */ "./resources/js/src/providers/inventories/Purchases.js");
+/* harmony import */ var _providers_inventories_Suppliers__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @/providers/inventories/Suppliers */ "./resources/js/src/providers/inventories/Suppliers.js");
 /* harmony import */ var _providers_inventories_Warehouses__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @/providers/inventories/Warehouses */ "./resources/js/src/providers/inventories/Warehouses.js");
 /* harmony import */ var _core_libs_i18n__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @core/libs/i18n */ "./resources/js/src/@core/libs/i18n/index.js");
 /* harmony import */ var vue_toastification_composition__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! vue-toastification/composition */ "./node_modules/vue-toastification/composition/index.js");
@@ -54,6 +52,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var _name$components$dire;
 
 
 
@@ -63,231 +62,287 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -306,281 +361,362 @@ __webpack_require__.r(__webpack_exports__);
 // Notification
 
 
+var SupplierResource = new _providers_inventories_Suppliers__WEBPACK_IMPORTED_MODULE_23__["default"]();
 var WarehouseResource = new _providers_inventories_Warehouses__WEBPACK_IMPORTED_MODULE_24__["default"]();
-var TransferResource = new _providers_inventories_Transfers__WEBPACK_IMPORTED_MODULE_23__["default"]();
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'CreateTransfer',
+var PurchaseResource = new _providers_inventories_Purchases__WEBPACK_IMPORTED_MODULE_22__["default"]();
+/* harmony default export */ __webpack_exports__["default"] = (_name$components$dire = {
+  name: 'PurchaseUpdate',
   components: {
-    BRow: bootstrap_vue__WEBPACK_IMPORTED_MODULE_19__["BRow"],
-    BCol: bootstrap_vue__WEBPACK_IMPORTED_MODULE_19__["BCol"],
-    BCard: bootstrap_vue__WEBPACK_IMPORTED_MODULE_19__["BCard"],
-    BCardBody: bootstrap_vue__WEBPACK_IMPORTED_MODULE_19__["BCardBody"],
-    BButton: bootstrap_vue__WEBPACK_IMPORTED_MODULE_19__["BButton"],
-    BCardText: bootstrap_vue__WEBPACK_IMPORTED_MODULE_19__["BCardText"],
-    BForm: bootstrap_vue__WEBPACK_IMPORTED_MODULE_19__["BForm"],
-    BFormGroup: bootstrap_vue__WEBPACK_IMPORTED_MODULE_19__["BFormGroup"],
-    BFormInput: bootstrap_vue__WEBPACK_IMPORTED_MODULE_19__["BFormInput"],
-    BInputGroup: bootstrap_vue__WEBPACK_IMPORTED_MODULE_19__["BInputGroup"],
-    BInputGroupPrepend: bootstrap_vue__WEBPACK_IMPORTED_MODULE_19__["BInputGroupPrepend"],
-    BFormTextarea: bootstrap_vue__WEBPACK_IMPORTED_MODULE_19__["BFormTextarea"],
-    BFormCheckbox: bootstrap_vue__WEBPACK_IMPORTED_MODULE_19__["BFormCheckbox"],
-    BPopover: bootstrap_vue__WEBPACK_IMPORTED_MODULE_19__["BPopover"],
-    flatPickr: vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_21___default.a,
-    BSpinner: bootstrap_vue__WEBPACK_IMPORTED_MODULE_19__["BSpinner"],
-    BOverlay: bootstrap_vue__WEBPACK_IMPORTED_MODULE_19__["BOverlay"],
-    vSelect: vue_select__WEBPACK_IMPORTED_MODULE_20___default.a,
-    SearchMedicine: _core_components_medicines_SearchMedicine_vue__WEBPACK_IMPORTED_MODULE_22__["default"],
+    BRow: bootstrap_vue__WEBPACK_IMPORTED_MODULE_18__["BRow"],
+    BCol: bootstrap_vue__WEBPACK_IMPORTED_MODULE_18__["BCol"],
+    BCard: bootstrap_vue__WEBPACK_IMPORTED_MODULE_18__["BCard"],
+    BCardBody: bootstrap_vue__WEBPACK_IMPORTED_MODULE_18__["BCardBody"],
+    BButton: bootstrap_vue__WEBPACK_IMPORTED_MODULE_18__["BButton"],
+    BCardText: bootstrap_vue__WEBPACK_IMPORTED_MODULE_18__["BCardText"],
+    BForm: bootstrap_vue__WEBPACK_IMPORTED_MODULE_18__["BForm"],
+    BFormGroup: bootstrap_vue__WEBPACK_IMPORTED_MODULE_18__["BFormGroup"],
+    BFormInput: bootstrap_vue__WEBPACK_IMPORTED_MODULE_18__["BFormInput"],
+    BInputGroup: bootstrap_vue__WEBPACK_IMPORTED_MODULE_18__["BInputGroup"],
+    BInputGroupPrepend: bootstrap_vue__WEBPACK_IMPORTED_MODULE_18__["BInputGroupPrepend"],
+    BFormTextarea: bootstrap_vue__WEBPACK_IMPORTED_MODULE_18__["BFormTextarea"],
+    BFormCheckbox: bootstrap_vue__WEBPACK_IMPORTED_MODULE_18__["BFormCheckbox"],
+    BPopover: bootstrap_vue__WEBPACK_IMPORTED_MODULE_18__["BPopover"],
+    BSpinner: bootstrap_vue__WEBPACK_IMPORTED_MODULE_18__["BSpinner"],
+    BOverlay: bootstrap_vue__WEBPACK_IMPORTED_MODULE_18__["BOverlay"],
+    flatPickr: vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_20___default.a,
+    vSelect: vue_select__WEBPACK_IMPORTED_MODULE_19___default.a,
+    SearchMedicine: _core_components_medicines_SearchMedicine_vue__WEBPACK_IMPORTED_MODULE_21__["default"],
     ToastificationContent: _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_27__["default"]
+    // InvoiceSidebarAddNewCustomer,
   },
+
   directives: {
-    Ripple: vue_ripple_directive__WEBPACK_IMPORTED_MODULE_16__["default"],
-    'b-toggle': bootstrap_vue__WEBPACK_IMPORTED_MODULE_19__["VBToggle"]
+    Ripple: vue_ripple_directive__WEBPACK_IMPORTED_MODULE_15__["default"],
+    'b-toggle': bootstrap_vue__WEBPACK_IMPORTED_MODULE_18__["VBToggle"]
   },
-  mixins: [_core_mixins_ui_transition__WEBPACK_IMPORTED_MODULE_15__["heightTransition"]],
+  mixins: [_core_mixins_ui_transition__WEBPACK_IMPORTED_MODULE_14__["heightTransition"]],
+  watch: {
+    // eslint-disable-next-line func-names
+    'invoiceData.items': function invoiceDataItems() {
+      this.initTrHeight();
+      this.calculateTotals();
+    }
+  },
   mounted: function mounted() {
     this.initTrHeight();
-    this.invoiceData.reference = this.generateReference('TR-');
   },
   created: function created() {
     window.addEventListener('resize', this.initTrHeight);
   },
   destroyed: function destroyed() {
     window.removeEventListener('resize', this.initTrHeight);
-  },
-  methods: {
-    addNewItemInItemForm: function addNewItemInItemForm(e) {
-      var _this = this;
-      this.$refs.form.style.overflow = 'hidden';
-      var index = this.invoiceData.items.findIndex(function (item) {
-        return item.medicine_id == e.id;
+  }
+}, Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_0__["default"])(_name$components$dire, "mounted", function mounted() {}), Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_0__["default"])(_name$components$dire, "methods", {
+  addNewItemInItemForm: function addNewItemInItemForm(e) {
+    var _this = this;
+    this.$refs.form.style.overflow = 'hidden';
+    var index = this.invoiceData.items.findIndex(function (item) {
+      return item.medicine_id == e.id;
+    });
+    if (index > -1) {
+      this.invoiceData.items[index].quantity += 1;
+      this.invoiceData.items[index].subtotal = this.invoiceData.items[index].quantity * (this.invoiceData.items[index].unit_price * 1);
+      this.invoiceData.items[index].total = this.invoiceData.items[index].subtotal - this.invoiceData.items[index].discount * 1;
+    } else {
+      this.invoiceData.items.push({
+        medicine_id: e.id,
+        name: e.name,
+        sku: e.sku,
+        quantity: 1,
+        unit_price: 0,
+        tax: 0,
+        discount: 0,
+        subtotal: 0,
+        total: 0,
+        comments: e.comments
       });
-      if (index > -1) {
-        this.invoiceData.items[index].quantity += 1;
-      } else {
-        this.disableStore = false;
-        this.invoiceData.items.push({
-          medicine_id: e.id,
-          name: e.name,
-          sku: e.sku,
-          quantity: 1,
-          stock: e.current_stock,
-          description: e.description
-        });
-        this.$nextTick(function () {
-          _this.trAddHeight(_this.$refs.row[0].offsetHeight);
-          setTimeout(function () {
-            _this.$refs.form.style.overflow = null;
-          }, 350);
-        });
-      }
-    },
-    removeItem: function removeItem(index) {
-      this.invoiceData.items.splice(index, 1);
-      this.trTrimHeight(this.$refs.row[0].offsetHeight);
-    },
-    initTrHeight: function initTrHeight() {
-      var _this2 = this;
-      this.trSetHeight(null);
       this.$nextTick(function () {
-        _this2.trSetHeight(_this2.$refs.form.scrollHeight);
+        _this.trAddHeight(_this.$refs.row[0].offsetHeight);
+        setTimeout(function () {
+          _this.$refs.form.style.overflow = null;
+        }, 350);
       });
     }
   },
-  setup: function setup() {
-    var fromWarehousesData = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_14__["ref"])([]);
-    var toWarehousesData = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_14__["ref"])([]);
-    var activeSearchMedicine = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_14__["ref"])(false);
-    var loading = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_14__["ref"])(false);
-    var disableStore = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_14__["ref"])(true);
-    var _useI18nUtils = Object(_core_libs_i18n__WEBPACK_IMPORTED_MODULE_25__["useUtils"])(),
-      t = _useI18nUtils.t;
+  removeItem: function removeItem(index) {
+    this.invoiceData.items.splice(index, 1);
+    this.trTrimHeight(this.$refs.row[0].offsetHeight);
+    this.calculateTotals();
+  },
+  initTrHeight: function initTrHeight() {
+    var _this2 = this;
+    this.trSetHeight(null);
+    this.$nextTick(function () {
+      _this2.trSetHeight(_this2.$refs.form.scrollHeight);
+    });
+  }
+}), Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_0__["default"])(_name$components$dire, "setup", function setup() {
+  var suppliersData = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_13__["ref"])([]);
+  var warehousesData = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_13__["ref"])([]);
+  var activeSearchMedicine = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_13__["ref"])(false);
+  var loading = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_13__["ref"])(false);
+  var _useI18nUtils = Object(_core_libs_i18n__WEBPACK_IMPORTED_MODULE_25__["useUtils"])(),
+    t = _useI18nUtils.t;
 
-    // Use toast
-    var toast = Object(vue_toastification_composition__WEBPACK_IMPORTED_MODULE_26__["useToast"])();
-    var getWarehouses = /*#__PURE__*/function () {
-      var _ref = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee() {
-        var _yield$WarehouseResou, data;
-        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee$(_context) {
-          while (1) switch (_context.prev = _context.next) {
-            case 0:
-              loading.value = true;
-              _context.next = 3;
-              return WarehouseResource.index({
-                all: true
-              });
-            case 3:
-              _yield$WarehouseResou = _context.sent;
-              data = _yield$WarehouseResou.data;
-              loading.value = false;
-              fromWarehousesData.value = data.data;
-            case 7:
-            case "end":
-              return _context.stop();
-          }
-        }, _callee);
-      }));
-      return function getWarehouses() {
-        return _ref.apply(this, arguments);
-      };
-    }();
-    var selectFromWarehouse = function selectFromWarehouse(warehouse) {
-      invoiceData.value.to_warehouse_id = null;
-      toWarehousesData.value = fromWarehousesData.value.filter(function (item) {
-        return item.id != warehouse;
-      });
+  // Use toast
+  var toast = Object(vue_toastification_composition__WEBPACK_IMPORTED_MODULE_26__["useToast"])();
+  var getSuppliers = /*#__PURE__*/function () {
+    var _ref = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().mark(function _callee() {
+      var _yield$SupplierResour, data;
+      return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().wrap(function _callee$(_context) {
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            loading.value = true;
+            _context.next = 3;
+            return SupplierResource.index({
+              all: true
+            });
+          case 3:
+            _yield$SupplierResour = _context.sent;
+            data = _yield$SupplierResour.data;
+            loading.value = false;
+            suppliersData.value = data.data;
+          case 7:
+          case "end":
+            return _context.stop();
+        }
+      }, _callee);
+    }));
+    return function getSuppliers() {
+      return _ref.apply(this, arguments);
     };
-    Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_14__["onMounted"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee2() {
-      return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee2$(_context2) {
+  }();
+  var getWarehouses = /*#__PURE__*/function () {
+    var _ref2 = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().mark(function _callee2() {
+      var _yield$WarehouseResou, data;
+      return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
-            _context2.next = 2;
-            return getWarehouses();
-          case 2:
+            loading.value = true;
+            _context2.next = 3;
+            return WarehouseResource.index({
+              all: true
+            });
+          case 3:
+            _yield$WarehouseResou = _context2.sent;
+            data = _yield$WarehouseResou.data;
+            loading.value = false;
+            warehousesData.value = data.data;
+          case 7:
           case "end":
             return _context2.stop();
         }
       }, _callee2);
-    })));
-    var itemFormBlankItem = {};
-    var invoiceData = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_14__["ref"])({
-      from_warehouse_id: null,
-      to_warehouse_id: null,
-      user_id: _store__WEBPACK_IMPORTED_MODULE_17__["default"].state.auth.user.id,
-      reference: null,
-      transfer_date: new Date(),
-      status: 'completed',
-      items: [],
-      note: null
-    });
-    var transferStatus = [
-    // {
-    //     value: 'pending',
-    //     label: 'Pendiente',
-    // },
-    {
-      value: 'completed',
-      label: t('inventories.transfers.status.completed')
-    }];
-    var updateItemForm = function updateItemForm(index) {
-      var item = invoiceData.value.items[index];
-      if (item.quantity && item.quantity > 0) {
-        disableStore.value = false;
-        if (item.quantity > item.stock) {
-          invoiceData.value.items[index].quantity = item.stock;
-          toast({
-            component: _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_27__["default"],
-            props: {
-              title: t('inventories.transfers.valid_stock'),
-              icon: "AlertCircleIcon",
-              variant: "danger"
-            }
-          });
+    }));
+    return function getWarehouses() {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  var getPurchaseDetail = /*#__PURE__*/function () {
+    var _ref3 = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().mark(function _callee3(id) {
+      var _yield$PurchaseResour, data;
+      return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().wrap(function _callee3$(_context3) {
+        while (1) switch (_context3.prev = _context3.next) {
+          case 0:
+            loading.value = true;
+            _context3.next = 3;
+            return PurchaseResource.show(id);
+          case 3:
+            _yield$PurchaseResour = _context3.sent;
+            data = _yield$PurchaseResour.data;
+            loading.value = false;
+            invoiceData.value = {
+              supplier_id: data.data.supplier_id,
+              warehouse_id: data.data.warehouse_id,
+              user_id: data.data.user_id,
+              reference: data.data.reference,
+              purchase_date: data.data.purchase_date,
+              status: data.data.status,
+              total: data.data.total,
+              subtotal: data.data.subtotal,
+              discount: data.data.discount,
+              tax: data.data.tax,
+              shipping: data.data.shipping,
+              items: data.data.items,
+              comments: data.data.comments
+            };
+            calculateTotals();
+          case 8:
+          case "end":
+            return _context3.stop();
         }
-      } else {
-        disableStore.value = true;
+      }, _callee3);
+    }));
+    return function getPurchaseDetail(_x) {
+      return _ref3.apply(this, arguments);
+    };
+  }();
+  Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_13__["onMounted"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().mark(function _callee4() {
+    return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().wrap(function _callee4$(_context4) {
+      while (1) switch (_context4.prev = _context4.next) {
+        case 0:
+          _context4.next = 2;
+          return getSuppliers();
+        case 2:
+          _context4.next = 4;
+          return getWarehouses();
+        case 4:
+          _context4.next = 6;
+          return getPurchaseDetail(_router__WEBPACK_IMPORTED_MODULE_17__["default"].currentRoute.params.id);
+        case 6:
+        case "end":
+          return _context4.stop();
       }
+    }, _callee4);
+  })));
+  var itemFormBlankItem = {};
+  var invoiceData = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_13__["ref"])({
+    supplier_id: null,
+    user_id: _store__WEBPACK_IMPORTED_MODULE_16__["default"].state.auth.user.id,
+    reference: null,
+    purchase_date: new Date(),
+    status: 'pending',
+    total: 0,
+    subtotal: 0,
+    discount: 0,
+    tax: 0,
+    shipping: 0,
+    items: []
+  });
+  var purchaseStatus = [{
+    value: 'received',
+    label: t('inventories.purchases.status.received')
+  }, {
+    value: 'pending',
+    label: t('inventories.purchases.status.pending')
+  }];
+  var calculateTotals = function calculateTotals() {
+    invoiceData.value.subtotal = invoiceData.value.items.reduce(function (a, b) {
+      return a + (b.subtotal || 0);
+    }, 0);
+    invoiceData.value.discount = invoiceData.value.items.reduce(function (a, b) {
+      return a + (b.discount || 0);
+    }, 0);
+    invoiceData.value.total = invoiceData.value.subtotal - invoiceData.value.discount;
+  };
+  var updateItemForm = function updateItemForm(index, item) {
+    var unit_price = item.unit_price,
+      quantity = item.quantity,
+      discount = item.discount;
+    invoiceData.value.items[index].unit_price = unit_price * 1;
+    invoiceData.value.items[index].quantity = quantity * 1;
+    invoiceData.value.items[index].discount = discount * 1;
+    var subtotal = quantity * (unit_price * 1);
+    invoiceData.value.items[index].subtotal = subtotal;
+    invoiceData.value.items[index].total = subtotal - discount * 1;
+    calculateTotals();
+  };
+  var paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer'];
+  var getFirstValidationError = function getFirstValidationError(errorBag) {
+    var errors = Object.values(errorBag);
+    errors = errors.flat();
+    return errors[0];
+  };
+  var handleResponseErrors = function handleResponseErrors(e) {
+    loading.value = false;
+    if (e.response.status === 422) {
+      toast({
+        component: _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_27__["default"],
+        props: {
+          title: getFirstValidationError(e.response.data.errors),
+          icon: "AlertCircleIcon",
+          variant: "danger"
+        }
+      });
+    } else {
+      toast({
+        component: _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_27__["default"],
+        props: {
+          title: e.message,
+          icon: "AlertCircleIcon",
+          variant: "danger"
+        }
+      });
+    }
+  };
+  var updatePurchase = /*#__PURE__*/function () {
+    var _ref5 = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().mark(function _callee5() {
+      var _yield$PurchaseResour2, data;
+      return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().wrap(function _callee5$(_context5) {
+        while (1) switch (_context5.prev = _context5.next) {
+          case 0:
+            _context5.prev = 0;
+            loading.value = true;
+            _context5.next = 4;
+            return PurchaseResource.update(_router__WEBPACK_IMPORTED_MODULE_17__["default"].currentRoute.params.id, invoiceData.value);
+          case 4:
+            _yield$PurchaseResour2 = _context5.sent;
+            data = _yield$PurchaseResour2.data;
+            loading.value = false;
+            if (data.success) {
+              toast({
+                component: _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_27__["default"],
+                props: {
+                  title: data.message,
+                  icon: "CheckIcon",
+                  variant: "success"
+                }
+              });
+              _router__WEBPACK_IMPORTED_MODULE_17__["default"].push({
+                name: 'apps-inventories-purchases'
+              });
+            } else {
+              toast({
+                component: _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_27__["default"],
+                props: {
+                  title: data.message,
+                  icon: "AlertCircleIcon",
+                  variant: "danger"
+                }
+              });
+            }
+            _context5.next = 14;
+            break;
+          case 10:
+            _context5.prev = 10;
+            _context5.t0 = _context5["catch"](0);
+            loading.value = false;
+            handleResponseErrors(_context5.t0);
+          case 14:
+          case "end":
+            return _context5.stop();
+        }
+      }, _callee5, null, [[0, 10]]);
+    }));
+    return function updatePurchase() {
+      return _ref5.apply(this, arguments);
     };
-    var getFirstValidationError = function getFirstValidationError(errorBag) {
-      var errors = Object.values(errorBag);
-      errors = errors.flat();
-      return errors[0];
-    };
-    var handleResponseErrors = function handleResponseErrors(e) {
-      console.log(e.response);
-      if (e.response.status === 422) {
-        toast({
-          component: _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_27__["default"],
-          props: {
-            title: getFirstValidationError(e.response.data.errors),
-            icon: "AlertCircleIcon",
-            variant: "danger"
-          }
-        });
-      } else {
-        toast({
-          component: _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_27__["default"],
-          props: {
-            title: e.message,
-            icon: "AlertCircleIcon",
-            variant: "danger"
-          }
-        });
-      }
-    };
-    var storeTransfer = /*#__PURE__*/function () {
-      var _ref3 = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee3() {
-        var _yield$TransferResour, data;
-        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee3$(_context3) {
-          while (1) switch (_context3.prev = _context3.next) {
-            case 0:
-              _context3.prev = 0;
-              loading.value = true;
-              _context3.next = 4;
-              return TransferResource.store(invoiceData.value);
-            case 4:
-              _yield$TransferResour = _context3.sent;
-              data = _yield$TransferResour.data;
-              loading.value = false;
-              if (data.success) {
-                toast({
-                  component: _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_27__["default"],
-                  props: {
-                    title: data.message,
-                    icon: "CheckIcon",
-                    variant: "success"
-                  }
-                });
-                _router__WEBPACK_IMPORTED_MODULE_18__["default"].push({
-                  name: 'apps-inventories-transfers'
-                });
-              } else {
-                toast({
-                  component: _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_27__["default"],
-                  props: {
-                    title: data.message,
-                    icon: "AlertCircleIcon",
-                    variant: "danger"
-                  }
-                });
-              }
-              _context3.next = 14;
-              break;
-            case 10:
-              _context3.prev = 10;
-              _context3.t0 = _context3["catch"](0);
-              loading.value = false;
-              handleResponseErrors(_context3.t0);
-            case 14:
-            case "end":
-              return _context3.stop();
-          }
-        }, _callee3, null, [[0, 10]]);
-      }));
-      return function storeTransfer() {
-        return _ref3.apply(this, arguments);
-      };
-    }();
-    return {
-      loading: loading,
-      invoiceData: invoiceData,
-      fromWarehousesData: fromWarehousesData,
-      toWarehousesData: toWarehousesData,
-      transferStatus: transferStatus,
-      disableStore: disableStore,
-      updateItemForm: updateItemForm,
-      selectFromWarehouse: selectFromWarehouse,
-      itemFormBlankItem: itemFormBlankItem,
-      activeSearchMedicine: activeSearchMedicine,
-      storeTransfer: storeTransfer
-    };
-  }
-});
+  }();
+  return {
+    loading: loading,
+    invoiceData: invoiceData,
+    suppliersData: suppliersData,
+    warehousesData: warehousesData,
+    purchaseStatus: purchaseStatus,
+    updateItemForm: updateItemForm,
+    itemFormBlankItem: itemFormBlankItem,
+    paymentMethods: paymentMethods,
+    activeSearchMedicine: activeSearchMedicine,
+    updatePurchase: updatePurchase,
+    calculateTotals: calculateTotals
+  };
+}), _name$components$dire);
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=style&index=0&id=5bff4fca&lang=scss&":
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=style&index=0&id=caf0c504&lang=scss&":
 /*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=style&index=0&id=5bff4fca&lang=scss& ***!
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=style&index=0&id=caf0c504&lang=scss& ***!
   \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -598,9 +734,9 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=style&index=1&id=5bff4fca&lang=scss&scoped=true&":
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=style&index=1&id=caf0c504&lang=scss&scoped=true&":
 /*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=style&index=1&id=5bff4fca&lang=scss&scoped=true& ***!
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=style&index=1&id=caf0c504&lang=scss&scoped=true& ***!
   \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -609,22 +745,22 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "[dir=ltr] .invoice-preview .invoice-padding[data-v-5bff4fca], [dir=ltr] .invoice-edit .invoice-padding[data-v-5bff4fca], [dir=ltr] .invoice-add .invoice-padding[data-v-5bff4fca] {\n  padding-left: 2.5rem;\n  padding-right: 2.5rem;\n}[dir=rtl] .invoice-preview .invoice-padding[data-v-5bff4fca], [dir=rtl] .invoice-edit .invoice-padding[data-v-5bff4fca], [dir=rtl] .invoice-add .invoice-padding[data-v-5bff4fca] {\n  padding-right: 2.5rem;\n  padding-left: 2.5rem;\n}\n[dir=ltr] .invoice-preview .table th[data-v-5bff4fca]:first-child, [dir=ltr] .invoice-preview .table td[data-v-5bff4fca]:first-child, [dir=ltr] .invoice-edit .table th[data-v-5bff4fca]:first-child, [dir=ltr] .invoice-edit .table td[data-v-5bff4fca]:first-child, [dir=ltr] .invoice-add .table th[data-v-5bff4fca]:first-child, [dir=ltr] .invoice-add .table td[data-v-5bff4fca]:first-child {\n  padding-left: 2.5rem;\n}\n[dir=rtl] .invoice-preview .table th[data-v-5bff4fca]:first-child, [dir=rtl] .invoice-preview .table td[data-v-5bff4fca]:first-child, [dir=rtl] .invoice-edit .table th[data-v-5bff4fca]:first-child, [dir=rtl] .invoice-edit .table td[data-v-5bff4fca]:first-child, [dir=rtl] .invoice-add .table th[data-v-5bff4fca]:first-child, [dir=rtl] .invoice-add .table td[data-v-5bff4fca]:first-child {\n  padding-right: 2.5rem;\n}\n.invoice-preview .logo-wrapper[data-v-5bff4fca],\n.invoice-edit .logo-wrapper[data-v-5bff4fca],\n.invoice-add .logo-wrapper[data-v-5bff4fca] {\n  display: flex;\n  align-items: center;\n}\n[dir] .invoice-preview .logo-wrapper[data-v-5bff4fca], [dir] .invoice-edit .logo-wrapper[data-v-5bff4fca], [dir] .invoice-add .logo-wrapper[data-v-5bff4fca] {\n  margin-bottom: 1.9rem;\n}\n.invoice-preview .logo-wrapper .invoice-logo[data-v-5bff4fca],\n.invoice-edit .logo-wrapper .invoice-logo[data-v-5bff4fca],\n.invoice-add .logo-wrapper .invoice-logo[data-v-5bff4fca] {\n  font-size: 2.142rem;\n  font-weight: bold;\n  letter-spacing: -0.54px;\n}\n[dir] .invoice-preview .logo-wrapper .invoice-logo[data-v-5bff4fca], [dir] .invoice-edit .logo-wrapper .invoice-logo[data-v-5bff4fca], [dir] .invoice-add .logo-wrapper .invoice-logo[data-v-5bff4fca] {\n  margin-bottom: 0;\n}\n[dir=ltr] .invoice-preview .logo-wrapper .invoice-logo[data-v-5bff4fca], [dir=ltr] .invoice-edit .logo-wrapper .invoice-logo[data-v-5bff4fca], [dir=ltr] .invoice-add .logo-wrapper .invoice-logo[data-v-5bff4fca] {\n  margin-left: 1rem;\n}\n[dir=rtl] .invoice-preview .logo-wrapper .invoice-logo[data-v-5bff4fca], [dir=rtl] .invoice-edit .logo-wrapper .invoice-logo[data-v-5bff4fca], [dir=rtl] .invoice-add .logo-wrapper .invoice-logo[data-v-5bff4fca] {\n  margin-right: 1rem;\n}\n.invoice-preview .invoice-title[data-v-5bff4fca],\n.invoice-edit .invoice-title[data-v-5bff4fca],\n.invoice-add .invoice-title[data-v-5bff4fca] {\n  font-size: 1.285rem;\n}\n[dir] .invoice-preview .invoice-title[data-v-5bff4fca], [dir] .invoice-edit .invoice-title[data-v-5bff4fca], [dir] .invoice-add .invoice-title[data-v-5bff4fca] {\n  margin-bottom: 1rem;\n}\n.invoice-preview .invoice-title .invoice-number[data-v-5bff4fca],\n.invoice-edit .invoice-title .invoice-number[data-v-5bff4fca],\n.invoice-add .invoice-title .invoice-number[data-v-5bff4fca] {\n  font-weight: 600;\n}\n.invoice-preview .invoice-date-wrapper[data-v-5bff4fca],\n.invoice-edit .invoice-date-wrapper[data-v-5bff4fca],\n.invoice-add .invoice-date-wrapper[data-v-5bff4fca] {\n  display: flex;\n  align-items: center;\n}\n[dir] .invoice-preview .invoice-date-wrapper[data-v-5bff4fca]:not(:last-of-type), [dir] .invoice-edit .invoice-date-wrapper[data-v-5bff4fca]:not(:last-of-type), [dir] .invoice-add .invoice-date-wrapper[data-v-5bff4fca]:not(:last-of-type) {\n  margin-bottom: 0.5rem;\n}\n.invoice-preview .invoice-date-wrapper .invoice-date-title[data-v-5bff4fca],\n.invoice-edit .invoice-date-wrapper .invoice-date-title[data-v-5bff4fca],\n.invoice-add .invoice-date-wrapper .invoice-date-title[data-v-5bff4fca] {\n  width: 7rem;\n}\n[dir] .invoice-preview .invoice-date-wrapper .invoice-date-title[data-v-5bff4fca], [dir] .invoice-edit .invoice-date-wrapper .invoice-date-title[data-v-5bff4fca], [dir] .invoice-add .invoice-date-wrapper .invoice-date-title[data-v-5bff4fca] {\n  margin-bottom: 0;\n}\n.invoice-preview .invoice-date-wrapper .invoice-date[data-v-5bff4fca],\n.invoice-edit .invoice-date-wrapper .invoice-date[data-v-5bff4fca],\n.invoice-add .invoice-date-wrapper .invoice-date[data-v-5bff4fca] {\n  font-weight: 600;\n}\n[dir] .invoice-preview .invoice-date-wrapper .invoice-date[data-v-5bff4fca], [dir] .invoice-edit .invoice-date-wrapper .invoice-date[data-v-5bff4fca], [dir] .invoice-add .invoice-date-wrapper .invoice-date[data-v-5bff4fca] {\n  margin-bottom: 0;\n}\n[dir=ltr] .invoice-preview .invoice-date-wrapper .invoice-date[data-v-5bff4fca], [dir=ltr] .invoice-edit .invoice-date-wrapper .invoice-date[data-v-5bff4fca], [dir=ltr] .invoice-add .invoice-date-wrapper .invoice-date[data-v-5bff4fca] {\n  margin-left: 0.5rem;\n}\n[dir=rtl] .invoice-preview .invoice-date-wrapper .invoice-date[data-v-5bff4fca], [dir=rtl] .invoice-edit .invoice-date-wrapper .invoice-date[data-v-5bff4fca], [dir=rtl] .invoice-add .invoice-date-wrapper .invoice-date[data-v-5bff4fca] {\n  margin-right: 0.5rem;\n}\n[dir] .invoice-preview .invoice-spacing[data-v-5bff4fca], [dir] .invoice-edit .invoice-spacing[data-v-5bff4fca], [dir] .invoice-add .invoice-spacing[data-v-5bff4fca] {\n  margin: 1.45rem 0;\n}\n.invoice-preview .invoice-number-date .title[data-v-5bff4fca],\n.invoice-edit .invoice-number-date .title[data-v-5bff4fca],\n.invoice-add .invoice-number-date .title[data-v-5bff4fca] {\n  width: 115px;\n}\n.invoice-preview .invoice-total-wrapper[data-v-5bff4fca],\n.invoice-edit .invoice-total-wrapper[data-v-5bff4fca],\n.invoice-add .invoice-total-wrapper[data-v-5bff4fca] {\n  width: 100%;\n  max-width: 12rem;\n}\n.invoice-preview .invoice-total-wrapper .invoice-total-item[data-v-5bff4fca],\n.invoice-edit .invoice-total-wrapper .invoice-total-item[data-v-5bff4fca],\n.invoice-add .invoice-total-wrapper .invoice-total-item[data-v-5bff4fca] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n[dir] .invoice-preview .invoice-total-wrapper .invoice-total-item .invoice-total-title[data-v-5bff4fca], [dir] .invoice-edit .invoice-total-wrapper .invoice-total-item .invoice-total-title[data-v-5bff4fca], [dir] .invoice-add .invoice-total-wrapper .invoice-total-item .invoice-total-title[data-v-5bff4fca] {\n  margin-bottom: 0.35rem;\n}\n.invoice-preview .invoice-total-wrapper .invoice-total-item .invoice-total-amount[data-v-5bff4fca],\n.invoice-edit .invoice-total-wrapper .invoice-total-item .invoice-total-amount[data-v-5bff4fca],\n.invoice-add .invoice-total-wrapper .invoice-total-item .invoice-total-amount[data-v-5bff4fca] {\n  font-weight: 600;\n}\n[dir] .invoice-preview .invoice-total-wrapper .invoice-total-item .invoice-total-amount[data-v-5bff4fca], [dir] .invoice-edit .invoice-total-wrapper .invoice-total-item .invoice-total-amount[data-v-5bff4fca], [dir] .invoice-add .invoice-total-wrapper .invoice-total-item .invoice-total-amount[data-v-5bff4fca] {\n  margin-bottom: 0.35rem;\n}\n@media (min-width: 768px) {\n[dir] .invoice-preview .invoice-title[data-v-5bff4fca], [dir] .invoice-edit .invoice-title[data-v-5bff4fca], [dir] .invoice-add .invoice-title[data-v-5bff4fca] {\n    margin-bottom: 3rem;\n}\n[dir=ltr] .invoice-preview .invoice-title[data-v-5bff4fca], [dir=ltr] .invoice-edit .invoice-title[data-v-5bff4fca], [dir=ltr] .invoice-add .invoice-title[data-v-5bff4fca] {\n    text-align: right;\n}\n[dir=rtl] .invoice-preview .invoice-title[data-v-5bff4fca], [dir=rtl] .invoice-edit .invoice-title[data-v-5bff4fca], [dir=rtl] .invoice-add .invoice-title[data-v-5bff4fca] {\n    text-align: left;\n}\n}\n[dir] .invoice-edit .invoice-preview-card .invoice-title[data-v-5bff4fca], [dir] .invoice-add .invoice-preview-card .invoice-title[data-v-5bff4fca] {\n  margin-bottom: 0;\n}\n[dir=ltr] .invoice-edit .invoice-preview-card .invoice-title[data-v-5bff4fca], [dir=ltr] .invoice-add .invoice-preview-card .invoice-title[data-v-5bff4fca] {\n  text-align: left;\n  margin-right: 3.5rem;\n}\n[dir=rtl] .invoice-edit .invoice-preview-card .invoice-title[data-v-5bff4fca], [dir=rtl] .invoice-add .invoice-preview-card .invoice-title[data-v-5bff4fca] {\n  text-align: right;\n  margin-left: 3.5rem;\n}\n.invoice-edit .invoice-preview-card .invoice-edit-input[data-v-5bff4fca],\n.invoice-edit .invoice-preview-card .invoice-edit-input-group[data-v-5bff4fca],\n.invoice-add .invoice-preview-card .invoice-edit-input[data-v-5bff4fca],\n.invoice-add .invoice-preview-card .invoice-edit-input-group[data-v-5bff4fca] {\n  max-width: 11.21rem;\n}\n[dir] .invoice-edit .invoice-preview-card .invoice-product-details[data-v-5bff4fca], [dir] .invoice-add .invoice-preview-card .invoice-product-details[data-v-5bff4fca] {\n  background-color: #fcfcfc;\n  padding: 3.75rem 3.45rem 2.3rem 3.45rem;\n}\n[dir] .invoice-edit .invoice-preview-card .invoice-product-details .product-details-border[data-v-5bff4fca], [dir] .invoice-add .invoice-preview-card .invoice-product-details .product-details-border[data-v-5bff4fca] {\n  border: 1px solid #ebe9f1;\n  border-radius: 0.357rem;\n}\n[dir] .invoice-edit .invoice-preview-card .invoice-to-title[data-v-5bff4fca], [dir] .invoice-add .invoice-preview-card .invoice-to-title[data-v-5bff4fca] {\n  margin-bottom: 1.9rem;\n}\n.invoice-edit .invoice-preview-card .col-title[data-v-5bff4fca],\n.invoice-add .invoice-preview-card .col-title[data-v-5bff4fca] {\n  position: absolute;\n  top: -3.2rem;\n}\n.invoice-edit .invoice-preview-card .item-options-menu[data-v-5bff4fca],\n.invoice-add .invoice-preview-card .item-options-menu[data-v-5bff4fca] {\n  min-width: 20rem;\n}\n[dir] .invoice-edit .invoice-preview-card .repeater-wrapper[data-v-5bff4fca]:not(:last-child), [dir] .invoice-add .invoice-preview-card .repeater-wrapper[data-v-5bff4fca]:not(:last-child) {\n  margin-bottom: 3rem;\n}\n.invoice-edit .invoice-preview-card .invoice-calculations .total-amt-title[data-v-5bff4fca],\n.invoice-add .invoice-preview-card .invoice-calculations .total-amt-title[data-v-5bff4fca] {\n  width: 100px;\n}\n@media (max-width: 769px) {\n.invoice-edit .invoice-preview-card .invoice-title[data-v-5bff4fca],\n.invoice-add .invoice-preview-card .invoice-title[data-v-5bff4fca] {\n    width: 115px;\n}\n[dir=ltr] .invoice-edit .invoice-preview-card .invoice-title[data-v-5bff4fca], [dir=ltr] .invoice-add .invoice-preview-card .invoice-title[data-v-5bff4fca] {\n    margin-right: 0;\n}\n[dir=rtl] .invoice-edit .invoice-preview-card .invoice-title[data-v-5bff4fca], [dir=rtl] .invoice-add .invoice-preview-card .invoice-title[data-v-5bff4fca] {\n    margin-left: 0;\n}\n.invoice-edit .invoice-preview-card .invoice-edit-input[data-v-5bff4fca],\n.invoice-add .invoice-preview-card .invoice-edit-input[data-v-5bff4fca] {\n    max-width: 100%;\n}\n}\n@media (max-width: 992px) {\n.invoice-edit .col-title[data-v-5bff4fca],\n.invoice-add .col-title[data-v-5bff4fca] {\n    top: -1.5rem !important;\n}\n}\n@media print {\n[dir] .invoice-edit hr[data-v-5bff4fca], [dir] .invoice-add hr[data-v-5bff4fca] {\n    margin-top: 1rem !important;\n    margin-bottom: 1rem !important;\n}\n}\n[dir] .form-item-section[data-v-5bff4fca] {\n  background-color: #fcfcfc;\n}\n.form-item-action-col[data-v-5bff4fca] {\n  width: 27px;\n}\n.repeater-form[data-v-5bff4fca] {\n  transition: 0.35s height;\n}\n[dir] .v-select.item-selector-title[data-v-5bff4fca], [dir] .v-select.payment-selector[data-v-5bff4fca] {\n  background-color: #fff;\n}\n[dir] .dark-layout .v-select.item-selector-title[data-v-5bff4fca], [dir] .dark-layout .v-select.payment-selector[data-v-5bff4fca] {\n  background-color: unset;\n}\n[dir] .dark-layout .form-item-section[data-v-5bff4fca] {\n  background-color: #161d31;\n}\n[dir] .dark-layout .form-item-section .row .border[data-v-5bff4fca] {\n  background-color: #283046;\n}", ""]);
+exports.push([module.i, "[dir=ltr] .invoice-preview .invoice-padding[data-v-caf0c504], [dir=ltr] .invoice-edit .invoice-padding[data-v-caf0c504], [dir=ltr] .invoice-add .invoice-padding[data-v-caf0c504] {\n  padding-left: 2.5rem;\n  padding-right: 2.5rem;\n}[dir=rtl] .invoice-preview .invoice-padding[data-v-caf0c504], [dir=rtl] .invoice-edit .invoice-padding[data-v-caf0c504], [dir=rtl] .invoice-add .invoice-padding[data-v-caf0c504] {\n  padding-right: 2.5rem;\n  padding-left: 2.5rem;\n}\n[dir=ltr] .invoice-preview .table th[data-v-caf0c504]:first-child, [dir=ltr] .invoice-preview .table td[data-v-caf0c504]:first-child, [dir=ltr] .invoice-edit .table th[data-v-caf0c504]:first-child, [dir=ltr] .invoice-edit .table td[data-v-caf0c504]:first-child, [dir=ltr] .invoice-add .table th[data-v-caf0c504]:first-child, [dir=ltr] .invoice-add .table td[data-v-caf0c504]:first-child {\n  padding-left: 2.5rem;\n}\n[dir=rtl] .invoice-preview .table th[data-v-caf0c504]:first-child, [dir=rtl] .invoice-preview .table td[data-v-caf0c504]:first-child, [dir=rtl] .invoice-edit .table th[data-v-caf0c504]:first-child, [dir=rtl] .invoice-edit .table td[data-v-caf0c504]:first-child, [dir=rtl] .invoice-add .table th[data-v-caf0c504]:first-child, [dir=rtl] .invoice-add .table td[data-v-caf0c504]:first-child {\n  padding-right: 2.5rem;\n}\n.invoice-preview .logo-wrapper[data-v-caf0c504],\n.invoice-edit .logo-wrapper[data-v-caf0c504],\n.invoice-add .logo-wrapper[data-v-caf0c504] {\n  display: flex;\n  align-items: center;\n}\n[dir] .invoice-preview .logo-wrapper[data-v-caf0c504], [dir] .invoice-edit .logo-wrapper[data-v-caf0c504], [dir] .invoice-add .logo-wrapper[data-v-caf0c504] {\n  margin-bottom: 1.9rem;\n}\n.invoice-preview .logo-wrapper .invoice-logo[data-v-caf0c504],\n.invoice-edit .logo-wrapper .invoice-logo[data-v-caf0c504],\n.invoice-add .logo-wrapper .invoice-logo[data-v-caf0c504] {\n  font-size: 2.142rem;\n  font-weight: bold;\n  letter-spacing: -0.54px;\n}\n[dir] .invoice-preview .logo-wrapper .invoice-logo[data-v-caf0c504], [dir] .invoice-edit .logo-wrapper .invoice-logo[data-v-caf0c504], [dir] .invoice-add .logo-wrapper .invoice-logo[data-v-caf0c504] {\n  margin-bottom: 0;\n}\n[dir=ltr] .invoice-preview .logo-wrapper .invoice-logo[data-v-caf0c504], [dir=ltr] .invoice-edit .logo-wrapper .invoice-logo[data-v-caf0c504], [dir=ltr] .invoice-add .logo-wrapper .invoice-logo[data-v-caf0c504] {\n  margin-left: 1rem;\n}\n[dir=rtl] .invoice-preview .logo-wrapper .invoice-logo[data-v-caf0c504], [dir=rtl] .invoice-edit .logo-wrapper .invoice-logo[data-v-caf0c504], [dir=rtl] .invoice-add .logo-wrapper .invoice-logo[data-v-caf0c504] {\n  margin-right: 1rem;\n}\n.invoice-preview .invoice-title[data-v-caf0c504],\n.invoice-edit .invoice-title[data-v-caf0c504],\n.invoice-add .invoice-title[data-v-caf0c504] {\n  font-size: 1.285rem;\n}\n[dir] .invoice-preview .invoice-title[data-v-caf0c504], [dir] .invoice-edit .invoice-title[data-v-caf0c504], [dir] .invoice-add .invoice-title[data-v-caf0c504] {\n  margin-bottom: 1rem;\n}\n.invoice-preview .invoice-title .invoice-number[data-v-caf0c504],\n.invoice-edit .invoice-title .invoice-number[data-v-caf0c504],\n.invoice-add .invoice-title .invoice-number[data-v-caf0c504] {\n  font-weight: 600;\n}\n.invoice-preview .invoice-date-wrapper[data-v-caf0c504],\n.invoice-edit .invoice-date-wrapper[data-v-caf0c504],\n.invoice-add .invoice-date-wrapper[data-v-caf0c504] {\n  display: flex;\n  align-items: center;\n}\n[dir] .invoice-preview .invoice-date-wrapper[data-v-caf0c504]:not(:last-of-type), [dir] .invoice-edit .invoice-date-wrapper[data-v-caf0c504]:not(:last-of-type), [dir] .invoice-add .invoice-date-wrapper[data-v-caf0c504]:not(:last-of-type) {\n  margin-bottom: 0.5rem;\n}\n.invoice-preview .invoice-date-wrapper .invoice-date-title[data-v-caf0c504],\n.invoice-edit .invoice-date-wrapper .invoice-date-title[data-v-caf0c504],\n.invoice-add .invoice-date-wrapper .invoice-date-title[data-v-caf0c504] {\n  width: 7rem;\n}\n[dir] .invoice-preview .invoice-date-wrapper .invoice-date-title[data-v-caf0c504], [dir] .invoice-edit .invoice-date-wrapper .invoice-date-title[data-v-caf0c504], [dir] .invoice-add .invoice-date-wrapper .invoice-date-title[data-v-caf0c504] {\n  margin-bottom: 0;\n}\n.invoice-preview .invoice-date-wrapper .invoice-date[data-v-caf0c504],\n.invoice-edit .invoice-date-wrapper .invoice-date[data-v-caf0c504],\n.invoice-add .invoice-date-wrapper .invoice-date[data-v-caf0c504] {\n  font-weight: 600;\n}\n[dir] .invoice-preview .invoice-date-wrapper .invoice-date[data-v-caf0c504], [dir] .invoice-edit .invoice-date-wrapper .invoice-date[data-v-caf0c504], [dir] .invoice-add .invoice-date-wrapper .invoice-date[data-v-caf0c504] {\n  margin-bottom: 0;\n}\n[dir=ltr] .invoice-preview .invoice-date-wrapper .invoice-date[data-v-caf0c504], [dir=ltr] .invoice-edit .invoice-date-wrapper .invoice-date[data-v-caf0c504], [dir=ltr] .invoice-add .invoice-date-wrapper .invoice-date[data-v-caf0c504] {\n  margin-left: 0.5rem;\n}\n[dir=rtl] .invoice-preview .invoice-date-wrapper .invoice-date[data-v-caf0c504], [dir=rtl] .invoice-edit .invoice-date-wrapper .invoice-date[data-v-caf0c504], [dir=rtl] .invoice-add .invoice-date-wrapper .invoice-date[data-v-caf0c504] {\n  margin-right: 0.5rem;\n}\n[dir] .invoice-preview .invoice-spacing[data-v-caf0c504], [dir] .invoice-edit .invoice-spacing[data-v-caf0c504], [dir] .invoice-add .invoice-spacing[data-v-caf0c504] {\n  margin: 1.45rem 0;\n}\n.invoice-preview .invoice-number-date .title[data-v-caf0c504],\n.invoice-edit .invoice-number-date .title[data-v-caf0c504],\n.invoice-add .invoice-number-date .title[data-v-caf0c504] {\n  width: 115px;\n}\n.invoice-preview .invoice-total-wrapper[data-v-caf0c504],\n.invoice-edit .invoice-total-wrapper[data-v-caf0c504],\n.invoice-add .invoice-total-wrapper[data-v-caf0c504] {\n  width: 100%;\n  max-width: 12rem;\n}\n.invoice-preview .invoice-total-wrapper .invoice-total-item[data-v-caf0c504],\n.invoice-edit .invoice-total-wrapper .invoice-total-item[data-v-caf0c504],\n.invoice-add .invoice-total-wrapper .invoice-total-item[data-v-caf0c504] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n[dir] .invoice-preview .invoice-total-wrapper .invoice-total-item .invoice-total-title[data-v-caf0c504], [dir] .invoice-edit .invoice-total-wrapper .invoice-total-item .invoice-total-title[data-v-caf0c504], [dir] .invoice-add .invoice-total-wrapper .invoice-total-item .invoice-total-title[data-v-caf0c504] {\n  margin-bottom: 0.35rem;\n}\n.invoice-preview .invoice-total-wrapper .invoice-total-item .invoice-total-amount[data-v-caf0c504],\n.invoice-edit .invoice-total-wrapper .invoice-total-item .invoice-total-amount[data-v-caf0c504],\n.invoice-add .invoice-total-wrapper .invoice-total-item .invoice-total-amount[data-v-caf0c504] {\n  font-weight: 600;\n}\n[dir] .invoice-preview .invoice-total-wrapper .invoice-total-item .invoice-total-amount[data-v-caf0c504], [dir] .invoice-edit .invoice-total-wrapper .invoice-total-item .invoice-total-amount[data-v-caf0c504], [dir] .invoice-add .invoice-total-wrapper .invoice-total-item .invoice-total-amount[data-v-caf0c504] {\n  margin-bottom: 0.35rem;\n}\n@media (min-width: 768px) {\n[dir] .invoice-preview .invoice-title[data-v-caf0c504], [dir] .invoice-edit .invoice-title[data-v-caf0c504], [dir] .invoice-add .invoice-title[data-v-caf0c504] {\n    margin-bottom: 3rem;\n}\n[dir=ltr] .invoice-preview .invoice-title[data-v-caf0c504], [dir=ltr] .invoice-edit .invoice-title[data-v-caf0c504], [dir=ltr] .invoice-add .invoice-title[data-v-caf0c504] {\n    text-align: right;\n}\n[dir=rtl] .invoice-preview .invoice-title[data-v-caf0c504], [dir=rtl] .invoice-edit .invoice-title[data-v-caf0c504], [dir=rtl] .invoice-add .invoice-title[data-v-caf0c504] {\n    text-align: left;\n}\n}\n[dir] .invoice-edit .invoice-preview-card .invoice-title[data-v-caf0c504], [dir] .invoice-add .invoice-preview-card .invoice-title[data-v-caf0c504] {\n  margin-bottom: 0;\n}\n[dir=ltr] .invoice-edit .invoice-preview-card .invoice-title[data-v-caf0c504], [dir=ltr] .invoice-add .invoice-preview-card .invoice-title[data-v-caf0c504] {\n  text-align: left;\n  margin-right: 3.5rem;\n}\n[dir=rtl] .invoice-edit .invoice-preview-card .invoice-title[data-v-caf0c504], [dir=rtl] .invoice-add .invoice-preview-card .invoice-title[data-v-caf0c504] {\n  text-align: right;\n  margin-left: 3.5rem;\n}\n.invoice-edit .invoice-preview-card .invoice-edit-input[data-v-caf0c504],\n.invoice-edit .invoice-preview-card .invoice-edit-input-group[data-v-caf0c504],\n.invoice-add .invoice-preview-card .invoice-edit-input[data-v-caf0c504],\n.invoice-add .invoice-preview-card .invoice-edit-input-group[data-v-caf0c504] {\n  max-width: 11.21rem;\n}\n[dir] .invoice-edit .invoice-preview-card .invoice-product-details[data-v-caf0c504], [dir] .invoice-add .invoice-preview-card .invoice-product-details[data-v-caf0c504] {\n  background-color: #fcfcfc;\n  padding: 3.75rem 3.45rem 2.3rem 3.45rem;\n}\n[dir] .invoice-edit .invoice-preview-card .invoice-product-details .product-details-border[data-v-caf0c504], [dir] .invoice-add .invoice-preview-card .invoice-product-details .product-details-border[data-v-caf0c504] {\n  border: 1px solid #ebe9f1;\n  border-radius: 0.357rem;\n}\n[dir] .invoice-edit .invoice-preview-card .invoice-to-title[data-v-caf0c504], [dir] .invoice-add .invoice-preview-card .invoice-to-title[data-v-caf0c504] {\n  margin-bottom: 1.9rem;\n}\n.invoice-edit .invoice-preview-card .col-title[data-v-caf0c504],\n.invoice-add .invoice-preview-card .col-title[data-v-caf0c504] {\n  position: absolute;\n  top: -3.2rem;\n}\n.invoice-edit .invoice-preview-card .item-options-menu[data-v-caf0c504],\n.invoice-add .invoice-preview-card .item-options-menu[data-v-caf0c504] {\n  min-width: 20rem;\n}\n[dir] .invoice-edit .invoice-preview-card .repeater-wrapper[data-v-caf0c504]:not(:last-child), [dir] .invoice-add .invoice-preview-card .repeater-wrapper[data-v-caf0c504]:not(:last-child) {\n  margin-bottom: 3rem;\n}\n.invoice-edit .invoice-preview-card .invoice-calculations .total-amt-title[data-v-caf0c504],\n.invoice-add .invoice-preview-card .invoice-calculations .total-amt-title[data-v-caf0c504] {\n  width: 100px;\n}\n@media (max-width: 769px) {\n.invoice-edit .invoice-preview-card .invoice-title[data-v-caf0c504],\n.invoice-add .invoice-preview-card .invoice-title[data-v-caf0c504] {\n    width: 115px;\n}\n[dir=ltr] .invoice-edit .invoice-preview-card .invoice-title[data-v-caf0c504], [dir=ltr] .invoice-add .invoice-preview-card .invoice-title[data-v-caf0c504] {\n    margin-right: 0;\n}\n[dir=rtl] .invoice-edit .invoice-preview-card .invoice-title[data-v-caf0c504], [dir=rtl] .invoice-add .invoice-preview-card .invoice-title[data-v-caf0c504] {\n    margin-left: 0;\n}\n.invoice-edit .invoice-preview-card .invoice-edit-input[data-v-caf0c504],\n.invoice-add .invoice-preview-card .invoice-edit-input[data-v-caf0c504] {\n    max-width: 100%;\n}\n}\n@media (max-width: 992px) {\n.invoice-edit .col-title[data-v-caf0c504],\n.invoice-add .col-title[data-v-caf0c504] {\n    top: -1.5rem !important;\n}\n}\n@media print {\n[dir] .invoice-edit hr[data-v-caf0c504], [dir] .invoice-add hr[data-v-caf0c504] {\n    margin-top: 1rem !important;\n    margin-bottom: 1rem !important;\n}\n}\n[dir] .form-item-section[data-v-caf0c504] {\n  background-color: #fcfcfc;\n}\n.form-item-action-col[data-v-caf0c504] {\n  width: 27px;\n}\n.repeater-form[data-v-caf0c504] {\n  transition: 0.35s height;\n}\n[dir] .v-select.item-selector-title[data-v-caf0c504], [dir] .v-select.payment-selector[data-v-caf0c504] {\n  background-color: #fff;\n}\n[dir] .dark-layout .v-select.item-selector-title[data-v-caf0c504], [dir] .dark-layout .v-select.payment-selector[data-v-caf0c504] {\n  background-color: unset;\n}\n[dir] .dark-layout .form-item-section[data-v-caf0c504] {\n  background-color: #161d31;\n}\n[dir] .dark-layout .form-item-section .row .border[data-v-caf0c504] {\n  background-color: #283046;\n}", ""]);
 // Exports
 module.exports = exports;
 
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=style&index=0&id=5bff4fca&lang=scss&":
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=style&index=0&id=caf0c504&lang=scss&":
 /*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=style&index=0&id=5bff4fca&lang=scss& ***!
+  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=style&index=0&id=caf0c504&lang=scss& ***!
   \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Create.vue?vue&type=style&index=0&id=5bff4fca&lang=scss& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=style&index=0&id=5bff4fca&lang=scss&");
+var content = __webpack_require__(/*! !../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Update.vue?vue&type=style&index=0&id=caf0c504&lang=scss& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=style&index=0&id=caf0c504&lang=scss&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -646,15 +782,15 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=style&index=1&id=5bff4fca&lang=scss&scoped=true&":
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=style&index=1&id=caf0c504&lang=scss&scoped=true&":
 /*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=style&index=1&id=5bff4fca&lang=scss&scoped=true& ***!
+  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=style&index=1&id=caf0c504&lang=scss&scoped=true& ***!
   \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Create.vue?vue&type=style&index=1&id=5bff4fca&lang=scss&scoped=true& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=style&index=1&id=5bff4fca&lang=scss&scoped=true&");
+var content = __webpack_require__(/*! !../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Update.vue?vue&type=style&index=1&id=caf0c504&lang=scss&scoped=true& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=style&index=1&id=caf0c504&lang=scss&scoped=true&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -850,9 +986,9 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=template&id=5bff4fca&scoped=true&":
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=template&id=caf0c504&scoped=true&":
 /*!***********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=template&id=5bff4fca&scoped=true& ***!
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=template&id=caf0c504&scoped=true& ***!
   \***********************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -948,61 +1084,97 @@ var render = function () {
                                       attrs: { cols: "12", xl: "6" },
                                     },
                                     [
-                                      _c(
-                                        "div",
-                                        { staticClass: "mt-2" },
-                                        [
-                                          _c(
-                                            "label",
-                                            { staticClass: "mb-50" },
-                                            [
-                                              _vm._v(
-                                                _vm._s(
-                                                  _vm.$t(
-                                                    "inventories.transfers.fields.from_warehouse"
-                                                  )
-                                                )
-                                              ),
-                                            ]
+                                      _c("h6", { staticClass: "mb-2" }, [
+                                        _vm._v(
+                                          "\n                                        " +
+                                            _vm._s(
+                                              _vm.$t(
+                                                "inventories.purchases.fields.supplier_name"
+                                              )
+                                            ) +
+                                            "\n                                    "
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("v-select", {
+                                        attrs: {
+                                          options: _vm.suppliersData,
+                                          label: "name",
+                                          "input-id": "invoice-data-client",
+                                          clearable: false,
+                                          reduce: function (supplier) {
+                                            return supplier.id
+                                          },
+                                          placeholder: _vm.$t(
+                                            "inventories.purchases.fields.supplier_name_placeholder"
                                           ),
-                                          _vm._v(" "),
-                                          _c("v-select", {
-                                            attrs: {
-                                              disabled:
-                                                _vm.invoiceData.items.length >
-                                                0,
-                                              options: _vm.fromWarehousesData,
-                                              label: "name",
-                                              clearable: false,
-                                              searchable: false,
-                                              reduce: function (warehouse) {
-                                                return warehouse.id
-                                              },
-                                              placeholder: _vm.$t(
-                                                "inventories.transfers.fields.from_warehouse_placeholder"
-                                              ),
+                                          disabled: "",
+                                        },
+                                        scopedSlots: _vm._u([
+                                          {
+                                            key: "list-header",
+                                            fn: function () {
+                                              return [
+                                                _c(
+                                                  "li",
+                                                  {
+                                                    directives: [
+                                                      {
+                                                        name: "b-toggle",
+                                                        rawName:
+                                                          "v-b-toggle.sidebar-invoice-add-new-customer",
+                                                        modifiers: {
+                                                          "sidebar-invoice-add-new-customer": true,
+                                                        },
+                                                      },
+                                                    ],
+                                                    staticClass:
+                                                      "add-new-client-header d-flex align-items-center my-50",
+                                                  },
+                                                  [
+                                                    _c("feather-icon", {
+                                                      attrs: {
+                                                        icon: "PlusIcon",
+                                                        size: "16",
+                                                      },
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _c(
+                                                      "span",
+                                                      {
+                                                        staticClass:
+                                                          "align-middle ml-25",
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          _vm._s(
+                                                            _vm.$t(
+                                                              "inventories.purchases.add_supplier"
+                                                            )
+                                                          )
+                                                        ),
+                                                      ]
+                                                    ),
+                                                  ],
+                                                  1
+                                                ),
+                                              ]
                                             },
-                                            on: {
-                                              input: _vm.selectFromWarehouse,
-                                            },
-                                            model: {
-                                              value:
-                                                _vm.invoiceData
-                                                  .from_warehouse_id,
-                                              callback: function ($$v) {
-                                                _vm.$set(
-                                                  _vm.invoiceData,
-                                                  "from_warehouse_id",
-                                                  $$v
-                                                )
-                                              },
-                                              expression:
-                                                "invoiceData.from_warehouse_id",
-                                            },
-                                          }),
-                                        ],
-                                        1
-                                      ),
+                                            proxy: true,
+                                          },
+                                        ]),
+                                        model: {
+                                          value: _vm.invoiceData.supplier_id,
+                                          callback: function ($$v) {
+                                            _vm.$set(
+                                              _vm.invoiceData,
+                                              "supplier_id",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "invoiceData.supplier_id",
+                                        },
+                                      }),
                                       _vm._v(" "),
                                       _c(
                                         "div",
@@ -1015,7 +1187,7 @@ var render = function () {
                                               _vm._v(
                                                 _vm._s(
                                                   _vm.$t(
-                                                    "inventories.transfers.fields.to_warehouse"
+                                                    "inventories.purchases.fields.warehouse"
                                                   )
                                                 )
                                               ),
@@ -1024,126 +1196,112 @@ var render = function () {
                                           _vm._v(" "),
                                           _c("v-select", {
                                             attrs: {
-                                              disabled:
-                                                _vm.invoiceData.items.length >
-                                                0,
-                                              options: _vm.toWarehousesData,
+                                              options: _vm.warehousesData,
                                               label: "name",
                                               clearable: false,
-                                              searchable: false,
                                               reduce: function (warehouse) {
                                                 return warehouse.id
                                               },
+                                              disabled: "",
                                               placeholder: _vm.$t(
-                                                "inventories.transfers.fields.to_warehouse_placeholder"
+                                                "inventories.purchases.fields.warehouse_placeholder"
                                               ),
                                             },
                                             model: {
                                               value:
-                                                _vm.invoiceData.to_warehouse_id,
+                                                _vm.invoiceData.warehouse_id,
                                               callback: function ($$v) {
                                                 _vm.$set(
                                                   _vm.invoiceData,
-                                                  "to_warehouse_id",
+                                                  "warehouse_id",
                                                   $$v
                                                 )
                                               },
                                               expression:
-                                                "invoiceData.to_warehouse_id",
+                                                "invoiceData.warehouse_id",
                                             },
                                           }),
                                         ],
                                         1
                                       ),
                                       _vm._v(" "),
-                                      _vm.invoiceData.from_warehouse_id &&
-                                      _vm.invoiceData.to_warehouse_id
-                                        ? _c(
-                                            "div",
-                                            { staticClass: "mt-2" },
+                                      _c(
+                                        "div",
+                                        { staticClass: "mt-2" },
+                                        [
+                                          _c(
+                                            "b-form-group",
+                                            {
+                                              attrs: {
+                                                label: _vm.$t(
+                                                  "inventories.purchases.fields.search"
+                                                ),
+                                                "label-for": "search-medicine",
+                                                description: _vm.$t(
+                                                  "inventories.purchases.fields.search_help"
+                                                ),
+                                              },
+                                            },
                                             [
                                               _c(
-                                                "b-form-group",
+                                                "b-input-group",
                                                 {
-                                                  attrs: {
-                                                    label:
-                                                      _vm.$t("medicine_search"),
-                                                    "label-for":
-                                                      "search-medicine",
-                                                    description: _vm.$t(
-                                                      "medicine_search_help"
-                                                    ),
-                                                  },
+                                                  staticClass:
+                                                    "input-group-merge",
                                                 },
                                                 [
                                                   _c(
-                                                    "b-input-group",
+                                                    "b-input-group-prepend",
                                                     {
-                                                      staticClass:
-                                                        "input-group-merge",
+                                                      attrs: { "is-text": "" },
                                                     },
                                                     [
-                                                      _c(
-                                                        "b-input-group-prepend",
-                                                        {
-                                                          attrs: {
-                                                            "is-text": "",
-                                                          },
-                                                        },
-                                                        [
-                                                          _c("feather-icon", {
-                                                            attrs: {
-                                                              icon: "SearchIcon",
-                                                            },
-                                                          }),
-                                                        ],
-                                                        1
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _c("b-form-input", {
+                                                      _c("feather-icon", {
                                                         attrs: {
-                                                          readonly: "",
-                                                          placeholder: _vm.$t(
-                                                            "medicine_search_help"
-                                                          ),
-                                                        },
-                                                        on: {
-                                                          click: function (
-                                                            $event
-                                                          ) {
-                                                            _vm.activeSearchMedicine = true
-                                                          },
+                                                          icon: "SearchIcon",
                                                         },
                                                       }),
                                                     ],
                                                     1
                                                   ),
+                                                  _vm._v(" "),
+                                                  _c("b-form-input", {
+                                                    attrs: {
+                                                      readonly: "",
+                                                      placeholder: _vm.$t(
+                                                        "inventories.purchases.fields.search_placeholder"
+                                                      ),
+                                                    },
+                                                    on: {
+                                                      click: function ($event) {
+                                                        _vm.activeSearchMedicine = true
+                                                      },
+                                                    },
+                                                  }),
                                                 ],
                                                 1
                                               ),
-                                              _vm._v(" "),
-                                              _c("search-medicine", {
-                                                attrs: {
-                                                  active:
-                                                    _vm.activeSearchMedicine,
-                                                  "is-transfer": true,
-                                                  warehouse:
-                                                    _vm.invoiceData
-                                                      .from_warehouse_id,
-                                                },
-                                                on: {
-                                                  selected:
-                                                    _vm.addNewItemInItemForm,
-                                                  close: function ($event) {
-                                                    _vm.activeSearchMedicine = false
-                                                  },
-                                                },
-                                              }),
                                             ],
                                             1
-                                          )
-                                        : _vm._e(),
-                                    ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c("search-medicine", {
+                                            attrs: {
+                                              active: _vm.activeSearchMedicine,
+                                            },
+                                            on: {
+                                              selected:
+                                                _vm.addNewItemInItemForm,
+                                              close: function ($event) {
+                                                _vm.activeSearchMedicine = false
+                                              },
+                                            },
+                                          }),
+                                        ],
+                                        1
+                                      ),
+                                    ],
+                                    1
                                   ),
                                   _vm._v(" "),
                                   _c(
@@ -1165,7 +1323,7 @@ var render = function () {
                                                   _vm._v(
                                                     _vm._s(
                                                       _vm.$t(
-                                                        "inventories.transfers.fields.reference"
+                                                        "inventories.purchases.fields.reference"
                                                       )
                                                     )
                                                   ),
@@ -1181,7 +1339,7 @@ var render = function () {
                                                     attrs: {
                                                       id: "invoice-data-id",
                                                       placeholder: _vm.$t(
-                                                        "inventories.transfers.fields.reference_placeholder"
+                                                        "inventories.purchases.fields.reference_placeholder"
                                                       ),
                                                     },
                                                     model: {
@@ -1212,7 +1370,7 @@ var render = function () {
                                                   _vm._v(
                                                     _vm._s(
                                                       _vm.$t(
-                                                        "inventories.transfers.fields.date"
+                                                        "inventories.purchases.fields.purchase_date"
                                                       )
                                                     )
                                                   ),
@@ -1228,16 +1386,16 @@ var render = function () {
                                                     model: {
                                                       value:
                                                         _vm.invoiceData
-                                                          .transfer_date,
+                                                          .purchase_date,
                                                       callback: function ($$v) {
                                                         _vm.$set(
                                                           _vm.invoiceData,
-                                                          "transfer_date",
+                                                          "purchase_date",
                                                           $$v
                                                         )
                                                       },
                                                       expression:
-                                                        "invoiceData.transfer_date",
+                                                        "invoiceData.purchase_date",
                                                     },
                                                   }),
                                                 ],
@@ -1253,7 +1411,7 @@ var render = function () {
                                                   _vm._v(
                                                     _vm._s(
                                                       _vm.$t(
-                                                        "inventories.transfers.fields.state"
+                                                        "inventories.purchases.fields.state"
                                                       )
                                                     )
                                                   ),
@@ -1268,15 +1426,12 @@ var render = function () {
                                                       "invoice-edit-input w-100 mt-1",
                                                     attrs: {
                                                       options:
-                                                        _vm.transferStatus,
+                                                        _vm.purchaseStatus,
                                                       label: "label",
                                                       clearable: false,
                                                       reduce: function (label) {
                                                         return label.value
                                                       },
-                                                      placeholder: _vm.$t(
-                                                        "inventories.transfers.fields.state_placeholder"
-                                                      ),
                                                     },
                                                     model: {
                                                       value:
@@ -1357,7 +1512,7 @@ var render = function () {
                                                       _vm._v(
                                                         _vm._s(
                                                           _vm.$t(
-                                                            "inventories.transfers.table.items.medicine"
+                                                            "inventories.purchases.fields.medicine"
                                                           )
                                                         )
                                                       ),
@@ -1369,14 +1524,14 @@ var render = function () {
                                                     {
                                                       attrs: {
                                                         cols: "12",
-                                                        lg: "3",
+                                                        lg: "2",
                                                       },
                                                     },
                                                     [
                                                       _vm._v(
                                                         _vm._s(
                                                           _vm.$t(
-                                                            "inventories.transfers.table.items.stock"
+                                                            "inventories.purchases.fields.cost"
                                                           )
                                                         )
                                                       ),
@@ -1388,14 +1543,33 @@ var render = function () {
                                                     {
                                                       attrs: {
                                                         cols: "12",
-                                                        lg: "3",
+                                                        lg: "2",
                                                       },
                                                     },
                                                     [
                                                       _vm._v(
                                                         _vm._s(
                                                           _vm.$t(
-                                                            "inventories.transfers.table.items.quantity"
+                                                            "inventories.purchases.fields.quantity"
+                                                          )
+                                                        )
+                                                      ),
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "b-col",
+                                                    {
+                                                      attrs: {
+                                                        cols: "12",
+                                                        lg: "2",
+                                                      },
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm.$t(
+                                                            "inventories.purchases.fields.discount"
                                                           )
                                                         )
                                                       ),
@@ -1446,7 +1620,7 @@ var render = function () {
                                                           _vm._v(
                                                             _vm._s(
                                                               _vm.$t(
-                                                                "inventories.transfers.table.items.medicine"
+                                                                "inventories.purchases.fields.medicine"
                                                               )
                                                             )
                                                           ),
@@ -1479,7 +1653,7 @@ var render = function () {
                                                     {
                                                       attrs: {
                                                         cols: "12",
-                                                        lg: "3",
+                                                        lg: "2",
                                                       },
                                                     },
                                                     [
@@ -1493,7 +1667,7 @@ var render = function () {
                                                           _vm._v(
                                                             _vm._s(
                                                               _vm.$t(
-                                                                "inventories.transfers.table.items.stock"
+                                                                "inventories.purchases.fields.cost"
                                                               )
                                                             )
                                                           ),
@@ -1504,21 +1678,33 @@ var render = function () {
                                                         staticClass: "mb-2",
                                                         attrs: {
                                                           type: "number",
-                                                          disabled: "",
+                                                          placeholder:
+                                                            "Ejem. 10.5",
+                                                        },
+                                                        on: {
+                                                          input: function (
+                                                            $event
+                                                          ) {
+                                                            return _vm.updateItemForm(
+                                                              index,
+                                                              item
+                                                            )
+                                                          },
                                                         },
                                                         model: {
-                                                          value: item.stock,
+                                                          value:
+                                                            item.unit_price,
                                                           callback: function (
                                                             $$v
                                                           ) {
                                                             _vm.$set(
                                                               item,
-                                                              "stock",
+                                                              "unit_price",
                                                               $$v
                                                             )
                                                           },
                                                           expression:
-                                                            "item.stock",
+                                                            "item.unit_price",
                                                         },
                                                       }),
                                                     ],
@@ -1530,7 +1716,7 @@ var render = function () {
                                                     {
                                                       attrs: {
                                                         cols: "12",
-                                                        lg: "3",
+                                                        lg: "2",
                                                       },
                                                     },
                                                     [
@@ -1544,7 +1730,7 @@ var render = function () {
                                                           _vm._v(
                                                             _vm._s(
                                                               _vm.$t(
-                                                                "inventories.transfers.table.items.quantity"
+                                                                "inventories.purchases.fields.quantity"
                                                               )
                                                             )
                                                           ),
@@ -1554,9 +1740,7 @@ var render = function () {
                                                       _c("b-form-input", {
                                                         staticClass: "mb-2",
                                                         attrs: {
-                                                          autocomplete: "off",
                                                           type: "number",
-                                                          min: "1",
                                                           placeholder:
                                                             "Ejem. 10",
                                                         },
@@ -1565,7 +1749,8 @@ var render = function () {
                                                             $event
                                                           ) {
                                                             return _vm.updateItemForm(
-                                                              index
+                                                              index,
+                                                              item
                                                             )
                                                           },
                                                         },
@@ -1593,7 +1778,7 @@ var render = function () {
                                                     {
                                                       attrs: {
                                                         cols: "12",
-                                                        lg: "6",
+                                                        lg: "2",
                                                       },
                                                     },
                                                     [
@@ -1607,7 +1792,68 @@ var render = function () {
                                                           _vm._v(
                                                             _vm._s(
                                                               _vm.$t(
-                                                                "inventories.transfers.table.items.description"
+                                                                "inventories.purchases.fields.discount"
+                                                              )
+                                                            )
+                                                          ),
+                                                        ]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c("b-form-input", {
+                                                        staticClass: "mb-2",
+                                                        attrs: {
+                                                          type: "number",
+                                                          placeholder: "$ 3.5",
+                                                        },
+                                                        on: {
+                                                          input: function (
+                                                            $event
+                                                          ) {
+                                                            return _vm.updateItemForm(
+                                                              index,
+                                                              item
+                                                            )
+                                                          },
+                                                        },
+                                                        model: {
+                                                          value: item.discount,
+                                                          callback: function (
+                                                            $$v
+                                                          ) {
+                                                            _vm.$set(
+                                                              item,
+                                                              "discount",
+                                                              $$v
+                                                            )
+                                                          },
+                                                          expression:
+                                                            "item.discount",
+                                                        },
+                                                      }),
+                                                    ],
+                                                    1
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "b-col",
+                                                    {
+                                                      attrs: {
+                                                        cols: "12",
+                                                        lg: "10",
+                                                      },
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "label",
+                                                        {
+                                                          staticClass:
+                                                            "d-inline d-lg-none",
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            _vm._s(
+                                                              _vm.$t(
+                                                                "inventories.purchases.fields.description"
                                                               )
                                                             )
                                                           ),
@@ -1630,6 +1876,56 @@ var render = function () {
                                                               ) +
                                                               "\n                                                    "
                                                           ),
+                                                        ]
+                                                      ),
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "b-col",
+                                                    {
+                                                      attrs: {
+                                                        cols: "12",
+                                                        lg: "2",
+                                                      },
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "p",
+                                                        { staticClass: "mb-0" },
+                                                        [
+                                                          _c("strong", [
+                                                            _vm._v(
+                                                              _vm._s(
+                                                                _vm.$t(
+                                                                  "inventories.purchases.fields.subtotal"
+                                                                )
+                                                              ) +
+                                                                ": " +
+                                                                _vm._s(
+                                                                  _vm.formatPrice(
+                                                                    item.subtotal
+                                                                  )
+                                                                )
+                                                            ),
+                                                          ]),
+                                                          _c("br"),
+                                                          _vm._v(" "),
+                                                          _c("strong", [
+                                                            _vm._v(
+                                                              _vm._s(
+                                                                _vm.$t(
+                                                                  "inventories.purchases.fields.total"
+                                                                )
+                                                              ) +
+                                                                ": " +
+                                                                _vm._s(
+                                                                  _vm.formatPrice(
+                                                                    item.total
+                                                                  )
+                                                                )
+                                                            ),
+                                                          ]),
                                                         ]
                                                       ),
                                                     ]
@@ -1714,7 +2010,7 @@ var render = function () {
                                               _vm._v(
                                                 _vm._s(
                                                   _vm.$t(
-                                                    "inventories.transfers.fields.comments"
+                                                    "inventories.purchases.fields.comments"
                                                   )
                                                 )
                                               ),
@@ -1723,15 +2019,16 @@ var render = function () {
                                           _vm._v(" "),
                                           _c("b-form-textarea", {
                                             model: {
-                                              value: _vm.invoiceData.note,
+                                              value: _vm.invoiceData.comments,
                                               callback: function ($$v) {
                                                 _vm.$set(
                                                   _vm.invoiceData,
-                                                  "note",
+                                                  "comments",
                                                   $$v
                                                 )
                                               },
-                                              expression: "invoiceData.note",
+                                              expression:
+                                                "invoiceData.comments",
                                             },
                                           }),
                                         ],
@@ -1767,38 +2064,139 @@ var render = function () {
                                             },
                                             [
                                               _c(
-                                                "b-button",
+                                                "p",
                                                 {
-                                                  directives: [
-                                                    {
-                                                      name: "ripple",
-                                                      rawName: "v-ripple.400",
-                                                      value:
-                                                        "rgba(255, 255, 255, 0.15)",
-                                                      expression:
-                                                        "'rgba(255, 255, 255, 0.15)'",
-                                                      modifiers: { 400: true },
-                                                    },
-                                                  ],
-                                                  attrs: {
-                                                    disabled: _vm.disableStore,
-                                                    variant: "primary",
-                                                    block: "",
-                                                  },
-                                                  on: {
-                                                    click: _vm.storeTransfer,
-                                                  },
+                                                  staticClass:
+                                                    "invoice-total-title",
                                                 },
                                                 [
                                                   _vm._v(
                                                     "\n                                                " +
-                                                      _vm._s(_vm.$t("save")) +
+                                                      _vm._s(
+                                                        _vm.$t(
+                                                          "inventories.purchases.fields.subtotal"
+                                                        )
+                                                      ) +
                                                       "\n                                            "
                                                   ),
                                                 ]
                                               ),
-                                            ],
-                                            1
+                                              _vm._v(" "),
+                                              _c(
+                                                "p",
+                                                {
+                                                  staticClass:
+                                                    "invoice-total-amount",
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                                " +
+                                                      _vm._s(
+                                                        _vm.formatPrice(
+                                                          _vm.invoiceData
+                                                            .subtotal
+                                                        )
+                                                      ) +
+                                                      "\n                                            "
+                                                  ),
+                                                ]
+                                              ),
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass: "invoice-total-item",
+                                            },
+                                            [
+                                              _c(
+                                                "p",
+                                                {
+                                                  staticClass:
+                                                    "invoice-total-title",
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                                " +
+                                                      _vm._s(
+                                                        _vm.$t(
+                                                          "inventories.purchases.fields.discount"
+                                                        )
+                                                      ) +
+                                                      "\n                                            "
+                                                  ),
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "p",
+                                                {
+                                                  staticClass:
+                                                    "invoice-total-amount",
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                                " +
+                                                      _vm._s(
+                                                        _vm.formatPrice(
+                                                          _vm.invoiceData
+                                                            .discount
+                                                        )
+                                                      ) +
+                                                      "\n                                            "
+                                                  ),
+                                                ]
+                                              ),
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c("hr", { staticClass: "my-50" }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass: "invoice-total-item",
+                                            },
+                                            [
+                                              _c(
+                                                "p",
+                                                {
+                                                  staticClass:
+                                                    "invoice-total-title",
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                                " +
+                                                      _vm._s(
+                                                        _vm.$t(
+                                                          "inventories.purchases.fields.total"
+                                                        )
+                                                      ) +
+                                                      "\n                                            "
+                                                  ),
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "p",
+                                                {
+                                                  staticClass:
+                                                    "invoice-total-amount",
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                                " +
+                                                      _vm._s(
+                                                        _vm.formatPrice(
+                                                          _vm.invoiceData.total
+                                                        )
+                                                      ) +
+                                                      "\n                                            "
+                                                  ),
+                                                ]
+                                              ),
+                                            ]
                                           ),
                                         ]
                                       ),
@@ -1812,6 +2210,88 @@ var render = function () {
                           ),
                           _vm._v(" "),
                           _c("hr", { staticClass: "invoice-spacing" }),
+                          _vm._v(" "),
+                          _c(
+                            "b-card-body",
+                            { staticClass: "invoice-padding pt-0" },
+                            [
+                              _c(
+                                "b-row",
+                                [
+                                  _c(
+                                    "b-col",
+                                    { attrs: { cols: "12", lg: "10" } },
+                                    [
+                                      _vm.invoiceData.status == "received"
+                                        ? _c(
+                                            "p",
+                                            { staticClass: "text-danger" },
+                                            [
+                                              _vm._v(
+                                                "\n                                        " +
+                                                  _vm._s(
+                                                    _vm.$t(
+                                                      "inventories.purchases.marked_stock"
+                                                    )
+                                                  ) +
+                                                  " "
+                                              ),
+                                              _c("strong", [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    _vm.$t(
+                                                      "inventories.purchases.status.received"
+                                                    )
+                                                  )
+                                                ),
+                                              ]),
+                                            ]
+                                          )
+                                        : _vm._e(),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "b-col",
+                                    { attrs: { cols: "12", lg: "2" } },
+                                    [
+                                      _c(
+                                        "b-button",
+                                        {
+                                          directives: [
+                                            {
+                                              name: "ripple",
+                                              rawName: "v-ripple.400",
+                                              value:
+                                                "rgba(255, 255, 255, 0.15)",
+                                              expression:
+                                                "'rgba(255, 255, 255, 0.15)'",
+                                              modifiers: { 400: true },
+                                            },
+                                          ],
+                                          attrs: {
+                                            variant: "primary",
+                                            block: "",
+                                          },
+                                          on: { click: _vm.updatePurchase },
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                                        " +
+                                              _vm._s(_vm.$t("save")) +
+                                              "\n                                    "
+                                          ),
+                                        ]
+                                      ),
+                                    ],
+                                    1
+                                  ),
+                                ],
+                                1
+                              ),
+                            ],
+                            1
+                          ),
                         ],
                         1
                       ),
@@ -1946,16 +2426,16 @@ var _ = null;
 
 /***/ }),
 
-/***/ "./resources/js/src/providers/inventories/Transfers.js":
+/***/ "./resources/js/src/providers/inventories/Purchases.js":
 /*!*************************************************************!*\
-  !*** ./resources/js/src/providers/inventories/Transfers.js ***!
+  !*** ./resources/js/src/providers/inventories/Purchases.js ***!
   \*************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Transfers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Purchases; });
 /* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
 /* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
@@ -1963,57 +2443,117 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var Transfers = /*#__PURE__*/function () {
-  function Transfers() {
-    Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Transfers);
+var Purchases = /*#__PURE__*/function () {
+  function Purchases() {
+    Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Purchases);
   }
-  Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__["default"])(Transfers, [{
+  Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__["default"])(Purchases, [{
     key: "index",
     value: function index(query) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/inventories/transfers", {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/inventories/purchases", {
         params: query
       });
     }
   }, {
     key: "store",
     value: function store(payload) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/inventories/transfers", payload);
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/inventories/purchases", payload);
     }
   }, {
     key: "destroy",
     value: function destroy(id) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a["delete"]("/api/inventories/transfers/".concat(id));
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a["delete"]("/api/inventories/purchases/".concat(id));
     }
   }, {
     key: "update",
     value: function update(id, payload) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("/api/inventories/transfers/".concat(id), payload);
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("/api/inventories/purchases/".concat(id), payload);
     }
   }, {
     key: "show",
     value: function show(id) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/inventories/transfers/".concat(id));
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/inventories/purchases/".concat(id));
+    }
+  }, {
+    key: "markedAsReceived",
+    value: function markedAsReceived(id) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/inventories/purchases/".concat(id, "/marked"));
     }
   }]);
-  return Transfers;
+  return Purchases;
 }();
 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/inventories/Transfers/Create.vue":
+/***/ "./resources/js/src/providers/inventories/Suppliers.js":
+/*!*************************************************************!*\
+  !*** ./resources/js/src/providers/inventories/Suppliers.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Suppliers; });
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+var Suppliers = /*#__PURE__*/function () {
+  function Suppliers() {
+    Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Suppliers);
+  }
+  Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__["default"])(Suppliers, [{
+    key: "index",
+    value: function index(query) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/inventories/suppliers", {
+        params: query
+      });
+    }
+  }, {
+    key: "store",
+    value: function store(payload) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/inventories/suppliers", payload);
+    }
+  }, {
+    key: "destroy",
+    value: function destroy(id) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a["delete"]("/api/inventories/suppliers/".concat(id));
+    }
+  }, {
+    key: "update",
+    value: function update(id, payload) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("/api/inventories/suppliers/".concat(id), payload);
+    }
+  }, {
+    key: "show",
+    value: function show(id) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/inventories/suppliers/".concat(id));
+    }
+  }]);
+  return Suppliers;
+}();
+
+
+/***/ }),
+
+/***/ "./resources/js/src/views/apps/inventories/Purchases/Update.vue":
 /*!**********************************************************************!*\
-  !*** ./resources/js/src/views/apps/inventories/Transfers/Create.vue ***!
+  !*** ./resources/js/src/views/apps/inventories/Purchases/Update.vue ***!
   \**********************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Create_vue_vue_type_template_id_5bff4fca_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Create.vue?vue&type=template&id=5bff4fca&scoped=true& */ "./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=template&id=5bff4fca&scoped=true&");
-/* harmony import */ var _Create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Create.vue?vue&type=script&lang=js& */ "./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _Create_vue_vue_type_style_index_0_id_5bff4fca_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Create.vue?vue&type=style&index=0&id=5bff4fca&lang=scss& */ "./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=style&index=0&id=5bff4fca&lang=scss&");
-/* harmony import */ var _Create_vue_vue_type_style_index_1_id_5bff4fca_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Create.vue?vue&type=style&index=1&id=5bff4fca&lang=scss&scoped=true& */ "./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=style&index=1&id=5bff4fca&lang=scss&scoped=true&");
+/* harmony import */ var _Update_vue_vue_type_template_id_caf0c504_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Update.vue?vue&type=template&id=caf0c504&scoped=true& */ "./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=template&id=caf0c504&scoped=true&");
+/* harmony import */ var _Update_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Update.vue?vue&type=script&lang=js& */ "./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Update_vue_vue_type_style_index_0_id_caf0c504_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Update.vue?vue&type=style&index=0&id=caf0c504&lang=scss& */ "./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=style&index=0&id=caf0c504&lang=scss&");
+/* harmony import */ var _Update_vue_vue_type_style_index_1_id_caf0c504_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Update.vue?vue&type=style&index=1&id=caf0c504&lang=scss&scoped=true& */ "./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=style&index=1&id=caf0c504&lang=scss&scoped=true&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -2025,82 +2565,82 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_4__["default"])(
-  _Create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Create_vue_vue_type_template_id_5bff4fca_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Create_vue_vue_type_template_id_5bff4fca_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _Update_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Update_vue_vue_type_template_id_caf0c504_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Update_vue_vue_type_template_id_caf0c504_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "5bff4fca",
+  "caf0c504",
   null
   
 )
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/src/views/apps/inventories/Transfers/Create.vue"
+component.options.__file = "resources/js/src/views/apps/inventories/Purchases/Update.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=script&lang=js&":
+/***/ "./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=script&lang=js&":
 /*!***********************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=script&lang=js& ***!
+  !*** ./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=script&lang=js& ***!
   \***********************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Create.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Update_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Update.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Update_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=style&index=0&id=5bff4fca&lang=scss&":
+/***/ "./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=style&index=0&id=caf0c504&lang=scss&":
 /*!********************************************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=style&index=0&id=5bff4fca&lang=scss& ***!
+  !*** ./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=style&index=0&id=caf0c504&lang=scss& ***!
   \********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_style_index_0_id_5bff4fca_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/style-loader!../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Create.vue?vue&type=style&index=0&id=5bff4fca&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=style&index=0&id=5bff4fca&lang=scss&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_style_index_0_id_5bff4fca_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_style_index_0_id_5bff4fca_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_style_index_0_id_5bff4fca_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_style_index_0_id_5bff4fca_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Update_vue_vue_type_style_index_0_id_caf0c504_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/style-loader!../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Update.vue?vue&type=style&index=0&id=caf0c504&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=style&index=0&id=caf0c504&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Update_vue_vue_type_style_index_0_id_caf0c504_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Update_vue_vue_type_style_index_0_id_caf0c504_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Update_vue_vue_type_style_index_0_id_caf0c504_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Update_vue_vue_type_style_index_0_id_caf0c504_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=style&index=1&id=5bff4fca&lang=scss&scoped=true&":
+/***/ "./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=style&index=1&id=caf0c504&lang=scss&scoped=true&":
 /*!********************************************************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=style&index=1&id=5bff4fca&lang=scss&scoped=true& ***!
+  !*** ./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=style&index=1&id=caf0c504&lang=scss&scoped=true& ***!
   \********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_style_index_1_id_5bff4fca_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/style-loader!../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Create.vue?vue&type=style&index=1&id=5bff4fca&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=style&index=1&id=5bff4fca&lang=scss&scoped=true&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_style_index_1_id_5bff4fca_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_style_index_1_id_5bff4fca_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_style_index_1_id_5bff4fca_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_style_index_1_id_5bff4fca_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Update_vue_vue_type_style_index_1_id_caf0c504_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/style-loader!../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--11-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Update.vue?vue&type=style&index=1&id=caf0c504&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=style&index=1&id=caf0c504&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Update_vue_vue_type_style_index_1_id_caf0c504_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Update_vue_vue_type_style_index_1_id_caf0c504_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Update_vue_vue_type_style_index_1_id_caf0c504_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Update_vue_vue_type_style_index_1_id_caf0c504_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=template&id=5bff4fca&scoped=true&":
+/***/ "./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=template&id=caf0c504&scoped=true&":
 /*!*****************************************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=template&id=5bff4fca&scoped=true& ***!
+  !*** ./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=template&id=caf0c504&scoped=true& ***!
   \*****************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_template_id_5bff4fca_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Create.vue?vue&type=template&id=5bff4fca&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Transfers/Create.vue?vue&type=template&id=5bff4fca&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_template_id_5bff4fca_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Update_vue_vue_type_template_id_caf0c504_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Update.vue?vue&type=template&id=caf0c504&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/inventories/Purchases/Update.vue?vue&type=template&id=caf0c504&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Update_vue_vue_type_template_id_caf0c504_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_template_id_5bff4fca_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Update_vue_vue_type_template_id_caf0c504_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

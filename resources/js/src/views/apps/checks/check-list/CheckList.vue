@@ -8,8 +8,8 @@
             </div>
         </template>
 
-         <b-card no-body class="mb-0">
-            <div class="m-2">
+         <b-card no-body class="mb-0_">
+            <div class="m-2_">
                 <b-card-header class="pb-50">
                     <h5>{{ $t('filters.title') }}</h5>
                 </b-card-header>
@@ -24,7 +24,8 @@
                                     :reduce="option => option.id"
                                     :placeholder="$t('select_an_option')"
                                     :searchable="false"
-                                    @input="getChecks">
+                                    @input="getChecks"
+                                    class="select-size-sm">
                                 </v-select>
                             </b-form-group>
                         </b-col>
@@ -39,7 +40,8 @@
                                     :reduce="option => option.value"
                                     :placeholder="$t('select_an_option')"
                                     :searchable="false"
-                                    @input="getChecks">
+                                    @input="getChecks"
+                                    class="select-size-sm">
                                 </v-select>
                             </b-form-group>
                         </b-col>
@@ -54,7 +56,8 @@
                                     :reduce="option => option.value"
                                     :placeholder="$t('select_an_option')"
                                     :searchable="false"
-                                    @input="getChecks">
+                                    @input="getChecks"
+                                    class="select-size-sm">
                                 </v-select>
                             </b-form-group>
                         </b-col>
@@ -72,7 +75,7 @@
                     <b-col cols="12" md="6" class="d-flex align-items-center justify-content-start mb-1 mb-md-0">
                         <label>{{ $t("show") }}</label>
                         <v-select v-model="perPage" :options="perPageOptions" :clearable="false"
-                            class="per-page-selector d-inline-block mx-50" />
+                            class="per-page-selector d-inline-block mx-50 select-size-sm" />
                         <label>{{ $t("entries") }}</label>
                     </b-col>
 
@@ -80,10 +83,10 @@
                     <b-col cols="12" md="6">
                         <div class="d-flex align-items-center justify-content-end">
                             <b-input-group>
-                                <b-form-input v-model="searchQuery" class="d-inline-block _mr-1"
+                                <b-form-input size="sm" v-model="searchQuery" class="d-inline-block _mr-1"
                                     :placeholder="$t('checks.input_search')" @keyup.enter="getChecks" />
                                 <b-input-group-prepend>
-                                    <b-button variant="primary" @click="getChecks">
+                                    <b-button size="sm" variant="primary" @click="getChecks">
                                         <feather-icon icon="SearchIcon" />
                                     </b-button>
                                 </b-input-group-prepend>
@@ -93,9 +96,9 @@
                 </b-row>
             </div>
 
-            <b-table ref="refChecksListTable" class="position-relative" :items="checks" responsive :fields="columns"
+            <b-table ref="refChecksListTable" class="position-relative text-small table-small small" :items="checks" responsive :fields="columns"
                 primary-key="id" :sort-by.sync="sortBy" show-empty :empty-text="$t('datatables.sZeroRecords')"
-                :sort-desc.sync="sortDesc" :current-page="currentPage" busy.sync="loading" stacked="md">
+                :sort-desc.sync="sortDesc" :current-page="currentPage" busy.sync="loading" stacked="md" small>
 
                 <!-- Column: created_at -->
                 <template #cell(branch)="data">

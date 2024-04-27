@@ -82,6 +82,17 @@ class RoleAndPermissionsTableSeeder extends Seeder
         Permission::updateOrCreate(['name' => 'tenants.destroy'], ['guard_name' => 'web', 'group' => 'tenants', 'description' => 'Permitir eliminar inquilinos']);
         Permission::updateOrCreate(['name' => 'tenants.update'], ['guard_name' => 'web', 'group' => 'tenants', 'description' => 'Permitir actualizar inquilinos']);
 
+        Permission::updateOrCreate(['name' => 'faqs.index'], ['guard_name' => 'web', 'group' => 'faqs', 'description' => 'Permitir ver los FAQs']);
+        Permission::updateOrCreate(['name' => 'faqs.prices'], ['guard_name' => 'web', 'group' => 'faqs', 'description' => 'Permitir ver los precios de los FAQs']);
+        Permission::updateOrCreate(['name' => 'faqs.create'], ['guard_name' => 'web', 'group' => 'faqs', 'description' => 'Permitir crear FAQs']);
+        Permission::updateOrCreate(['name' => 'faqs.edit'], ['guard_name' => 'web', 'group' => 'faqs', 'description' => 'Permitir editar FAQs']);
+        Permission::updateOrCreate(['name' => 'faqs.active'], ['guard_name' => 'web', 'group' => 'faqs', 'description' => 'Permitir activar FAQs']);
+        Permission::updateOrCreate(['name' => 'faqs.store'], ['guard_name' => 'web', 'group' => 'faqs', 'description' => 'Permitir guardar FAQs']);
+        Permission::updateOrCreate(['name' => 'faqs.show'], ['guard_name' => 'web', 'group' => 'faqs', 'description' => 'Permitir ver detalle del Faq']);
+        Permission::updateOrCreate(['name' => 'faqs.destroy'], ['guard_name' => 'web', 'group' => 'faqs', 'description' => 'Permitir eliminar FAQs']);
+        Permission::updateOrCreate(['name' => 'faqs.update'], ['guard_name' => 'web', 'group' => 'faqs', 'description' => 'Permitir actualizar FAQs']);
+
+
         //Create role admin        
         $admin = Role::updateOrCreate(['name' => 'Administrator'], ['guard_name' => 'web']);
         $admin->givePermissionTo(Permission::all());        

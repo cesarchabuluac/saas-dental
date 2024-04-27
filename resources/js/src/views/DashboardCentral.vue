@@ -277,6 +277,8 @@ export default {
             const { data } = await CentralsResource.index("this_year");
             this.loading = false;
             this.dashboard = data.data;
+
+            console.log(this.dashboard)
         },
         async getTopPlans () {
           this.loading = true;

@@ -1,7 +1,6 @@
 <template>
     <div v-if="account">
         <section id="dashboard-ecommerce">
-
             <b-row v-if="isAdmin || isDirector" class="match-height">
                 <b-col xl="4" md="6">
                     <dashboard-earning :loading="loading" :data="dashboard" />
