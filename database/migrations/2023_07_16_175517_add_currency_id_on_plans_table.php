@@ -26,6 +26,9 @@ return new class extends Migration
     public function down()
     {
         Schema::table('plans', function (Blueprint $table) {
+
+            $table->dropConstrainedForeignId('plans_currency_id_foreign');
+
             $table->dropColumn('currency_id');
         });
     }
