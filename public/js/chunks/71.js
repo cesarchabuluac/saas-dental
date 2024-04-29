@@ -1318,41 +1318,6 @@ var render = function () {
                                 {
                                   name: "b-tooltip",
                                   rawName: "v-b-tooltip.hover.right",
-                                  value: "Sincronizar Servidor",
-                                  expression: "`Sincronizar Servidor`",
-                                  modifiers: { hover: true, right: true },
-                                },
-                              ],
-                              staticClass: "btn-icon",
-                              attrs: { variant: "outline-warning", size: "sm" },
-                              on: {
-                                click: function ($event) {
-                                  return _vm.syncDnsOnDigitalOcean(data.item)
-                                },
-                              },
-                            },
-                            [
-                              _c("feather-icon", {
-                                attrs: { icon: "RefreshCcwIcon" },
-                              }),
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "b-button",
-                            {
-                              directives: [
-                                {
-                                  name: "ripple",
-                                  rawName: "v-ripple.400",
-                                  value: "rgba(255, 255, 255, 0.15)",
-                                  expression: "'rgba(255, 255, 255, 0.15)'",
-                                  modifiers: { 400: true },
-                                },
-                                {
-                                  name: "b-tooltip",
-                                  rawName: "v-b-tooltip.hover.right",
                                   value: _vm.$t("button_tooltip_detail"),
                                   expression: "$t('button_tooltip_detail')",
                                   modifiers: { hover: true, right: true },

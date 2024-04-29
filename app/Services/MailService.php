@@ -54,7 +54,7 @@ class MailService
     public function sendEmail ($params) {
         $data = [
             'from' => [
-                'email' => 'cesarchabuluac@gmail.com',
+                'email' => 'soporte@soft-dental.com',
                 'name' => 'Soft-Dental'
             ],
             'to' => $params['to'],

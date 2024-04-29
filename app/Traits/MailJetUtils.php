@@ -19,8 +19,8 @@ trait MailJetUtils
      */
     private function makeRequestPost($data): Response
     {
-        $public_key = "d1dd62bd23ac1cfbd6e572a1cf2472ec";
-        $private_key = "e74d3d47b5d95f67489042632916cf37";
+        $public_key = "74073a866e4923036a4a01a895382253";
+        $private_key = "6f4280757e9979ba3f4f61b0c50d050f";
         $mj = new Client($public_key, $private_key, true, ['version' => 'v3.1']);
         $body = [
             'Messages' => [

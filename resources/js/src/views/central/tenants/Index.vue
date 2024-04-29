@@ -115,7 +115,7 @@
                 <!-- Column: Actions -->
                 <template #cell(actions)="data">
                     <div class="demo-inline-spacing">
-                        <b-button
+                        <!-- <b-button
                             v-ripple.400="'rgba(255, 255, 255, 0.15)'"
                             variant="outline-warning"
                             class="btn-icon"
@@ -123,7 +123,7 @@
                             @click="syncDnsOnDigitalOcean(data.item)"
                              v-b-tooltip.hover.right="`Sincronizar Servidor`">
                             <feather-icon icon="RefreshCcwIcon"/>
-                        </b-button>
+                        </b-button> -->
                         
                         <b-button
                             v-ripple.400="'rgba(255, 255, 255, 0.15)'"

@@ -21,6 +21,7 @@ use App\Repositories\DoDomainRepository;
 use App\Repositories\TenantRepository;
 use App\Repositories\UserRepository;
 use App\Services\DigitalOceanService;
+use App\Services\MailService;
 use Exception;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
@@ -334,19 +335,44 @@ class TenantController extends Controller
 
     public function ban(Tenant $tenant)
     {
-        if ($tenant->is_banned) {
-            $tenant->update([
-                'is_banned' => false,
-            ]);
+         // notify tenant
+         $service = app()->make(MailService::class);
+         $dataEmail = [
+             'to' => [
+                 [
+                     'name' => "demo",
+                     'email' => "cesarchabuluac@gmail.com",
+                 ],
+             ],
+             'subject' => "Bienvenido a Soft-Dental",
+             'template_id' => "5923956",
+             'vars' => [
+                 "name" => "Cesar Chab",
+                 "app_name" => "Soft-Dental",
+                 "email" => "cesarchabuluac@gmail.com",
+                 "password" => "1234567890",
+                 "domain_link" => "https://fichadentales.com",
+                 "days" => 14,
+             ],
+         ];
+ 
+         Log::info($dataEmail);
+ 
+         $service->sendEmail($dataEmail);
 
-            return $this->sendResponse($tenant->load('plan'), __('lang.unbanned_successfully', ['operator' => __('lang.user')]));
-        } else {
-            $tenant->update([
-                'is_banned' => true,
-            ]);
+        // if ($tenant->is_banned) {
+        //     $tenant->update([
+        //         'is_banned' => false,
+        //     ]);
 
-            return $this->sendResponse($tenant->load('plan'), __('lang.banned_successfully', ['operator' => __('lang.user')]));
-        }
+        //     return $this->sendResponse($tenant->load('plan'), __('lang.unbanned_successfully', ['operator' => __('lang.user')]));
+        // } else {
+        //     $tenant->update([
+        //         'is_banned' => true,
+        //     ]);
+
+        //     return $this->sendResponse($tenant->load('plan'), __('lang.banned_successfully', ['operator' => __('lang.user')]));
+        // }
     }
 
     public function impersonate(Tenant $tenant, TenantService $tenantService)

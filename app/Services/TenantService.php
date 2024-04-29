@@ -21,6 +21,7 @@ use Exception;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 
 class TenantService
 {
@@ -168,6 +169,8 @@ class TenantService
                 "days" => 14,
             ],
         ];
+
+        Log::info($dataEmail);
 
         $service->sendEmail($dataEmail);
 
