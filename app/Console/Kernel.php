@@ -16,11 +16,6 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $settings = GeneralSetting::whereIn('key', ['scheduled_appointment_interval'])
-        //     ->pluck('value', 'key')
-        //     ->toArray();
-        // $interval = (int)$settings['scheduled_appointment_interval'] ?? 15;
-
         // $schedule->command('inspire')->hourly();
 
         // telescope daily data pruner
