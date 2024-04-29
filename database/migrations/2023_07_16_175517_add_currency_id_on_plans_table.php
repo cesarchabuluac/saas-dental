@@ -27,7 +27,7 @@ return new class extends Migration
     {
         Schema::table('plans', function (Blueprint $table) {
 
-            $table->dropConstrainedForeignId('plans_currency_id_foreign');
+            // $table->dropConstrainedForeignId('plans_currency_id_foreign');
 
             $table->dropColumn('currency_id');
         });
