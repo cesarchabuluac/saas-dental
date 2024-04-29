@@ -34,6 +34,9 @@ trait MailJetUtils
                 ]
             ]
         ];
+
+        Log::warning($body);
+
         $response = $mj->post(Resources::$Email, ['body' => $body]);
         Log::info('success', ['success' => $response->success()]);
         Log::info('dataResponse', ['response' => $response->getData()]);

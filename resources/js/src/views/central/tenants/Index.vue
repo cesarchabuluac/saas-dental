@@ -207,7 +207,7 @@
             @hidden="onShowModalCreateUpdateTenant=false"
             :visible="onShowModalCreateUpdateTenant">
 
-            <b-overlay :show="loading" variant="transparent" blur="2px">
+            <b-overlay :show="loading" variant="transparent" blur="3px">
             
                 <b-card-text class="mb-2 mt-2">
                     {{ $t('form_register.description_2').replace(':number_days', this.setting.trial_day_count) }}

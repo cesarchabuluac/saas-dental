@@ -100,6 +100,8 @@ class TenantService
                 $this->tenantData($request, $trialDayCount, now()),
         );
 
+        \Log::info($tenant);
+
         $domain = $tenant->createDomain([
             'domain' => $request->domain,
         ]);
