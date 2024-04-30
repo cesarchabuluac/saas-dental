@@ -187,9 +187,9 @@ class AppServiceProvider extends ServiceProvider
          * tenant related configurations end
          */
 
-        Model::preventLazyLoading(
-            ! app()->isProduction()
-        );
+        // Model::preventLazyLoading(
+        //     ! app()->isProduction()
+        // );
 
         Model::preventSilentlyDiscardingAttributes(
             !app()->isProduction()

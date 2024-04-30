@@ -150,7 +150,13 @@
                 <div class="checkout-options">
                 <b-card>                   
                     <div class="price-details">
-                        <h3>{{ $t('subscriptions.payment_options') }}</h3>
+                        <h3>{{ $t('subscriptions.payment_options') }} ({{ setting.stripe_mode === 'sandbox' ? 'Modo Pruebas' : '' }})</h3>
+
+                        <small v-if="setting.stripe_mode === 'sandbox'" class="help-block">
+                            <strong>Tarjeta:</strong> 4242 4242 4242 4242<br>
+                            <strong>Vencimiento:</strong> Cualquier Mes y Año<br>
+                            <strong>Ccv/Cvc:</strong> 123
+                        </small>
                         <hr>
 
                         <b-form-group :label="$t('subscriptions.cards.name')" label-for="card-holder-name">
@@ -161,7 +167,7 @@
                             />
                         </b-form-group>
 
-                        <b-form-group :label="$t('subscriptions.cards.card')" label-for="card-element">
+                        <b-form-group :label="`${$t('subscriptions.cards.card')}`" label-for="card-element">
                            <div id="card-element"></div>
                         </b-form-group>                        
                         
@@ -440,6 +446,7 @@ export default {
 
         return {
             loading,
+            setting,
             plans,
             account,
             monthlyPlanShow,

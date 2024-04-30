@@ -22,7 +22,7 @@ export const SubscriptionGuard = (to, from, next) => {
 
     console.table(checkIsCentral())
 
-    if (checkIsCentral()) {
+    if (!checkIsCentral()) {
         const isSubscriptionActive = store.getters['auth/getCurrentAccount'].is_subscribed;
         const isInitialSetUpActive = store.getters['auth/getCurrentAccount'].initial_setup;
         const roleId = store.getters['auth/getRoleId']        
