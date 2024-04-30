@@ -20,9 +20,9 @@ export const SetupGuard = (to, from, next) => {
 
 export const SubscriptionGuard = (to, from, next) => {
 
-    console.table(checkIsCentral())
+    console.table(`¿ es central ? ${checkIsCentral()}`)
 
-    if (!checkIsCentral()) {
+    if (checkIsCentral()) {
         const isSubscriptionActive = store.getters['auth/getCurrentAccount'].is_subscribed;
         const isInitialSetUpActive = store.getters['auth/getCurrentAccount'].initial_setup;
         const roleId = store.getters['auth/getRoleId']        
