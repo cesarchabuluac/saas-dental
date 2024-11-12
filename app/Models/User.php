@@ -129,7 +129,7 @@ class User extends Authenticatable
 
     public function schedules(): HasMany
     {
-        return $this->hasMany(UserSchedule::class);
+        return $this->hasMany(UserSchedule::class, 'user_id', 'id');
     }
 
     public function isAvailableAt(Carbon $dateTime)

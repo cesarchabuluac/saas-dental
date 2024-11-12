@@ -1,6 +1,7 @@
 <template>
     <b-overlay :show="loading" blur="2px" variant="transparent" rounded="lg" opacity="0.85">
         <b-card>
+
             <b-row>
                 <b-col cols="12" class="mb-2">
                     <h5 class="mb-0">{{ $t("app_setting_global") }}</h5>
@@ -11,7 +12,7 @@
                 <b-col md="6">
                     <b-form-group :label="$t('app_setting_app_name')" label-for="app_setting_app_name"
                         :description="$t('app_setting_app_name_help')">
-                        <b-form-input v-model="config.app_name" id="app_setting_app_name" :placeholder="$t('app_setting_app_name_placeholder')" />
+                        <b-form-input autocomplete="off" v-model="config.app_name" id="app_setting_app_name" :placeholder="$t('app_setting_app_name_placeholder')" />
                     </b-form-group>
                 </b-col>
 
@@ -19,7 +20,7 @@
                 <b-col md="6">
                     <b-form-group :label="$t('app_setting_app_short_description')" label-for="app_short_description"
                         :description="$t('app_setting_app_short_description_help')">
-                        <b-form-input v-model="config.app_short_description" id="app_short_description" 
+                        <b-form-input autocomplete="off" v-model="config.app_short_description" id="app_short_description" 
                         :placeholder="$t('app_setting_app_short_description_placeholder')" />
                     </b-form-group>
                 </b-col>
@@ -107,7 +108,7 @@ import Cleave from "vue-cleave-component";
 import * as helper from "@/libs/helpers";
 import store from "@/store";
 import { $themeConfig } from "@themeConfig";
-
+import { ValidationProvider, ValidationObserver } from 'vee-validate'
 import { useUtils as useI18nUtils } from "@core/libs/i18n";
 import useAppConfig from "@core/app-config/useAppConfig";
 
@@ -137,6 +138,10 @@ export default {
         BMediaBody,
         BLink,
         BImg,
+
+        //
+        ValidationProvider,
+        ValidationObserver,
     },
     directives: {
         Ripple,
@@ -208,6 +213,8 @@ export default {
                 helper.danger(translateMessages.setting_required);
                 return false;
             }
+
+            console.log(changedData)
 
             try {
                 loading.value = true;

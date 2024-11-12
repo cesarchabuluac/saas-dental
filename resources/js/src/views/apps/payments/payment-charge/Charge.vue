@@ -133,7 +133,7 @@
                         </b-card-body>
 
                         <!-- Invoice Description: Table -->
-                        <b-table id="table-items" ref="tableItems" stacked="sm" responsive :items="budget.budget_actions"
+                        <b-table id="table-items" ref="tableItems" stacked="sm" :items="budget.budget_actions"
                             :fields="columns" small class="text-small small table-small">
                             <!-- Description -->
                             <template #cell(action)="data">
@@ -156,7 +156,7 @@
 
                             <!-- Subtotal -->
                             <template #cell(subtotal)="data">
-                                <span v-if="data.item.discount > 0">Desc. {{ formatPrice(data.item.discount) }}</span>
+                                <span v-if="data.item.discount > 0">Desc. {{ formatPrice(data.item.discount) }}<br></span>
                                 {{ formatPrice(data.item.subtotal) }}
                             </template>
 

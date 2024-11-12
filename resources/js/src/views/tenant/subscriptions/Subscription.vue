@@ -14,7 +14,7 @@
             <b-tabs horizontal content-class="col-12 col-md-12 mt-1 mt-md-0" pills nav-wrapper-class="col-md-12 col-12" nav-class="nav-left">
             
                 <!-- general tab -->
-                <b-tab active :disabled="account.plan_ends_at !== null" lazy>
+                <!-- <b-tab active :disabled="account.plan_ends_at !== null" lazy>
                     <template #title>
                         <feather-icon icon="DollarSignIcon" size="18" class="mr-50"/>
                         <span class="font-weight-bold">{{ $t('subscriptions.plans.title') }}</span>
@@ -23,7 +23,7 @@
                     <subscription-current v-if="!isWitchPlan && account.is_subscribed && !account.on_trial" class="mt-3" />
                     <subscription-price v-else-if="isWitchPlan || !account.is_subscribed || account.on_trial" class="mt-3" />
                     
-                </b-tab>
+                </b-tab> -->
 
                 <b-tab lazy>
                     <template #title>

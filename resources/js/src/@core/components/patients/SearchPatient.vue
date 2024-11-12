@@ -10,10 +10,10 @@
                     <b-col cols="12" md="12">
                         <div class="d-flex align-items-center justify-content-end">
                             <b-input-group>
-                                <b-form-input autofocus v-model="searchQuery" class="d-inline-block _mr-1"
+                                <b-form-input size="sm" autofocus v-model="searchQuery" class="d-inline-block _mr-1" autocomplete="off"
                                     :placeholder="$t('patients.search_options')" @keyup.enter="searchPatients" />
                                 <b-input-group-prepend>
-                                    <b-button variant="primary" @click="searchPatients">
+                                    <b-button size="sm" variant="primary" @click="searchPatients">
                                         <feather-icon icon="SearchIcon" />
                                     </b-button>
                                 </b-input-group-prepend>
@@ -22,9 +22,11 @@
                     </b-col>
                 </b-row>
             </div>
-            <b-table ref="refPatientsListTable" class="position-relative" :items="patients" responsive stacked="sm" hover
+            <b-table ref="refPatientsListTable" class="position-relative b-table-small text-small small table-samll" :items="patients" responsive hover
                 :fields="columns" primary-key="id" show-empty :empty-text="$t('datatables.sZeroRecords')"
-                busy.sync="loading">
+                busy.sync="loading" small
+                selectable select-mode="single" 
+                @row-selected="selectRow">
                 <!-- Empty -->
                 <template slot="empty">
                     <div v-if="loading" class="d-flex justify-content-center mb-1">
@@ -34,7 +36,7 @@
 
                 <!-- Column: name -->
                 <template #cell(name)="data">
-                    <div @click="choosePatient(data.item)" class="text-wrap">
+                    <div class="text-wrap">
                         {{ data.item.full_name }} <br>
                         <span class="badge badge-light-info float-left">{{ data.item.email }}</span>
                     </div>
@@ -42,19 +44,19 @@
 
                 <!-- Column: document -->
                 <template #cell(document)="data">
-                    <span @click="choosePatient(data.item)">{{ data.item.rut }}</span>
+                    <span>{{ data.item.rut }}</span>
                 </template>
 
                 <!-- Column: phone -->
                 <template #cell(phone)="data">
-                    <span @click="choosePatient(data.item)">{{ data.item.cellphone }}</span>
+                    <span>{{ data.item.cellphone }}</span>
                 </template>
 
                 <!-- Column: Actions -->
                 <template #cell(actions)="data">
                     <div class="text-nowrap">
                         <b-button @click="choosePatient(data.item)" size="sm" v-ripple.400="'rgba(255, 255, 255, 0.15)'"
-                            variant="primary">
+                            variant="outline-primary">
                             {{ $t('to_choose') }}
                         </b-button>
                     </div>
@@ -136,6 +138,10 @@ export default {
         }
     },
     methods: {
+        selectRow(item) {
+            this.$emit("selected", { ...item[0] });
+            this.close();
+        },
         choosePatient(item) {
             this.$emit("selected", { ...item });
             this.close();

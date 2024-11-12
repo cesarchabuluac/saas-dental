@@ -157,6 +157,7 @@ Route::group(['middleware' => 'auth:api', 'as' => 'tenant.'], function () {
   Route::post('budgets/{id}/send', 'App\Http\Controllers\API\BudgetAPIController@sendEmail')->name('budgets.send');
   Route::resource('budgets', 'App\Http\Controllers\API\BudgetAPIController');
 
+
   //Payments
   Route::get('payments/dashboard', 'App\Http\Controllers\API\PaymentAPIController@dashboard')->name('payments.dashboard');
   Route::get('payments/{id}/preview', 'App\Http\Controllers\API\PaymentAPIController@preview')->name('payments.preview');
@@ -203,6 +204,13 @@ Route::group(['middleware' => 'auth:api', 'as' => 'tenant.'], function () {
     Route::get('budgets', 'App\Http\Controllers\API\V2\BudgetAPIController@index')->name('budgets.index');
     Route::get('appointments', [AppointmentAPIController::class, 'index'])->name('appointments.index');
     Route::get('appointments/available', 'App\Http\Controllers\API\AppointmentAPIController@availableEvent');
+
+    //Budget Actions
+    Route::get('budget-actions', 'App\Http\Controllers\API\V2\BudgetActionAPIController@index')->name('budget-actions.index');
+
+    Route::prefix('reports')->group(function () {
+      Route::get('medicines-with-stock', 'App\Http\Controllers\API\V2\ReportAPIController@getMedicinesWithStock')->name('reports.medicines-with-stock');
+    });    
   });
 
   //NOTIFICATIONS

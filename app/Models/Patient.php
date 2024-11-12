@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;
+use Laravel\Scout\Searchable;
+
 
 class Patient extends Model
 {
@@ -50,11 +52,6 @@ class Patient extends Model
     protected $casts = [
         'is_active' => 'boolean',
     ];
-
-    // public function getIsActiveAttribute()
-    // {
-    //     return $this->deleted_at == null ? true : false;
-    // }
 
     public function getTotalBudgetAttribute () {
         return $this->budget()->count();

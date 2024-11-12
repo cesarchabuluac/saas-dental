@@ -203,6 +203,7 @@ export default {
                     label: this.$t("payments.table_amount"),
                 },
             ],
+            userRoles: store.getters['auth/getUser'].roles.map(role => role.id)
         }
     },
     created() {
@@ -210,16 +211,16 @@ export default {
     },
     computed: {
         isAdmin() {
-            return store.getters['auth/getRoleId'] === 1;
+            return store.getters['auth/getRoleId'] === 1 //this.userRoles.includes(1);
         },
         isDirector() {
-            return store.getters['auth/getRoleId'] === 2;
+            return store.getters['auth/getRoleId'] === 2 // this.userRoles.includes(2);
         },
         isDoctor() {
-            return store.getters['auth/getRoleId'] === 4;
+            return store.getters['auth/getRoleId'] === 4 // this.userRoles.includes(4);
         },
         isPatient() {
-            return store.getters['auth/getRoleId'] === 5;
+            return store.getters['auth/getRoleId'] === 5 // this.userRoles.includes(5);
         },
         isTenant () {
             return this.checkIsTenant()

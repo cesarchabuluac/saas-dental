@@ -131,19 +131,27 @@ class PaymentReport implements FromCollection, WithHeadings, WithStyles, WithCol
             $payments = $payments->whereBetween('payments.payment_date', [$start, $end]);
         }
 
+        $methodTranslations = [
+            "cash" => "Efectivo",
+            "debit_card" => "Tarjeta de Débito",
+            "credit_card" => "Tarjeta de Crédito",
+            "check" => "Cheque",
+            "transfer" => "Transferencia",
+        ];
 
-        return $payments->get()->map(function ($payment) {
+
+        return $payments->get()->map(function ($payment) use($methodTranslations) {
             return [
                 "id" => $payment["id"],
                 "payment_date" => $payment["payment_date"],
                 "budget" => $payment["budget"]["label"],
                 "patient" => $payment["budget"]["patient"]["full_name"],
                 "amount" => $payment["amount"],
-                "method" => $payment["method"],
+                "method" => $methodTranslations[$payment['method']],
                 "bank" => !empty($payment["check"]) ? $payment["check"]["bank"] : "",
                 "reference" => !empty($payment["check"]) ? $payment["check"]["reference"] : "",
                 "serie" => !empty($payment["check"]) ? $payment["check"]["serie"] : "",
-                "charged" => $payment["check_paid"] == 1 ? "Si" : "No",
+                "charged" => $payment["check_paid"] == 1 ? "SI" : "NO",
             ];            
         });
     }

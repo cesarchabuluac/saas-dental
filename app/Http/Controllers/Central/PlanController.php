@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class PlanController extends Controller
 {
@@ -32,11 +33,11 @@ class PlanController extends Controller
         $this->digitalOceanService = $digitalOceanService;
 
         // through stripe api, make plan in stripe.com
-        if (boolval(config()->get('enable_stripe_mode'))) {
-            $this->stripe = Stripe::make(config()->get('stripe.live.secret'));
-        } else {
-            $this->stripe = Stripe::make(config()->get('stripe.sandbox.secret'));
-        }
+        // if (boolval(config()->get('enable_stripe_mode'))) {
+        //     $this->stripe = Stripe::make(config()->get('stripe.live.secret'));
+        // } else {
+        //     $this->stripe = Stripe::make(config()->get('stripe.sandbox.secret'));
+        // }
     }
 
     /**
@@ -47,7 +48,7 @@ class PlanController extends Controller
     public function index()
     {
 
-        $domains = $this->digitalOceanService->getDomains();
+        //$domains = $this->digitalOceanService->getDomains();
         return $this->planRepository->with('currency')
             ->withTrashed()
             ->paginate(request('perPage'));
@@ -71,6 +72,7 @@ class PlanController extends Controller
      */
     public function store(CreatePlanRequest $request, ImageService $imageService)
     {
+        Log::info($request->all());
 
         $input = $request->all();
         $currency = $this->currencyRepository->find($input['currency_id']);
@@ -78,31 +80,31 @@ class PlanController extends Controller
 
         $imageNameWithStringFolderPath = $imageService->uploadImageFileAndGetPath($request->image, 'plans');
 
-        $plan = $this->stripe->plans()->create([
-            'name' => $input['name'],
-            'amount' => $input['amount'],
-            'currency' => $currency->code,
-            'interval' => $input['interval'],
-            'statement_descriptor' => 'Soft-Dental',
-            'metadata' => [
-                'description' => $input['description'] ?? null,
-            ],
-        ]);
+        // $plan = $this->stripe->plans()->create([
+        //     'name' => $input['name'],
+        //     'amount' => $input['amount'],
+        //     'currency' => $currency->code,
+        //     'interval' => $input['interval'],
+        //     'statement_descriptor' => 'Soft-Dental',
+        //     'metadata' => [
+        //         'description' => $input['description'] ?? null,
+        //     ],
+        // ]);
 
         // stripe always add extra 00 in amount
-        $amount = (int) $plan['amount'] / 100;
+        $amount = $request->amount;  //(int) $request['amount'] / 100;
 
-        $savedPlan = $this->planRepository->create([
-            'api_id' => $plan['id'],
+        $plan = $this->planRepository->create([
+            'api_id' => Str::uuid()->toString(), //$plan['id'],
             'image' => $imageNameWithStringFolderPath,
-            'name' => $plan['name'],
+            'name' => $request['name'],
             'amount' => $amount,
-            'product_id' => $plan['product'],
-            'description' => $plan['metadata']['description'],
+            'product_id' => Str::uuid()->toString(),
+            'description' => $input['description'] ?? null,
             'is_popular' => $input['is_popular'] === 'true' ? true : false,
             'currency_id' => $currency->id,
-            'currency' => $plan['currency'],
-            'interval' => $plan['interval'],
+            'currency' => $currency->code,
+            'interval' => $input['interval'],
             'limit_doctor' => $input['limit_doctor'],
             'limit_assistant' => $input['limit_assistant'],
             'limit_receptionist' => $input['limit_receptionist'],
@@ -114,7 +116,7 @@ class PlanController extends Controller
 
         // $savedPlan->features()->sync($data['features']);
 
-        return $this->sendResponse($savedPlan, __('lang.saved_successfully', ['operator' => $plan['name']]));
+        return $this->sendResponse($plan, __('lang.saved_successfully', ['operator' => $plan['name']]));
     }
 
     /**
@@ -155,9 +157,10 @@ class PlanController extends Controller
     public function update(UpdatePlanRequest $request, $id, ImageService $imageService)
     {
         $plan = $this->planRepository->find($id);
-        $this->stripe->plans()->update($plan['api_id'], [
-            'name' => $request->name,
-        ]);
+        
+        // $this->stripe->plans()->update($plan['api_id'], [
+        //     'name' => $request->name,
+        // ]);
 
 
         if ($request->file('image')) {
@@ -189,7 +192,7 @@ class PlanController extends Controller
                 $plan = $this->planRepository->find($id);
 
                 if (!$plan->tenants()->exists()) {
-                    $this->stripe->plans()->delete($plan->api_id);
+                    // $this->stripe->plans()->delete($plan->api_id);
                     $plan->forceDelete();
 
                     // Elimina la imagen asociada si existe

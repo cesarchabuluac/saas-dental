@@ -227,14 +227,15 @@ class AppointmentAPIController extends Controller
             }
         }
 
+        $userRoleIds = auth()->user()->roles->pluck('id')->toArray();
         $appointments =  $this->appointmentRepository->query()->with('user', 'patient', 'branch')
             ->where(function ($q) use ($isDashboard, $start, $end) {
                 if ($isDashboard) {
                     $q->whereBetween('date', [$start, $end]);
                 }
             })
-            ->where(function ($q) use ($roles) {
-                if (!in_array(auth()->user()->roles[0]->id, $roles)) {
+            ->where(function ($q) use ($roles, $userRoleIds) {
+                if (!array_intersect($userRoleIds, $roles)) {
                     $q->where('user_id', auth()->user()->id);
                 }
             })

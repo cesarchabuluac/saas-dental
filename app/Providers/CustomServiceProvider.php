@@ -3,9 +3,11 @@
 namespace App\Providers;
 
 use App\Interfaces\IDashboardService;
+use App\Interfaces\IReportService;
 // use App\Interfaces\ITransactionService;
 
 use App\Services\DashboardService;
+use App\Services\ReportService;
 // use App\Services\TransactionService;
 
 use Illuminate\Support\ServiceProvider;
@@ -20,8 +22,8 @@ class CustomServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(IDashboardService::class, DashboardService::class);
+        $this->app->bind(IReportService::class, ReportService::class);
         // $this->app->bind(ITransactionService::class, TransactionService::class);
-
     }
 
     /**

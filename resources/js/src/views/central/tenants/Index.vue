@@ -209,17 +209,23 @@
 
             <b-overlay :show="loading" variant="transparent" blur="3px">
             
-                <b-card-text class="mb-2 mt-2">
+                <!-- <b-card-text class="mb-2 mt-2">
                     {{ $t('form_register.description_2').replace(':number_days', this.setting.trial_day_count) }}
-                </b-card-text>
+                </b-card-text> -->
+                <b-alert variant="primary" show>
+                    <div class="alert-body">
+                        {{ $t('form_register.description_2').replace(':number_days', this.setting.trial_day_count) }}
+                    </div>
+                </b-alert>
 
                 <validation-observer ref="registerForm">
-                    <b-form class="auth-register-form mt-3" @submit.prevent="register">
+                    <b-form class="auth-register-form" @submit.prevent="register">
                         
                         <!-- name -->
                         <b-form-group :label="$t('name')" label-for="name">
                             <validation-provider #default="{ errors }" :name="$t('name')" rules="required">
                                 <b-form-input
+                                    autocomplete="off"
                                     id="name"
                                     v-model="tenant.name"
                                     :state="errors.length > 0 ? false : null"
@@ -234,6 +240,7 @@
                         <b-form-group :label="$t('email')" label-for="email">
                             <validation-provider #default="{ errors }" :name="$t('email')" rules="required|email">
                                 <b-form-input
+                                    autocomplete="off"
                                     id="email"
                                     v-model="tenant.email"
                                     :state="errors.length > 0 ? false : null"
@@ -249,6 +256,7 @@
                             <validation-provider #default="{ errors }" :name="$t('domain')" rules="required">
                                 <b-input-group :append="hostName">
                                     <b-form-input 
+                                        autocomplete="off"
                                         id="domain"
                                         v-model="tenant.domain" 
                                         name="register-doamin"
@@ -263,6 +271,7 @@
                         <b-form-group :label="$t('clinic')" label-for="clinic">
                             <validation-provider #default="{ errors }" :name="$t('clinic')" rules="required">
                                 <b-form-input
+                                    autocomplete="off"
                                     id="clinic"
                                     v-model="tenant.company"
                                     :state="errors.length > 0 ? false : null"
@@ -278,6 +287,7 @@
                             <validation-provider #default="{ errors }" :name="$t('password')" rules="required">
                                 <b-input-group class="input-group-merge" :class="errors.length > 0 ? 'is-invalid' : null">
                                     <b-form-input
+                                        autocomplete="off"
                                         id="password"
                                         v-model="tenant.password"
                                         :type="passwordFieldType"
@@ -319,7 +329,7 @@
 
                 <template #overlay>                    
                     <div class="text-center">                        
-                        <p id="cancel-label">{{$t('tenants.wait')}}</p>                         
+                        <p id="cancel-label"><strong>{{$t('tenants.wait')}}</strong></p>
                     </div>
                     <div class="text-center">
                         <!-- <b-spinner small type="grow" variant="secondary" /> -->
@@ -362,6 +372,7 @@ import {
     BTooltip, VBTooltip,
     BCardTitle,
     BCardText,
+    BAlert,
 } from "bootstrap-vue";
 import Ripple from "vue-ripple-directive";
 import { ValidationProvider, ValidationObserver } from 'vee-validate'
@@ -402,6 +413,7 @@ export default {
         BCardTitle,
         BCardText,
         BOverlay,
+        BAlert,
         ValidationProvider,
         ValidationObserver,     
     },

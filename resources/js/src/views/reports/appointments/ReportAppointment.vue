@@ -17,13 +17,13 @@
                     <b-row>
                         <b-col cols="12" md="4">
                             <label>{{ $t('start_at') }}</label>
-                            <flat-pickr v-model="filter.start" class="form-control" :config="{ dateFormat: 'Y-m-d' }"
+                            <flat-pickr v-model="filter.start" class="form-control flatpickr-small" :config="{ dateFormat: 'Y-m-d' }"
                                 placeholder="DD/MM/YYYY" />
                         </b-col>
 
                         <b-col cols="12" md="4">
                             <label>{{ $t('end_at') }}</label>
-                            <flat-pickr v-model="filter.end" class="form-control" :config="{
+                            <flat-pickr v-model="filter.end" class="form-control flatpickr-small" :config="{
                                 minDate: filter.start,
                                 dateFormat: 'Y-m-d'
                             }" placeholder="DD/MM/YYYY" />
@@ -37,7 +37,8 @@
                                     :options="professionals"
                                     label="name" 
                                     :reduce="professional => professional.id" 
-                                    input-id="add-professional"                                    
+                                    input-id="add-professional" 
+                                    class="select-size-sm"                                
                                     :placeholder="$t('appointments.professional_placeholder')">
                                 </v-select>
                             </b-form-group>
@@ -47,6 +48,7 @@
                             <b-form-group :label="$t('appointments.patient')" label-for="add-patient">
                                 <v-select v-model="filter.patient_id" :options="patients" label="name"
                                     input-id="add-patient" @search="onSearchPatients" :filterable="true"
+                                    class="select-size-sm"
                                     :placeholder="$t('appointments.patient_placeholder')" :reduce="patient => patient.id">
                                     <template #option="{ full_name, document_type, rut, email, cellphone }">
                                         <span class="ml-50 align-middle">{{ full_name }}</span><br>
@@ -68,7 +70,8 @@
                             <b-form-group :label="$t('appointments.state')" label-for="calendar">
                                 <v-select v-model="filter.state" :options="calendarOptions" label="label"
                                     :reduce="(calendar) => calendar.label" input-id="calendar"
-                                    :placeholder="$t('appointments.state_placeholder')">
+                                    :placeholder="$t('appointments.state_placeholder')"
+                                    class="select-size-sm">
 
                                     <template #option="{ color, label }">
                                         <div class="rounded-circle d-inline-block mr-50" :class="`bg-${color}`"
@@ -87,25 +90,25 @@
 
                         <b-col cols="12" md="12">
                             <div class="demo-inline-spacing">
-                                <b-button @click="filterData" variant="outline-primary"
+                                <b-button size="sm" @click="filterData" variant="outline-primary"
                                     v-ripple.400="'rgba(255, 255, 255, 0.15)'" :class="{ 'btn-block': isMobile }">
                                     <feather-icon icon="SearchIcon" />
                                     {{ $t("button_filter") }}
                                 </b-button>
 
-                                <b-button v-if="appointments.length" @click="donwloadAppointment" variant="outline-success"
+                                <b-button size="sm" v-if="appointments.length" @click="donwloadAppointment" variant="outline-success"
                                     v-ripple.400="'rgba(255, 255, 255, 0.15)'" :class="{ 'btn-block': isMobile }">
                                     <feather-icon icon="DownloadIcon" />
                                     {{ $t("button_download") }}
                                 </b-button>
 
-                                <b-button v-if="filter.start" @click="clearFilter" variant="outline-danger"
+                                <b-button size="sm" v-if="filter.start" @click="clearFilter" variant="outline-danger"
                                     v-ripple.400="'rgba(255, 255, 255, 0.15)'" :class="{ 'btn-block': isMobile }">
                                     <feather-icon icon="XIcon" />
                                     {{ $t("button_clear_filter") }}
                                 </b-button>
 
-                                <b-button v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="outline-secondary"
+                                <b-button size="sm" v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="outline-secondary"
                                     :class="{ 'btn-block': isMobile }" @click="$router.back()">
                                     <feather-icon icon="ChevronLeftIcon" />
                                     {{ $t('back') }}
@@ -356,7 +359,8 @@ export default {
                 user_id: null,
             },
             isMobile: false,
-            isFilterApplied: false
+            isFilterApplied: false,
+            userRoles: store.getters['auth/getUser'].roles.map(role => role.id)
         }
     },
     computed: {
@@ -371,7 +375,7 @@ export default {
             };
         },
         isProfessional() {
-            return store.getters['auth/getRoleId'] === 4
+            return this.userRoles.includes(4)
         },
         user_id() {
             return store.getters['auth/getUserId']
@@ -654,5 +658,17 @@ export default {
     background: inherit;
     color: inherit;
     font-size: 1.125em;
+}
+
+.flatpickr-small .flatpickr-input {
+    /*font-size: 8px!important; /* Ajusta el tamaño del texto del input */
+    padding: 5px; /* Ajusta el padding del input */
+    /*width: 120px; /* Ajusta el ancho del input */
+}
+
+.flatpickr-input {
+    /*width: 150px!important; /* Ajusta el ancho del input */
+    height: 30px!important; /* Ajusta la altura del input */
+    /*font-size: 7px!important; /* Ajusta el tamaño del texto del input */
 }
 </style>

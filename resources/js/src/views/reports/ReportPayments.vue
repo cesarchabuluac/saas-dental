@@ -22,13 +22,13 @@
                         </b-col>
                         <b-col cols="12" md="3">
                             <label>{{ $t('start_at') }}</label>
-                            <flat-pickr v-model="filter.start" class="form-control" :config="{ dateFormat: 'Y-m-d' }"
+                            <flat-pickr v-model="filter.start" class="form-control flatpickr-small" :config="{ dateFormat: 'Y-m-d' }"
                                 placeholder="DD/MM/YYYY" />
                         </b-col>
 
                         <b-col cols="12" md="3">
                             <label>{{ $t('end_at') }}</label>
-                            <flat-pickr v-model="filter.end" class="form-control" :config="{
+                            <flat-pickr v-model="filter.end" class="form-control flatpickr-small" :config="{
                                 minDate: filter.start,
                                 dateFormat: 'Y-m-d'
                             }" placeholder="DD/MM/YYYY" />
@@ -38,6 +38,7 @@
                             <b-form-group :label="$t('payments.way_pay')" label-for="add-guests">
                                 <v-select v-model="filter.method" :options="paymentMethods"
                                     label="label" :reduce="option => option.value" input-id="add-method"
+                                    class="select-size-sm"  :clearable="true" :searchable="true"
                                     :placeholder="$t('payments.way_pay_placeholder')">
                                 </v-select>
                             </b-form-group>
@@ -45,25 +46,25 @@
 
                         <b-col cols="12" md="12">
                             <div class="demo-inline-spacing">
-                                <b-button @click="filterData" variant="outline-primary"
+                                <b-button size="sm" @click="filterData" variant="outline-primary"
                                     v-ripple.400="'rgba(255, 255, 255, 0.15)'" :class="{ 'btn-block': isMobile }">
                                     <feather-icon icon="SearchIcon" />
                                     {{ $t("button_filter") }}
                                 </b-button>
 
-                                <b-button v-if="payments.length" @click="donwloadPayment" variant="outline-success"
+                                <b-button size="sm" v-if="payments.length" @click="donwloadPayment" variant="outline-success"
                                     v-ripple.400="'rgba(255, 255, 255, 0.15)'" :class="{ 'btn-block': isMobile }">
                                     <feather-icon icon="DownloadIcon" />
                                     {{ $t("button_download") }}
                                 </b-button>
 
-                                <b-button v-if="filter.start" @click="clearFilter" variant="outline-danger"
+                                <b-button size="sm" v-if="filter.start" @click="clearFilter" variant="outline-danger"
                                     v-ripple.400="'rgba(255, 255, 255, 0.15)'" :class="{ 'btn-block': isMobile }">
                                     <feather-icon icon="XIcon" />
                                     {{ $t("button_clear_filter") }}
                                 </b-button>
 
-                                <b-button v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="outline-secondary"
+                                <b-button size="sm" v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="outline-secondary"
                                     :class="{ 'btn-block': isMobile }" @click="$router.back()">
                                     <feather-icon icon="ChevronLeftIcon" />
                                     {{ $t('back') }}
@@ -76,8 +77,8 @@
             <b-card no-body class="mb-0">
                 <div class="table-responsive">
                     <b-table ref="refPaymentListTable" striped hover :items="payments" :fields="columns" responsive
-                        primary-key="id" show-empty :empty-text="$t('datatables.sZeroRecords')" class="position-relative"
-                        :current-page="currentPage" busy.sync="loading" stacked="md">
+                        primary-key="id" show-empty :empty-text="$t('datatables.sZeroRecords')" class="position-relative table-small text-small small"
+                        :current-page="currentPage" busy.sync="loading" stacked="md" small>
                         <!-- Column: payment_id -->
                         <template #cell(payment_id)="data">
                             <b-link v-if="canAccess('payments.preview')" :to="{ name: 'payments-budgets-preview', params: { id: data.item.budget_id, payment_id: data.item.id, model: 'apps-payments-view' }}" class="font-weight-bold">
@@ -300,7 +301,8 @@ export default {
                 method: null,
             },
             isMobile: false,
-            isFilterApplied: false
+            isFilterApplied: false,
+            userRoles: store.getters['auth/getUser'].roles.map(role => role.id)
         }
     },
     computed: {
@@ -315,7 +317,7 @@ export default {
             };
         },
         isProfessional() {
-            return store.getters['auth/getRoleId'] === 4
+            return this.userRoles.includes(4);
         },
     },
     created() {
@@ -417,5 +419,17 @@ export default {
     .dark-layout & {
         background: $theme-dark-body-bg !important;
     }
+}
+
+.flatpickr-small .flatpickr-input {
+    /*font-size: 8px!important; /* Ajusta el tamaño del texto del input */
+    padding: 5px; /* Ajusta el padding del input */
+    /*width: 120px; /* Ajusta el ancho del input */
+}
+
+.flatpickr-input {
+    /*width: 150px!important; /* Ajusta el ancho del input */
+    height: 30px!important; /* Ajusta la altura del input */
+    /*font-size: 7px!important; /* Ajusta el tamaño del texto del input */
 }
 </style>

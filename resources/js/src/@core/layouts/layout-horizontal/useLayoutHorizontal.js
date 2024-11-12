@@ -26,15 +26,15 @@ export default function useLayoutHorizontal(navbarMenuType, footerType, isVertic
     return classes
   })
 
-  // const resizeHandler = () => {
-  //   isVerticalMenuActive.value = window.innerWidth >= 1200
+  const resizeHandler = () => {
+    isVerticalMenuActive.value = window.innerWidth >= 1200
 
-  //   if (window.innerWidth >= 1200) currentBreakpoint.value = 'xl'
-  //   else if (window.innerWidth >= 992) currentBreakpoint.value = 'lg'
-  //   else if (window.innerWidth >= 768) currentBreakpoint.value = 'md'
-  //   else if (window.innerWidth >= 576) currentBreakpoint.value = 'sm'
-  //   else currentBreakpoint.value = 'xs'
-  // }
+    if (window.innerWidth >= 1200) currentBreakpoint.value = 'xl'
+    else if (window.innerWidth >= 992) currentBreakpoint.value = 'lg'
+    else if (window.innerWidth >= 768) currentBreakpoint.value = 'md'
+    else if (window.innerWidth >= 576) currentBreakpoint.value = 'sm'
+    else currentBreakpoint.value = 'xs'
+  }
 
   const navbarMenuTypeClass = computed(() => {
     if (navbarMenuType.value === 'sticky') return 'fixed-top'

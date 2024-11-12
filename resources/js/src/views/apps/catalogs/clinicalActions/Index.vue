@@ -12,10 +12,10 @@
                             v-model="perPage"
                             :options="perPageOptions"
                             :clearable="false"
-                            class="per-page-selector d-inline-block mx-50"
+                            class="per-page-selector d-inline-block mx-50 select-size-sm"
                         />
                         <!-- <label>{{ $t("entries") }}</label> -->
-                        <b-button v-if="canAccess('actions.create')" variant="primary" @click="$router.push({name: 'actions-add'})">
+                        <b-button size="sm" v-if="canAccess('actions.create')" variant="primary" @click="$router.push({name: 'actions-add'})">
                             <!-- <feather-icon icon="PlusIcon" /> -->
                             <span class="text-wrap">
                                 {{ $t("add") }}
@@ -27,10 +27,10 @@
                     <b-col cols="12" md="6">
                         <div class="d-flex align-items-center justify-content-end">
                             <b-input-group>
-                                <b-form-input v-model="searchQuery" class="d-inline-block _mr-1" :placeholder="$t('clinical_actions.search_options')"
+                                <b-form-input size="sm" v-model="searchQuery" class="d-inline-block _mr-1" :placeholder="$t('clinical_actions.search_options')"
                                 @keyup.enter="getActions"/>
                                 <b-input-group-prepend>
-                                <b-button variant="primary" @click="getActions">
+                                <b-button size="sm" variant="primary" @click="getActions">
                                     <feather-icon icon="SearchIcon" />
                                 </b-button>
                                 </b-input-group-prepend>
@@ -42,7 +42,7 @@
 
             <b-table
                 ref="refActionsListTable"
-                class="position-relative"
+                class="position-relative table-small text-small small b-table-small"
                 :items="actions.data"
                 responsive
                 :fields="columns"
@@ -54,6 +54,7 @@
                 :current-page="currentPage"
                 busy.sync="loading"
                 stacked="md"
+                small
             >
                 <!-- Empty -->
                 <template slot="empty">

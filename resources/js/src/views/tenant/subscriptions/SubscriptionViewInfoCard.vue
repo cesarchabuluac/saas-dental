@@ -61,7 +61,7 @@
                     <tr>
                         <th class="pb-50">
                             <feather-icon icon="UserIcon" class="mr-75" />
-                            <span class="font-weight-bold">Company</span>
+                            <span class="font-weight-bold">{{ $t('tenant_name') }}</span>
                         </th>
                         <td class="pb-50">
                             {{ account.company }}
@@ -70,7 +70,7 @@
                     <tr>
                         <th class="pb-50">
                             <feather-icon icon="CheckIcon" class="mr-75" />
-                            <span class="font-weight-bold">Subscribed</span>
+                            <span class="font-weight-bold">{{$t('tenant_subscribed')}}</span>
                         </th>
                         <td class="pb-50 text-capitalize">
                             <b-badge pill :variant="`light-${resolveStatusBadge(account.is_subscribed)}`" class="text-capitalize">
@@ -81,7 +81,7 @@
                     <tr>
                         <th class="pb-50">
                             <feather-icon icon="SlashIcon" class="mr-75" />
-                            <span class="font-weight-bold">Banned</span>
+                            <span class="font-weight-bold">{{ $t('tenant_banned') }}</span>
                         </th>
                         <td class="pb-50 text-capitalize">
                             <b-badge pill :variant="`light-${resolveStatusBadge(account.is_banned)}`" class="text-capitalize">
@@ -93,9 +93,9 @@
                     <tr>
                         <th class="pb-50">
                             <feather-icon icon="CalendarIcon" class="mr-75" />
-                            <span class="font-weight-bold">Trial Started At</span>
+                            <span class="font-weight-bold">{{ $t('tenant_trial_started_at') }}</span>
                         </th>
-                        <td class="pb-50">
+                        <td class="pb-50 text-capitalize">
                             {{ formatDate(account.created_at) }}
                         </td>
                     </tr>
@@ -103,9 +103,9 @@
                     <tr v-if="account.on_trial">
                         <th class="pb-50">
                             <feather-icon icon="CalendarIcon" class="mr-75" />
-                            <span class="font-weight-bold">Trial Ends At</span>
+                            <span class="font-weight-bold">{{ $t('tenant_trial_ends_at') }}</span>
                         </th>
-                        <td class="pb-50">
+                        <td class="pb-50 text-capitalize">
                             {{ formatDate(account.trial_ends_at) }}
                         </td>
                     </tr>
@@ -113,9 +113,9 @@
                     <tr>
                         <th class="pb-50">
                             <feather-icon icon="CalendarIcon" class="mr-75" />
-                            <span class="font-weight-bold">Created At</span>
+                            <span class="font-weight-bold">{{ $t('tenant_created_at') }}</span>
                         </th>
-                        <td class="pb-50">
+                        <td class="pb-50 text-capitalize">
                             {{ formatDate(account.created_at) }}
                         </td>
                     </tr>

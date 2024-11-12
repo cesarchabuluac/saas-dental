@@ -1,6 +1,6 @@
 <template>
   <li
-    v-if="canViewVerticalNavMenuGroup(item)"
+    v-if="canAccess(item.permission)"
     class="dropdown dropdown-submenu"
     :class="{
       'show': isOpen,

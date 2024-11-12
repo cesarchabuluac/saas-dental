@@ -10,15 +10,14 @@ class UserSchedule extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
-
     protected $fillable = [
         'id',
         'user_id',
         'day',
         'day_of_week',
-        'start_time',
+        'start_time',        
         'end_time',
+        'breaks',
         'active',
     ];
 

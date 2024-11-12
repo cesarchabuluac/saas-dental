@@ -12,3 +12,7 @@
 
 -- Use Compoer 
 ```php /usr/local/bin/composer```
+
+-- NOTAS
+1 - Cuando se debe suscribirse bloquear el boton de pago para evitar multiples clicks
+

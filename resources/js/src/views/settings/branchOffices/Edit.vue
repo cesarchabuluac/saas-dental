@@ -18,6 +18,7 @@
                                 label-for="name"
                             >
                                 <b-form-input
+                                    size="sm"
                                     id="name"
                                     v-model="branch.name"
                                     :placeholder="$t('branch_offices.name_placeholder')"
@@ -32,6 +33,7 @@
                                 label-for="postal_code"
                             >
                                 <b-form-input
+                                    size="sm"
                                     id="postal_code"
                                     v-model="branch.postal_code"
                                     :placeholder="$t('branch_offices.postal_code_placeholder')"
@@ -46,6 +48,7 @@
                                 label-for="country"
                             >
                                 <b-form-input
+                                    size="sm"
                                     id="country"
                                     v-model="branch.country"
                                     :placeholder="$t('branch_offices.country_placeholder')"
@@ -60,6 +63,7 @@
                                 label-for="phone"
                             >
                                 <b-form-input
+                                    size="sm"
                                     id="phone"
                                     v-model="branch.phone"
                                     :placeholder="$t('branch_offices.phone_placeholder')"
@@ -74,6 +78,7 @@
                                 label-for="email"
                             >
                                 <b-form-input
+                                    size="sm"
                                     id="email"
                                     v-model="branch.email"
                                     :placeholder="$t('branch_offices.email_placeholder')"
@@ -88,6 +93,7 @@
                                 label-for="address"
                             >
                                 <b-form-input
+                                    size="sm"
                                     id="address"
                                     v-model="branch.address"
                                     :placeholder="$t('branch_offices.address_placeholder')"
@@ -100,13 +106,12 @@
                              <b-form-group
                                 :label="$t('branch_offices.membrete')"
                                 label-for="dropzone"
-                                :description="$t('branch_offices.membrete_help')">
-         
-                                
+                                :description="$t('branch_offices.membrete_help')">                                
                                 <b-form-file
                                     :placeholder="$t('branch_offices.membrete_placeholder')"
                                     drop-placeholder="Drop file here..."
                                     @change="handleImageUpload" accept="image/*"
+                                    size="sm"
                                 />
 
                                 <b-card-text class="my-1">                                                                     
@@ -119,10 +124,9 @@
                              <b-form-group
                                 :label="$t('branch_offices.membrete')"
                                 label-for="dropzone"
-                                :description="$t('branch_offices.membrete_help')">
-         
-                                
+                                :description="$t('branch_offices.membrete_help')">                                
                                 <b-form-file
+                                    size="sm"
                                     v-model="file2"
                                     :placeholder="$t('branch_offices.membrete_placeholder')"
                                     drop-placeholder="Drop file here..."
@@ -139,6 +143,7 @@
 
                     <!-- Action Buttons -->
                     <b-button
+                        size="sm"
                         :disabled="loading"
                         variant="primary"
                         class="mb-1 mb-sm-0 mr-0 mr-sm-1"
@@ -147,6 +152,7 @@
                         {{ $t("save") }}
                     </b-button>
                     <b-button
+                        size="sm"
                         :disabled="loading"
                         variant="outline-secondary"
                         class="mb-1 mb-sm-0 mr-0 mr-sm-1"

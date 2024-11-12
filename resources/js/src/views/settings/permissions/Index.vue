@@ -155,7 +155,7 @@ export default {
     },
     computed: {
         isAdmin () {
-            return store.getters['auth/getUser'].roles[0].id === 1 ?? false
+            return store.getters['auth/getRoleId'] === 1 || store.getters['auth/getRoleId'] === 2
         }
     },
     watch: {},

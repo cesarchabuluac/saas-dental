@@ -6,8 +6,9 @@
     <component
       :is="resolveNavComponent(item)"
       v-for="item in items"
-      :key="item.header || item.title"
+      :key="$t(item.header) || $t(item.title)"
       :item="item"
+      :v-if="canAccess(item.permission)"
     />
   </ul>
 </template>

@@ -33,8 +33,8 @@ export const danger = (message, icon = 'XIcon') => {
 }
 
 export const showMessage = (message, type = 'success', icon = 'check') => {
-    let options = {};
-    switch (type) {
+	let options = {};
+	switch (type) {
 		case 'success':
 			options.type = 'success';
 			break;
@@ -50,27 +50,30 @@ export const showMessage = (message, type = 'success', icon = 'check') => {
 		default:
 			options.type = 'default';
 			break;
-    }
-    options.icon = icon;
-    options.showCloseButton = true;
-    options.hideProgressBar = false,
-    options.closeButton = "button",
-    options.icon = true,
-    options.rtl = false
-    Vue.prototype.$toast(message, options);
+	}
+	options.icon = icon;
+	options.showCloseButton = true;
+	options.hideProgressBar = false,
+		options.closeButton = "button",
+		options.icon = true,
+		options.rtl = false
+	Vue.prototype.$toast(message, options);
 }
 
 export const getFirstValidationError = (errorBag) => {
-    let errors = Object.values(errorBag)
-    errors = errors.flat()
-    return errors[0]
+	console.log(errorBag)
+	if (errorBag.response.data.errors) {
+		let errors = Object.values(errorBag.response.data.errors).flat();
+		return errors[0] || null;
+	} else {
+		return errorBag.response.data.message;
+	}
 }
 
 export const handleResponseErrors = (e) => {
-
 	const options = {
 		type: 'error',
-		icon: 'XIcon',
+		icon: 'error',
 		showCloseButton: true,
 		hideProgressBar: false,
 		closeButton: "button",
@@ -78,25 +81,24 @@ export const handleResponseErrors = (e) => {
 		rtl: false
 	}
 
-	switch (e.response.status) {
-		case 401:
-		case 403:
-		case 404:
-		case 405:
-		case 422:
-		case 500:
-			Vue.prototype.$toast.error(getFirstValidationError(e), options);
-			break;
-		default:
-			Vue.prototype.$toast.error(e.message, options);
-			break;
+	let errorMessage = e.message; // Mensaje de error predeterminado
+	console.log(errorMessage)
+
+	if (e.response) {
+		const { status } = e.response;
+		const validationError = getFirstValidationError(e);
+		switch (status) {
+			case 401:
+			case 403:
+			case 404:
+			case 405:
+			case 422:
+			case 500:
+				errorMessage = validationError || "Error en la solicitud.";
+				break;
+		}
 	}
-    // if (e.response.status === 422) {
-	// 	let errors = Object.values(e.response.data.errors)
-    // 	errors = errors.flat() 
-	// 	Vue.prototype.$toast.error(errors[0], options);
-    // } else {
-	// 	Vue.prototype.$toast.error(e.message, options);
-    // }
+
+	Vue.prototype.$toast.error(errorMessage, options);
 }
 

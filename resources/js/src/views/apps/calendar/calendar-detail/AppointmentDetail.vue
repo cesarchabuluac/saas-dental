@@ -263,8 +263,11 @@ export default {
         } = useCalendarEventHandler(toRefs(props), clearFormData, emit);
 
         clearFormData.value = null
-        isAdministrator.value = (store.getters['auth/getRoleId'] === 1 || store.getters['auth/getRoleId'] === 2) ? true : false
-        isDoctor.value = store.getters['auth/getRoleId'] === 4 ? true : false
+        
+        const userRoleIds = store.getters['auth/getUser'].roles || []; // Array de roles del usuario        
+        const roleId = store.getters['auth/getRoleId'] // Id del rol del usuario
+        isAdministrator.value = (roleId === 1 || roleId === 2) ? true : false
+        isDoctor.value = roleId === 4 ? true : false //userRoleIds.includes(4) ? true : false
 
         const youCanConfirm = computed(() => {
             moment.locale(store.state.auth.setting['language'])

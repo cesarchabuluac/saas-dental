@@ -37,8 +37,7 @@ class TransferAPIController extends Controller
      */
     public function index()
     {
-        $transfers = $this->transferRepository->query()
-            ->with(['fromWarehouse', 'toWarehouse', 'user', 'items'])
+        $transfers = $this->transferRepository->with(['fromWarehouse', 'toWarehouse', 'user', 'items'])
             ->whereHas('fromWarehouse', function($query) {
                 $query->where('name', request('search'));
             })

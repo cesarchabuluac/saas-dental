@@ -32,8 +32,8 @@
                     <b-col cols="12" md="6" class="d-flex align-items-center justify-content-start mb-1 mb-md-0">
                         <label>{{ $t("show") }}</label>
                         <v-select v-model="perPage" :options="perPageOptions" :clearable="false"
-                            class="per-page-selector d-inline-block mx-50" />
-                        <b-button v-if="canAccess('budgets.create')" variant="primary"
+                            class="per-page-selector d-inline-block mx-50 select-size-sm" />
+                        <b-button size="sm" v-if="canAccess('budgets.create')" variant="primary"
                             @click="$router.push({ name: 'apps-budgets-add', })">
                             <span class="text-nowrap">
                                 {{ $t("add") }}
@@ -45,10 +45,10 @@
                     <b-col cols="12" md="6">
                         <div class="d-flex align-items-center justify-content-end">
                             <b-input-group>
-                                <b-form-input v-model="searchQuery" class="d-inline-block _mr-1"
+                                <b-form-input size="sm" v-model="searchQuery" class="d-inline-block _mr-1"
                                     :placeholder="$t('budgets.search_options')" @keyup.enter="getBudgets" />
                                 <b-input-group-prepend>
-                                    <b-button variant="primary" @click="getBudgets">
+                                    <b-button size="sm" variant="primary" @click="getBudgets">
                                         <feather-icon icon="SearchIcon" />
                                     </b-button>
                                 </b-input-group-prepend>
@@ -58,10 +58,10 @@
                 </b-row>
             </div>
 
-            <b-table ref="refBugdetsListTable" class="position-relative" :items="budgets" responsive striped hover
+            <b-table ref="refBugdetsListTable" class="position-relative table-small text-small small" :items="budgets" responsive striped hover
                 :fields="columns" primary-key="id" :sort-by.sync="sortBy" show-empty
                 :empty-text="$t('datatables.sZeroRecords')" :sort-desc.sync="sortDesc" :current-page="currentPage"
-                busy.sync="loading" stacked="md">
+                busy.sync="loading" stacked="md" small>
 
                 <!-- Label -->
                 <template #cell(label)="data">
@@ -69,6 +69,10 @@
                         v-b-tooltip.hover :title="$t('budgets.options_show_detail_tooltip')">
                         {{ data.item.label }}
                     </b-link>
+                </template>
+
+                <template #cell(name)="data">
+                    {{ data.item.name || data.item.label }}
                 </template>
 
                 <template #cell(branch)="data">
@@ -346,6 +350,10 @@ export default {
                 {
                     key: "label",
                     label: this.$t("budgets.table_number"),
+                },
+                {
+                    key: 'name',
+                    label: this.$t('budgets.table_budget_name')
                 },
                 {
                     key: "patient",

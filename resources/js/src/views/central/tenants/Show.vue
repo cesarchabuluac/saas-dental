@@ -34,25 +34,29 @@
                             </div>
                             <!-- User Stats -->
                             <div class="d-flex align-items-center mt-2">
-                                <!-- <div class="d-flex align-items-center mr-2">
-                                    <b-avatar variant="light-primary" rounded>
+                                <div class="d-flex align-items-center mr-2">
+                                    <b-button size="sm" variant="outline-primary"
+                                    @click="$router.push({name: 'tenants'})">
+                                        {{ $t('button_back') }}
+                                    </b-button>
+                                    <!-- <b-avatar variant="light-primary" rounded>
                                         <feather-icon icon="DollarSignIcon" size="18"/>
                                     </b-avatar>
                                     <div class="ml-1">
                                         <h5 class="mb-0">23.3k</h5>
                                         <small>Monthly Sales</small>
-                                    </div>
+                                    </div> -->
                                 </div>
 
                                 <div class="d-flex align-items-center">
-                                    <b-avatar variant="light-success" rounded>
+                                    <!-- <b-avatar variant="light-success" rounded>
                                         <feather-icon icon="TrendingUpIcon" size="18"/>
                                     </b-avatar>
                                     <div class="ml-1">
                                         <h5 class="mb-0">$99.87k</h5>
                                         <small>Annual Profit</small>
-                                    </div>
-                                </div> -->
+                                    </div> -->
+                                </div>
                             </div>
                         </b-col>
 
@@ -125,11 +129,11 @@
                 </b-card>                
             </b-col>
             <b-col cols="12" md="5" xl="3" lg="4">
-                <b-card no-body class="border-primary">
+                <b-card v-if="tenant && tenant.plan" no-body class="border-primary">
                     <b-card-header class="d-flex justify-content-between align-items-center pt-75 pb-25">
                         <h5 class="mb-0">{{ $t('tenants.current_plan') }}</h5>
                         <b-badge variant="light-primary">
-                            {{ tenant.plan.name }}
+                            {{ tenant.plan.name }}                            
                         </b-badge>
                         <small class="text-muted w-100">{{ $t('subscriptions.plans.start') }} {{ formatDateTime(tenant.updated_at) }}</small>
                         <!-- <small class="text-muted_ w-100 text-danger">{{ $t('tenants.trial_ends_at') }}: {{ formatDateTime(tenant.trial_ends_at) }}</small> -->

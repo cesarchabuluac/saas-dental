@@ -37,8 +37,8 @@
                                 <!-- Header: Left Content -->
                                 <div>
                                     <div class="logo-wrapper">
+                                        <b-img fluid :src="logo" alt="Logo" />
                                         <h3 class="text-primary invoice-logo">
-                                            <small>{{ $t('budgets.name') }}</small>
                                             <p>{{ budget.name }}</p>
                                         </h3>
                                     </div>
@@ -68,6 +68,7 @@
                                         <b-form-input
                                             id="patient"
                                             readonly
+                                            size="sm"
                                             v-model="budget.patient.full_name"
                                         />
                                     </b-form-group>
@@ -187,7 +188,8 @@
                                     <b-form-textarea readonly 
                                         v-model="budget.comments" 
                                         id="textarea-default" 
-                                        :placeholder="$t('budgets.comments_placeholder')" rows="3"/>
+                                        size="sm"
+                                        :placeholder="$t('budgets.comments_placeholder')"/>
                                 </b-col>
 
                                 <!-- Col: Total -->
@@ -199,19 +201,19 @@
                                                     <td class="pe-1">
                                                         <p class="invoice-total-title">{{$t('budgets.subtotal')}}</p>
                                                     </td>
-                                                    <td><p class="invoice-total-amount"><strong>{{formatPrice(budget_cost)}}</strong></p></td>
+                                                    <td><p class="invoice-total-amount"><strong>{{formatPrice(budget.subtotal)}}</strong></p></td>
                                                 </tr>
                                                 <tr>
                                                     <td class="pe-1"><p class="invoice-total-title">{{$t('budgets.discount')}}</p></td>
-                                                    <td><p class="invoice-total-amount"><strong>{{formatPrice(budget_discount)}}</strong></p></td>
+                                                    <td><p class="invoice-total-amount"><strong>{{formatPrice(budget.discount)}}</strong></p></td>
                                                 </tr>
                                                 <tr v-if="isEnabledTax">
                                                     <td class="pe-1"><p class="invoice-total-title">{{$t('budgets.tax')}} ({{findSetting('default_tax')}}%)</p></td>
-                                                    <td><p class="invoice-total-amount"><strong>{{formatPrice(budget_tax)}}</strong></p></td>
+                                                    <td><p class="invoice-total-amount"><strong>{{formatPrice(budget.tax)}}</strong></p></td>
                                                 </tr>
                                                 <tr>
                                                     <td class="pe-1"><p class="invoice-total-title">{{$t('budgets.total')}}</p></td>
-                                                    <td><p class="invoice-total-amount"><strong>{{formatPrice(budget_total + budget_tax)}}</strong></p></td>
+                                                    <td><p class="invoice-total-amount"><strong>{{formatPrice(budget.total)}}</strong></p></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -271,7 +273,7 @@
 <script>
 import {
   BRow, BCol, BCard, BCardBody, BTableLite, BCardText, BButton, BAlert, BLink, VBToggle, BOverlay, BSpinner, BTable,BFormCheckbox, BFormGroup, BFormInput,
-  BModal, VBModal, BSidebar, BForm, BIcon, BInputGroup, BInputGroupAppend, BInputGroupPrepend, BFormTextarea,BFormTags
+  BModal, VBModal, BSidebar, BForm, BIcon, BInputGroup, BInputGroupAppend, BInputGroupPrepend, BFormTextarea,BFormTags,BImg
 } from 'bootstrap-vue'
 import router from "@/router";
 import "animate.css";
@@ -313,7 +315,8 @@ export default {
         BInputGroupAppend,
         BInputGroupPrepend,
         BFormTextarea,
-        BFormTags
+        BFormTags,
+        BImg,
     },
     data () {
         return {
@@ -414,6 +417,9 @@ export default {
         },
         isEnabledTax() {
             return this.findSetting("enable_tax")
+        },
+        logo () {
+            return store.state.auth.logo || window._setting.app_logo
         },
     },
     async mounted() {

@@ -21,10 +21,10 @@ class UserSeeder extends Seeder
             "theme" => 'light',
         ];
 
-        User::query()->firstOrCreate(['email' => 'admin@demo.com'], [
+        User::query()->firstOrCreate(['email' => 'admin@soft-dental.com'], [
             'name' => 'Super Administrator',
             'email_verified_at' => date('Y-m-d H:i:s'),
-            'password' => Hash::make('123456'),
+            'password' => Hash::make('Adm1n2024_'),
             'account_role' => 1,
             'is_active' => 1,
             'settings' => $json,

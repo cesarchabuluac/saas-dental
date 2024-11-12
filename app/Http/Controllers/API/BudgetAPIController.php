@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Exports\BudgetReport;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateBudgetRequest;
 use App\Http\Requests\UpdateBudgetRequest;
@@ -20,6 +21,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx\Rels;
 use Carbon\Carbon;
+use Maatwebsite\Excel\Facades\Excel;
 
 class BudgetAPIController extends Controller
 {
@@ -44,20 +46,18 @@ class BudgetAPIController extends Controller
     {
         $search = request('search');
         $isBudget = boolval(request('isBudget'));
-        return $this->budgetRepository->with(['patient', 'branch', 'payments', 'user', 'budgetActions'])
+        $budgets = $this->budgetRepository
+            ->with(['patient', 'branch', 'payments', 'user', 'budgetActions'])
             ->whereHas('patient', function ($q) use ($search) {
                 $q->where(
                     DB::raw(
-                        // REPLACE will remove the double white space with single (As defined)
                         "REPLACE(
-                    /* CONCAT will concat the columns with defined separator */
                     CONCAT(
-                        /* COALESCE operator will handle NUll values as defined value. */
                         COALESCE(name,''),' ',
                         COALESCE(last_name,''),' ',
                         COALESCE(mother_last_name,'')
                     ),
-                '  ',' ')"
+                    '  ',' ')"
                     ),
                     'LIKE',
                     '%' . $search . '%'
@@ -82,8 +82,29 @@ class BudgetAPIController extends Controller
             ->when(!$isBudget, function ($q) {
                 return $q->having('balance', '>', 0);
             })
-            ->orderBy('id', 'DESC')
-            ->paginate(request('perPage'));
+            ->when($request->filled('branch_id'), function ($q) use ($request) {
+                return $q->where('branch_id', $request->branch_id);
+            })
+            ->when($request->filled('user_id'), function ($q) use ($request) {
+                return $q->where('user_id', $request->user_id);
+            })
+            ->when($request->filled('start'), function ($q) use ($request) {
+                $startDate = Carbon::parse($request->start)->startOfDay();
+                return $q->whereDate('created_at', '>=', $startDate);
+            })
+            ->when($request->filled('end'), function ($q) use ($request) {
+                $endDate = Carbon::parse($request->end)->endOfDay();
+                return $q->whereDate('created_at', '<=', $endDate);
+            })
+            ->orderBy('id', 'DESC');
+
+        if($request->filled('isDownload')) {
+            $budgets = $budgets->get();
+            return Excel::download(new BudgetReport($budgets), 'Presupuestos.xlsx');
+        }
+            
+
+        return $budgets->paginate(request('perPage'));
     }
 
     /**
@@ -97,6 +118,10 @@ class BudgetAPIController extends Controller
         $input = $request->except('items');
         $input['approved'] = 0;
         $inputAction = [];
+
+        if (setting('enable_tax')) {
+            $input['tax_percent'] = setting('default_tax');
+        }
 
         try {
 

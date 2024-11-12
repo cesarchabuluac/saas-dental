@@ -1,6 +1,6 @@
 <template>
   <li
-    v-if="canViewHorizontalNavMenuLink(item)"
+    v-if="canAccess(item.permission)"
     :class="{
       'active': isActive,
       'disabled': item.disabled

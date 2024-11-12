@@ -19,7 +19,7 @@
                                     <span class="card-text text-break">{{data.email}}</span>
                                 </div>
                                 <div class="d-flex flex-wrap">
-                                    <b-button :disabled="isDisabled" v-if="canAccess('patients.edit')" :to="{ name: 'apps-patients-edit', params: { id: data.id },}" variant="primary">
+                                    <b-button size="sm" :disabled="isDisabled" v-if="canAccess('patients.edit')" :to="{ name: 'apps-patients-edit', params: { id: data.id },}" variant="primary">
                                         {{ $t("edit") }}
                                     </b-button>
                                 </div>

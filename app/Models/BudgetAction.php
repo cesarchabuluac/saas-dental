@@ -33,6 +33,10 @@ class BudgetAction extends Model
         return $this->belongsTo(ActionPayment::class, 'professional_id');
     }
 
+    public function actionPayments() {
+        return $this->hasMany(ActionPayment::class, 'budget_action_id', 'id');
+    }
+
     public function clinicalPayments ()
     {
         return $this->hasMany(ActionPayment::class, 'budget_action_id')

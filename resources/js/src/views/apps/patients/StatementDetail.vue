@@ -27,223 +27,247 @@
 
 				<!-- Col: Left (Invoice Container) -->
 				<b-col cols="12" xl="9" md="8">
-					<b-card no-body class="invoice-preview-card">
-						<!-- Header -->
-						<b-card-body class="invoice-padding pb-0">
 
-							<div class="d-flex justify-content-between flex-md-row flex-column invoice-spacing mt-0">
+					<!-- <VueHtml2pdf
+						id="viewer"
+						:show-layout="false"
+						:float-layout="true"
+						:enable-download="false"
+						:preview-modal="true"
+						:paginate-elements-by-height="10"        
+						:pdf-quality="2"
+						:manual-pagination="true"
+						pdf-format="letter"
+						pdf-orientation="portrait"
+						ref="html2Pdf"
+						:html-to-pdf-options="pdfOptions"
+						>
 
-								<!-- Header: Left Content -->
-								<div>
-									<div class="logo-wrapper">
-										<h3 class="text-primary invoice-logo">
-											{{ findSetting('app_name') }}
-										</h3>
-									</div>
-									<p class="card-text mb-25">
-										<strong>{{ patientData.full_name }}</strong><br>
-										<small><feather-icon icon="MailIcon" class="mr-50" /> {{ patientData.email
-										}}</small>
-									</p>
-									<p class="card-text mb-25">
-										<feather-icon icon="UserIcon" class="mr-50" /> {{ patientData.document_type }}:
-										{{ patientData.rut }}
-									</p>
-									<p class="card-text mb-25">
-										<feather-icon icon="MapPinIcon" class="mr-50" /> {{ patientData.address }}
-									</p>
-									<p class="card-text mb-0">
-										<feather-icon icon="PhoneIcon" class="mr-50" /> {{ patientData.mobile ?
-											patientData.mobile.e164 : patientData.cellphone }}, {{ patientData.phone }}
-									</p>
-								</div>
+						<section slot="pdf-content" class="invoice-preview-wrapper">
+							<section class="pdf-item"> -->
+								<b-card no-body class="invoice-preview-card">
+									<!-- Header -->
+									<b-card-body class="invoice-padding pb-0">
 
-								<!-- Header: Right Content -->
-								<div class="mt-md-0 mt-2">
-									<h4 class="invoice-title">
-										{{ $t('patients.identifier') }}:
-										<span class="invoice-number">{{ padString(patientData.id) }}</span>
-									</h4>
-									<ul class="list-unstyled my-1 font-weight-bold text-capitalize">
-										<li>
-											<span class="align-middle">
-												{{ $t('date') }}
-												{{ momentFormat() }}
-											</span>
-										</li>
-										<li>
-											<span class="align-middle">
-												{{ $t("debt") }}
-												<b-badge pill :variant="`light-danger`" class="text-capitalize">
-													{{ totalCostFormatted }}
-												</b-badge>
-											</span>
-										</li>
-										<li class="my-25">
-											<span class="align-middle">{{ $t("paid") }}
-												<b-badge pill :variant="`light-success`" class="text-capitalize">
-													{{ totalPaidFormatted }}
-												</b-badge>
-											</span>
-										</li>
-										<li>
-											<span class="align-middle">{{ $t("per_paid") }}
-												<b-badge pill :variant="`light-warning`" class="text-capitalize">
-													{{ totalDebtFormatted }}
-												</b-badge>
-											</span>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</b-card-body>
+										<div class="d-flex justify-content-between flex-md-row flex-column invoice-spacing mt-0">
 
-						<!-- Invoice Description: Table -->
-						<b-table responsive bordered outlined sticky-header="100vh" :foot-clone="false"
-							:no-border-collapse="false" class="position-relative" :fields="tableFields"
-							:items="patientData.budgets">
+											<!-- Header: Left Content -->
+											<div>
+												<div class="logo-wrapper">
+													<h3 class="text-primary invoice-logo">
+														{{ findSetting('app_name') }}
+													</h3>
+												</div>
+												<p class="card-text mb-25">
+													<strong>{{ patientData.full_name }}</strong><br>
+													<small><feather-icon icon="MailIcon" class="mr-50" /> {{ patientData.email
+													}}</small>
+												</p>
+												<p class="card-text mb-25">
+													<feather-icon icon="UserIcon" class="mr-50" /> {{ patientData.document_type }}:
+													{{ patientData.rut }}
+												</p>
+												<p class="card-text mb-25">
+													<feather-icon icon="MapPinIcon" class="mr-50" /> {{ patientData.address }}
+												</p>
+												<p class="card-text mb-0">
+													<feather-icon icon="PhoneIcon" class="mr-50" /> {{ patientData.mobile ?
+														patientData.mobile.e164 : patientData.cellphone }}, {{ patientData.phone }}
+												</p>
+											</div>
 
-							<!-- Column: label -->
-							<template #cell(budget)="data">
-								{{ data.item.label }}
-							</template>
+											<!-- Header: Right Content -->
+											<div class="mt-md-0 mt-2">
+												<h4 class="invoice-title">
+													{{ $t('patients.identifier') }}:
+													<span class="invoice-number">{{ padString(patientData.id) }}</span>
+												</h4>
+												<ul class="list-unstyled my-1 font-weight-bold text-capitalize">
+													<li>
+														<span class="align-middle">
+															{{ $t('date') }}
+															{{ momentFormat() }}
+														</span>
+													</li>
+													<li>
+														<span class="align-middle">
+															{{ $t("debt") }}
+															<b-badge pill :variant="`light-danger`" class="text-capitalize">
+																{{ totalCostFormatted }}
+															</b-badge>
+														</span>
+													</li>
+													<li class="my-25">
+														<span class="align-middle">{{ $t("paid") }}
+															<b-badge pill :variant="`light-success`" class="text-capitalize">
+																{{ totalPaidFormatted }}
+															</b-badge>
+														</span>
+													</li>
+													<li>
+														<span class="align-middle">{{ $t("per_paid") }}
+															<b-badge pill :variant="`light-warning`" class="text-capitalize">
+																{{ totalDebtFormatted }}
+															</b-badge>
+														</span>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</b-card-body>
 
-							<!-- Column: subtotal -->
-							<template #cell(subtotal)="data">
-								{{ amountFormatted(data.item.subtotal * 1) }}
-							</template>
+									<!-- Invoice Description: Table -->
+									<!-- sticky-header="100vh" -->
+									<b-table responsive bordered outlined  :foot-clone="false"
+										:no-border-collapse="false" class="position-relative text-small table-small small" :fields="tableFields"
+										:items="patientData.budgets" small>
 
-							<!-- Column: discount -->
-							<template #cell(discount)="data">
-								{{ amountFormatted(data.item.discount * 1) }}
-							</template>
+										<!-- Column: label -->
+										<template #cell(budget)="data">
+											{{ data.item.label }}
+										</template>
 
-							<!-- Column: total -->
-							<template #cell(total)="data">
-								{{ amountFormatted(data.item.total_cost) }}
-							</template>
+										<!-- Column: subtotal -->
+										<template #cell(subtotal)="data">
+											{{ amountFormatted(data.item.subtotal * 1) }}
+										</template>
 
-							<!-- Column: paid -->
-							<template #cell(paid)="data">
-								{{ amountFormatted(data.item.total_paid) }}
-							</template>
+										<!-- Column: discount -->
+										<template #cell(discount)="data">
+											{{ amountFormatted(data.item.discount * 1) }}
+										</template>
 
-							<!-- Column: debt -->
-							<template #cell(debt)="data">
-								{{ amountFormatted(data.item.total_debt) }}
-							</template>
+										<!-- Column: total -->
+										<template #cell(total)="data">
+											{{ amountFormatted(data.item.total_cost) }}
+										</template>
 
-							<!-- Action Details -->
-							<template #row-details="data">
+										<!-- Column: paid -->
+										<template #cell(paid)="data">
+											{{ amountFormatted(data.item.total_paid) }}
+										</template>
 
-								<b-card>
-									<b-row class="mb-2">
-										<b-col md="12" class="mb-1">
-											<b-table responsive :foot-clone="false" :no-border-collapse="false"
-												:items="data.item.budget_actions" :fields="tableDetailFields" caption-top
-												:show-empty="true" :empty-text="$t('datatables.sEmptyTable')" small>
+										<!-- Column: debt -->
+										<template #cell(debt)="data">
+											{{ amountFormatted(data.item.total_debt) }}
+										</template>
 
-												<template #table-caption>
-													<strong>{{ $t('patients.statements.budget_detail')}} {{ data.item.label }}</strong>
-												</template>
+										<!-- Action Details -->
+										<template #row-details="data">
 
-												<!-- Description -->
-												<template #cell(description)="data">
-													<b-card-text class="font-weight-bold mb-25">
-														{{ data.item.action_name }}
-													</b-card-text>
-													<b-card-text class="text-wrap">
-														{{ data.item.action_group_name }}, 
-														<strong>{{ $t('area') }} {{ data.item.area }}</strong>
-													</b-card-text>
-													<span class="badge badge-light-primary float-left text-wrap">
-														{{ data.item.action_type === 'clinical' ? $t('budgets.clinical_action') : $t('budgets.laboratory_action') }}
-													</span>
-												</template>
+											<b-card>
+												<b-row class="mb-2">
+													<b-col md="12" class="mb-1">
+														<b-table responsive class="text-small table-small small" :foot-clone="false" :no-border-collapse="false"
+															:items="data.item.budget_actions" :fields="tableDetailFields" caption-top
+															:show-empty="true" :empty-text="$t('datatables.sEmptyTable')" small>
 
-												<!-- Subtotal -->
-												<template #cell(subtotal)="data">
-													{{ amountFormatted(data.item.price * 1) }}
-												</template>
+															<template #table-caption>
+																<strong>{{ $t('patients.statements.budget_detail')}} {{ data.item.label }}</strong>
+															</template>
 
-												<!-- Discount -->
-												<template #cell(discount)="data">
-													{{ amountFormatted(data.item.discount * 1) }}
-												</template>
+															<!-- Description -->
+															<template #cell(description)="data">
+																<b-card-text class="font-weight-bold mb-25">
+																	{{ data.item.action_name }}
+																</b-card-text>
+																<b-card-text class="text-wrap">
+																	{{ data.item.action_group_name }}, 
+																	<strong>{{ $t('area') }} {{ data.item.area }}</strong>
+																</b-card-text>
+																<span class="badge badge-light-primary float-left text-wrap">
+																	{{ data.item.action_type === 'clinical' ? $t('budgets.clinical_action') : $t('budgets.laboratory_action') }}
+																</span>
+															</template>
 
-												<!-- Total -->
-												<template #cell(total)="data">
-													{{ amountFormatted(data.item.subtotal * 1) }}
-												</template>
+															<!-- Subtotal -->
+															<template #cell(subtotal)="data">
+																{{ amountFormatted(data.item.price * 1) }}
+															</template>
 
-												<!-- Paid -->
-												<template #cell(paid)="data">
-													{{ amountFormatted(data.item.paid * 1) }}
-												</template>
+															<!-- Discount -->
+															<template #cell(discount)="data">
+																{{ amountFormatted(data.item.discount * 1) }}
+															</template>
 
-												<!-- Debt -->
-												<template #cell(debt)="data">
-													{{ amountFormatted(data.item.debt * 1) }}
-												</template>
+															<!-- Total -->
+															<template #cell(total)="data">
+																{{ amountFormatted(data.item.subtotal * 1) }}
+															</template>
 
-												<!-- Payment Details -->
-												<template #row-details="data">
-													<b-table v-if="data.item.action_type === 'clinical'" responsive
-														:foot-clone="false" :no-border-collapse="false"
-														:items="data.item.clinical_payments" :fields="tablePaymentDetails"
-														:show-empty="true" caption-top
-														:empty-text="$t('datatables.sEmptyTable')" small>
-														<template #table-caption><strong>{{
-															$t('patients.statements.payment_details')
-														}}</strong></template>
+															<!-- Paid -->
+															<template #cell(paid)="data">
+																{{ amountFormatted(data.item.paid * 1) }}
+															</template>
 
-														<!-- date -->
-														<template #cell(date)="data">
-															{{ data.item.payment_date }}
-														</template>
+															<!-- Debt -->
+															<template #cell(debt)="data">
+																{{ amountFormatted(data.item.debt * 1) }}
+															</template>
 
-														<!-- amount -->
-														<template #cell(amount)="data">
-															{{ amountFormatted(data.item.amount * 1) }}
-														</template>
+															<!-- Payment Details -->
+															<template #row-details="data">
+																<b-table v-if="data.item.action_type === 'clinical'" responsive
+																	class="text-small table-small small"
+																	:foot-clone="false" :no-border-collapse="false"
+																	:items="data.item.clinical_payments" :fields="tablePaymentDetails"
+																	:show-empty="true" caption-top
+																	:empty-text="$t('datatables.sEmptyTable')" small>
+																	<template #table-caption><strong>{{
+																		$t('patients.statements.payment_details')
+																	}}</strong></template>
 
-														<!-- payment_method -->
-														<template #cell(method)="data">
-															{{ translatePaymentMethod(data.item.payment.method) }}
-														</template>
-													</b-table>
+																	<!-- date -->
+																	<template #cell(date)="data">
+																		{{ data.item.payment_date }}
+																	</template>
 
-													<b-table v-else responsive :foot-clone="false"
-														:no-border-collapse="false" :items="data.item.laboratory_payments"
-														:fields="tablePaymentDetails" :show-empty="true" caption-top
-														:empty-text="$t('datatables.sEmptyTable')" small>
-														<template #table-caption><strong>{{
-															$t('patients.statements.payment_details')
-														}}</strong></template>
+																	<!-- amount -->
+																	<template #cell(amount)="data">
+																		{{ amountFormatted(data.item.amount * 1) }}
+																	</template>
 
-														<!-- date -->
-														<template #cell(date)="data">
-															{{ data.item.payment_date }}
-														</template>
+																	<!-- payment_method -->
+																	<template #cell(method)="data">
+																		{{ translatePaymentMethod(data.item.payment.method) }}
+																	</template>
+																</b-table>
 
-														<!-- amount -->
-														<template #cell(amount)="data">
-															{{ amountFormatted(data.item.amount * 1) }}
-														</template>
+																<b-table v-else responsive :foot-clone="false"
+																	class="text-small table-small small"
+																	:no-border-collapse="false" :items="data.item.laboratory_payments"
+																	:fields="tablePaymentDetails" :show-empty="true" caption-top
+																	:empty-text="$t('datatables.sEmptyTable')" small>
+																	<template #table-caption><strong>{{
+																		$t('patients.statements.payment_details')
+																	}}</strong></template>
 
-														<!-- payment_method -->
-														<template #cell(method)="data">
-															{{ translatePaymentMethod(data.item.payment.method) }}
-														</template>
-													</b-table>
-												</template>
-											</b-table>
-										</b-col>
-									</b-row>
+																	<!-- date -->
+																	<template #cell(date)="data">
+																		{{ data.item.payment_date }}
+																	</template>
+
+																	<!-- amount -->
+																	<template #cell(amount)="data">
+																		{{ amountFormatted(data.item.amount * 1) }}
+																	</template>
+
+																	<!-- payment_method -->
+																	<template #cell(method)="data">
+																		{{ translatePaymentMethod(data.item.payment.method) }}
+																	</template>
+																</b-table>
+															</template>
+														</b-table>
+													</b-col>
+												</b-row>
+											</b-card>
+										</template>
+									</b-table>
 								</b-card>
-							</template>
-						</b-table>
-					</b-card>
+							<!-- </section>
+						</section>
+					</VueHtml2pdf>	 -->
 				</b-col>
 
 				<!-- Right Col: Card -->
@@ -275,6 +299,8 @@
 						</b-button>
 					</b-card>
 				</b-col>
+
+				
 			</b-row>
 		</section>
 	</b-overlay>
@@ -292,6 +318,7 @@ import {
 	BBadge, BOverlay, BSpinner,
 } from 'bootstrap-vue'
 import Ripple from 'vue-ripple-directive'
+import VueHtml2pdf from 'vue-html2pdf'
 
 // Notification
 import { useToast } from "vue-toastification/composition";
@@ -322,6 +349,14 @@ export default {
 		BBadge,
 		BOverlay,
 		BSpinner,
+
+		//
+		VueHtml2pdf,
+	},
+	methods: {
+		generateDocument () {
+			this.$refs.html2Pdf.generatePdf()
+		}
 	},
 	setup() {
 
@@ -333,6 +368,20 @@ export default {
 		const patientData = ref(null)
 		const paymentDetails = ref({})
 		const loading = ref(false)
+
+		const pdfOptions = ref({
+			margin: [5, 0, 0, 2], // top, left, buttom, right
+			image: { type: 'jpg', quality: 0.98 },              
+			html2canvas: {
+				scale: 2,
+				bottom: 0,
+				// letterRendering: true,
+			},
+			jsPDF: {
+			unit: 'mm',
+			orientation: 'portrait',
+			},              
+		})
 
 		const translateMessages = {
             fileName: t('patients.statements.title_download'),
@@ -611,6 +660,7 @@ export default {
 			tableFields,
 			tableDetailFields,
 			tablePaymentDetails,
+			pdfOptions,
 
 			// Total Cost
 			totalCostFormatted,

@@ -11,20 +11,20 @@
         <section class="invoice-add">
             <b-row class="invoice-preview">
                 <!-- Col: Left (Invoice Container) -->
-                <b-col cols="12" xl="8" md="8">
+                <b-col cols="12" xl="9" md="9">
                     <b-card no-body class="invoice-preview-card">
 
                         <!-- Invoice Client & Payment Details -->
-                        <b-card-body class="invoice-padding pt-0">
+                        <b-card-body class="invoice-padding pt-1">
                             <b-row class="invoice-spacing">
-                                <b-col cols="12" xl="8" class="p-1">
+                                <b-col cols="12" xl="8">
                                     <!-- Patients -->
                                     <b-form-group :label="$t('patients.patient')" label-for="patient">
                                         <b-input-group class="input-group-merge">
                                             <b-input-group-prepend is-text>
                                                 <feather-icon icon="SearchIcon" />
                                             </b-input-group-prepend>
-                                            <b-form-input readonly @click="activeSearchPatient = true"
+                                            <b-form-input size="sm" readonly @click="activeSearchPatient = true"
                                                 v-model="selectedPatient.full_name"
                                                 :placeholder="$t('patients.search_options')" />
                                         </b-input-group>
@@ -55,12 +55,9 @@
                                         </b-row>
                                     </b-card-body>
                                 </b-col>
-                                <b-col cols="12" xl="4" class="p-1"></b-col>
-                            </b-row>
+                                <b-col cols="12" xl="4"></b-col>
 
-                            <b-row class="invoice-spacing">
-                                <!-- BranchOffices -->
-                                <b-col cols="12" md="8" class="p-1">
+                                <b-col cols="12" md="8">
                                     <b-form-group :label="$t('branch_office')" label-for="add-branch-office">
                                         <v-select v-model="workorder.branch_office_id" 
                                             label="name" 
@@ -68,55 +65,51 @@
                                             :reduce="branchOffice => branchOffice.id" 
                                             :clearable="false"
                                             :searchable="false"
+                                            class="select-size-sm"
                                             :placeholder="$t('select_an_option')">
                                         </v-select>
                                     </b-form-group>
                                 </b-col>
-                                <b-col cols="12" md="4" class="p-1"></b-col>
-                            </b-row>
+                                <b-col cols="12" md="4"></b-col>
 
-                            <b-row class="invoice-spacing">
-
-                                <!-- Professional -->
-                                <b-col cols="12" md="4" class="p-1">
+                                <b-col cols="12" md="4">
                                     <b-form-group :label="$t('professional')" label-for="add-guests">
                                         <v-select v-model="workorder.professional_id" :options="professionals"
                                             :reduce="professional => professional.id" label="name"
                                             :clearable="false"
                                             :searchable="false"
                                             input-id="add-professional"
+                                            class="select-size-sm"
                                             :placeholder="$t('select_an_option')">                                           
                                         </v-select>
                                     </b-form-group>
                                 </b-col>
 
-                                <!-- Laboratories -->
-                                <b-col cols="12" md="4" class="p-1">
+                                <b-col cols="12" md="4">
                                     <b-form-group :label="$t('laboratory')" label-for="add-laboratory">
                                         <v-select v-model="workorder.laboratory_id" label="name" :options="laboratories"
                                             :reduce="laboratory => laboratory.id"
                                             :clearable="false"
                                             :searchable="false"
+                                            class="select-size-sm"
                                             :placeholder="$t('select_an_option')">
                                         </v-select>
                                     </b-form-group>
                                 </b-col>
 
-                                <b-col cols="12" md="4" class="p-1"></b-col>
-                            </b-row>
+                                <b-col cols="12" md="4"></b-col>
 
-                            <b-row class="invoice-spacing">
-                                <b-col cols="12" md="8" class="p-1">
+                                <b-col cols="12" md="8">
                                     <b-card-text class="mb-0">
                                         <span class="font-weight-bold">{{ $t('work_orders.delivery_materials')}}:</span>
                                     </b-card-text>
-                                    <b-form-textarea v-model="workorder.delivery_materials" id="textarea-default"
+                                    <b-form-textarea size="sm" v-model="workorder.delivery_materials" id="textarea-default"
                                         :placeholder="$t('work_orders.delivery_materials_placeholder')" />
                                 </b-col>
 
                                 <b-col cols="12" md="4"></b-col>
 
-                                <b-col cols="12" md="4" class="p-1">
+                                <b-col cols="12" md="4">
                                     <b-form-group :label="$t('work_orders.application_date')"
                                         label-for="application_date">
                                         <flat-pickr v-model="workorder.application_date" class="form-control" :config="{
@@ -125,7 +118,7 @@
                                         }" placeholder="DD-MM-YYYY" />
                                     </b-form-group>
                                 </b-col>
-                                <b-col cols="12" md="4" class="p-1">
+                                <b-col cols="12" md="4">
                                     <b-form-group :label="$t('work_orders.delivery_date')" label-for="delivery_date">
                                         <flat-pickr v-model="workorder.delivery_date" class="form-control" :config="{
                                             minDate: 'today',
@@ -134,11 +127,9 @@
                                     </b-form-group>
                                 </b-col>
 
-                                <b-col cols="12" md="4" class="p-1"></b-col>
-                            </b-row>
+                                <b-col cols="12" md="4"></b-col>
 
-                            <b-row class="invoice-spacing">
-                                <b-col cols="12" md="8" class="p-1">
+                                <b-col cols="12" md="8">
                                     <b-form-group label-cols="12" label-class="font-weight-bolder" label-align="center"
                                         :label="$t('work_orders.todo')">
                                         <b-form-radio-group id="radio-group-1" v-model="workorder.work_todo"
@@ -146,57 +137,50 @@
                                             class="groupselect mt-2"></b-form-radio-group>
                                     </b-form-group>
                                 </b-col>
-                                <b-col cols="12" md="4" class="p-1"></b-col>
-                            </b-row>
+                                <b-col cols="12" md="4"></b-col>
 
-                            <b-row class="invoice-spacing">
-                                <b-col cols="12" md="4" class="p-1">
+                                <b-col cols="12" md="4">
                                     <b-form-group :label="$t('work_orders.colour')" label-for="colour">
-                                        <b-form-input id="colour" v-model="workorder.colour"
+                                        <b-form-input size="sm" id="colour" v-model="workorder.colour"
                                             :placeholder="$t('work_orders.colour_placeholder')" />
                                     </b-form-group>
                                 </b-col>
 
-                                <b-col cols="12" md="4" class="p-1">
+                                <b-col cols="12" md="4">
                                     <b-form-group :label="$t('work_orders.area_dental')" label-for="area">
-                                        <b-form-input id="area" v-model="workorder.area_dental"
+                                        <b-form-input size="sm" id="area" v-model="workorder.area_dental"
                                             :placeholder="$t('work_orders.area_dental_placeholder')" />
                                     </b-form-group>
                                 </b-col>
 
-                                <b-col cols="12" md="4" class="p-1"></b-col>
+                                <b-col cols="12" md="4"></b-col>
 
-                            </b-row>
-
-                            <b-row class="invoice-spacing">
-                                <b-col cols="12" md="8" class="p-1">
+                                <b-col cols="12" md="8">
                                     <b-card-text class="mb-0">
                                         <span class="font-weight-bold">{{ $t('work_orders.clinical_specification')}}:</span>
                                     </b-card-text>
-                                    <b-form-textarea v-model="workorder.clinical_specification" id="textarea-default"
+                                    <b-form-textarea size="sm" v-model="workorder.clinical_specification" id="textarea-default"
                                         :placeholder="$t('work_orders.clinical_specification_placeholder')" />
                                 </b-col>
 
-                                <b-col cols="12" md="4" class="p-1"></b-col>
-                            </b-row>
+                                <b-col cols="12" md="4"></b-col>
 
-                            <b-row class="invoice-spacing">
-                                <b-col cols="12" md="8" class="p-1">
+                                <b-col cols="12" md="8">
                                     <b-card-text class="mb-0">
                                         <span class="font-weight-bold">{{ $t('work_orders.lab_specification')}}:</span>
                                     </b-card-text>
-                                    <b-form-textarea v-model="workorder.lab_specification" id="textarea-default"
+                                    <b-form-textarea size="sm" v-model="workorder.lab_specification" id="textarea-default"
                                         :placeholder="$t('work_orders.lab_specification_placeholder')" />
                                 </b-col>
 
-                                <b-col cols="12" md="4" class="p-1"></b-col>
+                                <b-col cols="12" md="4"></b-col>
                             </b-row>
                         </b-card-body>
                     </b-card>
                 </b-col>
 
                 <!-- Right Col: Card -->
-                <b-col cols="12" md="4" xl="4" class="invoice-actions">
+                <b-col cols="12" md="3" xl="3" class="invoice-actions">
                     <b-card>
                         <b-button variant="primary" class="mb-75" @click="store" block>
                             {{ $t("save") }}
@@ -391,16 +375,18 @@ export default {
             }
         },
         async getProfessionals() {
-            const doctors = store.state.auth.doctors
-            if (doctors) {
-                this.professionals = doctors
+            if (store.getters['auth/getDoctors'].length > 0) {
+                this.professionals = store.getters['auth/getDoctors']
             } else {
                 this.loading = true
                 const { data } = await UserResource.index({
-                    criteria: 'professionals'
+                    criteria: 'professionals',
+                    isAll: true,
+                    ignoreSchedules: true
                 });
+
                 this.loading = false
-                this.professionals = data.data
+                this.professionals = data
                 store.commit('auth/SET_DOCTORS', this.professionals)
             }
         },

@@ -44,7 +44,7 @@ class TenancyServiceProvider extends ServiceProvider
                     JobPipeline::make([
                         Jobs\CreateDatabase::class,
                         Jobs\MigrateDatabase::class,
-                        // CreateTenantAdmin::class,
+                        //CreateTenantAdmin::class,
                         Jobs\SeedDatabase::class,
                         CreateFrameworkDirectoriesForTenant::class,
     

@@ -377,8 +377,8 @@ export default function userCalendar() {
     slotMaxTime: store.state.auth.setting['schedule_end_time'] || "22:00:00",
     // nextDayThreshold: '09:00:00',
     nowIndicator: true,
-    selectHelper: true,
-    eventLimit: false, // allow "more" link when too many events
+    //selectHelper: true,
+    //eventLimit: false, // allow "more" link when too many events
     events: fetchEvents,
         
 
@@ -454,13 +454,15 @@ export default function userCalendar() {
       */
       event.value = JSON.parse(JSON.stringify(Object.assign(event.value, { start: info.date })))
       // isEventHandlerSidebarActive.value = true   
+
+      // Obtén los roles del usuario desde el store
+      const userRoleIds = store.getters['auth/getUser'].roles.map(role => role.id);
       
-      if (store.getters['auth/getRoleId'] !== 4) {
+      // Verifica si el usuario no tiene el rol con ID 4
+      if (!userRoleIds.includes(4)) {
         const startDate = moment.tz(event.value.start, 'YYYY-MM-DDTHH:mm:ss', timezone).format('DD/MM/YYYY HH:mm');
         fetchAvailable(startDate)
-      }
-
-      
+      }      
     },
 
     /*

@@ -2,13 +2,8 @@
 
 namespace App\Http\Controllers\Central;
 
-// use App\Models\Client;
 use App\Models\User;
 use App\Models\Tenant;
-// use App\Models\Invoice;
-// use App\Models\Employee;
-// use App\Models\Purchase;
-// use App\Models\Supplier;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Services\TenantService;
@@ -54,11 +49,11 @@ class TenantController extends Controller
         }
 
         $tenant = tenant();
-        if ($tenant->manually_subscribed_by) {
+        // if ($tenant->manually_subscribed_by) {
             $tenant->manually_subscribed_by = tenancy()->central(function () use ($tenant) {
                 return $this->userRepository->find($tenant->manually_subscribed_by)?->name ?? null;
             });
-        }
+        // }
 
         $data = new TenantResource($tenant);
 
@@ -94,8 +89,6 @@ class TenantController extends Controller
             $doctorLimit = $tenant->plan->limit_doctor;
             $doctorCurrent = $roles->firstWhere('id', 4)->users_count;
 
-
-
             $assistantLimit = $tenant->plan->limit_assistant;
             $assistantCurrent = $roles->firstWhere('id', 6)->users_count;
 
@@ -117,78 +110,46 @@ class TenantController extends Controller
             return [
                 [
                     'name' => 'tenants.doctors_limit',
-                    'limit' => $doctorLimit == 0 ? 'Unlimited' : $doctorLimit,
+                    'limit' => $doctorLimit == 0 ? 'Ilimitado' : $doctorLimit,
                     'current' => $doctorCurrent,
-                    'remaining' => $doctorLimit == 0 ? 'Unlimited' : $doctorLimit - $doctorCurrent,
+                    'remaining' => $doctorLimit == 0 ? 'Ilimitado' : $doctorLimit - $doctorCurrent,
                     'icon' => 'UsersIcon',
                     'bgColor' => 'primary',
                 ],
                 [
                     'name' => 'tenants.assitant_limit',
-                    'limit' => $assistantLimit == 0 ? 'Unlimited' : $assistantLimit,
+                    'limit' => $assistantLimit == 0 ? 'Ilimitado' : $assistantLimit,
                     'current' => $assistantCurrent,
-                    'remaining' => $assistantLimit == 0 ? 'Unlimited' : $assistantLimit - $assistantCurrent,
+                    'remaining' => $assistantLimit == 0 ? 'Ilimitado' : $assistantLimit - $assistantCurrent,
                     'icon' => 'UserCheckIcon',
                     'bgColor' => 'info',
                 ],
                 [
                     'name' => 'tenants.receptionist_limit',
-                    'limit' => $receptionistLimit == 0 ? 'Unlimited' : $receptionistLimit,
+                    'limit' => $receptionistLimit == 0 ? 'Ilimitado' : $receptionistLimit,
                     'current' => $receptionistCurrent,
-                    'remaining' => $receptionistLimit == 0 ? 'Unlimited' : $receptionistLimit - $receptionistCurrent,
+                    'remaining' => $receptionistLimit == 0 ? 'Ilimitado' : $receptionistLimit - $receptionistCurrent,
                     'icon' => 'UserIcon',
                     'bgColor' => 'success',
                 ],
                 [
                     'name' => 'tenants.patient_limit',
-                    'limit' => $patientLimit == 0 ? 'Unlimited' : $patientLimit,
+                    'limit' => $patientLimit == 0 ? 'Ilimitado' : $patientLimit,
                     'current' => $patientCurrent,
-                    'remaining' => $patientLimit == 0 ? 'Unlimited' : $patientLimit - $patientCurrent,
+                    'remaining' => $patientLimit == 0 ? 'Ilimitado' : $patientLimit - $patientCurrent,
                     'icon' => 'SmileIcon',
                     'bgColor' => 'success',
                 ],
-                // [
-                //     'name' => 'common.domains_limit',
-                //     'limit' => $domainLimit == 0 ? 'Unlimited' : $domainLimit,
-                //     'current' => $domainCurrent == 0 ? 'Unlimited' : $domainCurrent,
-                //     'remaining' => $domainLimit == 0 ? 'Unlimited' : $domainLimit - $domainCurrent,
-                //     'icon' => 'fas fa-globe',
-                //     'bgColor' => 'bg-gray',
-                // ],
-                // [
-                //     'name' => 'common.purchases_limit',
-                //     'limit' => $purchaseLimit == 0 ? 'Unlimited' : $purchaseLimit,
-                //     'current' => $purchaseCurrent == 0 ? 'Unlimited' : $purchaseCurrent,
-                //     'remaining' => $purchaseLimit == 0 ? 'Unlimited' : $purchaseLimit - $purchaseCurrent,
-                //     'icon' => 'fas fa-shopping-basket',
-                //     'bgColor' => 'bg-olive',
-                // ],
-                // [
-                //     'name' => 'common.invoices_limit',
-                //     'limit' => $invoiceLimit == 0 ? 'Unlimited' : $invoiceLimit,
-                //     'current' => $invoiceCurrent == 0 ? 'Unlimited' : $invoiceCurrent,
-                //     'remaining' => $invoiceLimit == 0 ? 'Unlimited' : $invoiceLimit - $invoiceCurrent,
-                //     'icon' => 'fas fa-file-invoice',
-                //     'bgColor' => 'bg-indigo',
-                // ],
             ];
         });
 
-        $tenant->tenant_invoices = $tenant->invoices();
+        $tenant->tenant_invoices = []; //$tenant->invoices();
         return new TenantResource($tenant);
     }
 
     public function store(StoreTenantRequest $request, TenantService $tenantService)
     {
         $tenantService->createTenantAndDomainThenGetDomainWithHost($request);
-
-        //Register recors on digigital ocean        
-        // $this->digitalOceanService->CreateNewDomainRecord($request->domain);
-        // $this->digitalOceanService->CreateNewDomainRecord("www." . $request->domain);
-
-        //generate file config on subdomain & cert
-        // Artisan::call("generate:site-config");
-
         return $this->sendResponse([], 'Tenant created successfully');
     }
 
@@ -203,87 +164,7 @@ class TenantController extends Controller
     public function update(UpdateTenantRequest $request, Tenant $tenant)
     {
         try {
-
-            if ($tenant->doDomains()->count() <= 0) {
-                $this->createDigitalOceanRecords($tenant->domain, $tenant->id);
-
-                //Check file config on sites-available
-                $serverIpAddress = $request->server('SERVER_ADDR');
-                if ($serverIpAddress === env('IP_SERVER_DIGITAL_OCEAN')) {
-                    $command = 'sudo ls /etc/nginx/sites-available';
-                    $output = shell_exec($command);
-                    $files = explode("\n", trim($output));
-
-                    foreach ($files as $key => $file) {
-                        if ($file !== $tenant->domain) {
-                            $tenantSubdomain = $tenant->domain;
-                            $mainDomain = "fichadentales.com";
-                            $nginxConfig = <<<EOL
-                                server {       
-                                    root /var/www/fichadentales/public;
-                                    index index.php index.html index.htm index.nginx-debian.html;
-
-                                    add_header X-Frame-Options "SAMEORIGIN";
-                                    add_header X-XSS-Protection "1; mode=block";
-                                    add_header X-Content-Type-Options "nosniff";
-
-                                    charset utf-8;
-
-                                    server_name $tenantSubdomain.$mainDomain www.$tenantSubdomain.$mainDomain;
-
-                                    location / {
-                                        try_files \$uri \$uri/ /index.php?\$query_string;
-                                    }
-
-                                    location ~ \.php$ {
-                                        include snippets/fastcgi-php.conf;
-                                        fastcgi_pass unix:/var/run/php/php8.2-fpm.sock;
-                                    }
-
-                                    location ~ /\.ht {
-                                        deny all;
-                                    }
-
-                                    location ~ /\.env {
-                                        deny all;
-                                    }
-                                }
-                                EOL;
-
-                            $tenantConfigPath = "/etc/nginx/sites-available/$tenantSubdomain";
-                            $nginxConfigFilePath = '/tmp/nginx_config'; // Ruta temporal para el archivo de configuración
-
-                            // Crear un archivo temporal para la configuración de Nginx
-                            file_put_contents($nginxConfigFilePath, $nginxConfig);
-                            Log::warning("generate file");
-                            // sleep(5);
-
-                            // Copiar el archivo temporal a la ubicación de configuración de Nginx con sudo
-                            exec("sudo cp /tmp/nginx_config /etc/nginx/sites-available/$tenantSubdomain");
-                            Log::warning("use cp");
-                            // sleep(5);
-
-                            exec("sudo ln -s /etc/nginx/sites-available/$tenantSubdomain /etc/nginx/sites-enabled/");
-                            Log::warning("enabled sites");
-                            // sleep(5);
-
-                            // Recargar la configuración de Nginx
-                            exec('sudo service nginx reload');
-                            Log::warning("reload nginx");
-                            // sleep(5);
-
-                            // Instalar el certificado SSL con Let's Encrypt
-                            // exec("sudo certbot certonly --webroot -w /var/www/fichadentales -d $tenantSubdomain.$mainDomain -d www.$tenantSubdomain.$mainDomain");
-                            // exec("sudo certbot --nginx -d $tenantSubdomain.$mainDomain -d www.$tenantSubdomain.$mainDomain");
-                            exec("sudo certbot --non-interactive --nginx --redirect --force-renewal -d $tenantSubdomain.$mainDomain -d www.$tenantSubdomain.$mainDomain");
-
-                            // Eliminar el archivo temporal
-                            unlink($nginxConfigFilePath);
-                        }
-                    }
-                }
-            }
-
+            $tenant->update($request->validated());
             return $this->sendResponse($tenant, 'Tenant updated successfully');
         } catch (Exception $ex) {
             return $this->sendError($ex->getMessage());

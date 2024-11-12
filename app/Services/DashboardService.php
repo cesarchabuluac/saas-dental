@@ -43,11 +43,12 @@ class DashboardService implements IDashboardService
 
         $to = Carbon::today()->endOfDay();
         $from = Carbon::today()->startOfDay();
+        $userRoleIds = auth()->user()->roles->pluck('id')->toArray();
 
         if ($request->boolean('onlyRevenue')) {
             $from = Carbon::parse($request->start_at)->startOfDay();
             $to = Carbon::parse($request->end_at)->endOfDay();
-            $revenueDoctors = (in_array(auth()->user()->roles[0]->id, $this->roles)) ? $this->userRepository->revenueReport($from, $to) : [];
+            $revenueDoctors = (array_intersect($userRoleIds, $this->roles)) ? $this->userRepository->revenueReport($from, $to) : [];
 
             return [
                 "revenueDoctors" => $revenueDoctors,
@@ -81,22 +82,22 @@ class DashboardService implements IDashboardService
                 $from = Carbon::now()->subMonthsNoOverflow()->endOfMonth()->startOfDay();
             }
         }
-        return $this->getSummeryBetweenDates($from, $to);
+        return $this->getSummeryBetweenDates($from, $to, $userRoleIds);
     }
 
-    public function getSummeryBetweenDates($from, $to)
+    public function getSummeryBetweenDates($from, $to, $userRoleIds)
     {
-        $amountEarningLastMonth = (in_array(auth()->user()->roles[0]->id, $this->roles)) ? $this->paymentRepository->earningLastMonth() : $this->paymentRepository->earningLastMonthByUser();
-        $amountEarningCurrentMonth = (in_array(auth()->user()->roles[0]->id, $this->roles)) ? $this->paymentRepository->earningCurrentMonth() : $this->paymentRepository->earningCurrentMonthByUser();
-        $amountEarningDay = (in_array(auth()->user()->roles[0]->id, $this->roles)) ? $this->paymentRepository->earningCurrentDay() : $this->paymentRepository->earningCurrentDayByUser();
-        $totalPatientCountCurrentMonth = (in_array(auth()->user()->roles[0]->id, $this->roles)) ? $this->patientRepository->countByMonth() : 0;
-        $totalPatientCountLastMonth = (in_array(auth()->user()->roles[0]->id, $this->roles)) ? $this->patientRepository->countByLastMonth() : 0;
-        $amountExpenseLastMonth = (in_array(auth()->user()->roles[0]->id, $this->roles)) ? $this->expenseRepository->amountLastMonth() : 0;
-        $amountExpenseCurrentMonth = (in_array(auth()->user()->roles[0]->id, $this->roles)) ? $this->expenseRepository->amountCurrentMonth() : 0;
-        $amountExpenseCurrentDay = (in_array(auth()->user()->roles[0]->id, $this->roles)) ? $this->expenseRepository->amountCurrentDay() : 0;
-        $countBudgetApprovedCurrentMonth = (in_array(auth()->user()->roles[0]->id, $this->roles)) ? $this->budgetRepository->countCurrentMonth() : $this->budgetRepository->countCurrentMonthByUser();
-        $totalBuddgetApproved = (in_array(auth()->user()->roles[0]->id, $this->roles)) ? $this->budgetRepository->totalBudgetApproved($from, $to) : 0;
-        $totalBudgetPaid = (in_array(auth()->user()->roles[0]->id, $this->roles)) ? $this->budgetRepository->totalPaidByDate($from, $to) : 0;
+        $amountEarningLastMonth = (array_intersect($userRoleIds, $this->roles)) ? $this->paymentRepository->earningLastMonth() : $this->paymentRepository->earningLastMonthByUser();
+        $amountEarningCurrentMonth = (array_intersect($userRoleIds, $this->roles)) ? $this->paymentRepository->earningCurrentMonth() : $this->paymentRepository->earningCurrentMonthByUser();
+        $amountEarningDay = (array_intersect($userRoleIds, $this->roles)) ? $this->paymentRepository->earningCurrentDay() : $this->paymentRepository->earningCurrentDayByUser();
+        $totalPatientCountCurrentMonth = (array_intersect($userRoleIds, $this->roles)) ? $this->patientRepository->countByMonth() : 0;
+        $totalPatientCountLastMonth = (array_intersect($userRoleIds, $this->roles)) ? $this->patientRepository->countByLastMonth() : 0;
+        $amountExpenseLastMonth = (array_intersect($userRoleIds, $this->roles)) ? $this->expenseRepository->amountLastMonth() : 0;
+        $amountExpenseCurrentMonth = (array_intersect($userRoleIds, $this->roles)) ? $this->expenseRepository->amountCurrentMonth() : 0;
+        $amountExpenseCurrentDay = (array_intersect($userRoleIds, $this->roles)) ? $this->expenseRepository->amountCurrentDay() : 0;
+        $countBudgetApprovedCurrentMonth = (array_intersect($userRoleIds, $this->roles)) ? $this->budgetRepository->countCurrentMonth() : $this->budgetRepository->countCurrentMonthByUser();
+        $totalBuddgetApproved = (array_intersect($userRoleIds, $this->roles)) ? $this->budgetRepository->totalBudgetApproved($from, $to) : 0;
+        $totalBudgetPaid = (array_intersect($userRoleIds, $this->roles)) ? $this->budgetRepository->totalPaidByDate($from, $to) : 0;
 
 
         //User doctors        
@@ -112,7 +113,7 @@ class DashboardService implements IDashboardService
             'transfer' => 0,
         ];
 
-        $professionalId = in_array(auth()->user()->roles[0]->id, $this->roles) ? null : auth()->user()->id;
+        $professionalId = array_intersect($userRoleIds, $this->roles) ? null : auth()->user()->id;
 
         $paymentMethods = DB::select("SELECT pm.name, COALESCE(ROUND(SUM(ap.amount)), 0) AS amount FROM payment_methods pm 
             LEFT JOIN payments p ON p.payment_method_id = pm.id 

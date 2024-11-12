@@ -25,14 +25,10 @@ class UpdateUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => [
-                'required', 'min:3'
-            ],
-            // 'email' => [
-            //     'required', 'email', \Rule::unique((new \User)->getTable())->ignore($this->route()->user->id ?? null)
-            // ],
-            // 'email' => 'required|string|max:255|unique:users,email,'.$this->user,
+            'name' => ['required', 'min:3'],
             'password' => 'nullable|string|min:6',
+            'roles' => 'required|array',
+            'schedule' => 'required_if:roles,4|array',
         ];
     }
 

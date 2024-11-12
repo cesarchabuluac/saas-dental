@@ -1,5 +1,58 @@
 <template>
    <div>
+
+    <b-card no-body class="mb-0_">
+        <div class="m-2">
+            <b-row>
+                <b-col cols="12" md="3">
+                    <b-form-group :label="$t('inventories.medicines.fields.warehouse')">
+                        <v-select 
+                            v-model="filter.warehouse_id"
+                            :options="warehouses"
+                            label="name" 
+                            :reduce="option => option.id"
+                            :placeholder="$t('select_an_option')"
+                            :searchable="false"
+                            class="select-size-sm"
+                            @input="getMedicines">
+                        </v-select>
+                    </b-form-group>
+                </b-col>
+
+                <b-col cols="12" md="3">
+                    <b-form-group :label="$t('inventories.medicines.fields.unit')">
+                        <v-select id="unit_id" v-model="filter.unit_id" :options="units" :reduce="unit => unit.id"
+                            label="name" :placeholder="$t('inventories.medicines.fields.unit_placeholder')" 
+                            class="select-size-sm" 
+                            @input="getMedicines"/>
+                    </b-form-group>
+                </b-col>
+
+                <b-col cols="12" md="3">
+                    <b-form-group :label="$t('inventories.medicines.fields.brand')">
+                        <v-select id="brand_id" v-model="filter.brand_id" :options="brands"
+                            :reduce="brand => brand.id" label="name"
+                            :placeholder="$t('inventories.medicines.fields.brand_placeholder')" 
+                            class="select-size-sm" 
+                            @input="getMedicines"/>
+                    </b-form-group>
+                </b-col>
+
+                <b-col cols="12" md="3">
+                    <b-form-group :label="$t('inventories.medicines.fields.category')">
+                        <v-select id="category_id" v-model="filter.category_id" :options="categories"
+                            :reduce="category => category.id" label="name"
+                            :placeholder="$t('inventories.medicines.fields.category_placeholder')" 
+                            class="select-size-sm"
+                            @input="getMedicines"/>
+                    </b-form-group>
+                </b-col>
+            </b-row>
+            
+        </div>
+    </b-card>
+
+
         <!-- Table Container Card -->
         <b-card no-body class="mb-0">
             <div class="m-2">
@@ -12,9 +65,9 @@
                             v-model="perPage"
                             :options="perPageOptions"
                             :clearable="false"
-                            class="per-page-selector d-inline-block mx-50"
+                            class="per-page-selector select-size-sm d-inline-block mx-50"
                         />
-                        <b-button v-if="canAccess('inventories.medicines.create')" variant="primary" @click="onShowModalCreateUpdateMedicine=true">
+                        <b-button size="sm" v-if="canAccess('inventories.medicines.create')" variant="primary" @click="onShowModalCreateUpdateMedicine=true">
                             <span class="text-wrap">
                                 {{ $t("add") }}
                             </span>
@@ -25,10 +78,10 @@
                     <b-col cols="12" md="6">
                         <div class="d-flex align-items-center justify-content-end">
                             <b-input-group>
-                                <b-form-input v-model="search" class="d-inline-block _mr-1" :placeholder="$t('inventories.medicines.search_help')"
+                                <b-form-input size="sm" v-model="filter.search" class="d-inline-block _mr-1" :placeholder="$t('inventories.medicines.search_help')"
                                 @keyup.enter="getMedicines"/>
                                 <b-input-group-prepend>
-                                <b-button variant="primary" @click="getMedicines">
+                                <b-button size="sm" variant="primary" @click="getMedicines">
                                     <feather-icon icon="SearchIcon" />
                                 </b-button>
                                 </b-input-group-prepend>
@@ -40,8 +93,8 @@
 
             <b-table
                 ref="refMedicinesListTable"
-                class="position-relative"
-                :items="medicines"
+                class="position-relative table-small text-small small"
+                :items="dataMedicines"
                 responsive
                 :fields="columns"
                 primary-key="id"
@@ -50,7 +103,8 @@
                 :empty-text="$t('datatables.sZeroRecords')"
                 :sort-desc.sync="sortDesc"
                 :current-page="currentPage"
-                busy.sync="loading"
+                :busy.sync="loading"
+                small
             >
                 <!-- Empty -->
                 <template slot="empty">
@@ -64,13 +118,28 @@
                     </div>
                 </template>
 
-                <template #cell(name)="data">
+                <!-- <template #cell(name)="data">
                     {{data.item.name}}<br>
                     <small><strong>SKU: {{data.item.sku}}</strong></small>
+                </template> -->
+                <template #cell(name)="data">
+                    <b-link @click="showStocks(data.item)" class="text-wrap" :id="`medicine-row-${data.item.id}-detail-icon`"
+                        v-b-tooltip.hover :title="$t('stock_per_warehouse')">
+                        {{ data.item.name }}<br>
+                        <small><strong>SKU: {{data.item.sku}}</strong></small>
+                    </b-link>
                 </template>
 
                 <template #cell(warehouse)="data">
-                    {{data.item.warehouse.name}}
+                    {{ data.item.stocks
+                        .map(stock => stock.warehouse ? stock.warehouse.name : '')
+                        .filter(name => name) // Esto eliminará las cadenas vacías del resultado final.
+                        .join(', ') 
+                    }}
+                </template>
+
+                <template #cell(unit_id)="data">
+                    {{data.item.unit.name}}
                 </template>
 
                 <template #cell(category)="data">
@@ -99,11 +168,11 @@
                 </template>
 
                  <template #cell(expiration_date)="data">
-                    {{formatDateTime(data.item.expiration_date)}}
+                    <span class="text-capitalize">{{formatDateTime(data.item.expiration_date)}}</span>
                 </template>
 
                 <template #cell(created_at)="data">
-                    {{formatDateTime(data.item.created_at)}}
+                    <span class="text-capitalize">{{formatDateTime(data.item.created_at)}}</span>
                 </template>
 
                 <template #cell(updated_at)="data">
@@ -432,6 +501,65 @@
                 </b-form>
             </validation-observer>
         </b-modal>
+
+        <!-- Modal stocks -->
+        <b-modal
+            ref="refModalCreateUpdateUnit"
+            id="modalCreateUpdateUnit"
+            :title="$t('inventories.medicines.title_modal_stock')"
+            no-close-on-backdrop
+            :ok-title="$t('close')"
+            :cancel-title="$t('cancel')"
+            ok-only
+            
+            @cancel="onShowModalStocks=false"
+            @hidden="onShowModalStocks=false"
+            :visible="onShowModalStocks"
+            >
+
+            <table v-if="medicineWithStocks.name" class="border text-small small w-100 ">
+                <tr>
+                    <td>{{ $t('inventories.medicines.medicine') }}</td>
+                    <td>{{ medicineWithStocks.name }}</td>
+                </tr>
+                <tr>
+                    <td>{{ $t('inventories.medicines.fields.sku') }}</td>
+                    <td>{{ medicineWithStocks.sku }}</td>
+                </tr>
+                <tr>
+                    <td>{{ $t('inventories.medicines.fields.unit') }}</td>
+                    <td>{{ medicineWithStocks.unit.name }}</td>
+                </tr>
+                <tr>
+                    <td>{{ $t('inventories.medicines.fields.category') }}</td>
+                    <td>{{ medicineWithStocks.category.name }}</td>
+                </tr>
+                <tr>
+                    <td>{{ $t('inventories.medicines.fields.brand') }}</td>
+                    <td>{{ medicineWithStocks.brand.name }}</td>
+                </tr>
+                <tr>
+                    <td>{{ $t('price') }}</td>
+                    <td>{{ medicineWithStocks.price }}</td>
+                </tr>
+            </table>
+            
+
+            <table class="table mt-1 table-bordered table-striped table-hover table-sm">
+                <thead>
+                    <tr>
+                        <th class="text-center">{{ $t('inventories.medicines.fields.warehouse') }}</th>
+                        <th class="text-center">{{ $t('inventories.medicines.current_stock') }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(stock, index) in medicineWithStocks.stocks" :key="index">
+                        <td>{{ stock.warehouse.name }}</td>
+                        <td class="text-center">{{ stock.quantity }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </b-modal>
     </div>
 </template>
 
@@ -520,6 +648,7 @@ export default {
         ValidationObserver,
     },
     directives: {
+        'b-tooltip': VBTooltip,
         Ripple,
     },
     data () {
@@ -528,6 +657,14 @@ export default {
                 {
                     key: "name",
                     label: this.$t('inventories.medicines.medicine'),
+                },
+                {
+                    key: "warehouse",
+                    label: this.$t('inventories.medicines.fields.warehouse'),
+                },
+                {
+                    key: "unit_id",
+                    label: this.$t('inventories.medicines.unit'),
                 },
                 {
                     key: "category",
@@ -590,6 +727,16 @@ export default {
             to: 0,
             loading: false,
             onShowModalCreateUpdateMedicine: false,
+            onShowModalStocks: false,
+            filter: {
+                unit_id: null,
+                brand_id: null,
+                category_id: null,
+                warehouse_id: '',
+                search: null,
+            },
+            medicineWithStocks: {},
+
         }
     },
     computed: {
@@ -602,6 +749,20 @@ export default {
                 to: this.perPage * (this.currentPage - 1) + localItemsCount,
                 of: this.totalMedicines,
             };
+        },
+        dataMedicines() {
+            if (this.filter.warehouse_id) {
+                return this.medicines
+                    .filter(medicine => medicine.stocks.some(stock => stock.warehouse_id === this.filter.warehouse_id))
+                    .map(medicine => {
+                        return {
+                            ...medicine,
+                            stocks: medicine.stocks.filter(stock => stock.warehouse_id === this.filter.warehouse_id)
+                        };
+                    });
+            } else {
+                return this.medicines;
+            }
         },
     },
     watch: {
@@ -646,13 +807,22 @@ export default {
         },
     },
     async mounted() {
-        // await this.getWarehouses()
-        await this.getUnits()
-        await this.getBrands()
-        await this.getCategories()
+
+        await Promise.all([
+            this.getWarehouses(),
+            this.getUnits(),
+            this.getBrands(),
+            this.getCategories()
+        ]);
+        
         await this.getMedicines();
     },
     methods: {
+        showStocks(item) {
+            this.medicineWithStocks = {...item}
+            this.onShowModalStocks = true
+            console.log(this.medicineWithStocks)
+        },
         validationForm() {
             this.$refs.simpleRules.validate().then(success => {
                 if (success) {
@@ -661,8 +831,8 @@ export default {
             })
         },
         async getUnits() {
-            if (store.state.inventory.units.length > 0) {
-                this.units = store.state.inventory.units
+            if (store.getters['inventory/getUnits'].length > 0) {
+                this.units = store.getters['inventory/getUnits']
             } else {
                 this.loading = true
                 const { data } = await UnitResource.index({ all: true })
@@ -672,8 +842,8 @@ export default {
             }
         },
         async getBrands() {
-            if (store.state.inventory.brands.length > 0) {
-                this.brands = store.state.inventory.brands
+            if (store.getters['inventory/getBrands'].length > 0) {
+                this.brands = store.getters['inventory/getBrands']
             } else {
                 this.loading = true
                 const { data } = await BrandResource.index({ all: true })
@@ -683,8 +853,8 @@ export default {
             }
         },
         async getWarehouses() {
-            if (store.state.inventory.warehouse.length > 0) {
-                this.warehouses = store.state.inventory.warehouses
+            if (store.getters['inventory/getWarehouses'].length > 0) {
+                this.warehouses = store.getters['inventory/getWarehouses']
             } else {
                 this.loading = true
                 const { data } = await WarehouseResource.index({ all: true })
@@ -694,8 +864,8 @@ export default {
             }
         },
         async getCategories() {
-            if (store.state.inventory.categories.length > 0) {
-                this.categories = store.state.inventory.categories
+            if (store.getters['inventory/getCategories'].length > 0) {
+                this.categories = store.getters['inventory/getCategories']
             } else {
                 this.loading = true
                 const { data } = await CategoryResource.index({ all: true })
@@ -715,14 +885,20 @@ export default {
             })
         },
         async getMedicines() {
-            this.loading = true
-            const { data } = await MedicineResource.index({
+            
+            this.medicines = []
+            this.totalMedicines = 0
+
+            const query = {
+                ...this.filter,
                 page: this.currentPage,
                 perPage: this.perPage,
                 sortBy: this.sortBy,
                 sortDesc: this.sortDesc,
-                search: this.search,
-            })
+            }
+
+            this.loading = true
+            const { data } = await MedicineResource.index(query)
             this.loading = false
             this.medicines = data.data.data;
             this.totalMedicines = data.data.total;

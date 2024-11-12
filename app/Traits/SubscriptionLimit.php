@@ -13,11 +13,10 @@ trait SubscriptionLimit
     /**
      * @throws \Exception
      */
-    public function checkSubscriptionLimitByModelName($userRoleID): void
-    {
-        Log::info($userRoleID);
-        if (empty($userRoleID)) {
-            throw new \Exception('User role can\'t be empty for checkSubscriptionLimitByUserRole method');
+    public function checkSubscriptionLimitByModelName(array $userRoleIDs): void
+    {        
+        if (empty($userRoleIDs)) {
+            throw new \Exception('User role IDs can\'t be empty for checkSubscriptionLimitByModelNames method');
         }
 
         if (tenant()->on_trial) {
@@ -26,42 +25,47 @@ trait SubscriptionLimit
             });
         } else {
             $tenantPlan = tenant()->plan;
-        }
+        }        
 
-        Log::info($tenantPlan);
+        $roleLimits = [
+            2 => "limit_director",
+            3 => "limit_receptionist",
+            4 => "limit_doctor",
+            5 => "limit_patient",
+            6 => "limit_assistant" // Cambia el ID de rol y el nombre del límite según corresponda
+        ];
 
-        $limitColumnName = null;
-        switch ($userRoleID) {            
-            case 2:
-                $limitColumnName = "limit_director";
-                break;
-            case 3:
-                $limitColumnName = "limit_receptionist";
-                break;
-            case 4:
-                $limitColumnName = "limit_doctor";
-                break;
-            case 5:
-                $limitColumnName = "limit_patient";
-                break;
-            case 4:
-                $limitColumnName = "limit_assistant";
-                break;
-        }
-
-        $tenantLimit = $tenantPlan ? $tenantPlan->$limitColumnName : null;
-        $tenantCurrentCount = $this->getTenantCurrentCountByUserRole($userRoleID);
-
-        if ($tenantLimit <= $tenantCurrentCount && $tenantLimit > 0) {
-            response()->json([
-                'success' => false,                
-                'error' => true,
-                'message' => __('lang.subscription_limit'),
-                'data' => [
+        $limits = [];
+        $roleName = null;
+        foreach ($userRoleIDs as $userRoleID) {
+            if (!isset($roleLimits[$userRoleID])) {
+                throw new \Exception('Invalid role ID provided');
+            }
+    
+            $limitColumnName = $roleLimits[$userRoleID];
+            $tenantLimit = $tenantPlan ? $tenantPlan->$limitColumnName : null;
+            $tenantCurrentCount = $this->getTenantCurrentCountByUserRole($userRoleID);    
+            if ($tenantLimit <= $tenantCurrentCount['current'] && $tenantLimit > 0) {
+                $roleName = $tenantCurrentCount['name'];
+                $limits[$userRoleID] = [
                     'limit' => $tenantLimit,
                     'used' => $tenantCurrentCount,
-                ],
-            ], 201)->throwResponse();
+                    'name' => $roleName
+                ];
+            }
+        }        
+
+        if (!empty($limits)) {
+            $data = [
+                'success' => false,
+                'error' => true,
+                'message' => __('lang.subscription_limit', ['role' => $roleName]),
+                'data' => $limits,
+            ];
+            Log::info($data);
+            response()->json($data, 201)->throwResponse();
+        } else {
+            Log::info('Subscription limit check passed');   
         }
     }
 
@@ -69,6 +73,9 @@ trait SubscriptionLimit
     {
         $role = Role::withCount('users')->where('id', $userRoleID)->first();
         $current =  $role->users_count;
-        return $current;
+        return [
+            "current" => $current,
+            "name" => $role->name
+        ];
     }
 }

@@ -20,14 +20,11 @@ export const SetupGuard = (to, from, next) => {
 
 export const SubscriptionGuard = (to, from, next) => {
 
-    console.table(`¿ es central ? ${checkIsCentral()}`)
+    //console.table(`¿ es central ? ${checkIsCentral()}`)
 
-    if (checkIsCentral()) {
+    if (!checkIsCentral()) {
         const isSubscriptionActive = store.getters['auth/getCurrentAccount'].is_subscribed;
         const isInitialSetUpActive = store.getters['auth/getCurrentAccount'].initial_setup;
-        const roleId = store.getters['auth/getRoleId']        
-
-        console.table(isInitialSetUpActive)
        
         if (!isInitialSetUpActive) {
             next({ name: "initial-setup" }); // Redirige al usuario a la página de configuracion inicial o a otra página bloqueada

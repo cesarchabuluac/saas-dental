@@ -1,11 +1,5 @@
 <template>
-    <b-overlay
-        :show="loading"
-        blur="2px"
-        variant="transparent"
-        rounded="lg"
-        opacity="0.85"
-    >
+    <b-overlay :show="loading" blur="2px" variant="transparent" rounded="lg" opacity="0.85">
         <template #overlay>
             <div class="d-flex align-items-center">
                 <b-spinner small type="grow" variant="secondary" />
@@ -19,56 +13,26 @@
                     <b-row>
                         <!-- Field: name -->
                         <b-col cols="12" md="4">
-                            <b-form-group
-                                :label="$t('laboratory_actions.name')"
-                                label-for="name"
-                            >
-                                <b-form-input
-                                    id="name"
-                                    v-model="action.name"
-                                    :placeholder="
-                                        $t(
-                                            'laboratory_actions.name_placeholder'
-                                        )
-                                    "
-                                />
+                            <b-form-group :label="$t('laboratory_actions.name')" :description="$t('laboratory_actions.name_help')" label-for="name">
+                                <b-form-input id="name" v-model="action.name" :placeholder="$t('laboratory_actions.name_placeholder')" />
                             </b-form-group>
                         </b-col>
 
                         <!-- Cost -->
                         <b-col cols="12" md="4">
-                            <b-form-group
-                                :label="$t('laboratory_actions.cost')"
-                                label-for="cost"
-                            >
-                                <b-form-input
-                                    id="cost"
-                                    v-model="action.cost"
-                                    :placeholder="
-                                        $t(
-                                            'laboratory_actions.cost_placeholder'
-                                        )
-                                    "
-                                    type="number"
-                                />
+                            <b-form-group :label="$t('laboratory_actions.cost')" :description="$t('laboratory_actions.cost_help')" label-for="cost">
+                                <b-form-input id="cost" v-model="action.cost" :placeholder="$t('laboratory_actions.cost_placeholder')" type="number" />
                             </b-form-group>
                         </b-col>
                     </b-row>
 
                     <!-- Action Buttons -->
-                    <b-button
-                        v-if="canAccess('laboratory_actions.store')"
-                        variant="primary"
-                        class="mb-1 mb-sm-0 mr-0 mr-sm-1"
-                        @click="store"
-                    >
+                    <b-button v-if="canAccess('laboratory_actions.store')" variant="primary"
+                        class="mb-1 mb-sm-0 mr-0 mr-sm-1" @click="store">
                         {{ $t("save") }}
                     </b-button>
-                    <b-button
-                        variant="outline-secondary"
-                        class="mb-1 mb-sm-0 mr-0 mr-sm-1"
-                        @click="$router.push({ name: 'laboratory-actions' })"
-                    >
+                    <b-button variant="outline-secondary" class="mb-1 mb-sm-0 mr-0 mr-sm-1"
+                        @click="$router.push({ name: 'laboratory-actions' })">
                         {{ $t("back") }}
                     </b-button>
                 </b-form>
@@ -139,10 +103,10 @@ export default {
         return {
             action: {},
             loading: false,
-            action_id: router.currentRoute.params.id, 
+            action_id: router.currentRoute.params.id,
         };
     },
-    async mounted () {
+    async mounted() {
         await this.getAction()
     },
     methods: {

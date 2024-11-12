@@ -13,14 +13,14 @@
                    <b-row>
                        <!-- Field: name -->
                        <b-col cols="12" md="4">
-                           <b-form-group :label="$t('laboratory_actions.name')" label-for="name">
+                           <b-form-group :label="$t('laboratory_actions.name')" :description="$t('laboratory_actions.name_help')" label-for="name">
                                <b-form-input id="name" v-model="action.name" :placeholder="$t('laboratory_actions.name_placeholder')"/>
                            </b-form-group>
                        </b-col>
 
                        <!-- Cost -->
                        <b-col cols="12" md="4">
-                           <b-form-group :label="$t('laboratory_actions.cost')" label-for="cost">
+                           <b-form-group :label="$t('laboratory_actions.cost')" :description="$t('laboratory_actions.cost_help')" label-for="cost">
                                <b-form-input id="cost" v-model="action.cost" :placeholder="$t('laboratory_actions.cost_placeholder')" type="number"/>
                            </b-form-group>
                        </b-col>

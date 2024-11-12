@@ -37,6 +37,7 @@
             <div class="card-header">
               <div class="d-flex align-content-center justify-content-between w-100">
                 <v-select class="w-100"
+                  :disabled="!isAdmin && !isDirector"
                   v-model="selectedProfessional"
                   :options="professionals"
                   label="name" 
@@ -171,6 +172,7 @@ export default {
     const searchQuery = ref("")
     const nextAppointments = ref([])
     const activeModal = ref(false)
+    const userRoles = store.getters['auth/getUser'].roles.map(role => role.id)
 
     const CALENDAR_APP_STORE_MODULE_NAME = 'calendar'
 
@@ -178,9 +180,9 @@ export default {
     if (!store.hasModule(CALENDAR_APP_STORE_MODULE_NAME)) store.registerModule(CALENDAR_APP_STORE_MODULE_NAME, calendarStoreModule)
 
     // UnRegister on leave
-    // onUnmounted(() => {
-    //   if (store.hasModule(CALENDAR_APP_STORE_MODULE_NAME)) store.unregisterModule(CALENDAR_APP_STORE_MODULE_NAME)
-    // })
+    onUnmounted(() => {
+      if (store.hasModule(CALENDAR_APP_STORE_MODULE_NAME)) store.unregisterModule(CALENDAR_APP_STORE_MODULE_NAME)
+    })
 
     const {
       isLoading,
@@ -230,6 +232,10 @@ export default {
 
     const professionals = computed(() => store.state.calendar.useProfessionals)   
 
+    const isAdmin = computed(() => userRoles.includes(1))
+    const isDirector = computed(() => userRoles.includes(2))
+    const isProfessional = computed(() => userRoles.includes(4))
+
     fetchEvents()
 
     return {
@@ -237,6 +243,9 @@ export default {
       refCalendar,
       isCalendarOverlaySidebarActive,
       event,
+      isAdmin,
+      isDirector,
+      isProfessional,
       clearEventData,
       addEvent,
       updateEvent,

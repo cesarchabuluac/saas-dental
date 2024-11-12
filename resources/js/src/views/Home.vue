@@ -348,16 +348,16 @@ export default {
             return store.getters['auth/getCurrentAccount']
         },
         isAdmin() {
-            return store.state.auth.user.roles[0].id === 1;
+            return store.getters['auth/getRoleId'] === 1 //store.state.auth.user.roles[0].id === 1;
         },
         isDirector() {
-            return store.state.auth.user.roles[0].id === 2;
+            return store.getters['auth/getRoleId'] === 2 // store.state.auth.user.roles[0].id === 2;
         },
         isDoctor() {
-            return store.state.auth.user.roles[0].id === 4;
+            return store.getters['auth/getRoleId'] === 4 // store.state.auth.user.roles[0].id === 4;
         },
         isPatient() {
-            return store.state.auth.user.roles[0].id === 5;
+            return store.getters['auth/getRoleId'] === 5 // store.state.auth.user.roles[0].id === 5;
         },
         dataPatient() {
             return {} //store.state.auth.user.patient
@@ -398,7 +398,6 @@ export default {
             this.loading = true
             const { data } = await DashboardResource.index({})
             this.loading = false
-            console.log(data)
         },
         async getDashboard() {
             this.loading = true;
@@ -456,12 +455,12 @@ export default {
         },
         resolveUserRoleVariant(roles) {
             if (!_.isEmpty(roles)) {
-                if (roles[0].id == 1) return "danger"; // Administrator
-                if (roles[0].id == 2) return "warning"; // Director
-                if (roles[0].id == 3) return "primary"; // Recepcionista
-                if (roles[0].id == 4) return "secondary"; // Profesional
-                if (roles[0].id == 5) return "success"; // Paciente
-                if (roles[0].id == 6) return "info"; // Asistente Dental
+                if (store.getters['auth/getRoleId'] == 1) return "danger"; // Administrator
+                if (store.getters['auth/getRoleId'] == 2) return "warning"; // Director
+                if (store.getters['auth/getRoleId'] == 3) return "primary"; // Recepcionista
+                if (store.getters['auth/getRoleId'] == 4) return "secondary"; // Profesional
+                if (store.getters['auth/getRoleId'] == 5) return "success"; // Paciente
+                if (store.getters['auth/getRoleId'] == 6) return "info"; // Asistente Dental
             }
             return "primary";
         },

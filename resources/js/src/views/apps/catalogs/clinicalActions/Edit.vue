@@ -13,7 +13,7 @@
                     <b-row>
                         <!-- Groups -->
                         <b-col cols="12" md="4">
-                            <b-form-group label-for="actionGroupList" :label="$t('clinical_actions.group')">
+                            <b-form-group label-for="actionGroupList" :description="$t('clinical_actions.group_help')" :label="$t('clinical_actions.group')">
                                 <v-select
                                     id="actionGroupList"
                                     v-model="action.action_group_id"
@@ -30,21 +30,21 @@
 
                         <!-- Field: name -->
                         <b-col cols="12" md="4">
-                            <b-form-group :label="$t('clinical_actions.name')" label-for="name">
+                            <b-form-group :label="$t('clinical_actions.name')" :description="$t('clinical_actions.name_help')" label-for="name">
                                 <b-form-input id="name" v-model="action.name" :placeholder="$t('clinical_actions.name_placeholder')"/>
                             </b-form-group>
                         </b-col>
 
                         <!-- Postal Area -->
                         <b-col cols="12" md="4">
-                            <b-form-group :label="$t('clinical_actions.area')" label-for="area">
+                            <b-form-group :label="$t('clinical_actions.area')" :description="$t('clinical_actions.area_help')" label-for="area">
                                 <b-form-input id="area" v-model="action.area" :placeholder="$t('clinical_actions.area_placeholder')"/>
                             </b-form-group>
                         </b-col>
 
                         <!-- Cost -->
                         <b-col cols="12" md="4">
-                            <b-form-group :label="$t('clinical_actions.cost')" label-for="cost">
+                            <b-form-group :label="$t('clinical_actions.cost')" :description="$t('clinical_actions.cost_help')" label-for="cost">
                                 <b-form-input id="cost" v-model="action.cost" :placeholder="$t('clinical_actions.cost_placeholder')" type="number"/>
                             </b-form-group>
                         </b-col>

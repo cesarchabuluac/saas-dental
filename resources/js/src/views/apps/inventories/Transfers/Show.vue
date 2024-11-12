@@ -13,162 +13,172 @@
                 <!-- Col: Left (Invoice Container) -->
                 <b-col cols="12" xl="9" md="8">
                     <b-form @submit.prevent>
-                        <b-card no-body class="invoice-preview-card">           
+                        <b-card>
+                            <b-row class="invoice-spacing">
 
-                            <!-- Purchase Supplier Client & Details -->
-                            <b-card-body class="invoice-padding pt-0">
-                                <b-row class="invoice-spacing">
+                                <!-- Col: Invoice To -->
+                                <b-col cols="12" xl="6">
 
-                                    <!-- Col: Invoice To -->
-                                    <b-col cols="12" xl="6" class="mb-lg-1">
+                                        <!-- From Warehouses -->
+                                    <div v-if="invoiceData.from_warehouse">
+                                        <label class="mb-50">{{ $t('inventories.transfers.fields.from_warehouse') }}</label>
+                                        <b-form-input
+                                            size="sm"
+                                            readonly
+                                            v-model="invoiceData.from_warehouse.name"
+                                            class="form-control"
+                                            :placeholder="$t('inventories.transfers.fields.from_warehouse_placeholder')"/>
+                                    </div>
 
-                                         <!-- From Warehouses -->
-                                        <div v-if="invoiceData.from_warehouse" class="mt-2">
-                                            <label class="mb-50">{{ $t('inventories.transfers.fields.from_warehouse') }}</label>
-                                            <b-form-input
-                                                readonly
-                                                v-model="invoiceData.from_warehouse.name"
-                                                class="form-control"
-                                                :placeholder="$t('inventories.transfers.fields.from_warehouse_placeholder')"/>
-                                        </div>
+                                    <!-- To Warehouses -->
+                                    <div v-if="invoiceData.to_warehouse">
+                                        <label class="mb-50">{{ $t('inventories.transfers.fields.to_warehouse') }}</label>
+                                        <b-form-input
+                                            size="sm"
+                                            readonly
+                                            v-model="invoiceData.to_warehouse.name"
+                                            class="form-control"
+                                            :placeholder="$t('inventories.transfers.fields.to_warehouse_placeholder')"
+                                        />
+                                    </div>
+                                </b-col>
 
-                                        <!-- To Warehouses -->
-                                        <div v-if="invoiceData.to_warehouse" class="mt-2">
-                                            <label class="mb-50">{{ $t('inventories.transfers.fields.to_warehouse') }}</label>
-                                            <b-form-input
-                                                readonly
-                                                v-model="invoiceData.to_warehouse.name"
-                                                class="form-control"
-                                                :placeholder="$t('inventories.transfers.fields.to_warehouse_placeholder')"
-                                            />
-                                        </div>
-
-
-                                     
-                                    </b-col>
-
-                                    <!-- Col: Transfer Details -->
-                                    <b-col xl="6" cols="12" class="mt-xl-0 mt-2 justify-content-end d-xl-flex d-block">
-                                        <div>
-                                            <table>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="pr-1">{{ $t('inventories.transfers.fields.reference') }}</td>
-                                                        <td>
-                                                            <b-form-input
-                                                                readonly
-                                                                id="invoice-data-id"
-                                                                v-model="invoiceData.reference"
-                                                                class="invoice-edit-input"
-                                                            />
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="pr-1">{{ $t('inventories.transfers.fields.date') }}</td>
-                                                        <td>
-                                                            <flat-pickr
-                                                                disabled
-                                                                v-model="invoiceData.transfer_date"
-                                                                class="form-control invoice-edit-input mt-1"
-                                                                />
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </b-col>
-                                </b-row>
-                            </b-card-body>
+                                <!-- Col: Transfer Details -->
+                                <b-col xl="6" cols="12" class="mt-xl-0 mt-2 justify-content-end d-xl-flex d-block">
+                                    <div>
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td>{{ $t('inventories.transfers.fields.reference') }}</td>
+                                                    <td>
+                                                        <b-form-input
+                                                            size="sm"
+                                                            readonly
+                                                            id="invoice-data-id"
+                                                            v-model="invoiceData.reference"
+                                                            class="invoice-edit-input mt-0"
+                                                        />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{ $t('inventories.transfers.fields.date') }}</td>
+                                                    <td>
+                                                        <b-form-input
+                                                            size="sm"
+                                                            readonly                                                            
+                                                            :value="formatDate(invoiceData.transfer_date)"
+                                                            class="invoice-edit-input mt-0"  />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{ $t('inventories.transfers.fields.state') }}</td>
+                                                    <td>
+                                                        <v-select
+                                                            disabled
+                                                            v-model="invoiceData.status"
+                                                            :options="transferStatus"
+                                                            label="label"
+                                                            :clearable="false"
+                                                            :reduce="option => option.value"
+                                                            class="invoice-edit-input w-100 mt-0 select-size-sm"
+                                                            :placeholder="$t('inventories.transfers.fields.state_placeholder')"
+                                                        />
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </b-col>
+                            </b-row>
 
                            <!-- Items Section -->
-                            <b-card-body class="invoice-padding form-item-section">
-                                <div ref="form" class="repeater-form" :style="{height: trHeight}">
-                                    <b-row v-for="(item, index) in invoiceData.items" :key="index" ref="row" class="pb-2">
+                           <b-row>
+                                <b-col cols="12">
+                                    <div ref="form" class="repeater-form" :style="{height: trHeight}">
+                                        <b-row v-for="(item, index) in invoiceData.items" :key="index" ref="row" class="pb-2">
 
-                                        <!-- Item Form -->
-                                        <!-- ? This will be in loop => So consider below markup for single item -->
-                                        <b-col cols="12">
+                                            <!-- Item Form -->
+                                            <!-- ? This will be in loop => So consider below markup for single item -->
+                                            <b-col cols="12">
 
-                                            <!-- ? Flex to keep separate width for XIcon and SettingsIcon -->
-                                            <div class="d-none d-lg-flex">
-                                                <b-row class="flex-grow-1 px-1">
-                                                    <!-- Single Item Form Headers -->
-                                                    <b-col cols="12" lg="6">{{ $t('inventories.transfers.table.items.medicine') }}</b-col>
-                                                    <b-col cols="12" lg="3">{{ $t('inventories.transfers.table.items.stock') }}</b-col>
-                                                    <b-col cols="12" lg="3">{{ $t('inventories.transfers.table.items.quantity') }}</b-col>
-                                                </b-row>
-                                                <div class="form-item-action-col" />
-                                            </div>
+                                                <!-- ? Flex to keep separate width for XIcon and SettingsIcon -->
+                                                <div class="d-none d-lg-flex">
+                                                    <b-row class="flex-grow-1 px-1">
+                                                        <!-- Single Item Form Headers -->
+                                                        <b-col cols="12" lg="6">{{ $t('inventories.transfers.table.items.medicine') }}</b-col>
+                                                        <b-col cols="12" lg="3">{{ $t('inventories.transfers.table.items.stock') }}</b-col>
+                                                        <b-col cols="12" lg="3">{{ $t('inventories.transfers.table.items.quantity') }}</b-col>
+                                                    </b-row>
+                                                    <div class="form-item-action-col" />
+                                                </div>
 
-                                            <!-- Form Input Fields OR content inside bordered area  -->
-                                            <!-- ? Flex to keep separate width for XIcon and SettingsIcon -->
-                                            <div class="d-flex border rounded">
-                                                <b-row class="flex-grow-1 p-2">
-                                                    <!-- Single Item Form Headers -->
-                                                    <b-col cols="12" lg="6">
-                                                        <label class="d-inline d-lg-none">{{ $t('inventories.transfers.table.items.medicine') }}</label>
-                                                        <b-form-input
-                                                            v-model="item.name"
-                                                            readonly
-                                                        />
-                                                    </b-col>
-                                                    <b-col cols="12" lg="3">
-                                                        <label class="d-inline  d-lg-none">{{ $t('inventories.transfers.table.items.stock') }}</label>
-                                                        <b-form-input v-model="item.stock" type="number" class="mb-2" disabled/>
-                                                    </b-col>
-                                                    <b-col cols="12" lg="3">
-                                                        <label class="d-inline d-lg-none">{{ $t('inventories.transfers.table.items.quantity') }}</label>
-                                                        <b-form-input
-                                                            readonly
-                                                            autocomplete="off"
-                                                            v-model="item.quantity"
-                                                            type="number"
-                                                            class="mb-2"
-                                                            min="1"
-                                                            placeholder="Ejem. 10"
-                                                        />
-                                                    </b-col>
-                                                    <b-col cols="12" lg="6">
-                                                        <label class="d-inline d-lg-none">{{ $t('inventories.transfers.table.items.description') }}</label>
-                                                        <p class="mb-1">
-                                                            SKU: {{ item.sku }}<br>
-                                                            {{ item.description }}
-                                                        </p>
-                                                    </b-col>
-                                                </b-row>
-                                            </div>
-                                        </b-col>
-                                    </b-row>
-                                </div>
-                            </b-card-body>
+                                                <!-- Form Input Fields OR content inside bordered area  -->
+                                                <!-- ? Flex to keep separate width for XIcon and SettingsIcon -->
+                                                <div class="d-flex border rounded">
+                                                    <b-row class="flex-grow-1 p-2">
+                                                        <!-- Single Item Form Headers -->
+                                                        <b-col cols="12" lg="6">
+                                                            <label class="d-inline d-lg-none">{{ $t('inventories.transfers.table.items.medicine') }}</label>
+                                                            <b-form-input
+                                                                size="sm"
+                                                                v-model="item.name"
+                                                                readonly
+                                                            />
+                                                        </b-col>
+                                                        <b-col cols="12" lg="3">
+                                                            <label class="d-inline  d-lg-none">{{ $t('inventories.transfers.table.items.stock') }}</label>
+                                                            <b-form-input size="sm" v-model="item.stock" type="number" class="mb-2" disabled/>
+                                                        </b-col>
+                                                        <b-col cols="12" lg="3">
+                                                            <label class="d-inline d-lg-none">{{ $t('inventories.transfers.table.items.quantity') }}</label>
+                                                            <b-form-input
+                                                                readonly
+                                                                autocomplete="off"
+                                                                v-model="item.quantity"
+                                                                type="number"
+                                                                class="mb-2"
+                                                                min="1"
+                                                                size="sm"
+                                                                placeholder="Ejem. 10"
+                                                            />
+                                                        </b-col>
+                                                        <b-col cols="12" lg="6">
+                                                            <label class="d-inline d-lg-none">{{ $t('inventories.transfers.table.items.description') }}</label>
+                                                            <p class="mb-1">
+                                                                SKU: {{ item.sku }}<br>
+                                                                {{ item.description }}
+                                                            </p>
+                                                        </b-col>
+                                                    </b-row>
+                                                </div>
+                                            </b-col>
+                                        </b-row>
+                                    </div>
+                                </b-col>
+                            </b-row>
+                            
+                            <b-row>
 
-                            <!-- Invoice Description: Total -->
-                            <b-card-body class="invoice-padding pb-0">
-                                <b-row>
+                                <!-- Col: Notes -->
+                                <b-col cols="12" md="6" order="2" order-md="1">
+                                    <b-form-group :label="$t('inventories.transfers.fields.comments')" label-for="comments" 
+                                        :description="$t('inventories.transfers.fields.comments_help')">
+                                        <b-form-textarea disabled id="comments" size="sm" v-model="invoiceData.note" 
+                                        :placeholder="$t('inventories.transfers.fields.comments_placeholder')" />
+                                    </b-form-group>
+                                </b-col>
 
-                                    <!-- Col: Notes -->
-                                    <b-col cols="12" md="6" class="mt-md-0 mt-3 d-flex align-items-center" order="2" order-md="1">
-                                        <b-card-body class="invoice-padding pt-0">
-                                            <label for="invoice-data-sales-person" class="text-nowrap mr-50 font-weight-bold">{{ $t('inventories.transfers.fields.comments') }}</label>
-                                            <b-form-textarea disabled v-model="invoiceData.note" />
-                                        </b-card-body>
-                                    </b-col>
-
-                                    <!-- Col: Actions -->
-                                    <b-col cols="12" md="6" class="mt-md-6 d-flex justify-content-end" order="1" order-md="2">
-                                        <div class="invoice-total-wrapper">
-                                            <div class="invoice-total-item">
-                                                <b-button @click="$router.push({ name: 'apps-inventories-transfers'})" v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="secondary" block>
-                                                    {{ $t('back') }}
-                                                </b-button>
-                                            </div>
+                                <!-- Col: Actions -->
+                                <b-col cols="12" md="6" class="mt-md-6 d-flex justify-content-end" order="1" order-md="2">
+                                    <div class="invoice-total-wrapper">
+                                        <div class="invoice-total-item">
+                                            <b-button @click="$router.push({ name: 'apps-inventories-transfers'})" v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="secondary" block>
+                                                {{ $t('back') }}
+                                            </b-button>
                                         </div>
-                                    </b-col>
-                                </b-row>
-                            </b-card-body>
-
-                            <!-- Spacer -->
-                            <hr class="invoice-spacing">
+                                    </div>
+                                </b-col>
+                            </b-row>                            
                         </b-card>
                     </b-form>
                 </b-col>
@@ -313,22 +323,30 @@ export default {
             loading.value = true
             const { data } = await TransferResource.show(id);
             loading.value = false
+
+            invoiceData.value = {...data.data}
+
+            invoiceData.value.items = data.data.items.map(item => {
+                item.description = item.medicine.description || null
+                item.stock = item.stock.quantity
+                return item
+            })  
            
-            invoiceData.value = {
-                from_warehouse: data.data.from_warehouse,
-                from_warehouse_id: data.data.from_warehouse_id,
-                to_warehouse_id: data.data.to_warehouse_id,
-                to_warehouse: data.data.to_warehouse,
-                user_id: data.data.user_id,
-                reference: data.data.reference,
-                transfer_date: data.data.transfer_date,
-                items: data.data.items.map(item => {
-                    item.description = item.medicine.description || null
-                    item.stock = item.stock.quantity
-                    return item
-                }),
-                note: data.data.note,
-            }
+            // invoiceData.value = {
+            //     from_warehouse: data.data.from_warehouse,
+            //     from_warehouse_id: data.data.from_warehouse_id,
+            //     to_warehouse_id: data.data.to_warehouse_id,
+            //     to_warehouse: data.data.to_warehouse,
+            //     user_id: data.data.user_id,
+            //     reference: data.data.reference,
+            //     transfer_date: data.data.transfer_date,
+            //     items: data.data.items.map(item => {
+            //         item.description = item.medicine.description || null
+            //         item.stock = item.stock.quantity
+            //         return item
+            //     }),
+            //     note: data.data.note,
+            // }
         }
 
         onMounted(async () => {

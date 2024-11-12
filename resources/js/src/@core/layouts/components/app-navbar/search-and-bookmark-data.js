@@ -21,7 +21,9 @@ export default {
       { title: 'Button Group', route: { name: 'components-button-group' }, icon: 'BoldIcon', isBookmarked: false },
       { title: 'Button Toolbar', route: { name: 'components-button-toolbar' }, icon: 'BoldIcon', isBookmarked: false },
       { title: 'Button', route: { name: 'components-button' }, icon: 'BoldIcon', isBookmarked: false },
+      
       { title: 'appointments.menu', route: { name: 'appointments' }, icon: 'CalendarIcon', isBookmarked: true, permission: 'appointments.index' },
+
       { title: 'Calendar Component', route: { name: 'components-calendar' }, icon: 'CalendarIcon', isBookmarked: false },
       { title: 'Card Actions', route: { name: 'card-action' }, icon: 'CreditCardIcon', isBookmarked: false },
       { title: 'Carousel', route: { name: 'components-carousel' }, icon: 'CopyIcon', isBookmarked: false },
@@ -110,7 +112,11 @@ export default {
       { title: 'Timeline', route: { name: 'components-timeline' }, icon: 'GitCommitIcon', isBookmarked: false },
       { title: 'Toastification', route: { name: 'extensions-toastification' }, icon: 'BellIcon', isBookmarked: false },
       { title: 'Toasts', route: { name: 'components-toasts' }, icon: 'BellIcon', isBookmarked: false },
+      
       { title: 'todos.menu', route: { name: 'apps-todo' }, icon: 'CheckSquareIcon', isBookmarked: true, permission: 'todos.index' },
+      { title: 'patients.menu', route: { name: 'apps-patients-list' }, icon: 'HeartIcon', isBookmarked: true, permission: 'patients.index' },
+
+
       { title: 'Tooltip', route: { name: 'components-tooltip' }, icon: 'CopyIcon', isBookmarked: false },
       { title: 'Tour', route: { name: 'extensions-tour' }, icon: 'GlobeIcon', isBookmarked: false },
       // { title: 'Tree', route: { name: 'extensions-tree' }, icon: 'GitCommitIcon', isBookmarked: false },
@@ -289,4 +295,15 @@ export default {
       },
     ],
   },
+  reportes: {
+    key: 'title',
+    data: [
+      { title: 'Reporte de Citas Médicas', route: { name: 'reports-appointments' }, icon: 'CalendarIcon', isBookmarked: false },
+      { title: 'Reporte de Pacientes', route: { name: 'reports-patients' }, icon: 'HeartIcon', isBookmarked: false },
+      { title: 'Reporte de Gastos', route: { name: 'reports-expenses' }, icon: 'TrendingDownIcon', isBookmarked: false },
+      { title: 'Reporte de Pagos', route: { name: 'reports-payments' }, icon: 'TrendingUpIcon', isBookmarked: false },
+      { title: 'Reporte de Medicamentos', route: { name: 'reports-medicines' }, icon: 'PackageIcon', isBookmarked: false },
+      { title: 'Reporte de Presupuestos', route: { name: 'reports-budgets' }, icon: 'PieChartIcon', isBookmarked: false },
+    ],
+  }
 }

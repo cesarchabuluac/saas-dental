@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="{{ global_asset('css/core.css') }}">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="{{ global_asset('images/logo/SoftDental.png') }}">
+  <link rel="shortcut icon" href="{{ config('settings.app_logo') }}">
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -34,7 +34,7 @@
   </noscript> -->
   <div id="loading-bg">
     <div class="loading-logo">
-      <!-- <img src="{{ global_asset('images/logo/SoftDental.png') }}" alt="Logo" /> -->
+      <img src="{{ config('settings.app_logo') }}" alt="Soft-Dental" />
     </div>
     <div class="loading">
       <div class="effect-1 effects"></div>
@@ -62,7 +62,7 @@
     localStorage.setItem('vapid_key', `{!!config('settings.firebase_vapid_key')!!}`)
 
     window._setting = {
-      app_logo: `{{ isset($app_logo) ? $app_logo : public_path('images/logo/logo.jpg') }}`,
+      app_logo: `{{ config('settings.app_logo') }}`,
       theme: `{{ config('settings.app_theme')}}`,
       app_name: `{{ config('settings.app_name') }}`,
       app_short_description: `{{ config('settings.app_short_description') }}`,

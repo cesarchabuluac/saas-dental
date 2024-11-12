@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import { SubscriptionGuard } from '../guards'
 Vue.use(VueRouter)
 
+import reports from './reports'
+
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
@@ -451,24 +453,24 @@ const router = new VueRouter({
       },
     },
     //Billings
-    {
-      path: "/billing/history",
-      name: "billing-history",
-      component: () => import("@/views/central/billings/Index.vue"),
-      meta: {
-        permission: "tenants.index",
-        pageTitle: "billings.histories.desc",
-        breadcrumb: [
-          {
-            text: "dashboard",
-          },
-          {
-            text: "billings.histories.slug",
-            active: true,
-          },
-        ],
-      },
-    },
+    // {
+    //   path: "/billing/history",
+    //   name: "billing-history",
+    //   component: () => import("@/views/central/billings/Index.vue"),
+    //   meta: {
+    //     permission: "tenants.index",
+    //     pageTitle: "billings.histories.desc",
+    //     breadcrumb: [
+    //       {
+    //         text: "dashboard",
+    //       },
+    //       {
+    //         text: "billings.histories.slug",
+    //         active: true,
+    //       },
+    //     ],
+    //   },
+    // },
 
     //APPS
 
@@ -1655,131 +1657,7 @@ const router = new VueRouter({
     // *===============================================---*
     // *--------- REPORTS --------------------------------*
     // *===============================================---*        
-    {
-      path: '/reports',
-      name: 'reports',
-      component: () => import("@/views/reports/Index.vue"),
-      beforeEnter: SubscriptionGuard,
-      meta: {
-        permission: "reports.index",
-        pageTitle: "reports.desc",
-        breadcrumb: [
-          {
-            text: "dashboard",
-            to: "/"
-          },
-          {
-            text: "reports.slug",
-            active: true,
-          },
-        ],
-      },
-    },
-    {
-      path: "/reports/appointments",
-      name: "reports-appointments",
-      component: () =>
-        import("@/views/reports/appointments/ReportAppointment.vue"),
-      beforeEnter: SubscriptionGuard,
-      meta: {
-        permission: "reports.index",
-        pageTitle: "reports.appointments.desc",
-        breadcrumb: [
-          {
-            text: "dashboard",
-            to: "/",
-          },
-          {
-            text: "reports.appointments.slug",
-            active: true,
-          },
-        ],
-      },
-    },
-    {
-      path: "/reports/patients",
-      name: "reports-patients",
-      component: () =>
-        import("@/views/reports/ReportPatients.vue"),
-      beforeEnter: SubscriptionGuard,
-      meta: {
-        permission: "reports.index",
-        pageTitle: "reports.patients.desc",
-        breadcrumb: [
-          {
-            text: "dashboard",
-            to: "/",
-          },
-          {
-            text: "reports.patients.slug",
-            active: true,
-          },
-        ],
-      },
-    },
-    {
-      path: "/reports/expenses",
-      name: "reports-expenses",
-      component: () =>
-        import("@/views/reports/ReportExpenses.vue"),
-      beforeEnter: SubscriptionGuard,
-      meta: {
-        permission: "reports.index",
-        pageTitle: "reports.expenses.desc",
-        breadcrumb: [
-          {
-            text: "dashboard",
-            to: "/",
-          },
-          {
-            text: "reports.expenses.slug",
-            active: true,
-          },
-        ],
-      },
-    },
-    {
-      path: "/reports/payments",
-      name: "reports-payments",
-      component: () =>
-        import("@/views/reports/ReportPayments.vue"),
-      beforeEnter: SubscriptionGuard,
-      meta: {
-        permission: "reports.index",
-        pageTitle: "reports.payments.desc",
-        breadcrumb: [
-          {
-            text: "dashboard",
-            to: "/",
-          },
-          {
-            text: "reports.payments.slug",
-            active: true,
-          },
-        ],
-      },
-    },
-    {
-      path: "/reports/medicines",
-      name: "reports-medicines",
-      component: () =>
-        import("@/views/reports/ReportMedicines.vue"),
-      beforeEnter: SubscriptionGuard,
-      meta: {
-        permission: "reports.index",
-        pageTitle: "reports.medicines.desc",
-        breadcrumb: [
-          {
-            text: "dashboard",
-            to: "/",
-          },
-          {
-            text: "reports.medicines.slug",
-            active: true,
-          },
-        ],
-      },
-    },
+   ...reports,
 
   ],
 })

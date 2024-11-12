@@ -13,7 +13,6 @@
                 <b-col md="6">
                     <b-form-group :label="$t('app_setting_enable_tax')" label-for="app_setting_enable_tax">
                         <b-form-checkbox
-                            disabled
                             id="app_setting_enable_tax"
                             v-model="config.enable_tax"
                             name="app_setting_enable_tax">
@@ -24,9 +23,8 @@
 
                 <!-- Numeral Formatting -->
                 <b-col md="6">
-                    <b-form-group :label="$t('app_setting_default_tax')" label-for="number">
+                    <b-form-group :label="$t('app_setting_default_tax')" :description="$t('app_setting_default_tax_help')" label-for="number">
                         <cleave
-                            disabled
                             id="number"
                             v-model="config.default_tax"
                             class="form-control"

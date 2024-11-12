@@ -58,6 +58,7 @@ class PatientAPIController extends Controller
     public function index(Request $request)
     {
         $roles = array(1, 2); //Super Admin | Director
+        $userRoleIds = auth()->user()->roles->pluck('id')->toArray();
 
         //Is Report
         if ($request->boolean('isReport')) {
@@ -183,8 +184,9 @@ class PatientAPIController extends Controller
                     )";
                 $patients = DB::select($query);
             } else {
-                $patients = (in_array(auth()->user()->roles[0]->id, $roles)) ?
-                    DB::select("select
+
+                if (array_intersect($userRoleIds, $roles)) {
+                  $patients =  DB::select("select
                     p.id,
                     concat(coalesce(p.name, ' '), ' ', coalesce(p.last_name, ' '), ' ', coalesce(p.mother_last_name, ' ')) as patient_name,
                     p.email,
@@ -210,7 +212,10 @@ class PatientAPIController extends Controller
                     where p.created_at >='{$start}' and p.created_at <= '{$end}'
                     and p.deleted_at is null
                     group by p.id, p.name, p.last_name, p.mother_last_name , p.email, p.cellphone, p.phone, p.created_at
-                    order by patient_name asc ") : [];
+                    order by patient_name asc ");
+                } else {
+                    $patients = [];
+                }
             }
 
             return $this->sendResponse($patients, 'Patients retrievied successfully');

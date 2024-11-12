@@ -47,7 +47,7 @@ class MedicineAPIController extends Controller
         }
 
         $query = $this->medicineRepository->query()
-            ->with(['unit', 'brand', 'category', 'subCategory'])
+            ->with(['unit', 'brand', 'category', 'subCategory', 'stocks.warehouse'])
             ->where(function ($q) use ($searchTerm) {
                 $q->where('name', 'like', '%' . $searchTerm . '%')
                     ->orWhere('sku', 'like', '%' . $searchTerm . '%');
@@ -55,6 +55,11 @@ class MedicineAPIController extends Controller
             ->when($request->filled('unit_id'), fn ($query) => $query->where('unit_id', $request->unit_id))
             ->when($request->filled('brand_id'), fn ($query) => $query->where('brand_id', $request->brand_id))
             ->when($request->filled('category_id'), fn ($query) => $query->where('category_id', $request->patient_id));
+            // ->when($request->filled('warehouse_id'), function ($query) use ($request) {
+            //     return $query->whereHas('stocks', function ($query) use ($request) {
+            //         return $query->where('warehouse_id', $request->warehouse_id);
+            //     });
+            // });
 
         if ($isAll) {
             $medicines = $query->orderBy('name', 'ASC')->get();

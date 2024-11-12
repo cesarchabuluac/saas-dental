@@ -9,7 +9,7 @@
         <span v-if="statisticText">{{ statisticText }}<br></span>
         <span v-if="statisticDescription">{{ statisticDescription }}</span>
       </div>
-      <b-avatar :variant="`light-${color}`" size="45">
+      <b-avatar v-if="icon" :variant="`light-${color}`" size="45">
         <feather-icon size="21" :icon="icon"/>
       </b-avatar>
     </b-card-body>

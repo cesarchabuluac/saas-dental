@@ -59,7 +59,6 @@ class UserAPIController extends Controller
      */
     public function index(Request $request)
     {
-        Log::info($request->all());
         $this->userRepository->pushCriteria(new TenantCriteria());
         $this->userRepository->pushCriteria(new UserCriteria($request));
 
@@ -67,13 +66,19 @@ class UserAPIController extends Controller
             return $this->userRepository->with(['roles', 'schedules'])->get();
         }
 
-        return $this->userRepository->with('roles')
+        $users = $this->userRepository->with(['roles', 'schedules'])
             ->where(function ($q) {
                 $q->where('name', 'LIKE', '%' . request('search') . '%')
                     ->orWhere('email', 'LIKE', '%' . request('search') . '%');
-            })
-            // ->orderBy(request('sortBy'), request('sortDesc') ? 'asc' : 'desc')
-            ->withTrashed()
+            });
+
+        if ($request->filled('isAll')) {
+            return $users->get();
+        }  
+            
+        Log::info("aqui paso");
+
+            return $users->withTrashed()
             ->paginate(request('perPage'));
     }
 
@@ -96,14 +101,15 @@ class UserAPIController extends Controller
     public function store(CreateUserRequest $request)
     {
         if (tenant()) {
-            $this->checkSubscriptionLimitByModelName($request->role_id);
+            $this->checkSubscriptionLimitByModelName($request->roles);
         }
 
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
-        $role = $this->roleRepository->find($input['role_id']);
+        $roles = $request->roles;
         unset($input['role_id']);
         unset($input['schedules']);
+        unset($input['roles']);
         $input['email_verified_at'] = Carbon::now();
 
         $setting = $this->settingRepository->whereIn('key', ['language', 'app_theme'])->get();
@@ -119,12 +125,33 @@ class UserAPIController extends Controller
 
             DB::beginTransaction();
             $user = $this->userRepository->create($input);
-            $user->syncRoles($role->name);
+            $user->syncRoles($roles);           
 
             if (tenant()) {
-                if ($role->id === 4) { //Doctor
-                    $user->schedules()->createMany($request->schedules);
-                }
+
+                //Verficar si en array de $request['roles'] esta el id 4 que es el del doctor
+                if (in_array(4, $roles)) {
+
+                    //Validar si el array de $request['schedules'] no esta vacio
+                    if (!empty($request->schedules)) {
+
+                        //Recorrer el array de $request['schedules']
+                        $schedules = $request->schedules;
+                        foreach ($schedules as $schedule) {
+
+                            //Crear un nuevo registro en la tabla user_schedules
+                            if(!empty($schedule['breaks'])) {
+                                $schedule['breaks'] = json_encode($schedule['breaks']);
+                            } else {
+                                $schedule['breaks'] = null;
+                            }
+                            $user->schedules()->create($schedule);
+                        }
+                    } else {
+                        DB::rollBack();
+                        return $this->sendError(__('lang.schedules_required'));   
+                    }                    
+                }                
             }
             DB::commit();
 
@@ -292,6 +319,26 @@ class UserAPIController extends Controller
             return $this->sendError(__('lang.not_found', ['operator' => __('lang.user')]));
         }
 
+        //Obtener los roles actuales del usuario:
+        $currentRoleIds = $oldUser->roles->pluck('id')->toArray();
+
+        //Comparar con los roles nuevos:
+        $newRoleIds = $request->input('roles'); // Este es un array de IDs de roles
+
+        //array_diff para encontrar roles añadidos o eliminados:
+        $roleIdsAdded = array_diff($newRoleIds, $currentRoleIds);
+        $roleIdsRemoved = array_diff($currentRoleIds, $newRoleIds);
+
+        
+        //Valida si es tenant y si los roles han cambiado:        
+        if (tenant()) {
+            if (count($roleIdsAdded) > 0) {
+
+                $this->checkSubscriptionLimitByModelName($roleIdsAdded);
+            }
+        }
+
+        //Si existe la variable de isSettings entonces solo actualiza la configuración del usuario
         if ($request->boolean('isSettings')) {
             $settings = $oldUser->settings;
             if ($request->filled('locale')) {
@@ -305,52 +352,84 @@ class UserAPIController extends Controller
             return $this->sendResponse($oldUser->load('roles'), __('lang.updated_successfully', ['operator' => __('lang.setting')]));
         }
 
+        //Si no es settings entonces actualiza el usuario
         $input = $request->except(['avatar', 'schedules', 'change_avatar', 'role_id', 'role', 'roles', 'has_media', 'deleted_at', 'created_at', 'updated_at', 'verified', 'id']);
+        
+        //Si el campo de password no esta vacio entonces hashea la contraseña
         if (isset($input['password']) && !empty($input['password'])) {
             $input['password'] = Hash::make($input['password']);
         } else {
             unset($input['password']);
         }
 
-        $role = $this->roleRepository->find($request->role_id);
         try {
 
             DB::beginTransaction();
             $user = $this->userRepository->update($input, $id);
-            $user->syncRoles($role->name);
+            $user->syncRoles($newRoleIds);
+                    
 
             if (tenant()) {
-                $user->load(['roles', 'schedules']);
 
-                if ($role->id === 4) {
-                    $requestSchedules = $request->schedules;
-                    $existingSchedules = $user->schedules()->get(); // Obtiene los días existentes
-    
-                    // Recorre los días existentes y verifica si no están en la selección actual
-                    $existingSchedules->each(function ($schedule) use (&$requestSchedules) {
-                        $found = false;
-                        foreach ($requestSchedules as $key => $requestSchedule) {
-                            if ($schedule->day_of_week == $requestSchedule['day_of_week']) {
-                                $found = true;
-                                // Actualiza los campos personalizados como "start_time" y "end_time"
-                                $schedule->start_time = $requestSchedule['start_time'];
-                                $schedule->end_time = $requestSchedule['end_time'];
-                                $schedule->save();
-                                // Quita el día del arreglo $requestSchedules para evitar duplicados
-                                unset($requestSchedules[$key]);
-                                break;
+                //Verficar si en array de $request['roles'] esta el id 4 que es el del doctor
+                if(in_array(4, $newRoleIds)) {
+
+                    //Validar si el array de $request['schedules'] no esta vacio
+                    if (!empty($request->schedules)) {
+
+                        $user->schedules()->delete();
+
+                        //Recorrer el array de $request['schedules']
+                        $schedules = $request->schedules;
+                        Log::warning($schedules);
+                        foreach ($schedules as $schedule) {
+
+                            //Crear un nuevo registro en la tabla user_schedules
+                            if(!empty($schedule['breaks'])) {
+                                $schedule['breaks'] = json_encode($schedule['breaks']);
+                            } else {
+                                $schedule['breaks'] = null;
                             }
+                            $user->schedules()->create($schedule);
                         }
-    
-                        // Si no se encontró el día en la selección actual, elimínalo
-                        if (!$found) {
-                            $schedule->delete();
-                        }
-                    });
-    
-                    // Luego, agrega los nuevos días que quedan en $requestSchedules
-                    $user->schedules()->createMany($requestSchedules);
+                    } else {
+                        DB::rollBack();
+                        return $this->sendError(__('lang.schedules_required'));   
+                    }                    
                 }
+
+
+                // $user->load(['roles', 'schedules']);
+
+                // if ($role->id === 4) {
+                //     $requestSchedules = $request->schedules;
+                //     $existingSchedules = $user->schedules()->get(); // Obtiene los días existentes
+    
+                //     // Recorre los días existentes y verifica si no están en la selección actual
+                //     $existingSchedules->each(function ($schedule) use (&$requestSchedules) {
+                //         $found = false;
+                //         foreach ($requestSchedules as $key => $requestSchedule) {
+                //             if ($schedule->day_of_week == $requestSchedule['day_of_week']) {
+                //                 $found = true;
+                //                 // Actualiza los campos personalizados como "start_time" y "end_time"
+                //                 $schedule->start_time = $requestSchedule['start_time'];
+                //                 $schedule->end_time = $requestSchedule['end_time'];
+                //                 $schedule->save();
+                //                 // Quita el día del arreglo $requestSchedules para evitar duplicados
+                //                 unset($requestSchedules[$key]);
+                //                 break;
+                //             }
+                //         }
+    
+                //         // Si no se encontró el día en la selección actual, elimínalo
+                //         if (!$found) {
+                //             $schedule->delete();
+                //         }
+                //     });
+    
+                //     // Luego, agrega los nuevos días que quedan en $requestSchedules
+                //     $user->schedules()->createMany($requestSchedules);
+                //}
             }          
 
             if (isset($request->change_avatar) && $request->avatar) {
@@ -392,7 +471,7 @@ class UserAPIController extends Controller
      */
     public function destroy($id)
     {
-        $user = $this->userRepository->withTrashed()->find($id);
+        $user = $this->userRepository->with('roles')->withTrashed()->find($id);
 
         try {
 
@@ -400,13 +479,13 @@ class UserAPIController extends Controller
                 return $this->sendError(__('lang.not_found', ['operator' => __('lang.user')]));
             }
 
-            // $input['is_active'] = false;
-            // $message = __('lang.disabled_successfully', ['operator' => __('lang.user')]);
-            // if (!$user->is_active) {
-            //     $input['is_active'] = true;
-            //     $message = __('lang.enabled_successfully', ['operator' => __('lang.user')]);
-            // }
-            // $user->update($input);
+            //Valida si es tenant y si los roles han cambiado:        
+            $roleIdsAdded = $user->roles->pluck('id')->toArray();
+            if (tenant()) {
+                if (count($roleIdsAdded) > 0) {
+                   $this->checkSubscriptionLimitByModelName($roleIdsAdded);
+                }
+            }
 
             $message = __('lang.disabled_successfully', ['operator' => __('lang.user')]);
             if (empty($user->deleted_at)) {

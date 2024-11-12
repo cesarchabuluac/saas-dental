@@ -11,9 +11,6 @@
             <!-- Table Container Card -->
             <b-card no-body class="mb-0">
                 <div class="m-2">
-                    <!-- <b-card-text>
-                        <h4>{{$t('imports.import_donwload_description')}}</h4>
-                    </b-card-text> -->
                     <b-row>
                         <b-col cols="12">
                             <b-alert variant="warning" show>
@@ -38,15 +35,16 @@
                                     label="text"
                                     @input="selectCatalog"
                                     :placeholder="$t('imports.import_template_placeholder')"
+                                    class="select-size-sm"
                                 />
                             </b-form-group>
                         </b-col>
-                    </b-row>
-
-                    <!-- Action Buttons -->
-                    <b-button variant="primary" class="mb-1 mb-sm-0 mr-0 mr-sm-1" @click="downloadCatalog">
-                        {{ $t("donwload") }}
-                    </b-button>
+                        <b-col cols="12" md="4">
+                            <b-button size="sm" variant="primary" class="mt-2" @click="downloadCatalog">
+                                {{ $t("donwload") }}
+                            </b-button>
+                        </b-col>
+                    </b-row>                    
                 </div>
             </b-card>
             
@@ -66,23 +64,28 @@
                                     label="text"
                                     @input="selectCatalog"
                                     :placeholder="$t('imports.import_input_template_placeholder')"
+                                    class="select-size-sm"
                                 />
                             </b-form-group>
                         </b-col>
-                        <b-col cols="12" md="12">
-                            <label for="">{{$t('imports.import_input_file')}}</label>
-                            <b-form-file
-                                @change="loadFile"
-                                :placeholder="$t('imports.import_input_file_placeholder')"
-                                class="mt-1"
-                            />
+                        <b-col cols="12" md="4">
+                            <b-form-group :label="$t('imports.import_input_file')" label-for="import">
+                                <b-form-file
+                                    @change="loadFile"
+                                    :placeholder="$t('imports.import_input_file_placeholder')"
+                                    size="sm"
+                                />
+                            </b-form-group>                            
+                        </b-col>
+                        <b-col cols="12" md="4">
+                            <b-button size="sm" variant="primary" class="mt-2" @click="importCatalog">
+                                {{ $t("save") }}
+                            </b-button>
                         </b-col>
                     </b-row>                   
 
                     <!-- Action Buttons -->
-                    <b-button variant="primary" class="mb-1 mt-3 mb-sm-0 mr-0 mr-sm-1" @click="importCatalog">
-                        {{ $t("save") }}
-                    </b-button>
+                    
                 </div>
             </b-card>
         </b-overlay>

@@ -12,9 +12,9 @@
                             v-model="perPage"
                             :options="perPageOptions"
                             :clearable="false"
-                            class="per-page-selector d-inline-block mx-50"
+                            class="per-page-selector select-size-sm d-inline-block mx-50"
                         />
-                        <b-button v-if="canAccess('inventories.transfers.create')" variant="primary"
+                        <b-button size="sm" v-if="canAccess('inventories.transfers.create')" variant="primary"
                             @click="$router.push({name: 'apps-inventories-transfers-add'})">
                             <span class="text-wrap">
                                 {{ $t("add") }}
@@ -26,10 +26,10 @@
                     <b-col cols="12" md="6">
                         <div class="d-flex align-items-center justify-content-end">
                             <b-input-group>
-                                <b-form-input v-model="search" class="d-inline-block _mr-1" :placeholder="$t('inventories.transfers.search_help')"
+                                <b-form-input size="sm" v-model="search" class="d-inline-block _mr-1" :placeholder="$t('inventories.transfers.search_help')"
                                 @keyup.enter="getTransfers"/>
                                 <b-input-group-prepend>
-                                <b-button variant="primary" @click="getTransfers">
+                                <b-button size="sm" variant="primary" @click="getTransfers">
                                     <feather-icon icon="SearchIcon" />
                                 </b-button>
                                 </b-input-group-prepend>
@@ -41,7 +41,7 @@
 
             <b-table
                 ref="refTransfersListTable"
-                class="position-relative"
+                class="position-relative table-small small  text-small"
                 :items="transfers"
                 responsive
                 :fields="columns"
@@ -52,6 +52,7 @@
                 :sort-desc.sync="sortDesc"
                 :current-page="currentPage"
                 busy.sync="loading"
+                small
             >
                 <!-- Empty -->
                 <template slot="empty">
@@ -116,26 +117,23 @@
                             @click="deleteTransfer(data.item)">
                             <feather-icon icon="Trash2Icon"/>
                         </b-button>
-                       
                     </div>
                 </template>
-
-               
             </b-table>
 
             <!-- Pagination -->
             <div v-if="transfers.length" class="mx-2 mb-2">
-                    <b-row>
-                        <b-col cols="12" sm="6" class="d-flex align-items-center justify-content-center justify-content-sm-start">
-                            <span class="text-muted">{{ resolvePaginationTranslate(dataMeta) }}</span>
-                        </b-col>
-                        <b-col cols="12" sm="6" class="d-flex align-items-center justify-content-center justify-content-sm-end">
-                            <div class="mt-2 demo-spacing-0">
-                                <b-pagination v-model="currentPage" :total-rows="totalTransfers" :per-page="perPage" size="lg"/>
-                            </div>
-                        </b-col>
-                    </b-row>
-                </div>
+                <b-row>
+                    <b-col cols="12" sm="6" class="d-flex align-items-center justify-content-center justify-content-sm-start">
+                        <span class="text-muted">{{ resolvePaginationTranslate(dataMeta) }}</span>
+                    </b-col>
+                    <b-col cols="12" sm="6" class="d-flex align-items-center justify-content-center justify-content-sm-end">
+                        <div class="mt-2 demo-spacing-0">
+                            <b-pagination v-model="currentPage" :total-rows="totalTransfers" :per-page="perPage"/>
+                        </div>
+                    </b-col>
+                </b-row>
+            </div>
         </b-card>       
     </div>
 </template>

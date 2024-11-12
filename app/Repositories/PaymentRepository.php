@@ -63,7 +63,7 @@ class PaymentRepository extends BaseRepository
     {
         $start = Carbon::now()->startOfDay();
         $end = Carbon::now()->endOfDay();
-        $user_id = auth()->id;
+        $user_id = auth()->user()->id;
 
         $data = DB::select("SELECT SUM(action_payments.amount) as total
             FROM payments
@@ -97,7 +97,7 @@ class PaymentRepository extends BaseRepository
     {
         $start = Carbon::now()->startOfMonth();
         $end = Carbon::now()->endOfMonth();
-        $user_id = auth()->id;
+        $user_id = auth()->user()->id;
 
         $data = DB::select("SELECT SUM(action_payments.amount) as total
         FROM payments
@@ -131,7 +131,7 @@ class PaymentRepository extends BaseRepository
     {
         $start = Carbon::now()->subMonth()->startOfMonth();
         $end = Carbon::now()->subMonth()->endOfMonth();
-        $user_id = auth()->id;
+        $user_id = auth()->user()->id;
 
         $data = DB::select("SELECT SUM(action_payments.amount) as total
             FROM payments

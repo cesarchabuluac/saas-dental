@@ -12,7 +12,8 @@ export default function useCalendarSidebar() {
     const { data } = await UserResource.index({ criteria: "professionals", isCalendar: true, ignoreSchedules: false, });    
     store.commit('calendar/SET_USE_PROFESSIONALS', data)
     store.commit("calendar/SET_USE_PROFESSIONALS", data);
-    if (store.getters['auth/getRoleId'] === 4) {
+    const userRolesIds = store.getters['auth/getUser'].roles.map(role => role.id);    
+    if (userRolesIds.includes(4)) { //Professional
       store.commit("calendar/SET_SELECTED_PROFESSIONAL", store.getters['auth/getUser']);
     } else {
       store.commit("calendar/SET_SELECTED_PROFESSIONAL", data[0]);

@@ -174,12 +174,13 @@ class PaymentAPIController extends Controller
         $end = Carbon::now()->endOfMonth();
         $start_day = Carbon::now()->startOfDay();
         $end_day = Carbon::now()->endOfDay();
+        $userRoleIds = auth()->user()->roles->pluck('id')->toArray();
 
         //Get payments
         $paymentDays = $this->paymentRepository->join('action_payments as ap', 'payments.id', '=', 'ap.payment_id')
-            ->where(function ($query) use ($roles) {
-                if (!in_array(auth()->user()->roles[0]->id, $roles)) {
-                    $query->where('ap.professional_id', auth()->user()->id);
+            ->where(function ($query) use ($roles, $userRoleIds) {
+                if (!array_intersect($userRoleIds, $roles)) {
+                    $query->where('user_id', auth()->user()->id);
                 }
             })->where('check_paid', 1)
             ->selectRaw('payments.method, SUM(ap.amount) as amount')
@@ -214,8 +215,8 @@ class PaymentAPIController extends Controller
         //Payment of month
         $paymentMonths = $this->paymentRepository
             ->join('action_payments as ap', 'payments.id', '=', 'ap.payment_id')
-            ->where(function ($query) use ($roles) {
-                if (!in_array(auth()->user()->roles[0]->id, $roles)) {
+            ->where(function ($query) use ($roles, $userRoleIds) {
+                if (!array_intersect($userRoleIds, $roles)) {
                     $query->where('ap.professional_id', auth()->user()->id);
                 }
             })->where('check_paid', 1)
@@ -250,12 +251,13 @@ class PaymentAPIController extends Controller
         $payments =
             $this->paymentRepository
             ->join('budgets', 'payments.budget_id', '=', 'budgets.id')
-            ->where(function ($query) use ($roles) {
-                if (!in_array(auth()->user()->roles[0]->id, $roles)) {
+            ->where(function ($query) use ($roles, $userRoleIds) {
+                if (!array_intersect($userRoleIds, $roles)) {
                     $query->whereHas('actionPayments', function ($q) {
                         $q->where('professional_id', auth()->user()->id);
                     });
                 }
+                
             })
             ->where('ap.payment_date', '>=',  $start)
             ->where('ap.payment_date', '<=', $end)
@@ -265,19 +267,19 @@ class PaymentAPIController extends Controller
 
 
         //Monthly expenses
-        $totalExpenseMonth = (in_array(auth()->user()->roles[0]->id, $roles)) ?
+        $totalExpenseMonth = (array_intersect($userRoleIds, $roles)) ?
             $this->expenseRepository->whereDate('date', '>=', $start)->whereDate('date', '<=', $end)->sum('amount') : 0;
 
         //Day expenses
-        $totalExpenseDay = (in_array(auth()->user()->roles[0]->id, $roles)) ?
+        $totalExpenseDay = (array_intersect($userRoleIds, $roles)) ?
             $this->expenseRepository->whereDate('date', '>=', Carbon::now()->format('Y-m-d'))->whereDate('date', '<=', Carbon::now()->format('Y-m-d'))->where('is_closed', 0)->sum('amount') : 0;
 
         //Get payments for last month
         $first = Carbon::now()->startOfMonth()->subMonthsNoOverflow()->toDateString();
         $last = Carbon::now()->subMonthsNoOverflow()->endOfMonth()->toDateString();
         $this->totalEarningLastMonth = $this->paymentRepository->join('action_payments as ap', 'payments.id', '=', 'ap.payment_id')
-            ->where(function ($query) use ($roles) {
-                if (!in_array(auth()->user()->roles[0]->id, $roles)) {
+            ->where(function ($query) use ($roles, $userRoleIds) {
+                if (!array_intersect($userRoleIds, $roles)) {
                     $query->whereHas('actionPayments', function ($q) {
                         $q->where('user_id', auth()->user()->id);
                     });
@@ -289,13 +291,13 @@ class PaymentAPIController extends Controller
             ->sum('ap.amount');
 
 
-        $this->totalExpenseLastMonth = (in_array(auth()->user()->roles[0]->id, $roles)) ? $this->expenseRepository->whereDate('date', '>=', $first)->whereDate('date', '<=', $last)->sum('amount') : 0;
-        $patientCount = (in_array(auth()->user()->roles[0]->id, $roles)) ? $this->patientRepository->where(DB::raw('cast(created_at as date)'), '>=', $start)->where(DB::raw('cast(created_at as date)'), '<=', $end)->count() : 0;
+        $this->totalExpenseLastMonth = (array_intersect($userRoleIds, $roles)) ? $this->expenseRepository->whereDate('date', '>=', $first)->whereDate('date', '<=', $last)->sum('amount') : 0;
+        $patientCount = (array_intersect($userRoleIds, $roles)) ? $this->patientRepository->where(DB::raw('cast(created_at as date)'), '>=', $start)->where(DB::raw('cast(created_at as date)'), '<=', $end)->count() : 0;
 
-        if (!in_array(auth()->user()->roles[0]->id, $roles)) {
+        if (!array_intersect($userRoleIds, $roles)) {
 
-            $appointments = $this->appointmentRepository->where(function ($q)  use ($roles, $end) {
-                if (!in_array(auth()->user()->roles[0]->id, $roles)) {
+            $appointments = $this->appointmentRepository->where(function ($q)  use ($roles, $end, $userRoleIds) {
+                if (!array_intersect($userRoleIds, $roles)) {
                     $q->where('user_id', auth()->user()->id);
                 }
             })

@@ -172,6 +172,9 @@ class RoleAndPermissionsTableSeeder extends Seeder
         Permission::updateOrCreate(['name' => 'reports.expenses'], ['guard_name' => 'web', 'group' => 'reports', 'description' => 'Informes de Gastos']);
         Permission::updateOrCreate(['name' => 'reports.payments'], ['guard_name' => 'web', 'group' => 'reports', 'description' => 'Informes de Pagos']);
         Permission::updateOrCreate(['name' => 'reports.medicines'], ['guard_name' => 'web', 'group' => 'reports', 'description' => 'Informes de Inventarios']);
+        Permission::updateOrCreate(['name' => 'reports.budgets'], ['guard_name' => 'web', 'group' => 'reports', 'description' => 'Informes de Presupuestos']);
+        Permission::updateOrCreate(['name' => 'reports.clinic_actions'], ['guard_name' => 'web', 'group' => 'reports', 'description' => 'Informes de Acciones Clínicas']);
+        Permission::updateOrCreate(['name' => 'reports.laboratory_actions'], ['guard_name' => 'web', 'group' => 'reports', 'description' => 'Informes de Acciones de Laboratorio']);
 
         //Importers
         Permission::updateOrCreate(['name' => 'imports.index'], ['guard_name' => 'web', 'group' => 'settings', 'description' => 'Ver el importador de catalogos']);

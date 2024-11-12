@@ -29,38 +29,38 @@
 
 			<!-- Buttons -->
 			<b-row class="match-height">
-				<b-col>
+				<b-col cols="12">
 					<b-card>
 						<div class="demo-inline-spacing">
 
-							<b-button v-if="canAccess('patients.statement_account')" variant="dark" pill
+							<b-button size="sm" v-if="canAccess('patients.statement_account')" variant="dark" pill
 								@click="$router.push({ name: 'apps-patients-view-statement-detail', params: { patient_id: patient.id }, })">
 								<span class="text-nowrap">
 									{{ $t('patients.account_statement') }}
 								</span>
 							</b-button>
 
-							<b-button :disabled="isDisabled" v-if="canAccess('orders.create')" variant="primary" pill
+							<b-button size="sm" :disabled="isDisabled" v-if="canAccess('orders.create')" variant="primary" pill
 								@click="$router.push({ name: 'apps-work-orders-add', params: { patient_id: patient.id, name: patient.name }, })">
 								<span class="text-nowrap">
 									{{ $t("patients.work_order.add") }}
 								</span>
 							</b-button>
 
-							<b-button :disabled="isDisabled" v-if="canAccess('budgets.create')" variant="warning" pill
+							<b-button size="sm" :disabled="isDisabled" v-if="canAccess('budgets.create')" variant="warning" pill
 								@click="$router.push({ name: 'apps-budgets-add', params: { patient_id: patient.id, name: patient.name }, })">
 								<span class="text-nowrap">
 									{{ $t("patients.budgets.add") }}
 								</span>
 							</b-button>
 
-							<b-button :disabled="isDisabled" v-if="canAccess('patients.evolution_add')"
+							<b-button size="sm" :disabled="isDisabled" v-if="canAccess('patients.evolution_add')"
 								v-b-modal.modal-center class="float-right" v-ripple.400="'rgba(255, 255, 255, 0.15)'"
 								variant="secondary" pill>
 								{{ $t('patients.evolutions.add') }}
 							</b-button>
 
-							<b-button class="float-right" v-ripple.400="'rgba(255, 255, 255, 0.15)'"
+							<b-button size="sm" class="float-right" v-ripple.400="'rgba(255, 255, 255, 0.15)'"
 								variant="outline-primary" pill @click="$router.back()">
 								<feather-icon icon="ChevronLeftIcon" class="mr-50" />
 								<span class="align-middle">{{ $t('back') }}</span>
@@ -90,7 +90,7 @@
 											<!-- Field: Name -->
 											<b-col cols="12" md="4">
 												<b-form-group :label="$t('patients.name')" label-for="name">
-													<b-form-input id="name" v-model="patient.name"
+													<b-form-input size="sm" id="name" v-model="patient.name"
 														:placeholder="$t('patients.name_placeholder')" disabled />
 												</b-form-group>
 											</b-col>
@@ -98,7 +98,7 @@
 											<!-- Field: Last Name -->
 											<b-col cols="12" md="4">
 												<b-form-group :label="$t('patients.last_name')" label-for="last_name">
-													<b-form-input id="last_name" v-model="patient.last_name"
+													<b-form-input size="sm" id="last_name" v-model="patient.last_name"
 														:placeholder="$t('patients.last_name_placeholder')" disabled />
 												</b-form-group>
 											</b-col>
@@ -107,7 +107,7 @@
 											<b-col cols="12" md="4">
 												<b-form-group :label="$t('patients.mother_last_name')"
 													label-for="mother_last_name">
-													<b-form-input id="mother_last_name" v-model="patient.mother_last_name"
+													<b-form-input size="sm" id="mother_last_name" v-model="patient.mother_last_name"
 														:placeholder="$t('patients.mother_last_name_placeholder')"
 														disabled />
 												</b-form-group>
@@ -116,7 +116,7 @@
 											<!-- Field: Document Type -->
 											<b-col cols="12" md="4">
 												<b-form-group :label="$t('patients.document_type')" label-for="rut">
-													<b-form-input id="document_type"
+													<b-form-input size="sm" id="document_type"
 														:value="`${resolveTypeDocumentTranslate(patient.document_type)}`"
 														disabled />
 												</b-form-group>
@@ -125,7 +125,7 @@
 											<!-- Field: Document -->
 											<b-col cols="12" md="4">
 												<b-form-group :label="$t('patients.document')" label-for="rut">
-													<b-form-input id="rut" v-model="patient.rut"
+													<b-form-input size="sm" id="rut" v-model="patient.rut"
 														:placeholder="$t('patients.document_placeholder')" disabled />
 												</b-form-group>
 											</b-col>
@@ -133,7 +133,7 @@
 											<!-- Field: Birth Date -->
 											<b-col cols="12" md="6" lg="4">
 												<b-form-group :label="$t('patients.birthday')" label-for="birthday">
-													<b-form-input id="birthday" :value="`${dateFormat(patient.birthday)}`"
+													<b-form-input size="sm" id="birthday" :value="`${dateFormat(patient.birthday)}`"
 														disabled />
 												</b-form-group>
 											</b-col>
@@ -141,7 +141,7 @@
 											<!-- Field: Email -->
 											<b-col cols="12" md="4">
 												<b-form-group :label="$t('patients.email')" label-for="email">
-													<b-form-input id="email" type="email" v-model="patient.email"
+													<b-form-input size="sm" id="email" type="email" v-model="patient.email"
 														:placeholder="$t('patients.email_placeholder')" disabled />
 												</b-form-group>
 											</b-col>
@@ -149,7 +149,7 @@
 											<!-- Field: Cell phone -->
 											<b-col cols="12" md="4">
 												<b-form-group :label="$t('patients.cellphone')" label-for="cellphone">
-													<b-form-input id="cellphone" v-model="patient.cellphone"
+													<b-form-input size="sm" id="cellphone" v-model="patient.cellphone"
 														:placeholder="$t('patients.cellphone_placeholder')" disabled />
 												</b-form-group>
 											</b-col>
@@ -157,7 +157,7 @@
 											<!-- Field: Phone -->
 											<b-col cols="12" md="4">
 												<b-form-group :label="$t('patients.phone')" label-for="phone">
-													<b-form-input id="phone" v-model="patient.phone"
+													<b-form-input size="sm" id="phone" v-model="patient.phone"
 														:placeholder="$t('patients.phone_placeholder')" disabled />
 												</b-form-group>
 											</b-col>
@@ -165,7 +165,7 @@
 											<!-- Field: Address -->
 											<b-col cols="12" md="6">
 												<b-form-group :label="$t('patients.address')" label-for="address">
-													<b-form-input id="address" v-model="patient.address"
+													<b-form-input size="sm" id="address" v-model="patient.address"
 														:placeholder="$t('patients.address_placeholder')" disabled />
 												</b-form-group>
 											</b-col>
@@ -173,7 +173,7 @@
 											<!-- Field: Comments -->
 											<b-col cols="12" md="6">
 												<b-form-group :label="$t('patients.comments')" label-for="comments">
-													<b-form-input id="comments" v-model="patient.comments"
+													<b-form-input size="sm" id="comments" v-model="patient.comments"
 														:placeholder="$t('patients.comments_placeholder')" disabled />
 												</b-form-group>
 											</b-col>
@@ -196,7 +196,7 @@
 											<b-col cols="12" md="4" lg="4">
 												<b-form-group :label="$t('patients.anamnesis.first_reason_consultation')"
 													label-for="first_reason_consultation">
-													<b-form-textarea id="first_reason_consultation"
+													<b-form-textarea size="sm" id="first_reason_consultation"
 														v-model="anamnesi.first_reason_consultation" rows="2"
 														:placeholder="$t('patients.anamnesis.first_reason_consultation')" />
 												</b-form-group>
@@ -206,7 +206,7 @@
 											<b-col cols="12" md="4" lg="4">
 												<b-form-group :label="$t('patients.anamnesis.medical_history')"
 													label-for="anamnesis_medical_history">
-													<b-form-textarea id="anamnesis_medical_history"
+													<b-form-textarea size="sm" id="anamnesis_medical_history"
 														v-model="anamnesi.medical_history" rows="2"
 														:placeholder="$t('patients.anamnesis.medical_history')" />
 												</b-form-group>
@@ -216,7 +216,7 @@
 											<b-col cols="12" md="4" lg="4">
 												<b-form-group :label="$t('patients.anamnesis.allergies')"
 													label-for="anamnesis_allergies">
-													<b-form-textarea id="anamnesis_allergies" v-model="anamnesi.allergies"
+													<b-form-textarea size="sm" id="anamnesis_allergies" v-model="anamnesi.allergies"
 														rows="2" :placeholder="$t('patients.anamnesis.allergies')" />
 												</b-form-group>
 											</b-col>
@@ -225,7 +225,7 @@
 											<b-col cols="12" md="4" lg="4">
 												<b-form-group :label="$t('patients.anamnesis.medicines')"
 													label-for="anamnesis_medicines">
-													<b-form-textarea id="anamnesis_medicines" v-model="anamnesi.medicines"
+													<b-form-textarea size="sm" id="anamnesis_medicines" v-model="anamnesi.medicines"
 														rows="2" :placeholder="$t('patients.anamnesis.medicines')" />
 												</b-form-group>
 											</b-col>
@@ -234,7 +234,7 @@
 											<b-col cols="12" md="4" lg="4">
 												<b-form-group :label="$t('patients.anamnesis.habits')"
 													label-for="anamnesis_habits">
-													<b-form-textarea id="anamnesis_habits" v-model="anamnesi.habits"
+													<b-form-textarea size="sm" id="anamnesis_habits" v-model="anamnesi.habits"
 														rows="2" :placeholder="$t('patients.anamnesis.habits')" />
 												</b-form-group>
 											</b-col>
@@ -243,7 +243,7 @@
 											<b-col cols="12" md="4" lg="4">
 												<b-form-group :label="$t('patients.anamnesis.family_background')"
 													label-for="anamnesi_family_background">
-													<b-form-textarea id="anamnesi_family_background"
+													<b-form-textarea size="sm" id="anamnesi_family_background"
 														v-model="anamnesi.family_background" rows="2"
 														:placeholder="$t('patients.anamnesis.family_background')" />
 												</b-form-group>
@@ -253,7 +253,7 @@
 											<b-col cols="12" md="4" lg="4">
 												<b-form-group :label="$t('patients.anamnesis.others')"
 													label-for="anamnesi_others">
-													<b-form-textarea id="anamnesi_others" v-model="anamnesi.others"
+													<b-form-textarea size="sm" id="anamnesi_others" v-model="anamnesi.others"
 														rows="2" :placeholder="$t('patients.anamnesis.others')" />
 												</b-form-group>
 											</b-col>
@@ -294,7 +294,7 @@
 										</b-row>
 
 										<!-- Action Buttons -->
-										<b-button :disabled="isDisabled" v-if="canAccess('anamnesis.update')"
+										<b-button size="sm" :disabled="isDisabled" v-if="canAccess('anamnesis.update')"
 											variant="primary" class="mb-1 mt-3 mb-sm-0 mr-0 mr-sm-1" @click="storeAnamnesi">
 											{{ $t("save") }}
 										</b-button>
@@ -307,10 +307,10 @@
 										<feather-icon icon="GitBranchIcon" size="16" class="mr-0 mr-sm-50" />
 										<span class="ml-1">{{ $t("patients.evolutions.title") }}</span>
 									</template>
-									<b-table ref="refEvolutionsListTable" class="position-relative" :items="budgets"
+									<b-table ref="refEvolutionsListTable" class="position-relative text-small small table-small" :items="budgets"
 										responsive :fields="columnEvolutions" primary-key="id" show-empty
 										:empty-text="$t('datatables.sZeroRecords')" :current-page="currentPage"
-										busy.sync="loading" stacked="md">
+										busy.sync="loading" stacked="md" small>
 
 										<!-- Column: label -->
 										<template #cell(label)="data">
@@ -430,10 +430,10 @@
 									<b-row v-if="canAccess('patients.budget')">
 										<b-col cols="12" xl="12" lg="12" md="12">
 											<b-card no-body class="mb-0">
-												<b-table ref="refPaymentsListTable" class="position-relative"
+												<b-table ref="refPaymentsListTable" class="position-relative text-small small table-small"
 													:items="budgets" striped responsive :fields="columnsBudgets"
 													primary-key="id" show-empty :empty-text="$t('datatables.sZeroRecords')"
-													:current-page="currentPage" busy.sync="loading" stacked="md">
+													:current-page="currentPage" busy.sync="loading" stacked="md" small>
 
 													<!-- Column: label -->
 													<template #cell(label)="data">
@@ -560,9 +560,9 @@
 										<span class="ml-1">{{ $t("patients.work_order.plural") }}</span>
 									</template>
 									<hr>
-									<b-table stacked="sm" ref="refWorkOrderListTable" class="position-relative"
+									<b-table stacked="sm" ref="refWorkOrderListTable" class="position-relative table-small text-small small"
 										:items="workorders" responsive striped hover :fields="columnOrders" primary-key="id"
-										show-empty :empty-text="$t('datatables.sZeroRecords')" busy.sync="loading">
+										show-empty :empty-text="$t('datatables.sZeroRecords')" busy.sync="loading" small>
 
 										<!-- Label -->
 										<template #cell(label)="data">

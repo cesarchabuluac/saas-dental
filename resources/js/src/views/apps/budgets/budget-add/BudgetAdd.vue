@@ -41,7 +41,7 @@
 
                                         <!-- Branch Office -->
                                         <b-form-group :label="$t('budgets.branch_office')" label-for="branch_office_id">
-                                            <v-select v-model="selectedBranch" :options="branchs" label="name"
+                                            <v-select size="sm" class="select-size-sm" v-model="selectedBranch" :options="branchs" label="name"
                                                 input-id="branch_office_id" :clearable="false" :searchable="false" />
                                         </b-form-group>
 
@@ -51,7 +51,7 @@
                                                 <b-input-group-prepend is-text>
                                                     <feather-icon icon="SearchIcon" />
                                                 </b-input-group-prepend>
-                                                <b-form-input readonly @click="activeSearchPatient = true"
+                                                <b-form-input size="sm" readonly @click="activeSearchPatient = true"
                                                     v-model="selectedPatient.full_name"
                                                     :placeholder="$t('patients.search_options')" />
                                                 <b-input-group-append>
@@ -64,7 +64,7 @@
                                         </b-form-group>
 
                                         <!-- Patient Details -->
-                                        <b-card-body v-if="selectedPatient.full_name" class="invoice-padding pt-0">
+                                        <b-card-body v-if="selectedPatient.full_name" class="invoice-padding pt-0_">
                                             <b-row class="invoice-spacing">
                                                 <b-col cols="12" xl="12" class="p-1">
                                                     <p class="card-text mb-25">
@@ -113,28 +113,26 @@
                                 </b-row>
 
                                 <b-row v-if="selectedPatient.full_name" class="invoice-spacing">
-                                    <b-col cols="12" class="p-1">
-                                        <h4 class="card-title">{{ $t('budgets.name') }}</h4>
+                                    <b-col cols="12" class="p-1_">
+                                        <h6 class="card-title_">{{ $t('budgets.name') }}</h6>
 
                                         <!-- Budget name -->
                                         <b-row>
                                             <b-col cols="6">
-                                                <b-form-input v-model="budget.name"
+                                                <b-form-input size="sm" v-model="budget.name"
                                                     :placeholder="$t('budgets.name_placeholder')" />
                                             </b-col>
                                         </b-row>
 
                                         <!-- Row Loop -->
-                                        <b-row v-for="(item, index) in items" :id="item.id" :key="item.id" ref="row"
-                                            class="mt-1">
+                                        <b-row ref="row" v-for="(item, index) in items" :id="item.id" :key="item.id" class="mt-1">
 
                                             <!-- Item Name -->
                                             <b-col v-if="item.type === 'clinical'" md="3">
                                                 <!-- Action type field -->
-                                                <b-form-group :label="$t('budgets.action_group')" label-for="action_group"
-                                                    class="sm">
+                                                <b-form-group :label="$t('budgets.action_group')" :label-for="`group-action_group_${index}`">
                                                     <v-select v-model="item.action_group_id" :options="actionGroups"
-                                                        label="name" input-id="action_group"
+                                                        label="name" class="select-size-sm" :input-id="`group-action_group_${index}`"
                                                         @input="selectActionGroup(item)" :reduce="action => action.id"
                                                         :clearable="false" :searchable="false" :placeholder="$t('select_an_option')" />
                                                 </b-form-group>
@@ -144,26 +142,26 @@
                                             <b-col :md="item.type === 'clinical' ? 3 : 6">
                                                 <b-form-group
                                                     :label="item.type === 'clinical' ? $t('budgets.clinical_actions') : $t('budgets.laboratory_actions')"
-                                                    label-for="action">
+                                                    :label-for="`action-${index}`">
                                                     <v-select v-model="item.selectedAction" :options="item.actions"
-                                                        label="name" input-id="action" @input="selectAction(item)"
+                                                        label="name" class="select-size-sm" :input-id="`action-${index}`" @input="selectAction(item)"
                                                         :clearable="false" :searchable="false" :placeholder="$t('select_an_option')" />
                                                 </b-form-group>
                                             </b-col>
 
                                             <!-- Cost -->
                                             <b-col md="2">
-                                                <b-form-group :label="$t('budgets.cost')" label-for="cost">
-                                                    <b-form-input @input="calculateTotal(item)" v-model="item.cost"
-                                                        id="cost" type="number"
+                                                <b-form-group :label="$t('budgets.cost')" :label-for="`cost-${index}`">
+                                                    <b-form-input size="sm" @input.native="calculateTotal(item)" v-model="item.cost"
+                                                        :id="`cost-${index}`" type="number"
                                                         :placeholder="$t('budgets.cost_placeholder')" />
                                                 </b-form-group>
                                             </b-col>
 
                                             <!-- Discount -->
                                             <b-col md="2">
-                                                <b-form-group :label="$t('budgets.discount')" label-for="price">
-                                                    <b-form-input @input="calculateTotal(item)" id="price"
+                                                <b-form-group :label="$t('budgets.discount')" :label-for="`discount-${index}`">
+                                                    <b-form-input size="sm" @input.native="calculateTotal(item)" :id="`discount-${index}`"
                                                         v-model="item.discount"
                                                         :placeholder="$t('budgets.discount_placeholder')" />
                                                 </b-form-group>
@@ -171,9 +169,9 @@
 
                                             <!-- Area -->
                                             <b-col md="1">
-                                                <b-form-group :label="$t('budgets.area')" label-for="area">
+                                                <b-form-group :label="$t('budgets.area')" :label-for="`area-${index}`">
                                                     <b-input-group @click="openModalAreas(item)">
-                                                        <b-form-input type="text" v-model="item.area"
+                                                        <b-form-input size="sm" type="text" v-model="item.area" :id="`area-${index}`"
                                                             :placeholder="$t('budgets.area_placeholder')" />
                                                     </b-input-group>
                                                 </b-form-group>
@@ -181,7 +179,7 @@
 
                                             <!-- Remove Button -->
                                             <b-col md="1" class="mb-50">
-                                                <b-button v-ripple.400="'rgba(234, 84, 85, 0.15)'" variant="danger"
+                                                <b-button size="sm" v-ripple.400="'rgba(234, 84, 85, 0.15)'" variant="danger"
                                                     class="mt-0 mt-md-2" @click="removeItem(index)">
                                                     <feather-icon icon="XIcon" class="" />
                                                 </b-button>
@@ -189,13 +187,13 @@
                                         </b-row>
 
                                         <div class="demo-inline-spacing">
-                                            <b-button class="mt-2" v-ripple.400="'rgba(255, 255, 255, 0.15)'"
+                                            <b-button size="sm" class="mt-2" v-ripple.400="'rgba(255, 255, 255, 0.15)'"
                                                 variant="outline-primary" @click="repeateAgain('clinical')">
                                                 <feather-icon icon="PlusIcon" class="mr-25" />
                                                 <span>{{ $t('budgets.clinical_action') }}</span>
                                             </b-button>
 
-                                            <b-button class="mt-2" v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="outline-primary"
+                                            <b-button size="sm" class="mt-2" v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="outline-primary"
                                                 @click="repeateAgain('laboratory')">
                                                 <feather-icon icon="PlusIcon" class="mr-25" />
                                                 <span>{{ $t('budgets.laboratory_action') }}</span>
@@ -212,8 +210,8 @@
                                         <b-card-text class="mb-0">
                                             <span class="font-weight-bold">{{ $t('budgets.comments') }}:</span>
                                         </b-card-text>
-                                        <b-form-textarea v-model="budget.comments" id="textarea-default"
-                                            :placeholder="$t('budgets.comments_placeholder')" rows="3" />
+                                        <b-form-textarea size="sm" v-model="budget.comments" id="textarea-default"
+                                            :placeholder="$t('budgets.comments_placeholder')" />
                                     </b-col>
 
                                     <!-- Col: Total -->
@@ -267,20 +265,34 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
-                                            <!-- Spacer -->
-                                            <hr class="invoice-spacing">
-                                            <b-button v-if="canAccess('budgets.store') && budget_total > 0"
-                                                v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="primary" block
-                                                @click="store">
-                                                {{ $t('save') }}
-                                            </b-button>
-
-                                            <!-- Spacer -->
-                                            <hr class="invoice-spacing">
                                         </div>
                                     </b-col>
                                 </b-row>
                             </b-card-body>
+
+                            <b-card-footer v-if="canAccess('budgets.store') && budget_total > 0">
+                                <b-row>
+                                    <b-col cols="12" md="8" xl="8">
+                                        <b-form-group :label="$t('budgets.mark_as_approved')" label-for="mark_as_approved">
+                                            <b-form-checkbox
+                                                v-model="budget.approved"
+                                                id="mark_as_approved"
+                                                name="mark_as_approved">
+                                                {{$t("budgets.mark_as_approved_help")}}
+                                            </b-form-checkbox>
+                                        </b-form-group>
+                                    </b-col>
+                                    <b-col cols="12" md="4" xl="4" class="mt-md-0 mt-3 d-flex justify-content-end">
+                                        <b-button
+                                            size="sm"
+                                            block
+                                            v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="primary"
+                                            @click="store">
+                                            {{ $t('save') }}
+                                        </b-button>
+                                    </b-col>
+                                </b-row>
+                            </b-card-footer>
                         </b-card>
                     </b-col>
                 </b-row>
@@ -397,7 +409,7 @@
 <script>
 import BCardCode from '@core/components/b-card-code'
 import {
-    BRow, BCol, BCard, BCardBody, BTableLite, BCardText, BButton, BAlert, BLink, VBToggle, BOverlay, BSpinner, BTable, BFormCheckbox, BFormGroup, BFormInput,
+    BRow, BCol, BCard, BCardBody, BCardFooter, BTableLite, BCardText, BButton, BAlert, BLink, VBToggle, BOverlay, BSpinner, BTable, BFormCheckbox, BFormGroup, BFormInput,
     BModal, VBModal, BSidebar, BForm, BIcon, BInputGroup, BInputGroupAppend, BInputGroupPrepend, BFormTextarea, BFormTags, BAvatar,
     BFormRadioGroup, BFormInvalidFeedback, BFormValidFeedback
 } from 'bootstrap-vue'
@@ -436,6 +448,7 @@ export default {
         BSidebar,
         BCol,
         BCard,
+        BCardFooter,
         BCardBody,
         BCardText,
         BButton,
@@ -892,6 +905,8 @@ export default {
                 return
             }
 
+            console.warn(this.currentAction)
+
             let counter = _.size(this.items)
             _.each(this.items, (item, idx) => {
                 if (item.id === this.currentAction.id) {
@@ -926,6 +941,18 @@ export default {
             })
         },
         async store() {
+
+            //En items cada item tiene una propiedad que se llama area entonces este campo es requerido por lo tanto
+            //antes de guardar debo validar que tengan un area seleccionada
+            //Para hacer esto supongo que es mejor filtrar y los item que no tengan area seleccionada
+
+            const existsAreaNull = this.items.filter(item => item.area !== null)
+            if (existsAreaNull.length > 0) {
+                this.danger(this.$t('budgets.area_required'))
+                return
+            }
+
+
 
             //Remove actions on row by row
             this.items.map((item) => {
@@ -1034,6 +1061,13 @@ export default {
         },
         calculateTotal(evt) {
             evt.discount = parseFloat(evt.discount)
+            if (isNaN(evt.discount)) {
+                evt.discount = 0
+            }
+
+            if (evt.discount > parseFloat(evt.cost)) {
+                evt.discount = evt.cost
+            }
             evt.subtotal = evt.cost
             evt.total = evt.subtotal - evt.discount
         },
@@ -1054,6 +1088,18 @@ export default {
             // }
         },
         async selectActionGroup(item) {
+
+            console.log(item)
+
+            item.actions = []
+            item.cost = 0
+            item.discount = 0
+            item.subtotal = 0
+            item.total = 0
+            //item.type = null
+            item.area = null
+            item.selectedAction = null
+
             item.actions = this.actionGroups.filter(ag => ag.id === item.action_group_id).map(a => a.actions).flat()
         },
         selectAction(evt) {
@@ -1085,6 +1131,8 @@ export default {
                     await this.getLaboratoryActions()
                 }
             }
+
+
 
             this.items.push({
                 id: counter + 1,

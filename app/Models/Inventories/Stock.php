@@ -23,12 +23,12 @@ class Stock extends Model
 
     public function warehouse()
     {
-        return $this->belongsTo(Warehouse::class);
+        return $this->belongsTo(Warehouse::class)->withTrashed();
     }
 
     public function medicine()
     {
-        return $this->belongsTo(Medicine::class);
+        return $this->belongsTo(Medicine::class)->withTrashed();
     }
 
     public function movements()

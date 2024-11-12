@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use betterapp\LaravelDbEncrypter\Traits\EncryptableDbAttribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class GeneralSetting extends Model
 {
-    use HasFactory;
+    use HasFactory; /*, EncryptableDbAttribute;*/
 
     public $table = "settings";
     public $timestamps = false;
@@ -20,4 +21,8 @@ class GeneralSetting extends Model
     protected $fillable = [
         'key', 'value',
     ];
+
+    // protected $encryptable = [
+    //     'value'
+    // ];
 }

@@ -5,7 +5,7 @@
     </component>
 
     <!-- BuyNow -->
-    <buy-now />
+    <!-- <buy-now /> -->
     <!-- Scroll to top -->
     <scroll-to-top v-if="enableScrollToTop" />
   </div>

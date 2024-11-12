@@ -1,6 +1,6 @@
 <template>
   <li
-    v-if="canViewHorizontalNavMenuHeaderGroup(item)"
+   v-if="canAccess(item.permission)"
     class="dropdown nav-item"
     :class="{
       'sidebar-group-active active open': isActive,

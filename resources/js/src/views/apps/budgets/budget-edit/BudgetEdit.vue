@@ -31,25 +31,25 @@
                                 <!-- Header: Left Content -->
                                 <div>
                                     <div class="logo-wrapper">
+                                        <b-img fluid :src="logo" alt="Logo" />
                                         <h3 class="text-primary invoice-logo">
                                             {{ findSetting("app_name") }}
                                         </h3>
-
-                                        <!-- Header: Right Content -->
-                                        <div class="mt-md-0 mt-2">
-                                            <h5>{{ $t('budgets.folio') }}: {{ budget.label }}</h5>
-                                            <small>{{ $t('budgets.date_issued') }}
-                                                {{ formatDate(budget.created_at) }}</small><br>
-                                            <small>{{ $t('budgets.table_approved') }}: <span
-                                                    :class="`badge badge-light-${resolveStatusVariant(budget.approved)}`">{{ formatActive(budget.approved) }}</span></small><br>
-                                            <small v-if="budget">{{ $t('budgets.transmitter') }} {{ budget.user.name }}</small>
-                                        </div>
                                     </div>
                                 </div>
 
                                 <!-- Header: Right Content -->
                                 <div class="mt-md-0 mt-2">
-                                    <b-button v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="outline-primary"
+                                    <!-- Header: Right Content -->
+                                    <div class="mt-md-0 mt-2">
+                                        <h5>{{ $t('budgets.folio') }}: {{ budget.label }}</h5>
+                                        <small>{{ $t('budgets.date_issued') }}
+                                            {{ formatDate(budget.created_at) }}</small><br>
+                                        <small>{{ $t('budgets.table_approved') }}: <span
+                                                :class="`badge badge-light-${resolveStatusVariant(budget.approved)}`">{{ formatActive(budget.approved) }}</span></small><br>
+                                        <small v-if="budget">{{ $t('budgets.transmitter') }} {{ budget.user.name }}</small>
+                                    </div>
+                                    <b-button size="sm" v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="outline-primary"
                                         class="mb-75" block @click="$router.back()">
                                         {{ $t("back") }}
                                     </b-button>
@@ -67,13 +67,13 @@
                                 <b-col cols="12" xl="6" class="p-1">
                                     <!-- Branch Office -->
                                     <b-form-group :label="$t('branch_office')" label-for="branch_office_id">
-                                        <v-select :disabled="true" v-model="selectedBranch" :options="branchs" label="name"
+                                        <v-select class="select-size-sm" :disabled="true" v-model="selectedBranch" :options="branchs" label="name"
                                             input-id="branch_office_id" />
                                     </b-form-group>
 
                                     <!-- Patients -->
                                     <b-form-group :label="$t('budgets.patient')" label-for="patient">
-                                        <b-form-input id="patient" readonly v-model="budget.patient.full_name" />
+                                        <b-form-input size="sm" id="patient" readonly v-model="budget.patient.full_name" />
                                     </b-form-group>
 
                                     <!-- Patient Details -->
@@ -133,14 +133,14 @@
 
                             <b-row class="invoice-spacing">
                                 <b-col cols="12" class="p-1">
-                                    <h4 class="card-title">
+                                    <h6>
                                         {{ $t('budgets.name') }}
-                                    </h4>
+                                    </h6>
                                     <b-form ref="form" class="_repeater-form">
                                         <!-- Budget name -->
                                         <b-row>
                                             <b-col cols="6">
-                                                <b-form-input v-model="budget.name"
+                                                <b-form-input size="sm" v-model="budget.name"
                                                     :placeholder="$t('budgets.name_placeholder')" />
                                             </b-col>
                                         </b-row>
@@ -153,11 +153,11 @@
                                                 <!-- Action type field -->
                                                 <b-form-group v-if="!item.isNew" :label="$t('budgets.action_group')"
                                                     label-for="action_group" class="sm">
-                                                    <b-form-input v-model="item.action_group_name" readonly />
+                                                    <b-form-input size="sm" v-model="item.action_group_name" readonly />
                                                 </b-form-group>
                                                 <b-form-group v-else :label="$t('budgets.action_group')"
                                                     label-for="action_group" class="sm">
-                                                    <v-select v-model="item.action_group" :options="actionGroups"
+                                                    <v-select class="select-size-sm" v-model="item.action_group" :options="actionGroups"
                                                         label="name" input-id="action_group"
                                                         @input="selectActionGroup(item)" />
                                                 </b-form-group>
@@ -168,13 +168,13 @@
                                                 <b-form-group v-if="!item.isNew"
                                                     :label="item.action_type === 'clinical' ? $t('budgets.clinical_actions') : $t('budgets.laboratory_actions')"
                                                     label-for="action">
-                                                    <b-form-input v-model="item.action_name" readonly />
+                                                    <b-form-input size="sm" v-model="item.action_name" readonly />
                                                 </b-form-group>
 
                                                 <b-form-group v-else
                                                     :label="item.type === 'clinical' ? $t('budgets.clinical_actions') : $t('budgets.laboratory_actions')"
                                                     label-for="action">
-                                                    <v-select v-model="item.selectedAction" :options="actions" label="name"
+                                                    <v-select class="select-size-sm" v-model="item.selectedAction" :options="actions" label="name"
                                                         input-id="action" @input="selectAction(item)" />
                                                 </b-form-group>
                                             </b-col>
@@ -182,7 +182,7 @@
                                             <!-- Cost -->
                                             <b-col md="2">
                                                 <b-form-group :label="$t('budgets.cost')" label-for="price">
-                                                    <b-form-input @input="calculateTotal(item)" v-model="item.price"
+                                                    <b-form-input size="sm" @input.native="calculateTotal(item)" v-model="item.price"
                                                         id="price" type="number"
                                                         :placeholder="$t('budgets.cost_placeholder')" />
                                                 </b-form-group>
@@ -192,7 +192,7 @@
                                             <b-col md="2">
                                                 <b-form-group :label="$t('budgets.discount')"
                                                     label-for="discount">
-                                                    <b-form-input @input="calculateTotal(item)" id="discount"
+                                                    <b-form-input size="sm" @input.native="calculateTotal(item)" id="discount"
                                                         v-model="item.discount"
                                                         :placeholder="$t('budgets.discount_placeholder')" />
                                                 </b-form-group>
@@ -202,7 +202,7 @@
                                             <b-col md="1">
                                                 <b-form-group :label="$t('budgets.area')" label-for="area">
                                                     <b-input-group @click="openModalAreas(item)">
-                                                        <b-form-input type="text" v-model="item.area"
+                                                        <b-form-input size="sm" type="text" v-model="item.area"
                                                             :placeholder="$t('budgets.area_placeholder')" />
                                                     </b-input-group>
                                                 </b-form-group>
@@ -210,7 +210,7 @@
 
                                             <!-- Remove Button -->
                                             <b-col md="1" class="mb-50">
-                                                <b-button v-ripple.400="'rgba(234, 84, 85, 0.15)'" variant="danger"
+                                                <b-button size="sm" v-ripple.400="'rgba(234, 84, 85, 0.15)'" variant="danger"
                                                     class="mt-0 mt-md-2" @click="removeItem(index)">
                                                     <feather-icon icon="XIcon" class="" /></b-button>
                                             </b-col>
@@ -218,13 +218,13 @@
                                     </b-form>
 
                                     <div class="demo-inline-spacing">
-                                        <b-button class="mt-2" v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="outline-primary"
+                                        <b-button size="sm" class="mt-2" v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="outline-primary"
                                             @click="repeateAgain('clinical')">
                                             <feather-icon icon="PlusIcon" class="mr-25" />
                                             <span>{{ $t('budgets.clinical_action') }}</span>
                                         </b-button>
 
-                                        <b-button class="mt-2" v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="outline-primary"
+                                        <b-button size="sm" class="mt-2" v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="outline-primary"
                                             @click="repeateAgain('laboratory')">
                                             <feather-icon icon="PlusIcon" class="mr-25" />
                                             <span>{{ $t('budgets.laboratory_action') }}</span>
@@ -258,7 +258,11 @@
                                                     </td>
                                                     <td aria-colindex="1" role="cell">
                                                         <p class="invoice-total-amount">
-                                                            <strong>{{ formatPrice(budget_cost) }}</strong>
+                                                            <strong>
+                                                                {{ formatPrice(items.reduce((carry, action) => {
+                                                                    return carry + parseFloat(action.price);
+                                                                }, 0)) }}
+                                                            </strong>
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -270,7 +274,9 @@
                                                     </td>
                                                     <td>
                                                         <p class="invoice-total-amount">
-                                                            <strong>{{ formatPrice(budget_discount) }}</strong>
+                                                            <strong>{{ items.reduce((carry, action) => {
+                                                                return carry + parseFloat(action.discount);
+                                                            }, 0) }}</strong>
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -282,8 +288,13 @@
                                                         </p>
                                                     </td>
                                                     <td>
+                                                        <!-- Subutotal - descuento * el 16% -->
                                                         <p class="invoice-total-amount">
-                                                            <strong>{{ formatPrice(budget_tax) }}</strong>
+                                                            <strong>{{ 
+                                                               formatPrice(items.reduce((carry, action) => {
+                                                                    return carry + parseFloat(action.price) - parseFloat(action.discount);
+                                                                }, 0) * findSetting("default_tax") / 100)
+                                                            }}</strong>
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -294,8 +305,15 @@
                                                         </p>
                                                     </td>
                                                     <td>
+                                                        <!-- subtotal - descuento + impuesto -->
                                                         <p class="invoice-total-amount">
-                                                            <strong>{{ formatPrice(budget_total + budget_tax) }}</strong>
+                                                            <strong>
+                                                                {{ formatPrice(items.reduce((carry, action) => {
+                                                                    return carry + parseFloat(action.price) - parseFloat(action.discount);
+                                                                }, 0) + (items.reduce((carry, action) => {
+                                                                    return carry + parseFloat(action.price) - parseFloat(action.discount);
+                                                                }, 0) * findSetting("default_tax") / 100)) }}
+                                                            </strong>
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -452,7 +470,8 @@ import {
     BFormTags,
     BFormRadioGroup,
     BFormInvalidFeedback,
-    BFormValidFeedback
+    BFormValidFeedback,
+    BImg,
 } from "bootstrap-vue";
 import router from "@/router";
 import vSelect from "vue-select";
@@ -512,7 +531,8 @@ export default {
         BCardCode,
         BFormRadioGroup,
         BFormInvalidFeedback,
-        BFormValidFeedback
+        BFormValidFeedback,
+        BImg,
     },
     mixins: [heightTransition],
     data() {
@@ -820,7 +840,7 @@ export default {
             return this.findSetting('app_budget_default_nomenclature')
         },
         budget_cost() {
-            if (_.isEmpty(this.items)) return 0;
+            if (this.items.length <= 0) return 0;
             const result = this.items.reduce((carry, action) => {
                 return carry + parseFloat(action.price);
             }, 0);
@@ -828,7 +848,7 @@ export default {
             return _.isNaN(result) ? 0 : result;
         },
         budget_discount() {
-            if (_.isEmpty(this.items)) return 0;
+            if (this.items.length <= 0) return 0;
             const result = this.items.reduce((carry, action) => {
                 return carry + parseFloat(action.discount);
             }, 0);
@@ -836,29 +856,31 @@ export default {
             return _.isNaN(result) ? 0 : result;
         },
         budget_total() {
-            if (_.isEmpty(this.items)) return 0;
+            if (this.items.length <= 0) return 0;
             const result = this.items.reduce((carry, action) => {
                 return carry + (parseFloat(action.price) - parseFloat(action.discount));
             }, 0);
             return _.isNaN(result) ? 0 : result;
         },
         budget_subtotal() {
-            if (_.isEmpty(this.items)) return 0;
+            if (this.items.length <= 0) return 0;
             const result = this.items.reduce((carry, action) => {
                 return carry + parseFloat(action.subtotal);
             }, 0);
             return _.isNaN(result) ? 0 : result;
         },
         budget_tax() {
-            const enableTax = this.isEnabledTax;
+            const enableTax = this.findSetting("enable_tax")            
             if (enableTax) {
                 const tax = parseFloat(this.findSetting("default_tax"));
-                if (_.isEmpty(this.items)) return 0;
+                if (this.items.length <= 0) return 0;
                 const result =
                     this.items.reduce((carry, action) => {
                         return carry + parseFloat(action.total);
                     }, 0) *
                     (tax / 100);
+
+                console.log(`Result ${result}`)
                 return _.isNaN(result) ? 0 : result;
             }
             return 0;
@@ -871,6 +893,9 @@ export default {
         },
         isEnabledTax() {
             return this.findSetting("enable_tax")
+        },
+        logo () {
+            return store.state.auth.logo || window._setting.app_logo
         },
     },
     async mounted() {
@@ -1009,9 +1034,16 @@ export default {
             this.actions = data.data;
         },
         calculateTotal(evt) {
-            evt.discount = parseFloat(evt.discount);
-            evt.subtotal = evt.price;
-            evt.total = evt.subtotal - evt.discount;
+            evt.discount = parseFloat(evt.discount)
+            if (isNaN(evt.discount)) {
+                evt.discount = 0
+            }
+
+            if (evt.discount > parseFloat(evt.cost)) {
+                evt.discount = evt.cost
+            }
+            evt.subtotal = evt.cost
+            evt.total = evt.subtotal - evt.discount
         },
         selectPatient(evt) { },
         selectActionType(evt) {

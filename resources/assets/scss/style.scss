@@ -10,3 +10,15 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
     letter-spacing: 0.01rem;
     font-size: 1.45rem;
 }
+
+.flatpickr-small .flatpickr-input {
+    /*font-size: 8px!important; /* Ajusta el tamaño del texto del input */
+    padding: 5px; /* Ajusta el padding del input */
+    /*width: 120px; /* Ajusta el ancho del input */
+}
+
+.flatpickr-input {
+    /*width: 150px!important; /* Ajusta el ancho del input */
+    height: 30px!important; /* Ajusta la altura del input */
+    /*font-size: 7px!important; /* Ajusta el tamaño del texto del input */
+}

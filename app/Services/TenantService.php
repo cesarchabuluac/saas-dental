@@ -100,8 +100,6 @@ class TenantService
                 $this->tenantData($request, $trialDayCount, now()),
         );
 
-        Log::info($tenant);
-
         $domain = $tenant->createDomain([
             'domain' => $request->domain,
         ]);
@@ -138,6 +136,7 @@ class TenantService
         WHERE `key` IN ('app_name', 'mail_from_name');");
 
         $json = '{"locale": "es", "theme": "light"}';
+
         DB::statement("UPDATE users SET settings='{$json}'");
 
         tenancy()->end();
@@ -172,9 +171,8 @@ class TenantService
             ],
         ];
 
-        Log::info($dataEmail);
-
-        $service->sendEmail($dataEmail);
+        $log = $service->sendEmail($dataEmail);
+        Log::info(json_encode($log));
 
         // Artisan::call("generate:site-config");
         //$this->createDigitalOceanRecords($tenant->domain, $tenant->id);

@@ -13,11 +13,11 @@
                     <b-col cols="12" md="12">
                         <div class="d-flex align-items-center justify-content-end">
                             <b-input-group>
-                                <b-form-input autofocus v-model="search" class="d-inline-block _mr-1" :placeholder="$t('inventories.medicines.search_help')" 
+                                <b-form-input autofocus size="sm" v-model="search" class="d-inline-block _mr-1" :placeholder="$t('inventories.medicines.search_help')" 
                                 @keyup.enter="searchMedicines"
                                 autocomplete="off"/>
                                 <b-input-group-prepend>
-                                <b-button variant="primary" @click="searchMedicines">
+                                <b-button size="sm" variant="primary" @click="searchMedicines">
                                     <feather-icon icon="SearchIcon" />
                                 </b-button>
                                 </b-input-group-prepend>
@@ -28,7 +28,7 @@
             </div>
             <b-table
                 ref="refMedicinesListTable"
-                class="position-relative"
+                class="position-relative table-sm table-small text-small small"
                 :items="medicines"
                 responsive
                 stacked="sm"
@@ -38,6 +38,9 @@
                 show-empty
                 :empty-text="$t('datatables.sZeroRecords')"
                 busy.sync="loading"
+                small
+                selectable select-mode="single" 
+                @row-selected="selectRow"
             >
                 <!-- Empty -->
                 <template slot="empty">
@@ -53,14 +56,14 @@
 
                 <!-- Column: name -->
                 <template #cell(name)="data">
-                    <div @click="chooseItem(data.item)" class="text-wrap">
+                    <div class="text-wrap">
                         {{ data.item.name }}
                     </div>
                 </template>
 
                 <!-- Column: Sku -->
                 <template #cell(sku)="data">
-                    <span @click="chooseItem(data.item)">{{data.item.sku }}</span>
+                    {{data.item.sku }}
                 </template>
 
                 <template #cell(stock)="data">
@@ -78,7 +81,7 @@
 
                 <!-- Column: Description -->
                 <template #cell(description)="data">
-                    <span  @click="chooseItem(data.item)">{{data.item.description}}</span>
+                    {{data.item.description}}
                 </template>
 
                 <!-- Column: Actions -->
@@ -88,7 +91,7 @@
                             @click="chooseItem(data.item)"
                             size="sm"
                             v-ripple.400="'rgba(255, 255, 255, 0.15)'"
-                            variant="primary"
+                            variant="outline-primary"
                             >
                         {{$t('to_choose')}}
                         </b-button>
@@ -200,6 +203,25 @@ export default {
         }
     },
     methods: {
+        selectRow(item) {
+            const medicine = {...item[0]}
+            if (this.isTransfer) {
+                if(medicine.current_stock <= 0) {
+                    this.$toast({
+                        component: ToastificationContent,
+                        props: {
+                            title: this.$t('inventories.medicines.no_stock'),
+                            icon: "XIcon",
+                            variant: "danger",
+                        },
+                    });
+                    return
+                }
+            }
+
+            this.$emit("selected", {...medicine});
+            this.close();
+        },
         chooseItem(item) {
             if(this.isTransfer) {
                 if(item.current_stock <= 0) {

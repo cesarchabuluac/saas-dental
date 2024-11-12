@@ -143,7 +143,7 @@
                             <td class="title" width="360" style="min-width: 360x!important;">
                                 <strong>{{__('lang.budgets.patient')}}</strong><br>
                                 {{$budget->patient->getFullName()}}<br>
-                                {{__('lang.patients.document_type')}} ({{$budget->patient->document_type}}): {{$budget->patient->rut}}<br>
+                                {{__('lang.patients.document_type')}} ({{$budget->patient->document_type}}): <br>{{$budget->patient->rut}}<br>
                                 {{__('lang.patients.phone')}}: {{$budget->patient->phone}}, {{$budget->patient->cellphone}} <br>
                                 {{__('lang.patients.email')}}: <br>{{$budget->patient->email}}<br>
                                 <strong>{{ __('lang.total_due') }}: {{getPrice($budget->total_debt)}}</strong><br>
@@ -224,6 +224,17 @@
                         <strong> {{__('lang.discount')}}: {!!getPrice($budget->discount)!!} </strong>
                     </td>
                 </tr>
+                @if ($budget->tax > 0 && $budget->tax_percent > 0)
+                <tr  class="total">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="2" style="text-align: right; font-size:16px">
+                        <strong> {{__('lang.tax')}} ({{intVal($budget->tax_percent)}}%): {!!getPrice($budget->tax)!!} </strong>
+                    </td>
+                </tr>
+                @endif
                 <tr class="total">
                     <td></td>
                     <td></td>

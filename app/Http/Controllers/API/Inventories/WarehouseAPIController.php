@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API\Inventories;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateWarehouseRequest;
 use App\Http\Requests\UpdateWarehouseRequest;
+use App\Repositories\Inventories\StockRepository;
 use App\Repositories\Inventories\WarehouseRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -14,11 +15,13 @@ class WarehouseAPIController extends Controller
 
     /** @var  WarehouseRepository */
     private $warehouseRepository;
+    private $stockRepository;
 
-    public function __construct(WarehouseRepository $warehouseRepository)
+    public function __construct(WarehouseRepository $warehouseRepository, StockRepository $stockRepository)
     {
         $this->warehouseRepository = $warehouseRepository;
-    }
+        $this->stockRepository = $stockRepository;
+    }    
 
     /**
      * Display a listing of the resource.
@@ -137,5 +140,24 @@ class WarehouseAPIController extends Controller
         } catch (\Exception $e) {
             return $this->sendError($e->getMessage());
         }
+    }
+
+    /**
+     * Get stocks of a warehouse
+     */
+    public function getStocks($id)
+    {
+        $warehouse = $this->warehouseRepository->find($id);        
+        if (empty($warehouse)) {
+            return $this->sendError('Warehouse not found');
+        }
+
+        $stocks = $this->stockRepository->query()
+            ->where('warehouse_id', $id)
+            ->with('medicine')
+            ->orderBy('created_at', 'DESC')
+            ->paginate(request('perPage'));
+
+        return $this->sendResponse($stocks, 'Stocks retrieved successfully.');
     }
 }

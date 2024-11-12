@@ -22,14 +22,22 @@ router.beforeEach((to, from, next) => {
             next();
         }
     } else if (to.name === 'subscription') {
-        const roleId = store.getters['auth/getRoleId']
-        if (roleId == 1 || roleId == 2) {
-            next()
+        
+        const userRoles = store.getters['auth/getUser'].roles || []; // Array de roles del usuario
+
+        // Define los roles que tienen acceso
+        const allowedRoles = [1, 2]; // Roles que permiten acceder a la ruta
+
+        // Verifica si alguno de los roles del usuario está en la lista de roles permitidos
+        const hasAccess = userRoles.some(role => allowedRoles.includes(role.id));
+
+        if (hasAccess) {
+            next();
         } else {
-            console.log('aqui....')
-            next({name: 'home'})
-            
+            console.log('Acceso denegado');
+            next({ name: 'home' }); // Redirige a la página de inicio u otra ruta
         }
+       
     } else {
         if (store.state.auth.user) {
             next();

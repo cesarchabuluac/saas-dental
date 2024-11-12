@@ -2,127 +2,78 @@
   <li class="nav-item nav-search">
 
     <!-- Icon -->
-    <a
-      href="javascript:void(0)"
-      class="nav-link nav-link-search"
-      @click="showSearchBar = true"
-    >
-      <feather-icon
-        icon="SearchIcon"
-        size="21"
-      />
+    <a href="javascript:void(0)" class="nav-link nav-link-search" @click="showSearchBar = true">
+      <feather-icon icon="SearchIcon" size="21" />
     </a>
 
     <!-- Input -->
-    <div
-      class="search-input"
-      :class="{'open': showSearchBar}"
-    >
+    <div class="search-input" :class="{ 'open': showSearchBar }">
       <div class="search-input-icon">
         <feather-icon icon="SearchIcon" />
       </div>
       <!-- <input type="text" placeholder="Explore Vuexy...." class="form-control-input"> -->
       <!-- @keyup.esc="escPressed" -->
       <!-- @keyup.enter="suggestionSelected" -->
-      <b-form-input
-        v-if="showSearchBar"
-        v-model="searchQuery"
-        placeholder="Explore Vuexy"
-        autofocus
-        autocomplete="off"
-        @keyup.up="increaseIndex(false)"
-        @keyup.down="increaseIndex"
-        @keyup.esc="showSearchBar = false; resetsearchQuery()"
-        @keyup.enter="suggestionSelected"
-        @blur.stop="showSearchBar = false; resetsearchQuery()"
-      />
-      <div
-        class="search-input-close"
-        @click="showSearchBar = false; resetsearchQuery()"
-      >
+      <b-form-input v-if="showSearchBar" v-model="searchQuery" placeholder="Explorar..." autofocus autocomplete="off"
+        @keyup.up="increaseIndex(false)" @keyup.down="increaseIndex"
+        @keyup.esc="showSearchBar = false; resetsearchQuery()" @keyup.enter="suggestionSelected"
+        @blur.stop="showSearchBar = false; resetsearchQuery()" />
+      <div class="search-input-close" @click="showSearchBar = false; resetsearchQuery()">
         <feather-icon icon="XIcon" />
       </div>
 
       <!-- Suggestions List -->
-      <vue-perfect-scrollbar
-        :settings="perfectScrollbarSettings"
-        class="search-list search-list-main scroll-area overflow-hidden"
-        :class="{'show': searchQuery}"
-        tagname="ul"
-      >
-        <li
-          v-for="(suggestion_list, grp_name, grp_index) in filteredData"
-          :key="grp_index"
-          class="suggestions-groups-list"
-        >
+      <vue-perfect-scrollbar :settings="perfectScrollbarSettings"
+        class="search-list search-list-main scroll-area overflow-hidden" :class="{ 'show': searchQuery }" tagname="ul">
+  <li v-for="(suggestion_list, grp_name, grp_index) in filteredData" :key="grp_index" class="suggestions-groups-list">
 
-          <!-- Group Header -->
-          <p class="suggestion-group-title">
-            <span>
-              {{ title(grp_name) }}
-            </span>
-          </p>
+    <!-- Group Header -->
+    <p class="suggestion-group-title">
+      <span>
+        {{ title(grp_name) }}
+      </span>
+    </p>
 
-          <!-- Suggestion List of each group -->
-          <ul>
-            <li
-              v-for="(suggestion, index) in suggestion_list"
-              :key="index"
-              class="suggestion-group-suggestion cursor-pointer"
-              :class="{'suggestion-current-selected': currentSelected === `${grp_index}.${index}`}"
-              @mouseenter="currentSelected = `${grp_index}.${index}`"
-              @mousedown.prevent="suggestionSelected(grp_name, suggestion)"
-            >
-              <b-link
-                v-if="grp_name === 'pages'"
-                class="p-0"
-              >
-                <feather-icon
-                  :icon="suggestion.icon"
-                  class="mr-75"
-                />
-                <span class="align-middle">{{ suggestion.title }}</span>
-              </b-link>
-              <template v-else-if="grp_name === 'files'">
-                <div class="d-flex align-items-center">
-                  <b-img
-                    :src="suggestion.icon"
-                    class="mr-1"
-                    height="32"
-                  />
-                  <div>
-                    <p>{{ suggestion.file_name }}</p>
-                    <small>by {{ suggestion.from }}</small>
-                  </div>
-                  <small class="ml-auto">{{ suggestion.size }}</small>
-                </div>
-              </template>
-              <template v-else-if="grp_name === 'contacts'">
-                <div class="d-flex align-items-center">
-                  <b-avatar
-                    :src="suggestion.img"
-                    class="mr-1"
-                    size="32"
-                  />
-                  <div>
-                    <p>{{ suggestion.name }}</p>
-                    <small>{{ suggestion.email }}</small>
-                  </div>
-                  <small class="ml-auto">{{ suggestion.time }}</small>
-                </div>
-              </template>
-            </li>
+    <!-- Suggestion List of each group -->
+    <ul>
+      <li v-for="(suggestion, index) in suggestion_list" :key="index" class="suggestion-group-suggestion cursor-pointer"
+        :class="{ 'suggestion-current-selected': currentSelected === `${grp_index}.${index}` }"
+        @mouseenter="currentSelected = `${grp_index}.${index}`"
+        @mousedown.prevent="suggestionSelected(grp_name, suggestion)">
+        <b-link v-if="grp_name === 'reportes'" class="p-0"
+          :to="suggestion.route">
+          <feather-icon :icon="suggestion.icon" class="mr-75" />
+          <span class="align-middle">{{ suggestion.title }}</span>
+        </b-link>
+        <!-- <template v-else-if="grp_name === 'files'">
+          <div class="d-flex align-items-center">
+            <b-img :src="suggestion.icon" class="mr-1" height="32" />
+            <div>
+              <p>{{ suggestion.file_name }}</p>
+              <small>by {{ suggestion.from }}</small>
+            </div>
+            <small class="ml-auto">{{ suggestion.size }}</small>
+          </div>
+        </template>
+        <template v-else-if="grp_name === 'contacts'">
+          <div class="d-flex align-items-center">
+            <b-avatar :src="suggestion.img" class="mr-1" size="32" />
+            <div>
+              <p>{{ suggestion.name }}</p>
+              <small>{{ suggestion.email }}</small>
+            </div>
+            <small class="ml-auto">{{ suggestion.time }}</small>
+          </div>
+        </template> -->
+      </li>
 
-            <li
-              v-if="!suggestion_list.length && searchQuery"
-              class="suggestion-group-suggestion no-results"
-            >
-              <p>No Results Found.</p>
-            </li>
-          </ul>
-        </li>
-      </vue-perfect-scrollbar>
-    </div>
+      <li v-if="!suggestion_list.length && searchQuery" class="suggestion-group-suggestion no-results">
+        <p>No Results Found.</p>
+      </li>
+    </ul>
+  </li>
+  </vue-perfect-scrollbar>
+  </div>
   </li>
 </template>
 
@@ -166,7 +117,7 @@ export default {
           /* eslint-enable */
         }
       }
-      if (grpName === 'pages') router.push(suggestion.route).catch(() => {})
+      if (grpName === 'pages') router.push(suggestion.route).catch(() => { })
       // eslint-disable-next-line no-use-before-define
       resetsearchQuery()
       showSearchBar.value = false
@@ -218,7 +169,7 @@ export default {
         if (activeGrpTotalItems - 1 > itemIndex) {
           currentSelected.value = `${grpIndex}.${Number(itemIndex) + 1}`
 
-        // If active item grp is not last in grp list
+          // If active item grp is not last in grp list
         } else if (grpIndex < grpArr.length - 1) {
           for (let i = Number(grpIndex) + 1; i < grpArr.length; i++) {
             // If navigating group have items => Then move in that group
@@ -233,7 +184,7 @@ export default {
         if (Number(itemIndex)) {
           currentSelected.value = `${grpIndex}.${Number(itemIndex) - 1}`
 
-        // If active item grp  is not first in grp list
+          // If active item grp  is not first in grp list
         } else if (Number(grpIndex)) {
           for (let i = Number(grpIndex) - 1; i >= 0; i--) {
             // If navigating group have items => Then move in that group
@@ -269,12 +220,12 @@ export default {
 @import '~@resources/scss/base/bootstrap-extended/include';
 @import '~@resources/scss/base/components/variables-dark';
 
-ul
-{
+ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 p {
   margin: 0;
 }

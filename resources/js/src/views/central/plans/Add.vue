@@ -18,6 +18,7 @@
                                 label-for="name"
                             >
                                 <b-form-input
+                                    autocomplete="off"
                                     id="name"
                                     v-model="plan.name"
                                     :placeholder="$t('plans.name_placeholder')"
@@ -32,6 +33,7 @@
                                 label-for="description"
                             >
                                 <b-form-input
+                                    autocomplete="off"
                                     id="description"
                                     v-model="plan.description"
                                     :placeholder="$t('plans.description_placeholder')"
@@ -76,6 +78,7 @@
                         <b-col cols="12" md="4">
                             <b-form-group :label="$t('plans.amount')" label-for="amount">
                                 <b-form-input 
+                                    autocomplete="off"
                                     id="amount" 
                                     v-model="plan.amount" 
                                     :placeholder="$t('plans.amount_placeholder')" 
@@ -86,6 +89,7 @@
                         <b-col cols="12" md="4">
                             <b-form-group :label="$t('plans.image')" label-for="image">
                                 <b-form-file
+                                    autocomplete="off"
                                     v-model="plan.image"
                                     :placeholder="$t('plans.image_placeholder')"
                                     drop-placeholder="Drop file here..."
@@ -106,6 +110,7 @@
                         <b-col cols="12" md="4">
                             <b-form-group :label="$t('plans.limit_doctor')" label-for="limit_doctor">
                                 <b-form-input 
+                                    autocomplete="off"
                                     id="limit_doctor" 
                                     v-model="plan.limit_doctor" 
                                     :placeholder="$t('plans.limit_doctor_placeholder')" 
@@ -116,6 +121,7 @@
                         <b-col cols="12" md="4">
                             <b-form-group :label="$t('plans.limit_assistant')" label-for="limit_assistant">
                                 <b-form-input 
+                                    autocomplete="off"
                                     id="limit_assistant" 
                                     v-model="plan.limit_assistant" 
                                     :placeholder="$t('plans.limit_assistant_placeholder')" 
@@ -126,6 +132,7 @@
                         <b-col cols="12" md="4">
                             <b-form-group :label="$t('plans.limit_receptionist')" label-for="limit_receptionist">
                                 <b-form-input 
+                                    autocomplete="off"
                                     id="limit_receptionist" 
                                     v-model="plan.limit_receptionist" 
                                     :placeholder="$t('plans.limit_receptionist_placeholder')" 
@@ -136,6 +143,7 @@
                         <b-col cols="12" md="4">
                             <b-form-group :label="$t('plans.limit_patient')" label-for="limit_patient">
                                 <b-form-input 
+                                    autocomplete="off"
                                     id="limit_patient" 
                                     v-model="plan.limit_patient" 
                                     :placeholder="$t('plans.limit_patient_placeholder')" 
@@ -252,11 +260,11 @@ export default {
             },
             loading: false,
             intervals: [
-                // { label: this.$t('intervals.days'), value: "days" },
+                // { label: this.$t('intervals.days'), value: "day" },
                 // { label: this.$t('intervals.week'), value: "week" },
                 { label: this.$t('intervals.month'), value: "month" },
                 { label: this.$t('intervals.quarter'), value: "quarter" },
-                { label: this.$t('intervals.semester'), value: "6month" },
+                { label: this.$t('intervals.semester'), value: "semester" },
                 { label: this.$t('intervals.year'), value: "year" },
             ],
             currencies: []

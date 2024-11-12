@@ -9,21 +9,20 @@
         </template>
 
         <!-- Table Container Card -->
+
+        <b-card>
+            <b-row>
+                <b-col cols="12" md="8">
+                    <b-form-group :label="$t('filters.title')" label-cols="12" label-class="font-weight-bolder"
+                        label-align="left">
+                        <b-form-radio-group id="radio-group-1" v-model="filter_by" :options="optionsFilters"
+                            :reduce="option => option.value" name="radio-options" class="groupselect"
+                            @change="getPatients"></b-form-radio-group>
+                    </b-form-group>
+                </b-col>
+            </b-row>            
+        </b-card>
         <b-card no-body class="mb-0">
-
-            <div class="m-2">
-                <b-row>
-                    <b-col cols="12" md="8" class="p-1">
-                        <b-form-group :label="$t('filters.title')" label-cols="12" label-class="font-weight-bolder"
-                            label-align="left">
-                            <b-form-radio-group id="radio-group-1" v-model="filter_by" :options="optionsFilters"
-                                :reduce="option => option.value" name="radio-options" class="groupselect"
-                                @change="getPatients"></b-form-radio-group>
-                        </b-form-group>
-                    </b-col>
-                </b-row>
-            </div>
-
             <div class="m-2">
                 <!-- Table Top -->
                 <b-row>
@@ -32,8 +31,8 @@
                         class="d-flex align-items-center justify-content-start mb-1 mb-md-0 col-md-6 col-12">
                         <label>{{ $t("show") }}</label>
                         <v-select v-model="perPage" :options="perPageOptions" :clearable="false"
-                            class="per-page-selector d-inline-block mx-50" />
-                        <b-button v-if="canAccess('patients.create')" variant="primary"
+                            class="select-size-sm per-page-selector d-inline-block mx-50" />
+                        <b-button size="sm" v-if="canAccess('patients.create')" variant="primary"
                             @click="$router.push({ name: 'apps-patients-add', })">
                             <span class="text-nowrap">
                                 {{ $t("add") }}
@@ -45,10 +44,10 @@
                     <b-col cols="12" md="6">
                         <div class="d-flex align-items-center justify-content-end">
                             <b-input-group>
-                                <b-form-input v-model="searchQuery" class="d-inline-block _mr-1"
+                                <b-form-input size="sm" v-model="searchQuery" class="d-inline-block _mr-1"
                                     :placeholder="$t('patients.search_options')" @keyup.enter="getPatients" />
                                 <b-input-group-prepend>
-                                    <b-button variant="primary" @click="getPatients">
+                                    <b-button size="sm" variant="primary" @click="getPatients">
                                         <feather-icon icon="SearchIcon" />
                                     </b-button>
                                 </b-input-group-prepend>
@@ -59,9 +58,9 @@
             </div>
 
 
-            <b-table ref="refPatientsListTable" class="position-relative" :items="patients" responsive :fields="columns"
+            <b-table ref="refPatientsListTable" class="position-relative table-small text-small small b-table-small" :items="patients" responsive :fields="columns"
                 primary-key="id" :sort-by.sync="sortBy" show-empty :empty-text="$t('datatables.sZeroRecords')"
-                :sort-desc.sync="sortDesc" :current-page="currentPage" busy.sync="loading" stacked="md">
+                :sort-desc.sync="sortDesc" :current-page="currentPage" busy.sync="loading" small stacked="md">
                 <!-- Empty -->
                 <template slot="empty">
                     <div v-if="loading" class="d-flex justify-content-center mb-1">

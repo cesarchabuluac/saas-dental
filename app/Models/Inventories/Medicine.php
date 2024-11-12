@@ -3,6 +3,7 @@
 namespace App\Models\Inventories;
 
 use App\Models\Inventories\SubCategory;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -16,6 +17,7 @@ class Medicine extends Model
     protected $appends = [
         'price_with_tax',
         'current_stock',
+        'warehouse_label',
     ];
 
     protected $fillable = [
@@ -42,6 +44,11 @@ class Medicine extends Model
         'manage_stock' => 'boolean',
     ];
 
+    public function getWarehouseLabelAttribute()
+    {
+        return $this->stocks->pluck('warehouse.name')->implode(', '); 
+    }
+
     public function getCurrentStockAttribute()
     {
         return $this->stocks->sum('quantity');
@@ -58,22 +65,22 @@ class Medicine extends Model
 
     public function unit()
     {
-        return $this->belongsTo(Unit::class);
+        return $this->belongsTo(Unit::class)->withTrashed();
     }
 
     public function brand()
     {
-        return $this->belongsTo(Brand::class);
+        return $this->belongsTo(Brand::class)->withTrashed();
     }
 
     public function category()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class)->withTrashed();
     }
 
     public function subcategory()
     {
-        return $this->belongsTo(SubCategory::class);
+        return $this->belongsTo(SubCategory::class)->withTrashed();
     }
 
     public function user()

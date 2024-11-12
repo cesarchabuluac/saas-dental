@@ -13,6 +13,11 @@ use Prettus\Repository\Eloquent\BaseRepository;
  */
 class TransferRepository extends BaseRepository
 {
+
+     /**
+     * @var array
+    */
+    protected $fieldSearchable = [];
     
     /**
      * Specify Model class name

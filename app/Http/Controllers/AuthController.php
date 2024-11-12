@@ -48,19 +48,19 @@ class AuthController extends Controller
             'c_password' => 'required|same:password',
         ]);
 
-        try {
-            DB::beginTransaction();
-            $user = User::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => bcrypt($request->password)
-            ]);
-            DB::commit();
-            return $this->sendResponse($user, __('lang.created_successfully', ['operator' => __('lang.user')]));
-        } catch (Exception $ex) {
-            DB::rollBack();
-            return $this->sendError($ex->getMessage(), 401);
-        }
+        // try {
+        //     DB::beginTransaction();
+        //     $user = User::create([
+        //         'name' => $request->name,
+        //         'email' => $request->email,
+        //         'password' => bcrypt($request->password)
+        //     ]);
+        //     DB::commit();
+        //     return $this->sendResponse($user, __('lang.created_successfully', ['operator' => __('lang.user')]));
+        // } catch (Exception $ex) {
+        //     DB::rollBack();
+        //     return $this->sendError($ex->getMessage(), 401);
+        // }
     }
 
     /**

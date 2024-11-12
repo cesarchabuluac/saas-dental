@@ -27,14 +27,14 @@
                                 {{ patient.name }}
                             </h4>
                             <div class="d-flex flex-wrap">
-                                <b-button variant="primary" @click="$refs.refInputEl.click()">
+                                <b-button size="sm" variant="primary" @click="$refs.refInputEl.click()">
                                     <input ref="refInputEl" type="file" class="d-none" @input="inputImageRenderer" />
                                     <span class="d-none d-sm-inline">{{
                                         $t("change")
                                     }}</span>
                                     <feather-icon icon="EditIcon" class="d-inline d-sm-none" />
                                 </b-button>
-                                <b-button @click="resetAvatar" variant="outline-secondary" class="ml-1">
+                                <b-button size="sm" @click="resetAvatar" variant="outline-secondary" class="ml-1">
                                     <span class="d-none d-sm-inline">{{
                                         $t("cancel")
                                     }}</span>
@@ -51,7 +51,7 @@
                                 <b-col cols="12" md="4">
                                     <b-form-group :label="$t('patients.name')" :description="$t('patients.name_help')"
                                         label-for="name">
-                                        <b-form-input id="name" v-model="patient.name"
+                                        <b-form-input size="sm" id="name" v-model="patient.name"
                                             :placeholder="$t('patients.name_placeholder')" />
                                     </b-form-group>
                                 </b-col>
@@ -60,7 +60,7 @@
                                 <b-col cols="12" md="4">
                                     <b-form-group :label="$t('patients.last_name')"
                                         :description="$t('patients.last_name_help')" label-for="last_name">
-                                        <b-form-input id="last_name" v-model="patient.last_name"
+                                        <b-form-input size="sm" id="last_name" v-model="patient.last_name"
                                             :placeholder="$t('patients.last_name_placeholder')" />
                                     </b-form-group>
                                 </b-col>
@@ -69,7 +69,7 @@
                                 <b-col cols="12" md="4">
                                     <b-form-group :label="$t('patients.mother_last_name')"
                                         :description="$t('patients.mother_last_name_help')" label-for="mother_last_name">
-                                        <b-form-input id="mother_last_name" v-model="patient.mother_last_name"
+                                        <b-form-input size="sm" id="mother_last_name" v-model="patient.mother_last_name"
                                             :placeholder="$t('patients.mother_last_name_placeholder')" />
                                     </b-form-group>
                                 </b-col>
@@ -80,6 +80,7 @@
                                         :description="$t('patients.document_type_help')">
                                         <v-select id="documentList" v-model="patient.document_type" label="label"
                                             :options="documentTypes" :placeholder="$t('patients.document_type_placeholder')"
+                                            class="select-size-sm"
                                             :clearable="false"
                                             :searchable="false" />
                                     </b-form-group>
@@ -89,7 +90,7 @@
                                 <b-col cols="12" md="4">
                                     <b-form-group :label="$t('patients.document')"
                                         :description="$t('patients.document_help')" label-for="rut">
-                                        <b-form-input id="rut" :class="isValidateRut ? '' : 'is-invalid'"
+                                        <b-form-input size="sm" id="rut" :class="isValidateRut ? '' : 'is-invalid'"
                                             v-model="patient.rut" @blur="validateRut"
                                             :placeholder="$t('patients.document_placeholder')" />
                                     </b-form-group>
@@ -108,7 +109,7 @@
                                 <b-col cols="12" md="4">
                                     <b-form-group :label="$t('patients.email')" :description="$t('patients.email_help')"
                                         label-for="email">
-                                        <b-form-input id="email" type="email" v-model="patient.email"
+                                        <b-form-input size="sm" id="email" type="email" v-model="patient.email"
                                             :placeholder="$t('patients.email_placeholder')" />
                                     </b-form-group>
                                 </b-col>
@@ -125,7 +126,7 @@
                                                 phoneNumberLabel: $t('patients.cellphone_placeholder'),
                                                 example: $t('patients.cellphone_example')
                                             }" :show-code-on-list="true" :no-validator-state="false"
-                                            :no-use-browser-locale="false" @update="validCellPhone" />
+                                            :no-use-browser-locale="false" @update="validCellPhone" size="sm" />
                                     </b-form-group>
 
                                 </b-col>
@@ -134,7 +135,7 @@
                                 <b-col cols="12" md="4">
                                     <b-form-group :label="$t('patients.phone')" :description="$t('patients.phone_help')"
                                         label-for="phone">
-                                        <b-form-input id="phone" v-model="patient.phone"
+                                        <b-form-input size="sm" id="phone" v-model="patient.phone"
                                             :placeholder="$t('patients.phone_placeholder')" />
                                     </b-form-group>
                                 </b-col>
@@ -143,7 +144,7 @@
                                 <b-col cols="12" md="6">
                                     <b-form-group :label="$t('patients.address')" :description="$t('patients.address_help')"
                                         label-for="address">
-                                        <b-form-input id="address" v-model="patient.address"
+                                        <b-form-input size="sm" id="address" v-model="patient.address"
                                             :placeholder="$t('patients.address_placeholder')" />
                                     </b-form-group>
                                 </b-col>
@@ -152,7 +153,7 @@
                                 <b-col cols="12" md="6">
                                     <b-form-group :label="$t('patients.comments')"
                                         :description="$t('patients.comments_help')" label-for="comments">
-                                        <b-form-input id="comments" v-model="patient.comments"
+                                        <b-form-input size="sm" id="comments" v-model="patient.comments"
                                             :placeholder="$t('patients.comments_placeholder')" />
                                     </b-form-group>
                                 </b-col>
@@ -166,10 +167,10 @@
                 </b-col>
 
                 <!-- Action Buttons -->
-                <b-button variant="primary" class="mb-1 mb-sm-0 mr-0 mr-sm-1" @click="store">
+                <b-button size="sm" variant="primary" class="mb-1 mb-sm-0 mr-0 mr-sm-1" @click="store">
                     {{ $t("save") }}
                 </b-button>
-                <b-button class="mb-1 mb-sm-0 mr-0 mr-sm-1" variant="outline-secondary"
+                <b-button size="sm" class="mb-1 mb-sm-0 mr-0 mr-sm-1" variant="outline-secondary"
                     @click="$router.push({ name: 'apps-patients-list' })">
                     {{ $t("back") }}
                 </b-button>

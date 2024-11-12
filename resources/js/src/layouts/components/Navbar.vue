@@ -25,6 +25,10 @@
     <b-navbar-nav v-if="user" class="nav align-items-center ml-auto">
       <!-- <locale /> -->
       <!-- <search-bar/> -->
+
+      <!-- Swtich Role Id -->
+      <session-dropdown />
+
       <notification-dropdown/>
       <b-nav-item-dropdown
         right
@@ -36,7 +40,7 @@
             <p class="user-name font-weight-bolder mb-0">
               {{ user.name }}
             </p>
-            <span class="user-status">{{ user.roles[0].name }}</span>
+            <span class="user-status">{{ roleName }}</span>
           </div>
           <b-avatar
             size="40"
@@ -54,7 +58,7 @@
           <span>{{$t('profile')}}</span>
         </b-dropdown-item>
 
-        <b-dropdown-item :disabled="!checkIsTenant()" v-if="roleId === 1 || roleId === 2" link-class="d-flex align-items-center"  :to="{ name: 'subscription'}">
+        <b-dropdown-item :disabled="!checkIsTenant()" v-if="isAccess" link-class="d-flex align-items-center"  :to="{ name: 'subscription'}">
           <feather-icon size="16" icon="CreditCardIcon" class="mr-50"/>
           <span>{{$t('subscriptions.menu')}}</span>
         </b-dropdown-item>
@@ -83,6 +87,7 @@ import Locale from '@core/layouts/components/app-navbar/components/Locale.vue'
 import SearchBar from '@core/layouts/components/app-navbar/components/SearchBar.vue'
 import CartDropdown from '@core/layouts/components/app-navbar/components/CartDropdown.vue'
 import NotificationDropdown from '@core/layouts/components/app-navbar/components/NotificationDropdown.vue'
+import SessionDropdown from '@core/layouts/components/app-navbar/components/SessionDropdown.vue'
 import UserDropdown from '@core/layouts/components/app-navbar/components/UserDropdown.vue'
 import store from '@/store'
 import { checkIsCentral } from '@/libs/domains';
@@ -103,7 +108,9 @@ export default {
     Bookmarks,
     Locale,
     NotificationDropdown,
+    SessionDropdown,
     SearchBar,
+    SessionDropdown,
   },
   props: {
     toggleVerticalMenuActive: {
@@ -119,8 +126,22 @@ export default {
     const isCentral = ref(checkIsCentral())
     const roleId = store.getters['auth/getRoleId'];
     
+    
     onMounted(async () => {
             
+    })
+
+    const roleName = computed(() => {
+      return store.getters['auth/getRole']
+    })
+
+    const isAccess = computed(() => {
+      const userRoles = store.getters['auth/getUser'].roles || []; // Array de roles del usuario
+
+      // Define los roles que tienen acceso
+      const allowedRoles = [1, 2]; // Roles que permiten acceder a la ruta
+
+      return userRoles.some(role => allowedRoles.includes(role.id));
     })
 
     const logout = () => {
@@ -134,6 +155,8 @@ export default {
       roleId,
       tenant,
       isCentral,
+      isAccess,
+      roleName,
 
 			logout,
     }

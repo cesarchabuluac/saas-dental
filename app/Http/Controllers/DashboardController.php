@@ -22,18 +22,18 @@ class DashboardController extends Controller
         // last_7_days
         // this_month
         // this_year
-        $stripeSecret = null;
-        if (config()->get('settings.stripe_mode') === 'sandbox') {
-            $stripeSecret = config()->get('settings.stripe_sandbox_secret');
-        } else {
-            $stripeSecret = config()->get('settings.stripe_live_secret');
-        }
+        // $stripeSecret = null;
+        // if (config()->get('settings.stripe_mode') === 'sandbox') {
+        //     $stripeSecret = config()->get('settings.stripe_sandbox_secret');
+        // } else {
+        //     $stripeSecret = config()->get('settings.stripe_live_secret');
+        // }
 
-        $stripe = Stripe::make($stripeSecret);
+        // $stripe = Stripe::make($stripeSecret);
 
-        $balancesCount = $stripe ? $stripe->balance()->current() : 0;
-        $pending = Money::USD($balancesCount['pending'][0]['amount']);
-        $available = Money::USD($balancesCount['available'][0]['amount']);
+        $balancesCount = 0; //$stripe ? $stripe->balance()->current() : 0;
+        $pending = 0; //Money::USD($balancesCount['pending'][0]['amount']);
+        $available = 0; // Money::USD($balancesCount['available'][0]['amount']);
 
         if ($summaryType == 'today') {
             $tenantsCount = Tenant::whereNotNull('data->email_verified_at')
@@ -97,14 +97,14 @@ class DashboardController extends Controller
                 ],
                 [
                     'name'      => 'tenants.dashboard.pending_amount',
-                    'value'     => $pending->format(),
+                    'value'     =>  0, //$pending->format(),
                     'icon'      => 'LoaderIcon',
                     'bgColor'   => 'danger'
                 ],
 
                 [
                     'name'      => 'tenants.dashboard.available_amount',
-                    'value'     => $available->format(),
+                    'value'     => 0, //$available->format(),
                     'icon'      => 'DollarSignIcon',
                     'bgColor'   => 'success'
                 ],

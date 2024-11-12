@@ -31,13 +31,15 @@ export default {
     logo: null,
     app_name: null,
     switch_plan: false,
+    roleName: null,
+    roleId: null,
   },
   getters: {
     getCountries: state => state.countries,
     getCurrencies: state => state.currencies,
     getTokens: state => state.token.access_token,
-    getRole: state => state.user.roles[0].name,
-    getRoleId: state => state.user.roles[0].id,
+    getRole: state => state.roleName, //state.user.roles[0].name,
+    getRoleId: state => state.roleId, //state.user.roles[0].id,
     getUserId: state => state.user.id,
     getUserEmail: state => state.user.email,
     getUserName: state => state.user.name,
@@ -59,6 +61,12 @@ export default {
     getSwithPlan: state => state.switch_plan,
   },
   mutations: {
+    SET_ROLE_NAME(state, roleName) {
+      state.roleName = roleName
+    },
+    SET_ROLE_ID(state, roleId) {
+      state.roleId = roleId
+    },
     SET_LOGO(state, logo) {
       state.logo = logo
     },
@@ -198,6 +206,8 @@ export default {
           if (data.success) {
             window.user = data.data.user
             commit('SET_CURRENT_USER', data.data.user)
+            commit('SET_ROLE_NAME', data.data.user.roles[0].name)
+            commit('SET_ROLE_ID', data.data.user.roles[0].id)
             commit('SET_PERMISSIONS', data.data.permissions)
             commit('SET_SETTING', data.data.settings)
             commit('SET_TIMEZONES', data.data.timezones)
@@ -226,6 +236,8 @@ export default {
           localStorage.removeItem('auth_token')
           window.localStorage.removeItem('vuex')
           commit('SET_TOKEN', null)
+          commit('SET_ROLE_NAME', null)
+          commit('SET_ROLE_ID', null)
           commit('SET_CURRENT_SUSCRIPTION', null)
           commit('SET_CURRENT_ACCOUNT', null)
           commit('SET_CURRENT_USER', null)
@@ -247,6 +259,8 @@ export default {
           localStorage.removeItem('auth_token')
           window.localStorage.removeItem('vuex')
           commit('SET_TOKEN', null)
+          commit('SET_ROLE_NAME', null)
+          commit('SET_ROLE_ID', null)
           commit('SET_CURRENT_SUSCRIPTION', null)
           commit('SET_CURRENT_ACCOUNT', null)
           commit('SET_CURRENT_USER', null)

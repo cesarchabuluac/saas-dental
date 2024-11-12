@@ -12,10 +12,10 @@
                             v-model="perPage"
                             :options="perPageOptions"
                             :clearable="false"
-                            class="per-page-selector d-inline-block mx-50"
+                            class="per-page-selector d-inline-block mx-50 select-size-sm"
                         />
                         <!-- <label>{{ $t("entries") }}</label> -->
-                        <b-button v-if="canAccess('branch-offices.create')" variant="primary" @click="$router.push({name: 'settings-branch-offices-add',})">
+                        <b-button size="sm" v-if="canAccess('branch-offices.create')" variant="primary" @click="$router.push({name: 'settings-branch-offices-add',})">
                             <span class="text-nowrap">
                                 {{ $t("add") }}
                             </span>
@@ -26,10 +26,10 @@
                     <b-col cols="12" md="6">
                         <div class="d-flex align-items-center justify-content-end">
                             <b-input-group>
-                                <b-form-input v-model="searchQuery" class="d-inline-block _mr-1" :placeholder="$t('branch_offices.search_options')"
+                                <b-form-input size="sm" v-model="searchQuery" class="d-inline-block _mr-1" :placeholder="$t('branch_offices.search_options')"
                                 @keyup.enter="filter"/>
                                 <b-input-group-prepend>
-                                <b-button variant="primary" @click="filter">
+                                <b-button size="sm" variant="primary" @click="filter">
                                     <feather-icon icon="SearchIcon" />
                                 </b-button>
                                 </b-input-group-prepend>
@@ -41,7 +41,7 @@
 
             <b-table
                 ref="refBranchListTable"
-                class="position-relative"
+                class="position-relative table-small b-table-small small text-small"
                 :items="branchs"
                 responsive
                 :fields="columns"
@@ -53,6 +53,7 @@
                 :current-page="currentPage"
                 busy.sync="loading"
                 stacked="md"
+                small
             >
                 <!-- Empty -->
                 <template slot="empty">

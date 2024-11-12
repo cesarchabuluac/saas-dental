@@ -6,6 +6,7 @@
             :role-options="roleOptions"
             @get-users="getUsers"
             @show-message="showMessage"
+            :user="user"
         />
 
         <b-row>
@@ -35,10 +36,11 @@
                             :dir="$store.state.appConfig.isRTL ? 'rtl' : 'ltr'"
                             :options="perPageOptions"
                             :clearable="false"
-                            class="per-page-selector d-inline-block mx-50"
+                            class="per-page-selector d-inline-block mx-50 select-size-sm"
                         />
                         <!-- <label>{{ $t("entries") }}</label> -->
-                        <b-button v-if="canAccess('users.create')" variant="primary" @click="$router.push({name: 'settings-user-add'})">
+                        <!-- @click="$router.push({name: 'settings-user-add'})" -->
+                        <b-button size="sm" v-if="canAccess('users.create')" variant="primary" @click="isAddNewUserSidebarActive = true">
                             <span class="text-nowrap">
                                 {{ $t("add") }}
                             </span>
@@ -49,10 +51,10 @@
                     <b-col cols="12" md="6">
                         <div class="d-flex align-items-center justify-content-end">
                             <b-input-group>
-                                <b-form-input v-model="searchQuery" class="d-inline-block _mr-1" :placeholder="$t('user_search_options')"
+                                <b-form-input autocomplete="off" size="sm" v-model="searchQuery" class="d-inline-block _mr-1" :placeholder="$t('user_search_options')"
                                 @keyup.enter="filter"/>
                                 <b-input-group-prepend>
-                                <b-button variant="primary" @click="filter">
+                                <b-button size="sm" variant="primary" @click="filter">
                                     <feather-icon icon="SearchIcon" />
                                 </b-button>
                                 </b-input-group-prepend>
@@ -94,11 +96,6 @@
                 <!-- Column: User -->
                 <template #cell(name)="data">
                     <b-media vertical-align="center">
-                        <template #aside>
-                            <b-avatar size="32" :src="data.item.has_media ? data.item.avatar : null"
-                                 :variant="`${resolveRoleVariant(data.item.roles)}`"
-                                :to="{ name: 'settings-user-edit', params: { id: data.item.id },}"/>
-                        </template>
                         <b-link :to="{ name: 'settings-user-edit', params: { id: data.item.id },}"
                             class="font-weight-bold d-block text-wrap">
                             {{ data.item.name }}
@@ -109,15 +106,7 @@
 
                 <!-- Column: Role -->
                 <template #cell(role)="data">
-                    <div class="text-nowrap">
-                        <feather-icon
-                            :icon="resolveRoleIcon(data.item.roles)"
-                            size="18"
-                            class="mr-50"
-                            :class="`text-${resolveRoleVariant(data.item.roles)}`"
-                        />
-                        <span class="align-text-top text-capitalize">{{ data.item.roles[0].name }}</span>
-                    </div>
+                    {{ data.item.roles.map(role => $t(`role_${role.name}`)).join(', ') }}
                 </template>
 
                 <!-- Column: Created at -->
@@ -146,7 +135,7 @@
                             variant="primary"
                             class="btn-icon"
                             size="sm"
-                            @click="$router.push({name: 'settings-user-edit',params: { id: data.item.id }})">
+                            @click="editUser(data.item)">
                             <feather-icon icon="EditIcon"/>
                         </b-button>
 
@@ -309,6 +298,7 @@ export default {
             tenant: {
                 limitations: [],
             },
+            userRoles: store.getters['auth/getUser'].roles.map(role => role.id)
         };
     },
     computed: {
@@ -321,12 +311,12 @@ export default {
                 to: this.perPage * (this.currentPage - 1) + localItemsCount,
                 of: this.totalUsers,
             };
-        },
+        },        
         isAdmin () {
-            return store.getters['auth/getRoleId'] === 1
+            return store.getters['auth/getRoleId'] === 1 //this.userRoles.includes(1) || false
         },
         isDirector () {
-            return store.getters['auth/getRoleId'] === 2
+            return store.getters['auth/getRoleId'] === 2 //this.userRoles.includes(2) || false
         }
     },
     watch: {
@@ -336,16 +326,24 @@ export default {
         perPage(value) {
             this.getUsers();
         },
+        isAddNewUserSidebarActive(value) {
+          if (!value) {
+            this.user = {}
+            this.isEdit = false
+          }
+        },
     },
     async mounted() {
-
-        console.error(this.checkIsTenant())
-
         await this.getTenant()
         await this.getUsers();
         this.mapRoles();
     },
     methods: {
+        editUser(item) {
+            this.user= {...item}
+            this.isEdit = true
+            this.isAddNewUserSidebarActive = true
+        },
         async getTenant() {
             if(this.checkIsTenant()) {
                 this.loading = true
@@ -368,6 +366,9 @@ export default {
             this.loading = false;
             this.users = data.data;
             this.totalUsers = data.total;
+            this.isEdit = false
+            this.user = {}
+            this.isAddNewUserSidebarActive = false
         },
         deleteUser(item) {
             this.$swal({
@@ -422,17 +423,26 @@ export default {
             this.getUsers();
         },
         mapRoles() {
-
-            console.log([this.isDirector, this.isAdmin])
-
             if (this.checkIsTenant()) {
                 if (this.isDirector) {
-                    this.roleOptions = store.getters['auth/getRoles'].filter(rol => rol.id !== 1 && rol.id !== 2).map(rol => ({value: rol.id, label: rol.name}))
+                    this.roleOptions = store.getters['auth/getRoles'].filter(rol => rol.id !== 1 /*&& rol.id !== 2*/)
+                        .map(rol => ({
+                            value: rol.id, 
+                            label: this.$t(`role_${rol.name}`) 
+                        }))
                 } else if (this.isAdmin) {
-                    this.roleOptions = store.getters['auth/getRoles'].filter(rol => rol.id !== 1).map(rol => ({value: rol.id, label: rol.name}))
+                    this.roleOptions = store.getters['auth/getRoles'].filter(rol => rol.id !== 1)
+                    .map(rol => ({
+                        value: rol.id, 
+                        label: this.$t(`role_${rol.name}`) 
+                    }))
                 }
             } else {
-                this.roleOptions = store.getters['auth/getRoles'].map(rol => ({value: rol.id, label: rol.name}))
+                this.roleOptions = store.getters['auth/getRoles']
+                    .map(rol => ({
+                        value: rol.id, 
+                        label: this.$t(`role_${rol.name}`) 
+                    }))
             }
         },
         showMessage(data) {

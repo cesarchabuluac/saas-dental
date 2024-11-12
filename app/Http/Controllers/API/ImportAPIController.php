@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Exports\Catalogs\Actions;
+use App\Exports\Catalogs\InventariosExport;
 use App\Exports\Catalogs\LaboratoryActions;
 use App\Http\Controllers\Controller;
 use App\Imports\ClinicalActionsExcel;
@@ -35,8 +36,8 @@ class ImportAPIController extends Controller
     public function donwloadCatalog(Request $request)
     {
        
-        if ($request->filled('value') && $request->value == 1) {
-
+        if ($request->filled('value') && $request->value == 1) 
+        {
             $actions = $this->actionRepository->get(['name', 'group', 'cost', 'area']);
             return Excel::download(new Actions($actions), 'Acciones Clínicas.xls');
         } else if ($request->filled('value') && $request->value == 2) {
@@ -44,10 +45,11 @@ class ImportAPIController extends Controller
             return Excel::download(new LaboratoryActions($actions), "Acciones de Laboratorio.xls");
         } else if ($request->filled('value') && $request->value == 3) {
             
-        }
+            return Excel::download(new InventariosExport, 'Inventarios.xls');
 
-        // $filepath = public_path("templates/{$request->file}");
-        // return \Response::download($filepath);
+            // $filepath = public_path("templates/{$request->file}");
+            // return \Response::download($filepath);
+        }
     }
 
     public function importCatalog(Request $request)
