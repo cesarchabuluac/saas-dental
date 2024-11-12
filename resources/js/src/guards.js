@@ -6,6 +6,9 @@ const TenantsResource = new TenantsProviders()
 
 // En el archivo guards.js
 export const SetupGuard = (to, from, next) => {
+
+    console.log(`Check is central: ${checkIsCentral()}`)
+
     if (!checkIsCentral()) {
         const isInitialSetUpActive = store.getters['auth/getCurrentAccount'].initial_setup;
         if (isInitialSetUpActive) {
