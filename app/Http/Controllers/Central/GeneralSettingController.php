@@ -61,7 +61,7 @@ class GeneralSettingController extends Controller
             DB::beginTransaction();
 
             if ($request->boolean('change_logo') && isset($request->logo)) {
-                $this->storageService->setTenant(tenant());
+                // $this->storageService->setTenant(tenant());
                 $path = $this->storageService->saveImageFromBase64($request->logo, "logo", 1);
                 $input["app_logo"] = global_asset("/storage/" . $path);
                 $allSettings->where('key', 'app_logo')->first()->update(['value' => $input['app_logo']]);

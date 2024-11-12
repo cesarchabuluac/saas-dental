@@ -15,7 +15,7 @@ class TenantSettingSeeder extends Seeder
      */
     public function run()
     {
-        GeneralSetting::query()->firstOrCreate(['key' => 'app_logo', 'value' => '']);
+        GeneralSetting::query()->firstOrCreate(['key' => 'app_logo', 'value' => '/assets/images/logo.png']);
         GeneralSetting::query()->firstOrCreate(['key' => 'app_about', 'value' => 'Soft-Dental es el software ideal para la administración de consultorios dentales. Facilita tus tareas diarias, fortalece la relación con tus pacientes y aumenta la rentabilidad de tu clínica. ¡Dile adiós al papel!']);
         GeneralSetting::query()->firstOrCreate(['key' => 'app_address', 'value' => 'Mérida Yucatán, México 97370']);
         GeneralSetting::query()->firstOrCreate(['key' => 'app_country', 'value' => 'México']);
