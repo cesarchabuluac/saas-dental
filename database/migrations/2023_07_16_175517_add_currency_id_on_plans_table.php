@@ -27,10 +27,13 @@ return new class extends Migration
     {
         Schema::table('plans', function (Blueprint $table) {
 
-            $table->dropConstrainedForeignId('plans_currency_id_foreign');
+            // $table->dropConstrainedForeignId('plans_currency_id_foreign');
             // $table->dropIfExists('plans_currency_id_foreign');
 
-            $table->dropIfExists('currency_id');
+            // $table->dropIfExists('currency_id');
+
+            $table->dropForeign(['currency_id']); // Eliminar la restricción de clave foránea
+            $table->dropColumn('currency_id');   // Eliminar la columna
         });
     }
 };
