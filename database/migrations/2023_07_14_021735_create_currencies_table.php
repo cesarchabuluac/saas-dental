@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('position')->default('left');
             $table->unsignedTinyInteger('decimal_digits')->nullable();
             $table->unsignedTinyInteger('rounding')->nullable();
+            $table->boolean('is_default')->default(0);
             $table->string('note')->nullable();
             $table->boolean('status')->nullable()->default(true);
             $table->timestamps();

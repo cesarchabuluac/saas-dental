@@ -21,6 +21,7 @@ class CurrencySeeder extends Seeder
             'decimal_digits' => 2,
             'rounding' => 0,
             'note' => 'This is default currency',
+            'is_default' => 1,
         ]);
 
         Currency::query()->firstOrCreate(['name' => 'Pesos Chilenos'], [
