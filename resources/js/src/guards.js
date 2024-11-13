@@ -42,6 +42,6 @@ export const SubscriptionGuard = (to, from, next) => {
         console.log('To:', to);
         console.log('From:', from);
         
-        next(); // Si es central, permite el acceso
+        next({name: to.name}); // Si es central, permite el acceso
     }
 };
