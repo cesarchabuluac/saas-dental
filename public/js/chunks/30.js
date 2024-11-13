@@ -1,2 +1,11592 @@
-/*! For license information please see 30.js.LICENSE.txt */
-(window.webpackJsonp=window.webpackJsonp||[]).push([[30,4,6,12],{"+TAz":function(e,t,n){"use strict";n.d(t,"c",(function(){return s})),n.d(t,"a",(function(){return c})),n.d(t,"b",(function(){return l}));var i=n("rePB"),a=(n("BIHw"),n("QGkA"),n("B6y2"),n("XuX8")),r=n.n(a),o=n("bEKI");r.a.use(o.default,{position:"bottom-right"});var s=function(e){var t,n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"CheckIcon",a=(t={type:"success",icon:n,showCloseButton:!0,hideProgressBar:!1,closeButton:"button"},Object(i.a)(t,"icon",!0),Object(i.a)(t,"rtl",!1),t);r.a.prototype.$toast.success(e,a)},c=function(e){var t,n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"XIcon",a=(t={type:"error",icon:n,showCloseButton:!0,hideProgressBar:!1,closeButton:"button"},Object(i.a)(t,"icon",!0),Object(i.a)(t,"rtl",!1),t);r.a.prototype.$toast.error(e,a)},l=function(e){var t,n,a=(t={type:"error",icon:"error",showCloseButton:!0,hideProgressBar:!1,closeButton:"button"},Object(i.a)(t,"icon",!0),Object(i.a)(t,"rtl",!1),t),o=e.message;if(console.log(o),e.response){var s=e.response.status,c=(n=e,console.log(n),n.response.data.errors?Object.values(n.response.data.errors).flat()[0]||null:n.response.data.message);switch(s){case 401:case 403:case 404:case 405:case 422:case 500:o=c||"Error en la solicitud."}}r.a.prototype.$toast.error(o,a)}},"/dg/":function(e,t,n){"use strict";n("NTls")},"08sT":function(e,t,n){"use strict";n.d(t,"a",(function(){return S})),n.d(t,"c",(function(){return T})),n.d(t,"b",(function(){return M}));var i,a,r=n("L3ns"),o=n("pyNs"),s=n("AFYn"),c=n("kGy3"),l=n("ex6f"),d=n("PCFI"),u=n("WPLV"),p=n("2C+6"),f=n("z3V6"),h=n("STsD"),v=n("3ec0"),g=n("qVMd"),b=n("rUdO"),m=n("1SAT"),y=n("kO/s"),w=n("jBgq");function k(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);t&&(i=i.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,i)}return n}function O(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?k(Object(n),!0).forEach((function(t){x(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):k(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function x(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var _=Object(u.a)("checked",{defaultValue:null}),j=_.mixin,C=_.props,D=_.prop,S=_.event,T=Object(f.d)(Object(p.m)(O(O(O(O(O(O(O({},y.b),C),v.b),b.b),m.b),g.b),{},{ariaLabel:Object(f.c)(o.u),ariaLabelledby:Object(f.c)(o.u),button:Object(f.c)(o.g,!1),buttonVariant:Object(f.c)(o.u),inline:Object(f.c)(o.g,!1),value:Object(f.c)(o.a)})),"formRadioCheckControls"),M=Object(r.c)({mixins:[h.a,y.a,j,w.a,v.a,b.a,m.a,g.a],inheritAttrs:!1,props:T,data:function(){return{localChecked:this.isGroup?this.bvGroup[D]:this[D],hasFocus:!1}},computed:{computedLocalChecked:{get:function(){return this.isGroup?this.bvGroup.localChecked:this.localChecked},set:function(e){this.isGroup?this.bvGroup.localChecked=e:this.localChecked=e}},isChecked:function(){return Object(d.a)(this.value,this.computedLocalChecked)},isRadio:function(){return!0},isGroup:function(){return!!this.bvGroup},isBtnMode:function(){return this.isGroup?this.bvGroup.buttons:this.button},isPlain:function(){return!this.isBtnMode&&(this.isGroup?this.bvGroup.plain:this.plain)},isCustom:function(){return!this.isBtnMode&&!this.isPlain},isSwitch:function(){return!(this.isBtnMode||this.isRadio||this.isPlain)&&(this.isGroup?this.bvGroup.switches:this.switch)},isInline:function(){return this.isGroup?this.bvGroup.inline:this.inline},isDisabled:function(){return this.isGroup&&this.bvGroup.disabled||this.disabled},isRequired:function(){return this.computedName&&(this.isGroup?this.bvGroup.required:this.required)},computedName:function(){return(this.isGroup?this.bvGroup.groupName:this.name)||null},computedForm:function(){return(this.isGroup?this.bvGroup.form:this.form)||null},computedSize:function(){return(this.isGroup?this.bvGroup.size:this.size)||""},computedState:function(){return this.isGroup?this.bvGroup.computedState:Object(l.b)(this.state)?this.state:null},computedButtonVariant:function(){var e=this.buttonVariant;return e||(this.isGroup&&this.bvGroup.buttonVariant?this.bvGroup.buttonVariant:"secondary")},buttonClasses:function(){var e,t=this.computedSize;return["btn","btn-".concat(this.computedButtonVariant),(e={},x(e,"btn-".concat(t),t),x(e,"disabled",this.isDisabled),x(e,"active",this.isChecked),x(e,"focus",this.hasFocus),e)]},computedAttrs:function(){var e=this.isDisabled,t=this.isRequired;return O(O({},this.bvAttrs),{},{id:this.safeId(),type:this.isRadio?"radio":"checkbox",name:this.computedName,form:this.computedForm,disabled:e,required:t,"aria-required":t||null,"aria-label":this.ariaLabel||null,"aria-labelledby":this.ariaLabelledby||null})}},watch:(i={},x(i,D,(function(){this["".concat(D,"Watcher")].apply(this,arguments)})),x(i,"computedLocalChecked",(function(){this.computedLocalCheckedWatcher.apply(this,arguments)})),i),methods:(a={},x(a,"".concat(D,"Watcher"),(function(e){Object(d.a)(e,this.computedLocalChecked)||(this.computedLocalChecked=e)})),x(a,"computedLocalCheckedWatcher",(function(e,t){Object(d.a)(e,t)||this.$emit(S,e)})),x(a,"handleChange",(function(e){var t=this,n=e.target.checked,i=this.value,a=n?i:null;this.computedLocalChecked=i,this.$nextTick((function(){t.$emit(s.d,a),t.isGroup&&t.bvGroup.$emit(s.d,a)}))})),x(a,"handleFocus",(function(e){e.target&&("focus"===e.type?this.hasFocus=!0:"blur"===e.type&&(this.hasFocus=!1))})),x(a,"focus",(function(){this.isDisabled||Object(c.d)(this.$refs.input)})),x(a,"blur",(function(){this.isDisabled||Object(c.c)(this.$refs.input)})),a),render:function(e){var t=this.isRadio,n=this.isBtnMode,i=this.isPlain,a=this.isCustom,r=this.isInline,o=this.isSwitch,s=this.computedSize,c=this.bvAttrs,l=this.normalizeSlot(),d=e("input",{class:[{"form-check-input":i,"custom-control-input":a,"position-static":i&&!l},n?"":this.stateClass],directives:[{name:"model",value:this.computedLocalChecked}],attrs:this.computedAttrs,domProps:{value:this.value,checked:this.isChecked},on:O({change:this.handleChange},n?{focus:this.handleFocus,blur:this.handleFocus}:{}),key:"input",ref:"input"});if(n){var u=e("label",{class:this.buttonClasses},[d,l]);return this.isGroup||(u=e("div",{class:["btn-group-toggle","d-inline-block"]},[u])),u}var p=e();return i&&!l||(p=e("label",{class:{"form-check-label":i,"custom-control-label":a},attrs:{for:this.safeId()}},l)),e("div",{class:[x({"form-check":i,"form-check-inline":i&&r,"custom-control":a,"custom-control-inline":a&&r,"custom-checkbox":a&&!t&&!o,"custom-switch":o,"custom-radio":a&&t},"b-custom-control-".concat(s),s&&!n),c.class],style:c.style},[d,p])}})},"0ZAa":function(e,t,n){"use strict";n.d(t,"a",(function(){return l}));var i=n("L3ns"),a=n("tC49"),r=n("xjcK"),o=n("pyNs"),s=n("z3V6"),c=Object(s.d)({tag:Object(s.c)(o.u,"div")},r.Z),l=Object(i.c)({name:r.Z,functional:!0,props:c,render:function(e,t){var n=t.props,i=t.data,r=t.children;return e(n.tag,Object(a.a)(i,{staticClass:"input-group-text"}),r)}})},"2fXf":function(e,t,n){"use strict";var i=n("I+eb"),a=n("2oRo"),r=n("xluM"),o=n("4zBA"),s=n("xDBR"),c=n("g6v/"),l=n("BPiQ"),d=n("0Dky"),u=n("Gi26"),p=n("OpvP"),f=n("glrk"),h=n("/GqU"),v=n("oEtG"),g=n("V37c"),b=n("XGwC"),m=n("fHMY"),y=n("33Wh"),w=n("JBy8"),k=n("BX/b"),O=n("dBg+"),x=n("Bs8V"),_=n("m/L8"),j=n("N+g0"),C=n("0eef"),D=n("yy0I"),S=n("7dAM"),T=n("VpIT"),M=n("93I0"),P=n("0BK2"),I=n("kOOl"),E=n("tiKp"),F=n("5Tg+"),A=n("4GWN"),$=n("V7lt"),L=n("1E5z"),R=n("afO8"),B=n("tycR").forEach,z=M("hidden"),N=R.set,H=R.getterFor("Symbol"),V=Object.prototype,Y=a.Symbol,W=Y&&Y.prototype,q=a.TypeError,G=a.QObject,K=x.f,J=_.f,U=k.f,X=C.f,Z=o([].push),Q=T("symbols"),ee=T("op-symbols"),te=T("wks"),ne=!G||!G.prototype||!G.prototype.findChild,ie=c&&d((function(){return 7!=m(J({},"a",{get:function(){return J(this,"a",{value:7}).a}})).a}))?function(e,t,n){var i=K(V,t);i&&delete V[t],J(e,t,n),i&&e!==V&&J(V,t,i)}:J,ae=function(e,t){var n=Q[e]=m(W);return N(n,{type:"Symbol",tag:e,description:t}),c||(n.description=t),n},re=function(e,t,n){e===V&&re(ee,t,n),f(e);var i=v(t);return f(n),u(Q,i)?(n.enumerable?(u(e,z)&&e[z][i]&&(e[z][i]=!1),n=m(n,{enumerable:b(0,!1)})):(u(e,z)||J(e,z,b(1,{})),e[z][i]=!0),ie(e,i,n)):J(e,i,n)},oe=function(e,t){f(e);var n=h(t),i=y(n).concat(de(n));return B(i,(function(t){c&&!r(se,n,t)||re(e,t,n[t])})),e},se=function(e){var t=v(e),n=r(X,this,t);return!(this===V&&u(Q,t)&&!u(ee,t))&&(!(n||!u(this,t)||!u(Q,t)||u(this,z)&&this[z][t])||n)},ce=function(e,t){var n=h(e),i=v(t);if(n!==V||!u(Q,i)||u(ee,i)){var a=K(n,i);return!a||!u(Q,i)||u(n,z)&&n[z][i]||(a.enumerable=!0),a}},le=function(e){var t=U(h(e)),n=[];return B(t,(function(e){u(Q,e)||u(P,e)||Z(n,e)})),n},de=function(e){var t=e===V,n=U(t?ee:h(e)),i=[];return B(n,(function(e){!u(Q,e)||t&&!u(V,e)||Z(i,Q[e])})),i};l||(D(W=(Y=function(){if(p(W,this))throw q("Symbol is not a constructor");var e=arguments.length&&void 0!==arguments[0]?g(arguments[0]):void 0,t=I(e),n=function(e){this===V&&r(n,ee,e),u(this,z)&&u(this[z],t)&&(this[z][t]=!1),ie(this,t,b(1,e))};return c&&ne&&ie(V,t,{configurable:!0,set:n}),ae(t,e)}).prototype,"toString",(function(){return H(this).tag})),D(Y,"withoutSetter",(function(e){return ae(I(e),e)})),C.f=se,_.f=re,j.f=oe,x.f=ce,w.f=k.f=le,O.f=de,F.f=function(e){return ae(E(e),e)},c&&(S(W,"description",{configurable:!0,get:function(){return H(this).description}}),s||D(V,"propertyIsEnumerable",se,{unsafe:!0}))),i({global:!0,constructor:!0,wrap:!0,forced:!l,sham:!l},{Symbol:Y}),B(y(te),(function(e){A(e)})),i({target:"Symbol",stat:!0,forced:!l},{useSetter:function(){ne=!0},useSimple:function(){ne=!1}}),i({target:"Object",stat:!0,forced:!l,sham:!c},{create:function(e,t){return void 0===t?m(e):oe(m(e),t)},defineProperty:re,defineProperties:oe,getOwnPropertyDescriptor:ce}),i({target:"Object",stat:!0,forced:!l},{getOwnPropertyNames:le}),$(),L(Y,"Symbol"),P[z]=!0},"4Brf":function(e,t,n){"use strict";var i=n("I+eb"),a=n("g6v/"),r=n("2oRo"),o=n("4zBA"),s=n("Gi26"),c=n("Fib7"),l=n("OpvP"),d=n("V37c"),u=n("7dAM"),p=n("6JNq"),f=r.Symbol,h=f&&f.prototype;if(a&&c(f)&&(!("description"in h)||void 0!==f().description)){var v={},g=function(){var e=arguments.length<1||void 0===arguments[0]?void 0:d(arguments[0]),t=l(h,this)?new f(e):void 0===e?f():f(e);return""===e&&(v[t]=!0),t};p(g,f),g.prototype=h,h.constructor=g;var b="Symbol(test)"==String(f("test")),m=o(h.valueOf),y=o(h.toString),w=/^Symbol\((.*)\)[^)]+$/,k=o("".replace),O=o("".slice);u(h,"description",{configurable:!0,get:function(){var e=m(this);if(s(v,e))return"";var t=y(e),n=b?O(t,7,-1):k(t,w,"$1");return""===n?void 0:n}}),i({global:!0,constructor:!0,forced:!0},{Symbol:g})}},"4GWN":function(e,t,n){var i=n("Qo9l"),a=n("Gi26"),r=n("5Tg+"),o=n("m/L8").f;e.exports=function(e){var t=i.Symbol||(i.Symbol={});a(t,e)||o(t,e,{value:r.f(e)})}},"5Tg+":function(e,t,n){var i=n("tiKp");t.f=i},"6Ytq":function(e,t,n){"use strict";n.d(t,"a",(function(){return g}));var i=n("L3ns"),a=n("tC49"),r=n("xjcK"),o=n("pyNs"),s=n("2C+6"),c=n("z3V6"),l=n("Sjgb"),d=n("qlm0");function u(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);t&&(i=i.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,i)}return n}function p(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?u(Object(n),!0).forEach((function(t){f(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):u(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function f(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var h=Object(s.j)(d.b,["event","routerTag"]);delete h.href.default,delete h.to.default;var v=Object(c.d)(Object(s.m)(p(p({},h),{},{pill:Object(c.c)(o.g,!1),tag:Object(c.c)(o.u,"span"),variant:Object(c.c)(o.u,"secondary")})),r.d),g=Object(i.c)({name:r.d,functional:!0,props:v,render:function(e,t){var n=t.props,i=t.data,r=t.children,o=n.active,s=n.disabled,u=Object(l.d)(n),p=u?d.a:n.tag,f=n.variant||"secondary";return e(p,Object(a.a)(i,{staticClass:"badge",class:["badge-".concat(f),{"badge-pill":n.pill,active:o,disabled:s}],props:u?Object(c.e)(h,n):{}}),r)}})},"9oHr":function(e,t,n){(t=n("JPst")(!1)).push([e.i,'.flatpickr-calendar {\n  background: transparent;\n  opacity: 0;\n  display: none;\n  text-align: center;\n  visibility: hidden;\n  padding: 0;\n  -webkit-animation: none;\n          animation: none;\n  direction: ltr;\n  border: 0;\n  font-size: 14px;\n  line-height: 24px;\n  border-radius: 5px;\n  position: absolute;\n  width: 307.875px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  -ms-touch-action: manipulation;\n      touch-action: manipulation;\n  background: #fff;\n  -webkit-box-shadow: 1px 0 0 #e6e6e6, -1px 0 0 #e6e6e6, 0 1px 0 #e6e6e6, 0 -1px 0 #e6e6e6, 0 3px 13px rgba(0,0,0,0.08);\n          box-shadow: 1px 0 0 #e6e6e6, -1px 0 0 #e6e6e6, 0 1px 0 #e6e6e6, 0 -1px 0 #e6e6e6, 0 3px 13px rgba(0,0,0,0.08);\n}\n.flatpickr-calendar.open,\n.flatpickr-calendar.inline {\n  opacity: 1;\n  max-height: 640px;\n  visibility: visible;\n}\n.flatpickr-calendar.open {\n  display: inline-block;\n  z-index: 99999;\n}\n.flatpickr-calendar.animate.open {\n  -webkit-animation: fpFadeInDown 300ms cubic-bezier(0.23, 1, 0.32, 1);\n          animation: fpFadeInDown 300ms cubic-bezier(0.23, 1, 0.32, 1);\n}\n.flatpickr-calendar.inline {\n  display: block;\n  position: relative;\n  top: 2px;\n}\n.flatpickr-calendar.static {\n  position: absolute;\n  top: calc(100% + 2px);\n}\n.flatpickr-calendar.static.open {\n  z-index: 999;\n  display: block;\n}\n.flatpickr-calendar.multiMonth .flatpickr-days .dayContainer:nth-child(n+1) .flatpickr-day.inRange:nth-child(7n+7) {\n  -webkit-box-shadow: none !important;\n          box-shadow: none !important;\n}\n.flatpickr-calendar.multiMonth .flatpickr-days .dayContainer:nth-child(n+2) .flatpickr-day.inRange:nth-child(7n+1) {\n  -webkit-box-shadow: -2px 0 0 #e6e6e6, 5px 0 0 #e6e6e6;\n          box-shadow: -2px 0 0 #e6e6e6, 5px 0 0 #e6e6e6;\n}\n.flatpickr-calendar .hasWeeks .dayContainer,\n.flatpickr-calendar .hasTime .dayContainer {\n  border-bottom: 0;\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.flatpickr-calendar .hasWeeks .dayContainer {\n  border-left: 0;\n}\n.flatpickr-calendar.hasTime .flatpickr-time {\n  height: 40px;\n  border-top: 1px solid #e6e6e6;\n}\n.flatpickr-calendar.noCalendar.hasTime .flatpickr-time {\n  height: auto;\n}\n.flatpickr-calendar:before,\n.flatpickr-calendar:after {\n  position: absolute;\n  display: block;\n  pointer-events: none;\n  border: solid transparent;\n  content: \'\';\n  height: 0;\n  width: 0;\n  left: 22px;\n}\n.flatpickr-calendar.rightMost:before,\n.flatpickr-calendar.arrowRight:before,\n.flatpickr-calendar.rightMost:after,\n.flatpickr-calendar.arrowRight:after {\n  left: auto;\n  right: 22px;\n}\n.flatpickr-calendar.arrowCenter:before,\n.flatpickr-calendar.arrowCenter:after {\n  left: 50%;\n  right: 50%;\n}\n.flatpickr-calendar:before {\n  border-width: 5px;\n  margin: 0 -5px;\n}\n.flatpickr-calendar:after {\n  border-width: 4px;\n  margin: 0 -4px;\n}\n.flatpickr-calendar.arrowTop:before,\n.flatpickr-calendar.arrowTop:after {\n  bottom: 100%;\n}\n.flatpickr-calendar.arrowTop:before {\n  border-bottom-color: #e6e6e6;\n}\n.flatpickr-calendar.arrowTop:after {\n  border-bottom-color: #fff;\n}\n.flatpickr-calendar.arrowBottom:before,\n.flatpickr-calendar.arrowBottom:after {\n  top: 100%;\n}\n.flatpickr-calendar.arrowBottom:before {\n  border-top-color: #e6e6e6;\n}\n.flatpickr-calendar.arrowBottom:after {\n  border-top-color: #fff;\n}\n.flatpickr-calendar:focus {\n  outline: 0;\n}\n.flatpickr-wrapper {\n  position: relative;\n  display: inline-block;\n}\n.flatpickr-months {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n}\n.flatpickr-months .flatpickr-month {\n  background: transparent;\n  color: rgba(0,0,0,0.9);\n  fill: rgba(0,0,0,0.9);\n  height: 34px;\n  line-height: 1;\n  text-align: center;\n  position: relative;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  overflow: hidden;\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n}\n.flatpickr-months .flatpickr-prev-month,\n.flatpickr-months .flatpickr-next-month {\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  text-decoration: none;\n  cursor: pointer;\n  position: absolute;\n  top: 0;\n  height: 34px;\n  padding: 10px;\n  z-index: 3;\n  color: rgba(0,0,0,0.9);\n  fill: rgba(0,0,0,0.9);\n}\n.flatpickr-months .flatpickr-prev-month.flatpickr-disabled,\n.flatpickr-months .flatpickr-next-month.flatpickr-disabled {\n  display: none;\n}\n.flatpickr-months .flatpickr-prev-month i,\n.flatpickr-months .flatpickr-next-month i {\n  position: relative;\n}\n.flatpickr-months .flatpickr-prev-month.flatpickr-prev-month,\n.flatpickr-months .flatpickr-next-month.flatpickr-prev-month {\n/*\n      /*rtl:begin:ignore*/\n/*\n      */\n  left: 0;\n/*\n      /*rtl:end:ignore*/\n/*\n      */\n}\n/*\n      /*rtl:begin:ignore*/\n/*\n      /*rtl:end:ignore*/\n.flatpickr-months .flatpickr-prev-month.flatpickr-next-month,\n.flatpickr-months .flatpickr-next-month.flatpickr-next-month {\n/*\n      /*rtl:begin:ignore*/\n/*\n      */\n  right: 0;\n/*\n      /*rtl:end:ignore*/\n/*\n      */\n}\n/*\n      /*rtl:begin:ignore*/\n/*\n      /*rtl:end:ignore*/\n.flatpickr-months .flatpickr-prev-month:hover,\n.flatpickr-months .flatpickr-next-month:hover {\n  color: #959ea9;\n}\n.flatpickr-months .flatpickr-prev-month:hover svg,\n.flatpickr-months .flatpickr-next-month:hover svg {\n  fill: #f64747;\n}\n.flatpickr-months .flatpickr-prev-month svg,\n.flatpickr-months .flatpickr-next-month svg {\n  width: 14px;\n  height: 14px;\n}\n.flatpickr-months .flatpickr-prev-month svg path,\n.flatpickr-months .flatpickr-next-month svg path {\n  -webkit-transition: fill 0.1s;\n  transition: fill 0.1s;\n  fill: inherit;\n}\n.numInputWrapper {\n  position: relative;\n  height: auto;\n}\n.numInputWrapper input,\n.numInputWrapper span {\n  display: inline-block;\n}\n.numInputWrapper input {\n  width: 100%;\n}\n.numInputWrapper input::-ms-clear {\n  display: none;\n}\n.numInputWrapper input::-webkit-outer-spin-button,\n.numInputWrapper input::-webkit-inner-spin-button {\n  margin: 0;\n  -webkit-appearance: none;\n}\n.numInputWrapper span {\n  position: absolute;\n  right: 0;\n  width: 14px;\n  padding: 0 4px 0 2px;\n  height: 50%;\n  line-height: 50%;\n  opacity: 0;\n  cursor: pointer;\n  border: 1px solid rgba(57,57,57,0.15);\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n.numInputWrapper span:hover {\n  background: rgba(0,0,0,0.1);\n}\n.numInputWrapper span:active {\n  background: rgba(0,0,0,0.2);\n}\n.numInputWrapper span:after {\n  display: block;\n  content: "";\n  position: absolute;\n}\n.numInputWrapper span.arrowUp {\n  top: 0;\n  border-bottom: 0;\n}\n.numInputWrapper span.arrowUp:after {\n  border-left: 4px solid transparent;\n  border-right: 4px solid transparent;\n  border-bottom: 4px solid rgba(57,57,57,0.6);\n  top: 26%;\n}\n.numInputWrapper span.arrowDown {\n  top: 50%;\n}\n.numInputWrapper span.arrowDown:after {\n  border-left: 4px solid transparent;\n  border-right: 4px solid transparent;\n  border-top: 4px solid rgba(57,57,57,0.6);\n  top: 40%;\n}\n.numInputWrapper span svg {\n  width: inherit;\n  height: auto;\n}\n.numInputWrapper span svg path {\n  fill: rgba(0,0,0,0.5);\n}\n.numInputWrapper:hover {\n  background: rgba(0,0,0,0.05);\n}\n.numInputWrapper:hover span {\n  opacity: 1;\n}\n.flatpickr-current-month {\n  font-size: 135%;\n  line-height: inherit;\n  font-weight: 300;\n  color: inherit;\n  position: absolute;\n  width: 75%;\n  left: 12.5%;\n  padding: 7.48px 0 0 0;\n  line-height: 1;\n  height: 34px;\n  display: inline-block;\n  text-align: center;\n  -webkit-transform: translate3d(0px, 0px, 0px);\n          transform: translate3d(0px, 0px, 0px);\n}\n.flatpickr-current-month span.cur-month {\n  font-family: inherit;\n  font-weight: 700;\n  color: inherit;\n  display: inline-block;\n  margin-left: 0.5ch;\n  padding: 0;\n}\n.flatpickr-current-month span.cur-month:hover {\n  background: rgba(0,0,0,0.05);\n}\n.flatpickr-current-month .numInputWrapper {\n  width: 6ch;\n  width: 7ch\\0;\n  display: inline-block;\n}\n.flatpickr-current-month .numInputWrapper span.arrowUp:after {\n  border-bottom-color: rgba(0,0,0,0.9);\n}\n.flatpickr-current-month .numInputWrapper span.arrowDown:after {\n  border-top-color: rgba(0,0,0,0.9);\n}\n.flatpickr-current-month input.cur-year {\n  background: transparent;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: inherit;\n  cursor: text;\n  padding: 0 0 0 0.5ch;\n  margin: 0;\n  display: inline-block;\n  font-size: inherit;\n  font-family: inherit;\n  font-weight: 300;\n  line-height: inherit;\n  height: auto;\n  border: 0;\n  border-radius: 0;\n  vertical-align: initial;\n  -webkit-appearance: textfield;\n  -moz-appearance: textfield;\n  appearance: textfield;\n}\n.flatpickr-current-month input.cur-year:focus {\n  outline: 0;\n}\n.flatpickr-current-month input.cur-year[disabled],\n.flatpickr-current-month input.cur-year[disabled]:hover {\n  font-size: 100%;\n  color: rgba(0,0,0,0.5);\n  background: transparent;\n  pointer-events: none;\n}\n.flatpickr-current-month .flatpickr-monthDropdown-months {\n  appearance: menulist;\n  background: transparent;\n  border: none;\n  border-radius: 0;\n  box-sizing: border-box;\n  color: inherit;\n  cursor: pointer;\n  font-size: inherit;\n  font-family: inherit;\n  font-weight: 300;\n  height: auto;\n  line-height: inherit;\n  margin: -1px 0 0 0;\n  outline: none;\n  padding: 0 0 0 0.5ch;\n  position: relative;\n  vertical-align: initial;\n  -webkit-box-sizing: border-box;\n  -webkit-appearance: menulist;\n  -moz-appearance: menulist;\n  width: auto;\n}\n.flatpickr-current-month .flatpickr-monthDropdown-months:focus,\n.flatpickr-current-month .flatpickr-monthDropdown-months:active {\n  outline: none;\n}\n.flatpickr-current-month .flatpickr-monthDropdown-months:hover {\n  background: rgba(0,0,0,0.05);\n}\n.flatpickr-current-month .flatpickr-monthDropdown-months .flatpickr-monthDropdown-month {\n  background-color: transparent;\n  outline: none;\n  padding: 0;\n}\n.flatpickr-weekdays {\n  background: transparent;\n  text-align: center;\n  overflow: hidden;\n  width: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n      -ms-flex-align: center;\n          align-items: center;\n  height: 28px;\n}\n.flatpickr-weekdays .flatpickr-weekdaycontainer {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n}\nspan.flatpickr-weekday {\n  cursor: default;\n  font-size: 90%;\n  background: transparent;\n  color: rgba(0,0,0,0.54);\n  line-height: 1;\n  margin: 0;\n  text-align: center;\n  display: block;\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  font-weight: bolder;\n}\n.dayContainer,\n.flatpickr-weeks {\n  padding: 1px 0 0 0;\n}\n.flatpickr-days {\n  position: relative;\n  overflow: hidden;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: start;\n  -webkit-align-items: flex-start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  width: 307.875px;\n}\n.flatpickr-days:focus {\n  outline: 0;\n}\n.dayContainer {\n  padding: 0;\n  outline: 0;\n  text-align: left;\n  width: 307.875px;\n  min-width: 307.875px;\n  max-width: 307.875px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  display: inline-block;\n  display: -ms-flexbox;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-flex-wrap: wrap;\n          flex-wrap: wrap;\n  -ms-flex-wrap: wrap;\n  -ms-flex-pack: justify;\n  -webkit-justify-content: space-around;\n          justify-content: space-around;\n  -webkit-transform: translate3d(0px, 0px, 0px);\n          transform: translate3d(0px, 0px, 0px);\n  opacity: 1;\n}\n.dayContainer + .dayContainer {\n  -webkit-box-shadow: -1px 0 0 #e6e6e6;\n          box-shadow: -1px 0 0 #e6e6e6;\n}\n.flatpickr-day {\n  background: none;\n  border: 1px solid transparent;\n  border-radius: 150px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #393939;\n  cursor: pointer;\n  font-weight: 400;\n  width: 14.2857143%;\n  -webkit-flex-basis: 14.2857143%;\n      -ms-flex-preferred-size: 14.2857143%;\n          flex-basis: 14.2857143%;\n  max-width: 39px;\n  height: 39px;\n  line-height: 39px;\n  margin: 0;\n  display: inline-block;\n  position: relative;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  text-align: center;\n}\n.flatpickr-day.inRange,\n.flatpickr-day.prevMonthDay.inRange,\n.flatpickr-day.nextMonthDay.inRange,\n.flatpickr-day.today.inRange,\n.flatpickr-day.prevMonthDay.today.inRange,\n.flatpickr-day.nextMonthDay.today.inRange,\n.flatpickr-day:hover,\n.flatpickr-day.prevMonthDay:hover,\n.flatpickr-day.nextMonthDay:hover,\n.flatpickr-day:focus,\n.flatpickr-day.prevMonthDay:focus,\n.flatpickr-day.nextMonthDay:focus {\n  cursor: pointer;\n  outline: 0;\n  background: #e6e6e6;\n  border-color: #e6e6e6;\n}\n.flatpickr-day.today {\n  border-color: #959ea9;\n}\n.flatpickr-day.today:hover,\n.flatpickr-day.today:focus {\n  border-color: #959ea9;\n  background: #959ea9;\n  color: #fff;\n}\n.flatpickr-day.selected,\n.flatpickr-day.startRange,\n.flatpickr-day.endRange,\n.flatpickr-day.selected.inRange,\n.flatpickr-day.startRange.inRange,\n.flatpickr-day.endRange.inRange,\n.flatpickr-day.selected:focus,\n.flatpickr-day.startRange:focus,\n.flatpickr-day.endRange:focus,\n.flatpickr-day.selected:hover,\n.flatpickr-day.startRange:hover,\n.flatpickr-day.endRange:hover,\n.flatpickr-day.selected.prevMonthDay,\n.flatpickr-day.startRange.prevMonthDay,\n.flatpickr-day.endRange.prevMonthDay,\n.flatpickr-day.selected.nextMonthDay,\n.flatpickr-day.startRange.nextMonthDay,\n.flatpickr-day.endRange.nextMonthDay {\n  background: #569ff7;\n  -webkit-box-shadow: none;\n          box-shadow: none;\n  color: #fff;\n  border-color: #569ff7;\n}\n.flatpickr-day.selected.startRange,\n.flatpickr-day.startRange.startRange,\n.flatpickr-day.endRange.startRange {\n  border-radius: 50px 0 0 50px;\n}\n.flatpickr-day.selected.endRange,\n.flatpickr-day.startRange.endRange,\n.flatpickr-day.endRange.endRange {\n  border-radius: 0 50px 50px 0;\n}\n.flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n+1)),\n.flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n+1)),\n.flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n+1)) {\n  -webkit-box-shadow: -10px 0 0 #569ff7;\n          box-shadow: -10px 0 0 #569ff7;\n}\n.flatpickr-day.selected.startRange.endRange,\n.flatpickr-day.startRange.startRange.endRange,\n.flatpickr-day.endRange.startRange.endRange {\n  border-radius: 50px;\n}\n.flatpickr-day.inRange {\n  border-radius: 0;\n  -webkit-box-shadow: -5px 0 0 #e6e6e6, 5px 0 0 #e6e6e6;\n          box-shadow: -5px 0 0 #e6e6e6, 5px 0 0 #e6e6e6;\n}\n.flatpickr-day.flatpickr-disabled,\n.flatpickr-day.flatpickr-disabled:hover,\n.flatpickr-day.prevMonthDay,\n.flatpickr-day.nextMonthDay,\n.flatpickr-day.notAllowed,\n.flatpickr-day.notAllowed.prevMonthDay,\n.flatpickr-day.notAllowed.nextMonthDay {\n  color: rgba(57,57,57,0.3);\n  background: transparent;\n  border-color: transparent;\n  cursor: default;\n}\n.flatpickr-day.flatpickr-disabled,\n.flatpickr-day.flatpickr-disabled:hover {\n  cursor: not-allowed;\n  color: rgba(57,57,57,0.1);\n}\n.flatpickr-day.week.selected {\n  border-radius: 0;\n  -webkit-box-shadow: -5px 0 0 #569ff7, 5px 0 0 #569ff7;\n          box-shadow: -5px 0 0 #569ff7, 5px 0 0 #569ff7;\n}\n.flatpickr-day.hidden {\n  visibility: hidden;\n}\n.rangeMode .flatpickr-day {\n  margin-top: 1px;\n}\n.flatpickr-weekwrapper {\n  float: left;\n}\n.flatpickr-weekwrapper .flatpickr-weeks {\n  padding: 0 12px;\n  -webkit-box-shadow: 1px 0 0 #e6e6e6;\n          box-shadow: 1px 0 0 #e6e6e6;\n}\n.flatpickr-weekwrapper .flatpickr-weekday {\n  float: none;\n  width: 100%;\n  line-height: 28px;\n}\n.flatpickr-weekwrapper span.flatpickr-day,\n.flatpickr-weekwrapper span.flatpickr-day:hover {\n  display: block;\n  width: 100%;\n  max-width: none;\n  color: rgba(57,57,57,0.3);\n  background: transparent;\n  cursor: default;\n  border: none;\n}\n.flatpickr-innerContainer {\n  display: block;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  overflow: hidden;\n}\n.flatpickr-rContainer {\n  display: inline-block;\n  padding: 0;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n.flatpickr-time {\n  text-align: center;\n  outline: 0;\n  display: block;\n  height: 0;\n  line-height: 40px;\n  max-height: 40px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  overflow: hidden;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n}\n.flatpickr-time:after {\n  content: "";\n  display: table;\n  clear: both;\n}\n.flatpickr-time .numInputWrapper {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  width: 40%;\n  height: 40px;\n  float: left;\n}\n.flatpickr-time .numInputWrapper span.arrowUp:after {\n  border-bottom-color: #393939;\n}\n.flatpickr-time .numInputWrapper span.arrowDown:after {\n  border-top-color: #393939;\n}\n.flatpickr-time.hasSeconds .numInputWrapper {\n  width: 26%;\n}\n.flatpickr-time.time24hr .numInputWrapper {\n  width: 49%;\n}\n.flatpickr-time input {\n  background: transparent;\n  -webkit-box-shadow: none;\n          box-shadow: none;\n  border: 0;\n  border-radius: 0;\n  text-align: center;\n  margin: 0;\n  padding: 0;\n  height: inherit;\n  line-height: inherit;\n  color: #393939;\n  font-size: 14px;\n  position: relative;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  -webkit-appearance: textfield;\n  -moz-appearance: textfield;\n  appearance: textfield;\n}\n.flatpickr-time input.flatpickr-hour {\n  font-weight: bold;\n}\n.flatpickr-time input.flatpickr-minute,\n.flatpickr-time input.flatpickr-second {\n  font-weight: 400;\n}\n.flatpickr-time input:focus {\n  outline: 0;\n  border: 0;\n}\n.flatpickr-time .flatpickr-time-separator,\n.flatpickr-time .flatpickr-am-pm {\n  height: inherit;\n  float: left;\n  line-height: inherit;\n  color: #393939;\n  font-weight: bold;\n  width: 2%;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  -webkit-align-self: center;\n      -ms-flex-item-align: center;\n          align-self: center;\n}\n.flatpickr-time .flatpickr-am-pm {\n  outline: 0;\n  width: 18%;\n  cursor: pointer;\n  text-align: center;\n  font-weight: 400;\n}\n.flatpickr-time input:hover,\n.flatpickr-time .flatpickr-am-pm:hover,\n.flatpickr-time input:focus,\n.flatpickr-time .flatpickr-am-pm:focus {\n  background: #eee;\n}\n.flatpickr-input[readonly] {\n  cursor: pointer;\n}\n@-webkit-keyframes fpFadeInDown {\n  from {\n    opacity: 0;\n    -webkit-transform: translate3d(0, -20px, 0);\n            transform: translate3d(0, -20px, 0);\n  }\n  to {\n    opacity: 1;\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n  }\n}\n@keyframes fpFadeInDown {\n  from {\n    opacity: 0;\n    -webkit-transform: translate3d(0, -20px, 0);\n            transform: translate3d(0, -20px, 0);\n  }\n  to {\n    opacity: 1;\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n  }\n}\n',""]),e.exports=t},AYOL:function(e,t,n){(t=n("JPst")(!1)).push([e.i,".card-code pre[class*=language-][data-v-365b0de1] {\n  max-height: 350px;\n}[dir] .card-code pre[class*=language-][data-v-365b0de1] {\n  margin: 0;\n  border-radius: 0.5rem;\n}\n.card-code[data-v-365b0de1] ::-webkit-scrollbar {\n  width: 8px;\n  height: 8px;\n}\n[dir] .card-code[data-v-365b0de1] ::-webkit-scrollbar {\n  background: #2d2d2d;\n  border-radius: 100%;\n}\n[dir] .dark-layout .card-code[data-v-365b0de1] ::-webkit-scrollbar {\n  background-color: #161d31 !important;\n}\n[dir] .card-code[data-v-365b0de1] ::-webkit-scrollbar-track {\n  background: transparent;\n}\n[dir] .card-code[data-v-365b0de1] ::-webkit-scrollbar-thumb {\n  border-radius: 0.5rem;\n  background: rgba(241, 241, 241, 0.4);\n}\n.card-code[data-v-365b0de1] ::-webkit-scrollbar-corner {\n  display: none;\n}\n[dir] .code-toggler[data-v-365b0de1] {\n  border-bottom: 1px solid transparent;\n}\n[dir] .code-toggler[aria-expanded=false][data-v-365b0de1] {\n  border-bottom-color: #7367f0;\n}\n.card .card-header .heading-elements[data-v-365b0de1] {\n  position: static;\n}\n[dir] .card .card-header .heading-elements[data-v-365b0de1] {\n  background: red;\n}",""]),e.exports=t},ApPQ:function(e,t,n){"use strict";n("a/RR")},"BX/b":function(e,t,n){var i=n("xrYK"),a=n("/GqU"),r=n("JBy8").f,o=n("Ta7t"),s="object"==typeof window&&window&&Object.getOwnPropertyNames?Object.getOwnPropertyNames(window):[];e.exports.f=function(e){return s&&"Window"==i(e)?function(e){try{return r(e)}catch(e){return o(s)}}(e):r(a(e))}},C0Od:function(e,t,n){var i=n("BPiQ");e.exports=i&&!!Symbol.for&&!!Symbol.keyFor},Ed67:function(e,t,n){"use strict";n.d(t,"a",(function(){return l}));var i=n("L3ns"),a=n("tC49"),r=n("xjcK"),o=n("pyNs"),s=n("z3V6"),c=Object(s.d)({id:Object(s.c)(o.u),inline:Object(s.c)(o.g,!1),novalidate:Object(s.c)(o.g,!1),validated:Object(s.c)(o.g,!1)},r.A),l=Object(i.c)({name:r.A,functional:!0,props:c,render:function(e,t){var n=t.props,i=t.data,r=t.children;return e("form",Object(a.a)(i,{class:{"form-inline":n.inline,"was-validated":n.validated},attrs:{id:n.id,novalidate:n.novalidate}}),r)}})},Ep9I:function(e,t){e.exports=Object.is||function(e,t){return e===t?0!==e||1/e==1/t:e!=e&&t!=t}},JhbM:function(e,t,n){"use strict";n.d(t,"a",(function(){return A}));var i=n("xjcK"),a=n("6GPe"),r=n("AFYn"),o=n("Iyau"),s=n("L3ns"),c=n("Io6r"),l=n("vika"),d=n("bAY6"),u=n("TlNa"),p=n("ex6f"),f=n("PCFI"),h=n("OljW"),v=n("2C+6"),g=n("Oa0e"),b=n("jfhb");function m(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);t&&(i=i.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,i)}return n}function y(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?m(Object(n),!0).forEach((function(t){w(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):m(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function w(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var k="__BV_Tooltip__",O={focus:!0,hover:!0,click:!0,blur:!0,manual:!0},x=/^html$/i,_=/^noninteractive$/i,j=/^nofade$/i,C=/^(auto|top(left|right)?|bottom(left|right)?|left(top|bottom)?|right(top|bottom)?)$/i,D=/^(window|viewport|scrollParent)$/i,S=/^d\d+$/i,T=/^ds\d+$/i,M=/^dh\d+$/i,P=/^o-?\d+$/i,I=/^v-.+$/i,E=/\s+/,F=function(e,t,n){if(a.g){var m=function(e,t){var n={title:void 0,trigger:"",placement:"top",fallbackPlacement:"flip",container:!1,animation:!0,offset:0,id:null,html:!1,interactive:!0,disabled:!1,delay:Object(c.c)(i.Mb,"delay",50),boundary:String(Object(c.c)(i.Mb,"boundary","scrollParent")),boundaryPadding:Object(h.b)(Object(c.c)(i.Mb,"boundaryPadding",5),0),variant:Object(c.c)(i.Mb,"variant"),customClass:Object(c.c)(i.Mb,"customClass")};if(Object(p.n)(e.value)||Object(p.h)(e.value)||Object(p.f)(e.value)?n.title=e.value:Object(p.k)(e.value)&&(n=y(y({},n),e.value)),Object(p.o)(n.title)){var a=s.d?t.props:(t.data||{}).attrs;n.title=a&&!Object(p.p)(a.title)?a.title:void 0}Object(p.k)(n.delay)||(n.delay={show:Object(h.b)(n.delay,0),hide:Object(h.b)(n.delay,0)}),e.arg&&(n.container="#".concat(e.arg)),Object(v.h)(e.modifiers).forEach((function(e){if(x.test(e))n.html=!0;else if(_.test(e))n.interactive=!1;else if(j.test(e))n.animation=!1;else if(C.test(e))n.placement=e;else if(D.test(e))e="scrollparent"===e?"scrollParent":e,n.boundary=e;else if(S.test(e)){var t=Object(h.b)(e.slice(1),0);n.delay.show=t,n.delay.hide=t}else T.test(e)?n.delay.show=Object(h.b)(e.slice(2),0):M.test(e)?n.delay.hide=Object(h.b)(e.slice(2),0):P.test(e)?n.offset=Object(h.b)(e.slice(1),0):I.test(e)&&(n.variant=e.slice(2)||null)}));var r={};return Object(o.b)(n.trigger||"").filter(d.a).join(" ").trim().toLowerCase().split(E).forEach((function(e){O[e]&&(r[e]=!0)})),Object(v.h)(e.modifiers).forEach((function(e){e=e.toLowerCase(),O[e]&&(r[e]=!0)})),n.trigger=Object(v.h)(r).join(" "),"blur"===n.trigger&&(n.trigger="focus"),n.trigger||(n.trigger="hover focus"),n}(t,n);if(!e[k]){var w=Object(u.a)(n,t);e[k]=Object(g.a)(w,b.a,{_scopeId:Object(l.a)(w,void 0)}),e[k].__bv_prev_data__={},e[k].$on(r.S,(function(){Object(p.f)(m.title)&&e[k].updateData({title:m.title(e)})}))}var F={title:m.title,triggers:m.trigger,placement:m.placement,fallbackPlacement:m.fallbackPlacement,variant:m.variant,customClass:m.customClass,container:m.container,boundary:m.boundary,delay:m.delay,offset:m.offset,noFade:!m.animation,id:m.id,interactive:m.interactive,disabled:m.disabled,html:m.html},A=e[k].__bv_prev_data__;if(e[k].__bv_prev_data__=F,!Object(f.a)(F,A)){var $={target:e};Object(v.h)(F).forEach((function(t){F[t]!==A[t]&&($[t]="title"===t&&Object(p.f)(F[t])?F[t](e):F[t])})),e[k].updateData($)}}},A={bind:function(e,t,n){F(e,t,n)},componentUpdated:function(e,t,n){Object(s.e)((function(){F(e,t,n)}))},unbind:function(e){!function(e){e[k]&&(e[k].$destroy(),e[k]=null),delete e[k]}(e)}}},M9Pj:function(e,t,n){"use strict";n.d(t,"a",(function(){return s}));var i=n("1OyB"),a=n("vuIU"),r=n("vDqi"),o=n.n(r),s=function(){function e(){Object(i.a)(this,e)}return Object(a.a)(e,[{key:"index",value:function(e){return o.a.get("/api/inventories/medicines",{params:e})}},{key:"store",value:function(e){return o.a.post("/api/inventories/medicines",e)}},{key:"destroy",value:function(e){return o.a.delete("/api/inventories/medicines/".concat(e))}},{key:"update",value:function(e,t){return o.a.put("/api/inventories/medicines/".concat(e),t)}},{key:"show",value:function(e){return o.a.get("/api/inventories/medicines/".concat(e))}}]),e}()},MnyD:function(e,t,n){var i=n("muC2");"string"==typeof i&&(i=[[e.i,i,""]]);var a={hmr:!0,transform:void 0,insertInto:void 0};n("aET+")(i,a);i.locals&&(e.exports=i.locals)},NTls:function(e,t,n){var i=n("vMS1");"string"==typeof i&&(i=[[e.i,i,""]]);var a={hmr:!0,transform:void 0,insertInto:void 0};n("aET+")(i,a);i.locals&&(e.exports=i.locals)},"NlY+":function(e,t,n){"use strict";n.d(t,"a",(function(){return f}));var i=n("L3ns"),a=n("tC49"),r=n("xjcK"),o=n("2C+6"),s=n("z3V6"),c=n("Rrza");function l(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);t&&(i=i.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,i)}return n}function d(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?l(Object(n),!0).forEach((function(t){u(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):l(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function u(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var p=Object(s.d)(Object(o.j)(c.b,["append"]),r.Y),f=Object(i.c)({name:r.Y,functional:!0,props:p,render:function(e,t){var n=t.props,i=t.data,r=t.children;return e(c.a,Object(a.a)(i,{props:d(d({},n),{},{append:!1})}),r)}})},OCip:function(e,t,n){"use strict";n.d(t,"a",(function(){return w}));var i=n("L3ns"),a=n("xjcK"),r=n("AFYn"),o=n("pyNs"),s=n("m3aq"),c=n("z3V6"),l=n("tK4P"),d=n("jfhb"),u=n("ex6f"),p=n("30Sj"),f=Object(i.c)({name:a.sb,extends:p.a,computed:{templateType:function(){return"popover"}},methods:{renderTemplate:function(e){var t=this.title,n=this.content,i=Object(u.f)(t)?t({}):t,a=Object(u.f)(n)?n({}):n,r=this.html&&!Object(u.f)(t)?{innerHTML:t}:{},o=this.html&&!Object(u.f)(n)?{innerHTML:n}:{};return e("div",{staticClass:"popover b-popover",class:this.templateClasses,attrs:this.templateAttributes,on:this.templateListeners},[e("div",{staticClass:"arrow",ref:"arrow"}),Object(u.p)(i)||""===i?e():e("h3",{staticClass:"popover-header",domProps:r},[i]),Object(u.p)(a)||""===a?e():e("div",{staticClass:"popover-body",domProps:o},[a])])}}}),h=Object(i.c)({name:a.rb,extends:d.a,computed:{templateType:function(){return"popover"}},methods:{getTemplate:function(){return f}}}),v=n("2C+6");function g(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);t&&(i=i.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,i)}return n}function b(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?g(Object(n),!0).forEach((function(t){m(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):g(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function m(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var y=Object(c.d)(Object(v.m)(b(b({},l.b),{},{content:Object(c.c)(o.u),placement:Object(c.c)(o.u,"right"),triggers:Object(c.c)(o.f,r.f)})),a.qb),w=Object(i.c)({name:a.qb,extends:l.a,inheritAttrs:!1,props:y,methods:{getComponent:function(){return h},updateContent:function(){this.setContent(this.normalizeSlot()||this.content),this.setTitle(this.normalizeSlot(s.U)||this.title)}}})},OOfG:function(e,t,n){"use strict";var i=n("KHd+"),a=Object(i.a)({},(function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("svg",{attrs:{viewBox:"0 0 139 95",version:"1.1",xmlns:"http://www.w3.org/2000/svg","xmlns:xlink":"http://www.w3.org/1999/xlink",height:"24"}},[n("defs",[n("linearGradient",{attrs:{id:"linearGradient-1",x1:"100%",y1:"10.5120544%",x2:"50%",y2:"89.4879456%"}},[n("stop",{attrs:{"stop-color":"#000000",offset:"0%"}}),e._v(" "),n("stop",{attrs:{"stop-color":"#FFFFFF",offset:"100%"}})],1),e._v(" "),n("linearGradient",{attrs:{id:"linearGradient-2",x1:"64.0437835%",y1:"46.3276743%",x2:"37.373316%",y2:"100%"}},[n("stop",{attrs:{"stop-color":"#EEEEEE","stop-opacity":"0",offset:"0%"}}),e._v(" "),n("stop",{attrs:{"stop-color":"#FFFFFF",offset:"100%"}})],1)],1),e._v(" "),n("g",{attrs:{id:"Page-1",stroke:"none","stroke-width":"1",fill:"none","fill-rule":"evenodd"}},[n("g",{attrs:{id:"Artboard",transform:"translate(-400.000000, -178.000000)"}},[n("g",{attrs:{id:"Group",transform:"translate(400.000000, 178.000000)"}},[n("path",{staticClass:"text-primary",staticStyle:{fill:"currentColor"},attrs:{id:"Path",d:"M-5.68434189e-14,2.84217094e-14 L39.1816085,2.84217094e-14 L69.3453773,32.2519224 L101.428699,2.84217094e-14 L138.784583,2.84217094e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L6.71554594,44.4188507 C2.46876683,39.9813776 0.345377275,35.1089553 0.345377275,29.8015838 C0.345377275,24.4942122 0.230251516,14.560351 -5.68434189e-14,2.84217094e-14 Z"}}),e._v(" "),n("path",{attrs:{id:"Path1",d:"M69.3453773,32.2519224 L101.428699,1.42108547e-14 L138.784583,1.42108547e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L32.8435758,70.5039241 L69.3453773,32.2519224 Z",fill:"url(#linearGradient-1)",opacity:"0.2"}}),e._v(" "),n("polygon",{attrs:{id:"Path-2",fill:"#000000",opacity:"0.049999997",points:"69.3922914 32.4202615 32.8435758 70.5039241 54.0490008 16.1851325"}}),e._v(" "),n("polygon",{attrs:{id:"Path-21",fill:"#000000",opacity:"0.099999994",points:"69.3922914 32.4202615 32.8435758 70.5039241 58.3683556 20.7402338"}}),e._v(" "),n("polygon",{attrs:{id:"Path-3",fill:"url(#linearGradient-2)",opacity:"0.099999994",points:"101.428699 0 83.0667527 94.1480575 130.378721 47.0740288"}})])])])])}),[],!1,null,null,null);t.a=a.exports},Obrr:function(e,t,n){"use strict";n.d(t,"a",(function(){return I}));var i=n("xjcK"),a=n("6GPe"),r=n("AFYn"),o=n("m/oX"),s=n("mS7b"),c=n("Iyau"),l=n("TlNa"),d=n("kGy3"),u=n("a3f1"),p=n("ex6f"),f=n("PCFI"),h=n("2C+6"),v=n("39rg"),g="__BV_toggle",b="".concat(g,"_HANDLER__"),m="".concat(g,"_CLICK__"),y="".concat(g,"_STATE__"),w="".concat(g,"_TARGETS__"),k=Object(u.d)(i.u,"toggle"),O=Object(u.e)(i.u,"state"),x=Object(u.e)(i.u,"sync-state"),_=Object(u.d)(i.u,"request-state"),j=[o.e,o.l],C=function(e){return!Object(c.a)(["button","a"],e.tagName.toLowerCase())},D=function(e){var t=e[m];t&&(Object(u.a)(e,"click",t,r.Z),Object(u.a)(e,"keydown",t,r.Z)),e[m]=null},S=function(e,t){e[b]&&t&&Object(v.a)(t).$off([O,x],e[b]),e[b]=null},T=function(e,t){t?(Object(d.y)(e,"collapsed"),Object(d.b)(e,"not-collapsed"),Object(d.E)(e,"aria-expanded","true")):(Object(d.y)(e,"not-collapsed"),Object(d.b)(e,"collapsed"),Object(d.E)(e,"aria-expanded","false"))},M=function(e,t){e[t]=null,delete e[t]},P=function(e,t,n){if(a.g&&Object(l.a)(n,t)){C(e)&&(Object(d.o)(e,"role")||Object(d.E)(e,"role","button"),Object(d.o)(e,"tabindex")||Object(d.E)(e,"tabindex","0")),T(e,e[y]);var i=function(e,t){var n=e.modifiers,i=e.arg,a=e.value,r=Object(h.h)(n||{});if(a=Object(p.n)(a)?a.split(s.u):a,Object(d.t)(t.tagName,"a")){var o=Object(d.h)(t,"href")||"";s.k.test(o)&&r.push(o.replace(s.j,""))}return Object(c.b)(i,a).forEach((function(e){return Object(p.n)(e)&&r.push(e)})),r.filter((function(e,t,n){return e&&n.indexOf(e)===t}))}(t,e);i.length>0?(Object(d.E)(e,"aria-controls",i.join(" ")),Object(d.F)(e,"overflow-anchor","none")):(Object(d.x)(e,"aria-controls"),Object(d.A)(e,"overflow-anchor")),Object(d.B)((function(){!function(e,t){if(D(e),t){var n=function(n){"keydown"===n.type&&!Object(c.a)(j,n.keyCode)||Object(d.r)(e)||(e[w]||[]).forEach((function(e){Object(v.a)(t).$emit(k,e)}))};e[m]=n,Object(u.b)(e,"click",n,r.Z),C(e)&&Object(u.b)(e,"keydown",n,r.Z)}}(e,Object(l.a)(n,t))})),Object(f.a)(i,e[w])||(e[w]=i,i.forEach((function(e){Object(v.a)(Object(l.a)(n,t)).$emit(_,e)})))}},I={bind:function(e,t,n){e[y]=!1,e[w]=[],function(e,t){if(S(e,t),t){var n=function(t,n){Object(c.a)(e[w]||[],t)&&(e[y]=n,T(e,n))};e[b]=n,Object(v.a)(t).$on([O,x],n)}}(e,Object(l.a)(n,t)),P(e,t,n)},componentUpdated:P,updated:P,unbind:function(e,t,n){D(e),S(e,Object(l.a)(n,t)),M(e,b),M(e,m),M(e,y),M(e,w),Object(d.y)(e,"collapsed"),Object(d.y)(e,"not-collapsed"),Object(d.x)(e,"aria-expanded"),Object(d.x)(e,"aria-controls"),Object(d.x)(e,"role"),Object(d.A)(e,"overflow-anchor")}}},OfmS:function(e,t,n){(t=n("JPst")(!1)).push([e.i,'/**\n * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML\n * Based on https://github.com/chriskempson/tomorrow-theme\n * @author Rose Pritchard\n */\n\ncode[class*="language-"],\npre[class*="language-"] {\n\tcolor: #ccc;\n\tfont-family: Consolas, Monaco, \'Andale Mono\', \'Ubuntu Mono\', monospace;\n\tfont-size: 1em;\n\twhite-space: pre;\n\tword-spacing: normal;\n\tword-break: normal;\n\tword-wrap: normal;\n\tline-height: 1.5;\n\n\t-moz-tab-size: 4;\n\t-o-tab-size: 4;\n\ttab-size: 4;\n\n\t-webkit-hyphens: none;\n\t-moz-hyphens: none;\n\t-ms-hyphens: none;\n\thyphens: none;\n\n}\n\n[dir] code[class*="language-"], [dir] pre[class*="language-"] {\n\tbackground: none;\n\n}\n\n[dir=ltr] code[class*="language-"], [dir=ltr] pre[class*="language-"] {\n\ttext-align: left;\n\n}\n\n[dir=rtl] code[class*="language-"], [dir=rtl] pre[class*="language-"] {\n\ttext-align: right;\n\n}\n\n/* Code blocks */\npre[class*="language-"] {\n\toverflow: auto;\n}\n[dir] pre[class*="language-"] {\n\tpadding: 1em;\n\tmargin: .5em 0;\n}\n\n[dir] :not(pre) > code[class*="language-"], [dir] pre[class*="language-"] {\n\tbackground: #2d2d2d;\n}\n\n/* Inline code */\n:not(pre) > code[class*="language-"] {\n\twhite-space: normal;\n}\n[dir] :not(pre) > code[class*="language-"] {\n\tpadding: .1em;\n\tborder-radius: .3em;\n}\n\n.token.comment,\n.token.block-comment,\n.token.prolog,\n.token.doctype,\n.token.cdata {\n\tcolor: #999;\n}\n\n.token.punctuation {\n\tcolor: #ccc;\n}\n\n.token.tag,\n.token.attr-name,\n.token.namespace,\n.token.deleted {\n\tcolor: #e2777a;\n}\n\n.token.function-name {\n\tcolor: #6196cc;\n}\n\n.token.boolean,\n.token.number,\n.token.function {\n\tcolor: #f08d49;\n}\n\n.token.property,\n.token.class-name,\n.token.constant,\n.token.symbol {\n\tcolor: #f8c555;\n}\n\n.token.selector,\n.token.important,\n.token.atrule,\n.token.keyword,\n.token.builtin {\n\tcolor: #cc99cd;\n}\n\n.token.string,\n.token.char,\n.token.attr-value,\n.token.regex,\n.token.variable {\n\tcolor: #7ec699;\n}\n\n.token.operator,\n.token.entity,\n.token.url {\n\tcolor: #67cdcc;\n}\n\n.token.important,\n.token.bold {\n\tfont-weight: bold;\n}\n.token.italic {\n\tfont-style: italic;\n}\n\n[dir] .token.entity {\n\tcursor: help;\n}\n\n.token.inserted {\n\tcolor: green;\n}\n',""]),e.exports=t},Rrza:function(e,t,n){"use strict";n.d(t,"b",(function(){return l})),n.d(t,"a",(function(){return d}));var i=n("L3ns"),a=n("tC49"),r=n("xjcK"),o=n("pyNs"),s=n("z3V6"),c=n("0ZAa"),l=Object(s.d)({append:Object(s.c)(o.g,!1),id:Object(s.c)(o.u),isText:Object(s.c)(o.g,!1),tag:Object(s.c)(o.u,"div")},r.W),d=Object(i.c)({name:r.W,functional:!0,props:l,render:function(e,t){var n=t.props,i=t.data,r=t.children,o=n.append;return e(n.tag,Object(a.a)(i,{class:{"input-group-append":o,"input-group-prepend":!o},attrs:{id:n.id}}),n.isText?[e(c.a,r)]:r)}})},"Snq/":function(e,t,n){"undefined"!=typeof self&&self,e.exports=(()=>{var e={646:e=>{e.exports=function(e){if(Array.isArray(e)){for(var t=0,n=new Array(e.length);t<e.length;t++)n[t]=e[t];return n}}},713:e=>{e.exports=function(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}},860:e=>{e.exports=function(e){if(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e))return Array.from(e)}},206:e=>{e.exports=function(){throw new TypeError("Invalid attempt to spread non-iterable instance")}},319:(e,t,n)=>{var i=n(646),a=n(860),r=n(206);e.exports=function(e){return i(e)||a(e)||r()}},8:e=>{function t(n){return"function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?e.exports=t=function(e){return typeof e}:e.exports=t=function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},t(n)}e.exports=t}},t={};function n(i){var a=t[i];if(void 0!==a)return a.exports;var r=t[i]={exports:{}};return e[i](r,r.exports,n),r.exports}n.n=e=>{var t=e&&e.__esModule?()=>e.default:()=>e;return n.d(t,{a:t}),t},n.d=(e,t)=>{for(var i in t)n.o(t,i)&&!n.o(e,i)&&Object.defineProperty(e,i,{enumerable:!0,get:t[i]})},n.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),n.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})};var i={};return(()=>{"use strict";n.r(i),n.d(i,{VueSelect:()=>b,default:()=>y,mixins:()=>m});var e=n(319),t=n.n(e),a=n(8),r=n.n(a),o=n(713),s=n.n(o);const c={props:{autoscroll:{type:Boolean,default:!0}},watch:{typeAheadPointer:function(){this.autoscroll&&this.maybeAdjustScroll()},open:function(e){var t=this;this.autoscroll&&e&&this.$nextTick((function(){return t.maybeAdjustScroll()}))}},methods:{maybeAdjustScroll:function(){var e,t=(null===(e=this.$refs.dropdownMenu)||void 0===e?void 0:e.children[this.typeAheadPointer])||!1;if(t){var n=this.getDropdownViewport(),i=t.getBoundingClientRect(),a=i.top,r=i.bottom,o=i.height;if(a<n.top)return this.$refs.dropdownMenu.scrollTop=t.offsetTop;if(r>n.bottom)return this.$refs.dropdownMenu.scrollTop=t.offsetTop-(n.height-o)}},getDropdownViewport:function(){return this.$refs.dropdownMenu?this.$refs.dropdownMenu.getBoundingClientRect():{height:0,top:0,bottom:0}}}},l={data:function(){return{typeAheadPointer:-1}},watch:{filteredOptions:function(){for(var e=0;e<this.filteredOptions.length;e++)if(this.selectable(this.filteredOptions[e])){this.typeAheadPointer=e;break}},open:function(e){e&&this.typeAheadToLastSelected()},selectedValue:function(){this.open&&this.typeAheadToLastSelected()}},methods:{typeAheadUp:function(){for(var e=this.typeAheadPointer-1;e>=0;e--)if(this.selectable(this.filteredOptions[e])){this.typeAheadPointer=e;break}},typeAheadDown:function(){for(var e=this.typeAheadPointer+1;e<this.filteredOptions.length;e++)if(this.selectable(this.filteredOptions[e])){this.typeAheadPointer=e;break}},typeAheadSelect:function(){var e=this.filteredOptions[this.typeAheadPointer];e&&this.selectable(e)&&this.select(e)},typeAheadToLastSelected:function(){var e=0!==this.selectedValue.length?this.filteredOptions.indexOf(this.selectedValue[this.selectedValue.length-1]):-1;-1!==e&&(this.typeAheadPointer=e)}}},d={props:{loading:{type:Boolean,default:!1}},data:function(){return{mutableLoading:!1}},watch:{search:function(){this.$emit("search",this.search,this.toggleLoading)},loading:function(e){this.mutableLoading=e}},methods:{toggleLoading:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:null;return this.mutableLoading=null==e?!this.mutableLoading:e}}};function u(e,t,n,i,a,r,o,s){var c,l="function"==typeof e?e.options:e;if(t&&(l.render=t,l.staticRenderFns=n,l._compiled=!0),i&&(l.functional=!0),r&&(l._scopeId="data-v-"+r),o?(c=function(e){(e=e||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext)||"undefined"==typeof __VUE_SSR_CONTEXT__||(e=__VUE_SSR_CONTEXT__),a&&a.call(this,e),e&&e._registeredComponents&&e._registeredComponents.add(o)},l._ssrRegister=c):a&&(c=s?function(){a.call(this,(l.functional?this.parent:this).$root.$options.shadowRoot)}:a),c)if(l.functional){l._injectStyles=c;var d=l.render;l.render=function(e,t){return c.call(t),d(e,t)}}else{var u=l.beforeCreate;l.beforeCreate=u?[].concat(u,c):[c]}return{exports:e,options:l}}const p={Deselect:u({},(function(){var e=this.$createElement,t=this._self._c||e;return t("svg",{attrs:{xmlns:"http://www.w3.org/2000/svg",width:"10",height:"10"}},[t("path",{attrs:{d:"M6.895455 5l2.842897-2.842898c.348864-.348863.348864-.914488 0-1.263636L9.106534.261648c-.348864-.348864-.914489-.348864-1.263636 0L5 3.104545 2.157102.261648c-.348863-.348864-.914488-.348864-1.263636 0L.261648.893466c-.348864.348864-.348864.914489 0 1.263636L3.104545 5 .261648 7.842898c-.348864.348863-.348864.914488 0 1.263636l.631818.631818c.348864.348864.914773.348864 1.263636 0L5 6.895455l2.842898 2.842897c.348863.348864.914772.348864 1.263636 0l.631818-.631818c.348864-.348864.348864-.914489 0-1.263636L6.895455 5z"}})])}),[],!1,null,null,null).exports,OpenIndicator:u({},(function(){var e=this.$createElement,t=this._self._c||e;return t("svg",{attrs:{xmlns:"http://www.w3.org/2000/svg",width:"14",height:"10"}},[t("path",{attrs:{d:"M9.211364 7.59931l4.48338-4.867229c.407008-.441854.407008-1.158247 0-1.60046l-.73712-.80023c-.407008-.441854-1.066904-.441854-1.474243 0L7 5.198617 2.51662.33139c-.407008-.441853-1.066904-.441853-1.474243 0l-.737121.80023c-.407008.441854-.407008 1.158248 0 1.600461l4.48338 4.867228L7 10l2.211364-2.40069z"}})])}),[],!1,null,null,null).exports},f={inserted:function(e,t,n){var i=n.context;if(i.appendToBody){var a=i.$refs.toggle.getBoundingClientRect(),r=a.height,o=a.top,s=a.left,c=a.width,l=window.scrollX||window.pageXOffset,d=window.scrollY||window.pageYOffset;e.unbindPosition=i.calculatePosition(e,i,{width:c+"px",left:l+s+"px",top:d+o+r+"px"}),document.body.appendChild(e)}},unbind:function(e,t,n){n.context.appendToBody&&(e.unbindPosition&&"function"==typeof e.unbindPosition&&e.unbindPosition(),e.parentNode&&e.parentNode.removeChild(e))}};var h=0;function v(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);t&&(i=i.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,i)}return n}function g(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?v(Object(n),!0).forEach((function(t){s()(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):v(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}const b=u({components:g({},p),directives:{appendToBody:f},mixins:[c,l,d],props:{value:{},components:{type:Object,default:function(){return{}}},options:{type:Array,default:function(){return[]}},disabled:{type:Boolean,default:!1},clearable:{type:Boolean,default:!0},deselectFromDropdown:{type:Boolean,default:!1},searchable:{type:Boolean,default:!0},multiple:{type:Boolean,default:!1},placeholder:{type:String,default:""},transition:{type:String,default:"vs__fade"},clearSearchOnSelect:{type:Boolean,default:!0},closeOnSelect:{type:Boolean,default:!0},label:{type:String,default:"label"},autocomplete:{type:String,default:"off"},reduce:{type:Function,default:function(e){return e}},selectable:{type:Function,default:function(e){return!0}},getOptionLabel:{type:Function,default:function(e){return"object"===r()(e)?e.hasOwnProperty(this.label)?e[this.label]:console.warn('[vue-select warn]: Label key "option.'.concat(this.label,'" does not')+" exist in options object ".concat(JSON.stringify(e),".\n")+"https://vue-select.org/api/props.html#getoptionlabel"):e}},getOptionKey:{type:Function,default:function(e){if("object"!==r()(e))return e;try{return e.hasOwnProperty("id")?e.id:function(e){var t={};return Object.keys(e).sort().forEach((function(n){t[n]=e[n]})),JSON.stringify(t)}(e)}catch(t){return console.warn("[vue-select warn]: Could not stringify this option to generate unique key. Please provide'getOptionKey' prop to return a unique key for each option.\nhttps://vue-select.org/api/props.html#getoptionkey",e,t)}}},onTab:{type:Function,default:function(){this.selectOnTab&&!this.isComposing&&this.typeAheadSelect()}},taggable:{type:Boolean,default:!1},tabindex:{type:Number,default:null},pushTags:{type:Boolean,default:!1},filterable:{type:Boolean,default:!0},filterBy:{type:Function,default:function(e,t,n){return(t||"").toLocaleLowerCase().indexOf(n.toLocaleLowerCase())>-1}},filter:{type:Function,default:function(e,t){var n=this;return e.filter((function(e){var i=n.getOptionLabel(e);return"number"==typeof i&&(i=i.toString()),n.filterBy(e,i,t)}))}},createOption:{type:Function,default:function(e){return"object"===r()(this.optionList[0])?s()({},this.label,e):e}},resetOnOptionsChange:{default:!1,validator:function(e){return["function","boolean"].includes(r()(e))}},clearSearchOnBlur:{type:Function,default:function(e){var t=e.clearSearchOnSelect,n=e.multiple;return t&&!n}},noDrop:{type:Boolean,default:!1},inputId:{type:String},dir:{type:String,default:"auto"},selectOnTab:{type:Boolean,default:!1},selectOnKeyCodes:{type:Array,default:function(){return[13]}},searchInputQuerySelector:{type:String,default:"[type=search]"},mapKeydown:{type:Function,default:function(e,t){return e}},appendToBody:{type:Boolean,default:!1},calculatePosition:{type:Function,default:function(e,t,n){var i=n.width,a=n.top,r=n.left;e.style.top=a,e.style.left=r,e.style.width=i}},dropdownShouldOpen:{type:Function,default:function(e){var t=e.noDrop,n=e.open,i=e.mutableLoading;return!t&&n&&!i}},uid:{type:[String,Number],default:function(){return++h}}},data:function(){return{search:"",open:!1,isComposing:!1,pushedTags:[],_value:[]}},computed:{isTrackingValues:function(){return void 0===this.value||this.$options.propsData.hasOwnProperty("reduce")},selectedValue:function(){var e=this.value;return this.isTrackingValues&&(e=this.$data._value),null!=e&&""!==e?[].concat(e):[]},optionList:function(){return this.options.concat(this.pushTags?this.pushedTags:[])},searchEl:function(){return this.$scopedSlots.search?this.$refs.selectedOptions.querySelector(this.searchInputQuerySelector):this.$refs.search},scope:function(){var e=this,t={search:this.search,loading:this.loading,searching:this.searching,filteredOptions:this.filteredOptions};return{search:{attributes:g({disabled:this.disabled,placeholder:this.searchPlaceholder,tabindex:this.tabindex,readonly:!this.searchable,id:this.inputId,"aria-autocomplete":"list","aria-labelledby":"vs".concat(this.uid,"__combobox"),"aria-controls":"vs".concat(this.uid,"__listbox"),ref:"search",type:"search",autocomplete:this.autocomplete,value:this.search},this.dropdownOpen&&this.filteredOptions[this.typeAheadPointer]?{"aria-activedescendant":"vs".concat(this.uid,"__option-").concat(this.typeAheadPointer)}:{}),events:{compositionstart:function(){return e.isComposing=!0},compositionend:function(){return e.isComposing=!1},keydown:this.onSearchKeyDown,keypress:this.onSearchKeyPress,blur:this.onSearchBlur,focus:this.onSearchFocus,input:function(t){return e.search=t.target.value}}},spinner:{loading:this.mutableLoading},noOptions:{search:this.search,loading:this.mutableLoading,searching:this.searching},openIndicator:{attributes:{ref:"openIndicator",role:"presentation",class:"vs__open-indicator"}},listHeader:t,listFooter:t,header:g({},t,{deselect:this.deselect}),footer:g({},t,{deselect:this.deselect})}},childComponents:function(){return g({},p,{},this.components)},stateClasses:function(){return{"vs--open":this.dropdownOpen,"vs--single":!this.multiple,"vs--multiple":this.multiple,"vs--searching":this.searching&&!this.noDrop,"vs--searchable":this.searchable&&!this.noDrop,"vs--unsearchable":!this.searchable,"vs--loading":this.mutableLoading,"vs--disabled":this.disabled}},searching:function(){return!!this.search},dropdownOpen:function(){return this.dropdownShouldOpen(this)},searchPlaceholder:function(){return this.isValueEmpty&&this.placeholder?this.placeholder:void 0},filteredOptions:function(){var e=[].concat(this.optionList);if(!this.filterable&&!this.taggable)return e;var t=this.search.length?this.filter(e,this.search,this):e;if(this.taggable&&this.search.length){var n=this.createOption(this.search);this.optionExists(n)||t.unshift(n)}return t},isValueEmpty:function(){return 0===this.selectedValue.length},showClearButton:function(){return!this.multiple&&this.clearable&&!this.open&&!this.isValueEmpty}},watch:{options:function(e,t){var n=this;!this.taggable&&("function"==typeof n.resetOnOptionsChange?n.resetOnOptionsChange(e,t,n.selectedValue):n.resetOnOptionsChange)&&this.clearSelection(),this.value&&this.isTrackingValues&&this.setInternalValueFromOptions(this.value)},value:{immediate:!0,handler:function(e){this.isTrackingValues&&this.setInternalValueFromOptions(e)}},multiple:function(){this.clearSelection()},open:function(e){this.$emit(e?"open":"close")},search:function(e){e.length&&(this.open=!0)}},created:function(){this.mutableLoading=this.loading,this.$on("option:created",this.pushTag)},methods:{setInternalValueFromOptions:function(e){var t=this;Array.isArray(e)?this.$data._value=e.map((function(e){return t.findOptionFromReducedValue(e)})):this.$data._value=this.findOptionFromReducedValue(e)},select:function(e){this.$emit("option:selecting",e),this.isOptionSelected(e)?this.deselectFromDropdown&&(this.clearable||this.multiple&&this.selectedValue.length>1)&&this.deselect(e):(this.taggable&&!this.optionExists(e)&&this.$emit("option:created",e),this.multiple&&(e=this.selectedValue.concat(e)),this.updateValue(e),this.$emit("option:selected",e)),this.onAfterSelect(e)},deselect:function(e){var t=this;this.$emit("option:deselecting",e),this.updateValue(this.selectedValue.filter((function(n){return!t.optionComparator(n,e)}))),this.$emit("option:deselected",e)},clearSelection:function(){this.updateValue(this.multiple?[]:null)},onAfterSelect:function(e){var t=this;this.closeOnSelect&&(this.open=!this.open),this.clearSearchOnSelect&&(this.search=""),this.noDrop&&this.multiple&&this.$nextTick((function(){return t.$refs.search.focus()}))},updateValue:function(e){var t=this;void 0===this.value&&(this.$data._value=e),null!==e&&(e=Array.isArray(e)?e.map((function(e){return t.reduce(e)})):this.reduce(e)),this.$emit("input",e)},toggleDropdown:function(e){var n=e.target!==this.searchEl;n&&e.preventDefault();var i=[].concat(t()(this.$refs.deselectButtons||[]),t()([this.$refs.clearButton]||!1));void 0===this.searchEl||i.filter(Boolean).some((function(t){return t.contains(e.target)||t===e.target}))?e.preventDefault():this.open&&n?this.searchEl.blur():this.disabled||(this.open=!0,this.searchEl.focus())},isOptionSelected:function(e){var t=this;return this.selectedValue.some((function(n){return t.optionComparator(n,e)}))},isOptionDeselectable:function(e){return this.isOptionSelected(e)&&this.deselectFromDropdown},optionComparator:function(e,t){return this.getOptionKey(e)===this.getOptionKey(t)},findOptionFromReducedValue:function(e){var n=this,i=[].concat(t()(this.options),t()(this.pushedTags)).filter((function(t){return JSON.stringify(n.reduce(t))===JSON.stringify(e)}));return 1===i.length?i[0]:i.find((function(e){return n.optionComparator(e,n.$data._value)}))||e},closeSearchOptions:function(){this.open=!1,this.$emit("search:blur")},maybeDeleteValue:function(){if(!this.searchEl.value.length&&this.selectedValue&&this.selectedValue.length&&this.clearable){var e=null;this.multiple&&(e=t()(this.selectedValue.slice(0,this.selectedValue.length-1))),this.updateValue(e)}},optionExists:function(e){var t=this;return this.optionList.some((function(n){return t.optionComparator(n,e)}))},normalizeOptionForSlot:function(e){return"object"===r()(e)?e:s()({},this.label,e)},pushTag:function(e){this.pushedTags.push(e)},onEscape:function(){this.search.length?this.search="":this.open=!1},onSearchBlur:function(){if(!this.mousedown||this.searching){var e=this.clearSearchOnSelect,t=this.multiple;return this.clearSearchOnBlur({clearSearchOnSelect:e,multiple:t})&&(this.search=""),void this.closeSearchOptions()}this.mousedown=!1,0!==this.search.length||0!==this.options.length||this.closeSearchOptions()},onSearchFocus:function(){this.open=!0,this.$emit("search:focus")},onMousedown:function(){this.mousedown=!0},onMouseUp:function(){this.mousedown=!1},onSearchKeyDown:function(e){var t=this,n=function(e){return e.preventDefault(),!t.isComposing&&t.typeAheadSelect()},i={8:function(e){return t.maybeDeleteValue()},9:function(e){return t.onTab()},27:function(e){return t.onEscape()},38:function(e){if(e.preventDefault(),t.open)return t.typeAheadUp();t.open=!0},40:function(e){if(e.preventDefault(),t.open)return t.typeAheadDown();t.open=!0}};this.selectOnKeyCodes.forEach((function(e){return i[e]=n}));var a=this.mapKeydown(i,this);if("function"==typeof a[e.keyCode])return a[e.keyCode](e)},onSearchKeyPress:function(e){this.open||32!==e.keyCode||(e.preventDefault(),this.open=!0)}}},(function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",{staticClass:"v-select",class:e.stateClasses,attrs:{dir:e.dir}},[e._t("header",null,null,e.scope.header),e._v(" "),n("div",{ref:"toggle",staticClass:"vs__dropdown-toggle",attrs:{id:"vs"+e.uid+"__combobox",role:"combobox","aria-expanded":e.dropdownOpen.toString(),"aria-owns":"vs"+e.uid+"__listbox","aria-label":"Search for option"},on:{mousedown:function(t){return e.toggleDropdown(t)}}},[n("div",{ref:"selectedOptions",staticClass:"vs__selected-options"},[e._l(e.selectedValue,(function(t){return e._t("selected-option-container",[n("span",{key:e.getOptionKey(t),staticClass:"vs__selected"},[e._t("selected-option",[e._v("\n            "+e._s(e.getOptionLabel(t))+"\n          ")],null,e.normalizeOptionForSlot(t)),e._v(" "),e.multiple?n("button",{ref:"deselectButtons",refInFor:!0,staticClass:"vs__deselect",attrs:{disabled:e.disabled,type:"button",title:"Deselect "+e.getOptionLabel(t),"aria-label":"Deselect "+e.getOptionLabel(t)},on:{click:function(n){return e.deselect(t)}}},[n(e.childComponents.Deselect,{tag:"component"})],1):e._e()],2)],{option:e.normalizeOptionForSlot(t),deselect:e.deselect,multiple:e.multiple,disabled:e.disabled})})),e._v(" "),e._t("search",[n("input",e._g(e._b({staticClass:"vs__search"},"input",e.scope.search.attributes,!1),e.scope.search.events))],null,e.scope.search)],2),e._v(" "),n("div",{ref:"actions",staticClass:"vs__actions"},[n("button",{directives:[{name:"show",rawName:"v-show",value:e.showClearButton,expression:"showClearButton"}],ref:"clearButton",staticClass:"vs__clear",attrs:{disabled:e.disabled,type:"button",title:"Clear Selected","aria-label":"Clear Selected"},on:{click:e.clearSelection}},[n(e.childComponents.Deselect,{tag:"component"})],1),e._v(" "),e._t("open-indicator",[e.noDrop?e._e():n(e.childComponents.OpenIndicator,e._b({tag:"component"},"component",e.scope.openIndicator.attributes,!1))],null,e.scope.openIndicator),e._v(" "),e._t("spinner",[n("div",{directives:[{name:"show",rawName:"v-show",value:e.mutableLoading,expression:"mutableLoading"}],staticClass:"vs__spinner"},[e._v("Loading...")])],null,e.scope.spinner)],2)]),e._v(" "),n("transition",{attrs:{name:e.transition}},[e.dropdownOpen?n("ul",{directives:[{name:"append-to-body",rawName:"v-append-to-body"}],key:"vs"+e.uid+"__listbox",ref:"dropdownMenu",staticClass:"vs__dropdown-menu",attrs:{id:"vs"+e.uid+"__listbox",role:"listbox",tabindex:"-1"},on:{mousedown:function(t){return t.preventDefault(),e.onMousedown(t)},mouseup:e.onMouseUp}},[e._t("list-header",null,null,e.scope.listHeader),e._v(" "),e._l(e.filteredOptions,(function(t,i){return n("li",{key:e.getOptionKey(t),staticClass:"vs__dropdown-option",class:{"vs__dropdown-option--deselect":e.isOptionDeselectable(t)&&i===e.typeAheadPointer,"vs__dropdown-option--selected":e.isOptionSelected(t),"vs__dropdown-option--highlight":i===e.typeAheadPointer,"vs__dropdown-option--disabled":!e.selectable(t)},attrs:{id:"vs"+e.uid+"__option-"+i,role:"option","aria-selected":i===e.typeAheadPointer||null},on:{mouseover:function(n){e.selectable(t)&&(e.typeAheadPointer=i)},click:function(n){n.preventDefault(),n.stopPropagation(),e.selectable(t)&&e.select(t)}}},[e._t("option",[e._v("\n          "+e._s(e.getOptionLabel(t))+"\n        ")],null,e.normalizeOptionForSlot(t))],2)})),e._v(" "),0===e.filteredOptions.length?n("li",{staticClass:"vs__no-options"},[e._t("no-options",[e._v("\n          Sorry, no matching options.\n        ")],null,e.scope.noOptions)],2):e._e(),e._v(" "),e._t("list-footer",null,null,e.scope.listFooter)],2):n("ul",{staticStyle:{display:"none",visibility:"hidden"},attrs:{id:"vs"+e.uid+"__listbox",role:"listbox"}})]),e._v(" "),e._t("footer",null,null,e.scope.footer)],2)}),[],!1,null,null,null).exports,m={ajax:d,pointer:l,pointerScroll:c},y=b})(),i})()},Ta7t:function(e,t,n){var i=n("I8vh"),a=n("B/qT"),r=n("hBjN"),o=Array,s=Math.max;e.exports=function(e,t,n){for(var c=a(e),l=i(t,c),d=i(void 0===n?c:n,c),u=o(s(d-l,0)),p=0;l<d;l++,p++)r(u,p,e[l]);return u.length=p,u}},V7lt:function(e,t,n){var i=n("xluM"),a=n("0GbY"),r=n("tiKp"),o=n("yy0I");e.exports=function(){var e=a("Symbol"),t=e&&e.prototype,n=t&&t.valueOf,s=r("toPrimitive");t&&!t[s]&&o(t,s,(function(e){return i(n,this)}),{arity:1})}},WEOK:function(e,t,n){"use strict";n.d(t,"a",(function(){return L}));var i,a=n("L3ns"),r=n("xjcK"),o=n("6GPe"),s=n("AFYn"),c=n("pyNs"),l=n("m3aq"),d=n("kGy3"),u=n("a3f1"),p=n("WPLV"),f=n("2C+6"),h=n("z3V6"),v=n("kO/s"),g=n("YC3Q"),b=n("jBgq"),m=n("tC49"),y={css:!0,enterClass:"",enterActiveClass:"collapsing",enterToClass:"collapse show",leaveClass:"collapse show",leaveActiveClass:"collapsing",leaveToClass:"collapse"},w={enter:function(e){Object(d.F)(e,"height",0),Object(d.B)((function(){Object(d.w)(e),Object(d.F)(e,"height","".concat(e.scrollHeight,"px"))}))},afterEnter:function(e){Object(d.A)(e,"height")},leave:function(e){Object(d.F)(e,"height","auto"),Object(d.F)(e,"display","block"),Object(d.F)(e,"height","".concat(Object(d.i)(e).height,"px")),Object(d.w)(e),Object(d.F)(e,"height",0)},afterLeave:function(e){Object(d.A)(e,"height")}},k={appear:Object(h.c)(c.g,!1)},O=Object(a.c)({name:r.v,functional:!0,props:k,render:function(e,t){var n=t.props,i=t.data,a=t.children;return e("transition",Object(m.a)(i,{props:y,on:w},{props:n}),a)}});function x(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);t&&(i=i.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,i)}return n}function _(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?x(Object(n),!0).forEach((function(t){j(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):x(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function j(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var C=Object(u.d)(r.u,"toggle"),D=Object(u.d)(r.u,"request-state"),S=Object(u.e)(r.u,"accordion"),T=Object(u.e)(r.u,"state"),M=Object(u.e)(r.u,"sync-state"),P=Object(p.a)("visible",{type:c.g,defaultValue:!1}),I=P.mixin,E=P.props,F=P.prop,A=P.event,$=Object(h.d)(Object(f.m)(_(_(_({},v.b),E),{},{accordion:Object(h.c)(c.u),appear:Object(h.c)(c.g,!1),isNav:Object(h.c)(c.g,!1),tag:Object(h.c)(c.u,"div")})),r.u),L=Object(a.c)({name:r.u,mixins:[v.a,I,b.a,g.a],props:$,data:function(){return{show:this[F],transitioning:!1}},computed:{classObject:function(){var e=this.transitioning;return{"navbar-collapse":this.isNav,collapse:!e,show:this.show&&!e}},slotScope:function(){var e=this;return{visible:this.show,close:function(){e.show=!1}}}},watch:(i={},j(i,F,(function(e){e!==this.show&&(this.show=e)})),j(i,"show",(function(e,t){e!==t&&this.emitState()})),i),created:function(){this.show=this[F]},mounted:function(){var e=this;this.show=this[F],this.listenOnRoot(C,this.handleToggleEvent),this.listenOnRoot(S,this.handleAccordionEvent),this.isNav&&(this.setWindowEvents(!0),this.handleResize()),this.$nextTick((function(){e.emitState()})),this.listenOnRoot(D,(function(t){t===e.safeId()&&e.$nextTick(e.emitSync)}))},updated:function(){this.emitSync()},deactivated:function(){this.isNav&&this.setWindowEvents(!1)},activated:function(){this.isNav&&this.setWindowEvents(!0),this.emitSync()},beforeDestroy:function(){this.show=!1,this.isNav&&o.g&&this.setWindowEvents(!1)},methods:{setWindowEvents:function(e){Object(u.c)(e,window,"resize",this.handleResize,s.Y),Object(u.c)(e,window,"orientationchange",this.handleResize,s.Y)},toggle:function(){this.show=!this.show},onEnter:function(){this.transitioning=!0,this.$emit(s.S)},onAfterEnter:function(){this.transitioning=!1,this.$emit(s.T)},onLeave:function(){this.transitioning=!0,this.$emit(s.x)},onAfterLeave:function(){this.transitioning=!1,this.$emit(s.w)},emitState:function(){var e=this.show,t=this.accordion,n=this.safeId();this.$emit(A,e),this.emitOnRoot(T,n,e),t&&e&&this.emitOnRoot(S,n,t)},emitSync:function(){this.emitOnRoot(M,this.safeId(),this.show)},checkDisplayBlock:function(){var e=this.$el,t=Object(d.p)(e,"show");Object(d.y)(e,"show");var n="block"===Object(d.k)(e).display;return t&&Object(d.b)(e,"show"),n},clickHandler:function(e){var t=e.target;this.isNav&&t&&"block"===Object(d.k)(this.$el).display&&(!Object(d.v)(t,".nav-link,.dropdown-item")&&!Object(d.e)(".nav-link,.dropdown-item",t)||this.checkDisplayBlock()||(this.show=!1))},handleToggleEvent:function(e){e===this.safeId()&&this.toggle()},handleAccordionEvent:function(e,t){var n=this.accordion,i=this.show;if(n&&n===t){var a=e===this.safeId();(a&&!i||!a&&i)&&this.toggle()}},handleResize:function(){this.show="block"===Object(d.k)(this.$el).display}},render:function(e){var t=this.appear,n=e(this.tag,{class:this.classObject,directives:[{name:"show",value:this.show}],attrs:{id:this.safeId()},on:{click:this.clickHandler}},this.normalizeSlot(l.i,this.slotScope));return e(O,{props:{appear:t},on:{enter:this.onEnter,afterEnter:this.onAfterEnter,leave:this.onLeave,afterLeave:this.onAfterLeave}},[n])}})},WkfP:function(e,t,n){var i=n("I+eb"),a=n("BPiQ"),r=n("0Dky"),o=n("dBg+"),s=n("ewvW");i({target:"Object",stat:!0,forced:!a||r((function(){o.f(1)}))},{getOwnPropertySymbols:function(e){var t=o.f;return t?t(s(e)):[]}})},X2Dv:function(e,t,n){"use strict";n.r(t);var i=["onChange","onClose","onDayCreate","onDestroy","onKeyDown","onMonthChange","onOpen","onParseConfig","onReady","onValueUpdate","onYearChange","onPreCalendarPosition"],a={_disable:[],allowInput:!1,allowInvalidPreload:!1,altFormat:"F j, Y",altInput:!1,altInputClass:"form-control input",animate:"object"==typeof window&&-1===window.navigator.userAgent.indexOf("MSIE"),ariaDateFormat:"F j, Y",autoFillDefaultTime:!0,clickOpens:!0,closeOnSelect:!0,conjunction:", ",dateFormat:"Y-m-d",defaultHour:12,defaultMinute:0,defaultSeconds:0,disable:[],disableMobile:!1,enableSeconds:!1,enableTime:!1,errorHandler:function(e){return"undefined"!=typeof console&&console.warn(e)},getWeek:function(e){var t=new Date(e.getTime());t.setHours(0,0,0,0),t.setDate(t.getDate()+3-(t.getDay()+6)%7);var n=new Date(t.getFullYear(),0,4);return 1+Math.round(((t.getTime()-n.getTime())/864e5-3+(n.getDay()+6)%7)/7)},hourIncrement:1,ignoredFocusElements:[],inline:!1,locale:"default",minuteIncrement:5,mode:"single",monthSelectorType:"dropdown",nextArrow:"<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 17 17'><g></g><path d='M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z' /></svg>",noCalendar:!1,now:new Date,onChange:[],onClose:[],onDayCreate:[],onDestroy:[],onKeyDown:[],onMonthChange:[],onOpen:[],onParseConfig:[],onReady:[],onValueUpdate:[],onYearChange:[],onPreCalendarPosition:[],plugins:[],position:"auto",positionElement:void 0,prevArrow:"<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 17 17'><g></g><path d='M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z' /></svg>",shorthandCurrentMonth:!1,showMonths:1,static:!1,time_24hr:!1,weekNumbers:!1,wrap:!1},r={weekdays:{shorthand:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],longhand:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},months:{shorthand:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],longhand:["January","February","March","April","May","June","July","August","September","October","November","December"]},daysInMonth:[31,28,31,30,31,30,31,31,30,31,30,31],firstDayOfWeek:0,ordinal:function(e){var t=e%100;if(t>3&&t<21)return"th";switch(t%10){case 1:return"st";case 2:return"nd";case 3:return"rd";default:return"th"}},rangeSeparator:" to ",weekAbbreviation:"Wk",scrollTitle:"Scroll to increment",toggleTitle:"Click to toggle",amPM:["AM","PM"],yearAriaLabel:"Year",monthAriaLabel:"Month",hourAriaLabel:"Hour",minuteAriaLabel:"Minute",time_24hr:!1},o=r,s=function(e,t){return void 0===t&&(t=2),("000"+e).slice(-1*t)},c=function(e){return!0===e?1:0};function l(e,t){var n;return function(){var i=this,a=arguments;clearTimeout(n),n=setTimeout((function(){return e.apply(i,a)}),t)}}var d=function(e){return e instanceof Array?e:[e]};function u(e,t,n){if(!0===n)return e.classList.add(t);e.classList.remove(t)}function p(e,t,n){var i=window.document.createElement(e);return t=t||"",n=n||"",i.className=t,void 0!==n&&(i.textContent=n),i}function f(e){for(;e.firstChild;)e.removeChild(e.firstChild)}function h(e,t){var n=p("div","numInputWrapper"),i=p("input","numInput "+e),a=p("span","arrowUp"),r=p("span","arrowDown");if(-1===navigator.userAgent.indexOf("MSIE 9.0")?i.type="number":(i.type="text",i.pattern="\\d*"),void 0!==t)for(var o in t)i.setAttribute(o,t[o]);return n.appendChild(i),n.appendChild(a),n.appendChild(r),n}function v(e){try{return"function"==typeof e.composedPath?e.composedPath()[0]:e.target}catch(t){return e.target}}var g=function(){},b=function(e,t,n){return n.months[t?"shorthand":"longhand"][e]},m={D:g,F:function(e,t,n){e.setMonth(n.months.longhand.indexOf(t))},G:function(e,t){e.setHours((e.getHours()>=12?12:0)+parseFloat(t))},H:function(e,t){e.setHours(parseFloat(t))},J:function(e,t){e.setDate(parseFloat(t))},K:function(e,t,n){e.setHours(e.getHours()%12+12*c(new RegExp(n.amPM[1],"i").test(t)))},M:function(e,t,n){e.setMonth(n.months.shorthand.indexOf(t))},S:function(e,t){e.setSeconds(parseFloat(t))},U:function(e,t){return new Date(1e3*parseFloat(t))},W:function(e,t,n){var i=parseInt(t),a=new Date(e.getFullYear(),0,2+7*(i-1),0,0,0,0);return a.setDate(a.getDate()-a.getDay()+n.firstDayOfWeek),a},Y:function(e,t){e.setFullYear(parseFloat(t))},Z:function(e,t){return new Date(t)},d:function(e,t){e.setDate(parseFloat(t))},h:function(e,t){e.setHours((e.getHours()>=12?12:0)+parseFloat(t))},i:function(e,t){e.setMinutes(parseFloat(t))},j:function(e,t){e.setDate(parseFloat(t))},l:g,m:function(e,t){e.setMonth(parseFloat(t)-1)},n:function(e,t){e.setMonth(parseFloat(t)-1)},s:function(e,t){e.setSeconds(parseFloat(t))},u:function(e,t){return new Date(parseFloat(t))},w:g,y:function(e,t){e.setFullYear(2e3+parseFloat(t))}},y={D:"",F:"",G:"(\\d\\d|\\d)",H:"(\\d\\d|\\d)",J:"(\\d\\d|\\d)\\w+",K:"",M:"",S:"(\\d\\d|\\d)",U:"(.+)",W:"(\\d\\d|\\d)",Y:"(\\d{4})",Z:"(.+)",d:"(\\d\\d|\\d)",h:"(\\d\\d|\\d)",i:"(\\d\\d|\\d)",j:"(\\d\\d|\\d)",l:"",m:"(\\d\\d|\\d)",n:"(\\d\\d|\\d)",s:"(\\d\\d|\\d)",u:"(.+)",w:"(\\d\\d|\\d)",y:"(\\d{2})"},w={Z:function(e){return e.toISOString()},D:function(e,t,n){return t.weekdays.shorthand[w.w(e,t,n)]},F:function(e,t,n){return b(w.n(e,t,n)-1,!1,t)},G:function(e,t,n){return s(w.h(e,t,n))},H:function(e){return s(e.getHours())},J:function(e,t){return void 0!==t.ordinal?e.getDate()+t.ordinal(e.getDate()):e.getDate()},K:function(e,t){return t.amPM[c(e.getHours()>11)]},M:function(e,t){return b(e.getMonth(),!0,t)},S:function(e){return s(e.getSeconds())},U:function(e){return e.getTime()/1e3},W:function(e,t,n){return n.getWeek(e)},Y:function(e){return s(e.getFullYear(),4)},d:function(e){return s(e.getDate())},h:function(e){return e.getHours()%12?e.getHours()%12:12},i:function(e){return s(e.getMinutes())},j:function(e){return e.getDate()},l:function(e,t){return t.weekdays.longhand[e.getDay()]},m:function(e){return s(e.getMonth()+1)},n:function(e){return e.getMonth()+1},s:function(e){return e.getSeconds()},u:function(e){return e.getTime()},w:function(e){return e.getDay()},y:function(e){return String(e.getFullYear()).substring(2)}},k=function(e){var t=e.config,n=void 0===t?a:t,i=e.l10n,o=void 0===i?r:i,s=e.isMobile,c=void 0!==s&&s;return function(e,t,i){var a=i||o;return void 0===n.formatDate||c?t.split("").map((function(t,i,r){return w[t]&&"\\"!==r[i-1]?w[t](e,a,n):"\\"!==t?t:""})).join(""):n.formatDate(e,t,a)}},O=function(e){var t=e.config,n=void 0===t?a:t,i=e.l10n,o=void 0===i?r:i;return function(e,t,i,r){if(0===e||e){var s,c=r||o,l=e;if(e instanceof Date)s=new Date(e.getTime());else if("string"!=typeof e&&void 0!==e.toFixed)s=new Date(e);else if("string"==typeof e){var d=t||(n||a).dateFormat,u=String(e).trim();if("today"===u)s=new Date,i=!0;else if(n&&n.parseDate)s=n.parseDate(e,d);else if(/Z$/.test(u)||/GMT$/.test(u))s=new Date(e);else{for(var p=void 0,f=[],h=0,v=0,g="";h<d.length;h++){var b=d[h],w="\\"===b,k="\\"===d[h-1]||w;if(y[b]&&!k){g+=y[b];var O=new RegExp(g).exec(e);O&&(p=!0)&&f["Y"!==b?"push":"unshift"]({fn:m[b],val:O[++v]})}else w||(g+=".")}s=n&&n.noCalendar?new Date((new Date).setHours(0,0,0,0)):new Date((new Date).getFullYear(),0,1,0,0,0,0),f.forEach((function(e){var t=e.fn,n=e.val;return s=t(s,n,c)||s})),s=p?s:void 0}}if(s instanceof Date&&!isNaN(s.getTime()))return!0===i&&s.setHours(0,0,0,0),s;n.errorHandler(new Error("Invalid date provided: "+l))}}};function x(e,t,n){return void 0===n&&(n=!0),!1!==n?new Date(e.getTime()).setHours(0,0,0,0)-new Date(t.getTime()).setHours(0,0,0,0):e.getTime()-t.getTime()}var _=function(e,t,n){return 3600*e+60*t+n},j=864e5;function C(e){var t=e.defaultHour,n=e.defaultMinute,i=e.defaultSeconds;if(void 0!==e.minDate){var a=e.minDate.getHours(),r=e.minDate.getMinutes(),o=e.minDate.getSeconds();t<a&&(t=a),t===a&&n<r&&(n=r),t===a&&n===r&&i<o&&(i=e.minDate.getSeconds())}if(void 0!==e.maxDate){var s=e.maxDate.getHours(),c=e.maxDate.getMinutes();(t=Math.min(t,s))===s&&(n=Math.min(c,n)),t===s&&n===c&&(i=e.maxDate.getSeconds())}return{hours:t,minutes:n,seconds:i}}n("cW3J");var D=function(){return(D=Object.assign||function(e){for(var t,n=1,i=arguments.length;n<i;n++)for(var a in t=arguments[n])Object.prototype.hasOwnProperty.call(t,a)&&(e[a]=t[a]);return e}).apply(this,arguments)},S=function(){for(var e=0,t=0,n=arguments.length;t<n;t++)e+=arguments[t].length;var i=Array(e),a=0;for(t=0;t<n;t++)for(var r=arguments[t],o=0,s=r.length;o<s;o++,a++)i[a]=r[o];return i};function T(e,t){var n={config:D(D({},a),P.defaultConfig),l10n:o};function r(){var e;return(null===(e=n.calendarContainer)||void 0===e?void 0:e.getRootNode()).activeElement||document.activeElement}function g(e){return e.bind(n)}function m(){var e=n.config;!1===e.weekNumbers&&1===e.showMonths||!0!==e.noCalendar&&window.requestAnimationFrame((function(){if(void 0!==n.calendarContainer&&(n.calendarContainer.style.visibility="hidden",n.calendarContainer.style.display="block"),void 0!==n.daysContainer){var t=(n.days.offsetWidth+1)*e.showMonths;n.daysContainer.style.width=t+"px",n.calendarContainer.style.width=t+(void 0!==n.weekWrapper?n.weekWrapper.offsetWidth:0)+"px",n.calendarContainer.style.removeProperty("visibility"),n.calendarContainer.style.removeProperty("display")}}))}function w(e){if(0===n.selectedDates.length){var t=void 0===n.config.minDate||x(new Date,n.config.minDate)>=0?new Date:new Date(n.config.minDate.getTime()),i=C(n.config);t.setHours(i.hours,i.minutes,i.seconds,t.getMilliseconds()),n.selectedDates=[t],n.latestSelectedDateObj=t}void 0!==e&&"blur"!==e.type&&function(e){e.preventDefault();var t="keydown"===e.type,i=v(e),a=i;void 0!==n.amPM&&i===n.amPM&&(n.amPM.textContent=n.l10n.amPM[c(n.amPM.textContent===n.l10n.amPM[0])]);var r=parseFloat(a.getAttribute("min")),o=parseFloat(a.getAttribute("max")),l=parseFloat(a.getAttribute("step")),d=parseInt(a.value,10),u=e.delta||(t?38===e.which?1:-1:0),p=d+l*u;if(void 0!==a.value&&2===a.value.length){var f=a===n.hourElement,h=a===n.minuteElement;p<r?(p=o+p+c(!f)+(c(f)&&c(!n.amPM)),h&&R(void 0,-1,n.hourElement)):p>o&&(p=a===n.hourElement?p-o-c(!n.amPM):r,h&&R(void 0,1,n.hourElement)),n.amPM&&f&&(1===l?p+d===23:Math.abs(p-d)>l)&&(n.amPM.textContent=n.l10n.amPM[c(n.amPM.textContent===n.l10n.amPM[0])]),a.value=s(p)}}(e);var a=n._input.value;T(),Oe(),n._input.value!==a&&n._debouncedChange()}function T(){if(void 0!==n.hourElement&&void 0!==n.minuteElement){var e,t,i=(parseInt(n.hourElement.value.slice(-2),10)||0)%24,a=(parseInt(n.minuteElement.value,10)||0)%60,r=void 0!==n.secondElement?(parseInt(n.secondElement.value,10)||0)%60:0;void 0!==n.amPM&&(e=i,t=n.amPM.textContent,i=e%12+12*c(t===n.l10n.amPM[1]));var o=void 0!==n.config.minTime||n.config.minDate&&n.minDateHasTime&&n.latestSelectedDateObj&&0===x(n.latestSelectedDateObj,n.config.minDate,!0),s=void 0!==n.config.maxTime||n.config.maxDate&&n.maxDateHasTime&&n.latestSelectedDateObj&&0===x(n.latestSelectedDateObj,n.config.maxDate,!0);if(void 0!==n.config.maxTime&&void 0!==n.config.minTime&&n.config.minTime>n.config.maxTime){var l=_(n.config.minTime.getHours(),n.config.minTime.getMinutes(),n.config.minTime.getSeconds()),d=_(n.config.maxTime.getHours(),n.config.maxTime.getMinutes(),n.config.maxTime.getSeconds()),u=_(i,a,r);if(u>d&&u<l){var p=function(e){var t=Math.floor(e/3600),n=(e-3600*t)/60;return[t,n,e-3600*t-60*n]}(l);i=p[0],a=p[1],r=p[2]}}else{if(s){var f=void 0!==n.config.maxTime?n.config.maxTime:n.config.maxDate;(i=Math.min(i,f.getHours()))===f.getHours()&&(a=Math.min(a,f.getMinutes())),a===f.getMinutes()&&(r=Math.min(r,f.getSeconds()))}if(o){var h=void 0!==n.config.minTime?n.config.minTime:n.config.minDate;(i=Math.max(i,h.getHours()))===h.getHours()&&a<h.getMinutes()&&(a=h.getMinutes()),a===h.getMinutes()&&(r=Math.max(r,h.getSeconds()))}}I(i,a,r)}}function M(e){var t=e||n.latestSelectedDateObj;t&&t instanceof Date&&I(t.getHours(),t.getMinutes(),t.getSeconds())}function I(e,t,i){void 0!==n.latestSelectedDateObj&&n.latestSelectedDateObj.setHours(e%24,t,i||0,0),n.hourElement&&n.minuteElement&&!n.isMobile&&(n.hourElement.value=s(n.config.time_24hr?e:(12+e)%12+12*c(e%12==0)),n.minuteElement.value=s(t),void 0!==n.amPM&&(n.amPM.textContent=n.l10n.amPM[c(e>=12)]),void 0!==n.secondElement&&(n.secondElement.value=s(i)))}function E(e){var t=v(e),n=parseInt(t.value)+(e.delta||0);(n/1e3>1||"Enter"===e.key&&!/[^\d]/.test(n.toString()))&&Q(n)}function F(e,t,i,a){return t instanceof Array?t.forEach((function(t){return F(e,t,i,a)})):e instanceof Array?e.forEach((function(e){return F(e,t,i,a)})):(e.addEventListener(t,i,a),void n._handlers.push({remove:function(){return e.removeEventListener(t,i,a)}}))}function A(){be("onChange")}function $(e,t){var i=void 0!==e?n.parseDate(e):n.latestSelectedDateObj||(n.config.minDate&&n.config.minDate>n.now?n.config.minDate:n.config.maxDate&&n.config.maxDate<n.now?n.config.maxDate:n.now),a=n.currentYear,r=n.currentMonth;try{void 0!==i&&(n.currentYear=i.getFullYear(),n.currentMonth=i.getMonth())}catch(e){e.message="Invalid date supplied: "+i,n.config.errorHandler(e)}t&&n.currentYear!==a&&(be("onYearChange"),W()),!t||n.currentYear===a&&n.currentMonth===r||be("onMonthChange"),n.redraw()}function L(e){var t=v(e);~t.className.indexOf("arrow")&&R(e,t.classList.contains("arrowUp")?1:-1)}function R(e,t,n){var i=e&&v(e),a=n||i&&i.parentNode&&i.parentNode.firstChild,r=me("increment");r.delta=t,a&&a.dispatchEvent(r)}function B(e,t,i,a){var r=ee(t,!0),o=p("span",e,t.getDate().toString());return o.dateObj=t,o.$i=a,o.setAttribute("aria-label",n.formatDate(t,n.config.ariaDateFormat)),-1===e.indexOf("hidden")&&0===x(t,n.now)&&(n.todayDateElem=o,o.classList.add("today"),o.setAttribute("aria-current","date")),r?(o.tabIndex=-1,ye(t)&&(o.classList.add("selected"),n.selectedDateElem=o,"range"===n.config.mode&&(u(o,"startRange",n.selectedDates[0]&&0===x(t,n.selectedDates[0],!0)),u(o,"endRange",n.selectedDates[1]&&0===x(t,n.selectedDates[1],!0)),"nextMonthDay"===e&&o.classList.add("inRange")))):o.classList.add("flatpickr-disabled"),"range"===n.config.mode&&function(e){return!("range"!==n.config.mode||n.selectedDates.length<2)&&(x(e,n.selectedDates[0])>=0&&x(e,n.selectedDates[1])<=0)}(t)&&!ye(t)&&o.classList.add("inRange"),n.weekNumbers&&1===n.config.showMonths&&"prevMonthDay"!==e&&a%7==6&&n.weekNumbers.insertAdjacentHTML("beforeend","<span class='flatpickr-day'>"+n.config.getWeek(t)+"</span>"),be("onDayCreate",o),o}function z(e){e.focus(),"range"===n.config.mode&&ae(e)}function N(e){for(var t=e>0?0:n.config.showMonths-1,i=e>0?n.config.showMonths:-1,a=t;a!=i;a+=e)for(var r=n.daysContainer.children[a],o=e>0?0:r.children.length-1,s=e>0?r.children.length:-1,c=o;c!=s;c+=e){var l=r.children[c];if(-1===l.className.indexOf("hidden")&&ee(l.dateObj))return l}}function H(e,t){var i=r(),a=te(i||document.body),o=void 0!==e?e:a?i:void 0!==n.selectedDateElem&&te(n.selectedDateElem)?n.selectedDateElem:void 0!==n.todayDateElem&&te(n.todayDateElem)?n.todayDateElem:N(t>0?1:-1);void 0===o?n._input.focus():a?function(e,t){for(var i=-1===e.className.indexOf("Month")?e.dateObj.getMonth():n.currentMonth,a=t>0?n.config.showMonths:-1,r=t>0?1:-1,o=i-n.currentMonth;o!=a;o+=r)for(var s=n.daysContainer.children[o],c=i-n.currentMonth===o?e.$i+t:t<0?s.children.length-1:0,l=s.children.length,d=c;d>=0&&d<l&&d!=(t>0?l:-1);d+=r){var u=s.children[d];if(-1===u.className.indexOf("hidden")&&ee(u.dateObj)&&Math.abs(e.$i-d)>=Math.abs(t))return z(u)}n.changeMonth(r),H(N(r),0)}(o,t):z(o)}function V(e,t){for(var i=(new Date(e,t,1).getDay()-n.l10n.firstDayOfWeek+7)%7,a=n.utils.getDaysInMonth((t-1+12)%12,e),r=n.utils.getDaysInMonth(t,e),o=window.document.createDocumentFragment(),s=n.config.showMonths>1,c=s?"prevMonthDay hidden":"prevMonthDay",l=s?"nextMonthDay hidden":"nextMonthDay",d=a+1-i,u=0;d<=a;d++,u++)o.appendChild(B("flatpickr-day "+c,new Date(e,t-1,d),0,u));for(d=1;d<=r;d++,u++)o.appendChild(B("flatpickr-day",new Date(e,t,d),0,u));for(var f=r+1;f<=42-i&&(1===n.config.showMonths||u%7!=0);f++,u++)o.appendChild(B("flatpickr-day "+l,new Date(e,t+1,f%r),0,u));var h=p("div","dayContainer");return h.appendChild(o),h}function Y(){if(void 0!==n.daysContainer){f(n.daysContainer),n.weekNumbers&&f(n.weekNumbers);for(var e=document.createDocumentFragment(),t=0;t<n.config.showMonths;t++){var i=new Date(n.currentYear,n.currentMonth,1);i.setMonth(n.currentMonth+t),e.appendChild(V(i.getFullYear(),i.getMonth()))}n.daysContainer.appendChild(e),n.days=n.daysContainer.firstChild,"range"===n.config.mode&&1===n.selectedDates.length&&ae()}}function W(){if(!(n.config.showMonths>1||"dropdown"!==n.config.monthSelectorType)){var e=function(e){return!(void 0!==n.config.minDate&&n.currentYear===n.config.minDate.getFullYear()&&e<n.config.minDate.getMonth())&&!(void 0!==n.config.maxDate&&n.currentYear===n.config.maxDate.getFullYear()&&e>n.config.maxDate.getMonth())};n.monthsDropdownContainer.tabIndex=-1,n.monthsDropdownContainer.innerHTML="";for(var t=0;t<12;t++)if(e(t)){var i=p("option","flatpickr-monthDropdown-month");i.value=new Date(n.currentYear,t).getMonth().toString(),i.textContent=b(t,n.config.shorthandCurrentMonth,n.l10n),i.tabIndex=-1,n.currentMonth===t&&(i.selected=!0),n.monthsDropdownContainer.appendChild(i)}}}function q(){var e,t=p("div","flatpickr-month"),i=window.document.createDocumentFragment();n.config.showMonths>1||"static"===n.config.monthSelectorType?e=p("span","cur-month"):(n.monthsDropdownContainer=p("select","flatpickr-monthDropdown-months"),n.monthsDropdownContainer.setAttribute("aria-label",n.l10n.monthAriaLabel),F(n.monthsDropdownContainer,"change",(function(e){var t=v(e),i=parseInt(t.value,10);n.changeMonth(i-n.currentMonth),be("onMonthChange")})),W(),e=n.monthsDropdownContainer);var a=h("cur-year",{tabindex:"-1"}),r=a.getElementsByTagName("input")[0];r.setAttribute("aria-label",n.l10n.yearAriaLabel),n.config.minDate&&r.setAttribute("min",n.config.minDate.getFullYear().toString()),n.config.maxDate&&(r.setAttribute("max",n.config.maxDate.getFullYear().toString()),r.disabled=!!n.config.minDate&&n.config.minDate.getFullYear()===n.config.maxDate.getFullYear());var o=p("div","flatpickr-current-month");return o.appendChild(e),o.appendChild(a),i.appendChild(o),t.appendChild(i),{container:t,yearElement:r,monthElement:e}}function G(){f(n.monthNav),n.monthNav.appendChild(n.prevMonthNav),n.config.showMonths&&(n.yearElements=[],n.monthElements=[]);for(var e=n.config.showMonths;e--;){var t=q();n.yearElements.push(t.yearElement),n.monthElements.push(t.monthElement),n.monthNav.appendChild(t.container)}n.monthNav.appendChild(n.nextMonthNav)}function K(){n.weekdayContainer?f(n.weekdayContainer):n.weekdayContainer=p("div","flatpickr-weekdays");for(var e=n.config.showMonths;e--;){var t=p("div","flatpickr-weekdaycontainer");n.weekdayContainer.appendChild(t)}return J(),n.weekdayContainer}function J(){if(n.weekdayContainer){var e=n.l10n.firstDayOfWeek,t=S(n.l10n.weekdays.shorthand);e>0&&e<t.length&&(t=S(t.splice(e,t.length),t.splice(0,e)));for(var i=n.config.showMonths;i--;)n.weekdayContainer.children[i].innerHTML="\n      <span class='flatpickr-weekday'>\n        "+t.join("</span><span class='flatpickr-weekday'>")+"\n      </span>\n      "}}function U(e,t){void 0===t&&(t=!0);var i=t?e:e-n.currentMonth;i<0&&!0===n._hidePrevMonthArrow||i>0&&!0===n._hideNextMonthArrow||(n.currentMonth+=i,(n.currentMonth<0||n.currentMonth>11)&&(n.currentYear+=n.currentMonth>11?1:-1,n.currentMonth=(n.currentMonth+12)%12,be("onYearChange"),W()),Y(),be("onMonthChange"),we())}function X(e){return n.calendarContainer.contains(e)}function Z(e){if(n.isOpen&&!n.config.inline){var t=v(e),i=X(t),a=!(t===n.input||t===n.altInput||n.element.contains(t)||e.path&&e.path.indexOf&&(~e.path.indexOf(n.input)||~e.path.indexOf(n.altInput)))&&!i&&!X(e.relatedTarget),r=!n.config.ignoredFocusElements.some((function(e){return e.contains(t)}));a&&r&&(n.config.allowInput&&n.setDate(n._input.value,!1,n.config.altInput?n.config.altFormat:n.config.dateFormat),void 0!==n.timeContainer&&void 0!==n.minuteElement&&void 0!==n.hourElement&&""!==n.input.value&&void 0!==n.input.value&&w(),n.close(),n.config&&"range"===n.config.mode&&1===n.selectedDates.length&&n.clear(!1))}}function Q(e){if(!(!e||n.config.minDate&&e<n.config.minDate.getFullYear()||n.config.maxDate&&e>n.config.maxDate.getFullYear())){var t=e,i=n.currentYear!==t;n.currentYear=t||n.currentYear,n.config.maxDate&&n.currentYear===n.config.maxDate.getFullYear()?n.currentMonth=Math.min(n.config.maxDate.getMonth(),n.currentMonth):n.config.minDate&&n.currentYear===n.config.minDate.getFullYear()&&(n.currentMonth=Math.max(n.config.minDate.getMonth(),n.currentMonth)),i&&(n.redraw(),be("onYearChange"),W())}}function ee(e,t){var i;void 0===t&&(t=!0);var a=n.parseDate(e,void 0,t);if(n.config.minDate&&a&&x(a,n.config.minDate,void 0!==t?t:!n.minDateHasTime)<0||n.config.maxDate&&a&&x(a,n.config.maxDate,void 0!==t?t:!n.maxDateHasTime)>0)return!1;if(!n.config.enable&&0===n.config.disable.length)return!0;if(void 0===a)return!1;for(var r=!!n.config.enable,o=null!==(i=n.config.enable)&&void 0!==i?i:n.config.disable,s=0,c=void 0;s<o.length;s++){if("function"==typeof(c=o[s])&&c(a))return r;if(c instanceof Date&&void 0!==a&&c.getTime()===a.getTime())return r;if("string"==typeof c){var l=n.parseDate(c,void 0,!0);return l&&l.getTime()===a.getTime()?r:!r}if("object"==typeof c&&void 0!==a&&c.from&&c.to&&a.getTime()>=c.from.getTime()&&a.getTime()<=c.to.getTime())return r}return!r}function te(e){return void 0!==n.daysContainer&&(-1===e.className.indexOf("hidden")&&-1===e.className.indexOf("flatpickr-disabled")&&n.daysContainer.contains(e))}function ne(e){var t=e.target===n._input,i=n._input.value.trimEnd()!==ke();!t||!i||e.relatedTarget&&X(e.relatedTarget)||n.setDate(n._input.value,!0,e.target===n.altInput?n.config.altFormat:n.config.dateFormat)}function ie(t){var i=v(t),a=n.config.wrap?e.contains(i):i===n._input,o=n.config.allowInput,s=n.isOpen&&(!o||!a),c=n.config.inline&&a&&!o;if(13===t.keyCode&&a){if(o)return n.setDate(n._input.value,!0,i===n.altInput?n.config.altFormat:n.config.dateFormat),n.close(),i.blur();n.open()}else if(X(i)||s||c){var l=!!n.timeContainer&&n.timeContainer.contains(i);switch(t.keyCode){case 13:l?(t.preventDefault(),w(),ue()):pe(t);break;case 27:t.preventDefault(),ue();break;case 8:case 46:a&&!n.config.allowInput&&(t.preventDefault(),n.clear());break;case 37:case 39:if(l||a)n.hourElement&&n.hourElement.focus();else{t.preventDefault();var d=r();if(void 0!==n.daysContainer&&(!1===o||d&&te(d))){var u=39===t.keyCode?1:-1;t.ctrlKey?(t.stopPropagation(),U(u),H(N(1),0)):H(void 0,u)}}break;case 38:case 40:t.preventDefault();var p=40===t.keyCode?1:-1;n.daysContainer&&void 0!==i.$i||i===n.input||i===n.altInput?t.ctrlKey?(t.stopPropagation(),Q(n.currentYear-p),H(N(1),0)):l||H(void 0,7*p):i===n.currentYearElement?Q(n.currentYear-p):n.config.enableTime&&(!l&&n.hourElement&&n.hourElement.focus(),w(t),n._debouncedChange());break;case 9:if(l){var f=[n.hourElement,n.minuteElement,n.secondElement,n.amPM].concat(n.pluginElements).filter((function(e){return e})),h=f.indexOf(i);if(-1!==h){var g=f[h+(t.shiftKey?-1:1)];t.preventDefault(),(g||n._input).focus()}}else!n.config.noCalendar&&n.daysContainer&&n.daysContainer.contains(i)&&t.shiftKey&&(t.preventDefault(),n._input.focus())}}if(void 0!==n.amPM&&i===n.amPM)switch(t.key){case n.l10n.amPM[0].charAt(0):case n.l10n.amPM[0].charAt(0).toLowerCase():n.amPM.textContent=n.l10n.amPM[0],T(),Oe();break;case n.l10n.amPM[1].charAt(0):case n.l10n.amPM[1].charAt(0).toLowerCase():n.amPM.textContent=n.l10n.amPM[1],T(),Oe()}(a||X(i))&&be("onKeyDown",t)}function ae(e,t){if(void 0===t&&(t="flatpickr-day"),1===n.selectedDates.length&&(!e||e.classList.contains(t)&&!e.classList.contains("flatpickr-disabled"))){for(var i=e?e.dateObj.getTime():n.days.firstElementChild.dateObj.getTime(),a=n.parseDate(n.selectedDates[0],void 0,!0).getTime(),r=Math.min(i,n.selectedDates[0].getTime()),o=Math.max(i,n.selectedDates[0].getTime()),s=!1,c=0,l=0,d=r;d<o;d+=j)ee(new Date(d),!0)||(s=s||d>r&&d<o,d<a&&(!c||d>c)?c=d:d>a&&(!l||d<l)&&(l=d));Array.from(n.rContainer.querySelectorAll("*:nth-child(-n+"+n.config.showMonths+") > ."+t)).forEach((function(t){var r,o,d,u=t.dateObj.getTime(),p=c>0&&u<c||l>0&&u>l;if(p)return t.classList.add("notAllowed"),void["inRange","startRange","endRange"].forEach((function(e){t.classList.remove(e)}));s&&!p||(["startRange","inRange","endRange","notAllowed"].forEach((function(e){t.classList.remove(e)})),void 0!==e&&(e.classList.add(i<=n.selectedDates[0].getTime()?"startRange":"endRange"),a<i&&u===a?t.classList.add("startRange"):a>i&&u===a&&t.classList.add("endRange"),u>=c&&(0===l||u<=l)&&(o=a,d=i,(r=u)>Math.min(o,d)&&r<Math.max(o,d))&&t.classList.add("inRange")))}))}}function re(){!n.isOpen||n.config.static||n.config.inline||le()}function oe(e){return function(t){var i=n.config["_"+e+"Date"]=n.parseDate(t,n.config.dateFormat),a=n.config["_"+("min"===e?"max":"min")+"Date"];void 0!==i&&(n["min"===e?"minDateHasTime":"maxDateHasTime"]=i.getHours()>0||i.getMinutes()>0||i.getSeconds()>0),n.selectedDates&&(n.selectedDates=n.selectedDates.filter((function(e){return ee(e)})),n.selectedDates.length||"min"!==e||M(i),Oe()),n.daysContainer&&(de(),void 0!==i?n.currentYearElement[e]=i.getFullYear().toString():n.currentYearElement.removeAttribute(e),n.currentYearElement.disabled=!!a&&void 0!==i&&a.getFullYear()===i.getFullYear())}}function se(){return n.config.wrap?e.querySelector("[data-input]"):e}function ce(){"object"!=typeof n.config.locale&&void 0===P.l10ns[n.config.locale]&&n.config.errorHandler(new Error("flatpickr: invalid locale "+n.config.locale)),n.l10n=D(D({},P.l10ns.default),"object"==typeof n.config.locale?n.config.locale:"default"!==n.config.locale?P.l10ns[n.config.locale]:void 0),y.D="("+n.l10n.weekdays.shorthand.join("|")+")",y.l="("+n.l10n.weekdays.longhand.join("|")+")",y.M="("+n.l10n.months.shorthand.join("|")+")",y.F="("+n.l10n.months.longhand.join("|")+")",y.K="("+n.l10n.amPM[0]+"|"+n.l10n.amPM[1]+"|"+n.l10n.amPM[0].toLowerCase()+"|"+n.l10n.amPM[1].toLowerCase()+")",void 0===D(D({},t),JSON.parse(JSON.stringify(e.dataset||{}))).time_24hr&&void 0===P.defaultConfig.time_24hr&&(n.config.time_24hr=n.l10n.time_24hr),n.formatDate=k(n),n.parseDate=O({config:n.config,l10n:n.l10n})}function le(e){if("function"!=typeof n.config.position){if(void 0!==n.calendarContainer){be("onPreCalendarPosition");var t=e||n._positionElement,i=Array.prototype.reduce.call(n.calendarContainer.children,(function(e,t){return e+t.offsetHeight}),0),a=n.calendarContainer.offsetWidth,r=n.config.position.split(" "),o=r[0],s=r.length>1?r[1]:null,c=t.getBoundingClientRect(),l=window.innerHeight-c.bottom,d="above"===o||"below"!==o&&l<i&&c.top>i,p=window.pageYOffset+c.top+(d?-i-2:t.offsetHeight+2);if(u(n.calendarContainer,"arrowTop",!d),u(n.calendarContainer,"arrowBottom",d),!n.config.inline){var f=window.pageXOffset+c.left,h=!1,v=!1;"center"===s?(f-=(a-c.width)/2,h=!0):"right"===s&&(f-=a-c.width,v=!0),u(n.calendarContainer,"arrowLeft",!h&&!v),u(n.calendarContainer,"arrowCenter",h),u(n.calendarContainer,"arrowRight",v);var g=window.document.body.offsetWidth-(window.pageXOffset+c.right),b=f+a>window.document.body.offsetWidth,m=g+a>window.document.body.offsetWidth;if(u(n.calendarContainer,"rightMost",b),!n.config.static)if(n.calendarContainer.style.top=p+"px",b)if(m){var y=function(){for(var e=null,t=0;t<document.styleSheets.length;t++){var n=document.styleSheets[t];if(n.cssRules){try{n.cssRules}catch(e){continue}e=n;break}}return null!=e?e:(i=document.createElement("style"),document.head.appendChild(i),i.sheet);var i}();if(void 0===y)return;var w=window.document.body.offsetWidth,k=Math.max(0,w/2-a/2),O=y.cssRules.length,x="{left:"+c.left+"px;right:auto;}";u(n.calendarContainer,"rightMost",!1),u(n.calendarContainer,"centerMost",!0),y.insertRule(".flatpickr-calendar.centerMost:before,.flatpickr-calendar.centerMost:after"+x,O),n.calendarContainer.style.left=k+"px",n.calendarContainer.style.right="auto"}else n.calendarContainer.style.left="auto",n.calendarContainer.style.right=g+"px";else n.calendarContainer.style.left=f+"px",n.calendarContainer.style.right="auto"}}}else n.config.position(n,e)}function de(){n.config.noCalendar||n.isMobile||(W(),we(),Y())}function ue(){n._input.focus(),-1!==window.navigator.userAgent.indexOf("MSIE")||void 0!==navigator.msMaxTouchPoints?setTimeout(n.close,0):n.close()}function pe(e){e.preventDefault(),e.stopPropagation();var t=function e(t,n){return n(t)?t:t.parentNode?e(t.parentNode,n):void 0}(v(e),(function(e){return e.classList&&e.classList.contains("flatpickr-day")&&!e.classList.contains("flatpickr-disabled")&&!e.classList.contains("notAllowed")}));if(void 0!==t){var i=t,a=n.latestSelectedDateObj=new Date(i.dateObj.getTime()),r=(a.getMonth()<n.currentMonth||a.getMonth()>n.currentMonth+n.config.showMonths-1)&&"range"!==n.config.mode;if(n.selectedDateElem=i,"single"===n.config.mode)n.selectedDates=[a];else if("multiple"===n.config.mode){var o=ye(a);o?n.selectedDates.splice(parseInt(o),1):n.selectedDates.push(a)}else"range"===n.config.mode&&(2===n.selectedDates.length&&n.clear(!1,!1),n.latestSelectedDateObj=a,n.selectedDates.push(a),0!==x(a,n.selectedDates[0],!0)&&n.selectedDates.sort((function(e,t){return e.getTime()-t.getTime()})));if(T(),r){var s=n.currentYear!==a.getFullYear();n.currentYear=a.getFullYear(),n.currentMonth=a.getMonth(),s&&(be("onYearChange"),W()),be("onMonthChange")}if(we(),Y(),Oe(),r||"range"===n.config.mode||1!==n.config.showMonths?void 0!==n.selectedDateElem&&void 0===n.hourElement&&n.selectedDateElem&&n.selectedDateElem.focus():z(i),void 0!==n.hourElement&&void 0!==n.hourElement&&n.hourElement.focus(),n.config.closeOnSelect){var c="single"===n.config.mode&&!n.config.enableTime,l="range"===n.config.mode&&2===n.selectedDates.length&&!n.config.enableTime;(c||l)&&ue()}A()}}n.parseDate=O({config:n.config,l10n:n.l10n}),n._handlers=[],n.pluginElements=[],n.loadedPlugins=[],n._bind=F,n._setHoursFromDate=M,n._positionCalendar=le,n.changeMonth=U,n.changeYear=Q,n.clear=function(e,t){void 0===e&&(e=!0);void 0===t&&(t=!0);n.input.value="",void 0!==n.altInput&&(n.altInput.value="");void 0!==n.mobileInput&&(n.mobileInput.value="");n.selectedDates=[],n.latestSelectedDateObj=void 0,!0===t&&(n.currentYear=n._initialDate.getFullYear(),n.currentMonth=n._initialDate.getMonth());if(!0===n.config.enableTime){var i=C(n.config),a=i.hours,r=i.minutes,o=i.seconds;I(a,r,o)}n.redraw(),e&&be("onChange")},n.close=function(){n.isOpen=!1,n.isMobile||(void 0!==n.calendarContainer&&n.calendarContainer.classList.remove("open"),void 0!==n._input&&n._input.classList.remove("active"));be("onClose")},n.onMouseOver=ae,n._createElement=p,n.createDay=B,n.destroy=function(){void 0!==n.config&&be("onDestroy");for(var e=n._handlers.length;e--;)n._handlers[e].remove();if(n._handlers=[],n.mobileInput)n.mobileInput.parentNode&&n.mobileInput.parentNode.removeChild(n.mobileInput),n.mobileInput=void 0;else if(n.calendarContainer&&n.calendarContainer.parentNode)if(n.config.static&&n.calendarContainer.parentNode){var t=n.calendarContainer.parentNode;if(t.lastChild&&t.removeChild(t.lastChild),t.parentNode){for(;t.firstChild;)t.parentNode.insertBefore(t.firstChild,t);t.parentNode.removeChild(t)}}else n.calendarContainer.parentNode.removeChild(n.calendarContainer);n.altInput&&(n.input.type="text",n.altInput.parentNode&&n.altInput.parentNode.removeChild(n.altInput),delete n.altInput);n.input&&(n.input.type=n.input._type,n.input.classList.remove("flatpickr-input"),n.input.removeAttribute("readonly"));["_showTimeInput","latestSelectedDateObj","_hideNextMonthArrow","_hidePrevMonthArrow","__hideNextMonthArrow","__hidePrevMonthArrow","isMobile","isOpen","selectedDateElem","minDateHasTime","maxDateHasTime","days","daysContainer","_input","_positionElement","innerContainer","rContainer","monthNav","todayDateElem","calendarContainer","weekdayContainer","prevMonthNav","nextMonthNav","monthsDropdownContainer","currentMonthElement","currentYearElement","navigationCurrentMonth","selectedDateElem","config"].forEach((function(e){try{delete n[e]}catch(e){}}))},n.isEnabled=ee,n.jumpToDate=$,n.updateValue=Oe,n.open=function(e,t){void 0===t&&(t=n._positionElement);if(!0===n.isMobile){if(e){e.preventDefault();var i=v(e);i&&i.blur()}return void 0!==n.mobileInput&&(n.mobileInput.focus(),n.mobileInput.click()),void be("onOpen")}if(n._input.disabled||n.config.inline)return;var a=n.isOpen;n.isOpen=!0,a||(n.calendarContainer.classList.add("open"),n._input.classList.add("active"),be("onOpen"),le(t));!0===n.config.enableTime&&!0===n.config.noCalendar&&(!1!==n.config.allowInput||void 0!==e&&n.timeContainer.contains(e.relatedTarget)||setTimeout((function(){return n.hourElement.select()}),50))},n.redraw=de,n.set=function(e,t){if(null!==e&&"object"==typeof e)for(var a in Object.assign(n.config,e),e)void 0!==fe[a]&&fe[a].forEach((function(e){return e()}));else n.config[e]=t,void 0!==fe[e]?fe[e].forEach((function(e){return e()})):i.indexOf(e)>-1&&(n.config[e]=d(t));n.redraw(),Oe(!0)},n.setDate=function(e,t,i){void 0===t&&(t=!1);void 0===i&&(i=n.config.dateFormat);if(0!==e&&!e||e instanceof Array&&0===e.length)return n.clear(t);he(e,i),n.latestSelectedDateObj=n.selectedDates[n.selectedDates.length-1],n.redraw(),$(void 0,t),M(),0===n.selectedDates.length&&n.clear(!1);Oe(t),t&&be("onChange")},n.toggle=function(e){if(!0===n.isOpen)return n.close();n.open(e)};var fe={locale:[ce,J],showMonths:[G,m,K],minDate:[$],maxDate:[$],positionElement:[ge],clickOpens:[function(){!0===n.config.clickOpens?(F(n._input,"focus",n.open),F(n._input,"click",n.open)):(n._input.removeEventListener("focus",n.open),n._input.removeEventListener("click",n.open))}]};function he(e,t){var i=[];if(e instanceof Array)i=e.map((function(e){return n.parseDate(e,t)}));else if(e instanceof Date||"number"==typeof e)i=[n.parseDate(e,t)];else if("string"==typeof e)switch(n.config.mode){case"single":case"time":i=[n.parseDate(e,t)];break;case"multiple":i=e.split(n.config.conjunction).map((function(e){return n.parseDate(e,t)}));break;case"range":i=e.split(n.l10n.rangeSeparator).map((function(e){return n.parseDate(e,t)}))}else n.config.errorHandler(new Error("Invalid date supplied: "+JSON.stringify(e)));n.selectedDates=n.config.allowInvalidPreload?i:i.filter((function(e){return e instanceof Date&&ee(e,!1)})),"range"===n.config.mode&&n.selectedDates.sort((function(e,t){return e.getTime()-t.getTime()}))}function ve(e){return e.slice().map((function(e){return"string"==typeof e||"number"==typeof e||e instanceof Date?n.parseDate(e,void 0,!0):e&&"object"==typeof e&&e.from&&e.to?{from:n.parseDate(e.from,void 0),to:n.parseDate(e.to,void 0)}:e})).filter((function(e){return e}))}function ge(){n._positionElement=n.config.positionElement||n._input}function be(e,t){if(void 0!==n.config){var i=n.config[e];if(void 0!==i&&i.length>0)for(var a=0;i[a]&&a<i.length;a++)i[a](n.selectedDates,n.input.value,n,t);"onChange"===e&&(n.input.dispatchEvent(me("change")),n.input.dispatchEvent(me("input")))}}function me(e){var t=document.createEvent("Event");return t.initEvent(e,!0,!0),t}function ye(e){for(var t=0;t<n.selectedDates.length;t++){var i=n.selectedDates[t];if(i instanceof Date&&0===x(i,e))return""+t}return!1}function we(){n.config.noCalendar||n.isMobile||!n.monthNav||(n.yearElements.forEach((function(e,t){var i=new Date(n.currentYear,n.currentMonth,1);i.setMonth(n.currentMonth+t),n.config.showMonths>1||"static"===n.config.monthSelectorType?n.monthElements[t].textContent=b(i.getMonth(),n.config.shorthandCurrentMonth,n.l10n)+" ":n.monthsDropdownContainer.value=i.getMonth().toString(),e.value=i.getFullYear().toString()})),n._hidePrevMonthArrow=void 0!==n.config.minDate&&(n.currentYear===n.config.minDate.getFullYear()?n.currentMonth<=n.config.minDate.getMonth():n.currentYear<n.config.minDate.getFullYear()),n._hideNextMonthArrow=void 0!==n.config.maxDate&&(n.currentYear===n.config.maxDate.getFullYear()?n.currentMonth+1>n.config.maxDate.getMonth():n.currentYear>n.config.maxDate.getFullYear()))}function ke(e){var t=e||(n.config.altInput?n.config.altFormat:n.config.dateFormat);return n.selectedDates.map((function(e){return n.formatDate(e,t)})).filter((function(e,t,i){return"range"!==n.config.mode||n.config.enableTime||i.indexOf(e)===t})).join("range"!==n.config.mode?n.config.conjunction:n.l10n.rangeSeparator)}function Oe(e){void 0===e&&(e=!0),void 0!==n.mobileInput&&n.mobileFormatStr&&(n.mobileInput.value=void 0!==n.latestSelectedDateObj?n.formatDate(n.latestSelectedDateObj,n.mobileFormatStr):""),n.input.value=ke(n.config.dateFormat),void 0!==n.altInput&&(n.altInput.value=ke(n.config.altFormat)),!1!==e&&be("onValueUpdate")}function xe(e){var t=v(e),i=n.prevMonthNav.contains(t),a=n.nextMonthNav.contains(t);i||a?U(i?-1:1):n.yearElements.indexOf(t)>=0?t.select():t.classList.contains("arrowUp")?n.changeYear(n.currentYear+1):t.classList.contains("arrowDown")&&n.changeYear(n.currentYear-1)}return function(){n.element=n.input=e,n.isOpen=!1,function(){var r=["wrap","weekNumbers","allowInput","allowInvalidPreload","clickOpens","time_24hr","enableTime","noCalendar","altInput","shorthandCurrentMonth","inline","static","enableSeconds","disableMobile"],o=D(D({},JSON.parse(JSON.stringify(e.dataset||{}))),t),s={};n.config.parseDate=o.parseDate,n.config.formatDate=o.formatDate,Object.defineProperty(n.config,"enable",{get:function(){return n.config._enable},set:function(e){n.config._enable=ve(e)}}),Object.defineProperty(n.config,"disable",{get:function(){return n.config._disable},set:function(e){n.config._disable=ve(e)}});var c="time"===o.mode;if(!o.dateFormat&&(o.enableTime||c)){var l=P.defaultConfig.dateFormat||a.dateFormat;s.dateFormat=o.noCalendar||c?"H:i"+(o.enableSeconds?":S":""):l+" H:i"+(o.enableSeconds?":S":"")}if(o.altInput&&(o.enableTime||c)&&!o.altFormat){var u=P.defaultConfig.altFormat||a.altFormat;s.altFormat=o.noCalendar||c?"h:i"+(o.enableSeconds?":S K":" K"):u+" h:i"+(o.enableSeconds?":S":"")+" K"}Object.defineProperty(n.config,"minDate",{get:function(){return n.config._minDate},set:oe("min")}),Object.defineProperty(n.config,"maxDate",{get:function(){return n.config._maxDate},set:oe("max")});var p=function(e){return function(t){n.config["min"===e?"_minTime":"_maxTime"]=n.parseDate(t,"H:i:S")}};Object.defineProperty(n.config,"minTime",{get:function(){return n.config._minTime},set:p("min")}),Object.defineProperty(n.config,"maxTime",{get:function(){return n.config._maxTime},set:p("max")}),"time"===o.mode&&(n.config.noCalendar=!0,n.config.enableTime=!0);Object.assign(n.config,s,o);for(var f=0;f<r.length;f++)n.config[r[f]]=!0===n.config[r[f]]||"true"===n.config[r[f]];i.filter((function(e){return void 0!==n.config[e]})).forEach((function(e){n.config[e]=d(n.config[e]||[]).map(g)})),n.isMobile=!n.config.disableMobile&&!n.config.inline&&"single"===n.config.mode&&!n.config.disable.length&&!n.config.enable&&!n.config.weekNumbers&&/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);for(f=0;f<n.config.plugins.length;f++){var h=n.config.plugins[f](n)||{};for(var v in h)i.indexOf(v)>-1?n.config[v]=d(h[v]).map(g).concat(n.config[v]):void 0===o[v]&&(n.config[v]=h[v])}o.altInputClass||(n.config.altInputClass=se().className+" "+n.config.altInputClass);be("onParseConfig")}(),ce(),function(){if(n.input=se(),!n.input)return void n.config.errorHandler(new Error("Invalid input element specified"));n.input._type=n.input.type,n.input.type="text",n.input.classList.add("flatpickr-input"),n._input=n.input,n.config.altInput&&(n.altInput=p(n.input.nodeName,n.config.altInputClass),n._input=n.altInput,n.altInput.placeholder=n.input.placeholder,n.altInput.disabled=n.input.disabled,n.altInput.required=n.input.required,n.altInput.tabIndex=n.input.tabIndex,n.altInput.type="text",n.input.setAttribute("type","hidden"),!n.config.static&&n.input.parentNode&&n.input.parentNode.insertBefore(n.altInput,n.input.nextSibling));n.config.allowInput||n._input.setAttribute("readonly","readonly");ge()}(),function(){n.selectedDates=[],n.now=n.parseDate(n.config.now)||new Date;var e=n.config.defaultDate||("INPUT"!==n.input.nodeName&&"TEXTAREA"!==n.input.nodeName||!n.input.placeholder||n.input.value!==n.input.placeholder?n.input.value:null);e&&he(e,n.config.dateFormat);n._initialDate=n.selectedDates.length>0?n.selectedDates[0]:n.config.minDate&&n.config.minDate.getTime()>n.now.getTime()?n.config.minDate:n.config.maxDate&&n.config.maxDate.getTime()<n.now.getTime()?n.config.maxDate:n.now,n.currentYear=n._initialDate.getFullYear(),n.currentMonth=n._initialDate.getMonth(),n.selectedDates.length>0&&(n.latestSelectedDateObj=n.selectedDates[0]);void 0!==n.config.minTime&&(n.config.minTime=n.parseDate(n.config.minTime,"H:i"));void 0!==n.config.maxTime&&(n.config.maxTime=n.parseDate(n.config.maxTime,"H:i"));n.minDateHasTime=!!n.config.minDate&&(n.config.minDate.getHours()>0||n.config.minDate.getMinutes()>0||n.config.minDate.getSeconds()>0),n.maxDateHasTime=!!n.config.maxDate&&(n.config.maxDate.getHours()>0||n.config.maxDate.getMinutes()>0||n.config.maxDate.getSeconds()>0)}(),n.utils={getDaysInMonth:function(e,t){return void 0===e&&(e=n.currentMonth),void 0===t&&(t=n.currentYear),1===e&&(t%4==0&&t%100!=0||t%400==0)?29:n.l10n.daysInMonth[e]}},n.isMobile||function(){var e=window.document.createDocumentFragment();if(n.calendarContainer=p("div","flatpickr-calendar"),n.calendarContainer.tabIndex=-1,!n.config.noCalendar){if(e.appendChild((n.monthNav=p("div","flatpickr-months"),n.yearElements=[],n.monthElements=[],n.prevMonthNav=p("span","flatpickr-prev-month"),n.prevMonthNav.innerHTML=n.config.prevArrow,n.nextMonthNav=p("span","flatpickr-next-month"),n.nextMonthNav.innerHTML=n.config.nextArrow,G(),Object.defineProperty(n,"_hidePrevMonthArrow",{get:function(){return n.__hidePrevMonthArrow},set:function(e){n.__hidePrevMonthArrow!==e&&(u(n.prevMonthNav,"flatpickr-disabled",e),n.__hidePrevMonthArrow=e)}}),Object.defineProperty(n,"_hideNextMonthArrow",{get:function(){return n.__hideNextMonthArrow},set:function(e){n.__hideNextMonthArrow!==e&&(u(n.nextMonthNav,"flatpickr-disabled",e),n.__hideNextMonthArrow=e)}}),n.currentYearElement=n.yearElements[0],we(),n.monthNav)),n.innerContainer=p("div","flatpickr-innerContainer"),n.config.weekNumbers){var t=function(){n.calendarContainer.classList.add("hasWeeks");var e=p("div","flatpickr-weekwrapper");e.appendChild(p("span","flatpickr-weekday",n.l10n.weekAbbreviation));var t=p("div","flatpickr-weeks");return e.appendChild(t),{weekWrapper:e,weekNumbers:t}}(),i=t.weekWrapper,a=t.weekNumbers;n.innerContainer.appendChild(i),n.weekNumbers=a,n.weekWrapper=i}n.rContainer=p("div","flatpickr-rContainer"),n.rContainer.appendChild(K()),n.daysContainer||(n.daysContainer=p("div","flatpickr-days"),n.daysContainer.tabIndex=-1),Y(),n.rContainer.appendChild(n.daysContainer),n.innerContainer.appendChild(n.rContainer),e.appendChild(n.innerContainer)}n.config.enableTime&&e.appendChild(function(){n.calendarContainer.classList.add("hasTime"),n.config.noCalendar&&n.calendarContainer.classList.add("noCalendar");var e=C(n.config);n.timeContainer=p("div","flatpickr-time"),n.timeContainer.tabIndex=-1;var t=p("span","flatpickr-time-separator",":"),i=h("flatpickr-hour",{"aria-label":n.l10n.hourAriaLabel});n.hourElement=i.getElementsByTagName("input")[0];var a=h("flatpickr-minute",{"aria-label":n.l10n.minuteAriaLabel});n.minuteElement=a.getElementsByTagName("input")[0],n.hourElement.tabIndex=n.minuteElement.tabIndex=-1,n.hourElement.value=s(n.latestSelectedDateObj?n.latestSelectedDateObj.getHours():n.config.time_24hr?e.hours:function(e){switch(e%24){case 0:case 12:return 12;default:return e%12}}(e.hours)),n.minuteElement.value=s(n.latestSelectedDateObj?n.latestSelectedDateObj.getMinutes():e.minutes),n.hourElement.setAttribute("step",n.config.hourIncrement.toString()),n.minuteElement.setAttribute("step",n.config.minuteIncrement.toString()),n.hourElement.setAttribute("min",n.config.time_24hr?"0":"1"),n.hourElement.setAttribute("max",n.config.time_24hr?"23":"12"),n.hourElement.setAttribute("maxlength","2"),n.minuteElement.setAttribute("min","0"),n.minuteElement.setAttribute("max","59"),n.minuteElement.setAttribute("maxlength","2"),n.timeContainer.appendChild(i),n.timeContainer.appendChild(t),n.timeContainer.appendChild(a),n.config.time_24hr&&n.timeContainer.classList.add("time24hr");if(n.config.enableSeconds){n.timeContainer.classList.add("hasSeconds");var r=h("flatpickr-second");n.secondElement=r.getElementsByTagName("input")[0],n.secondElement.value=s(n.latestSelectedDateObj?n.latestSelectedDateObj.getSeconds():e.seconds),n.secondElement.setAttribute("step",n.minuteElement.getAttribute("step")),n.secondElement.setAttribute("min","0"),n.secondElement.setAttribute("max","59"),n.secondElement.setAttribute("maxlength","2"),n.timeContainer.appendChild(p("span","flatpickr-time-separator",":")),n.timeContainer.appendChild(r)}n.config.time_24hr||(n.amPM=p("span","flatpickr-am-pm",n.l10n.amPM[c((n.latestSelectedDateObj?n.hourElement.value:n.config.defaultHour)>11)]),n.amPM.title=n.l10n.toggleTitle,n.amPM.tabIndex=-1,n.timeContainer.appendChild(n.amPM));return n.timeContainer}());u(n.calendarContainer,"rangeMode","range"===n.config.mode),u(n.calendarContainer,"animate",!0===n.config.animate),u(n.calendarContainer,"multiMonth",n.config.showMonths>1),n.calendarContainer.appendChild(e);var r=void 0!==n.config.appendTo&&void 0!==n.config.appendTo.nodeType;if((n.config.inline||n.config.static)&&(n.calendarContainer.classList.add(n.config.inline?"inline":"static"),n.config.inline&&(!r&&n.element.parentNode?n.element.parentNode.insertBefore(n.calendarContainer,n._input.nextSibling):void 0!==n.config.appendTo&&n.config.appendTo.appendChild(n.calendarContainer)),n.config.static)){var o=p("div","flatpickr-wrapper");n.element.parentNode&&n.element.parentNode.insertBefore(o,n.element),o.appendChild(n.element),n.altInput&&o.appendChild(n.altInput),o.appendChild(n.calendarContainer)}n.config.static||n.config.inline||(void 0!==n.config.appendTo?n.config.appendTo:window.document.body).appendChild(n.calendarContainer)}(),function(){n.config.wrap&&["open","close","toggle","clear"].forEach((function(e){Array.prototype.forEach.call(n.element.querySelectorAll("[data-"+e+"]"),(function(t){return F(t,"click",n[e])}))}));if(n.isMobile)return void function(){var e=n.config.enableTime?n.config.noCalendar?"time":"datetime-local":"date";n.mobileInput=p("input",n.input.className+" flatpickr-mobile"),n.mobileInput.tabIndex=1,n.mobileInput.type=e,n.mobileInput.disabled=n.input.disabled,n.mobileInput.required=n.input.required,n.mobileInput.placeholder=n.input.placeholder,n.mobileFormatStr="datetime-local"===e?"Y-m-d\\TH:i:S":"date"===e?"Y-m-d":"H:i:S",n.selectedDates.length>0&&(n.mobileInput.defaultValue=n.mobileInput.value=n.formatDate(n.selectedDates[0],n.mobileFormatStr));n.config.minDate&&(n.mobileInput.min=n.formatDate(n.config.minDate,"Y-m-d"));n.config.maxDate&&(n.mobileInput.max=n.formatDate(n.config.maxDate,"Y-m-d"));n.input.getAttribute("step")&&(n.mobileInput.step=String(n.input.getAttribute("step")));n.input.type="hidden",void 0!==n.altInput&&(n.altInput.type="hidden");try{n.input.parentNode&&n.input.parentNode.insertBefore(n.mobileInput,n.input.nextSibling)}catch(e){}F(n.mobileInput,"change",(function(e){n.setDate(v(e).value,!1,n.mobileFormatStr),be("onChange"),be("onClose")}))}();var e=l(re,50);n._debouncedChange=l(A,300),n.daysContainer&&!/iPhone|iPad|iPod/i.test(navigator.userAgent)&&F(n.daysContainer,"mouseover",(function(e){"range"===n.config.mode&&ae(v(e))}));F(n._input,"keydown",ie),void 0!==n.calendarContainer&&F(n.calendarContainer,"keydown",ie);n.config.inline||n.config.static||F(window,"resize",e);void 0!==window.ontouchstart?F(window.document,"touchstart",Z):F(window.document,"mousedown",Z);F(window.document,"focus",Z,{capture:!0}),!0===n.config.clickOpens&&(F(n._input,"focus",n.open),F(n._input,"click",n.open));void 0!==n.daysContainer&&(F(n.monthNav,"click",xe),F(n.monthNav,["keyup","increment"],E),F(n.daysContainer,"click",pe));if(void 0!==n.timeContainer&&void 0!==n.minuteElement&&void 0!==n.hourElement){F(n.timeContainer,["increment"],w),F(n.timeContainer,"blur",w,{capture:!0}),F(n.timeContainer,"click",L),F([n.hourElement,n.minuteElement],["focus","click"],(function(e){return v(e).select()})),void 0!==n.secondElement&&F(n.secondElement,"focus",(function(){return n.secondElement&&n.secondElement.select()})),void 0!==n.amPM&&F(n.amPM,"click",(function(e){w(e)}))}n.config.allowInput&&F(n._input,"blur",ne)}(),(n.selectedDates.length||n.config.noCalendar)&&(n.config.enableTime&&M(n.config.noCalendar?n.latestSelectedDateObj:void 0),Oe(!1)),m();var r=/^((?!chrome|android).)*safari/i.test(navigator.userAgent);!n.isMobile&&r&&le(),be("onReady")}(),n}function M(e,t){for(var n=Array.prototype.slice.call(e).filter((function(e){return e instanceof HTMLElement})),i=[],a=0;a<n.length;a++){var r=n[a];try{if(null!==r.getAttribute("data-fp-omit"))continue;void 0!==r._flatpickr&&(r._flatpickr.destroy(),r._flatpickr=void 0),r._flatpickr=T(r,t||{}),i.push(r._flatpickr)}catch(e){console.error(e)}}return 1===i.length?i[0]:i}"undefined"!=typeof HTMLElement&&"undefined"!=typeof HTMLCollection&&"undefined"!=typeof NodeList&&(HTMLCollection.prototype.flatpickr=NodeList.prototype.flatpickr=function(e){return M(this,e)},HTMLElement.prototype.flatpickr=function(e){return M([this],e)});var P=function(e,t){return"string"==typeof e?M(window.document.querySelectorAll(e),t):e instanceof Node?M([e],t):M(e,t)};P.defaultConfig={},P.l10ns={en:D({},o),default:D({},o)},P.localize=function(e){P.l10ns.default=D(D({},P.l10ns.default),e)},P.setDefaults=function(e){P.defaultConfig=D(D({},P.defaultConfig),e)},P.parseDate=O({}),P.formatDate=k({}),P.compareDates=x,"undefined"!=typeof jQuery&&void 0!==jQuery.fn&&(jQuery.fn.flatpickr=function(e){return M(this,e)}),Date.prototype.fp_incr=function(e){return new Date(this.getFullYear(),this.getMonth(),this.getDate()+("string"==typeof e?parseInt(e,10):e))},"undefined"!=typeof window&&(window.flatpickr=P);t.default=P},XhI9:function(e,t,n){"use strict";n.d(t,"a",(function(){return v}));var i=n("L3ns"),a=n("tC49"),r=n("xjcK"),o=n("pyNs"),s=n("m3aq"),c=n("hpAl"),l=n("Nlw7"),d=n("z3V6"),u=n("zMAm"),p=n("NlY+"),f=n("0ZAa");var h=Object(d.d)({append:Object(d.c)(o.u),appendHtml:Object(d.c)(o.u),id:Object(d.c)(o.u),prepend:Object(d.c)(o.u),prependHtml:Object(d.c)(o.u),size:Object(d.c)(o.u),tag:Object(d.c)(o.u,"div")},r.V),v=Object(i.c)({name:r.V,functional:!0,props:h,render:function(e,t){var n=t.props,i=t.data,r=t.slots,o=t.scopedSlots,d=n.prepend,h=n.prependHtml,v=n.append,g=n.appendHtml,b=n.size,m=o||{},y=r(),w={},k=e(),O=Object(l.a)(s.K,m,y);(O||d||h)&&(k=e(p.a,[O?Object(l.b)(s.K,w,m,y):e(f.a,{domProps:Object(c.a)(h,d)})]));var x,_,j,C=e(),D=Object(l.a)(s.b,m,y);return(D||v||g)&&(C=e(u.a,[D?Object(l.b)(s.b,w,m,y):e(f.a,{domProps:Object(c.a)(g,v)})])),e(n.tag,Object(a.a)(i,{staticClass:"input-group",class:(x={},_="input-group-".concat(b),j=b,_ in x?Object.defineProperty(x,_,{value:j,enumerable:!0,configurable:!0,writable:!0}):x[_]=j,x),attrs:{id:n.id||null,role:"group"}}),[k,Object(l.b)(s.i,w,m,y),C])}})},"a/RR":function(e,t,n){var i=n("AYOL");"string"==typeof i&&(i=[[e.i,i,""]]);var a={hmr:!0,transform:void 0,insertInto:void 0};n("aET+")(i,a);i.locals&&(e.exports=i.locals)},cW3J:function(e,t,n){"use strict";"function"!=typeof Object.assign&&(Object.assign=function(e){for(var t=[],n=1;n<arguments.length;n++)t[n-1]=arguments[n];if(!e)throw TypeError("Cannot convert undefined or null to object");for(var i=function(t){t&&Object.keys(t).forEach((function(n){return e[n]=t[n]}))},a=0,r=t;a<r.length;a++){var o=r[a];i(o)}return e})},dq6P:function(e,t,n){"use strict";n.d(t,"a",(function(){return i}));n("qePV");var i={data:function(){return{trHeight:null}},methods:{trAddHeight:function(e){var t=Number(this.trHeight.substring(0,this.trHeight.length-2));this.trHeight="".concat(t+Number(e),"px")},trTrimHeight:function(e){var t=Number(this.trHeight.substring(0,this.trHeight.length-2));this.trHeight="".concat(t-Number(e),"px")},trSetHeight:function(e){this.trHeight=null===e?"auto":"".concat(Number(e),"px")}}}},gBsl:function(e,t,n){"use strict";n.d(t,"a",(function(){return c}));var i={};n.r(i),n.d(i,"t",(function(){return o})),n.d(i,"_",(function(){return s}));var a=n("VTBJ"),r=n("7Ql6"),o=function(e){var t=Object(r.getCurrentInstance)().proxy;return t.$t?t.$t(e):e},s=null,c=function(){return Object(a.a)({},i)}},hByQ:function(e,t,n){"use strict";var i=n("xluM"),a=n("14Sl"),r=n("glrk"),o=n("cjT7"),s=n("HYAF"),c=n("Ep9I"),l=n("V37c"),d=n("3Eq5"),u=n("FMNM");a("search",(function(e,t,n){return[function(t){var n=s(this),a=o(t)?void 0:d(t,e);return a?i(a,t,n):new RegExp(t)[e](l(n))},function(e){var i=r(this),a=l(e),o=n(t,i,a);if(o.done)return o.value;var s=i.lastIndex;c(s,0)||(i.lastIndex=0);var d=u(i,a);return c(i.lastIndex,s)||(i.lastIndex=s),null===d?-1:d.index}]}))},"hL/g":function(e,t,n){var i=n("OfmS");"string"==typeof i&&(i=[[e.i,i,""]]);var a={hmr:!0,transform:void 0,insertInto:void 0};n("aET+")(i,a);i.locals&&(e.exports=i.locals)},iPaL:function(e,t,n){"use strict";n("tkto"),n("6cQw");var i=n("IF94"),a=n("SWgu"),r=n("ugaB"),o=n("YZfj"),s=n("WEOK"),c=(n("wZee"),n("hL/g"),n("jVEP")),l=n.n(c),d={components:{BCard:i.a,BCardTitle:a.a,BCardSubTitle:r.a,BCardBody:o.a,BCollapse:s.a,Prism:l.a},inheritAttrs:!1,props:{codeLanguage:{default:"markup",type:String}},data:function(){return{parentID:"",code_visible:!1}},computed:{cardAttrs:function(){var e=JSON.parse(JSON.stringify(this.$attrs));return delete e.title,delete e["sub-title"],e}},created:function(){this.parentID=String(Math.floor(10*Math.random())+1)}},u=(n("ApPQ"),n("KHd+")),p=Object(u.a)(d,(function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("b-card",e._g(e._b({attrs:{"no-body":""}},"b-card",e.cardAttrs,!1),e.$listeners),[n("div",{staticClass:"card-header"},[n("div",[n("b-card-title",[e._v(e._s(e.$attrs.title))]),e._v(" "),e.$attrs["sub-title"]?n("b-card-sub-title",[e._v("\n        "+e._s(e.$attrs["sub-title"])+"\n      ")]):e._e()],1),e._v(" "),n("i",{staticClass:"code-toggler feather icon-code cursor-pointer",attrs:{"aria-expanded":e.code_visible?"false":"true","aria-controls":e.parentID},on:{click:function(t){e.code_visible=!e.code_visible}}})]),e._v(" "),void 0!==e.$attrs["no-body"]?[e._t("default"),e._v(" "),n("b-collapse",{staticClass:"card-code",attrs:{id:e.parentID,visible:e.code_visible},model:{value:e.code_visible,callback:function(t){e.code_visible=t},expression:"code_visible"}},[n("b-card-body",[n("prism",{attrs:{language:e.codeLanguage}},[e._t("code")],2)],1)],1)]:n("b-card-body",[e._t("default"),e._v(" "),n("b-collapse",{staticClass:"card-code",attrs:{id:e.parentID,visible:e.code_visible},model:{value:e.code_visible,callback:function(t){e.code_visible=t},expression:"code_visible"}},[n("div",{staticClass:"p-1"}),e._v(" "),n("prism",{attrs:{language:e.codeLanguage}},[e._t("code")],2)],1)],2)],2)}),[],!1,null,"365b0de1",null).exports;t.a=p},jVEP:function(e,t,n){"use strict";var i,a=(i=n("wZee"))&&"object"==typeof i&&"default"in i?i.default:i;function r(e){for(var t=1;t<arguments.length;t++)for(var n in arguments[t])e[n]=arguments[t][n];return e}var o={functional:!0,props:{code:{type:String},inline:{type:Boolean,default:!1},language:{type:String,default:"markup"}},render:function(e,t){var n=t.props.code||(t.children&&t.children.length>0?t.children[0].text:""),i=t.props.inline,o=t.props.language,s=a.languages[o],c="language-".concat(o);return i?e("code",r({},t.data,{class:[t.data.class,c],domProps:r({},t.data.domProps,{innerHTML:a.highlight(n,s)})})):e("pre",r({},t.data,{class:[t.data.class,c]}),[e("code",{class:c,domProps:{innerHTML:a.highlight(n,s)}})])}};e.exports=o},muC2:function(e,t,n){var i=n("JPst"),a=n("9oHr");(t=i(!1)).i(a),t.push([e.i,".v-select {\n  position: relative;\n  font-family: inherit;\n}\n.v-select, .v-select * {\n  box-sizing: border-box;\n}\n@-webkit-keyframes vSelectSpinner-ltr {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n@-webkit-keyframes vSelectSpinner-rtl {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(-360deg);\n}\n}\n@keyframes vSelectSpinner-ltr {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n@keyframes vSelectSpinner-rtl {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(-360deg);\n}\n}\n.vs__fade-enter-active, .vs__fade-leave-active {\n  pointer-events: none;\n  transition: opacity 0.15s cubic-bezier(1, 0.5, 0.8, 1);\n}\n.vs__fade-enter, .vs__fade-leave-to {\n  opacity: 0;\n}\n[dir] .vs--disabled .vs__dropdown-toggle, [dir] .vs--disabled .vs__clear, [dir] .vs--disabled .vs__search, [dir] .vs--disabled .vs__selected, [dir] .vs--disabled .vs__open-indicator {\n  cursor: not-allowed;\n  background-color: #f8f8f8;\n}\n.v-select[dir=rtl] .vs__actions {\n  padding: 0 3px 0 6px;\n}\n.v-select[dir=rtl] .vs__clear {\n  margin-left: 6px;\n  margin-right: 0;\n}\n.v-select[dir=rtl] .vs__deselect {\n  margin-left: 0;\n  margin-right: 2px;\n}\n.v-select[dir=rtl] .vs__dropdown-menu {\n  text-align: right;\n}\n.vs__dropdown-toggle {\n  appearance: none;\n  display: flex;\n  white-space: normal;\n}\n[dir] .vs__dropdown-toggle {\n  padding: 0 0 4px 0;\n  background: none;\n  border: 1px solid #d8d6de;\n  border-radius: 0.357rem;\n}\n.vs__selected-options {\n  display: flex;\n  flex-basis: 100%;\n  flex-grow: 1;\n  flex-wrap: wrap;\n  position: relative;\n}\n[dir] .vs__selected-options {\n  padding: 0 2px;\n}\n.vs__actions {\n  display: flex;\n  align-items: center;\n}\n[dir=ltr] .vs__actions {\n  padding: 4px 6px 0 3px;\n}\n[dir=rtl] .vs__actions {\n  padding: 4px 3px 0 6px;\n}\n[dir] .vs--searchable .vs__dropdown-toggle {\n  cursor: text;\n}\n[dir] .vs--unsearchable .vs__dropdown-toggle {\n  cursor: pointer;\n}\n[dir] .vs--open .vs__dropdown-toggle {\n  border-bottom-color: transparent;\n}\n[dir=ltr] .vs--open .vs__dropdown-toggle {\n  border-bottom-left-radius: 0;\n  border-bottom-right-radius: 0;\n}\n[dir=rtl] .vs--open .vs__dropdown-toggle {\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.vs__open-indicator {\n  fill: rgba(60, 60, 60, 0.5);\n  transition: transform 150ms cubic-bezier(1, -0.115, 0.975, 0.855);\n}\n[dir] .vs__open-indicator {\n  transform: scale(1);\n  transition-timing-function: cubic-bezier(1, -0.115, 0.975, 0.855);\n}\n[dir=ltr] .vs--open .vs__open-indicator {\n  transform: rotate(180deg) scale(1);\n}\n[dir=rtl] .vs--open .vs__open-indicator {\n  transform: rotate(-180deg) scale(1);\n}\n.vs--loading .vs__open-indicator {\n  opacity: 0;\n}\n.vs__clear {\n  fill: rgba(60, 60, 60, 0.5);\n}\n[dir] .vs__clear {\n  padding: 0;\n  border: 0;\n  background-color: transparent;\n  cursor: pointer;\n}\n[dir=ltr] .vs__clear {\n  margin-right: 8px;\n}\n[dir=rtl] .vs__clear {\n  margin-left: 8px;\n}\n.vs__dropdown-menu {\n  display: block;\n  box-sizing: border-box;\n  position: absolute;\n  top: calc(100% - 1px);\n  z-index: 1000;\n  width: 100%;\n  max-height: 350px;\n  min-width: 160px;\n  overflow-y: auto;\n  list-style: none;\n}\n[dir] .vs__dropdown-menu {\n  padding: 5px 0;\n  margin: 0;\n  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.1);\n  border: 1px solid #d8d6de;\n  border-top-style: none;\n  border-radius: 0 0 0.357rem 0.357rem;\n  background: #fff;\n}\n[dir=ltr] .vs__dropdown-menu {\n  left: 0;\n  text-align: left;\n}\n[dir=rtl] .vs__dropdown-menu {\n  right: 0;\n  text-align: right;\n}\n[dir] .vs__no-options {\n  text-align: center;\n}\n.vs__dropdown-option {\n  line-height: 1.42857143;\n  display: block;\n  color: #333;\n  white-space: nowrap;\n}\n[dir] .vs__dropdown-option {\n  padding: 3px 20px;\n  clear: both;\n  cursor: pointer;\n}\n.vs__dropdown-option--highlight {\n  color: #7367f0 !important;\n}\n[dir] .vs__dropdown-option--highlight {\n  background: rgba(115, 103, 240, 0.12);\n}\n.vs__dropdown-option--deselect {\n  color: #fff;\n}\n[dir] .vs__dropdown-option--deselect {\n  background: #fb5858;\n}\n.vs__dropdown-option--disabled {\n  color: rgba(60, 60, 60, 0.5);\n}\n[dir] .vs__dropdown-option--disabled {\n  background: inherit;\n  cursor: inherit;\n}\n.vs__selected {\n  display: flex;\n  align-items: center;\n  color: #333;\n  line-height: 1.8;\n  z-index: 0;\n}\n[dir] .vs__selected {\n  background-color: #7367f0;\n  border: 0 solid rgba(60, 60, 60, 0.26);\n  border-radius: 0.357rem;\n  margin: 4px 2px 0px 2px;\n  padding: 0 0.25em;\n}\n.vs__deselect {\n  display: inline-flex;\n  appearance: none;\n  fill: rgba(60, 60, 60, 0.5);\n}\n[dir] .vs__deselect {\n  padding: 0;\n  border: 0;\n  cursor: pointer;\n  background: none;\n  text-shadow: 0 1px 0 #fff;\n}\n[dir=ltr] .vs__deselect {\n  margin-left: 4px;\n}\n[dir=rtl] .vs__deselect {\n  margin-right: 4px;\n}\n[dir] .vs--single .vs__selected {\n  background-color: transparent;\n  border-color: transparent;\n}\n.vs--single.vs--open .vs__selected, .vs--single.vs--loading .vs__selected {\n  position: absolute;\n  opacity: 0.4;\n}\n.vs--single.vs--searching .vs__selected {\n  display: none;\n}\n.vs__search::-webkit-search-cancel-button {\n  display: none;\n}\n.vs__search::-webkit-search-decoration, .vs__search::-webkit-search-results-button, .vs__search::-webkit-search-results-decoration, .vs__search::-ms-clear {\n  display: none;\n}\n.vs__search, .vs__search:focus {\n  appearance: none;\n  line-height: 1.8;\n  font-size: 1em;\n  outline: none;\n  width: 0;\n  max-width: 100%;\n  flex-grow: 1;\n  z-index: 1;\n}\n[dir] .vs__search, [dir] .vs__search:focus {\n  border: 1px solid transparent;\n  margin: 4px 0 0 0;\n  padding: 0 7px;\n  background: none;\n  box-shadow: none;\n}\n[dir=ltr] .vs__search, [dir=ltr] .vs__search:focus {\n  border-left: none;\n}\n[dir=rtl] .vs__search, [dir=rtl] .vs__search:focus {\n  border-right: none;\n}\n.vs__search::placeholder {\n  color: #6e6b7b;\n}\n.vs--unsearchable .vs__search {\n  opacity: 1;\n}\n[dir] .vs--unsearchable:not(.vs--disabled) .vs__search {\n  cursor: pointer;\n}\n.vs--single.vs--searching:not(.vs--open):not(.vs--loading) .vs__search {\n  opacity: 0.2;\n}\n.vs__spinner {\n  align-self: center;\n  opacity: 0;\n  font-size: 5px;\n  text-indent: -9999em;\n  overflow: hidden;\n  transition: opacity 0.1s;\n}\n[dir] .vs__spinner {\n  border-top: 0.9em solid rgba(100, 100, 100, 0.1);\n  border-bottom: 0.9em solid rgba(100, 100, 100, 0.1);\n  transform: translateZ(0);\n}\n[dir=ltr] .vs__spinner {\n  border-right: 0.9em solid rgba(100, 100, 100, 0.1);\n  border-left: 0.9em solid rgba(60, 60, 60, 0.45);\n  animation:  vSelectSpinner-ltr 1.1s infinite linear;\n}\n[dir=rtl] .vs__spinner {\n  border-left: 0.9em solid rgba(100, 100, 100, 0.1);\n  border-right: 0.9em solid rgba(60, 60, 60, 0.45);\n  animation:  vSelectSpinner-rtl 1.1s infinite linear;\n}\n.vs__spinner, .vs__spinner:after {\n  width: 5em;\n  height: 5em;\n}\n[dir] .vs__spinner, [dir] .vs__spinner:after {\n  border-radius: 50%;\n}\n.vs--loading .vs__spinner {\n  opacity: 1;\n}\n.vs__open-indicator {\n  fill: none;\n}\n[dir] .vs__open-indicator {\n  margin-top: 0.15rem;\n}\n.vs__dropdown-toggle {\n  transition: all 0.25s ease-in-out;\n}\n[dir] .vs__dropdown-toggle {\n  padding: 0.59px 0 4px 0;\n}\n[dir=ltr] .vs--single .vs__dropdown-toggle {\n  padding-left: 6px;\n}\n[dir=rtl] .vs--single .vs__dropdown-toggle {\n  padding-right: 6px;\n}\n.vs__dropdown-option--disabled {\n  opacity: 0.5;\n}\n[dir] .vs__dropdown-option--disabled.vs__dropdown-option--selected {\n  background: #7367f0 !important;\n}\n.vs__dropdown-option {\n  color: #6e6b7b;\n}\n[dir] .vs__dropdown-option, [dir] .vs__no-options {\n  padding: 7px 20px;\n}\n.vs__dropdown-option--selected {\n  color: #fff;\n  position: relative;\n}\n[dir] .vs__dropdown-option--selected {\n  background-color: #7367f0;\n}\n.vs__dropdown-option--selected::after {\n  content: \"\";\n  height: 1.1rem;\n  width: 1.1rem;\n  display: inline-block;\n  position: absolute;\n  top: 50%;\n}\n[dir] .vs__dropdown-option--selected::after {\n  transform: translateY(-50%);\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E\");\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: 1.1rem;\n}\n[dir=ltr] .vs__dropdown-option--selected::after {\n  right: 20px;\n}\n[dir=rtl] .vs__dropdown-option--selected::after {\n  left: 20px;\n  right: unset;\n  left: 20px;\n}\n.vs__dropdown-option--selected.vs__dropdown-option--highlight {\n  color: #fff !important;\n}\n[dir] .vs__dropdown-option--selected.vs__dropdown-option--highlight {\n  background-color: #7367f0 !important;\n}\n.vs__clear svg {\n  color: #6e6b7b;\n}\n.vs__selected {\n  color: #fff;\n}\n.v-select.vs--single .vs__selected {\n  color: #6e6b7b;\n  transition: transform 0.2s ease;\n}\n[dir] .v-select.vs--single .vs__selected {\n  margin-top: 5px;\n}\n[dir=ltr] .v-select.vs--single .vs__selected input {\n  padding-left: 0;\n}\n[dir=rtl] .v-select.vs--single .vs__selected input {\n  padding-right: 0;\n}\n[dir=ltr] .vs--single.vs--open .vs__selected {\n  transform: translateX(5px);\n}\n[dir=rtl] .vs--single.vs--open .vs__selected {\n  transform: translateX(-5px);\n}\n.vs__selected .vs__deselect {\n  color: inherit;\n}\n.v-select:not(.vs--single) .vs__selected {\n  font-size: 0.9rem;\n}\n[dir] .v-select:not(.vs--single) .vs__selected {\n  border-radius: 3px;\n  padding: 0 0.6em;\n}\n[dir=ltr] .v-select:not(.vs--single) .vs__selected {\n  margin: 5px 2px 2px 5px;\n}\n[dir=rtl] .v-select:not(.vs--single) .vs__selected {\n  margin: 5px 5px 2px 2px;\n}\n.v-select:not(.vs--single) .vs__deselect svg {\n  vertical-align: text-top;\n}\n[dir] .v-select:not(.vs--single) .vs__deselect svg {\n  transform: scale(0.8);\n}\n.vs__dropdown-menu {\n  top: calc(100% + 1rem);\n}\n[dir] .vs__dropdown-menu {\n  border: none;\n  border-radius: 6px;\n  padding: 0;\n}\n[dir] .vs--open .vs__dropdown-toggle {\n  border-color: #7367f0;\n  border-bottom-color: #7367f0;\n  box-shadow: 0 3px 10px 0 rgba(34, 41, 47, 0.1);\n}\n[dir=ltr] .vs--open .vs__dropdown-toggle {\n  border-bottom-left-radius: 0.357rem;\n  border-bottom-right-radius: 0.357rem;\n}\n[dir=rtl] .vs--open .vs__dropdown-toggle {\n  border-bottom-right-radius: 0.357rem;\n  border-bottom-left-radius: 0.357rem;\n}\n.select-size-lg .vs__selected {\n  font-size: 1rem !important;\n}\n[dir] .select-size-lg.vs--single.vs--open .vs__selected {\n  margin-top: 6px;\n}\n.select-size-lg .vs__dropdown-toggle, .select-size-lg .vs__selected {\n  font-size: 1.25rem;\n}\n[dir] .select-size-lg .vs__dropdown-toggle {\n  padding: 5px;\n}\n[dir] .select-size-lg .vs__dropdown-toggle input {\n  margin-top: 0;\n}\n.select-size-lg .vs__deselect svg {\n  vertical-align: middle !important;\n}\n[dir] .select-size-lg .vs__deselect svg {\n  transform: scale(1) !important;\n}\n[dir] .select-size-sm .vs__dropdown-toggle {\n  padding-bottom: 0;\n  padding: 1px;\n}\n[dir] .select-size-sm.vs--single .vs__dropdown-toggle {\n  padding: 2px;\n}\n.select-size-sm .vs__dropdown-toggle, .select-size-sm .vs__selected {\n  font-size: 0.9rem;\n}\n[dir] .select-size-sm .vs__actions {\n  padding-top: 2px;\n  padding-bottom: 2px;\n}\n.select-size-sm .vs__deselect svg {\n  vertical-align: middle !important;\n}\n[dir] .select-size-sm .vs__search {\n  margin-top: 0;\n}\n.select-size-sm.v-select .vs__selected {\n  font-size: 0.75rem;\n}\n[dir] .select-size-sm.v-select .vs__selected {\n  padding: 0 0.3rem;\n}\n[dir] .select-size-sm.v-select:not(.vs--single) .vs__selected {\n  margin: 4px 5px;\n}\n[dir] .select-size-sm.v-select.vs--single .vs__selected {\n  margin-top: 1px;\n}\n[dir] .select-size-sm.vs--single.vs--open .vs__selected {\n  margin-top: 4px;\n}\n.dark-layout .vs__dropdown-toggle {\n  color: #b4b7bd;\n}\n[dir] .dark-layout .vs__dropdown-toggle {\n  background: #283046;\n  border-color: #404656;\n}\n.dark-layout .vs__selected-options input {\n  color: #b4b7bd;\n}\n.dark-layout .vs__selected-options input::placeholder {\n  color: #676d7d;\n}\n.dark-layout .vs__actions svg {\n  fill: #404656;\n}\n[dir] .dark-layout .vs__dropdown-menu {\n  background: #283046;\n}\n.dark-layout .vs__dropdown-menu li {\n  color: #b4b7bd;\n}\n.dark-layout .v-select:not(.vs--single) .vs__selected {\n  color: #7367f0;\n}\n[dir] .dark-layout .v-select:not(.vs--single) .vs__selected {\n  background-color: rgba(115, 103, 240, 0.12);\n}\n.dark-layout .v-select.vs--single .vs__selected {\n  color: #b4b7bd !important;\n}\n.dark-layout .vs--disabled .vs__dropdown-toggle, .dark-layout .vs--disabled .vs__clear, .dark-layout .vs--disabled .vs__search, .dark-layout .vs--disabled .vs__selected, .dark-layout .vs--disabled .vs__open-indicator {\n  opacity: 0.5;\n}\n[dir] .dark-layout .vs--disabled .vs__dropdown-toggle, [dir] .dark-layout .vs--disabled .vs__clear, [dir] .dark-layout .vs--disabled .vs__search, [dir] .dark-layout .vs--disabled .vs__selected, [dir] .dark-layout .vs--disabled .vs__open-indicator {\n  background-color: #283046;\n}\n.flatpickr-calendar .flatpickr-day {\n  color: #6e6b7b;\n}\n[dir] .flatpickr-calendar .flatpickr-day.today {\n  border-color: #7367f0;\n}\n.flatpickr-calendar .flatpickr-day.today:hover {\n  color: #6e6b7b;\n}\n[dir] .flatpickr-calendar .flatpickr-day.today:hover {\n  background: transparent;\n}\n.flatpickr-calendar .flatpickr-day.selected, .flatpickr-calendar .flatpickr-day.selected:hover {\n  color: #fff;\n}\n[dir] .flatpickr-calendar .flatpickr-day.selected, [dir] .flatpickr-calendar .flatpickr-day.selected:hover {\n  background: #7367f0;\n  border-color: #7367f0;\n}\n[dir] .flatpickr-calendar .flatpickr-day.inRange, [dir] .flatpickr-calendar .flatpickr-day.inRange:hover {\n  background: #f3f2fe;\n  border-color: #f3f2fe;\n}\n[dir=ltr] .flatpickr-calendar .flatpickr-day.inRange, [dir=ltr] .flatpickr-calendar .flatpickr-day.inRange:hover {\n  box-shadow: -5px 0 0 #f3f2fe, 5px 0 0 #f3f2fe;\n}\n[dir=rtl] .flatpickr-calendar .flatpickr-day.inRange, [dir=rtl] .flatpickr-calendar .flatpickr-day.inRange:hover {\n  box-shadow: 5px 0 0 #f3f2fe, -5px 0 0 #f3f2fe;\n}\n.flatpickr-calendar .flatpickr-day.startRange, .flatpickr-calendar .flatpickr-day.endRange, .flatpickr-calendar .flatpickr-day.startRange:hover, .flatpickr-calendar .flatpickr-day.endRange:hover {\n  color: #fff;\n}\n[dir] .flatpickr-calendar .flatpickr-day.startRange, [dir] .flatpickr-calendar .flatpickr-day.endRange, [dir] .flatpickr-calendar .flatpickr-day.startRange:hover, [dir] .flatpickr-calendar .flatpickr-day.endRange:hover {\n  background: #7367f0;\n  border-color: #7367f0;\n}\n[dir=ltr] .flatpickr-calendar .flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n+1)), [dir=ltr] .flatpickr-calendar .flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n+1)), [dir=ltr] .flatpickr-calendar .flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n+1)) {\n  box-shadow: -10px 0 0 #7367f0;\n}\n[dir=rtl] .flatpickr-calendar .flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n+1)), [dir=rtl] .flatpickr-calendar .flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n+1)), [dir=rtl] .flatpickr-calendar .flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n+1)) {\n  box-shadow: 10px 0 0 #7367f0;\n}\n.flatpickr-calendar .flatpickr-day.flatpickr-disabled, .flatpickr-calendar .flatpickr-day.prevMonthDay, .flatpickr-calendar .flatpickr-day.nextMonthDay {\n  color: #dae1e7;\n}\n[dir] .flatpickr-calendar .flatpickr-day:hover {\n  background: #f6f6f6;\n}\n.flatpickr-calendar:after, .flatpickr-calendar:before {\n  display: none;\n}\n.flatpickr-calendar .flatpickr-months .flatpickr-prev-month, .flatpickr-calendar .flatpickr-months .flatpickr-next-month {\n  top: -5px;\n}\n.flatpickr-calendar .flatpickr-months .flatpickr-prev-month:hover i, .flatpickr-calendar .flatpickr-months .flatpickr-prev-month:hover svg, .flatpickr-calendar .flatpickr-months .flatpickr-next-month:hover i, .flatpickr-calendar .flatpickr-months .flatpickr-next-month:hover svg {\n  fill: #7367f0;\n}\n.flatpickr-calendar .flatpickr-current-month span.cur-month {\n  font-weight: 300;\n}\n.flatpickr-calendar.open {\n  z-index: 1051;\n}\n.flatpickr-calendar.hasTime.open .flatpickr-time {\n  height: auto;\n}\n[dir] .flatpickr-time input:hover, [dir] .flatpickr-time .flatpickr-am-pm:hover, [dir] .flatpickr-time input:focus, [dir] .flatpickr-time .flatpickr-am-pm:focus {\n  background: #fff;\n}\n[dir] .dark-layout .flatpickr-calendar {\n  background: #161d31;\n  border-color: #161d31;\n  box-shadow: none;\n}\n.dark-layout .flatpickr-calendar .flatpickr-months i, .dark-layout .flatpickr-calendar .flatpickr-months svg {\n  fill: #b4b7bd;\n}\n.dark-layout .flatpickr-calendar .flatpickr-month {\n  color: #b4b7bd;\n}\n[dir=ltr] .dark-layout .flatpickr-calendar .flatpickr-weekwrapper .flatpickr-weeks {\n  box-shadow: 1px 0 0 #3b4253;\n}\n[dir=rtl] .dark-layout .flatpickr-calendar .flatpickr-weekwrapper .flatpickr-weeks {\n  box-shadow: -1px 0 0 #3b4253;\n}\n.dark-layout .flatpickr-calendar .flatpickr-weekday {\n  color: #b4b7bd;\n}\n.dark-layout .flatpickr-calendar .flatpickr-day, .dark-layout .flatpickr-calendar .flatpickr-day.today:hover {\n  color: #b4b7bd;\n}\n.dark-layout .flatpickr-calendar .flatpickr-day.selected {\n  color: #fff;\n}\n.dark-layout .flatpickr-calendar .flatpickr-day.prevMonthDay, .dark-layout .flatpickr-calendar .flatpickr-day.nextMonthDay, .dark-layout .flatpickr-calendar .flatpickr-day.flatpickr-disabled {\n  color: #4e5154 !important;\n}\n[dir] .dark-layout .flatpickr-calendar .flatpickr-day.inRange, [dir] .dark-layout .flatpickr-calendar .flatpickr-day.inRange:hover {\n  background: #283046;\n  border-color: #283046;\n}\n[dir=ltr] .dark-layout .flatpickr-calendar .flatpickr-day.inRange, [dir=ltr] .dark-layout .flatpickr-calendar .flatpickr-day.inRange:hover {\n  box-shadow: -5px 0 0 #283046, 5px 0 0 #283046;\n}\n[dir=rtl] .dark-layout .flatpickr-calendar .flatpickr-day.inRange, [dir=rtl] .dark-layout .flatpickr-calendar .flatpickr-day.inRange:hover {\n  box-shadow: 5px 0 0 #283046, -5px 0 0 #283046;\n}\n.dark-layout .flatpickr-calendar .flatpickr-day:hover:not(.selected):not(.today):not(.startRange):not(.endRange) {\n  color: #b4b7bd;\n}\n[dir] .dark-layout .flatpickr-calendar .flatpickr-day:hover:not(.selected):not(.today):not(.startRange):not(.endRange) {\n  border-color: #283046;\n}\n[dir] .dark-layout .flatpickr-calendar .flatpickr-days .flatpickr-day:hover:not(.selected):not(.today):not(.startRange):not(.endRange), [dir] .dark-layout .flatpickr-calendar .flatpickr-days .flatpickr-day:focus:not(.selected):not(.today):not(.startRange):not(.endRange) {\n  background: #283046;\n}\n[dir] .dark-layout .flatpickr-calendar .flatpickr-time {\n  border-color: #161d31 !important;\n}\n.dark-layout .flatpickr-calendar .flatpickr-time .numInput, .dark-layout .flatpickr-calendar .flatpickr-time .flatpickr-am-pm {\n  color: #b4b7bd;\n}\n[dir] .dark-layout .flatpickr-calendar .flatpickr-time .numInput:hover, [dir] .dark-layout .flatpickr-calendar .flatpickr-time .flatpickr-am-pm:hover {\n  background: #161d31;\n}\n[dir] .dark-layout .flatpickr-calendar .flatpickr-time .arrowUp:after {\n  border-bottom-color: #b4b7bd;\n}\n[dir] .dark-layout .flatpickr-calendar .flatpickr-time .arrowDown:after {\n  border-top-color: #b4b7bd;\n}\n[dir] .dark-layout .flatpickr-time input:hover, [dir] .dark-layout .flatpickr-time .flatpickr-am-pm:hover, [dir] .dark-layout .flatpickr-time input:focus, [dir] .dark-layout .flatpickr-time .flatpickr-am-pm:focus {\n  background: #161d31;\n}\n.flatpickr-input[readonly], .flatpickr-input ~ .form-control[readonly], .flatpickr-human-friendly[readonly] {\n  opacity: 1 !important;\n}\n[dir] .flatpickr-input[readonly], [dir] .flatpickr-input ~ .form-control[readonly], [dir] .flatpickr-human-friendly[readonly] {\n  background-color: inherit;\n}\n[dir] .flatpickr-weekdays {\n  margin-top: 8px;\n}\n.flatpickr-current-month .flatpickr-monthDropdown-months {\n  -webkit-appearance: none;\n}\n.flatpickr-current-month .flatpickr-monthDropdown-months, .flatpickr-current-month .numInputWrapper {\n  font-size: 1.1rem;\n  transition: all 0.15s ease-out;\n}\n[dir] .flatpickr-current-month .flatpickr-monthDropdown-months, [dir] .flatpickr-current-month .numInputWrapper {\n  border-radius: 4px;\n  padding: 2px;\n}\n.flatpickr-current-month .flatpickr-monthDropdown-months span, .flatpickr-current-month .numInputWrapper span {\n  display: none;\n}\nhtml[dir=rtl] .flatpickr-calendar .flatpickr-prev-month svg, html[dir=rtl] .flatpickr-calendar .flatpickr-next-month svg {\n  transform: rotate(180deg);\n}\n.invoice-add-wrapper .add-new-client-header {\n  color: #28c76f;\n}\n[dir] .invoice-add-wrapper .add-new-client-header {\n  padding: 7px 20px;\n}\n[dir] .invoice-add-wrapper .add-new-client-header:hover {\n  background-color: rgba(40, 199, 111, 0.12);\n}",""]),e.exports=t},mwM1:function(e,t,n){"use strict";n.d(t,"a",(function(){return m}));var i=n("L3ns"),a=n("xjcK"),r=n("AFYn"),o=n("pyNs"),s=n("m3aq"),c=n("OljW"),l=n("jBgq"),d=n("z3V6"),u=n("AeMN"),p=n("zio1");function f(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);t&&(i=i.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,i)}return n}function h(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?f(Object(n),!0).forEach((function(t){v(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):f(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function v(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var g={top:0,left:0,bottom:0,right:0},b=Object(d.d)({bgColor:Object(d.c)(o.u),blur:Object(d.c)(o.u,"2px"),fixed:Object(d.c)(o.g,!1),noCenter:Object(d.c)(o.g,!1),noFade:Object(d.c)(o.g,!1),noWrap:Object(d.c)(o.g,!1),opacity:Object(d.c)(o.p,.85,(function(e){var t=Object(c.a)(e,0);return t>=0&&t<=1})),overlayTag:Object(d.c)(o.u,"div"),rounded:Object(d.c)(o.j,!1),show:Object(d.c)(o.g,!1),spinnerSmall:Object(d.c)(o.g,!1),spinnerType:Object(d.c)(o.u,"border"),spinnerVariant:Object(d.c)(o.u),variant:Object(d.c)(o.u,"light"),wrapTag:Object(d.c)(o.u,"div"),zIndex:Object(d.c)(o.p,10)},a.ob),m=Object(i.c)({name:a.ob,mixins:[l.a],props:b,computed:{computedRounded:function(){var e=this.rounded;return!0===e||""===e?"rounded":e?"rounded-".concat(e):""},computedVariant:function(){var e=this.variant;return e&&!this.bgColor?"bg-".concat(e):""},slotScope:function(){return{spinnerType:this.spinnerType||null,spinnerVariant:this.spinnerVariant||null,spinnerSmall:this.spinnerSmall}}},methods:{defaultOverlayFn:function(e){var t=e.spinnerType,n=e.spinnerVariant,i=e.spinnerSmall;return this.$createElement(u.a,{props:{type:t,variant:n,small:i}})}},render:function(e){var t=this,n=this.show,i=this.fixed,a=this.noFade,o=this.noWrap,c=this.slotScope,l=e();if(n){var d=e("div",{staticClass:"position-absolute",class:[this.computedVariant,this.computedRounded],style:h(h({},g),{},{opacity:this.opacity,backgroundColor:this.bgColor||null,backdropFilter:this.blur?"blur(".concat(this.blur,")"):null})}),u=e("div",{staticClass:"position-absolute",style:this.noCenter?h({},g):{top:"50%",left:"50%",transform:"translateX(-50%) translateY(-50%)"}},[this.normalizeSlot(s.H,c)||this.defaultOverlayFn(c)]);l=e(this.overlayTag,{staticClass:"b-overlay",class:{"position-absolute":!o||o&&!i,"position-fixed":o&&i},style:h(h({},g),{},{zIndex:this.zIndex||10}),on:{click:function(e){return t.$emit(r.f,e)}},key:"overlay"},[d,u])}return l=e(p.a,{props:{noFade:a,appear:!0},on:{"after-enter":function(){return t.$emit(r.T)},"after-leave":function(){return t.$emit(r.w)}}},[l]),o?l:e(this.wrapTag,{staticClass:"b-overlay-wrap position-relative",attrs:{"aria-busy":n?"true":null}},o?[l]:[this.normalizeSlot(),l])}})},nH37:function(e,t,n){"use strict";n.d(t,"a",(function(){return E}));var i=n("L3ns"),a=n("xjcK"),r=n("pyNs"),o=n("kGy3"),s=n("ex6f"),c=n("qMhD"),l=n("OljW"),d=n("2C+6"),u=n("z3V6"),p=n("3ec0"),f=n("BtlJ"),h=n("rUdO"),v=n("1SAT"),g=n("QPyd"),b=n("Hx7N"),m=n("kO/s"),y=n("YC3Q"),w=n("vJrl"),k=n("mS7b"),O=n("PCFI");function x(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}var _="__bv__visibility_observer",j=function(){function e(t,n){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.el=t,this.callback=n.callback,this.margin=n.margin||0,this.once=n.once||!1,this.observer=null,this.visible=void 0,this.doneOnce=!1,this.createObserver()}var t,n,a;return t=e,(n=[{key:"createObserver",value:function(){var e=this;if(this.observer&&this.stop(),!this.doneOnce&&Object(s.f)(this.callback)){try{this.observer=new IntersectionObserver(this.handler.bind(this),{root:null,rootMargin:this.margin,threshold:0})}catch(e){return this.doneOnce=!0,this.observer=void 0,void this.callback(null)}Object(i.e)((function(){Object(o.B)((function(){e.observer&&e.observer.observe(e.el)}))}))}}},{key:"handler",value:function(e){var t=e?e[0]:{},n=Boolean(t.isIntersecting||t.intersectionRatio>0);n!==this.visible&&(this.visible=n,this.callback(n),this.once&&this.visible&&(this.doneOnce=!0,this.stop()))}},{key:"stop",value:function(){this.observer&&this.observer.disconnect(),this.observer=null}}])&&x(t.prototype,n),a&&x(t,a),Object.defineProperty(t,"prototype",{writable:!1}),e}(),C=function(e){var t=e[_];t&&t.stop&&t.stop(),delete e[_]},D=function(e,t){var n=t.value,i=t.modifiers,a={margin:"0px",once:!1,callback:n};Object(d.h)(i).forEach((function(e){k.f.test(e)?a.margin="".concat(e,"px"):"once"===e.toLowerCase()&&(a.once=!0)})),C(e),e[_]=new j(e,a),e[_]._prevModifiers=Object(d.b)(i)},S={bind:D,componentUpdated:function(e,t,n){var i=t.value,a=t.oldValue,r=t.modifiers;r=Object(d.b)(r),!e||i===a&&e[_]&&Object(O.a)(r,e[_]._prevModifiers)||D(e,{value:i,modifiers:r})},unbind:function(e){C(e)}};function T(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);t&&(i=i.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,i)}return n}function M(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?T(Object(n),!0).forEach((function(t){P(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):T(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function P(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var I=Object(u.d)(Object(d.m)(M(M(M(M(M(M({},m.b),p.b),h.b),v.b),g.b),{},{maxRows:Object(u.c)(r.p),noAutoShrink:Object(u.c)(r.g,!1),noResize:Object(u.c)(r.g,!1),rows:Object(u.c)(r.p,2),wrap:Object(u.c)(r.u,"soft")})),a.P),E=Object(i.c)({name:a.P,directives:{"b-visible":S},mixins:[w.a,m.a,y.a,p.a,h.a,v.a,g.a,f.a,b.a],props:I,data:function(){return{heightInPx:null}},computed:{type:function(){return null},computedStyle:function(){var e={resize:!this.computedRows||this.noResize?"none":null};return this.computedRows||(e.height=this.heightInPx,e.overflowY="scroll"),e},computedMinRows:function(){return Object(c.c)(Object(l.b)(this.rows,2),2)},computedMaxRows:function(){return Object(c.c)(this.computedMinRows,Object(l.b)(this.maxRows,0))},computedRows:function(){return this.computedMinRows===this.computedMaxRows?this.computedMinRows:null},computedAttrs:function(){var e=this.disabled,t=this.required;return{id:this.safeId(),name:this.name||null,form:this.form||null,disabled:e,placeholder:this.placeholder||null,required:t,autocomplete:this.autocomplete||null,readonly:this.readonly||this.plaintext,rows:this.computedRows,wrap:this.wrap||null,"aria-required":this.required?"true":null,"aria-invalid":this.computedAriaInvalid}},computedListeners:function(){return M(M({},this.bvListeners),{},{input:this.onInput,change:this.onChange,blur:this.onBlur})}},watch:{localValue:function(){this.setHeight()}},mounted:function(){this.setHeight()},methods:{visibleCallback:function(e){e&&this.$nextTick(this.setHeight)},setHeight:function(){var e=this;this.$nextTick((function(){Object(o.B)((function(){e.heightInPx=e.computeHeight()}))}))},computeHeight:function(){if(this.$isServer||!Object(s.g)(this.computedRows))return null;var e=this.$el;if(!Object(o.u)(e))return null;var t=Object(o.k)(e),n=Object(l.a)(t.lineHeight,1),i=Object(l.a)(t.borderTopWidth,0)+Object(l.a)(t.borderBottomWidth,0),a=Object(l.a)(t.paddingTop,0)+Object(l.a)(t.paddingBottom,0),r=i+a,d=n*this.computedMinRows+r,u=Object(o.m)(e,"height")||t.height;Object(o.F)(e,"height","auto");var p=e.scrollHeight;Object(o.F)(e,"height",u);var f=Object(c.c)((p-a)/n,2),h=Object(c.d)(Object(c.c)(f,this.computedMinRows),this.computedMaxRows),v=Object(c.c)(Object(c.a)(h*n+r),d);return this.noAutoShrink&&Object(l.a)(u,0)>v?u:"".concat(v,"px")}},render:function(e){return e("textarea",{class:this.computedClass,style:this.computedStyle,directives:[{name:"b-visible",value:this.visibleCallback,modifiers:{640:!0}}],attrs:this.computedAttrs,domProps:{value:this.localValue},on:this.computedListeners,ref:"input"})}})},nj01:function(e,t,n){"use strict";n.r(t);var i=n("x+uP"),a=n("HaE+"),r=(n("07d7"),n("x0AG"),n("FNk8"),n("sMBO"),n("pNMO"),n("4Brf"),n("pDQq"),n("TeQF"),n("B6y2"),n("BIHw"),n("QGkA"),n("OOfG"),n("7Ql6")),o=n("dq6P"),s=n("4AkS"),c=n("tvh2"),l=n("fx5J"),d=n("oVt+"),u=n("sove"),p=n("IF94"),f=n("YZfj"),h=n("GUe+"),v=n("1uQM"),g=n("Ed67"),b=n("giZP"),m=n("R5cT"),y=n("XhI9"),w=n("NlY+"),k=n("nH37"),O=n("w+YJ"),x=n("OCip"),_=n("AeMN"),j=n("mwM1"),C=n("Obrr"),D=n("Snq/"),S=n.n(D),T=n("w48C"),M=n.n(T),P=n("wE39"),I=n("+TAz"),E=n("x7Ef"),F=n("sbXi"),A=n("gBsl"),$=n("BLC3"),L=n("OIjt"),R=new F.a,B=new E.a,z={name:"CreateTransfer",components:{BRow:d.a,BCol:u.a,BCard:p.a,BCardBody:f.a,BButton:h.a,BCardText:v.a,BForm:g.a,BFormGroup:b.a,BFormInput:m.a,BInputGroup:y.a,BInputGroupPrepend:w.a,BFormTextarea:k.a,BFormCheckbox:O.a,BPopover:x.a,flatPickr:M.a,BSpinner:_.a,BOverlay:j.a,vSelect:S.a,SearchMedicine:P.a,ToastificationContent:L.a},directives:{Ripple:s.a,"b-toggle":C.a},mixins:[o.a],computed:{canSave:function(){return this.invoiceData.items.length>0&&this.invoiceData.items.every((function(e){return e.quantity>0&&e.quantity<=e.stock}))}},mounted:function(){this.initTrHeight(),this.invoiceData.reference=this.generateReference("TR-")},created:function(){window.addEventListener("resize",this.initTrHeight)},destroyed:function(){window.removeEventListener("resize",this.initTrHeight)},methods:{addNewItemInItemForm:function(e){var t=this;this.$refs.form.style.overflow="hidden";var n=this.invoiceData.items.findIndex((function(t){return t.medicine_id==e.id}));n>-1?this.invoiceData.items[n].quantity+=1:(this.disableStore=!0,this.invoiceData.items.push({medicine_id:e.id,name:e.name,sku:e.sku,quantity:1,stock:e.current_stock,description:e.description}),this.$nextTick((function(){t.trAddHeight(t.$refs.row[0].offsetHeight),setTimeout((function(){t.$refs.form.style.overflow=null}),350)})))},removeItem:function(e){this.invoiceData.items.splice(e,1),this.trTrimHeight(this.$refs.row[0].offsetHeight)},initTrHeight:function(){var e=this;this.trSetHeight(null),this.$nextTick((function(){e.trSetHeight(e.$refs.form.scrollHeight)}))}},setup:function(){var e=Object(r.ref)([]),t=Object(r.ref)([]),n=Object(r.ref)(!1),o=Object(r.ref)(!1),s=Object(r.ref)(!1),d=Object(A.a)().t,u=Object($.useToast)(),p=function(){var t=Object(a.a)(Object(i.a)().mark((function t(){var n,a;return Object(i.a)().wrap((function(t){for(;;)switch(t.prev=t.next){case 0:return o.value=!0,t.next=3,R.index({all:!0});case 3:n=t.sent,a=n.data,o.value=!1,e.value=a.data;case 7:case"end":return t.stop()}}),t)})));return function(){return t.apply(this,arguments)}}();Object(r.onMounted)(Object(a.a)(Object(i.a)().mark((function e(){return Object(i.a)().wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,p();case 2:case"end":return e.stop()}}),e)}))));var f=Object(r.ref)({from_warehouse_id:null,to_warehouse_id:null,user_id:c.a.state.auth.user.id,reference:null,transfer_date:new Date,status:"completed",items:[],note:null}),h=[{value:"completed",label:d("inventories.transfers.status.completed")}],v={validStock:d("inventories.transfers.valid_stock")},g=function(){var e=Object(a.a)(Object(i.a)().mark((function e(){var t,n;return Object(i.a)().wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return e.prev=0,o.value=!0,e.next=4,B.store(f.value);case 4:t=e.sent,n=t.data,o.value=!1,n.success?(u({component:L.a,props:{title:n.message,icon:"CheckIcon",variant:"success"}}),l.a.push({name:"apps-inventories-transfers"})):u({component:L.a,props:{title:n.message,icon:"AlertCircleIcon",variant:"danger"}}),e.next=14;break;case 10:e.prev=10,e.t0=e.catch(0),o.value=!1,i=e.t0,a=void 0,r=void 0,console.log(i.response),422===i.response.status?u({component:L.a,props:{title:(a=i.response.data.errors,r=Object.values(a),(r=r.flat())[0]),icon:"AlertCircleIcon",variant:"danger"}}):u({component:L.a,props:{title:i.message,icon:"AlertCircleIcon",variant:"danger"}});case 14:case"end":return e.stop()}var i,a,r}),e,null,[[0,10]])})));return function(){return e.apply(this,arguments)}}();return{loading:o,invoiceData:f,fromWarehousesData:e,toWarehousesData:t,transferStatus:h,disableStore:s,updateItemForm:function(e){var t=parseFloat(e.quantity);isNaN(t)?e.quantity=0:t>parseFloat(e.stock)?(e.quantity=0,I.a(v.validStock)):e.quantity=t},selectFromWarehouse:function(n){f.value.to_warehouse_id=null,t.value=e.value.filter((function(e){return e.id!=n}))},itemFormBlankItem:{},activeSearchMedicine:n,storeTransfer:g}}},N=(n("r6bN"),n("/dg/"),n("KHd+")),H=Object(N.a)(z,(function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("b-overlay",{attrs:{show:e.loading,blur:"2px",variant:"transparent",rounded:"lg",opacity:"0.85"},scopedSlots:e._u([{key:"overlay",fn:function(){return[n("div",{staticClass:"d-flex align-items-center"},[n("b-spinner",{attrs:{small:"",type:"grow",variant:"secondary"}}),e._v(" "),n("b-spinner",{attrs:{type:"grow",variant:"dark"}}),e._v(" "),n("b-spinner",{attrs:{small:"",type:"grow",variant:"secondary"}})],1)]},proxy:!0}])},[e._v(" "),n("section",{staticClass:"invoice-add-wrapper"},[n("b-row",{staticClass:"invoice-add"},[n("b-col",{attrs:{cols:"12",xl:"9",md:"8"}},[n("b-form",{on:{submit:function(e){e.preventDefault()}}},[n("b-card",[n("b-row",[n("b-col",{attrs:{cols:"12",xl:"6"}},[n("div",[n("label",{staticClass:"mb-50"},[e._v(e._s(e.$t("inventories.transfers.fields.from_warehouse")))]),e._v(" "),n("v-select",{staticClass:"select-size-sm",attrs:{disabled:e.invoiceData.items.length>0,options:e.fromWarehousesData,label:"name",clearable:!1,searchable:!1,reduce:function(e){return e.id},placeholder:e.$t("inventories.transfers.fields.from_warehouse_placeholder")},on:{input:e.selectFromWarehouse},model:{value:e.invoiceData.from_warehouse_id,callback:function(t){e.$set(e.invoiceData,"from_warehouse_id",t)},expression:"invoiceData.from_warehouse_id"}})],1),e._v(" "),n("div",[n("label",{staticClass:"mb-50"},[e._v(e._s(e.$t("inventories.transfers.fields.to_warehouse")))]),e._v(" "),n("v-select",{staticClass:"select-size-sm",attrs:{disabled:e.invoiceData.items.length>0,options:e.toWarehousesData,label:"name",clearable:!1,searchable:!1,reduce:function(e){return e.id},placeholder:e.$t("inventories.transfers.fields.to_warehouse_placeholder")},model:{value:e.invoiceData.to_warehouse_id,callback:function(t){e.$set(e.invoiceData,"to_warehouse_id",t)},expression:"invoiceData.to_warehouse_id"}})],1),e._v(" "),e.invoiceData.from_warehouse_id&&e.invoiceData.to_warehouse_id?n("div",[n("b-form-group",{attrs:{label:e.$t("medicine_search"),"label-for":"search-medicine",description:e.$t("medicine_search_help")}},[n("b-input-group",{staticClass:"input-group-merge"},[n("b-input-group-prepend",{attrs:{"is-text":""}},[n("feather-icon",{attrs:{icon:"SearchIcon"}})],1),e._v(" "),n("b-form-input",{attrs:{size:"sm",readonly:"",placeholder:e.$t("medicine_search_help")},on:{click:function(t){e.activeSearchMedicine=!0}}})],1)],1),e._v(" "),n("search-medicine",{attrs:{active:e.activeSearchMedicine,"is-transfer":!0,warehouse:e.invoiceData.from_warehouse_id},on:{selected:e.addNewItemInItemForm,close:function(t){e.activeSearchMedicine=!1}}})],1):e._e()]),e._v(" "),n("b-col",{staticClass:"mt-xl-0 mt-2 justify-content-end d-xl-flex d-block",attrs:{xl:"6",cols:"12"}},[n("table",[n("tbody",[n("tr",[n("td",[e._v(e._s(e.$t("inventories.transfers.fields.reference")))]),e._v(" "),n("td",[n("b-form-input",{staticClass:"invoice-edit-input",attrs:{id:"invoice-data-id",size:"sm",placeholder:e.$t("inventories.transfers.fields.reference_placeholder")},model:{value:e.invoiceData.reference,callback:function(t){e.$set(e.invoiceData,"reference",t)},expression:"invoiceData.reference"}})],1)]),e._v(" "),n("tr",[n("td",[e._v(e._s(e.$t("inventories.transfers.fields.date")))]),e._v(" "),n("td",[n("flat-pickr",{staticClass:"form-control invoice-edit-input mt-1",model:{value:e.invoiceData.transfer_date,callback:function(t){e.$set(e.invoiceData,"transfer_date",t)},expression:"invoiceData.transfer_date"}})],1)]),e._v(" "),n("tr",[n("td",[e._v(e._s(e.$t("inventories.transfers.fields.state")))]),e._v(" "),n("td",[n("v-select",{staticClass:"invoice-edit-input w-100 mt-1 select-size-sm",attrs:{options:e.transferStatus,label:"label",clearable:!1,reduce:function(e){return e.value},placeholder:e.$t("inventories.transfers.fields.state_placeholder")},model:{value:e.invoiceData.status,callback:function(t){e.$set(e.invoiceData,"status",t)},expression:"invoiceData.status"}})],1)])])])])],1),e._v(" "),n("b-row",[n("b-col",{attrs:{cols:"12",md:"12"}},[n("div",{ref:"form",staticClass:"repeater-form",style:{height:e.trHeight}},e._l(e.invoiceData.items,(function(t,i){return n("b-row",{key:i,ref:"row",refInFor:!0,staticClass:"pb-2"},[n("b-col",{attrs:{cols:"12"}},[n("div",{staticClass:"d-none d-lg-flex"},[n("b-row",{staticClass:"flex-grow-1 px-1"},[n("b-col",{attrs:{cols:"12",lg:"6"}},[e._v(e._s(e.$t("inventories.transfers.table.items.medicine")))]),e._v(" "),n("b-col",{attrs:{cols:"12",lg:"3"}},[e._v(e._s(e.$t("inventories.transfers.table.items.stock")))]),e._v(" "),n("b-col",{attrs:{cols:"12",lg:"3"}},[e._v(e._s(e.$t("inventories.transfers.table.items.quantity")))])],1),e._v(" "),n("div",{staticClass:"form-item-action-col"})],1),e._v(" "),n("div",{staticClass:"d-flex border rounded"},[n("b-row",{staticClass:"flex-grow-1 p-2"},[n("b-col",{attrs:{cols:"12",lg:"6"}},[n("label",{staticClass:"d-inline d-lg-none"},[e._v(e._s(e.$t("inventories.transfers.table.items.medicine")))]),e._v(" "),n("b-form-input",{attrs:{readonly:"",size:"sm"},model:{value:t.name,callback:function(n){e.$set(t,"name",n)},expression:"item.name"}})],1),e._v(" "),n("b-col",{attrs:{cols:"12",lg:"3"}},[n("label",{staticClass:"d-inline  d-lg-none"},[e._v(e._s(e.$t("inventories.transfers.table.items.stock")))]),e._v(" "),n("b-form-input",{staticClass:"mb-2",attrs:{size:"sm",type:"number",disabled:""},model:{value:t.stock,callback:function(n){e.$set(t,"stock",n)},expression:"item.stock"}})],1),e._v(" "),n("b-col",{attrs:{cols:"12",lg:"3"}},[n("label",{staticClass:"d-inline d-lg-none"},[e._v(e._s(e.$t("inventories.transfers.table.items.quantity")))]),e._v(" "),n("b-form-input",{staticClass:"mb-2",attrs:{autocomplete:"off",type:"number",size:"sm",placeholder:"Ejem. 10"},nativeOn:{input:function(n){return e.updateItemForm(t)}},model:{value:t.quantity,callback:function(n){e.$set(t,"quantity",n)},expression:"item.quantity"}})],1),e._v(" "),n("b-col",{attrs:{cols:"12",lg:"6"}},[n("label",{staticClass:"d-inline d-lg-none"},[e._v(e._s(e.$t("inventories.transfers.table.items.description")))]),e._v(" "),n("p",{staticClass:"mb-1"},[e._v("\n                                                                SKU: "+e._s(t.sku)),n("br"),e._v("\n                                                                "+e._s(t.description)+"\n                                                            ")])])],1),e._v(" "),n("div",{staticClass:"d-flex flex-column justify-content-between border-left py-50 px-25"},[n("feather-icon",{staticClass:"cursor-pointer",attrs:{size:"16",icon:"XIcon"},on:{click:function(t){return e.removeItem(i)}}})],1)],1)])],1)})),1)])],1),e._v(" "),n("b-row",[n("b-col",{attrs:{cols:"12",md:"6",order:"2","order-md":"1"}},[n("b-form-group",{attrs:{label:e.$t("inventories.transfers.fields.comments"),"label-for":"comments",description:e.$t("inventories.transfers.fields.comments_help")}},[n("b-form-textarea",{attrs:{id:"comments",size:"sm",placeholder:e.$t("inventories.transfers.fields.comments_placeholder")},model:{value:e.invoiceData.note,callback:function(t){e.$set(e.invoiceData,"note",t)},expression:"invoiceData.note"}})],1)],1),e._v(" "),n("b-col",{staticClass:"mt-md-6 d-flex justify-content-end",attrs:{cols:"12",md:"6",order:"1","order-md":"2"}},[n("div",{staticClass:"demo-inline-spacing"},[n("b-button",{directives:[{name:"ripple",rawName:"v-ripple.400",value:"rgba(255, 255, 255, 0.15)",expression:"'rgba(255, 255, 255, 0.15)'",modifiers:{400:!0}}],attrs:{variant:"secondary"},on:{click:function(t){return e.$router.push({name:"apps-inventories-transfers"})}}},[e._v("\n                                            "+e._s(e.$t("back"))+"\n                                        ")]),e._v(" "),n("b-button",{directives:[{name:"ripple",rawName:"v-ripple.400",value:"rgba(255, 255, 255, 0.15)",expression:"'rgba(255, 255, 255, 0.15)'",modifiers:{400:!0}}],attrs:{disabled:!e.canSave||e.loading,variant:"primary"},on:{click:e.storeTransfer}},[e._v("\n                                            "+e._s(e.$t("save"))+"\n                                        ")])],1)])],1)],1)],1)],1),e._v(" "),n("b-col",{staticClass:"invoice-actions mt-md-0 mt-2",attrs:{cols:"12",md:"4",xl:"3"}})],1)],1)])}),[],!1,null,"78fe02a8",null);t.default=H.exports},oXok:function(e,t,n){"use strict";n.d(t,"a",(function(){return Q}));var i=n("L3ns"),a=n("xjcK"),r=n("AFYn"),o=n("m/oX"),s=n("pyNs"),c=n("mS7b"),l=n("m3aq"),d=n("Iyau"),u=n("A7Ib"),p=n("kGy3"),f=n("a3f1"),h=n("bAY6"),v=n("ex6f"),g=n("PCFI"),b=n("WPLV"),m=n("2C+6"),y=n("z3V6"),w=n("+nMp"),k=n("3ec0"),O=n("rUdO"),x=n("1SAT"),_=n("kO/s"),j=n("vJrl"),C=n("jBgq"),D=n("GUe+"),S=n("MBD0"),T=n("lQ/x"),M=n("6Ytq"),P=n("8p45");function I(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);t&&(i=i.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,i)}return n}function E(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?I(Object(n),!0).forEach((function(t){F(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):I(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function F(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var A,$=Object(y.d)(Object(m.m)(E(E({},_.b),{},{disabled:Object(y.c)(s.g,!1),noRemove:Object(y.c)(s.g,!1),pill:Object(y.c)(s.g,!1),removeLabel:Object(y.c)(s.u,"Remove tag"),tag:Object(y.c)(s.u,"span"),title:Object(y.c)(s.u),variant:Object(y.c)(s.u,"secondary")})),a.M),L=Object(i.c)({name:a.M,mixins:[_.a,C.a],props:$,methods:{onRemove:function(e){var t=e.type,n=e.keyCode;this.disabled||"click"!==t&&("keydown"!==t||n!==o.b)||this.$emit(r.K)}},render:function(e){var t=this.title,n=this.tag,i=this.variant,a=this.pill,r=this.disabled,o=this.safeId(),s=this.safeId("_taglabel_"),c=e();this.noRemove||r||(c=e(P.a,{staticClass:"b-form-tag-remove",props:{ariaLabel:this.removeLabel},attrs:{"aria-controls":o,"aria-describedby":s,"aria-keyshortcuts":"Delete"},on:{click:this.onRemove,keydown:this.onRemove}}));var l=e("span",{staticClass:"b-form-tag-content flex-grow-1 text-truncate",attrs:{id:s}},this.normalizeSlot()||t);return e(M.a,{staticClass:"b-form-tag d-inline-flex align-items-baseline mw-100",class:{disabled:r},props:{tag:n,variant:i,pill:a},attrs:{id:o,title:t||null,"aria-labelledby":s}},[l,c])}});function R(e){return function(e){if(Array.isArray(e))return B(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||function(e,t){if(!e)return;if("string"==typeof e)return B(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return B(e,t)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function B(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,i=new Array(t);n<t;n++)i[n]=e[n];return i}function z(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);t&&(i=i.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,i)}return n}function N(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?z(Object(n),!0).forEach((function(t){H(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):z(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function H(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var V=Object(b.a)("value",{type:s.b,defaultValue:[]}),Y=V.mixin,W=V.props,q=V.prop,G=V.event,K=["text","email","tel","url","number"],J=[".b-form-tag","button","input","select"].join(" "),U=function(e){return Object(d.b)(e).map((function(e){return Object(w.h)(Object(w.g)(e))})).filter((function(e,t,n){return e.length>0&&n.indexOf(e)===t}))},X=function(e){return Object(v.n)(e)?e:Object(v.d)(e)&&e.target.value||""},Z=Object(y.d)(Object(m.m)(N(N(N(N(N(N({},_.b),W),k.b),O.b),x.b),{},{addButtonText:Object(y.c)(s.u,"Add"),addButtonVariant:Object(y.c)(s.u,"outline-secondary"),addOnChange:Object(y.c)(s.g,!1),duplicateTagText:Object(y.c)(s.u,"Duplicate tag(s)"),feedbackAriaLive:Object(y.c)(s.u,"assertive"),ignoreInputFocusSelector:Object(y.c)(s.f,J),inputAttrs:Object(y.c)(s.q,{}),inputClass:Object(y.c)(s.e),inputId:Object(y.c)(s.u),inputType:Object(y.c)(s.u,"text",(function(e){return Object(d.a)(K,e)})),invalidTagText:Object(y.c)(s.u,"Invalid tag(s)"),limit:Object(y.c)(s.n),limitTagsText:Object(y.c)(s.u,"Tag limit reached"),noAddOnEnter:Object(y.c)(s.g,!1),noOuterFocus:Object(y.c)(s.g,!1),noTagRemove:Object(y.c)(s.g,!1),placeholder:Object(y.c)(s.u,"Add tag..."),removeOnDelete:Object(y.c)(s.g,!1),separator:Object(y.c)(s.f),tagClass:Object(y.c)(s.e),tagPills:Object(y.c)(s.g,!1),tagRemoveLabel:Object(y.c)(s.u,"Remove tag"),tagRemovedLabel:Object(y.c)(s.u,"Tag removed"),tagValidator:Object(y.c)(s.l),tagVariant:Object(y.c)(s.u,"secondary")})),a.N),Q=Object(i.c)({name:a.N,mixins:[j.a,_.a,Y,k.a,O.a,x.a,C.a],props:Z,data:function(){return{hasFocus:!1,newTag:"",tags:[],removedTags:[],tagsState:{all:[],valid:[],invalid:[],duplicate:[]},focusState:null}},computed:{computedInputId:function(){return this.inputId||this.safeId("__input__")},computedInputType:function(){return Object(d.a)(K,this.inputType)?this.inputType:"text"},computedInputAttrs:function(){var e=this.disabled,t=this.form;return N(N({},this.inputAttrs),{},{id:this.computedInputId,value:this.newTag,disabled:e,form:t})},computedInputHandlers:function(){return N(N({},Object(m.j)(this.bvListeners,[r.t,r.u])),{},{blur:this.onInputBlur,change:this.onInputChange,focus:this.onInputFocus,input:this.onInputInput,keydown:this.onInputKeydown,reset:this.reset})},computedSeparator:function(){return Object(d.b)(this.separator).filter(v.n).filter(h.a).join("")},computedSeparatorRegExp:function(){var e,t=this.computedSeparator;return t?new RegExp("[".concat((e=t,Object(w.a)(e).replace(c.t,"\\s")),"]+")):null},computedJoiner:function(){var e=this.computedSeparator.charAt(0);return" "!==e?"".concat(e," "):e},computeIgnoreInputFocusSelector:function(){return Object(d.b)(this.ignoreInputFocusSelector).filter(h.a).join(",").trim()},disableAddButton:function(){var e=this,t=Object(w.h)(this.newTag);return""===t||!this.splitTags(t).some((function(t){return!Object(d.a)(e.tags,t)&&e.validateTag(t)}))},duplicateTags:function(){return this.tagsState.duplicate},hasDuplicateTags:function(){return this.duplicateTags.length>0},invalidTags:function(){return this.tagsState.invalid},hasInvalidTags:function(){return this.invalidTags.length>0},isLimitReached:function(){var e=this.limit;return Object(v.h)(e)&&e>=0&&this.tags.length>=e}},watch:(A={},H(A,q,(function(e){this.tags=U(e)})),H(A,"tags",(function(e,t){Object(g.a)(e,this[q])||this.$emit(G,e),Object(g.a)(e,t)||(e=Object(d.b)(e).filter(h.a),t=Object(d.b)(t).filter(h.a),this.removedTags=t.filter((function(t){return!Object(d.a)(e,t)})))})),H(A,"tagsState",(function(e,t){Object(g.a)(e,t)||this.$emit(r.V,e.valid,e.invalid,e.duplicate)})),A),created:function(){this.tags=U(this[q])},mounted:function(){var e=Object(p.e)("form",this.$el);e&&Object(f.b)(e,"reset",this.reset,r.Z)},beforeDestroy:function(){var e=Object(p.e)("form",this.$el);e&&Object(f.a)(e,"reset",this.reset,r.Z)},methods:{addTag:function(e){if(e=Object(v.n)(e)?e:this.newTag,!this.disabled&&""!==Object(w.h)(e)&&!this.isLimitReached){var t=this.parseTags(e);if(t.valid.length>0||0===t.all.length)if(Object(p.v)(this.getInput(),"select"))this.newTag="";else{var n=[].concat(R(t.invalid),R(t.duplicate));this.newTag=t.all.filter((function(e){return Object(d.a)(n,e)})).join(this.computedJoiner).concat(n.length>0?this.computedJoiner.charAt(0):"")}t.valid.length>0&&(this.tags=Object(d.b)(this.tags,t.valid)),this.tagsState=t,this.focus()}},removeTag:function(e){this.disabled||(this.tags=this.tags.filter((function(t){return t!==e})))},reset:function(){var e=this;this.newTag="",this.tags=[],this.$nextTick((function(){e.removedTags=[],e.tagsState={all:[],valid:[],invalid:[],duplicate:[]}}))},onInputInput:function(e){if(!(this.disabled||Object(v.d)(e)&&e.target.composing)){var t=X(e),n=this.computedSeparatorRegExp;this.newTag!==t&&(this.newTag=t),t=Object(w.i)(t),n&&n.test(t.slice(-1))?this.addTag():this.tagsState=""===t?{all:[],valid:[],invalid:[],duplicate:[]}:this.parseTags(t)}},onInputChange:function(e){if(!this.disabled&&this.addOnChange){var t=X(e);this.newTag!==t&&(this.newTag=t),this.addTag()}},onInputKeydown:function(e){if(!this.disabled&&Object(v.d)(e)){var t=e.keyCode,n=e.target.value||"";this.noAddOnEnter||t!==o.e?!this.removeOnDelete||t!==o.a&&t!==o.b||""!==n||(Object(f.f)(e,{propagation:!1}),this.tags=this.tags.slice(0,-1)):(Object(f.f)(e,{propagation:!1}),this.addTag())}},onClick:function(e){var t=this,n=this.computeIgnoreInputFocusSelector;n&&Object(p.e)(n,e.target,!0)||this.$nextTick((function(){t.focus()}))},onInputFocus:function(e){var t=this;"out"!==this.focusState&&(this.focusState="in",this.$nextTick((function(){Object(p.B)((function(){t.hasFocus&&(t.$emit(r.s,e),t.focusState=null)}))})))},onInputBlur:function(e){var t=this;"in"!==this.focusState&&(this.focusState="out",this.$nextTick((function(){Object(p.B)((function(){t.hasFocus||(t.$emit(r.b,e),t.focusState=null)}))})))},onFocusin:function(e){this.hasFocus=!0,this.$emit(r.t,e)},onFocusout:function(e){this.hasFocus=!1,this.$emit(r.u,e)},handleAutofocus:function(){var e=this;this.$nextTick((function(){Object(p.B)((function(){e.autofocus&&e.focus()}))}))},focus:function(){this.disabled||Object(p.d)(this.getInput())},blur:function(){this.disabled||Object(p.c)(this.getInput())},splitTags:function(e){e=Object(w.g)(e);var t=this.computedSeparatorRegExp;return(t?e.split(t):[e]).map(w.h).filter(h.a)},parseTags:function(e){var t=this,n=this.splitTags(e),i={all:n,valid:[],invalid:[],duplicate:[]};return n.forEach((function(e){Object(d.a)(t.tags,e)||Object(d.a)(i.valid,e)?Object(d.a)(i.duplicate,e)||i.duplicate.push(e):t.validateTag(e)?i.valid.push(e):Object(d.a)(i.invalid,e)||i.invalid.push(e)})),i},validateTag:function(e){var t=this.tagValidator;return!Object(y.b)(t)||t(e)},getInput:function(){return Object(p.C)("#".concat(Object(u.a)(this.computedInputId)),this.$el)},defaultRender:function(e){var t=e.addButtonText,n=e.addButtonVariant,i=e.addTag,a=e.disableAddButton,r=e.disabled,o=e.duplicateTagText,s=e.inputAttrs,c=e.inputClass,d=e.inputHandlers,u=e.inputType,p=e.invalidTagText,f=e.isDuplicate,v=e.isInvalid,g=e.isLimitReached,b=e.limitTagsText,m=e.noTagRemove,y=e.placeholder,k=e.removeTag,O=e.tagClass,x=e.tagPills,_=e.tagRemoveLabel,j=e.tagVariant,C=e.tags,M=this.$createElement,P=C.map((function(e){return e=Object(w.g)(e),M(L,{class:O,props:{disabled:r,noRemove:m,pill:x,removeLabel:_,tag:"li",title:e,variant:j},on:{remove:function(){return k(e)}},key:"tags_".concat(e)},e)})),I=p&&v?this.safeId("__invalid_feedback__"):null,E=o&&f?this.safeId("__duplicate_feedback__"):null,F=b&&g?this.safeId("__limit_feedback__"):null,A=[s["aria-describedby"],I,E,F].filter(h.a).join(" "),$=M("input",{staticClass:"b-form-tags-input w-100 flex-grow-1 p-0 m-0 bg-transparent border-0",class:c,style:{outline:0,minWidth:"5rem"},attrs:N(N({},s),{},{"aria-describedby":A||null,type:u,placeholder:y||null}),domProps:{value:s.value},on:d,directives:[{name:"model",value:s.value}],ref:"input"}),R=M(D.a,{staticClass:"b-form-tags-button py-0",class:{invisible:a},style:{fontSize:"90%"},props:{disabled:a||g,variant:n},on:{click:function(){return i()}},ref:"button"},[this.normalizeSlot(l.a)||t]),B=this.safeId("__tag_list__"),z=M("li",{staticClass:"b-form-tags-field flex-grow-1",attrs:{role:"none","aria-live":"off","aria-controls":B},key:"tags_field"},[M("div",{staticClass:"d-flex",attrs:{role:"group"}},[$,R])]),H=M("ul",{staticClass:"b-form-tags-list list-unstyled mb-0 d-flex flex-wrap align-items-center",attrs:{id:B},key:"tags_list"},[P,z]),V=M();if(p||o||b){var Y=this.feedbackAriaLive,W=this.computedJoiner,q=M();I&&(q=M(S.a,{props:{id:I,ariaLive:Y,forceShow:!0},key:"tags_invalid_feedback"},[this.invalidTagText,": ",this.invalidTags.join(W)]));var G=M();E&&(G=M(T.a,{props:{id:E,ariaLive:Y},key:"tags_duplicate_feedback"},[this.duplicateTagText,": ",this.duplicateTags.join(W)]));var K=M();F&&(K=M(T.a,{props:{id:F,ariaLive:Y},key:"tags_limit_feedback"},[b])),V=M("div",{attrs:{"aria-live":"polite","aria-atomic":"true"},key:"tags_feedback"},[q,G,K])}return[H,V]}},render:function(e){var t=this.name,n=this.disabled,i=this.required,a=this.form,r=this.tags,o=this.computedInputId,s=this.hasFocus,c=this.noOuterFocus,d=N({tags:r.slice(),inputAttrs:this.computedInputAttrs,inputType:this.computedInputType,inputHandlers:this.computedInputHandlers,removeTag:this.removeTag,addTag:this.addTag,reset:this.reset,inputId:o,isInvalid:this.hasInvalidTags,invalidTags:this.invalidTags.slice(),isDuplicate:this.hasDuplicateTags,duplicateTags:this.duplicateTags.slice(),isLimitReached:this.isLimitReached,disableAddButton:this.disableAddButton},Object(m.k)(this.$props,["addButtonText","addButtonVariant","disabled","duplicateTagText","form","inputClass","invalidTagText","limit","limitTagsText","noTagRemove","placeholder","required","separator","size","state","tagClass","tagPills","tagRemoveLabel","tagVariant"])),u=this.normalizeSlot(l.i,d)||this.defaultRender(d),p=e("output",{staticClass:"sr-only",attrs:{id:this.safeId("__selected_tags__"),role:"status",for:o,"aria-live":s?"polite":"off","aria-atomic":"true","aria-relevant":"additions text"}},this.tags.join(", ")),f=e("div",{staticClass:"sr-only",attrs:{id:this.safeId("__removed_tags__"),role:"status","aria-live":s?"assertive":"off","aria-atomic":"true"}},this.removedTags.length>0?"(".concat(this.tagRemovedLabel,") ").concat(this.removedTags.join(", ")):""),h=e();if(t&&!n){var v=r.length>0;h=(v?r:[""]).map((function(n){return e("input",{class:{"sr-only":!v},attrs:{type:v?"hidden":"text",value:n,required:i,name:t,form:a},key:"tag_input_".concat(n)})}))}return e("div",{staticClass:"b-form-tags form-control h-auto",class:[{focus:s&&!c&&!n,disabled:n},this.sizeFormClass,this.stateClass],attrs:{id:this.safeId(),role:"group",tabindex:n||c?null:"-1","aria-describedby":this.safeId("__selected_tags__")},on:{click:this.onClick,focusin:this.onFocusin,focusout:this.onFocusout}},[p,f,u,h])}})},pNMO:function(e,t,n){n("2fXf"),n("tPgW"),n("xRNQ"),n("6cQw"),n("WkfP")},qVMd:function(e,t,n){"use strict";n.d(t,"b",(function(){return o})),n.d(t,"a",(function(){return s}));var i=n("L3ns"),a=n("pyNs"),r=n("z3V6"),o=Object(r.d)({plain:Object(r.c)(a.g,!1)},"formControls"),s=Object(i.c)({props:o,computed:{custom:function(){return!this.plain}}})},r6bN:function(e,t,n){"use strict";n("MnyD")},sbXi:function(e,t,n){"use strict";n.d(t,"a",(function(){return s}));var i=n("1OyB"),a=n("vuIU"),r=n("vDqi"),o=n.n(r),s=function(){function e(){Object(i.a)(this,e)}return Object(a.a)(e,[{key:"index",value:function(e){return o.a.get("/api/inventories/warehouses",{params:e})}},{key:"store",value:function(e){return o.a.post("/api/inventories/warehouses",e)}},{key:"destroy",value:function(e){return o.a.delete("/api/inventories/warehouses/".concat(e))}},{key:"update",value:function(e,t){return o.a.put("/api/inventories/warehouses/".concat(e),t)}},{key:"show",value:function(e){return o.a.get("/api/inventories/warehouses/".concat(e))}}]),e}()},tK4P:function(e,t,n){"use strict";n.d(t,"b",(function(){return O})),n.d(t,"a",(function(){return x}));var i,a,r=n("L3ns"),o=n("xjcK"),s=n("AFYn"),c=n("pyNs"),l=n("yoge"),d=n("iHiM"),u=n("vika"),p=n("ex6f"),f=n("2C+6"),h=n("z3V6"),v=n("Oa0e"),g=n("jBgq"),b=n("jfhb");function m(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);t&&(i=i.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,i)}return n}function y(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var w=s.cb+"disabled",k=s.cb+"show",O=Object(h.d)((y(i={boundary:Object(h.c)([l.c,c.q,c.u],"scrollParent"),boundaryPadding:Object(h.c)(c.p,50),container:Object(h.c)([l.c,c.q,c.u]),customClass:Object(h.c)(c.u),delay:Object(h.c)(c.o,50)},"disabled",Object(h.c)(c.g,!1)),y(i,"fallbackPlacement",Object(h.c)(c.f,"flip")),y(i,"id",Object(h.c)(c.u)),y(i,"noFade",Object(h.c)(c.g,!1)),y(i,"noninteractive",Object(h.c)(c.g,!1)),y(i,"offset",Object(h.c)(c.p,0)),y(i,"placement",Object(h.c)(c.u,"top")),y(i,"show",Object(h.c)(c.g,!1)),y(i,"target",Object(h.c)([l.c,l.d,c.l,c.q,c.u],void 0,!0)),y(i,"title",Object(h.c)(c.u)),y(i,"triggers",Object(h.c)(c.f,"hover focus")),y(i,"variant",Object(h.c)(c.u)),i),o.Mb),x=Object(r.c)({name:o.Mb,mixins:[g.a,d.a],inheritAttrs:!1,props:O,data:function(){return{localShow:this.show,localTitle:"",localContent:""}},computed:{templateData:function(){return function(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?m(Object(n),!0).forEach((function(t){y(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):m(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}({title:this.localTitle,content:this.localContent,interactive:!this.noninteractive},Object(f.k)(this.$props,["boundary","boundaryPadding","container","customClass","delay","fallbackPlacement","id","noFade","offset","placement","target","target","triggers","variant","disabled"]))},templateTitleContent:function(){return{title:this.title,content:this.content}}},watch:(a={},y(a,"show",(function(e,t){e!==t&&e!==this.localShow&&this.$_toolpop&&(e?this.$_toolpop.show():this.$_toolpop.forceHide())})),y(a,"disabled",(function(e){e?this.doDisable():this.doEnable()})),y(a,"localShow",(function(e){this.$emit(k,e)})),y(a,"templateData",(function(){var e=this;this.$nextTick((function(){e.$_toolpop&&e.$_toolpop.updateData(e.templateData)}))})),y(a,"templateTitleContent",(function(){this.$nextTick(this.updateContent)})),a),created:function(){this.$_toolpop=null},updated:function(){this.$nextTick(this.updateContent)},beforeDestroy:function(){this.$off(s.F,this.doOpen),this.$off(s.g,this.doClose),this.$off(s.k,this.doDisable),this.$off(s.o,this.doEnable),this.$_toolpop&&(this.$_toolpop.$destroy(),this.$_toolpop=null)},mounted:function(){var e=this;this.$nextTick((function(){var t=e.getComponent();e.updateContent();var n=Object(u.a)(e)||Object(u.a)(e.bvParent),i=e.$_toolpop=Object(v.a)(e,t,{_scopeId:n||void 0});i.updateData(e.templateData),i.$on(s.S,e.onShow),i.$on(s.T,e.onShown),i.$on(s.x,e.onHide),i.$on(s.w,e.onHidden),i.$on(s.l,e.onDisabled),i.$on(s.p,e.onEnabled),e.disabled&&e.doDisable(),e.$on(s.F,e.doOpen),e.$on(s.g,e.doClose),e.$on(s.k,e.doDisable),e.$on(s.o,e.doEnable),e.localShow&&i.show()}))},methods:{getComponent:function(){return b.a},updateContent:function(){this.setTitle(this.normalizeSlot()||this.title)},setTitle:function(e){e=Object(p.p)(e)?"":e,this.localTitle!==e&&(this.localTitle=e)},setContent:function(e){e=Object(p.p)(e)?"":e,this.localContent!==e&&(this.localContent=e)},onShow:function(e){this.$emit(s.S,e),e&&(this.localShow=!e.defaultPrevented)},onShown:function(e){this.localShow=!0,this.$emit(s.T,e)},onHide:function(e){this.$emit(s.x,e)},onHidden:function(e){this.$emit(s.w,e),this.localShow=!1},onDisabled:function(e){e&&e.type===s.l&&(this.$emit(w,!0),this.$emit(s.l,e))},onEnabled:function(e){e&&e.type===s.p&&(this.$emit(w,!1),this.$emit(s.p,e))},doOpen:function(){!this.localShow&&this.$_toolpop&&this.$_toolpop.show()},doClose:function(){this.localShow&&this.$_toolpop&&this.$_toolpop.hide()},doDisable:function(){this.$_toolpop&&this.$_toolpop.disable()},doEnable:function(){this.$_toolpop&&this.$_toolpop.enable()}},render:function(e){return e()}})},tPgW:function(e,t,n){var i=n("I+eb"),a=n("0GbY"),r=n("Gi26"),o=n("V37c"),s=n("VpIT"),c=n("C0Od"),l=s("string-to-symbol-registry"),d=s("symbol-to-string-registry");i({target:"Symbol",stat:!0,forced:!c},{for:function(e){var t=o(e);if(r(l,t))return l[t];var n=a("Symbol")(t);return l[t]=n,d[n]=t,n}})},uqS5:function(e,t,n){"use strict";n.d(t,"a",(function(){return N}));var i,a=n("L3ns"),r=n("xjcK"),o=n("6GPe"),s=n("AFYn"),c=n("m/oX"),l=n("pyNs"),d=n("m3aq"),u=n("kGy3"),p=n("a3f1"),f=n("WPLV"),h=n("2C+6"),v=n("z3V6"),g=n("STsD"),b=n("kO/s"),m=n("YC3Q"),y=n("jBgq"),w=n("c4aD"),k=n("8p45"),O=n("zio1");function x(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);t&&(i=i.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,i)}return n}function _(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?x(Object(n),!0).forEach((function(t){j(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):x(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function j(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var C=Object(p.d)(r.u,"request-state"),D=Object(p.d)(r.u,"toggle"),S=Object(p.e)(r.u,"state"),T=Object(p.e)(r.u,"sync-state"),M=Object(f.a)("visible",{type:l.g,defaultValue:!1,event:s.d}),P=M.mixin,I=M.props,E=M.prop,F=M.event,A=Object(v.d)(Object(h.m)(_(_(_({},b.b),I),{},{ariaLabel:Object(v.c)(l.u),ariaLabelledby:Object(v.c)(l.u),backdrop:Object(v.c)(l.g,!1),backdropVariant:Object(v.c)(l.u,"dark"),bgVariant:Object(v.c)(l.u,"light"),bodyClass:Object(v.c)(l.e),closeLabel:Object(v.c)(l.u),footerClass:Object(v.c)(l.e),footerTag:Object(v.c)(l.u,"footer"),headerClass:Object(v.c)(l.e),headerTag:Object(v.c)(l.u,"header"),lazy:Object(v.c)(l.g,!1),noCloseOnBackdrop:Object(v.c)(l.g,!1),noCloseOnEsc:Object(v.c)(l.g,!1),noCloseOnRouteChange:Object(v.c)(l.g,!1),noEnforceFocus:Object(v.c)(l.g,!1),noHeader:Object(v.c)(l.g,!1),noHeaderClose:Object(v.c)(l.g,!1),noSlide:Object(v.c)(l.g,!1),right:Object(v.c)(l.g,!1),shadow:Object(v.c)(l.j,!1),sidebarClass:Object(v.c)(l.e),tag:Object(v.c)(l.u,"div"),textVariant:Object(v.c)(l.u,"dark"),title:Object(v.c)(l.u),width:Object(v.c)(l.u),zIndex:Object(v.c)(l.p)})),r.vb),$=function(e,t){if(t.noHeader)return e();var n=t.normalizeSlot(d.t,t.slotScope);if(!n){var i=function(e,t){var n=t.normalizeSlot(d.U,t.slotScope)||t.title;return n?e("strong",{attrs:{id:t.safeId("__title__")}},[n]):e("span")}(e,t),a=function(e,t){if(t.noHeaderClose)return e();var n=t.closeLabel,i=t.textVariant,a=t.hide;return e(k.a,{props:{ariaLabel:n,textVariant:i},on:{click:a},ref:"close-button"},[t.normalizeSlot(d.u)||e(w.j)])}(e,t);n=t.right?[a,i]:[i,a]}return e(t.headerTag,{staticClass:"".concat("b-sidebar","-header"),class:t.headerClass,key:"header"},n)},L=function(e,t){return e("div",{staticClass:"".concat("b-sidebar","-body"),class:t.bodyClass,key:"body"},[t.normalizeSlot(d.i,t.slotScope)])},R=function(e,t){var n=t.normalizeSlot(d.s,t.slotScope);return n?e(t.footerTag,{staticClass:"".concat("b-sidebar","-footer"),class:t.footerClass,key:"footer"},[n]):e()},B=function(e,t){var n=$(e,t);return t.lazy&&!t.isOpen?n:[n,L(e,t),R(e,t)]},z=function(e,t){if(!t.backdrop)return e();var n=t.backdropVariant;return e("div",{directives:[{name:"show",value:t.localShow}],staticClass:"b-sidebar-backdrop",class:j({},"bg-".concat(n),n),on:{click:t.onBackdropClick}})},N=Object(a.c)({name:r.vb,mixins:[g.a,b.a,P,m.a,y.a],inheritAttrs:!1,props:A,data:function(){var e=!!this[E];return{localShow:e,isOpen:e}},computed:{transitionProps:function(){return this.noSlide?{css:!0}:{css:!0,enterClass:"",enterActiveClass:"slide",enterToClass:"show",leaveClass:"show",leaveActiveClass:"slide",leaveToClass:""}},slotScope:function(){return{hide:this.hide,right:this.right,visible:this.localShow}},hasTitle:function(){var e=this.$scopedSlots,t=this.$slots;return!(this.noHeader||this.hasNormalizedSlot(d.t)||!this.normalizeSlot(d.U,this.slotScope,e,t)&&!this.title)},titleId:function(){return this.hasTitle?this.safeId("__title__"):null},computedAttrs:function(){return _(_({},this.bvAttrs),{},{id:this.safeId(),tabindex:"-1",role:"dialog","aria-modal":this.backdrop?"true":"false","aria-hidden":this.localShow?null:"true","aria-label":this.ariaLabel||null,"aria-labelledby":this.ariaLabelledby||this.titleId||null})}},watch:(i={},j(i,E,(function(e,t){e!==t&&(this.localShow=e)})),j(i,"localShow",(function(e,t){e!==t&&(this.emitState(e),this.$emit(F,e))})),j(i,"$route",(function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};this.noCloseOnRouteChange||e.fullPath===t.fullPath||this.hide()})),i),created:function(){this.$_returnFocusEl=null},mounted:function(){var e=this;this.listenOnRoot(D,this.handleToggle),this.listenOnRoot(C,this.handleSync),this.$nextTick((function(){e.emitState(e.localShow)}))},activated:function(){this.emitSync()},beforeDestroy:function(){this.localShow=!1,this.$_returnFocusEl=null},methods:{hide:function(){this.localShow=!1},emitState:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:this.localShow;this.emitOnRoot(S,this.safeId(),e)},emitSync:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:this.localShow;this.emitOnRoot(T,this.safeId(),e)},handleToggle:function(e){e&&e===this.safeId()&&(this.localShow=!this.localShow)},handleSync:function(e){var t=this;e&&e===this.safeId()&&this.$nextTick((function(){t.emitSync(t.localShow)}))},onKeydown:function(e){var t=e.keyCode;!this.noCloseOnEsc&&t===c.f&&this.localShow&&this.hide()},onBackdropClick:function(){this.localShow&&!this.noCloseOnBackdrop&&this.hide()},onTopTrapFocus:function(){var e=Object(u.n)(this.$refs.content);this.enforceFocus(e.reverse()[0])},onBottomTrapFocus:function(){var e=Object(u.n)(this.$refs.content);this.enforceFocus(e[0])},onBeforeEnter:function(){this.$_returnFocusEl=Object(u.g)(o.g?[document.body]:[]),this.isOpen=!0},onAfterEnter:function(e){Object(u.f)(e,Object(u.g)())||this.enforceFocus(e),this.$emit(s.T)},onAfterLeave:function(){this.enforceFocus(this.$_returnFocusEl),this.$_returnFocusEl=null,this.isOpen=!1,this.$emit(s.w)},enforceFocus:function(e){this.noEnforceFocus||Object(u.d)(e)}},render:function(e){var t,n=this.bgVariant,i=this.width,a=this.textVariant,r=this.localShow,o=""===this.shadow||this.shadow,s=e(this.tag,{staticClass:"b-sidebar",class:[(t={shadow:!0===o},j(t,"shadow-".concat(o),o&&!0!==o),j(t,"".concat("b-sidebar","-right"),this.right),j(t,"bg-".concat(n),n),j(t,"text-".concat(a),a),t),this.sidebarClass],style:{width:i},attrs:this.computedAttrs,directives:[{name:"show",value:r}],ref:"content"},[B(e,this)]);s=e("transition",{props:this.transitionProps,on:{beforeEnter:this.onBeforeEnter,afterEnter:this.onAfterEnter,afterLeave:this.onAfterLeave}},[s]);var c=e(O.a,{props:{noFade:this.noSlide}},[z(e,this)]),l=e(),d=e();return this.backdrop&&r&&(l=e("div",{attrs:{tabindex:"0"},on:{focus:this.onTopTrapFocus}}),d=e("div",{attrs:{tabindex:"0"},on:{focus:this.onBottomTrapFocus}})),e("div",{staticClass:"b-sidebar-outer",style:{zIndex:this.zIndex},attrs:{tabindex:"-1"},on:{keydown:this.onKeydown}},[l,s,d,c])}})},vMS1:function(e,t,n){(t=n("JPst")(!1)).push([e.i,"[dir=ltr] .invoice-preview .invoice-padding[data-v-78fe02a8], [dir=ltr] .invoice-edit .invoice-padding[data-v-78fe02a8], [dir=ltr] .invoice-add .invoice-padding[data-v-78fe02a8] {\n  padding-left: 2.5rem;\n  padding-right: 2.5rem;\n}[dir=rtl] .invoice-preview .invoice-padding[data-v-78fe02a8], [dir=rtl] .invoice-edit .invoice-padding[data-v-78fe02a8], [dir=rtl] .invoice-add .invoice-padding[data-v-78fe02a8] {\n  padding-right: 2.5rem;\n  padding-left: 2.5rem;\n}\n[dir=ltr] .invoice-preview .table th[data-v-78fe02a8]:first-child, [dir=ltr] .invoice-preview .table td[data-v-78fe02a8]:first-child, [dir=ltr] .invoice-edit .table th[data-v-78fe02a8]:first-child, [dir=ltr] .invoice-edit .table td[data-v-78fe02a8]:first-child, [dir=ltr] .invoice-add .table th[data-v-78fe02a8]:first-child, [dir=ltr] .invoice-add .table td[data-v-78fe02a8]:first-child {\n  padding-left: 2.5rem;\n}\n[dir=rtl] .invoice-preview .table th[data-v-78fe02a8]:first-child, [dir=rtl] .invoice-preview .table td[data-v-78fe02a8]:first-child, [dir=rtl] .invoice-edit .table th[data-v-78fe02a8]:first-child, [dir=rtl] .invoice-edit .table td[data-v-78fe02a8]:first-child, [dir=rtl] .invoice-add .table th[data-v-78fe02a8]:first-child, [dir=rtl] .invoice-add .table td[data-v-78fe02a8]:first-child {\n  padding-right: 2.5rem;\n}\n.invoice-preview .logo-wrapper[data-v-78fe02a8], .invoice-edit .logo-wrapper[data-v-78fe02a8], .invoice-add .logo-wrapper[data-v-78fe02a8] {\n  display: flex;\n  align-items: center;\n}\n[dir] .invoice-preview .logo-wrapper[data-v-78fe02a8], [dir] .invoice-edit .logo-wrapper[data-v-78fe02a8], [dir] .invoice-add .logo-wrapper[data-v-78fe02a8] {\n  margin-bottom: 1.9rem;\n}\n.invoice-preview .logo-wrapper .invoice-logo[data-v-78fe02a8], .invoice-edit .logo-wrapper .invoice-logo[data-v-78fe02a8], .invoice-add .logo-wrapper .invoice-logo[data-v-78fe02a8] {\n  font-size: 2.142rem;\n  font-weight: bold;\n  letter-spacing: -0.54px;\n}\n[dir] .invoice-preview .logo-wrapper .invoice-logo[data-v-78fe02a8], [dir] .invoice-edit .logo-wrapper .invoice-logo[data-v-78fe02a8], [dir] .invoice-add .logo-wrapper .invoice-logo[data-v-78fe02a8] {\n  margin-bottom: 0;\n}\n[dir=ltr] .invoice-preview .logo-wrapper .invoice-logo[data-v-78fe02a8], [dir=ltr] .invoice-edit .logo-wrapper .invoice-logo[data-v-78fe02a8], [dir=ltr] .invoice-add .logo-wrapper .invoice-logo[data-v-78fe02a8] {\n  margin-left: 1rem;\n}\n[dir=rtl] .invoice-preview .logo-wrapper .invoice-logo[data-v-78fe02a8], [dir=rtl] .invoice-edit .logo-wrapper .invoice-logo[data-v-78fe02a8], [dir=rtl] .invoice-add .logo-wrapper .invoice-logo[data-v-78fe02a8] {\n  margin-right: 1rem;\n}\n.invoice-preview .invoice-title[data-v-78fe02a8], .invoice-edit .invoice-title[data-v-78fe02a8], .invoice-add .invoice-title[data-v-78fe02a8] {\n  font-size: 1.285rem;\n}\n[dir] .invoice-preview .invoice-title[data-v-78fe02a8], [dir] .invoice-edit .invoice-title[data-v-78fe02a8], [dir] .invoice-add .invoice-title[data-v-78fe02a8] {\n  margin-bottom: 1rem;\n}\n.invoice-preview .invoice-title .invoice-number[data-v-78fe02a8], .invoice-edit .invoice-title .invoice-number[data-v-78fe02a8], .invoice-add .invoice-title .invoice-number[data-v-78fe02a8] {\n  font-weight: 600;\n}\n.invoice-preview .invoice-date-wrapper[data-v-78fe02a8], .invoice-edit .invoice-date-wrapper[data-v-78fe02a8], .invoice-add .invoice-date-wrapper[data-v-78fe02a8] {\n  display: flex;\n  align-items: center;\n}\n[dir] .invoice-preview .invoice-date-wrapper[data-v-78fe02a8]:not(:last-of-type), [dir] .invoice-edit .invoice-date-wrapper[data-v-78fe02a8]:not(:last-of-type), [dir] .invoice-add .invoice-date-wrapper[data-v-78fe02a8]:not(:last-of-type) {\n  margin-bottom: 0.5rem;\n}\n.invoice-preview .invoice-date-wrapper .invoice-date-title[data-v-78fe02a8], .invoice-edit .invoice-date-wrapper .invoice-date-title[data-v-78fe02a8], .invoice-add .invoice-date-wrapper .invoice-date-title[data-v-78fe02a8] {\n  width: 7rem;\n}\n[dir] .invoice-preview .invoice-date-wrapper .invoice-date-title[data-v-78fe02a8], [dir] .invoice-edit .invoice-date-wrapper .invoice-date-title[data-v-78fe02a8], [dir] .invoice-add .invoice-date-wrapper .invoice-date-title[data-v-78fe02a8] {\n  margin-bottom: 0;\n}\n.invoice-preview .invoice-date-wrapper .invoice-date[data-v-78fe02a8], .invoice-edit .invoice-date-wrapper .invoice-date[data-v-78fe02a8], .invoice-add .invoice-date-wrapper .invoice-date[data-v-78fe02a8] {\n  font-weight: 600;\n}\n[dir] .invoice-preview .invoice-date-wrapper .invoice-date[data-v-78fe02a8], [dir] .invoice-edit .invoice-date-wrapper .invoice-date[data-v-78fe02a8], [dir] .invoice-add .invoice-date-wrapper .invoice-date[data-v-78fe02a8] {\n  margin-bottom: 0;\n}\n[dir=ltr] .invoice-preview .invoice-date-wrapper .invoice-date[data-v-78fe02a8], [dir=ltr] .invoice-edit .invoice-date-wrapper .invoice-date[data-v-78fe02a8], [dir=ltr] .invoice-add .invoice-date-wrapper .invoice-date[data-v-78fe02a8] {\n  margin-left: 0.5rem;\n}\n[dir=rtl] .invoice-preview .invoice-date-wrapper .invoice-date[data-v-78fe02a8], [dir=rtl] .invoice-edit .invoice-date-wrapper .invoice-date[data-v-78fe02a8], [dir=rtl] .invoice-add .invoice-date-wrapper .invoice-date[data-v-78fe02a8] {\n  margin-right: 0.5rem;\n}\n[dir] .invoice-preview .invoice-spacing[data-v-78fe02a8], [dir] .invoice-edit .invoice-spacing[data-v-78fe02a8], [dir] .invoice-add .invoice-spacing[data-v-78fe02a8] {\n  margin: 1.45rem 0;\n}\n.invoice-preview .invoice-number-date .title[data-v-78fe02a8], .invoice-edit .invoice-number-date .title[data-v-78fe02a8], .invoice-add .invoice-number-date .title[data-v-78fe02a8] {\n  width: 115px;\n}\n.invoice-preview .invoice-total-wrapper[data-v-78fe02a8], .invoice-edit .invoice-total-wrapper[data-v-78fe02a8], .invoice-add .invoice-total-wrapper[data-v-78fe02a8] {\n  width: 100%;\n  max-width: 12rem;\n}\n.invoice-preview .invoice-total-wrapper .invoice-total-item[data-v-78fe02a8], .invoice-edit .invoice-total-wrapper .invoice-total-item[data-v-78fe02a8], .invoice-add .invoice-total-wrapper .invoice-total-item[data-v-78fe02a8] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n[dir] .invoice-preview .invoice-total-wrapper .invoice-total-item .invoice-total-title[data-v-78fe02a8], [dir] .invoice-edit .invoice-total-wrapper .invoice-total-item .invoice-total-title[data-v-78fe02a8], [dir] .invoice-add .invoice-total-wrapper .invoice-total-item .invoice-total-title[data-v-78fe02a8] {\n  margin-bottom: 0.35rem;\n}\n.invoice-preview .invoice-total-wrapper .invoice-total-item .invoice-total-amount[data-v-78fe02a8], .invoice-edit .invoice-total-wrapper .invoice-total-item .invoice-total-amount[data-v-78fe02a8], .invoice-add .invoice-total-wrapper .invoice-total-item .invoice-total-amount[data-v-78fe02a8] {\n  font-weight: 600;\n}\n[dir] .invoice-preview .invoice-total-wrapper .invoice-total-item .invoice-total-amount[data-v-78fe02a8], [dir] .invoice-edit .invoice-total-wrapper .invoice-total-item .invoice-total-amount[data-v-78fe02a8], [dir] .invoice-add .invoice-total-wrapper .invoice-total-item .invoice-total-amount[data-v-78fe02a8] {\n  margin-bottom: 0.35rem;\n}\n@media (min-width: 768px) {\n[dir] .invoice-preview .invoice-title[data-v-78fe02a8], [dir] .invoice-edit .invoice-title[data-v-78fe02a8], [dir] .invoice-add .invoice-title[data-v-78fe02a8] {\n    margin-bottom: 3rem;\n}\n[dir=ltr] .invoice-preview .invoice-title[data-v-78fe02a8], [dir=ltr] .invoice-edit .invoice-title[data-v-78fe02a8], [dir=ltr] .invoice-add .invoice-title[data-v-78fe02a8] {\n    text-align: right;\n}\n[dir=rtl] .invoice-preview .invoice-title[data-v-78fe02a8], [dir=rtl] .invoice-edit .invoice-title[data-v-78fe02a8], [dir=rtl] .invoice-add .invoice-title[data-v-78fe02a8] {\n    text-align: left;\n}\n}\n[dir] .invoice-edit .invoice-preview-card .invoice-title[data-v-78fe02a8], [dir] .invoice-add .invoice-preview-card .invoice-title[data-v-78fe02a8] {\n  margin-bottom: 0;\n}\n[dir=ltr] .invoice-edit .invoice-preview-card .invoice-title[data-v-78fe02a8], [dir=ltr] .invoice-add .invoice-preview-card .invoice-title[data-v-78fe02a8] {\n  text-align: left;\n  margin-right: 3.5rem;\n}\n[dir=rtl] .invoice-edit .invoice-preview-card .invoice-title[data-v-78fe02a8], [dir=rtl] .invoice-add .invoice-preview-card .invoice-title[data-v-78fe02a8] {\n  text-align: right;\n  margin-left: 3.5rem;\n}\n.invoice-edit .invoice-preview-card .invoice-edit-input[data-v-78fe02a8], .invoice-edit .invoice-preview-card .invoice-edit-input-group[data-v-78fe02a8], .invoice-add .invoice-preview-card .invoice-edit-input[data-v-78fe02a8], .invoice-add .invoice-preview-card .invoice-edit-input-group[data-v-78fe02a8] {\n  max-width: 11.21rem;\n}\n[dir] .invoice-edit .invoice-preview-card .invoice-product-details[data-v-78fe02a8], [dir] .invoice-add .invoice-preview-card .invoice-product-details[data-v-78fe02a8] {\n  background-color: #fcfcfc;\n  padding: 3.75rem 3.45rem 2.3rem 3.45rem;\n}\n[dir] .invoice-edit .invoice-preview-card .invoice-product-details .product-details-border[data-v-78fe02a8], [dir] .invoice-add .invoice-preview-card .invoice-product-details .product-details-border[data-v-78fe02a8] {\n  border: 1px solid #ebe9f1;\n  border-radius: 0.357rem;\n}\n[dir] .invoice-edit .invoice-preview-card .invoice-to-title[data-v-78fe02a8], [dir] .invoice-add .invoice-preview-card .invoice-to-title[data-v-78fe02a8] {\n  margin-bottom: 1.9rem;\n}\n.invoice-edit .invoice-preview-card .col-title[data-v-78fe02a8], .invoice-add .invoice-preview-card .col-title[data-v-78fe02a8] {\n  position: absolute;\n  top: -3.2rem;\n}\n.invoice-edit .invoice-preview-card .item-options-menu[data-v-78fe02a8], .invoice-add .invoice-preview-card .item-options-menu[data-v-78fe02a8] {\n  min-width: 20rem;\n}\n[dir] .invoice-edit .invoice-preview-card .repeater-wrapper[data-v-78fe02a8]:not(:last-child), [dir] .invoice-add .invoice-preview-card .repeater-wrapper[data-v-78fe02a8]:not(:last-child) {\n  margin-bottom: 3rem;\n}\n.invoice-edit .invoice-preview-card .invoice-calculations .total-amt-title[data-v-78fe02a8], .invoice-add .invoice-preview-card .invoice-calculations .total-amt-title[data-v-78fe02a8] {\n  width: 100px;\n}\n@media (max-width: 769px) {\n.invoice-edit .invoice-preview-card .invoice-title[data-v-78fe02a8], .invoice-add .invoice-preview-card .invoice-title[data-v-78fe02a8] {\n    width: 115px;\n}\n[dir=ltr] .invoice-edit .invoice-preview-card .invoice-title[data-v-78fe02a8], [dir=ltr] .invoice-add .invoice-preview-card .invoice-title[data-v-78fe02a8] {\n    margin-right: 0;\n}\n[dir=rtl] .invoice-edit .invoice-preview-card .invoice-title[data-v-78fe02a8], [dir=rtl] .invoice-add .invoice-preview-card .invoice-title[data-v-78fe02a8] {\n    margin-left: 0;\n}\n.invoice-edit .invoice-preview-card .invoice-edit-input[data-v-78fe02a8], .invoice-add .invoice-preview-card .invoice-edit-input[data-v-78fe02a8] {\n    max-width: 100%;\n}\n}\n@media (max-width: 992px) {\n.invoice-edit .col-title[data-v-78fe02a8], .invoice-add .col-title[data-v-78fe02a8] {\n    top: -1.5rem !important;\n}\n}\n@media print {\n[dir] .invoice-edit hr[data-v-78fe02a8], [dir] .invoice-add hr[data-v-78fe02a8] {\n    margin-top: 1rem !important;\n    margin-bottom: 1rem !important;\n}\n}\n[dir] .form-item-section[data-v-78fe02a8] {\n  background-color: #fcfcfc;\n}\n.form-item-action-col[data-v-78fe02a8] {\n  width: 27px;\n}\n.repeater-form[data-v-78fe02a8] {\n  transition: 0.35s height;\n}\n[dir] .v-select.item-selector-title[data-v-78fe02a8], [dir] .v-select.payment-selector[data-v-78fe02a8] {\n  background-color: #fff;\n}\n[dir] .dark-layout .v-select.item-selector-title[data-v-78fe02a8], [dir] .dark-layout .v-select.payment-selector[data-v-78fe02a8] {\n  background-color: unset;\n}\n[dir] .dark-layout .form-item-section[data-v-78fe02a8] {\n  background-color: #161d31;\n}\n[dir] .dark-layout .form-item-section .row .border[data-v-78fe02a8] {\n  background-color: #283046;\n}",""]),e.exports=t},"w+YJ":function(e,t,n){"use strict";n.d(t,"a",(function(){return y}));var i,a=n("L3ns"),r=n("xjcK"),o=n("AFYn"),s=n("pyNs"),c=n("ex6f"),l=n("PCFI"),d=function(e,t){for(var n=0;n<e.length;n++)if(Object(l.a)(e[n],t))return n;return-1},u=n("2C+6"),p=n("z3V6"),f=n("08sT");function h(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);t&&(i=i.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,i)}return n}function v(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?h(Object(n),!0).forEach((function(t){g(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):h(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function g(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var b=o.cb+"indeterminate",m=Object(p.d)(Object(u.m)(v(v({},f.c),{},(g(i={},"indeterminate",Object(p.c)(s.g,!1)),g(i,"switch",Object(p.c)(s.g,!1)),g(i,"uncheckedValue",Object(p.c)(s.a,!1)),g(i,"value",Object(p.c)(s.a,!0)),i))),r.C),y=Object(a.c)({name:r.C,mixins:[f.b],inject:{getBvGroup:{from:"getBvCheckGroup",default:function(){return function(){return null}}}},props:m,computed:{bvGroup:function(){return this.getBvGroup()},isChecked:function(){var e=this.value,t=this.computedLocalChecked;return Object(c.a)(t)?d(t,e)>-1:Object(l.a)(t,e)},isRadio:function(){return!1}},watch:g({},"indeterminate",(function(e,t){Object(l.a)(e,t)||this.setIndeterminate(e)})),mounted:function(){this.setIndeterminate(this.indeterminate)},methods:{computedLocalCheckedWatcher:function(e,t){if(!Object(l.a)(e,t)){this.$emit(f.a,e);var n=this.$refs.input;n&&this.$emit(b,n.indeterminate)}},handleChange:function(e){var t=this,n=e.target,i=n.checked,a=n.indeterminate,r=this.value,s=this.uncheckedValue,l=this.computedLocalChecked;if(Object(c.a)(l)){var u=d(l,r);i&&u<0?l=l.concat(r):!i&&u>-1&&(l=l.slice(0,u).concat(l.slice(u+1)))}else l=i?r:s;this.computedLocalChecked=l,this.$nextTick((function(){t.$emit(o.d,l),t.isGroup&&t.bvGroup.$emit(o.d,l),t.$emit(b,a)}))},setIndeterminate:function(e){Object(c.a)(this.computedLocalChecked)&&(e=!1);var t=this.$refs.input;t&&(t.indeterminate=e,this.$emit(b,e))}}})},w48C:function(e,t,n){var i;"undefined"!=typeof self&&self,e.exports=(i=n("X2Dv"),function(e){var t={};function n(i){if(t[i])return t[i].exports;var a=t[i]={i:i,l:!1,exports:{}};return e[i].call(a.exports,a,a.exports,n),a.l=!0,a.exports}return n.m=e,n.c=t,n.d=function(e,t,i){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:i})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var i=Object.create(null);if(n.r(i),Object.defineProperty(i,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var a in e)n.d(i,a,function(t){return e[t]}.bind(null,a));return i},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=1)}([function(e,t){e.exports=i},function(e,t,n){"use strict";n.r(t),n.d(t,"Component",(function(){return u})),n.d(t,"Plugin",(function(){return p}));var i=n(0),a=n.n(i),r=["onChange","onClose","onDestroy","onMonthChange","onOpen","onYearChange"];function o(){return(o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var i in n)Object.prototype.hasOwnProperty.call(n,i)&&(e[i]=n[i])}return e}).apply(this,arguments)}var s=function(e){return e.replace(/([a-z])([A-Z])/g,"$1-$2").toLowerCase()},c=function(e){return o({},e)},l=r.concat(["onValueUpdate","onDayCreate","onParseConfig","onReady","onPreCalendarPosition","onKeyDown"]),d=["locale","showMonths"],u={name:"flat-pickr",render:function(e){return e("input",{attrs:{type:"text","data-input":!0},props:{disabled:this.disabled},on:{input:this.onInput}})},props:{value:{default:null,required:!0,validator:function(e){return null===e||e instanceof Date||"string"==typeof e||e instanceof String||e instanceof Array||"number"==typeof e}},config:{type:Object,default:function(){return{wrap:!1,defaultDate:null}}},events:{type:Array,default:function(){return r}},disabled:{type:Boolean,default:!1}},data:function(){return{fp:null}},mounted:function(){var e=this;if(!this.fp){var t=c(this.config);this.events.forEach((function(n){var i,r=a.a.defaultConfig[n]||[];t[n]=(i=t[n]||[],i instanceof Array?i:[i]).concat(r,(function(){for(var t=arguments.length,i=new Array(t),a=0;a<t;a++)i[a]=arguments[a];e.$emit.apply(e,[s(n)].concat(i))}))})),t.defaultDate=this.value||t.defaultDate,this.fp=new a.a(this.getElem(),t),this.fpInput().addEventListener("blur",this.onBlur),this.$on("on-close",this.onClose),this.$watch("disabled",this.watchDisabled,{immediate:!0})}},methods:{getElem:function(){return this.config.wrap?this.$el.parentNode:this.$el},onInput:function(e){var t=this,n=e.target;this.$nextTick((function(){t.$emit("input",n.value)}))},fpInput:function(){return this.fp.altInput||this.fp.input},onBlur:function(e){this.$emit("blur",e.target.value)},onClose:function(e,t){this.$emit("input",t)},watchDisabled:function(e){e?this.fpInput().setAttribute("disabled",e):this.fpInput().removeAttribute("disabled")}},watch:{config:{deep:!0,handler:function(e){var t=this,n=c(e);l.forEach((function(e){delete n[e]})),this.fp.set(n),d.forEach((function(e){void 0!==n[e]&&t.fp.set(e,n[e])}))}},value:function(e){e!==this.$el.value&&this.fp&&this.fp.setDate(e,!0)}},beforeDestroy:function(){this.fp&&(this.fpInput().removeEventListener("blur",this.onBlur),this.fp.destroy(),this.fp=null)}},p=function(e,t){var n="flat-pickr";"string"==typeof t&&(n=t),e.component(n,u)};u.install=p,t.default=u}]).default)},wE39:function(e,t,n){"use strict";var i=n("rePB"),a=n("x+uP"),r=n("HaE+"),o=n("VTBJ"),s=(n("qePV"),n("rB9j"),n("hByQ"),n("2B1R"),n("fbCW"),n("07d7"),n("iPaL")),c=n("5scn"),l=n("Obrr"),d=n("oVt+"),u=n("uqS5"),p=n("sove"),f=n("IF94"),h=n("YZfj"),v=n("1uQM"),g=n("GUe+"),b=n("X9p1"),m=n("qlm0"),y=n("mwM1"),w=n("AeMN"),k=n("KaE5"),O=n("zoCi"),x=n("w+YJ"),_=n("giZP"),j=n("R5cT"),C=n("aqyy"),D=n("Ed67"),S=n("B1l5"),T=n("XhI9"),M=n("zMAm"),P=n("NlY+"),I=n("nH37"),E=n("oXok"),F=n("6Ytq"),A=n("6KOa"),$=n("tK4P"),L=n("JhbM"),R=(n("fx5J"),n("4AkS")),B=n("dq6P"),z=(n("BLC3"),n("OIjt")),N=new(n("M9Pj").a),H={name:"SearchMedicines",directives:{Ripple:R.a,"b-modal":c.a,"b-toggle":l.a},components:{BRow:d.a,BSidebar:u.a,BCol:p.a,BCard:f.a,BCardBody:h.a,BCardText:v.a,BButton:g.a,BAlert:b.a,BLink:m.a,BOverlay:y.a,BSpinner:w.a,BTable:k.a,BTableLite:O.a,BFormCheckbox:x.a,BFormGroup:_.a,BFormInput:j.a,BModal:C.a,VBModal:c.a,BForm:D.a,BIcon:S.a,BInputGroup:T.a,BInputGroupAppend:M.a,BInputGroupPrepend:P.a,BFormTextarea:I.a,BFormTags:E.a,BBadge:F.a,BCardCode:s.a,BAvatar:A.a,BTooltip:$.a,VBTooltip:L.a,ToastificationContent:z.a},mixins:[B.a],props:{active:{type:Boolean,default:!1},warehouse:{type:Number,default:null},isTransfer:{type:Boolean,default:!1}},data:function(){return{loading:!1,columns:[{key:"actions",label:" "},{key:"name",label:this.$t("inventories.medicines.medicine")},{key:"sku",label:"SKU"},{key:"stock",label:this.$t("inventories.medicines.current_stock")},{key:"description",label:this.$t("inventories.medicines.description")}],medicines:[],search:null}},methods:Object(i.a)({selectRow:function(e){var t=Object(o.a)({},e[0]);this.isTransfer&&t.current_stock<=0?this.$toast({component:z.a,props:{title:this.$t("inventories.medicines.no_stock"),icon:"XIcon",variant:"danger"}}):(this.$emit("selected",Object(o.a)({},t)),this.close())},chooseItem:function(e){this.isTransfer&&e.current_stock<=0?this.$toast({component:z.a,props:{title:this.$t("inventories.medicines.no_stock"),icon:"XIcon",variant:"danger"}}):(this.$emit("selected",Object(o.a)({},e)),this.close())},searchMedicines:function(){var e=this;return Object(r.a)(Object(a.a)().mark((function t(){var n,i,r;return Object(a.a)().wrap((function(t){for(;;)switch(t.prev=t.next){case 0:return e.loading=!0,n={search:e.search,all:!0},t.next=4,N.index(n);case 4:i=t.sent,r=i.data,e.loading=!1,e.medicines=r.data.map((function(t){return Object(o.a)(Object(o.a)({},t),{},{current_stock:e.warehouse?t.stocks.find((function(t){return t.warehouse_id==e.warehouse})).quantity:t.current_stock})}));case 8:case"end":return t.stop()}}),t)})))()},close:function(){this.$refs["modal-search-medicine"].hide(),this.search=null,this.$emit("close")},resolveVariantCurrentStock:function(e){return e.current_stock<=e.stock_min?{variant:"danger",icon:"InfoIcon"}:{variant:"primary",icon:"CheckIcon"}}},"resolveVariantCurrentStock",(function(e){return e.current_stock<=e.stock_min?{variant:"danger",icon:"InfoIcon"}:{variant:"primary",icon:"CheckIcon"}})),watch:{active:function(e){e?(this.medicines=[],this.searchQuery=null,this.$refs["modal-search-medicine"].toggle()):this.close()}}},V=n("KHd+"),Y=Object(V.a)(H,(function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",[n("b-modal",{ref:"modal-search-medicine",attrs:{id:"modal-search-medicine",title:e.$t("medicine_search"),"ok-only":"","ok-title":e.$t("accept"),size:"lg"},on:{hidden:e.close}},[n("div",{staticClass:"m-2"},[n("b-row",[n("b-col",{attrs:{cols:"12",md:"12"}},[n("div",{staticClass:"d-flex align-items-center justify-content-end"},[n("b-input-group",[n("b-form-input",{staticClass:"d-inline-block _mr-1",attrs:{autofocus:"",size:"sm",placeholder:e.$t("inventories.medicines.search_help"),autocomplete:"off"},on:{keyup:function(t){return!t.type.indexOf("key")&&e._k(t.keyCode,"enter",13,t.key,"Enter")?null:e.searchMedicines(t)}},model:{value:e.search,callback:function(t){e.search=t},expression:"search"}}),e._v(" "),n("b-input-group-prepend",[n("b-button",{attrs:{size:"sm",variant:"primary"},on:{click:e.searchMedicines}},[n("feather-icon",{attrs:{icon:"SearchIcon"}})],1)],1)],1)],1)])],1)],1),e._v(" "),n("b-table",{ref:"refMedicinesListTable",staticClass:"position-relative table-sm table-small text-small small",attrs:{items:e.medicines,responsive:"",stacked:"sm",hover:"",fields:e.columns,"primary-key":"id","show-empty":"","empty-text":e.$t("datatables.sZeroRecords"),"busy.sync":"loading",small:"",selectable:"","select-mode":"single"},on:{"row-selected":e.selectRow},scopedSlots:e._u([{key:"cell(name)",fn:function(t){return[n("div",{staticClass:"text-wrap"},[e._v("\n                    "+e._s(t.item.name)+"\n                ")])]}},{key:"cell(sku)",fn:function(t){return[e._v("\n                "+e._s(t.item.sku)+"\n            ")]}},{key:"cell(stock)",fn:function(t){return[t.item.current_stock<=t.item.stock_min?n("b-avatar",{attrs:{id:"medicine-row-"+t.item.id,size:"32",variant:"light-"+e.resolveVariantCurrentStock(t.item).variant}},[n("feather-icon",{attrs:{icon:e.resolveVariantCurrentStock(t.item).icon}})],1):e._e(),e._v(" "),t.item.current_stock<=t.item.stock_min?n("b-tooltip",{attrs:{target:"medicine-row-"+t.item.id,placement:"top"}},[n("p",{staticClass:"mb-0"},[e._v("\n                    "+e._s(e.$t("inventories.medicines.stok_alert").replace(":quantity",t.item.stock_min))+"\n                ")])]):e._e(),e._v(" "),n("b-badge",{attrs:{pill:"",variant:e.resolveVariantCurrentStock(t.item).variant}},[e._v(e._s(t.item.current_stock))])]}},{key:"cell(description)",fn:function(t){return[e._v("\n                "+e._s(t.item.description)+"\n            ")]}},{key:"cell(actions)",fn:function(t){return[n("div",{staticClass:"text-nowrap"},[n("b-button",{directives:[{name:"ripple",rawName:"v-ripple.400",value:"rgba(255, 255, 255, 0.15)",expression:"'rgba(255, 255, 255, 0.15)'",modifiers:{400:!0}}],attrs:{size:"sm",variant:"outline-primary"},on:{click:function(n){return e.chooseItem(t.item)}}},[e._v("\n                    "+e._s(e.$t("to_choose"))+"\n                    ")])],1)]}}])},[n("template",{slot:"empty"},[e.loading?n("div",{staticClass:"d-flex justify-content-center mb-1"},[n("b-spinner",{staticClass:"mr-1",staticStyle:{width:"3rem",height:"3rem"},attrs:{label:"Loading...",variant:"primary"}})],1):e._e()])],2)],1)],1)}),[],!1,null,null,null);t.a=Y.exports},wZee:function(e,t,n){(function(t){var n=function(e){var t=/(?:^|\s)lang(?:uage)?-([\w-]+)(?=\s|$)/i,n=0,i={},a={manual:e.Prism&&e.Prism.manual,disableWorkerMessageHandler:e.Prism&&e.Prism.disableWorkerMessageHandler,util:{encode:function e(t){return t instanceof r?new r(t.type,e(t.content),t.alias):Array.isArray(t)?t.map(e):t.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).slice(8,-1)},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++n}),e.__id},clone:function e(t,n){var i,r;switch(n=n||{},a.util.type(t)){case"Object":if(r=a.util.objId(t),n[r])return n[r];for(var o in i={},n[r]=i,t)t.hasOwnProperty(o)&&(i[o]=e(t[o],n));return i;case"Array":return r=a.util.objId(t),n[r]?n[r]:(i=[],n[r]=i,t.forEach((function(t,a){i[a]=e(t,n)})),i);default:return t}},getLanguage:function(e){for(;e;){var n=t.exec(e.className);if(n)return n[1].toLowerCase();e=e.parentElement}return"none"},setLanguage:function(e,n){e.className=e.className.replace(RegExp(t,"gi"),""),e.classList.add("language-"+n)},currentScript:function(){if("undefined"==typeof document)return null;if("currentScript"in document)return document.currentScript;try{throw new Error}catch(i){var e=(/at [^(\r\n]*\((.*):[^:]+:[^:]+\)$/i.exec(i.stack)||[])[1];if(e){var t=document.getElementsByTagName("script");for(var n in t)if(t[n].src==e)return t[n]}return null}},isActive:function(e,t,n){for(var i="no-"+t;e;){var a=e.classList;if(a.contains(t))return!0;if(a.contains(i))return!1;e=e.parentElement}return!!n}},languages:{plain:i,plaintext:i,text:i,txt:i,extend:function(e,t){var n=a.util.clone(a.languages[e]);for(var i in t)n[i]=t[i];return n},insertBefore:function(e,t,n,i){var r=(i=i||a.languages)[e],o={};for(var s in r)if(r.hasOwnProperty(s)){if(s==t)for(var c in n)n.hasOwnProperty(c)&&(o[c]=n[c]);n.hasOwnProperty(s)||(o[s]=r[s])}var l=i[e];return i[e]=o,a.languages.DFS(a.languages,(function(t,n){n===l&&t!=e&&(this[t]=o)})),o},DFS:function e(t,n,i,r){r=r||{};var o=a.util.objId;for(var s in t)if(t.hasOwnProperty(s)){n.call(t,s,t[s],i||s);var c=t[s],l=a.util.type(c);"Object"!==l||r[o(c)]?"Array"!==l||r[o(c)]||(r[o(c)]=!0,e(c,n,s,r)):(r[o(c)]=!0,e(c,n,null,r))}}},plugins:{},highlightAll:function(e,t){a.highlightAllUnder(document,e,t)},highlightAllUnder:function(e,t,n){var i={callback:n,container:e,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};a.hooks.run("before-highlightall",i),i.elements=Array.prototype.slice.apply(i.container.querySelectorAll(i.selector)),a.hooks.run("before-all-elements-highlight",i);for(var r,o=0;r=i.elements[o++];)a.highlightElement(r,!0===t,i.callback)},highlightElement:function(t,n,i){var r=a.util.getLanguage(t),o=a.languages[r];a.util.setLanguage(t,r);var s=t.parentElement;s&&"pre"===s.nodeName.toLowerCase()&&a.util.setLanguage(s,r);var c={element:t,language:r,grammar:o,code:t.textContent};function l(e){c.highlightedCode=e,a.hooks.run("before-insert",c),c.element.innerHTML=c.highlightedCode,a.hooks.run("after-highlight",c),a.hooks.run("complete",c),i&&i.call(c.element)}if(a.hooks.run("before-sanity-check",c),(s=c.element.parentElement)&&"pre"===s.nodeName.toLowerCase()&&!s.hasAttribute("tabindex")&&s.setAttribute("tabindex","0"),!c.code)return a.hooks.run("complete",c),void(i&&i.call(c.element));if(a.hooks.run("before-highlight",c),c.grammar)if(n&&e.Worker){var d=new Worker(a.filename);d.onmessage=function(e){l(e.data)},d.postMessage(JSON.stringify({language:c.language,code:c.code,immediateClose:!0}))}else l(a.highlight(c.code,c.grammar,c.language));else l(a.util.encode(c.code))},highlight:function(e,t,n){var i={code:e,grammar:t,language:n};if(a.hooks.run("before-tokenize",i),!i.grammar)throw new Error('The language "'+i.language+'" has no grammar.');return i.tokens=a.tokenize(i.code,i.grammar),a.hooks.run("after-tokenize",i),r.stringify(a.util.encode(i.tokens),i.language)},tokenize:function(e,t){var n=t.rest;if(n){for(var i in n)t[i]=n[i];delete t.rest}var d=new s;return c(d,d.head,e),function e(t,n,i,s,d,u){for(var p in i)if(i.hasOwnProperty(p)&&i[p]){var f=i[p];f=Array.isArray(f)?f:[f];for(var h=0;h<f.length;++h){if(u&&u.cause==p+","+h)return;var v=f[h],g=v.inside,b=!!v.lookbehind,m=!!v.greedy,y=v.alias;if(m&&!v.pattern.global){var w=v.pattern.toString().match(/[imsuy]*$/)[0];v.pattern=RegExp(v.pattern.source,w+"g")}for(var k=v.pattern||v,O=s.next,x=d;O!==n.tail&&!(u&&x>=u.reach);x+=O.value.length,O=O.next){var _=O.value;if(n.length>t.length)return;if(!(_ instanceof r)){var j,C=1;if(m){if(!(j=o(k,x,t,b))||j.index>=t.length)break;var D=j.index,S=j.index+j[0].length,T=x;for(T+=O.value.length;D>=T;)O=O.next,T+=O.value.length;if(T-=O.value.length,x=T,O.value instanceof r)continue;for(var M=O;M!==n.tail&&(T<S||"string"==typeof M.value);M=M.next)C++,T+=M.value.length;C--,_=t.slice(x,T),j.index-=x}else if(!(j=o(k,0,_,b)))continue;D=j.index;var P=j[0],I=_.slice(0,D),E=_.slice(D+P.length),F=x+_.length;u&&F>u.reach&&(u.reach=F);var A=O.prev;I&&(A=c(n,A,I),x+=I.length),l(n,A,C);var $=new r(p,g?a.tokenize(P,g):P,y,P);if(O=c(n,A,$),E&&c(n,O,E),C>1){var L={cause:p+","+h,reach:F};e(t,n,i,O.prev,x,L),u&&L.reach>u.reach&&(u.reach=L.reach)}}}}}}(e,d,t,d.head,0),function(e){var t=[],n=e.head.next;for(;n!==e.tail;)t.push(n.value),n=n.next;return t}(d)},hooks:{all:{},add:function(e,t){var n=a.hooks.all;n[e]=n[e]||[],n[e].push(t)},run:function(e,t){var n=a.hooks.all[e];if(n&&n.length)for(var i,r=0;i=n[r++];)i(t)}},Token:r};function r(e,t,n,i){this.type=e,this.content=t,this.alias=n,this.length=0|(i||"").length}function o(e,t,n,i){e.lastIndex=t;var a=e.exec(n);if(a&&i&&a[1]){var r=a[1].length;a.index+=r,a[0]=a[0].slice(r)}return a}function s(){var e={value:null,prev:null,next:null},t={value:null,prev:e,next:null};e.next=t,this.head=e,this.tail=t,this.length=0}function c(e,t,n){var i=t.next,a={value:n,prev:t,next:i};return t.next=a,i.prev=a,e.length++,a}function l(e,t,n){for(var i=t.next,a=0;a<n&&i!==e.tail;a++)i=i.next;t.next=i,i.prev=t,e.length-=a}if(e.Prism=a,r.stringify=function e(t,n){if("string"==typeof t)return t;if(Array.isArray(t)){var i="";return t.forEach((function(t){i+=e(t,n)})),i}var r={type:t.type,content:e(t.content,n),tag:"span",classes:["token",t.type],attributes:{},language:n},o=t.alias;o&&(Array.isArray(o)?Array.prototype.push.apply(r.classes,o):r.classes.push(o)),a.hooks.run("wrap",r);var s="";for(var c in r.attributes)s+=" "+c+'="'+(r.attributes[c]||"").replace(/"/g,"&quot;")+'"';return"<"+r.tag+' class="'+r.classes.join(" ")+'"'+s+">"+r.content+"</"+r.tag+">"},!e.document)return e.addEventListener?(a.disableWorkerMessageHandler||e.addEventListener("message",(function(t){var n=JSON.parse(t.data),i=n.language,r=n.code,o=n.immediateClose;e.postMessage(a.highlight(r,a.languages[i],i)),o&&e.close()}),!1),a):a;var d=a.util.currentScript();function u(){a.manual||a.highlightAll()}if(d&&(a.filename=d.src,d.hasAttribute("data-manual")&&(a.manual=!0)),!a.manual){var p=document.readyState;"loading"===p||"interactive"===p&&d&&d.defer?document.addEventListener("DOMContentLoaded",u):window.requestAnimationFrame?window.requestAnimationFrame(u):window.setTimeout(u,16)}return a}("undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{});e.exports&&(e.exports=n),void 0!==t&&(t.Prism=n),n.languages.markup={comment:{pattern:/<!--(?:(?!<!--)[\s\S])*?-->/,greedy:!0},prolog:{pattern:/<\?[\s\S]+?\?>/,greedy:!0},doctype:{pattern:/<!DOCTYPE(?:[^>"'[\]]|"[^"]*"|'[^']*')+(?:\[(?:[^<"'\]]|"[^"]*"|'[^']*'|<(?!!--)|<!--(?:[^-]|-(?!->))*-->)*\]\s*)?>/i,greedy:!0,inside:{"internal-subset":{pattern:/(^[^\[]*\[)[\s\S]+(?=\]>$)/,lookbehind:!0,greedy:!0,inside:null},string:{pattern:/"[^"]*"|'[^']*'/,greedy:!0},punctuation:/^<!|>$|[[\]]/,"doctype-tag":/^DOCTYPE/i,name:/[^\s<>'"]+/}},cdata:{pattern:/<!\[CDATA\[[\s\S]*?\]\]>/i,greedy:!0},tag:{pattern:/<\/?(?!\d)[^\s>\/=$<%]+(?:\s(?:\s*[^\s>\/=]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))|(?=[\s/>])))+)?\s*\/?>/,greedy:!0,inside:{tag:{pattern:/^<\/?[^\s>\/]+/,inside:{punctuation:/^<\/?/,namespace:/^[^\s>\/:]+:/}},"special-attr":[],"attr-value":{pattern:/=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+)/,inside:{punctuation:[{pattern:/^=/,alias:"attr-equals"},{pattern:/^(\s*)["']|["']$/,lookbehind:!0}]}},punctuation:/\/?>/,"attr-name":{pattern:/[^\s>\/]+/,inside:{namespace:/^[^\s>\/:]+:/}}}},entity:[{pattern:/&[\da-z]{1,8};/i,alias:"named-entity"},/&#x?[\da-f]{1,8};/i]},n.languages.markup.tag.inside["attr-value"].inside.entity=n.languages.markup.entity,n.languages.markup.doctype.inside["internal-subset"].inside=n.languages.markup,n.hooks.add("wrap",(function(e){"entity"===e.type&&(e.attributes.title=e.content.replace(/&amp;/,"&"))})),Object.defineProperty(n.languages.markup.tag,"addInlined",{value:function(e,t){var i={};i["language-"+t]={pattern:/(^<!\[CDATA\[)[\s\S]+?(?=\]\]>$)/i,lookbehind:!0,inside:n.languages[t]},i.cdata=/^<!\[CDATA\[|\]\]>$/i;var a={"included-cdata":{pattern:/<!\[CDATA\[[\s\S]*?\]\]>/i,inside:i}};a["language-"+t]={pattern:/[\s\S]+/,inside:n.languages[t]};var r={};r[e]={pattern:RegExp(/(<__[^>]*>)(?:<!\[CDATA\[(?:[^\]]|\](?!\]>))*\]\]>|(?!<!\[CDATA\[)[\s\S])*?(?=<\/__>)/.source.replace(/__/g,(function(){return e})),"i"),lookbehind:!0,greedy:!0,inside:a},n.languages.insertBefore("markup","cdata",r)}}),Object.defineProperty(n.languages.markup.tag,"addAttribute",{value:function(e,t){n.languages.markup.tag.inside["special-attr"].push({pattern:RegExp(/(^|["'\s])/.source+"(?:"+e+")"+/\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))/.source,"i"),lookbehind:!0,inside:{"attr-name":/^[^\s=]+/,"attr-value":{pattern:/=[\s\S]+/,inside:{value:{pattern:/(^=\s*(["']|(?!["'])))\S[\s\S]*(?=\2$)/,lookbehind:!0,alias:[t,"language-"+t],inside:n.languages[t]},punctuation:[{pattern:/^=/,alias:"attr-equals"},/"|'/]}}}})}}),n.languages.html=n.languages.markup,n.languages.mathml=n.languages.markup,n.languages.svg=n.languages.markup,n.languages.xml=n.languages.extend("markup",{}),n.languages.ssml=n.languages.xml,n.languages.atom=n.languages.xml,n.languages.rss=n.languages.xml,function(e){var t=/(?:"(?:\\(?:\r\n|[\s\S])|[^"\\\r\n])*"|'(?:\\(?:\r\n|[\s\S])|[^'\\\r\n])*')/;e.languages.css={comment:/\/\*[\s\S]*?\*\//,atrule:{pattern:RegExp("@[\\w-](?:"+/[^;{\s"']|\s+(?!\s)/.source+"|"+t.source+")*?"+/(?:;|(?=\s*\{))/.source),inside:{rule:/^@[\w-]+/,"selector-function-argument":{pattern:/(\bselector\s*\(\s*(?![\s)]))(?:[^()\s]|\s+(?![\s)])|\((?:[^()]|\([^()]*\))*\))+(?=\s*\))/,lookbehind:!0,alias:"selector"},keyword:{pattern:/(^|[^\w-])(?:and|not|only|or)(?![\w-])/,lookbehind:!0}}},url:{pattern:RegExp("\\burl\\((?:"+t.source+"|"+/(?:[^\\\r\n()"']|\\[\s\S])*/.source+")\\)","i"),greedy:!0,inside:{function:/^url/i,punctuation:/^\(|\)$/,string:{pattern:RegExp("^"+t.source+"$"),alias:"url"}}},selector:{pattern:RegExp("(^|[{}\\s])[^{}\\s](?:[^{};\"'\\s]|\\s+(?![\\s{])|"+t.source+")*(?=\\s*\\{)"),lookbehind:!0},string:{pattern:t,greedy:!0},property:{pattern:/(^|[^-\w\xA0-\uFFFF])(?!\s)[-_a-z\xA0-\uFFFF](?:(?!\s)[-\w\xA0-\uFFFF])*(?=\s*:)/i,lookbehind:!0},important:/!important\b/i,function:{pattern:/(^|[^-a-z0-9])[-a-z0-9]+(?=\()/i,lookbehind:!0},punctuation:/[(){};:,]/},e.languages.css.atrule.inside.rest=e.languages.css;var n=e.languages.markup;n&&(n.tag.addInlined("style","css"),n.tag.addAttribute("style","css"))}(n),n.languages.clike={comment:[{pattern:/(^|[^\\])\/\*[\s\S]*?(?:\*\/|$)/,lookbehind:!0,greedy:!0},{pattern:/(^|[^\\:])\/\/.*/,lookbehind:!0,greedy:!0}],string:{pattern:/(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,greedy:!0},"class-name":{pattern:/(\b(?:class|extends|implements|instanceof|interface|new|trait)\s+|\bcatch\s+\()[\w.\\]+/i,lookbehind:!0,inside:{punctuation:/[.\\]/}},keyword:/\b(?:break|catch|continue|do|else|finally|for|function|if|in|instanceof|new|null|return|throw|try|while)\b/,boolean:/\b(?:false|true)\b/,function:/\b\w+(?=\()/,number:/\b0x[\da-f]+\b|(?:\b\d+(?:\.\d*)?|\B\.\d+)(?:e[+-]?\d+)?/i,operator:/[<>]=?|[!=]=?=?|--?|\+\+?|&&?|\|\|?|[?*/~^%]/,punctuation:/[{}[\];(),.:]/},n.languages.javascript=n.languages.extend("clike",{"class-name":[n.languages.clike["class-name"],{pattern:/(^|[^$\w\xA0-\uFFFF])(?!\s)[_$A-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\.(?:constructor|prototype))/,lookbehind:!0}],keyword:[{pattern:/((?:^|\})\s*)catch\b/,lookbehind:!0},{pattern:/(^|[^.]|\.\.\.\s*)\b(?:as|assert(?=\s*\{)|async(?=\s*(?:function\b|\(|[$\w\xA0-\uFFFF]|$))|await|break|case|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally(?=\s*(?:\{|$))|for|from(?=\s*(?:['"]|$))|function|(?:get|set)(?=\s*(?:[#\[$\w\xA0-\uFFFF]|$))|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)\b/,lookbehind:!0}],function:/#?(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*(?:\.\s*(?:apply|bind|call)\s*)?\()/,number:{pattern:RegExp(/(^|[^\w$])/.source+"(?:"+/NaN|Infinity/.source+"|"+/0[bB][01]+(?:_[01]+)*n?/.source+"|"+/0[oO][0-7]+(?:_[0-7]+)*n?/.source+"|"+/0[xX][\dA-Fa-f]+(?:_[\dA-Fa-f]+)*n?/.source+"|"+/\d+(?:_\d+)*n/.source+"|"+/(?:\d+(?:_\d+)*(?:\.(?:\d+(?:_\d+)*)?)?|\.\d+(?:_\d+)*)(?:[Ee][+-]?\d+(?:_\d+)*)?/.source+")"+/(?![\w$])/.source),lookbehind:!0},operator:/--|\+\+|\*\*=?|=>|&&=?|\|\|=?|[!=]==|<<=?|>>>?=?|[-+*/%&|^!=<>]=?|\.{3}|\?\?=?|\?\.?|[~:]/}),n.languages.javascript["class-name"][0].pattern=/(\b(?:class|extends|implements|instanceof|interface|new)\s+)[\w.\\]+/,n.languages.insertBefore("javascript","keyword",{regex:{pattern:RegExp(/((?:^|[^$\w\xA0-\uFFFF."'\])\s]|\b(?:return|yield))\s*)/.source+/\//.source+"(?:"+/(?:\[(?:[^\]\\\r\n]|\\.)*\]|\\.|[^/\\\[\r\n])+\/[dgimyus]{0,7}/.source+"|"+/(?:\[(?:[^[\]\\\r\n]|\\.|\[(?:[^[\]\\\r\n]|\\.|\[(?:[^[\]\\\r\n]|\\.)*\])*\])*\]|\\.|[^/\\\[\r\n])+\/[dgimyus]{0,7}v[dgimyus]{0,7}/.source+")"+/(?=(?:\s|\/\*(?:[^*]|\*(?!\/))*\*\/)*(?:$|[\r\n,.;:})\]]|\/\/))/.source),lookbehind:!0,greedy:!0,inside:{"regex-source":{pattern:/^(\/)[\s\S]+(?=\/[a-z]*$)/,lookbehind:!0,alias:"language-regex",inside:n.languages.regex},"regex-delimiter":/^\/|\/$/,"regex-flags":/^[a-z]+$/}},"function-variable":{pattern:/#?(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*[=:]\s*(?:async\s*)?(?:\bfunction\b|(?:\((?:[^()]|\([^()]*\))*\)|(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*)\s*=>))/,alias:"function"},parameter:[{pattern:/(function(?:\s+(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*)?\s*\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\))/,lookbehind:!0,inside:n.languages.javascript},{pattern:/(^|[^$\w\xA0-\uFFFF])(?!\s)[_$a-z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*=>)/i,lookbehind:!0,inside:n.languages.javascript},{pattern:/(\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\)\s*=>)/,lookbehind:!0,inside:n.languages.javascript},{pattern:/((?:\b|\s|^)(?!(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)(?![$\w\xA0-\uFFFF]))(?:(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*\s*)\(\s*|\]\s*\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\)\s*\{)/,lookbehind:!0,inside:n.languages.javascript}],constant:/\b[A-Z](?:[A-Z_]|\dx?)*\b/}),n.languages.insertBefore("javascript","string",{hashbang:{pattern:/^#!.*/,greedy:!0,alias:"comment"},"template-string":{pattern:/`(?:\\[\s\S]|\$\{(?:[^{}]|\{(?:[^{}]|\{[^}]*\})*\})+\}|(?!\$\{)[^\\`])*`/,greedy:!0,inside:{"template-punctuation":{pattern:/^`|`$/,alias:"string"},interpolation:{pattern:/((?:^|[^\\])(?:\\{2})*)\$\{(?:[^{}]|\{(?:[^{}]|\{[^}]*\})*\})+\}/,lookbehind:!0,inside:{"interpolation-punctuation":{pattern:/^\$\{|\}$/,alias:"punctuation"},rest:n.languages.javascript}},string:/[\s\S]+/}},"string-property":{pattern:/((?:^|[,{])[ \t]*)(["'])(?:\\(?:\r\n|[\s\S])|(?!\2)[^\\\r\n])*\2(?=\s*:)/m,lookbehind:!0,greedy:!0,alias:"property"}}),n.languages.insertBefore("javascript","operator",{"literal-property":{pattern:/((?:^|[,{])[ \t]*)(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*:)/m,lookbehind:!0,alias:"property"}}),n.languages.markup&&(n.languages.markup.tag.addInlined("script","javascript"),n.languages.markup.tag.addAttribute(/on(?:abort|blur|change|click|composition(?:end|start|update)|dblclick|error|focus(?:in|out)?|key(?:down|up)|load|mouse(?:down|enter|leave|move|out|over|up)|reset|resize|scroll|select|slotchange|submit|unload|wheel)/.source,"javascript")),n.languages.js=n.languages.javascript,function(){if(void 0!==n&&"undefined"!=typeof document){Element.prototype.matches||(Element.prototype.matches=Element.prototype.msMatchesSelector||Element.prototype.webkitMatchesSelector);var e={js:"javascript",py:"python",rb:"ruby",ps1:"powershell",psm1:"powershell",sh:"bash",bat:"batch",h:"c",tex:"latex"},t='pre[data-src]:not([data-src-status="loaded"]):not([data-src-status="loading"])';n.hooks.add("before-highlightall",(function(e){e.selector+=", "+t})),n.hooks.add("before-sanity-check",(function(i){var a=i.element;if(a.matches(t)){i.code="",a.setAttribute("data-src-status","loading");var r=a.appendChild(document.createElement("CODE"));r.textContent="Loading…";var o=a.getAttribute("data-src"),s=i.language;if("none"===s){var c=(/\.(\w+)$/.exec(o)||[,"none"])[1];s=e[c]||c}n.util.setLanguage(r,s),n.util.setLanguage(a,s);var l=n.plugins.autoloader;l&&l.loadLanguages(s),function(e,t,n){var i=new XMLHttpRequest;i.open("GET",e,!0),i.onreadystatechange=function(){var e,a;4==i.readyState&&(i.status<400&&i.responseText?t(i.responseText):i.status>=400?n((e=i.status,a=i.statusText,"✖ Error "+e+" while fetching file: "+a)):n("✖ Error: File does not exist or is empty"))},i.send(null)}(o,(function(e){a.setAttribute("data-src-status","loaded");var t=function(e){var t=/^\s*(\d+)\s*(?:(,)\s*(?:(\d+)\s*)?)?$/.exec(e||"");if(t){var n=Number(t[1]),i=t[2],a=t[3];return i?a?[n,Number(a)]:[n,void 0]:[n,n]}}(a.getAttribute("data-range"));if(t){var i=e.split(/\r\n?|\n/g),o=t[0],s=null==t[1]?i.length:t[1];o<0&&(o+=i.length),o=Math.max(0,Math.min(o-1,i.length)),s<0&&(s+=i.length),s=Math.max(0,Math.min(s,i.length)),e=i.slice(o,s).join("\n"),a.hasAttribute("data-start")||a.setAttribute("data-start",String(o+1))}r.textContent=e,n.highlightElement(r)}),(function(e){a.setAttribute("data-src-status","failed"),r.textContent=e}))}})),n.plugins.fileHighlight={highlight:function(e){for(var i,a=(e||document).querySelectorAll(t),r=0;i=a[r++];)n.highlightElement(i)}};var i=!1;n.fileHighlight=function(){i||(console.warn("Prism.fileHighlight is deprecated. Use `Prism.plugins.fileHighlight.highlight` instead."),i=!0),n.plugins.fileHighlight.highlight.apply(this,arguments)}}}()}).call(this,n("yLpj"))},x7Ef:function(e,t,n){"use strict";n.d(t,"a",(function(){return s}));var i=n("1OyB"),a=n("vuIU"),r=n("vDqi"),o=n.n(r),s=function(){function e(){Object(i.a)(this,e)}return Object(a.a)(e,[{key:"index",value:function(e){return o.a.get("/api/inventories/transfers",{params:e})}},{key:"store",value:function(e){return o.a.post("/api/inventories/transfers",e)}},{key:"destroy",value:function(e){return o.a.delete("/api/inventories/transfers/".concat(e))}},{key:"update",value:function(e,t){return o.a.put("/api/inventories/transfers/".concat(e),t)}},{key:"show",value:function(e){return o.a.get("/api/inventories/transfers/".concat(e))}}]),e}()},xRNQ:function(e,t,n){var i=n("I+eb"),a=n("Gi26"),r=n("2bX/"),o=n("DVFp"),s=n("VpIT"),c=n("C0Od"),l=s("symbol-to-string-registry");i({target:"Symbol",stat:!0,forced:!c},{keyFor:function(e){if(!r(e))throw TypeError(o(e)+" is not a symbol");if(a(l,e))return l[e]}})},zMAm:function(e,t,n){"use strict";n.d(t,"a",(function(){return f}));var i=n("L3ns"),a=n("tC49"),r=n("xjcK"),o=n("2C+6"),s=n("z3V6"),c=n("Rrza");function l(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);t&&(i=i.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,i)}return n}function d(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?l(Object(n),!0).forEach((function(t){u(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):l(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function u(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var p=Object(s.d)(Object(o.j)(c.b,["append"]),r.X),f=Object(i.c)({name:r.X,functional:!0,props:p,render:function(e,t){var n=t.props,i=t.data,r=t.children;return e(c.a,Object(a.a)(i,{props:d(d({},n),{},{append:!0})}),r)}})},zoCi:function(e,t,n){"use strict";n.d(t,"a",(function(){return x}));var i=n("L3ns"),a=n("xjcK"),r=n("2C+6"),o=n("z3V6"),s=n("STsD"),c=n("Md8H"),l=n("kO/s"),d=n("jBgq"),u=n("PxWO"),p=n("1tTL"),f=n("Xg2j"),h=n("SPl0"),v=n("cSte"),g=n("OZ+h"),b=n("g47C"),m=n("wF1r");function y(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);t&&(i=i.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,i)}return n}function w(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?y(Object(n),!0).forEach((function(t){k(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):y(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function k(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var O=Object(o.d)(Object(r.m)(w(w(w(w(w(w(w(w(w({},l.b),u.b),p.b),f.b),h.a),v.a),g.a),b.a),m.a)),a.Ab),x=Object(i.c)({name:a.Ab,mixins:[s.a,c.a,l.a,d.a,f.a,v.b,h.b,m.b,b.b,g.b,u.a,p.a],props:O})}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[30],{
+
+/***/ "./node_modules/@fullcalendar/common/main.css":
+/*!****************************************************!*\
+  !*** ./node_modules/@fullcalendar/common/main.css ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../css-loader/dist/cjs.js??ref--6-1!../../postcss-loader/src??ref--6-2!./main.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/@fullcalendar/common/main.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/@fullcalendar/common/main.js":
+/*!***************************************************!*\
+  !*** ./node_modules/@fullcalendar/common/main.js ***!
+  \***************************************************/
+/*! exports provided: Component, Fragment, createContext, createElement, createPortal, createRef, flushSync, render, unmountComponentAtNode, BASE_OPTION_DEFAULTS, BASE_OPTION_REFINERS, BaseComponent, BgEvent, CalendarApi, CalendarContent, CalendarDataManager, CalendarDataProvider, CalendarRoot, ContentHook, CustomContentRenderContext, DateComponent, DateEnv, DateProfileGenerator, DayCellContent, DayCellRoot, DayHeader, DaySeriesModel, DayTableModel, DelayedRunner, ElementDragging, ElementScrollController, Emitter, EventApi, EventRoot, EventSourceApi, Interaction, MoreLinkRoot, MountHook, NamedTimeZoneImpl, NowIndicatorRoot, NowTimer, PositionCache, RefMap, RenderHook, ScrollController, ScrollResponder, Scroller, SegHierarchy, SimpleScrollGrid, Slicer, Splitter, StandardEvent, TableDateCell, TableDowCell, Theme, ViewApi, ViewContextType, ViewRoot, WeekNumberRoot, WindowScrollController, addDays, addDurations, addMs, addWeeks, allowContextMenu, allowSelection, applyMutationToEventStore, applyStyle, applyStyleProp, asCleanDays, asRoughMinutes, asRoughMs, asRoughSeconds, binarySearch, buildClassNameNormalizer, buildEntryKey, buildEventApis, buildEventRangeKey, buildHashFromArray, buildIsoString, buildNavLinkAttrs, buildSegCompareObj, buildSegTimeText, collectFromHash, combineEventUis, compareByFieldSpec, compareByFieldSpecs, compareNumbers, compareObjs, computeEarliestSegStart, computeEdges, computeFallbackHeaderFormat, computeHeightAndMargins, computeInnerRect, computeRect, computeSegDraggable, computeSegEndResizable, computeSegStartResizable, computeShrinkWidth, computeSmallestCellWidth, computeVisibleDayRange, config, constrainPoint, createAriaClickAttrs, createDuration, createEmptyEventStore, createEventInstance, createEventUi, createFormatter, createPlugin, diffDates, diffDayAndTime, diffDays, diffPoints, diffWeeks, diffWholeDays, diffWholeWeeks, disableCursor, elementClosest, elementMatches, enableCursor, eventTupleToStore, filterEventStoreDefs, filterHash, findDirectChildren, findElements, flexibleCompare, formatDate, formatDayString, formatIsoTimeString, formatRange, getAllowYScrolling, getCanVGrowWithinCell, getClippingParents, getDateMeta, getDayClassNames, getDefaultEventEnd, getElRoot, getElSeg, getEntrySpanEnd, getEventClassNames, getEventTargetViaRoot, getIsRtlScrollbarOnLeft, getRectCenter, getRelevantEvents, getScrollGridClassNames, getScrollbarWidths, getSectionClassNames, getSectionHasLiquidHeight, getSegAnchorAttrs, getSegMeta, getSlotClassNames, getStickyFooterScrollbar, getStickyHeaderDates, getUnequalProps, getUniqueDomId, globalLocales, globalPlugins, greatestDurationDenominator, groupIntersectingEntries, guid, hasBgRendering, hasShrinkWidth, identity, interactionSettingsStore, interactionSettingsToStore, intersectRanges, intersectRects, intersectSpans, isArraysEqual, isColPropsEqual, isDateSelectionValid, isDateSpansEqual, isInt, isInteractionValid, isMultiDayRange, isPropsEqual, isPropsValid, isValidDate, joinSpans, listenBySelector, mapHash, memoize, memoizeArraylike, memoizeHashlike, memoizeObjArg, mergeEventStores, multiplyDuration, padStart, parseBusinessHours, parseClassNames, parseDragMeta, parseEventDef, parseFieldSpecs, parseMarker, pointInsideRect, preventContextMenu, preventDefault, preventSelection, rangeContainsMarker, rangeContainsRange, rangesEqual, rangesIntersect, refineEventDef, refineProps, removeElement, removeExact, renderChunkContent, renderFill, renderMicroColGroup, renderScrollShim, requestJson, sanitizeShrinkWidth, setElSeg, setRef, sliceEventStore, sliceEvents, sortEventSegs, startOfDay, translateRect, triggerDateSelect, unpromisify, version, whenTransitionDone, wholeDivideDurations */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BASE_OPTION_DEFAULTS", function() { return BASE_OPTION_DEFAULTS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BASE_OPTION_REFINERS", function() { return BASE_OPTION_REFINERS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BaseComponent", function() { return BaseComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BgEvent", function() { return BgEvent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CalendarApi", function() { return CalendarApi; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CalendarContent", function() { return CalendarContent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CalendarDataManager", function() { return CalendarDataManager; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CalendarDataProvider", function() { return CalendarDataProvider; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CalendarRoot", function() { return CalendarRoot; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContentHook", function() { return ContentHook; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomContentRenderContext", function() { return CustomContentRenderContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DateComponent", function() { return DateComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DateEnv", function() { return DateEnv; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DateProfileGenerator", function() { return DateProfileGenerator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DayCellContent", function() { return DayCellContent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DayCellRoot", function() { return DayCellRoot; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DayHeader", function() { return DayHeader; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DaySeriesModel", function() { return DaySeriesModel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DayTableModel", function() { return DayTableModel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DelayedRunner", function() { return DelayedRunner; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ElementDragging", function() { return ElementDragging; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ElementScrollController", function() { return ElementScrollController; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Emitter", function() { return Emitter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EventApi", function() { return EventApi; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EventRoot", function() { return EventRoot; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EventSourceApi", function() { return EventSourceApi; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Interaction", function() { return Interaction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MoreLinkRoot", function() { return MoreLinkRoot; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MountHook", function() { return MountHook; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NamedTimeZoneImpl", function() { return NamedTimeZoneImpl; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NowIndicatorRoot", function() { return NowIndicatorRoot; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NowTimer", function() { return NowTimer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PositionCache", function() { return PositionCache; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RefMap", function() { return RefMap; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RenderHook", function() { return RenderHook; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScrollController", function() { return ScrollController; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScrollResponder", function() { return ScrollResponder; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Scroller", function() { return Scroller; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SegHierarchy", function() { return SegHierarchy; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SimpleScrollGrid", function() { return SimpleScrollGrid; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Slicer", function() { return Slicer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Splitter", function() { return Splitter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StandardEvent", function() { return StandardEvent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TableDateCell", function() { return TableDateCell; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TableDowCell", function() { return TableDowCell; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Theme", function() { return Theme; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViewApi", function() { return ViewApi; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViewContextType", function() { return ViewContextType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViewRoot", function() { return ViewRoot; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WeekNumberRoot", function() { return WeekNumberRoot; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WindowScrollController", function() { return WindowScrollController; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addDays", function() { return addDays; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addDurations", function() { return addDurations; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addMs", function() { return addMs; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addWeeks", function() { return addWeeks; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "allowContextMenu", function() { return allowContextMenu; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "allowSelection", function() { return allowSelection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "applyMutationToEventStore", function() { return applyMutationToEventStore; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "applyStyle", function() { return applyStyle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "applyStyleProp", function() { return applyStyleProp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "asCleanDays", function() { return asCleanDays; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "asRoughMinutes", function() { return asRoughMinutes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "asRoughMs", function() { return asRoughMs; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "asRoughSeconds", function() { return asRoughSeconds; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "binarySearch", function() { return binarySearch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buildClassNameNormalizer", function() { return buildClassNameNormalizer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buildEntryKey", function() { return buildEntryKey; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buildEventApis", function() { return buildEventApis; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buildEventRangeKey", function() { return buildEventRangeKey; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buildHashFromArray", function() { return buildHashFromArray; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buildIsoString", function() { return buildIsoString; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buildNavLinkAttrs", function() { return buildNavLinkAttrs; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buildSegCompareObj", function() { return buildSegCompareObj; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buildSegTimeText", function() { return buildSegTimeText; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "collectFromHash", function() { return collectFromHash; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "combineEventUis", function() { return combineEventUis; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "compareByFieldSpec", function() { return compareByFieldSpec; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "compareByFieldSpecs", function() { return compareByFieldSpecs; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "compareNumbers", function() { return compareNumbers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "compareObjs", function() { return compareObjs; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "computeEarliestSegStart", function() { return computeEarliestSegStart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "computeEdges", function() { return computeEdges; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "computeFallbackHeaderFormat", function() { return computeFallbackHeaderFormat; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "computeHeightAndMargins", function() { return computeHeightAndMargins; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "computeInnerRect", function() { return computeInnerRect; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "computeRect", function() { return computeRect; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "computeSegDraggable", function() { return computeSegDraggable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "computeSegEndResizable", function() { return computeSegEndResizable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "computeSegStartResizable", function() { return computeSegStartResizable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "computeShrinkWidth", function() { return computeShrinkWidth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "computeSmallestCellWidth", function() { return computeSmallestCellWidth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "computeVisibleDayRange", function() { return computeVisibleDayRange; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "config", function() { return config; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "constrainPoint", function() { return constrainPoint; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createAriaClickAttrs", function() { return createAriaClickAttrs; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createDuration", function() { return createDuration; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createEmptyEventStore", function() { return createEmptyEventStore; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createEventInstance", function() { return createEventInstance; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createEventUi", function() { return createEventUi; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createFormatter", function() { return createFormatter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPlugin", function() { return createPlugin; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "diffDates", function() { return diffDates; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "diffDayAndTime", function() { return diffDayAndTime; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "diffDays", function() { return diffDays; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "diffPoints", function() { return diffPoints; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "diffWeeks", function() { return diffWeeks; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "diffWholeDays", function() { return diffWholeDays; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "diffWholeWeeks", function() { return diffWholeWeeks; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "disableCursor", function() { return disableCursor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "elementClosest", function() { return elementClosest; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "elementMatches", function() { return elementMatches; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "enableCursor", function() { return enableCursor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "eventTupleToStore", function() { return eventTupleToStore; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "filterEventStoreDefs", function() { return filterEventStoreDefs; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "filterHash", function() { return filterHash; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findDirectChildren", function() { return findDirectChildren; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findElements", function() { return findElements; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "flexibleCompare", function() { return flexibleCompare; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formatDate", function() { return formatDate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formatDayString", function() { return formatDayString; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formatIsoTimeString", function() { return formatIsoTimeString; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formatRange", function() { return formatRange; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAllowYScrolling", function() { return getAllowYScrolling; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCanVGrowWithinCell", function() { return getCanVGrowWithinCell; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getClippingParents", function() { return getClippingParents; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDateMeta", function() { return getDateMeta; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDayClassNames", function() { return getDayClassNames; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDefaultEventEnd", function() { return getDefaultEventEnd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getElRoot", function() { return getElRoot; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getElSeg", function() { return getElSeg; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getEntrySpanEnd", function() { return getEntrySpanEnd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getEventClassNames", function() { return getEventClassNames; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getEventTargetViaRoot", function() { return getEventTargetViaRoot; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getIsRtlScrollbarOnLeft", function() { return getIsRtlScrollbarOnLeft; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getRectCenter", function() { return getRectCenter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getRelevantEvents", function() { return getRelevantEvents; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getScrollGridClassNames", function() { return getScrollGridClassNames; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getScrollbarWidths", function() { return getScrollbarWidths; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSectionClassNames", function() { return getSectionClassNames; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSectionHasLiquidHeight", function() { return getSectionHasLiquidHeight; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSegAnchorAttrs", function() { return getSegAnchorAttrs; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSegMeta", function() { return getSegMeta; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSlotClassNames", function() { return getSlotClassNames; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStickyFooterScrollbar", function() { return getStickyFooterScrollbar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStickyHeaderDates", function() { return getStickyHeaderDates; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUnequalProps", function() { return getUnequalProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUniqueDomId", function() { return getUniqueDomId; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "globalLocales", function() { return globalLocales; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "globalPlugins", function() { return globalPlugins; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "greatestDurationDenominator", function() { return greatestDurationDenominator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "groupIntersectingEntries", function() { return groupIntersectingEntries; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "guid", function() { return guid; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hasBgRendering", function() { return hasBgRendering; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hasShrinkWidth", function() { return hasShrinkWidth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "identity", function() { return identity; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "interactionSettingsStore", function() { return interactionSettingsStore; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "interactionSettingsToStore", function() { return interactionSettingsToStore; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "intersectRanges", function() { return intersectRanges; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "intersectRects", function() { return intersectRects; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "intersectSpans", function() { return intersectSpans; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isArraysEqual", function() { return isArraysEqual; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isColPropsEqual", function() { return isColPropsEqual; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isDateSelectionValid", function() { return isDateSelectionValid; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isDateSpansEqual", function() { return isDateSpansEqual; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isInt", function() { return isInt; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isInteractionValid", function() { return isInteractionValid; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isMultiDayRange", function() { return isMultiDayRange; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isPropsEqual", function() { return isPropsEqual; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isPropsValid", function() { return isPropsValid; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isValidDate", function() { return isValidDate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "joinSpans", function() { return joinSpans; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "listenBySelector", function() { return listenBySelector; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapHash", function() { return mapHash; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "memoize", function() { return memoize; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "memoizeArraylike", function() { return memoizeArraylike; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "memoizeHashlike", function() { return memoizeHashlike; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "memoizeObjArg", function() { return memoizeObjArg; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mergeEventStores", function() { return mergeEventStores; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multiplyDuration", function() { return multiplyDuration; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "padStart", function() { return padStart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "parseBusinessHours", function() { return parseBusinessHours; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "parseClassNames", function() { return parseClassNames; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "parseDragMeta", function() { return parseDragMeta; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "parseEventDef", function() { return parseEventDef; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "parseFieldSpecs", function() { return parseFieldSpecs; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "parseMarker", function() { return parse; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pointInsideRect", function() { return pointInsideRect; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "preventContextMenu", function() { return preventContextMenu; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "preventDefault", function() { return preventDefault; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "preventSelection", function() { return preventSelection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rangeContainsMarker", function() { return rangeContainsMarker; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rangeContainsRange", function() { return rangeContainsRange; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rangesEqual", function() { return rangesEqual; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rangesIntersect", function() { return rangesIntersect; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "refineEventDef", function() { return refineEventDef; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "refineProps", function() { return refineProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeElement", function() { return removeElement; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeExact", function() { return removeExact; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderChunkContent", function() { return renderChunkContent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderFill", function() { return renderFill; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderMicroColGroup", function() { return renderMicroColGroup; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderScrollShim", function() { return renderScrollShim; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "requestJson", function() { return requestJson; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sanitizeShrinkWidth", function() { return sanitizeShrinkWidth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setElSeg", function() { return setElSeg; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setRef", function() { return setRef; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sliceEventStore", function() { return sliceEventStore; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sliceEvents", function() { return sliceEvents; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortEventSegs", function() { return sortEventSegs; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "startOfDay", function() { return startOfDay; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "translateRect", function() { return translateRect; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "triggerDateSelect", function() { return triggerDateSelect; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unpromisify", function() { return unpromisify; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "version", function() { return version; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "whenTransitionDone", function() { return whenTransitionDone; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wholeDivideDurations", function() { return wholeDivideDurations; });
+/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main.css */ "./node_modules/@fullcalendar/common/main.css");
+/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_main_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _vdom_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./vdom.js */ "./node_modules/@fullcalendar/common/vdom.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Component", function() { return _vdom_js__WEBPACK_IMPORTED_MODULE_2__["Component"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Fragment", function() { return _vdom_js__WEBPACK_IMPORTED_MODULE_2__["Fragment"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createContext", function() { return _vdom_js__WEBPACK_IMPORTED_MODULE_2__["createContext"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createElement", function() { return _vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createPortal", function() { return _vdom_js__WEBPACK_IMPORTED_MODULE_2__["createPortal"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createRef", function() { return _vdom_js__WEBPACK_IMPORTED_MODULE_2__["createRef"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "flushSync", function() { return _vdom_js__WEBPACK_IMPORTED_MODULE_2__["flushSync"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _vdom_js__WEBPACK_IMPORTED_MODULE_2__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "unmountComponentAtNode", function() { return _vdom_js__WEBPACK_IMPORTED_MODULE_2__["unmountComponentAtNode"]; });
+
+/*!
+FullCalendar v5.11.5
+Docs & License: https://fullcalendar.io/
+(c) 2022 Adam Shaw
+*/
+
+
+
+
+
+
+// no public types yet. when there are, export from:
+// import {} from './api-type-deps'
+var EventSourceApi = /** @class */ (function () {
+    function EventSourceApi(context, internalEventSource) {
+        this.context = context;
+        this.internalEventSource = internalEventSource;
+    }
+    EventSourceApi.prototype.remove = function () {
+        this.context.dispatch({
+            type: 'REMOVE_EVENT_SOURCE',
+            sourceId: this.internalEventSource.sourceId,
+        });
+    };
+    EventSourceApi.prototype.refetch = function () {
+        this.context.dispatch({
+            type: 'FETCH_EVENT_SOURCES',
+            sourceIds: [this.internalEventSource.sourceId],
+            isRefetch: true,
+        });
+    };
+    Object.defineProperty(EventSourceApi.prototype, "id", {
+        get: function () {
+            return this.internalEventSource.publicId;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(EventSourceApi.prototype, "url", {
+        get: function () {
+            return this.internalEventSource.meta.url;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(EventSourceApi.prototype, "format", {
+        get: function () {
+            return this.internalEventSource.meta.format; // TODO: bad. not guaranteed
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return EventSourceApi;
+}());
+
+function removeElement(el) {
+    if (el.parentNode) {
+        el.parentNode.removeChild(el);
+    }
+}
+// Querying
+// ----------------------------------------------------------------------------------------------------------------
+function elementClosest(el, selector) {
+    if (el.closest) {
+        return el.closest(selector);
+        // really bad fallback for IE
+        // from https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
+    }
+    if (!document.documentElement.contains(el)) {
+        return null;
+    }
+    do {
+        if (elementMatches(el, selector)) {
+            return el;
+        }
+        el = (el.parentElement || el.parentNode);
+    } while (el !== null && el.nodeType === 1);
+    return null;
+}
+function elementMatches(el, selector) {
+    var method = el.matches || el.matchesSelector || el.msMatchesSelector;
+    return method.call(el, selector);
+}
+// accepts multiple subject els
+// returns a real array. good for methods like forEach
+// TODO: accept the document
+function findElements(container, selector) {
+    var containers = container instanceof HTMLElement ? [container] : container;
+    var allMatches = [];
+    for (var i = 0; i < containers.length; i += 1) {
+        var matches = containers[i].querySelectorAll(selector);
+        for (var j = 0; j < matches.length; j += 1) {
+            allMatches.push(matches[j]);
+        }
+    }
+    return allMatches;
+}
+// accepts multiple subject els
+// only queries direct child elements // TODO: rename to findDirectChildren!
+function findDirectChildren(parent, selector) {
+    var parents = parent instanceof HTMLElement ? [parent] : parent;
+    var allMatches = [];
+    for (var i = 0; i < parents.length; i += 1) {
+        var childNodes = parents[i].children; // only ever elements
+        for (var j = 0; j < childNodes.length; j += 1) {
+            var childNode = childNodes[j];
+            if (!selector || elementMatches(childNode, selector)) {
+                allMatches.push(childNode);
+            }
+        }
+    }
+    return allMatches;
+}
+// Style
+// ----------------------------------------------------------------------------------------------------------------
+var PIXEL_PROP_RE = /(top|left|right|bottom|width|height)$/i;
+function applyStyle(el, props) {
+    for (var propName in props) {
+        applyStyleProp(el, propName, props[propName]);
+    }
+}
+function applyStyleProp(el, name, val) {
+    if (val == null) {
+        el.style[name] = '';
+    }
+    else if (typeof val === 'number' && PIXEL_PROP_RE.test(name)) {
+        el.style[name] = val + "px";
+    }
+    else {
+        el.style[name] = val;
+    }
+}
+// Event Handling
+// ----------------------------------------------------------------------------------------------------------------
+// if intercepting bubbled events at the document/window/body level,
+// and want to see originating element (the 'target'), use this util instead
+// of `ev.target` because it goes within web-component boundaries.
+function getEventTargetViaRoot(ev) {
+    var _a, _b;
+    return (_b = (_a = ev.composedPath) === null || _a === void 0 ? void 0 : _a.call(ev)[0]) !== null && _b !== void 0 ? _b : ev.target;
+}
+// Shadow DOM consuderations
+// ----------------------------------------------------------------------------------------------------------------
+function getElRoot(el) {
+    return el.getRootNode ? el.getRootNode() : document;
+}
+// Unique ID for DOM attribute
+var guid$1 = 0;
+function getUniqueDomId() {
+    guid$1 += 1;
+    return 'fc-dom-' + guid$1;
+}
+
+// Stops a mouse/touch event from doing it's native browser action
+function preventDefault(ev) {
+    ev.preventDefault();
+}
+// Event Delegation
+// ----------------------------------------------------------------------------------------------------------------
+function buildDelegationHandler(selector, handler) {
+    return function (ev) {
+        var matchedChild = elementClosest(ev.target, selector);
+        if (matchedChild) {
+            handler.call(matchedChild, ev, matchedChild);
+        }
+    };
+}
+function listenBySelector(container, eventType, selector, handler) {
+    var attachedHandler = buildDelegationHandler(selector, handler);
+    container.addEventListener(eventType, attachedHandler);
+    return function () {
+        container.removeEventListener(eventType, attachedHandler);
+    };
+}
+function listenToHoverBySelector(container, selector, onMouseEnter, onMouseLeave) {
+    var currentMatchedChild;
+    return listenBySelector(container, 'mouseover', selector, function (mouseOverEv, matchedChild) {
+        if (matchedChild !== currentMatchedChild) {
+            currentMatchedChild = matchedChild;
+            onMouseEnter(mouseOverEv, matchedChild);
+            var realOnMouseLeave_1 = function (mouseLeaveEv) {
+                currentMatchedChild = null;
+                onMouseLeave(mouseLeaveEv, matchedChild);
+                matchedChild.removeEventListener('mouseleave', realOnMouseLeave_1);
+            };
+            // listen to the next mouseleave, and then unattach
+            matchedChild.addEventListener('mouseleave', realOnMouseLeave_1);
+        }
+    });
+}
+// Animation
+// ----------------------------------------------------------------------------------------------------------------
+var transitionEventNames = [
+    'webkitTransitionEnd',
+    'otransitionend',
+    'oTransitionEnd',
+    'msTransitionEnd',
+    'transitionend',
+];
+// triggered only when the next single subsequent transition finishes
+function whenTransitionDone(el, callback) {
+    var realCallback = function (ev) {
+        callback(ev);
+        transitionEventNames.forEach(function (eventName) {
+            el.removeEventListener(eventName, realCallback);
+        });
+    };
+    transitionEventNames.forEach(function (eventName) {
+        el.addEventListener(eventName, realCallback); // cross-browser way to determine when the transition finishes
+    });
+}
+// ARIA workarounds
+// ----------------------------------------------------------------------------------------------------------------
+function createAriaClickAttrs(handler) {
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({ onClick: handler }, createAriaKeyboardAttrs(handler));
+}
+function createAriaKeyboardAttrs(handler) {
+    return {
+        tabIndex: 0,
+        onKeyDown: function (ev) {
+            if (ev.key === 'Enter' || ev.key === ' ') {
+                handler(ev);
+                ev.preventDefault(); // if space, don't scroll down page
+            }
+        },
+    };
+}
+
+var guidNumber = 0;
+function guid() {
+    guidNumber += 1;
+    return String(guidNumber);
+}
+/* FullCalendar-specific DOM Utilities
+----------------------------------------------------------------------------------------------------------------------*/
+// Make the mouse cursor express that an event is not allowed in the current area
+function disableCursor() {
+    document.body.classList.add('fc-not-allowed');
+}
+// Returns the mouse cursor to its original look
+function enableCursor() {
+    document.body.classList.remove('fc-not-allowed');
+}
+/* Selection
+----------------------------------------------------------------------------------------------------------------------*/
+function preventSelection(el) {
+    el.classList.add('fc-unselectable');
+    el.addEventListener('selectstart', preventDefault);
+}
+function allowSelection(el) {
+    el.classList.remove('fc-unselectable');
+    el.removeEventListener('selectstart', preventDefault);
+}
+/* Context Menu
+----------------------------------------------------------------------------------------------------------------------*/
+function preventContextMenu(el) {
+    el.addEventListener('contextmenu', preventDefault);
+}
+function allowContextMenu(el) {
+    el.removeEventListener('contextmenu', preventDefault);
+}
+function parseFieldSpecs(input) {
+    var specs = [];
+    var tokens = [];
+    var i;
+    var token;
+    if (typeof input === 'string') {
+        tokens = input.split(/\s*,\s*/);
+    }
+    else if (typeof input === 'function') {
+        tokens = [input];
+    }
+    else if (Array.isArray(input)) {
+        tokens = input;
+    }
+    for (i = 0; i < tokens.length; i += 1) {
+        token = tokens[i];
+        if (typeof token === 'string') {
+            specs.push(token.charAt(0) === '-' ?
+                { field: token.substring(1), order: -1 } :
+                { field: token, order: 1 });
+        }
+        else if (typeof token === 'function') {
+            specs.push({ func: token });
+        }
+    }
+    return specs;
+}
+function compareByFieldSpecs(obj0, obj1, fieldSpecs) {
+    var i;
+    var cmp;
+    for (i = 0; i < fieldSpecs.length; i += 1) {
+        cmp = compareByFieldSpec(obj0, obj1, fieldSpecs[i]);
+        if (cmp) {
+            return cmp;
+        }
+    }
+    return 0;
+}
+function compareByFieldSpec(obj0, obj1, fieldSpec) {
+    if (fieldSpec.func) {
+        return fieldSpec.func(obj0, obj1);
+    }
+    return flexibleCompare(obj0[fieldSpec.field], obj1[fieldSpec.field])
+        * (fieldSpec.order || 1);
+}
+function flexibleCompare(a, b) {
+    if (!a && !b) {
+        return 0;
+    }
+    if (b == null) {
+        return -1;
+    }
+    if (a == null) {
+        return 1;
+    }
+    if (typeof a === 'string' || typeof b === 'string') {
+        return String(a).localeCompare(String(b));
+    }
+    return a - b;
+}
+/* String Utilities
+----------------------------------------------------------------------------------------------------------------------*/
+function padStart(val, len) {
+    var s = String(val);
+    return '000'.substr(0, len - s.length) + s;
+}
+function formatWithOrdinals(formatter, args, fallbackText) {
+    if (typeof formatter === 'function') {
+        return formatter.apply(void 0, args);
+    }
+    if (typeof formatter === 'string') { // non-blank string
+        return args.reduce(function (str, arg, index) { return (str.replace('$' + index, arg || '')); }, formatter);
+    }
+    return fallbackText;
+}
+/* Number Utilities
+----------------------------------------------------------------------------------------------------------------------*/
+function compareNumbers(a, b) {
+    return a - b;
+}
+function isInt(n) {
+    return n % 1 === 0;
+}
+/* FC-specific DOM dimension stuff
+----------------------------------------------------------------------------------------------------------------------*/
+function computeSmallestCellWidth(cellEl) {
+    var allWidthEl = cellEl.querySelector('.fc-scrollgrid-shrink-frame');
+    var contentWidthEl = cellEl.querySelector('.fc-scrollgrid-shrink-cushion');
+    if (!allWidthEl) {
+        throw new Error('needs fc-scrollgrid-shrink-frame className'); // TODO: use const
+    }
+    if (!contentWidthEl) {
+        throw new Error('needs fc-scrollgrid-shrink-cushion className');
+    }
+    return cellEl.getBoundingClientRect().width - allWidthEl.getBoundingClientRect().width + // the cell padding+border
+        contentWidthEl.getBoundingClientRect().width;
+}
+
+var DAY_IDS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+// Adding
+function addWeeks(m, n) {
+    var a = dateToUtcArray(m);
+    a[2] += n * 7;
+    return arrayToUtcDate(a);
+}
+function addDays(m, n) {
+    var a = dateToUtcArray(m);
+    a[2] += n;
+    return arrayToUtcDate(a);
+}
+function addMs(m, n) {
+    var a = dateToUtcArray(m);
+    a[6] += n;
+    return arrayToUtcDate(a);
+}
+// Diffing (all return floats)
+// TODO: why not use ranges?
+function diffWeeks(m0, m1) {
+    return diffDays(m0, m1) / 7;
+}
+function diffDays(m0, m1) {
+    return (m1.valueOf() - m0.valueOf()) / (1000 * 60 * 60 * 24);
+}
+function diffHours(m0, m1) {
+    return (m1.valueOf() - m0.valueOf()) / (1000 * 60 * 60);
+}
+function diffMinutes(m0, m1) {
+    return (m1.valueOf() - m0.valueOf()) / (1000 * 60);
+}
+function diffSeconds(m0, m1) {
+    return (m1.valueOf() - m0.valueOf()) / 1000;
+}
+function diffDayAndTime(m0, m1) {
+    var m0day = startOfDay(m0);
+    var m1day = startOfDay(m1);
+    return {
+        years: 0,
+        months: 0,
+        days: Math.round(diffDays(m0day, m1day)),
+        milliseconds: (m1.valueOf() - m1day.valueOf()) - (m0.valueOf() - m0day.valueOf()),
+    };
+}
+// Diffing Whole Units
+function diffWholeWeeks(m0, m1) {
+    var d = diffWholeDays(m0, m1);
+    if (d !== null && d % 7 === 0) {
+        return d / 7;
+    }
+    return null;
+}
+function diffWholeDays(m0, m1) {
+    if (timeAsMs(m0) === timeAsMs(m1)) {
+        return Math.round(diffDays(m0, m1));
+    }
+    return null;
+}
+// Start-Of
+function startOfDay(m) {
+    return arrayToUtcDate([
+        m.getUTCFullYear(),
+        m.getUTCMonth(),
+        m.getUTCDate(),
+    ]);
+}
+function startOfHour(m) {
+    return arrayToUtcDate([
+        m.getUTCFullYear(),
+        m.getUTCMonth(),
+        m.getUTCDate(),
+        m.getUTCHours(),
+    ]);
+}
+function startOfMinute(m) {
+    return arrayToUtcDate([
+        m.getUTCFullYear(),
+        m.getUTCMonth(),
+        m.getUTCDate(),
+        m.getUTCHours(),
+        m.getUTCMinutes(),
+    ]);
+}
+function startOfSecond(m) {
+    return arrayToUtcDate([
+        m.getUTCFullYear(),
+        m.getUTCMonth(),
+        m.getUTCDate(),
+        m.getUTCHours(),
+        m.getUTCMinutes(),
+        m.getUTCSeconds(),
+    ]);
+}
+// Week Computation
+function weekOfYear(marker, dow, doy) {
+    var y = marker.getUTCFullYear();
+    var w = weekOfGivenYear(marker, y, dow, doy);
+    if (w < 1) {
+        return weekOfGivenYear(marker, y - 1, dow, doy);
+    }
+    var nextW = weekOfGivenYear(marker, y + 1, dow, doy);
+    if (nextW >= 1) {
+        return Math.min(w, nextW);
+    }
+    return w;
+}
+function weekOfGivenYear(marker, year, dow, doy) {
+    var firstWeekStart = arrayToUtcDate([year, 0, 1 + firstWeekOffset(year, dow, doy)]);
+    var dayStart = startOfDay(marker);
+    var days = Math.round(diffDays(firstWeekStart, dayStart));
+    return Math.floor(days / 7) + 1; // zero-indexed
+}
+// start-of-first-week - start-of-year
+function firstWeekOffset(year, dow, doy) {
+    // first-week day -- which january is always in the first week (4 for iso, 1 for other)
+    var fwd = 7 + dow - doy;
+    // first-week day local weekday -- which local weekday is fwd
+    var fwdlw = (7 + arrayToUtcDate([year, 0, fwd]).getUTCDay() - dow) % 7;
+    return -fwdlw + fwd - 1;
+}
+// Array Conversion
+function dateToLocalArray(date) {
+    return [
+        date.getFullYear(),
+        date.getMonth(),
+        date.getDate(),
+        date.getHours(),
+        date.getMinutes(),
+        date.getSeconds(),
+        date.getMilliseconds(),
+    ];
+}
+function arrayToLocalDate(a) {
+    return new Date(a[0], a[1] || 0, a[2] == null ? 1 : a[2], // day of month
+    a[3] || 0, a[4] || 0, a[5] || 0);
+}
+function dateToUtcArray(date) {
+    return [
+        date.getUTCFullYear(),
+        date.getUTCMonth(),
+        date.getUTCDate(),
+        date.getUTCHours(),
+        date.getUTCMinutes(),
+        date.getUTCSeconds(),
+        date.getUTCMilliseconds(),
+    ];
+}
+function arrayToUtcDate(a) {
+    // according to web standards (and Safari), a month index is required.
+    // massage if only given a year.
+    if (a.length === 1) {
+        a = a.concat([0]);
+    }
+    return new Date(Date.UTC.apply(Date, a));
+}
+// Other Utils
+function isValidDate(m) {
+    return !isNaN(m.valueOf());
+}
+function timeAsMs(m) {
+    return m.getUTCHours() * 1000 * 60 * 60 +
+        m.getUTCMinutes() * 1000 * 60 +
+        m.getUTCSeconds() * 1000 +
+        m.getUTCMilliseconds();
+}
+
+function createEventInstance(defId, range, forcedStartTzo, forcedEndTzo) {
+    return {
+        instanceId: guid(),
+        defId: defId,
+        range: range,
+        forcedStartTzo: forcedStartTzo == null ? null : forcedStartTzo,
+        forcedEndTzo: forcedEndTzo == null ? null : forcedEndTzo,
+    };
+}
+
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+// Merges an array of objects into a single object.
+// The second argument allows for an array of property names who's object values will be merged together.
+function mergeProps(propObjs, complexPropsMap) {
+    var dest = {};
+    if (complexPropsMap) {
+        for (var name_1 in complexPropsMap) {
+            var complexObjs = [];
+            // collect the trailing object values, stopping when a non-object is discovered
+            for (var i = propObjs.length - 1; i >= 0; i -= 1) {
+                var val = propObjs[i][name_1];
+                if (typeof val === 'object' && val) { // non-null object
+                    complexObjs.unshift(val);
+                }
+                else if (val !== undefined) {
+                    dest[name_1] = val; // if there were no objects, this value will be used
+                    break;
+                }
+            }
+            // if the trailing values were objects, use the merged value
+            if (complexObjs.length) {
+                dest[name_1] = mergeProps(complexObjs);
+            }
+        }
+    }
+    // copy values into the destination, going from last to first
+    for (var i = propObjs.length - 1; i >= 0; i -= 1) {
+        var props = propObjs[i];
+        for (var name_2 in props) {
+            if (!(name_2 in dest)) { // if already assigned by previous props or complex props, don't reassign
+                dest[name_2] = props[name_2];
+            }
+        }
+    }
+    return dest;
+}
+function filterHash(hash, func) {
+    var filtered = {};
+    for (var key in hash) {
+        if (func(hash[key], key)) {
+            filtered[key] = hash[key];
+        }
+    }
+    return filtered;
+}
+function mapHash(hash, func) {
+    var newHash = {};
+    for (var key in hash) {
+        newHash[key] = func(hash[key], key);
+    }
+    return newHash;
+}
+function arrayToHash(a) {
+    var hash = {};
+    for (var _i = 0, a_1 = a; _i < a_1.length; _i++) {
+        var item = a_1[_i];
+        hash[item] = true;
+    }
+    return hash;
+}
+function buildHashFromArray(a, func) {
+    var hash = {};
+    for (var i = 0; i < a.length; i += 1) {
+        var tuple = func(a[i], i);
+        hash[tuple[0]] = tuple[1];
+    }
+    return hash;
+}
+function hashValuesToArray(obj) {
+    var a = [];
+    for (var key in obj) {
+        a.push(obj[key]);
+    }
+    return a;
+}
+function isPropsEqual(obj0, obj1) {
+    if (obj0 === obj1) {
+        return true;
+    }
+    for (var key in obj0) {
+        if (hasOwnProperty.call(obj0, key)) {
+            if (!(key in obj1)) {
+                return false;
+            }
+        }
+    }
+    for (var key in obj1) {
+        if (hasOwnProperty.call(obj1, key)) {
+            if (obj0[key] !== obj1[key]) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+function getUnequalProps(obj0, obj1) {
+    var keys = [];
+    for (var key in obj0) {
+        if (hasOwnProperty.call(obj0, key)) {
+            if (!(key in obj1)) {
+                keys.push(key);
+            }
+        }
+    }
+    for (var key in obj1) {
+        if (hasOwnProperty.call(obj1, key)) {
+            if (obj0[key] !== obj1[key]) {
+                keys.push(key);
+            }
+        }
+    }
+    return keys;
+}
+function compareObjs(oldProps, newProps, equalityFuncs) {
+    if (equalityFuncs === void 0) { equalityFuncs = {}; }
+    if (oldProps === newProps) {
+        return true;
+    }
+    for (var key in newProps) {
+        if (key in oldProps && isObjValsEqual(oldProps[key], newProps[key], equalityFuncs[key])) ;
+        else {
+            return false;
+        }
+    }
+    // check for props that were omitted in the new
+    for (var key in oldProps) {
+        if (!(key in newProps)) {
+            return false;
+        }
+    }
+    return true;
+}
+/*
+assumed "true" equality for handler names like "onReceiveSomething"
+*/
+function isObjValsEqual(val0, val1, comparator) {
+    if (val0 === val1 || comparator === true) {
+        return true;
+    }
+    if (comparator) {
+        return comparator(val0, val1);
+    }
+    return false;
+}
+function collectFromHash(hash, startIndex, endIndex, step) {
+    if (startIndex === void 0) { startIndex = 0; }
+    if (step === void 0) { step = 1; }
+    var res = [];
+    if (endIndex == null) {
+        endIndex = Object.keys(hash).length;
+    }
+    for (var i = startIndex; i < endIndex; i += step) {
+        var val = hash[i];
+        if (val !== undefined) { // will disregard undefined for sparse arrays
+            res.push(val);
+        }
+    }
+    return res;
+}
+
+function parseRecurring(refined, defaultAllDay, dateEnv, recurringTypes) {
+    for (var i = 0; i < recurringTypes.length; i += 1) {
+        var parsed = recurringTypes[i].parse(refined, dateEnv);
+        if (parsed) {
+            var allDay = refined.allDay;
+            if (allDay == null) {
+                allDay = defaultAllDay;
+                if (allDay == null) {
+                    allDay = parsed.allDayGuess;
+                    if (allDay == null) {
+                        allDay = false;
+                    }
+                }
+            }
+            return {
+                allDay: allDay,
+                duration: parsed.duration,
+                typeData: parsed.typeData,
+                typeId: i,
+            };
+        }
+    }
+    return null;
+}
+function expandRecurring(eventStore, framingRange, context) {
+    var dateEnv = context.dateEnv, pluginHooks = context.pluginHooks, options = context.options;
+    var defs = eventStore.defs, instances = eventStore.instances;
+    // remove existing recurring instances
+    // TODO: bad. always expand events as a second step
+    instances = filterHash(instances, function (instance) { return !defs[instance.defId].recurringDef; });
+    for (var defId in defs) {
+        var def = defs[defId];
+        if (def.recurringDef) {
+            var duration = def.recurringDef.duration;
+            if (!duration) {
+                duration = def.allDay ?
+                    options.defaultAllDayEventDuration :
+                    options.defaultTimedEventDuration;
+            }
+            var starts = expandRecurringRanges(def, duration, framingRange, dateEnv, pluginHooks.recurringTypes);
+            for (var _i = 0, starts_1 = starts; _i < starts_1.length; _i++) {
+                var start = starts_1[_i];
+                var instance = createEventInstance(defId, {
+                    start: start,
+                    end: dateEnv.add(start, duration),
+                });
+                instances[instance.instanceId] = instance;
+            }
+        }
+    }
+    return { defs: defs, instances: instances };
+}
+/*
+Event MUST have a recurringDef
+*/
+function expandRecurringRanges(eventDef, duration, framingRange, dateEnv, recurringTypes) {
+    var typeDef = recurringTypes[eventDef.recurringDef.typeId];
+    var markers = typeDef.expand(eventDef.recurringDef.typeData, {
+        start: dateEnv.subtract(framingRange.start, duration),
+        end: framingRange.end,
+    }, dateEnv);
+    // the recurrence plugins don't guarantee that all-day events are start-of-day, so we have to
+    if (eventDef.allDay) {
+        markers = markers.map(startOfDay);
+    }
+    return markers;
+}
+
+var INTERNAL_UNITS = ['years', 'months', 'days', 'milliseconds'];
+var PARSE_RE = /^(-?)(?:(\d+)\.)?(\d+):(\d\d)(?::(\d\d)(?:\.(\d\d\d))?)?/;
+// Parsing and Creation
+function createDuration(input, unit) {
+    var _a;
+    if (typeof input === 'string') {
+        return parseString(input);
+    }
+    if (typeof input === 'object' && input) { // non-null object
+        return parseObject(input);
+    }
+    if (typeof input === 'number') {
+        return parseObject((_a = {}, _a[unit || 'milliseconds'] = input, _a));
+    }
+    return null;
+}
+function parseString(s) {
+    var m = PARSE_RE.exec(s);
+    if (m) {
+        var sign = m[1] ? -1 : 1;
+        return {
+            years: 0,
+            months: 0,
+            days: sign * (m[2] ? parseInt(m[2], 10) : 0),
+            milliseconds: sign * ((m[3] ? parseInt(m[3], 10) : 0) * 60 * 60 * 1000 + // hours
+                (m[4] ? parseInt(m[4], 10) : 0) * 60 * 1000 + // minutes
+                (m[5] ? parseInt(m[5], 10) : 0) * 1000 + // seconds
+                (m[6] ? parseInt(m[6], 10) : 0) // ms
+            ),
+        };
+    }
+    return null;
+}
+function parseObject(obj) {
+    var duration = {
+        years: obj.years || obj.year || 0,
+        months: obj.months || obj.month || 0,
+        days: obj.days || obj.day || 0,
+        milliseconds: (obj.hours || obj.hour || 0) * 60 * 60 * 1000 + // hours
+            (obj.minutes || obj.minute || 0) * 60 * 1000 + // minutes
+            (obj.seconds || obj.second || 0) * 1000 + // seconds
+            (obj.milliseconds || obj.millisecond || obj.ms || 0), // ms
+    };
+    var weeks = obj.weeks || obj.week;
+    if (weeks) {
+        duration.days += weeks * 7;
+        duration.specifiedWeeks = true;
+    }
+    return duration;
+}
+// Equality
+function durationsEqual(d0, d1) {
+    return d0.years === d1.years &&
+        d0.months === d1.months &&
+        d0.days === d1.days &&
+        d0.milliseconds === d1.milliseconds;
+}
+function asCleanDays(dur) {
+    if (!dur.years && !dur.months && !dur.milliseconds) {
+        return dur.days;
+    }
+    return 0;
+}
+// Simple Math
+function addDurations(d0, d1) {
+    return {
+        years: d0.years + d1.years,
+        months: d0.months + d1.months,
+        days: d0.days + d1.days,
+        milliseconds: d0.milliseconds + d1.milliseconds,
+    };
+}
+function subtractDurations(d1, d0) {
+    return {
+        years: d1.years - d0.years,
+        months: d1.months - d0.months,
+        days: d1.days - d0.days,
+        milliseconds: d1.milliseconds - d0.milliseconds,
+    };
+}
+function multiplyDuration(d, n) {
+    return {
+        years: d.years * n,
+        months: d.months * n,
+        days: d.days * n,
+        milliseconds: d.milliseconds * n,
+    };
+}
+// Conversions
+// "Rough" because they are based on average-case Gregorian months/years
+function asRoughYears(dur) {
+    return asRoughDays(dur) / 365;
+}
+function asRoughMonths(dur) {
+    return asRoughDays(dur) / 30;
+}
+function asRoughDays(dur) {
+    return asRoughMs(dur) / 864e5;
+}
+function asRoughMinutes(dur) {
+    return asRoughMs(dur) / (1000 * 60);
+}
+function asRoughSeconds(dur) {
+    return asRoughMs(dur) / 1000;
+}
+function asRoughMs(dur) {
+    return dur.years * (365 * 864e5) +
+        dur.months * (30 * 864e5) +
+        dur.days * 864e5 +
+        dur.milliseconds;
+}
+// Advanced Math
+function wholeDivideDurations(numerator, denominator) {
+    var res = null;
+    for (var i = 0; i < INTERNAL_UNITS.length; i += 1) {
+        var unit = INTERNAL_UNITS[i];
+        if (denominator[unit]) {
+            var localRes = numerator[unit] / denominator[unit];
+            if (!isInt(localRes) || (res !== null && res !== localRes)) {
+                return null;
+            }
+            res = localRes;
+        }
+        else if (numerator[unit]) {
+            // needs to divide by something but can't!
+            return null;
+        }
+    }
+    return res;
+}
+function greatestDurationDenominator(dur) {
+    var ms = dur.milliseconds;
+    if (ms) {
+        if (ms % 1000 !== 0) {
+            return { unit: 'millisecond', value: ms };
+        }
+        if (ms % (1000 * 60) !== 0) {
+            return { unit: 'second', value: ms / 1000 };
+        }
+        if (ms % (1000 * 60 * 60) !== 0) {
+            return { unit: 'minute', value: ms / (1000 * 60) };
+        }
+        if (ms) {
+            return { unit: 'hour', value: ms / (1000 * 60 * 60) };
+        }
+    }
+    if (dur.days) {
+        if (dur.specifiedWeeks && dur.days % 7 === 0) {
+            return { unit: 'week', value: dur.days / 7 };
+        }
+        return { unit: 'day', value: dur.days };
+    }
+    if (dur.months) {
+        return { unit: 'month', value: dur.months };
+    }
+    if (dur.years) {
+        return { unit: 'year', value: dur.years };
+    }
+    return { unit: 'millisecond', value: 0 };
+}
+
+// timeZoneOffset is in minutes
+function buildIsoString(marker, timeZoneOffset, stripZeroTime) {
+    if (stripZeroTime === void 0) { stripZeroTime = false; }
+    var s = marker.toISOString();
+    s = s.replace('.000', '');
+    if (stripZeroTime) {
+        s = s.replace('T00:00:00Z', '');
+    }
+    if (s.length > 10) { // time part wasn't stripped, can add timezone info
+        if (timeZoneOffset == null) {
+            s = s.replace('Z', '');
+        }
+        else if (timeZoneOffset !== 0) {
+            s = s.replace('Z', formatTimeZoneOffset(timeZoneOffset, true));
+        }
+        // otherwise, its UTC-0 and we want to keep the Z
+    }
+    return s;
+}
+// formats the date, but with no time part
+// TODO: somehow merge with buildIsoString and stripZeroTime
+// TODO: rename. omit "string"
+function formatDayString(marker) {
+    return marker.toISOString().replace(/T.*$/, '');
+}
+// TODO: use Date::toISOString and use everything after the T?
+function formatIsoTimeString(marker) {
+    return padStart(marker.getUTCHours(), 2) + ':' +
+        padStart(marker.getUTCMinutes(), 2) + ':' +
+        padStart(marker.getUTCSeconds(), 2);
+}
+function formatTimeZoneOffset(minutes, doIso) {
+    if (doIso === void 0) { doIso = false; }
+    var sign = minutes < 0 ? '-' : '+';
+    var abs = Math.abs(minutes);
+    var hours = Math.floor(abs / 60);
+    var mins = Math.round(abs % 60);
+    if (doIso) {
+        return sign + padStart(hours, 2) + ":" + padStart(mins, 2);
+    }
+    return "GMT" + sign + hours + (mins ? ":" + padStart(mins, 2) : '');
+}
+
+// TODO: new util arrayify?
+function removeExact(array, exactVal) {
+    var removeCnt = 0;
+    var i = 0;
+    while (i < array.length) {
+        if (array[i] === exactVal) {
+            array.splice(i, 1);
+            removeCnt += 1;
+        }
+        else {
+            i += 1;
+        }
+    }
+    return removeCnt;
+}
+function isArraysEqual(a0, a1, equalityFunc) {
+    if (a0 === a1) {
+        return true;
+    }
+    var len = a0.length;
+    var i;
+    if (len !== a1.length) { // not array? or not same length?
+        return false;
+    }
+    for (i = 0; i < len; i += 1) {
+        if (!(equalityFunc ? equalityFunc(a0[i], a1[i]) : a0[i] === a1[i])) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function memoize(workerFunc, resEquality, teardownFunc) {
+    var currentArgs;
+    var currentRes;
+    return function () {
+        var newArgs = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            newArgs[_i] = arguments[_i];
+        }
+        if (!currentArgs) {
+            currentRes = workerFunc.apply(this, newArgs);
+        }
+        else if (!isArraysEqual(currentArgs, newArgs)) {
+            if (teardownFunc) {
+                teardownFunc(currentRes);
+            }
+            var res = workerFunc.apply(this, newArgs);
+            if (!resEquality || !resEquality(res, currentRes)) {
+                currentRes = res;
+            }
+        }
+        currentArgs = newArgs;
+        return currentRes;
+    };
+}
+function memoizeObjArg(workerFunc, resEquality, teardownFunc) {
+    var _this = this;
+    var currentArg;
+    var currentRes;
+    return function (newArg) {
+        if (!currentArg) {
+            currentRes = workerFunc.call(_this, newArg);
+        }
+        else if (!isPropsEqual(currentArg, newArg)) {
+            if (teardownFunc) {
+                teardownFunc(currentRes);
+            }
+            var res = workerFunc.call(_this, newArg);
+            if (!resEquality || !resEquality(res, currentRes)) {
+                currentRes = res;
+            }
+        }
+        currentArg = newArg;
+        return currentRes;
+    };
+}
+function memoizeArraylike(// used at all?
+workerFunc, resEquality, teardownFunc) {
+    var _this = this;
+    var currentArgSets = [];
+    var currentResults = [];
+    return function (newArgSets) {
+        var currentLen = currentArgSets.length;
+        var newLen = newArgSets.length;
+        var i = 0;
+        for (; i < currentLen; i += 1) {
+            if (!newArgSets[i]) { // one of the old sets no longer exists
+                if (teardownFunc) {
+                    teardownFunc(currentResults[i]);
+                }
+            }
+            else if (!isArraysEqual(currentArgSets[i], newArgSets[i])) {
+                if (teardownFunc) {
+                    teardownFunc(currentResults[i]);
+                }
+                var res = workerFunc.apply(_this, newArgSets[i]);
+                if (!resEquality || !resEquality(res, currentResults[i])) {
+                    currentResults[i] = res;
+                }
+            }
+        }
+        for (; i < newLen; i += 1) {
+            currentResults[i] = workerFunc.apply(_this, newArgSets[i]);
+        }
+        currentArgSets = newArgSets;
+        currentResults.splice(newLen); // remove excess
+        return currentResults;
+    };
+}
+function memoizeHashlike(workerFunc, resEquality, teardownFunc) {
+    var _this = this;
+    var currentArgHash = {};
+    var currentResHash = {};
+    return function (newArgHash) {
+        var newResHash = {};
+        for (var key in newArgHash) {
+            if (!currentResHash[key]) {
+                newResHash[key] = workerFunc.apply(_this, newArgHash[key]);
+            }
+            else if (!isArraysEqual(currentArgHash[key], newArgHash[key])) {
+                if (teardownFunc) {
+                    teardownFunc(currentResHash[key]);
+                }
+                var res = workerFunc.apply(_this, newArgHash[key]);
+                newResHash[key] = (resEquality && resEquality(res, currentResHash[key]))
+                    ? currentResHash[key]
+                    : res;
+            }
+            else {
+                newResHash[key] = currentResHash[key];
+            }
+        }
+        currentArgHash = newArgHash;
+        currentResHash = newResHash;
+        return newResHash;
+    };
+}
+
+var EXTENDED_SETTINGS_AND_SEVERITIES = {
+    week: 3,
+    separator: 0,
+    omitZeroMinute: 0,
+    meridiem: 0,
+    omitCommas: 0,
+};
+var STANDARD_DATE_PROP_SEVERITIES = {
+    timeZoneName: 7,
+    era: 6,
+    year: 5,
+    month: 4,
+    day: 2,
+    weekday: 2,
+    hour: 1,
+    minute: 1,
+    second: 1,
+};
+var MERIDIEM_RE = /\s*([ap])\.?m\.?/i; // eats up leading spaces too
+var COMMA_RE = /,/g; // we need re for globalness
+var MULTI_SPACE_RE = /\s+/g;
+var LTR_RE = /\u200e/g; // control character
+var UTC_RE = /UTC|GMT/;
+var NativeFormatter = /** @class */ (function () {
+    function NativeFormatter(formatSettings) {
+        var standardDateProps = {};
+        var extendedSettings = {};
+        var severity = 0;
+        for (var name_1 in formatSettings) {
+            if (name_1 in EXTENDED_SETTINGS_AND_SEVERITIES) {
+                extendedSettings[name_1] = formatSettings[name_1];
+                severity = Math.max(EXTENDED_SETTINGS_AND_SEVERITIES[name_1], severity);
+            }
+            else {
+                standardDateProps[name_1] = formatSettings[name_1];
+                if (name_1 in STANDARD_DATE_PROP_SEVERITIES) { // TODO: what about hour12? no severity
+                    severity = Math.max(STANDARD_DATE_PROP_SEVERITIES[name_1], severity);
+                }
+            }
+        }
+        this.standardDateProps = standardDateProps;
+        this.extendedSettings = extendedSettings;
+        this.severity = severity;
+        this.buildFormattingFunc = memoize(buildFormattingFunc);
+    }
+    NativeFormatter.prototype.format = function (date, context) {
+        return this.buildFormattingFunc(this.standardDateProps, this.extendedSettings, context)(date);
+    };
+    NativeFormatter.prototype.formatRange = function (start, end, context, betterDefaultSeparator) {
+        var _a = this, standardDateProps = _a.standardDateProps, extendedSettings = _a.extendedSettings;
+        var diffSeverity = computeMarkerDiffSeverity(start.marker, end.marker, context.calendarSystem);
+        if (!diffSeverity) {
+            return this.format(start, context);
+        }
+        var biggestUnitForPartial = diffSeverity;
+        if (biggestUnitForPartial > 1 && // the two dates are different in a way that's larger scale than time
+            (standardDateProps.year === 'numeric' || standardDateProps.year === '2-digit') &&
+            (standardDateProps.month === 'numeric' || standardDateProps.month === '2-digit') &&
+            (standardDateProps.day === 'numeric' || standardDateProps.day === '2-digit')) {
+            biggestUnitForPartial = 1; // make it look like the dates are only different in terms of time
+        }
+        var full0 = this.format(start, context);
+        var full1 = this.format(end, context);
+        if (full0 === full1) {
+            return full0;
+        }
+        var partialDateProps = computePartialFormattingOptions(standardDateProps, biggestUnitForPartial);
+        var partialFormattingFunc = buildFormattingFunc(partialDateProps, extendedSettings, context);
+        var partial0 = partialFormattingFunc(start);
+        var partial1 = partialFormattingFunc(end);
+        var insertion = findCommonInsertion(full0, partial0, full1, partial1);
+        var separator = extendedSettings.separator || betterDefaultSeparator || context.defaultSeparator || '';
+        if (insertion) {
+            return insertion.before + partial0 + separator + partial1 + insertion.after;
+        }
+        return full0 + separator + full1;
+    };
+    NativeFormatter.prototype.getLargestUnit = function () {
+        switch (this.severity) {
+            case 7:
+            case 6:
+            case 5:
+                return 'year';
+            case 4:
+                return 'month';
+            case 3:
+                return 'week';
+            case 2:
+                return 'day';
+            default:
+                return 'time'; // really?
+        }
+    };
+    return NativeFormatter;
+}());
+function buildFormattingFunc(standardDateProps, extendedSettings, context) {
+    var standardDatePropCnt = Object.keys(standardDateProps).length;
+    if (standardDatePropCnt === 1 && standardDateProps.timeZoneName === 'short') {
+        return function (date) { return (formatTimeZoneOffset(date.timeZoneOffset)); };
+    }
+    if (standardDatePropCnt === 0 && extendedSettings.week) {
+        return function (date) { return (formatWeekNumber(context.computeWeekNumber(date.marker), context.weekText, context.weekTextLong, context.locale, extendedSettings.week)); };
+    }
+    return buildNativeFormattingFunc(standardDateProps, extendedSettings, context);
+}
+function buildNativeFormattingFunc(standardDateProps, extendedSettings, context) {
+    standardDateProps = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, standardDateProps); // copy
+    extendedSettings = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, extendedSettings); // copy
+    sanitizeSettings(standardDateProps, extendedSettings);
+    standardDateProps.timeZone = 'UTC'; // we leverage the only guaranteed timeZone for our UTC markers
+    var normalFormat = new Intl.DateTimeFormat(context.locale.codes, standardDateProps);
+    var zeroFormat; // needed?
+    if (extendedSettings.omitZeroMinute) {
+        var zeroProps = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, standardDateProps);
+        delete zeroProps.minute; // seconds and ms were already considered in sanitizeSettings
+        zeroFormat = new Intl.DateTimeFormat(context.locale.codes, zeroProps);
+    }
+    return function (date) {
+        var marker = date.marker;
+        var format;
+        if (zeroFormat && !marker.getUTCMinutes()) {
+            format = zeroFormat;
+        }
+        else {
+            format = normalFormat;
+        }
+        var s = format.format(marker);
+        return postProcess(s, date, standardDateProps, extendedSettings, context);
+    };
+}
+function sanitizeSettings(standardDateProps, extendedSettings) {
+    // deal with a browser inconsistency where formatting the timezone
+    // requires that the hour/minute be present.
+    if (standardDateProps.timeZoneName) {
+        if (!standardDateProps.hour) {
+            standardDateProps.hour = '2-digit';
+        }
+        if (!standardDateProps.minute) {
+            standardDateProps.minute = '2-digit';
+        }
+    }
+    // only support short timezone names
+    if (standardDateProps.timeZoneName === 'long') {
+        standardDateProps.timeZoneName = 'short';
+    }
+    // if requesting to display seconds, MUST display minutes
+    if (extendedSettings.omitZeroMinute && (standardDateProps.second || standardDateProps.millisecond)) {
+        delete extendedSettings.omitZeroMinute;
+    }
+}
+function postProcess(s, date, standardDateProps, extendedSettings, context) {
+    s = s.replace(LTR_RE, ''); // remove left-to-right control chars. do first. good for other regexes
+    if (standardDateProps.timeZoneName === 'short') {
+        s = injectTzoStr(s, (context.timeZone === 'UTC' || date.timeZoneOffset == null) ?
+            'UTC' : // important to normalize for IE, which does "GMT"
+            formatTimeZoneOffset(date.timeZoneOffset));
+    }
+    if (extendedSettings.omitCommas) {
+        s = s.replace(COMMA_RE, '').trim();
+    }
+    if (extendedSettings.omitZeroMinute) {
+        s = s.replace(':00', ''); // zeroFormat doesn't always achieve this
+    }
+    // ^ do anything that might create adjacent spaces before this point,
+    // because MERIDIEM_RE likes to eat up loading spaces
+    if (extendedSettings.meridiem === false) {
+        s = s.replace(MERIDIEM_RE, '').trim();
+    }
+    else if (extendedSettings.meridiem === 'narrow') { // a/p
+        s = s.replace(MERIDIEM_RE, function (m0, m1) { return m1.toLocaleLowerCase(); });
+    }
+    else if (extendedSettings.meridiem === 'short') { // am/pm
+        s = s.replace(MERIDIEM_RE, function (m0, m1) { return m1.toLocaleLowerCase() + "m"; });
+    }
+    else if (extendedSettings.meridiem === 'lowercase') { // other meridiem transformers already converted to lowercase
+        s = s.replace(MERIDIEM_RE, function (m0) { return m0.toLocaleLowerCase(); });
+    }
+    s = s.replace(MULTI_SPACE_RE, ' ');
+    s = s.trim();
+    return s;
+}
+function injectTzoStr(s, tzoStr) {
+    var replaced = false;
+    s = s.replace(UTC_RE, function () {
+        replaced = true;
+        return tzoStr;
+    });
+    // IE11 doesn't include UTC/GMT in the original string, so append to end
+    if (!replaced) {
+        s += " " + tzoStr;
+    }
+    return s;
+}
+function formatWeekNumber(num, weekText, weekTextLong, locale, display) {
+    var parts = [];
+    if (display === 'long') {
+        parts.push(weekTextLong);
+    }
+    else if (display === 'short' || display === 'narrow') {
+        parts.push(weekText);
+    }
+    if (display === 'long' || display === 'short') {
+        parts.push(' ');
+    }
+    parts.push(locale.simpleNumberFormat.format(num));
+    if (locale.options.direction === 'rtl') { // TODO: use control characters instead?
+        parts.reverse();
+    }
+    return parts.join('');
+}
+// Range Formatting Utils
+// 0 = exactly the same
+// 1 = different by time
+// and bigger
+function computeMarkerDiffSeverity(d0, d1, ca) {
+    if (ca.getMarkerYear(d0) !== ca.getMarkerYear(d1)) {
+        return 5;
+    }
+    if (ca.getMarkerMonth(d0) !== ca.getMarkerMonth(d1)) {
+        return 4;
+    }
+    if (ca.getMarkerDay(d0) !== ca.getMarkerDay(d1)) {
+        return 2;
+    }
+    if (timeAsMs(d0) !== timeAsMs(d1)) {
+        return 1;
+    }
+    return 0;
+}
+function computePartialFormattingOptions(options, biggestUnit) {
+    var partialOptions = {};
+    for (var name_2 in options) {
+        if (!(name_2 in STANDARD_DATE_PROP_SEVERITIES) || // not a date part prop (like timeZone)
+            STANDARD_DATE_PROP_SEVERITIES[name_2] <= biggestUnit) {
+            partialOptions[name_2] = options[name_2];
+        }
+    }
+    return partialOptions;
+}
+function findCommonInsertion(full0, partial0, full1, partial1) {
+    var i0 = 0;
+    while (i0 < full0.length) {
+        var found0 = full0.indexOf(partial0, i0);
+        if (found0 === -1) {
+            break;
+        }
+        var before0 = full0.substr(0, found0);
+        i0 = found0 + partial0.length;
+        var after0 = full0.substr(i0);
+        var i1 = 0;
+        while (i1 < full1.length) {
+            var found1 = full1.indexOf(partial1, i1);
+            if (found1 === -1) {
+                break;
+            }
+            var before1 = full1.substr(0, found1);
+            i1 = found1 + partial1.length;
+            var after1 = full1.substr(i1);
+            if (before0 === before1 && after0 === after1) {
+                return {
+                    before: before0,
+                    after: after0,
+                };
+            }
+        }
+    }
+    return null;
+}
+
+function expandZonedMarker(dateInfo, calendarSystem) {
+    var a = calendarSystem.markerToArray(dateInfo.marker);
+    return {
+        marker: dateInfo.marker,
+        timeZoneOffset: dateInfo.timeZoneOffset,
+        array: a,
+        year: a[0],
+        month: a[1],
+        day: a[2],
+        hour: a[3],
+        minute: a[4],
+        second: a[5],
+        millisecond: a[6],
+    };
+}
+
+function createVerboseFormattingArg(start, end, context, betterDefaultSeparator) {
+    var startInfo = expandZonedMarker(start, context.calendarSystem);
+    var endInfo = end ? expandZonedMarker(end, context.calendarSystem) : null;
+    return {
+        date: startInfo,
+        start: startInfo,
+        end: endInfo,
+        timeZone: context.timeZone,
+        localeCodes: context.locale.codes,
+        defaultSeparator: betterDefaultSeparator || context.defaultSeparator,
+    };
+}
+
+/*
+TODO: fix the terminology of "formatter" vs "formatting func"
+*/
+/*
+At the time of instantiation, this object does not know which cmd-formatting system it will use.
+It receives this at the time of formatting, as a setting.
+*/
+var CmdFormatter = /** @class */ (function () {
+    function CmdFormatter(cmdStr) {
+        this.cmdStr = cmdStr;
+    }
+    CmdFormatter.prototype.format = function (date, context, betterDefaultSeparator) {
+        return context.cmdFormatter(this.cmdStr, createVerboseFormattingArg(date, null, context, betterDefaultSeparator));
+    };
+    CmdFormatter.prototype.formatRange = function (start, end, context, betterDefaultSeparator) {
+        return context.cmdFormatter(this.cmdStr, createVerboseFormattingArg(start, end, context, betterDefaultSeparator));
+    };
+    return CmdFormatter;
+}());
+
+var FuncFormatter = /** @class */ (function () {
+    function FuncFormatter(func) {
+        this.func = func;
+    }
+    FuncFormatter.prototype.format = function (date, context, betterDefaultSeparator) {
+        return this.func(createVerboseFormattingArg(date, null, context, betterDefaultSeparator));
+    };
+    FuncFormatter.prototype.formatRange = function (start, end, context, betterDefaultSeparator) {
+        return this.func(createVerboseFormattingArg(start, end, context, betterDefaultSeparator));
+    };
+    return FuncFormatter;
+}());
+
+function createFormatter(input) {
+    if (typeof input === 'object' && input) { // non-null object
+        return new NativeFormatter(input);
+    }
+    if (typeof input === 'string') {
+        return new CmdFormatter(input);
+    }
+    if (typeof input === 'function') {
+        return new FuncFormatter(input);
+    }
+    return null;
+}
+
+// base options
+// ------------
+var BASE_OPTION_REFINERS = {
+    navLinkDayClick: identity,
+    navLinkWeekClick: identity,
+    duration: createDuration,
+    bootstrapFontAwesome: identity,
+    buttonIcons: identity,
+    customButtons: identity,
+    defaultAllDayEventDuration: createDuration,
+    defaultTimedEventDuration: createDuration,
+    nextDayThreshold: createDuration,
+    scrollTime: createDuration,
+    scrollTimeReset: Boolean,
+    slotMinTime: createDuration,
+    slotMaxTime: createDuration,
+    dayPopoverFormat: createFormatter,
+    slotDuration: createDuration,
+    snapDuration: createDuration,
+    headerToolbar: identity,
+    footerToolbar: identity,
+    defaultRangeSeparator: String,
+    titleRangeSeparator: String,
+    forceEventDuration: Boolean,
+    dayHeaders: Boolean,
+    dayHeaderFormat: createFormatter,
+    dayHeaderClassNames: identity,
+    dayHeaderContent: identity,
+    dayHeaderDidMount: identity,
+    dayHeaderWillUnmount: identity,
+    dayCellClassNames: identity,
+    dayCellContent: identity,
+    dayCellDidMount: identity,
+    dayCellWillUnmount: identity,
+    initialView: String,
+    aspectRatio: Number,
+    weekends: Boolean,
+    weekNumberCalculation: identity,
+    weekNumbers: Boolean,
+    weekNumberClassNames: identity,
+    weekNumberContent: identity,
+    weekNumberDidMount: identity,
+    weekNumberWillUnmount: identity,
+    editable: Boolean,
+    viewClassNames: identity,
+    viewDidMount: identity,
+    viewWillUnmount: identity,
+    nowIndicator: Boolean,
+    nowIndicatorClassNames: identity,
+    nowIndicatorContent: identity,
+    nowIndicatorDidMount: identity,
+    nowIndicatorWillUnmount: identity,
+    showNonCurrentDates: Boolean,
+    lazyFetching: Boolean,
+    startParam: String,
+    endParam: String,
+    timeZoneParam: String,
+    timeZone: String,
+    locales: identity,
+    locale: identity,
+    themeSystem: String,
+    dragRevertDuration: Number,
+    dragScroll: Boolean,
+    allDayMaintainDuration: Boolean,
+    unselectAuto: Boolean,
+    dropAccept: identity,
+    eventOrder: parseFieldSpecs,
+    eventOrderStrict: Boolean,
+    handleWindowResize: Boolean,
+    windowResizeDelay: Number,
+    longPressDelay: Number,
+    eventDragMinDistance: Number,
+    expandRows: Boolean,
+    height: identity,
+    contentHeight: identity,
+    direction: String,
+    weekNumberFormat: createFormatter,
+    eventResizableFromStart: Boolean,
+    displayEventTime: Boolean,
+    displayEventEnd: Boolean,
+    weekText: String,
+    weekTextLong: String,
+    progressiveEventRendering: Boolean,
+    businessHours: identity,
+    initialDate: identity,
+    now: identity,
+    eventDataTransform: identity,
+    stickyHeaderDates: identity,
+    stickyFooterScrollbar: identity,
+    viewHeight: identity,
+    defaultAllDay: Boolean,
+    eventSourceFailure: identity,
+    eventSourceSuccess: identity,
+    eventDisplay: String,
+    eventStartEditable: Boolean,
+    eventDurationEditable: Boolean,
+    eventOverlap: identity,
+    eventConstraint: identity,
+    eventAllow: identity,
+    eventBackgroundColor: String,
+    eventBorderColor: String,
+    eventTextColor: String,
+    eventColor: String,
+    eventClassNames: identity,
+    eventContent: identity,
+    eventDidMount: identity,
+    eventWillUnmount: identity,
+    selectConstraint: identity,
+    selectOverlap: identity,
+    selectAllow: identity,
+    droppable: Boolean,
+    unselectCancel: String,
+    slotLabelFormat: identity,
+    slotLaneClassNames: identity,
+    slotLaneContent: identity,
+    slotLaneDidMount: identity,
+    slotLaneWillUnmount: identity,
+    slotLabelClassNames: identity,
+    slotLabelContent: identity,
+    slotLabelDidMount: identity,
+    slotLabelWillUnmount: identity,
+    dayMaxEvents: identity,
+    dayMaxEventRows: identity,
+    dayMinWidth: Number,
+    slotLabelInterval: createDuration,
+    allDayText: String,
+    allDayClassNames: identity,
+    allDayContent: identity,
+    allDayDidMount: identity,
+    allDayWillUnmount: identity,
+    slotMinWidth: Number,
+    navLinks: Boolean,
+    eventTimeFormat: createFormatter,
+    rerenderDelay: Number,
+    moreLinkText: identity,
+    moreLinkHint: identity,
+    selectMinDistance: Number,
+    selectable: Boolean,
+    selectLongPressDelay: Number,
+    eventLongPressDelay: Number,
+    selectMirror: Boolean,
+    eventMaxStack: Number,
+    eventMinHeight: Number,
+    eventMinWidth: Number,
+    eventShortHeight: Number,
+    slotEventOverlap: Boolean,
+    plugins: identity,
+    firstDay: Number,
+    dayCount: Number,
+    dateAlignment: String,
+    dateIncrement: createDuration,
+    hiddenDays: identity,
+    monthMode: Boolean,
+    fixedWeekCount: Boolean,
+    validRange: identity,
+    visibleRange: identity,
+    titleFormat: identity,
+    eventInteractive: Boolean,
+    // only used by list-view, but languages define the value, so we need it in base options
+    noEventsText: String,
+    viewHint: identity,
+    navLinkHint: identity,
+    closeHint: String,
+    timeHint: String,
+    eventHint: String,
+    moreLinkClick: identity,
+    moreLinkClassNames: identity,
+    moreLinkContent: identity,
+    moreLinkDidMount: identity,
+    moreLinkWillUnmount: identity,
+};
+// do NOT give a type here. need `typeof BASE_OPTION_DEFAULTS` to give real results.
+// raw values.
+var BASE_OPTION_DEFAULTS = {
+    eventDisplay: 'auto',
+    defaultRangeSeparator: ' - ',
+    titleRangeSeparator: ' \u2013 ',
+    defaultTimedEventDuration: '01:00:00',
+    defaultAllDayEventDuration: { day: 1 },
+    forceEventDuration: false,
+    nextDayThreshold: '00:00:00',
+    dayHeaders: true,
+    initialView: '',
+    aspectRatio: 1.35,
+    headerToolbar: {
+        start: 'title',
+        center: '',
+        end: 'today prev,next',
+    },
+    weekends: true,
+    weekNumbers: false,
+    weekNumberCalculation: 'local',
+    editable: false,
+    nowIndicator: false,
+    scrollTime: '06:00:00',
+    scrollTimeReset: true,
+    slotMinTime: '00:00:00',
+    slotMaxTime: '24:00:00',
+    showNonCurrentDates: true,
+    lazyFetching: true,
+    startParam: 'start',
+    endParam: 'end',
+    timeZoneParam: 'timeZone',
+    timeZone: 'local',
+    locales: [],
+    locale: '',
+    themeSystem: 'standard',
+    dragRevertDuration: 500,
+    dragScroll: true,
+    allDayMaintainDuration: false,
+    unselectAuto: true,
+    dropAccept: '*',
+    eventOrder: 'start,-duration,allDay,title',
+    dayPopoverFormat: { month: 'long', day: 'numeric', year: 'numeric' },
+    handleWindowResize: true,
+    windowResizeDelay: 100,
+    longPressDelay: 1000,
+    eventDragMinDistance: 5,
+    expandRows: false,
+    navLinks: false,
+    selectable: false,
+    eventMinHeight: 15,
+    eventMinWidth: 30,
+    eventShortHeight: 30,
+};
+// calendar listeners
+// ------------------
+var CALENDAR_LISTENER_REFINERS = {
+    datesSet: identity,
+    eventsSet: identity,
+    eventAdd: identity,
+    eventChange: identity,
+    eventRemove: identity,
+    windowResize: identity,
+    eventClick: identity,
+    eventMouseEnter: identity,
+    eventMouseLeave: identity,
+    select: identity,
+    unselect: identity,
+    loading: identity,
+    // internal
+    _unmount: identity,
+    _beforeprint: identity,
+    _afterprint: identity,
+    _noEventDrop: identity,
+    _noEventResize: identity,
+    _resize: identity,
+    _scrollRequest: identity,
+};
+// calendar-specific options
+// -------------------------
+var CALENDAR_OPTION_REFINERS = {
+    buttonText: identity,
+    buttonHints: identity,
+    views: identity,
+    plugins: identity,
+    initialEvents: identity,
+    events: identity,
+    eventSources: identity,
+};
+var COMPLEX_OPTION_COMPARATORS = {
+    headerToolbar: isMaybeObjectsEqual,
+    footerToolbar: isMaybeObjectsEqual,
+    buttonText: isMaybeObjectsEqual,
+    buttonHints: isMaybeObjectsEqual,
+    buttonIcons: isMaybeObjectsEqual,
+    dateIncrement: isMaybeObjectsEqual,
+};
+function isMaybeObjectsEqual(a, b) {
+    if (typeof a === 'object' && typeof b === 'object' && a && b) { // both non-null objects
+        return isPropsEqual(a, b);
+    }
+    return a === b;
+}
+// view-specific options
+// ---------------------
+var VIEW_OPTION_REFINERS = {
+    type: String,
+    component: identity,
+    buttonText: String,
+    buttonTextKey: String,
+    dateProfileGeneratorClass: identity,
+    usesMinMaxTime: Boolean,
+    classNames: identity,
+    content: identity,
+    didMount: identity,
+    willUnmount: identity,
+};
+// util funcs
+// ----------------------------------------------------------------------------------------------------
+function mergeRawOptions(optionSets) {
+    return mergeProps(optionSets, COMPLEX_OPTION_COMPARATORS);
+}
+function refineProps(input, refiners) {
+    var refined = {};
+    var extra = {};
+    for (var propName in refiners) {
+        if (propName in input) {
+            refined[propName] = refiners[propName](input[propName]);
+        }
+    }
+    for (var propName in input) {
+        if (!(propName in refiners)) {
+            extra[propName] = input[propName];
+        }
+    }
+    return { refined: refined, extra: extra };
+}
+function identity(raw) {
+    return raw;
+}
+
+function parseEvents(rawEvents, eventSource, context, allowOpenRange) {
+    var eventStore = createEmptyEventStore();
+    var eventRefiners = buildEventRefiners(context);
+    for (var _i = 0, rawEvents_1 = rawEvents; _i < rawEvents_1.length; _i++) {
+        var rawEvent = rawEvents_1[_i];
+        var tuple = parseEvent(rawEvent, eventSource, context, allowOpenRange, eventRefiners);
+        if (tuple) {
+            eventTupleToStore(tuple, eventStore);
+        }
+    }
+    return eventStore;
+}
+function eventTupleToStore(tuple, eventStore) {
+    if (eventStore === void 0) { eventStore = createEmptyEventStore(); }
+    eventStore.defs[tuple.def.defId] = tuple.def;
+    if (tuple.instance) {
+        eventStore.instances[tuple.instance.instanceId] = tuple.instance;
+    }
+    return eventStore;
+}
+// retrieves events that have the same groupId as the instance specified by `instanceId`
+// or they are the same as the instance.
+// why might instanceId not be in the store? an event from another calendar?
+function getRelevantEvents(eventStore, instanceId) {
+    var instance = eventStore.instances[instanceId];
+    if (instance) {
+        var def_1 = eventStore.defs[instance.defId];
+        // get events/instances with same group
+        var newStore = filterEventStoreDefs(eventStore, function (lookDef) { return isEventDefsGrouped(def_1, lookDef); });
+        // add the original
+        // TODO: wish we could use eventTupleToStore or something like it
+        newStore.defs[def_1.defId] = def_1;
+        newStore.instances[instance.instanceId] = instance;
+        return newStore;
+    }
+    return createEmptyEventStore();
+}
+function isEventDefsGrouped(def0, def1) {
+    return Boolean(def0.groupId && def0.groupId === def1.groupId);
+}
+function createEmptyEventStore() {
+    return { defs: {}, instances: {} };
+}
+function mergeEventStores(store0, store1) {
+    return {
+        defs: Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, store0.defs), store1.defs),
+        instances: Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, store0.instances), store1.instances),
+    };
+}
+function filterEventStoreDefs(eventStore, filterFunc) {
+    var defs = filterHash(eventStore.defs, filterFunc);
+    var instances = filterHash(eventStore.instances, function (instance) { return (defs[instance.defId] // still exists?
+    ); });
+    return { defs: defs, instances: instances };
+}
+function excludeSubEventStore(master, sub) {
+    var defs = master.defs, instances = master.instances;
+    var filteredDefs = {};
+    var filteredInstances = {};
+    for (var defId in defs) {
+        if (!sub.defs[defId]) { // not explicitly excluded
+            filteredDefs[defId] = defs[defId];
+        }
+    }
+    for (var instanceId in instances) {
+        if (!sub.instances[instanceId] && // not explicitly excluded
+            filteredDefs[instances[instanceId].defId] // def wasn't filtered away
+        ) {
+            filteredInstances[instanceId] = instances[instanceId];
+        }
+    }
+    return {
+        defs: filteredDefs,
+        instances: filteredInstances,
+    };
+}
+
+function normalizeConstraint(input, context) {
+    if (Array.isArray(input)) {
+        return parseEvents(input, null, context, true); // allowOpenRange=true
+    }
+    if (typeof input === 'object' && input) { // non-null object
+        return parseEvents([input], null, context, true); // allowOpenRange=true
+    }
+    if (input != null) {
+        return String(input);
+    }
+    return null;
+}
+
+function parseClassNames(raw) {
+    if (Array.isArray(raw)) {
+        return raw;
+    }
+    if (typeof raw === 'string') {
+        return raw.split(/\s+/);
+    }
+    return [];
+}
+
+// TODO: better called "EventSettings" or "EventConfig"
+// TODO: move this file into structs
+// TODO: separate constraint/overlap/allow, because selection uses only that, not other props
+var EVENT_UI_REFINERS = {
+    display: String,
+    editable: Boolean,
+    startEditable: Boolean,
+    durationEditable: Boolean,
+    constraint: identity,
+    overlap: identity,
+    allow: identity,
+    className: parseClassNames,
+    classNames: parseClassNames,
+    color: String,
+    backgroundColor: String,
+    borderColor: String,
+    textColor: String,
+};
+var EMPTY_EVENT_UI = {
+    display: null,
+    startEditable: null,
+    durationEditable: null,
+    constraints: [],
+    overlap: null,
+    allows: [],
+    backgroundColor: '',
+    borderColor: '',
+    textColor: '',
+    classNames: [],
+};
+function createEventUi(refined, context) {
+    var constraint = normalizeConstraint(refined.constraint, context);
+    return {
+        display: refined.display || null,
+        startEditable: refined.startEditable != null ? refined.startEditable : refined.editable,
+        durationEditable: refined.durationEditable != null ? refined.durationEditable : refined.editable,
+        constraints: constraint != null ? [constraint] : [],
+        overlap: refined.overlap != null ? refined.overlap : null,
+        allows: refined.allow != null ? [refined.allow] : [],
+        backgroundColor: refined.backgroundColor || refined.color || '',
+        borderColor: refined.borderColor || refined.color || '',
+        textColor: refined.textColor || '',
+        classNames: (refined.className || []).concat(refined.classNames || []), // join singular and plural
+    };
+}
+// TODO: prevent against problems with <2 args!
+function combineEventUis(uis) {
+    return uis.reduce(combineTwoEventUis, EMPTY_EVENT_UI);
+}
+function combineTwoEventUis(item0, item1) {
+    return {
+        display: item1.display != null ? item1.display : item0.display,
+        startEditable: item1.startEditable != null ? item1.startEditable : item0.startEditable,
+        durationEditable: item1.durationEditable != null ? item1.durationEditable : item0.durationEditable,
+        constraints: item0.constraints.concat(item1.constraints),
+        overlap: typeof item1.overlap === 'boolean' ? item1.overlap : item0.overlap,
+        allows: item0.allows.concat(item1.allows),
+        backgroundColor: item1.backgroundColor || item0.backgroundColor,
+        borderColor: item1.borderColor || item0.borderColor,
+        textColor: item1.textColor || item0.textColor,
+        classNames: item0.classNames.concat(item1.classNames),
+    };
+}
+
+var EVENT_NON_DATE_REFINERS = {
+    id: String,
+    groupId: String,
+    title: String,
+    url: String,
+    interactive: Boolean,
+};
+var EVENT_DATE_REFINERS = {
+    start: identity,
+    end: identity,
+    date: identity,
+    allDay: Boolean,
+};
+var EVENT_REFINERS = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, EVENT_NON_DATE_REFINERS), EVENT_DATE_REFINERS), { extendedProps: identity });
+function parseEvent(raw, eventSource, context, allowOpenRange, refiners) {
+    if (refiners === void 0) { refiners = buildEventRefiners(context); }
+    var _a = refineEventDef(raw, context, refiners), refined = _a.refined, extra = _a.extra;
+    var defaultAllDay = computeIsDefaultAllDay(eventSource, context);
+    var recurringRes = parseRecurring(refined, defaultAllDay, context.dateEnv, context.pluginHooks.recurringTypes);
+    if (recurringRes) {
+        var def = parseEventDef(refined, extra, eventSource ? eventSource.sourceId : '', recurringRes.allDay, Boolean(recurringRes.duration), context);
+        def.recurringDef = {
+            typeId: recurringRes.typeId,
+            typeData: recurringRes.typeData,
+            duration: recurringRes.duration,
+        };
+        return { def: def, instance: null };
+    }
+    var singleRes = parseSingle(refined, defaultAllDay, context, allowOpenRange);
+    if (singleRes) {
+        var def = parseEventDef(refined, extra, eventSource ? eventSource.sourceId : '', singleRes.allDay, singleRes.hasEnd, context);
+        var instance = createEventInstance(def.defId, singleRes.range, singleRes.forcedStartTzo, singleRes.forcedEndTzo);
+        return { def: def, instance: instance };
+    }
+    return null;
+}
+function refineEventDef(raw, context, refiners) {
+    if (refiners === void 0) { refiners = buildEventRefiners(context); }
+    return refineProps(raw, refiners);
+}
+function buildEventRefiners(context) {
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, EVENT_UI_REFINERS), EVENT_REFINERS), context.pluginHooks.eventRefiners);
+}
+/*
+Will NOT populate extendedProps with the leftover properties.
+Will NOT populate date-related props.
+*/
+function parseEventDef(refined, extra, sourceId, allDay, hasEnd, context) {
+    var def = {
+        title: refined.title || '',
+        groupId: refined.groupId || '',
+        publicId: refined.id || '',
+        url: refined.url || '',
+        recurringDef: null,
+        defId: guid(),
+        sourceId: sourceId,
+        allDay: allDay,
+        hasEnd: hasEnd,
+        interactive: refined.interactive,
+        ui: createEventUi(refined, context),
+        extendedProps: Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, (refined.extendedProps || {})), extra),
+    };
+    for (var _i = 0, _a = context.pluginHooks.eventDefMemberAdders; _i < _a.length; _i++) {
+        var memberAdder = _a[_i];
+        Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(def, memberAdder(refined));
+    }
+    // help out EventApi from having user modify props
+    Object.freeze(def.ui.classNames);
+    Object.freeze(def.extendedProps);
+    return def;
+}
+function parseSingle(refined, defaultAllDay, context, allowOpenRange) {
+    var allDay = refined.allDay;
+    var startMeta;
+    var startMarker = null;
+    var hasEnd = false;
+    var endMeta;
+    var endMarker = null;
+    var startInput = refined.start != null ? refined.start : refined.date;
+    startMeta = context.dateEnv.createMarkerMeta(startInput);
+    if (startMeta) {
+        startMarker = startMeta.marker;
+    }
+    else if (!allowOpenRange) {
+        return null;
+    }
+    if (refined.end != null) {
+        endMeta = context.dateEnv.createMarkerMeta(refined.end);
+    }
+    if (allDay == null) {
+        if (defaultAllDay != null) {
+            allDay = defaultAllDay;
+        }
+        else {
+            // fall back to the date props LAST
+            allDay = (!startMeta || startMeta.isTimeUnspecified) &&
+                (!endMeta || endMeta.isTimeUnspecified);
+        }
+    }
+    if (allDay && startMarker) {
+        startMarker = startOfDay(startMarker);
+    }
+    if (endMeta) {
+        endMarker = endMeta.marker;
+        if (allDay) {
+            endMarker = startOfDay(endMarker);
+        }
+        if (startMarker && endMarker <= startMarker) {
+            endMarker = null;
+        }
+    }
+    if (endMarker) {
+        hasEnd = true;
+    }
+    else if (!allowOpenRange) {
+        hasEnd = context.options.forceEventDuration || false;
+        endMarker = context.dateEnv.add(startMarker, allDay ?
+            context.options.defaultAllDayEventDuration :
+            context.options.defaultTimedEventDuration);
+    }
+    return {
+        allDay: allDay,
+        hasEnd: hasEnd,
+        range: { start: startMarker, end: endMarker },
+        forcedStartTzo: startMeta ? startMeta.forcedTzo : null,
+        forcedEndTzo: endMeta ? endMeta.forcedTzo : null,
+    };
+}
+function computeIsDefaultAllDay(eventSource, context) {
+    var res = null;
+    if (eventSource) {
+        res = eventSource.defaultAllDay;
+    }
+    if (res == null) {
+        res = context.options.defaultAllDay;
+    }
+    return res;
+}
+
+/* Date stuff that doesn't belong in datelib core
+----------------------------------------------------------------------------------------------------------------------*/
+// given a timed range, computes an all-day range that has the same exact duration,
+// but whose start time is aligned with the start of the day.
+function computeAlignedDayRange(timedRange) {
+    var dayCnt = Math.floor(diffDays(timedRange.start, timedRange.end)) || 1;
+    var start = startOfDay(timedRange.start);
+    var end = addDays(start, dayCnt);
+    return { start: start, end: end };
+}
+// given a timed range, computes an all-day range based on how for the end date bleeds into the next day
+// TODO: give nextDayThreshold a default arg
+function computeVisibleDayRange(timedRange, nextDayThreshold) {
+    if (nextDayThreshold === void 0) { nextDayThreshold = createDuration(0); }
+    var startDay = null;
+    var endDay = null;
+    if (timedRange.end) {
+        endDay = startOfDay(timedRange.end);
+        var endTimeMS = timedRange.end.valueOf() - endDay.valueOf(); // # of milliseconds into `endDay`
+        // If the end time is actually inclusively part of the next day and is equal to or
+        // beyond the next day threshold, adjust the end to be the exclusive end of `endDay`.
+        // Otherwise, leaving it as inclusive will cause it to exclude `endDay`.
+        if (endTimeMS && endTimeMS >= asRoughMs(nextDayThreshold)) {
+            endDay = addDays(endDay, 1);
+        }
+    }
+    if (timedRange.start) {
+        startDay = startOfDay(timedRange.start); // the beginning of the day the range starts
+        // If end is within `startDay` but not past nextDayThreshold, assign the default duration of one day.
+        if (endDay && endDay <= startDay) {
+            endDay = addDays(startDay, 1);
+        }
+    }
+    return { start: startDay, end: endDay };
+}
+// spans from one day into another?
+function isMultiDayRange(range) {
+    var visibleRange = computeVisibleDayRange(range);
+    return diffDays(visibleRange.start, visibleRange.end) > 1;
+}
+function diffDates(date0, date1, dateEnv, largeUnit) {
+    if (largeUnit === 'year') {
+        return createDuration(dateEnv.diffWholeYears(date0, date1), 'year');
+    }
+    if (largeUnit === 'month') {
+        return createDuration(dateEnv.diffWholeMonths(date0, date1), 'month');
+    }
+    return diffDayAndTime(date0, date1); // returns a duration
+}
+
+function parseRange(input, dateEnv) {
+    var start = null;
+    var end = null;
+    if (input.start) {
+        start = dateEnv.createMarker(input.start);
+    }
+    if (input.end) {
+        end = dateEnv.createMarker(input.end);
+    }
+    if (!start && !end) {
+        return null;
+    }
+    if (start && end && end < start) {
+        return null;
+    }
+    return { start: start, end: end };
+}
+// SIDE-EFFECT: will mutate ranges.
+// Will return a new array result.
+function invertRanges(ranges, constraintRange) {
+    var invertedRanges = [];
+    var start = constraintRange.start; // the end of the previous range. the start of the new range
+    var i;
+    var dateRange;
+    // ranges need to be in order. required for our date-walking algorithm
+    ranges.sort(compareRanges);
+    for (i = 0; i < ranges.length; i += 1) {
+        dateRange = ranges[i];
+        // add the span of time before the event (if there is any)
+        if (dateRange.start > start) { // compare millisecond time (skip any ambig logic)
+            invertedRanges.push({ start: start, end: dateRange.start });
+        }
+        if (dateRange.end > start) {
+            start = dateRange.end;
+        }
+    }
+    // add the span of time after the last event (if there is any)
+    if (start < constraintRange.end) { // compare millisecond time (skip any ambig logic)
+        invertedRanges.push({ start: start, end: constraintRange.end });
+    }
+    return invertedRanges;
+}
+function compareRanges(range0, range1) {
+    return range0.start.valueOf() - range1.start.valueOf(); // earlier ranges go first
+}
+function intersectRanges(range0, range1) {
+    var start = range0.start, end = range0.end;
+    var newRange = null;
+    if (range1.start !== null) {
+        if (start === null) {
+            start = range1.start;
+        }
+        else {
+            start = new Date(Math.max(start.valueOf(), range1.start.valueOf()));
+        }
+    }
+    if (range1.end != null) {
+        if (end === null) {
+            end = range1.end;
+        }
+        else {
+            end = new Date(Math.min(end.valueOf(), range1.end.valueOf()));
+        }
+    }
+    if (start === null || end === null || start < end) {
+        newRange = { start: start, end: end };
+    }
+    return newRange;
+}
+function rangesEqual(range0, range1) {
+    return (range0.start === null ? null : range0.start.valueOf()) === (range1.start === null ? null : range1.start.valueOf()) &&
+        (range0.end === null ? null : range0.end.valueOf()) === (range1.end === null ? null : range1.end.valueOf());
+}
+function rangesIntersect(range0, range1) {
+    return (range0.end === null || range1.start === null || range0.end > range1.start) &&
+        (range0.start === null || range1.end === null || range0.start < range1.end);
+}
+function rangeContainsRange(outerRange, innerRange) {
+    return (outerRange.start === null || (innerRange.start !== null && innerRange.start >= outerRange.start)) &&
+        (outerRange.end === null || (innerRange.end !== null && innerRange.end <= outerRange.end));
+}
+function rangeContainsMarker(range, date) {
+    return (range.start === null || date >= range.start) &&
+        (range.end === null || date < range.end);
+}
+// If the given date is not within the given range, move it inside.
+// (If it's past the end, make it one millisecond before the end).
+function constrainMarkerToRange(date, range) {
+    if (range.start != null && date < range.start) {
+        return range.start;
+    }
+    if (range.end != null && date >= range.end) {
+        return new Date(range.end.valueOf() - 1);
+    }
+    return date;
+}
+
+/*
+Specifying nextDayThreshold signals that all-day ranges should be sliced.
+*/
+function sliceEventStore(eventStore, eventUiBases, framingRange, nextDayThreshold) {
+    var inverseBgByGroupId = {};
+    var inverseBgByDefId = {};
+    var defByGroupId = {};
+    var bgRanges = [];
+    var fgRanges = [];
+    var eventUis = compileEventUis(eventStore.defs, eventUiBases);
+    for (var defId in eventStore.defs) {
+        var def = eventStore.defs[defId];
+        var ui = eventUis[def.defId];
+        if (ui.display === 'inverse-background') {
+            if (def.groupId) {
+                inverseBgByGroupId[def.groupId] = [];
+                if (!defByGroupId[def.groupId]) {
+                    defByGroupId[def.groupId] = def;
+                }
+            }
+            else {
+                inverseBgByDefId[defId] = [];
+            }
+        }
+    }
+    for (var instanceId in eventStore.instances) {
+        var instance = eventStore.instances[instanceId];
+        var def = eventStore.defs[instance.defId];
+        var ui = eventUis[def.defId];
+        var origRange = instance.range;
+        var normalRange = (!def.allDay && nextDayThreshold) ?
+            computeVisibleDayRange(origRange, nextDayThreshold) :
+            origRange;
+        var slicedRange = intersectRanges(normalRange, framingRange);
+        if (slicedRange) {
+            if (ui.display === 'inverse-background') {
+                if (def.groupId) {
+                    inverseBgByGroupId[def.groupId].push(slicedRange);
+                }
+                else {
+                    inverseBgByDefId[instance.defId].push(slicedRange);
+                }
+            }
+            else if (ui.display !== 'none') {
+                (ui.display === 'background' ? bgRanges : fgRanges).push({
+                    def: def,
+                    ui: ui,
+                    instance: instance,
+                    range: slicedRange,
+                    isStart: normalRange.start && normalRange.start.valueOf() === slicedRange.start.valueOf(),
+                    isEnd: normalRange.end && normalRange.end.valueOf() === slicedRange.end.valueOf(),
+                });
+            }
+        }
+    }
+    for (var groupId in inverseBgByGroupId) { // BY GROUP
+        var ranges = inverseBgByGroupId[groupId];
+        var invertedRanges = invertRanges(ranges, framingRange);
+        for (var _i = 0, invertedRanges_1 = invertedRanges; _i < invertedRanges_1.length; _i++) {
+            var invertedRange = invertedRanges_1[_i];
+            var def = defByGroupId[groupId];
+            var ui = eventUis[def.defId];
+            bgRanges.push({
+                def: def,
+                ui: ui,
+                instance: null,
+                range: invertedRange,
+                isStart: false,
+                isEnd: false,
+            });
+        }
+    }
+    for (var defId in inverseBgByDefId) {
+        var ranges = inverseBgByDefId[defId];
+        var invertedRanges = invertRanges(ranges, framingRange);
+        for (var _a = 0, invertedRanges_2 = invertedRanges; _a < invertedRanges_2.length; _a++) {
+            var invertedRange = invertedRanges_2[_a];
+            bgRanges.push({
+                def: eventStore.defs[defId],
+                ui: eventUis[defId],
+                instance: null,
+                range: invertedRange,
+                isStart: false,
+                isEnd: false,
+            });
+        }
+    }
+    return { bg: bgRanges, fg: fgRanges };
+}
+function hasBgRendering(def) {
+    return def.ui.display === 'background' || def.ui.display === 'inverse-background';
+}
+function setElSeg(el, seg) {
+    el.fcSeg = seg;
+}
+function getElSeg(el) {
+    return el.fcSeg ||
+        el.parentNode.fcSeg || // for the harness
+        null;
+}
+// event ui computation
+function compileEventUis(eventDefs, eventUiBases) {
+    return mapHash(eventDefs, function (eventDef) { return compileEventUi(eventDef, eventUiBases); });
+}
+function compileEventUi(eventDef, eventUiBases) {
+    var uis = [];
+    if (eventUiBases['']) {
+        uis.push(eventUiBases['']);
+    }
+    if (eventUiBases[eventDef.defId]) {
+        uis.push(eventUiBases[eventDef.defId]);
+    }
+    uis.push(eventDef.ui);
+    return combineEventUis(uis);
+}
+function sortEventSegs(segs, eventOrderSpecs) {
+    var objs = segs.map(buildSegCompareObj);
+    objs.sort(function (obj0, obj1) { return compareByFieldSpecs(obj0, obj1, eventOrderSpecs); });
+    return objs.map(function (c) { return c._seg; });
+}
+// returns a object with all primitive props that can be compared
+function buildSegCompareObj(seg) {
+    var eventRange = seg.eventRange;
+    var eventDef = eventRange.def;
+    var range = eventRange.instance ? eventRange.instance.range : eventRange.range;
+    var start = range.start ? range.start.valueOf() : 0; // TODO: better support for open-range events
+    var end = range.end ? range.end.valueOf() : 0; // "
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, eventDef.extendedProps), eventDef), { id: eventDef.publicId, start: start,
+        end: end, duration: end - start, allDay: Number(eventDef.allDay), _seg: seg });
+}
+function computeSegDraggable(seg, context) {
+    var pluginHooks = context.pluginHooks;
+    var transformers = pluginHooks.isDraggableTransformers;
+    var _a = seg.eventRange, def = _a.def, ui = _a.ui;
+    var val = ui.startEditable;
+    for (var _i = 0, transformers_1 = transformers; _i < transformers_1.length; _i++) {
+        var transformer = transformers_1[_i];
+        val = transformer(val, def, ui, context);
+    }
+    return val;
+}
+function computeSegStartResizable(seg, context) {
+    return seg.isStart && seg.eventRange.ui.durationEditable && context.options.eventResizableFromStart;
+}
+function computeSegEndResizable(seg, context) {
+    return seg.isEnd && seg.eventRange.ui.durationEditable;
+}
+function buildSegTimeText(seg, timeFormat, context, defaultDisplayEventTime, // defaults to true
+defaultDisplayEventEnd, // defaults to true
+startOverride, endOverride) {
+    var dateEnv = context.dateEnv, options = context.options;
+    var displayEventTime = options.displayEventTime, displayEventEnd = options.displayEventEnd;
+    var eventDef = seg.eventRange.def;
+    var eventInstance = seg.eventRange.instance;
+    if (displayEventTime == null) {
+        displayEventTime = defaultDisplayEventTime !== false;
+    }
+    if (displayEventEnd == null) {
+        displayEventEnd = defaultDisplayEventEnd !== false;
+    }
+    var wholeEventStart = eventInstance.range.start;
+    var wholeEventEnd = eventInstance.range.end;
+    var segStart = startOverride || seg.start || seg.eventRange.range.start;
+    var segEnd = endOverride || seg.end || seg.eventRange.range.end;
+    var isStartDay = startOfDay(wholeEventStart).valueOf() === startOfDay(segStart).valueOf();
+    var isEndDay = startOfDay(addMs(wholeEventEnd, -1)).valueOf() === startOfDay(addMs(segEnd, -1)).valueOf();
+    if (displayEventTime && !eventDef.allDay && (isStartDay || isEndDay)) {
+        segStart = isStartDay ? wholeEventStart : segStart;
+        segEnd = isEndDay ? wholeEventEnd : segEnd;
+        if (displayEventEnd && eventDef.hasEnd) {
+            return dateEnv.formatRange(segStart, segEnd, timeFormat, {
+                forcedStartTzo: startOverride ? null : eventInstance.forcedStartTzo,
+                forcedEndTzo: endOverride ? null : eventInstance.forcedEndTzo,
+            });
+        }
+        return dateEnv.format(segStart, timeFormat, {
+            forcedTzo: startOverride ? null : eventInstance.forcedStartTzo, // nooooo, same
+        });
+    }
+    return '';
+}
+function getSegMeta(seg, todayRange, nowDate) {
+    var segRange = seg.eventRange.range;
+    return {
+        isPast: segRange.end < (nowDate || todayRange.start),
+        isFuture: segRange.start >= (nowDate || todayRange.end),
+        isToday: todayRange && rangeContainsMarker(todayRange, segRange.start),
+    };
+}
+function getEventClassNames(props) {
+    var classNames = ['fc-event'];
+    if (props.isMirror) {
+        classNames.push('fc-event-mirror');
+    }
+    if (props.isDraggable) {
+        classNames.push('fc-event-draggable');
+    }
+    if (props.isStartResizable || props.isEndResizable) {
+        classNames.push('fc-event-resizable');
+    }
+    if (props.isDragging) {
+        classNames.push('fc-event-dragging');
+    }
+    if (props.isResizing) {
+        classNames.push('fc-event-resizing');
+    }
+    if (props.isSelected) {
+        classNames.push('fc-event-selected');
+    }
+    if (props.isStart) {
+        classNames.push('fc-event-start');
+    }
+    if (props.isEnd) {
+        classNames.push('fc-event-end');
+    }
+    if (props.isPast) {
+        classNames.push('fc-event-past');
+    }
+    if (props.isToday) {
+        classNames.push('fc-event-today');
+    }
+    if (props.isFuture) {
+        classNames.push('fc-event-future');
+    }
+    return classNames;
+}
+function buildEventRangeKey(eventRange) {
+    return eventRange.instance
+        ? eventRange.instance.instanceId
+        : eventRange.def.defId + ":" + eventRange.range.start.toISOString();
+    // inverse-background events don't have specific instances. TODO: better solution
+}
+function getSegAnchorAttrs(seg, context) {
+    var _a = seg.eventRange, def = _a.def, instance = _a.instance;
+    var url = def.url;
+    if (url) {
+        return { href: url };
+    }
+    var emitter = context.emitter, options = context.options;
+    var eventInteractive = options.eventInteractive;
+    if (eventInteractive == null) {
+        eventInteractive = def.interactive;
+        if (eventInteractive == null) {
+            eventInteractive = Boolean(emitter.hasHandlers('eventClick'));
+        }
+    }
+    // mock what happens in EventClicking
+    if (eventInteractive) {
+        // only attach keyboard-related handlers because click handler is already done in EventClicking
+        return createAriaKeyboardAttrs(function (ev) {
+            emitter.trigger('eventClick', {
+                el: ev.target,
+                event: new EventApi(context, def, instance),
+                jsEvent: ev,
+                view: context.viewApi,
+            });
+        });
+    }
+    return {};
+}
+
+var STANDARD_PROPS = {
+    start: identity,
+    end: identity,
+    allDay: Boolean,
+};
+function parseDateSpan(raw, dateEnv, defaultDuration) {
+    var span = parseOpenDateSpan(raw, dateEnv);
+    var range = span.range;
+    if (!range.start) {
+        return null;
+    }
+    if (!range.end) {
+        if (defaultDuration == null) {
+            return null;
+        }
+        range.end = dateEnv.add(range.start, defaultDuration);
+    }
+    return span;
+}
+/*
+TODO: somehow combine with parseRange?
+Will return null if the start/end props were present but parsed invalidly.
+*/
+function parseOpenDateSpan(raw, dateEnv) {
+    var _a = refineProps(raw, STANDARD_PROPS), standardProps = _a.refined, extra = _a.extra;
+    var startMeta = standardProps.start ? dateEnv.createMarkerMeta(standardProps.start) : null;
+    var endMeta = standardProps.end ? dateEnv.createMarkerMeta(standardProps.end) : null;
+    var allDay = standardProps.allDay;
+    if (allDay == null) {
+        allDay = (startMeta && startMeta.isTimeUnspecified) &&
+            (!endMeta || endMeta.isTimeUnspecified);
+    }
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({ range: {
+            start: startMeta ? startMeta.marker : null,
+            end: endMeta ? endMeta.marker : null,
+        }, allDay: allDay }, extra);
+}
+function isDateSpansEqual(span0, span1) {
+    return rangesEqual(span0.range, span1.range) &&
+        span0.allDay === span1.allDay &&
+        isSpanPropsEqual(span0, span1);
+}
+// the NON-DATE-RELATED props
+function isSpanPropsEqual(span0, span1) {
+    for (var propName in span1) {
+        if (propName !== 'range' && propName !== 'allDay') {
+            if (span0[propName] !== span1[propName]) {
+                return false;
+            }
+        }
+    }
+    // are there any props that span0 has that span1 DOESN'T have?
+    // both have range/allDay, so no need to special-case.
+    for (var propName in span0) {
+        if (!(propName in span1)) {
+            return false;
+        }
+    }
+    return true;
+}
+function buildDateSpanApi(span, dateEnv) {
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, buildRangeApi(span.range, dateEnv, span.allDay)), { allDay: span.allDay });
+}
+function buildRangeApiWithTimeZone(range, dateEnv, omitTime) {
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, buildRangeApi(range, dateEnv, omitTime)), { timeZone: dateEnv.timeZone });
+}
+function buildRangeApi(range, dateEnv, omitTime) {
+    return {
+        start: dateEnv.toDate(range.start),
+        end: dateEnv.toDate(range.end),
+        startStr: dateEnv.formatIso(range.start, { omitTime: omitTime }),
+        endStr: dateEnv.formatIso(range.end, { omitTime: omitTime }),
+    };
+}
+function fabricateEventRange(dateSpan, eventUiBases, context) {
+    var res = refineEventDef({ editable: false }, context);
+    var def = parseEventDef(res.refined, res.extra, '', // sourceId
+    dateSpan.allDay, true, // hasEnd
+    context);
+    return {
+        def: def,
+        ui: compileEventUi(def, eventUiBases),
+        instance: createEventInstance(def.defId, dateSpan.range),
+        range: dateSpan.range,
+        isStart: true,
+        isEnd: true,
+    };
+}
+
+function triggerDateSelect(selection, pev, context) {
+    context.emitter.trigger('select', Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, buildDateSpanApiWithContext(selection, context)), { jsEvent: pev ? pev.origEvent : null, view: context.viewApi || context.calendarApi.view }));
+}
+function triggerDateUnselect(pev, context) {
+    context.emitter.trigger('unselect', {
+        jsEvent: pev ? pev.origEvent : null,
+        view: context.viewApi || context.calendarApi.view,
+    });
+}
+function buildDateSpanApiWithContext(dateSpan, context) {
+    var props = {};
+    for (var _i = 0, _a = context.pluginHooks.dateSpanTransforms; _i < _a.length; _i++) {
+        var transform = _a[_i];
+        Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(props, transform(dateSpan, context));
+    }
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(props, buildDateSpanApi(dateSpan, context.dateEnv));
+    return props;
+}
+// Given an event's allDay status and start date, return what its fallback end date should be.
+// TODO: rename to computeDefaultEventEnd
+function getDefaultEventEnd(allDay, marker, context) {
+    var dateEnv = context.dateEnv, options = context.options;
+    var end = marker;
+    if (allDay) {
+        end = startOfDay(end);
+        end = dateEnv.add(end, options.defaultAllDayEventDuration);
+    }
+    else {
+        end = dateEnv.add(end, options.defaultTimedEventDuration);
+    }
+    return end;
+}
+
+// applies the mutation to ALL defs/instances within the event store
+function applyMutationToEventStore(eventStore, eventConfigBase, mutation, context) {
+    var eventConfigs = compileEventUis(eventStore.defs, eventConfigBase);
+    var dest = createEmptyEventStore();
+    for (var defId in eventStore.defs) {
+        var def = eventStore.defs[defId];
+        dest.defs[defId] = applyMutationToEventDef(def, eventConfigs[defId], mutation, context);
+    }
+    for (var instanceId in eventStore.instances) {
+        var instance = eventStore.instances[instanceId];
+        var def = dest.defs[instance.defId]; // important to grab the newly modified def
+        dest.instances[instanceId] = applyMutationToEventInstance(instance, def, eventConfigs[instance.defId], mutation, context);
+    }
+    return dest;
+}
+function applyMutationToEventDef(eventDef, eventConfig, mutation, context) {
+    var standardProps = mutation.standardProps || {};
+    // if hasEnd has not been specified, guess a good value based on deltas.
+    // if duration will change, there's no way the default duration will persist,
+    // and thus, we need to mark the event as having a real end
+    if (standardProps.hasEnd == null &&
+        eventConfig.durationEditable &&
+        (mutation.startDelta || mutation.endDelta)) {
+        standardProps.hasEnd = true; // TODO: is this mutation okay?
+    }
+    var copy = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, eventDef), standardProps), { ui: Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, eventDef.ui), standardProps.ui) });
+    if (mutation.extendedProps) {
+        copy.extendedProps = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, copy.extendedProps), mutation.extendedProps);
+    }
+    for (var _i = 0, _a = context.pluginHooks.eventDefMutationAppliers; _i < _a.length; _i++) {
+        var applier = _a[_i];
+        applier(copy, mutation, context);
+    }
+    if (!copy.hasEnd && context.options.forceEventDuration) {
+        copy.hasEnd = true;
+    }
+    return copy;
+}
+function applyMutationToEventInstance(eventInstance, eventDef, // must first be modified by applyMutationToEventDef
+eventConfig, mutation, context) {
+    var dateEnv = context.dateEnv;
+    var forceAllDay = mutation.standardProps && mutation.standardProps.allDay === true;
+    var clearEnd = mutation.standardProps && mutation.standardProps.hasEnd === false;
+    var copy = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, eventInstance);
+    if (forceAllDay) {
+        copy.range = computeAlignedDayRange(copy.range);
+    }
+    if (mutation.datesDelta && eventConfig.startEditable) {
+        copy.range = {
+            start: dateEnv.add(copy.range.start, mutation.datesDelta),
+            end: dateEnv.add(copy.range.end, mutation.datesDelta),
+        };
+    }
+    if (mutation.startDelta && eventConfig.durationEditable) {
+        copy.range = {
+            start: dateEnv.add(copy.range.start, mutation.startDelta),
+            end: copy.range.end,
+        };
+    }
+    if (mutation.endDelta && eventConfig.durationEditable) {
+        copy.range = {
+            start: copy.range.start,
+            end: dateEnv.add(copy.range.end, mutation.endDelta),
+        };
+    }
+    if (clearEnd) {
+        copy.range = {
+            start: copy.range.start,
+            end: getDefaultEventEnd(eventDef.allDay, copy.range.start, context),
+        };
+    }
+    // in case event was all-day but the supplied deltas were not
+    // better util for this?
+    if (eventDef.allDay) {
+        copy.range = {
+            start: startOfDay(copy.range.start),
+            end: startOfDay(copy.range.end),
+        };
+    }
+    // handle invalid durations
+    if (copy.range.end < copy.range.start) {
+        copy.range.end = getDefaultEventEnd(eventDef.allDay, copy.range.start, context);
+    }
+    return copy;
+}
+
+// no public types yet. when there are, export from:
+// import {} from './api-type-deps'
+var ViewApi = /** @class */ (function () {
+    function ViewApi(type, getCurrentData, dateEnv) {
+        this.type = type;
+        this.getCurrentData = getCurrentData;
+        this.dateEnv = dateEnv;
+    }
+    Object.defineProperty(ViewApi.prototype, "calendar", {
+        get: function () {
+            return this.getCurrentData().calendarApi;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(ViewApi.prototype, "title", {
+        get: function () {
+            return this.getCurrentData().viewTitle;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(ViewApi.prototype, "activeStart", {
+        get: function () {
+            return this.dateEnv.toDate(this.getCurrentData().dateProfile.activeRange.start);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(ViewApi.prototype, "activeEnd", {
+        get: function () {
+            return this.dateEnv.toDate(this.getCurrentData().dateProfile.activeRange.end);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(ViewApi.prototype, "currentStart", {
+        get: function () {
+            return this.dateEnv.toDate(this.getCurrentData().dateProfile.currentRange.start);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(ViewApi.prototype, "currentEnd", {
+        get: function () {
+            return this.dateEnv.toDate(this.getCurrentData().dateProfile.currentRange.end);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    ViewApi.prototype.getOption = function (name) {
+        return this.getCurrentData().options[name]; // are the view-specific options
+    };
+    return ViewApi;
+}());
+
+var EVENT_SOURCE_REFINERS = {
+    id: String,
+    defaultAllDay: Boolean,
+    url: String,
+    format: String,
+    events: identity,
+    eventDataTransform: identity,
+    // for any network-related sources
+    success: identity,
+    failure: identity,
+};
+function parseEventSource(raw, context, refiners) {
+    if (refiners === void 0) { refiners = buildEventSourceRefiners(context); }
+    var rawObj;
+    if (typeof raw === 'string') {
+        rawObj = { url: raw };
+    }
+    else if (typeof raw === 'function' || Array.isArray(raw)) {
+        rawObj = { events: raw };
+    }
+    else if (typeof raw === 'object' && raw) { // not null
+        rawObj = raw;
+    }
+    if (rawObj) {
+        var _a = refineProps(rawObj, refiners), refined = _a.refined, extra = _a.extra;
+        var metaRes = buildEventSourceMeta(refined, context);
+        if (metaRes) {
+            return {
+                _raw: raw,
+                isFetching: false,
+                latestFetchId: '',
+                fetchRange: null,
+                defaultAllDay: refined.defaultAllDay,
+                eventDataTransform: refined.eventDataTransform,
+                success: refined.success,
+                failure: refined.failure,
+                publicId: refined.id || '',
+                sourceId: guid(),
+                sourceDefId: metaRes.sourceDefId,
+                meta: metaRes.meta,
+                ui: createEventUi(refined, context),
+                extendedProps: extra,
+            };
+        }
+    }
+    return null;
+}
+function buildEventSourceRefiners(context) {
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, EVENT_UI_REFINERS), EVENT_SOURCE_REFINERS), context.pluginHooks.eventSourceRefiners);
+}
+function buildEventSourceMeta(raw, context) {
+    var defs = context.pluginHooks.eventSourceDefs;
+    for (var i = defs.length - 1; i >= 0; i -= 1) { // later-added plugins take precedence
+        var def = defs[i];
+        var meta = def.parseMeta(raw);
+        if (meta) {
+            return { sourceDefId: i, meta: meta };
+        }
+    }
+    return null;
+}
+
+function reduceCurrentDate(currentDate, action) {
+    switch (action.type) {
+        case 'CHANGE_DATE':
+            return action.dateMarker;
+        default:
+            return currentDate;
+    }
+}
+function getInitialDate(options, dateEnv) {
+    var initialDateInput = options.initialDate;
+    // compute the initial ambig-timezone date
+    if (initialDateInput != null) {
+        return dateEnv.createMarker(initialDateInput);
+    }
+    return getNow(options.now, dateEnv); // getNow already returns unzoned
+}
+function getNow(nowInput, dateEnv) {
+    if (typeof nowInput === 'function') {
+        nowInput = nowInput();
+    }
+    if (nowInput == null) {
+        return dateEnv.createNowMarker();
+    }
+    return dateEnv.createMarker(nowInput);
+}
+
+var CalendarApi = /** @class */ (function () {
+    function CalendarApi() {
+    }
+    CalendarApi.prototype.getCurrentData = function () {
+        return this.currentDataManager.getCurrentData();
+    };
+    CalendarApi.prototype.dispatch = function (action) {
+        return this.currentDataManager.dispatch(action);
+    };
+    Object.defineProperty(CalendarApi.prototype, "view", {
+        get: function () { return this.getCurrentData().viewApi; } // for public API
+        ,
+        enumerable: false,
+        configurable: true
+    });
+    CalendarApi.prototype.batchRendering = function (callback) {
+        callback();
+    };
+    CalendarApi.prototype.updateSize = function () {
+        this.trigger('_resize', true);
+    };
+    // Options
+    // -----------------------------------------------------------------------------------------------------------------
+    CalendarApi.prototype.setOption = function (name, val) {
+        this.dispatch({
+            type: 'SET_OPTION',
+            optionName: name,
+            rawOptionValue: val,
+        });
+    };
+    CalendarApi.prototype.getOption = function (name) {
+        return this.currentDataManager.currentCalendarOptionsInput[name];
+    };
+    CalendarApi.prototype.getAvailableLocaleCodes = function () {
+        return Object.keys(this.getCurrentData().availableRawLocales);
+    };
+    // Trigger
+    // -----------------------------------------------------------------------------------------------------------------
+    CalendarApi.prototype.on = function (handlerName, handler) {
+        var currentDataManager = this.currentDataManager;
+        if (currentDataManager.currentCalendarOptionsRefiners[handlerName]) {
+            currentDataManager.emitter.on(handlerName, handler);
+        }
+        else {
+            console.warn("Unknown listener name '" + handlerName + "'");
+        }
+    };
+    CalendarApi.prototype.off = function (handlerName, handler) {
+        this.currentDataManager.emitter.off(handlerName, handler);
+    };
+    // not meant for public use
+    CalendarApi.prototype.trigger = function (handlerName) {
+        var _a;
+        var args = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            args[_i - 1] = arguments[_i];
+        }
+        (_a = this.currentDataManager.emitter).trigger.apply(_a, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spreadArray"])([handlerName], args));
+    };
+    // View
+    // -----------------------------------------------------------------------------------------------------------------
+    CalendarApi.prototype.changeView = function (viewType, dateOrRange) {
+        var _this = this;
+        this.batchRendering(function () {
+            _this.unselect();
+            if (dateOrRange) {
+                if (dateOrRange.start && dateOrRange.end) { // a range
+                    _this.dispatch({
+                        type: 'CHANGE_VIEW_TYPE',
+                        viewType: viewType,
+                    });
+                    _this.dispatch({
+                        type: 'SET_OPTION',
+                        optionName: 'visibleRange',
+                        rawOptionValue: dateOrRange,
+                    });
+                }
+                else {
+                    var dateEnv = _this.getCurrentData().dateEnv;
+                    _this.dispatch({
+                        type: 'CHANGE_VIEW_TYPE',
+                        viewType: viewType,
+                        dateMarker: dateEnv.createMarker(dateOrRange),
+                    });
+                }
+            }
+            else {
+                _this.dispatch({
+                    type: 'CHANGE_VIEW_TYPE',
+                    viewType: viewType,
+                });
+            }
+        });
+    };
+    // Forces navigation to a view for the given date.
+    // `viewType` can be a specific view name or a generic one like "week" or "day".
+    // needs to change
+    CalendarApi.prototype.zoomTo = function (dateMarker, viewType) {
+        var state = this.getCurrentData();
+        var spec;
+        viewType = viewType || 'day'; // day is default zoom
+        spec = state.viewSpecs[viewType] || this.getUnitViewSpec(viewType);
+        this.unselect();
+        if (spec) {
+            this.dispatch({
+                type: 'CHANGE_VIEW_TYPE',
+                viewType: spec.type,
+                dateMarker: dateMarker,
+            });
+        }
+        else {
+            this.dispatch({
+                type: 'CHANGE_DATE',
+                dateMarker: dateMarker,
+            });
+        }
+    };
+    // Given a duration singular unit, like "week" or "day", finds a matching view spec.
+    // Preference is given to views that have corresponding buttons.
+    CalendarApi.prototype.getUnitViewSpec = function (unit) {
+        var _a = this.getCurrentData(), viewSpecs = _a.viewSpecs, toolbarConfig = _a.toolbarConfig;
+        var viewTypes = [].concat(toolbarConfig.header ? toolbarConfig.header.viewsWithButtons : [], toolbarConfig.footer ? toolbarConfig.footer.viewsWithButtons : []);
+        var i;
+        var spec;
+        for (var viewType in viewSpecs) {
+            viewTypes.push(viewType);
+        }
+        for (i = 0; i < viewTypes.length; i += 1) {
+            spec = viewSpecs[viewTypes[i]];
+            if (spec) {
+                if (spec.singleUnit === unit) {
+                    return spec;
+                }
+            }
+        }
+        return null;
+    };
+    // Current Date
+    // -----------------------------------------------------------------------------------------------------------------
+    CalendarApi.prototype.prev = function () {
+        this.unselect();
+        this.dispatch({ type: 'PREV' });
+    };
+    CalendarApi.prototype.next = function () {
+        this.unselect();
+        this.dispatch({ type: 'NEXT' });
+    };
+    CalendarApi.prototype.prevYear = function () {
+        var state = this.getCurrentData();
+        this.unselect();
+        this.dispatch({
+            type: 'CHANGE_DATE',
+            dateMarker: state.dateEnv.addYears(state.currentDate, -1),
+        });
+    };
+    CalendarApi.prototype.nextYear = function () {
+        var state = this.getCurrentData();
+        this.unselect();
+        this.dispatch({
+            type: 'CHANGE_DATE',
+            dateMarker: state.dateEnv.addYears(state.currentDate, 1),
+        });
+    };
+    CalendarApi.prototype.today = function () {
+        var state = this.getCurrentData();
+        this.unselect();
+        this.dispatch({
+            type: 'CHANGE_DATE',
+            dateMarker: getNow(state.calendarOptions.now, state.dateEnv),
+        });
+    };
+    CalendarApi.prototype.gotoDate = function (zonedDateInput) {
+        var state = this.getCurrentData();
+        this.unselect();
+        this.dispatch({
+            type: 'CHANGE_DATE',
+            dateMarker: state.dateEnv.createMarker(zonedDateInput),
+        });
+    };
+    CalendarApi.prototype.incrementDate = function (deltaInput) {
+        var state = this.getCurrentData();
+        var delta = createDuration(deltaInput);
+        if (delta) { // else, warn about invalid input?
+            this.unselect();
+            this.dispatch({
+                type: 'CHANGE_DATE',
+                dateMarker: state.dateEnv.add(state.currentDate, delta),
+            });
+        }
+    };
+    // for external API
+    CalendarApi.prototype.getDate = function () {
+        var state = this.getCurrentData();
+        return state.dateEnv.toDate(state.currentDate);
+    };
+    // Date Formatting Utils
+    // -----------------------------------------------------------------------------------------------------------------
+    CalendarApi.prototype.formatDate = function (d, formatter) {
+        var dateEnv = this.getCurrentData().dateEnv;
+        return dateEnv.format(dateEnv.createMarker(d), createFormatter(formatter));
+    };
+    // `settings` is for formatter AND isEndExclusive
+    CalendarApi.prototype.formatRange = function (d0, d1, settings) {
+        var dateEnv = this.getCurrentData().dateEnv;
+        return dateEnv.formatRange(dateEnv.createMarker(d0), dateEnv.createMarker(d1), createFormatter(settings), settings);
+    };
+    CalendarApi.prototype.formatIso = function (d, omitTime) {
+        var dateEnv = this.getCurrentData().dateEnv;
+        return dateEnv.formatIso(dateEnv.createMarker(d), { omitTime: omitTime });
+    };
+    // Date Selection / Event Selection / DayClick
+    // -----------------------------------------------------------------------------------------------------------------
+    // this public method receives start/end dates in any format, with any timezone
+    // NOTE: args were changed from v3
+    CalendarApi.prototype.select = function (dateOrObj, endDate) {
+        var selectionInput;
+        if (endDate == null) {
+            if (dateOrObj.start != null) {
+                selectionInput = dateOrObj;
+            }
+            else {
+                selectionInput = {
+                    start: dateOrObj,
+                    end: null,
+                };
+            }
+        }
+        else {
+            selectionInput = {
+                start: dateOrObj,
+                end: endDate,
+            };
+        }
+        var state = this.getCurrentData();
+        var selection = parseDateSpan(selectionInput, state.dateEnv, createDuration({ days: 1 }));
+        if (selection) { // throw parse error otherwise?
+            this.dispatch({ type: 'SELECT_DATES', selection: selection });
+            triggerDateSelect(selection, null, state);
+        }
+    };
+    // public method
+    CalendarApi.prototype.unselect = function (pev) {
+        var state = this.getCurrentData();
+        if (state.dateSelection) {
+            this.dispatch({ type: 'UNSELECT_DATES' });
+            triggerDateUnselect(pev, state);
+        }
+    };
+    // Public Events API
+    // -----------------------------------------------------------------------------------------------------------------
+    CalendarApi.prototype.addEvent = function (eventInput, sourceInput) {
+        if (eventInput instanceof EventApi) {
+            var def = eventInput._def;
+            var instance = eventInput._instance;
+            var currentData = this.getCurrentData();
+            // not already present? don't want to add an old snapshot
+            if (!currentData.eventStore.defs[def.defId]) {
+                this.dispatch({
+                    type: 'ADD_EVENTS',
+                    eventStore: eventTupleToStore({ def: def, instance: instance }), // TODO: better util for two args?
+                });
+                this.triggerEventAdd(eventInput);
+            }
+            return eventInput;
+        }
+        var state = this.getCurrentData();
+        var eventSource;
+        if (sourceInput instanceof EventSourceApi) {
+            eventSource = sourceInput.internalEventSource;
+        }
+        else if (typeof sourceInput === 'boolean') {
+            if (sourceInput) { // true. part of the first event source
+                eventSource = hashValuesToArray(state.eventSources)[0];
+            }
+        }
+        else if (sourceInput != null) { // an ID. accepts a number too
+            var sourceApi = this.getEventSourceById(sourceInput); // TODO: use an internal function
+            if (!sourceApi) {
+                console.warn("Could not find an event source with ID \"" + sourceInput + "\""); // TODO: test
+                return null;
+            }
+            eventSource = sourceApi.internalEventSource;
+        }
+        var tuple = parseEvent(eventInput, eventSource, state, false);
+        if (tuple) {
+            var newEventApi = new EventApi(state, tuple.def, tuple.def.recurringDef ? null : tuple.instance);
+            this.dispatch({
+                type: 'ADD_EVENTS',
+                eventStore: eventTupleToStore(tuple),
+            });
+            this.triggerEventAdd(newEventApi);
+            return newEventApi;
+        }
+        return null;
+    };
+    CalendarApi.prototype.triggerEventAdd = function (eventApi) {
+        var _this = this;
+        var emitter = this.getCurrentData().emitter;
+        emitter.trigger('eventAdd', {
+            event: eventApi,
+            relatedEvents: [],
+            revert: function () {
+                _this.dispatch({
+                    type: 'REMOVE_EVENTS',
+                    eventStore: eventApiToStore(eventApi),
+                });
+            },
+        });
+    };
+    // TODO: optimize
+    CalendarApi.prototype.getEventById = function (id) {
+        var state = this.getCurrentData();
+        var _a = state.eventStore, defs = _a.defs, instances = _a.instances;
+        id = String(id);
+        for (var defId in defs) {
+            var def = defs[defId];
+            if (def.publicId === id) {
+                if (def.recurringDef) {
+                    return new EventApi(state, def, null);
+                }
+                for (var instanceId in instances) {
+                    var instance = instances[instanceId];
+                    if (instance.defId === def.defId) {
+                        return new EventApi(state, def, instance);
+                    }
+                }
+            }
+        }
+        return null;
+    };
+    CalendarApi.prototype.getEvents = function () {
+        var currentData = this.getCurrentData();
+        return buildEventApis(currentData.eventStore, currentData);
+    };
+    CalendarApi.prototype.removeAllEvents = function () {
+        this.dispatch({ type: 'REMOVE_ALL_EVENTS' });
+    };
+    // Public Event Sources API
+    // -----------------------------------------------------------------------------------------------------------------
+    CalendarApi.prototype.getEventSources = function () {
+        var state = this.getCurrentData();
+        var sourceHash = state.eventSources;
+        var sourceApis = [];
+        for (var internalId in sourceHash) {
+            sourceApis.push(new EventSourceApi(state, sourceHash[internalId]));
+        }
+        return sourceApis;
+    };
+    CalendarApi.prototype.getEventSourceById = function (id) {
+        var state = this.getCurrentData();
+        var sourceHash = state.eventSources;
+        id = String(id);
+        for (var sourceId in sourceHash) {
+            if (sourceHash[sourceId].publicId === id) {
+                return new EventSourceApi(state, sourceHash[sourceId]);
+            }
+        }
+        return null;
+    };
+    CalendarApi.prototype.addEventSource = function (sourceInput) {
+        var state = this.getCurrentData();
+        if (sourceInput instanceof EventSourceApi) {
+            // not already present? don't want to add an old snapshot
+            if (!state.eventSources[sourceInput.internalEventSource.sourceId]) {
+                this.dispatch({
+                    type: 'ADD_EVENT_SOURCES',
+                    sources: [sourceInput.internalEventSource],
+                });
+            }
+            return sourceInput;
+        }
+        var eventSource = parseEventSource(sourceInput, state);
+        if (eventSource) { // TODO: error otherwise?
+            this.dispatch({ type: 'ADD_EVENT_SOURCES', sources: [eventSource] });
+            return new EventSourceApi(state, eventSource);
+        }
+        return null;
+    };
+    CalendarApi.prototype.removeAllEventSources = function () {
+        this.dispatch({ type: 'REMOVE_ALL_EVENT_SOURCES' });
+    };
+    CalendarApi.prototype.refetchEvents = function () {
+        this.dispatch({ type: 'FETCH_EVENT_SOURCES', isRefetch: true });
+    };
+    // Scroll
+    // -----------------------------------------------------------------------------------------------------------------
+    CalendarApi.prototype.scrollToTime = function (timeInput) {
+        var time = createDuration(timeInput);
+        if (time) {
+            this.trigger('_scrollRequest', { time: time });
+        }
+    };
+    return CalendarApi;
+}());
+
+var EventApi = /** @class */ (function () {
+    // instance will be null if expressing a recurring event that has no current instances,
+    // OR if trying to validate an incoming external event that has no dates assigned
+    function EventApi(context, def, instance) {
+        this._context = context;
+        this._def = def;
+        this._instance = instance || null;
+    }
+    /*
+    TODO: make event struct more responsible for this
+    */
+    EventApi.prototype.setProp = function (name, val) {
+        var _a, _b;
+        if (name in EVENT_DATE_REFINERS) {
+            console.warn('Could not set date-related prop \'name\'. Use one of the date-related methods instead.');
+            // TODO: make proper aliasing system?
+        }
+        else if (name === 'id') {
+            val = EVENT_NON_DATE_REFINERS[name](val);
+            this.mutate({
+                standardProps: { publicId: val }, // hardcoded internal name
+            });
+        }
+        else if (name in EVENT_NON_DATE_REFINERS) {
+            val = EVENT_NON_DATE_REFINERS[name](val);
+            this.mutate({
+                standardProps: (_a = {}, _a[name] = val, _a),
+            });
+        }
+        else if (name in EVENT_UI_REFINERS) {
+            var ui = EVENT_UI_REFINERS[name](val);
+            if (name === 'color') {
+                ui = { backgroundColor: val, borderColor: val };
+            }
+            else if (name === 'editable') {
+                ui = { startEditable: val, durationEditable: val };
+            }
+            else {
+                ui = (_b = {}, _b[name] = val, _b);
+            }
+            this.mutate({
+                standardProps: { ui: ui },
+            });
+        }
+        else {
+            console.warn("Could not set prop '" + name + "'. Use setExtendedProp instead.");
+        }
+    };
+    EventApi.prototype.setExtendedProp = function (name, val) {
+        var _a;
+        this.mutate({
+            extendedProps: (_a = {}, _a[name] = val, _a),
+        });
+    };
+    EventApi.prototype.setStart = function (startInput, options) {
+        if (options === void 0) { options = {}; }
+        var dateEnv = this._context.dateEnv;
+        var start = dateEnv.createMarker(startInput);
+        if (start && this._instance) { // TODO: warning if parsed bad
+            var instanceRange = this._instance.range;
+            var startDelta = diffDates(instanceRange.start, start, dateEnv, options.granularity); // what if parsed bad!?
+            if (options.maintainDuration) {
+                this.mutate({ datesDelta: startDelta });
+            }
+            else {
+                this.mutate({ startDelta: startDelta });
+            }
+        }
+    };
+    EventApi.prototype.setEnd = function (endInput, options) {
+        if (options === void 0) { options = {}; }
+        var dateEnv = this._context.dateEnv;
+        var end;
+        if (endInput != null) {
+            end = dateEnv.createMarker(endInput);
+            if (!end) {
+                return; // TODO: warning if parsed bad
+            }
+        }
+        if (this._instance) {
+            if (end) {
+                var endDelta = diffDates(this._instance.range.end, end, dateEnv, options.granularity);
+                this.mutate({ endDelta: endDelta });
+            }
+            else {
+                this.mutate({ standardProps: { hasEnd: false } });
+            }
+        }
+    };
+    EventApi.prototype.setDates = function (startInput, endInput, options) {
+        if (options === void 0) { options = {}; }
+        var dateEnv = this._context.dateEnv;
+        var standardProps = { allDay: options.allDay };
+        var start = dateEnv.createMarker(startInput);
+        var end;
+        if (!start) {
+            return; // TODO: warning if parsed bad
+        }
+        if (endInput != null) {
+            end = dateEnv.createMarker(endInput);
+            if (!end) { // TODO: warning if parsed bad
+                return;
+            }
+        }
+        if (this._instance) {
+            var instanceRange = this._instance.range;
+            // when computing the diff for an event being converted to all-day,
+            // compute diff off of the all-day values the way event-mutation does.
+            if (options.allDay === true) {
+                instanceRange = computeAlignedDayRange(instanceRange);
+            }
+            var startDelta = diffDates(instanceRange.start, start, dateEnv, options.granularity);
+            if (end) {
+                var endDelta = diffDates(instanceRange.end, end, dateEnv, options.granularity);
+                if (durationsEqual(startDelta, endDelta)) {
+                    this.mutate({ datesDelta: startDelta, standardProps: standardProps });
+                }
+                else {
+                    this.mutate({ startDelta: startDelta, endDelta: endDelta, standardProps: standardProps });
+                }
+            }
+            else { // means "clear the end"
+                standardProps.hasEnd = false;
+                this.mutate({ datesDelta: startDelta, standardProps: standardProps });
+            }
+        }
+    };
+    EventApi.prototype.moveStart = function (deltaInput) {
+        var delta = createDuration(deltaInput);
+        if (delta) { // TODO: warning if parsed bad
+            this.mutate({ startDelta: delta });
+        }
+    };
+    EventApi.prototype.moveEnd = function (deltaInput) {
+        var delta = createDuration(deltaInput);
+        if (delta) { // TODO: warning if parsed bad
+            this.mutate({ endDelta: delta });
+        }
+    };
+    EventApi.prototype.moveDates = function (deltaInput) {
+        var delta = createDuration(deltaInput);
+        if (delta) { // TODO: warning if parsed bad
+            this.mutate({ datesDelta: delta });
+        }
+    };
+    EventApi.prototype.setAllDay = function (allDay, options) {
+        if (options === void 0) { options = {}; }
+        var standardProps = { allDay: allDay };
+        var maintainDuration = options.maintainDuration;
+        if (maintainDuration == null) {
+            maintainDuration = this._context.options.allDayMaintainDuration;
+        }
+        if (this._def.allDay !== allDay) {
+            standardProps.hasEnd = maintainDuration;
+        }
+        this.mutate({ standardProps: standardProps });
+    };
+    EventApi.prototype.formatRange = function (formatInput) {
+        var dateEnv = this._context.dateEnv;
+        var instance = this._instance;
+        var formatter = createFormatter(formatInput);
+        if (this._def.hasEnd) {
+            return dateEnv.formatRange(instance.range.start, instance.range.end, formatter, {
+                forcedStartTzo: instance.forcedStartTzo,
+                forcedEndTzo: instance.forcedEndTzo,
+            });
+        }
+        return dateEnv.format(instance.range.start, formatter, {
+            forcedTzo: instance.forcedStartTzo,
+        });
+    };
+    EventApi.prototype.mutate = function (mutation) {
+        var instance = this._instance;
+        if (instance) {
+            var def = this._def;
+            var context_1 = this._context;
+            var eventStore_1 = context_1.getCurrentData().eventStore;
+            var relevantEvents = getRelevantEvents(eventStore_1, instance.instanceId);
+            var eventConfigBase = {
+                '': {
+                    display: '',
+                    startEditable: true,
+                    durationEditable: true,
+                    constraints: [],
+                    overlap: null,
+                    allows: [],
+                    backgroundColor: '',
+                    borderColor: '',
+                    textColor: '',
+                    classNames: [],
+                },
+            };
+            relevantEvents = applyMutationToEventStore(relevantEvents, eventConfigBase, mutation, context_1);
+            var oldEvent = new EventApi(context_1, def, instance); // snapshot
+            this._def = relevantEvents.defs[def.defId];
+            this._instance = relevantEvents.instances[instance.instanceId];
+            context_1.dispatch({
+                type: 'MERGE_EVENTS',
+                eventStore: relevantEvents,
+            });
+            context_1.emitter.trigger('eventChange', {
+                oldEvent: oldEvent,
+                event: this,
+                relatedEvents: buildEventApis(relevantEvents, context_1, instance),
+                revert: function () {
+                    context_1.dispatch({
+                        type: 'RESET_EVENTS',
+                        eventStore: eventStore_1,
+                    });
+                },
+            });
+        }
+    };
+    EventApi.prototype.remove = function () {
+        var context = this._context;
+        var asStore = eventApiToStore(this);
+        context.dispatch({
+            type: 'REMOVE_EVENTS',
+            eventStore: asStore,
+        });
+        context.emitter.trigger('eventRemove', {
+            event: this,
+            relatedEvents: [],
+            revert: function () {
+                context.dispatch({
+                    type: 'MERGE_EVENTS',
+                    eventStore: asStore,
+                });
+            },
+        });
+    };
+    Object.defineProperty(EventApi.prototype, "source", {
+        get: function () {
+            var sourceId = this._def.sourceId;
+            if (sourceId) {
+                return new EventSourceApi(this._context, this._context.getCurrentData().eventSources[sourceId]);
+            }
+            return null;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(EventApi.prototype, "start", {
+        get: function () {
+            return this._instance ?
+                this._context.dateEnv.toDate(this._instance.range.start) :
+                null;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(EventApi.prototype, "end", {
+        get: function () {
+            return (this._instance && this._def.hasEnd) ?
+                this._context.dateEnv.toDate(this._instance.range.end) :
+                null;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(EventApi.prototype, "startStr", {
+        get: function () {
+            var instance = this._instance;
+            if (instance) {
+                return this._context.dateEnv.formatIso(instance.range.start, {
+                    omitTime: this._def.allDay,
+                    forcedTzo: instance.forcedStartTzo,
+                });
+            }
+            return '';
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(EventApi.prototype, "endStr", {
+        get: function () {
+            var instance = this._instance;
+            if (instance && this._def.hasEnd) {
+                return this._context.dateEnv.formatIso(instance.range.end, {
+                    omitTime: this._def.allDay,
+                    forcedTzo: instance.forcedEndTzo,
+                });
+            }
+            return '';
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(EventApi.prototype, "id", {
+        // computable props that all access the def
+        // TODO: find a TypeScript-compatible way to do this at scale
+        get: function () { return this._def.publicId; },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(EventApi.prototype, "groupId", {
+        get: function () { return this._def.groupId; },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(EventApi.prototype, "allDay", {
+        get: function () { return this._def.allDay; },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(EventApi.prototype, "title", {
+        get: function () { return this._def.title; },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(EventApi.prototype, "url", {
+        get: function () { return this._def.url; },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(EventApi.prototype, "display", {
+        get: function () { return this._def.ui.display || 'auto'; } // bad. just normalize the type earlier
+        ,
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(EventApi.prototype, "startEditable", {
+        get: function () { return this._def.ui.startEditable; },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(EventApi.prototype, "durationEditable", {
+        get: function () { return this._def.ui.durationEditable; },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(EventApi.prototype, "constraint", {
+        get: function () { return this._def.ui.constraints[0] || null; },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(EventApi.prototype, "overlap", {
+        get: function () { return this._def.ui.overlap; },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(EventApi.prototype, "allow", {
+        get: function () { return this._def.ui.allows[0] || null; },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(EventApi.prototype, "backgroundColor", {
+        get: function () { return this._def.ui.backgroundColor; },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(EventApi.prototype, "borderColor", {
+        get: function () { return this._def.ui.borderColor; },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(EventApi.prototype, "textColor", {
+        get: function () { return this._def.ui.textColor; },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(EventApi.prototype, "classNames", {
+        // NOTE: user can't modify these because Object.freeze was called in event-def parsing
+        get: function () { return this._def.ui.classNames; },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(EventApi.prototype, "extendedProps", {
+        get: function () { return this._def.extendedProps; },
+        enumerable: false,
+        configurable: true
+    });
+    EventApi.prototype.toPlainObject = function (settings) {
+        if (settings === void 0) { settings = {}; }
+        var def = this._def;
+        var ui = def.ui;
+        var _a = this, startStr = _a.startStr, endStr = _a.endStr;
+        var res = {};
+        if (def.title) {
+            res.title = def.title;
+        }
+        if (startStr) {
+            res.start = startStr;
+        }
+        if (endStr) {
+            res.end = endStr;
+        }
+        if (def.publicId) {
+            res.id = def.publicId;
+        }
+        if (def.groupId) {
+            res.groupId = def.groupId;
+        }
+        if (def.url) {
+            res.url = def.url;
+        }
+        if (ui.display && ui.display !== 'auto') {
+            res.display = ui.display;
+        }
+        // TODO: what about recurring-event properties???
+        // TODO: include startEditable/durationEditable/constraint/overlap/allow
+        if (settings.collapseColor && ui.backgroundColor && ui.backgroundColor === ui.borderColor) {
+            res.color = ui.backgroundColor;
+        }
+        else {
+            if (ui.backgroundColor) {
+                res.backgroundColor = ui.backgroundColor;
+            }
+            if (ui.borderColor) {
+                res.borderColor = ui.borderColor;
+            }
+        }
+        if (ui.textColor) {
+            res.textColor = ui.textColor;
+        }
+        if (ui.classNames.length) {
+            res.classNames = ui.classNames;
+        }
+        if (Object.keys(def.extendedProps).length) {
+            if (settings.collapseExtendedProps) {
+                Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(res, def.extendedProps);
+            }
+            else {
+                res.extendedProps = def.extendedProps;
+            }
+        }
+        return res;
+    };
+    EventApi.prototype.toJSON = function () {
+        return this.toPlainObject();
+    };
+    return EventApi;
+}());
+function eventApiToStore(eventApi) {
+    var _a, _b;
+    var def = eventApi._def;
+    var instance = eventApi._instance;
+    return {
+        defs: (_a = {}, _a[def.defId] = def, _a),
+        instances: instance
+            ? (_b = {}, _b[instance.instanceId] = instance, _b) : {},
+    };
+}
+function buildEventApis(eventStore, context, excludeInstance) {
+    var defs = eventStore.defs, instances = eventStore.instances;
+    var eventApis = [];
+    var excludeInstanceId = excludeInstance ? excludeInstance.instanceId : '';
+    for (var id in instances) {
+        var instance = instances[id];
+        var def = defs[instance.defId];
+        if (instance.instanceId !== excludeInstanceId) {
+            eventApis.push(new EventApi(context, def, instance));
+        }
+    }
+    return eventApis;
+}
+
+var calendarSystemClassMap = {};
+function registerCalendarSystem(name, theClass) {
+    calendarSystemClassMap[name] = theClass;
+}
+function createCalendarSystem(name) {
+    return new calendarSystemClassMap[name]();
+}
+var GregorianCalendarSystem = /** @class */ (function () {
+    function GregorianCalendarSystem() {
+    }
+    GregorianCalendarSystem.prototype.getMarkerYear = function (d) {
+        return d.getUTCFullYear();
+    };
+    GregorianCalendarSystem.prototype.getMarkerMonth = function (d) {
+        return d.getUTCMonth();
+    };
+    GregorianCalendarSystem.prototype.getMarkerDay = function (d) {
+        return d.getUTCDate();
+    };
+    GregorianCalendarSystem.prototype.arrayToMarker = function (arr) {
+        return arrayToUtcDate(arr);
+    };
+    GregorianCalendarSystem.prototype.markerToArray = function (marker) {
+        return dateToUtcArray(marker);
+    };
+    return GregorianCalendarSystem;
+}());
+registerCalendarSystem('gregory', GregorianCalendarSystem);
+
+var ISO_RE = /^\s*(\d{4})(-?(\d{2})(-?(\d{2})([T ](\d{2}):?(\d{2})(:?(\d{2})(\.(\d+))?)?(Z|(([-+])(\d{2})(:?(\d{2}))?))?)?)?)?$/;
+function parse(str) {
+    var m = ISO_RE.exec(str);
+    if (m) {
+        var marker = new Date(Date.UTC(Number(m[1]), m[3] ? Number(m[3]) - 1 : 0, Number(m[5] || 1), Number(m[7] || 0), Number(m[8] || 0), Number(m[10] || 0), m[12] ? Number("0." + m[12]) * 1000 : 0));
+        if (isValidDate(marker)) {
+            var timeZoneOffset = null;
+            if (m[13]) {
+                timeZoneOffset = (m[15] === '-' ? -1 : 1) * (Number(m[16] || 0) * 60 +
+                    Number(m[18] || 0));
+            }
+            return {
+                marker: marker,
+                isTimeUnspecified: !m[6],
+                timeZoneOffset: timeZoneOffset,
+            };
+        }
+    }
+    return null;
+}
+
+var DateEnv = /** @class */ (function () {
+    function DateEnv(settings) {
+        var timeZone = this.timeZone = settings.timeZone;
+        var isNamedTimeZone = timeZone !== 'local' && timeZone !== 'UTC';
+        if (settings.namedTimeZoneImpl && isNamedTimeZone) {
+            this.namedTimeZoneImpl = new settings.namedTimeZoneImpl(timeZone);
+        }
+        this.canComputeOffset = Boolean(!isNamedTimeZone || this.namedTimeZoneImpl);
+        this.calendarSystem = createCalendarSystem(settings.calendarSystem);
+        this.locale = settings.locale;
+        this.weekDow = settings.locale.week.dow;
+        this.weekDoy = settings.locale.week.doy;
+        if (settings.weekNumberCalculation === 'ISO') {
+            this.weekDow = 1;
+            this.weekDoy = 4;
+        }
+        if (typeof settings.firstDay === 'number') {
+            this.weekDow = settings.firstDay;
+        }
+        if (typeof settings.weekNumberCalculation === 'function') {
+            this.weekNumberFunc = settings.weekNumberCalculation;
+        }
+        this.weekText = settings.weekText != null ? settings.weekText : settings.locale.options.weekText;
+        this.weekTextLong = (settings.weekTextLong != null ? settings.weekTextLong : settings.locale.options.weekTextLong) || this.weekText;
+        this.cmdFormatter = settings.cmdFormatter;
+        this.defaultSeparator = settings.defaultSeparator;
+    }
+    // Creating / Parsing
+    DateEnv.prototype.createMarker = function (input) {
+        var meta = this.createMarkerMeta(input);
+        if (meta === null) {
+            return null;
+        }
+        return meta.marker;
+    };
+    DateEnv.prototype.createNowMarker = function () {
+        if (this.canComputeOffset) {
+            return this.timestampToMarker(new Date().valueOf());
+        }
+        // if we can't compute the current date val for a timezone,
+        // better to give the current local date vals than UTC
+        return arrayToUtcDate(dateToLocalArray(new Date()));
+    };
+    DateEnv.prototype.createMarkerMeta = function (input) {
+        if (typeof input === 'string') {
+            return this.parse(input);
+        }
+        var marker = null;
+        if (typeof input === 'number') {
+            marker = this.timestampToMarker(input);
+        }
+        else if (input instanceof Date) {
+            input = input.valueOf();
+            if (!isNaN(input)) {
+                marker = this.timestampToMarker(input);
+            }
+        }
+        else if (Array.isArray(input)) {
+            marker = arrayToUtcDate(input);
+        }
+        if (marker === null || !isValidDate(marker)) {
+            return null;
+        }
+        return { marker: marker, isTimeUnspecified: false, forcedTzo: null };
+    };
+    DateEnv.prototype.parse = function (s) {
+        var parts = parse(s);
+        if (parts === null) {
+            return null;
+        }
+        var marker = parts.marker;
+        var forcedTzo = null;
+        if (parts.timeZoneOffset !== null) {
+            if (this.canComputeOffset) {
+                marker = this.timestampToMarker(marker.valueOf() - parts.timeZoneOffset * 60 * 1000);
+            }
+            else {
+                forcedTzo = parts.timeZoneOffset;
+            }
+        }
+        return { marker: marker, isTimeUnspecified: parts.isTimeUnspecified, forcedTzo: forcedTzo };
+    };
+    // Accessors
+    DateEnv.prototype.getYear = function (marker) {
+        return this.calendarSystem.getMarkerYear(marker);
+    };
+    DateEnv.prototype.getMonth = function (marker) {
+        return this.calendarSystem.getMarkerMonth(marker);
+    };
+    // Adding / Subtracting
+    DateEnv.prototype.add = function (marker, dur) {
+        var a = this.calendarSystem.markerToArray(marker);
+        a[0] += dur.years;
+        a[1] += dur.months;
+        a[2] += dur.days;
+        a[6] += dur.milliseconds;
+        return this.calendarSystem.arrayToMarker(a);
+    };
+    DateEnv.prototype.subtract = function (marker, dur) {
+        var a = this.calendarSystem.markerToArray(marker);
+        a[0] -= dur.years;
+        a[1] -= dur.months;
+        a[2] -= dur.days;
+        a[6] -= dur.milliseconds;
+        return this.calendarSystem.arrayToMarker(a);
+    };
+    DateEnv.prototype.addYears = function (marker, n) {
+        var a = this.calendarSystem.markerToArray(marker);
+        a[0] += n;
+        return this.calendarSystem.arrayToMarker(a);
+    };
+    DateEnv.prototype.addMonths = function (marker, n) {
+        var a = this.calendarSystem.markerToArray(marker);
+        a[1] += n;
+        return this.calendarSystem.arrayToMarker(a);
+    };
+    // Diffing Whole Units
+    DateEnv.prototype.diffWholeYears = function (m0, m1) {
+        var calendarSystem = this.calendarSystem;
+        if (timeAsMs(m0) === timeAsMs(m1) &&
+            calendarSystem.getMarkerDay(m0) === calendarSystem.getMarkerDay(m1) &&
+            calendarSystem.getMarkerMonth(m0) === calendarSystem.getMarkerMonth(m1)) {
+            return calendarSystem.getMarkerYear(m1) - calendarSystem.getMarkerYear(m0);
+        }
+        return null;
+    };
+    DateEnv.prototype.diffWholeMonths = function (m0, m1) {
+        var calendarSystem = this.calendarSystem;
+        if (timeAsMs(m0) === timeAsMs(m1) &&
+            calendarSystem.getMarkerDay(m0) === calendarSystem.getMarkerDay(m1)) {
+            return (calendarSystem.getMarkerMonth(m1) - calendarSystem.getMarkerMonth(m0)) +
+                (calendarSystem.getMarkerYear(m1) - calendarSystem.getMarkerYear(m0)) * 12;
+        }
+        return null;
+    };
+    // Range / Duration
+    DateEnv.prototype.greatestWholeUnit = function (m0, m1) {
+        var n = this.diffWholeYears(m0, m1);
+        if (n !== null) {
+            return { unit: 'year', value: n };
+        }
+        n = this.diffWholeMonths(m0, m1);
+        if (n !== null) {
+            return { unit: 'month', value: n };
+        }
+        n = diffWholeWeeks(m0, m1);
+        if (n !== null) {
+            return { unit: 'week', value: n };
+        }
+        n = diffWholeDays(m0, m1);
+        if (n !== null) {
+            return { unit: 'day', value: n };
+        }
+        n = diffHours(m0, m1);
+        if (isInt(n)) {
+            return { unit: 'hour', value: n };
+        }
+        n = diffMinutes(m0, m1);
+        if (isInt(n)) {
+            return { unit: 'minute', value: n };
+        }
+        n = diffSeconds(m0, m1);
+        if (isInt(n)) {
+            return { unit: 'second', value: n };
+        }
+        return { unit: 'millisecond', value: m1.valueOf() - m0.valueOf() };
+    };
+    DateEnv.prototype.countDurationsBetween = function (m0, m1, d) {
+        // TODO: can use greatestWholeUnit
+        var diff;
+        if (d.years) {
+            diff = this.diffWholeYears(m0, m1);
+            if (diff !== null) {
+                return diff / asRoughYears(d);
+            }
+        }
+        if (d.months) {
+            diff = this.diffWholeMonths(m0, m1);
+            if (diff !== null) {
+                return diff / asRoughMonths(d);
+            }
+        }
+        if (d.days) {
+            diff = diffWholeDays(m0, m1);
+            if (diff !== null) {
+                return diff / asRoughDays(d);
+            }
+        }
+        return (m1.valueOf() - m0.valueOf()) / asRoughMs(d);
+    };
+    // Start-Of
+    // these DON'T return zoned-dates. only UTC start-of dates
+    DateEnv.prototype.startOf = function (m, unit) {
+        if (unit === 'year') {
+            return this.startOfYear(m);
+        }
+        if (unit === 'month') {
+            return this.startOfMonth(m);
+        }
+        if (unit === 'week') {
+            return this.startOfWeek(m);
+        }
+        if (unit === 'day') {
+            return startOfDay(m);
+        }
+        if (unit === 'hour') {
+            return startOfHour(m);
+        }
+        if (unit === 'minute') {
+            return startOfMinute(m);
+        }
+        if (unit === 'second') {
+            return startOfSecond(m);
+        }
+        return null;
+    };
+    DateEnv.prototype.startOfYear = function (m) {
+        return this.calendarSystem.arrayToMarker([
+            this.calendarSystem.getMarkerYear(m),
+        ]);
+    };
+    DateEnv.prototype.startOfMonth = function (m) {
+        return this.calendarSystem.arrayToMarker([
+            this.calendarSystem.getMarkerYear(m),
+            this.calendarSystem.getMarkerMonth(m),
+        ]);
+    };
+    DateEnv.prototype.startOfWeek = function (m) {
+        return this.calendarSystem.arrayToMarker([
+            this.calendarSystem.getMarkerYear(m),
+            this.calendarSystem.getMarkerMonth(m),
+            m.getUTCDate() - ((m.getUTCDay() - this.weekDow + 7) % 7),
+        ]);
+    };
+    // Week Number
+    DateEnv.prototype.computeWeekNumber = function (marker) {
+        if (this.weekNumberFunc) {
+            return this.weekNumberFunc(this.toDate(marker));
+        }
+        return weekOfYear(marker, this.weekDow, this.weekDoy);
+    };
+    // TODO: choke on timeZoneName: long
+    DateEnv.prototype.format = function (marker, formatter, dateOptions) {
+        if (dateOptions === void 0) { dateOptions = {}; }
+        return formatter.format({
+            marker: marker,
+            timeZoneOffset: dateOptions.forcedTzo != null ?
+                dateOptions.forcedTzo :
+                this.offsetForMarker(marker),
+        }, this);
+    };
+    DateEnv.prototype.formatRange = function (start, end, formatter, dateOptions) {
+        if (dateOptions === void 0) { dateOptions = {}; }
+        if (dateOptions.isEndExclusive) {
+            end = addMs(end, -1);
+        }
+        return formatter.formatRange({
+            marker: start,
+            timeZoneOffset: dateOptions.forcedStartTzo != null ?
+                dateOptions.forcedStartTzo :
+                this.offsetForMarker(start),
+        }, {
+            marker: end,
+            timeZoneOffset: dateOptions.forcedEndTzo != null ?
+                dateOptions.forcedEndTzo :
+                this.offsetForMarker(end),
+        }, this, dateOptions.defaultSeparator);
+    };
+    /*
+    DUMB: the omitTime arg is dumb. if we omit the time, we want to omit the timezone offset. and if we do that,
+    might as well use buildIsoString or some other util directly
+    */
+    DateEnv.prototype.formatIso = function (marker, extraOptions) {
+        if (extraOptions === void 0) { extraOptions = {}; }
+        var timeZoneOffset = null;
+        if (!extraOptions.omitTimeZoneOffset) {
+            if (extraOptions.forcedTzo != null) {
+                timeZoneOffset = extraOptions.forcedTzo;
+            }
+            else {
+                timeZoneOffset = this.offsetForMarker(marker);
+            }
+        }
+        return buildIsoString(marker, timeZoneOffset, extraOptions.omitTime);
+    };
+    // TimeZone
+    DateEnv.prototype.timestampToMarker = function (ms) {
+        if (this.timeZone === 'local') {
+            return arrayToUtcDate(dateToLocalArray(new Date(ms)));
+        }
+        if (this.timeZone === 'UTC' || !this.namedTimeZoneImpl) {
+            return new Date(ms);
+        }
+        return arrayToUtcDate(this.namedTimeZoneImpl.timestampToArray(ms));
+    };
+    DateEnv.prototype.offsetForMarker = function (m) {
+        if (this.timeZone === 'local') {
+            return -arrayToLocalDate(dateToUtcArray(m)).getTimezoneOffset(); // convert "inverse" offset to "normal" offset
+        }
+        if (this.timeZone === 'UTC') {
+            return 0;
+        }
+        if (this.namedTimeZoneImpl) {
+            return this.namedTimeZoneImpl.offsetForArray(dateToUtcArray(m));
+        }
+        return null;
+    };
+    // Conversion
+    DateEnv.prototype.toDate = function (m, forcedTzo) {
+        if (this.timeZone === 'local') {
+            return arrayToLocalDate(dateToUtcArray(m));
+        }
+        if (this.timeZone === 'UTC') {
+            return new Date(m.valueOf()); // make sure it's a copy
+        }
+        if (!this.namedTimeZoneImpl) {
+            return new Date(m.valueOf() - (forcedTzo || 0));
+        }
+        return new Date(m.valueOf() -
+            this.namedTimeZoneImpl.offsetForArray(dateToUtcArray(m)) * 1000 * 60);
+    };
+    return DateEnv;
+}());
+
+var globalLocales = [];
+
+var MINIMAL_RAW_EN_LOCALE = {
+    code: 'en',
+    week: {
+        dow: 0,
+        doy: 4, // 4 days need to be within the year to be considered the first week
+    },
+    direction: 'ltr',
+    buttonText: {
+        prev: 'prev',
+        next: 'next',
+        prevYear: 'prev year',
+        nextYear: 'next year',
+        year: 'year',
+        today: 'today',
+        month: 'month',
+        week: 'week',
+        day: 'day',
+        list: 'list',
+    },
+    weekText: 'W',
+    weekTextLong: 'Week',
+    closeHint: 'Close',
+    timeHint: 'Time',
+    eventHint: 'Event',
+    allDayText: 'all-day',
+    moreLinkText: 'more',
+    noEventsText: 'No events to display',
+};
+var RAW_EN_LOCALE = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, MINIMAL_RAW_EN_LOCALE), { 
+    // Includes things we don't want other locales to inherit,
+    // things that derive from other translatable strings.
+    buttonHints: {
+        prev: 'Previous $0',
+        next: 'Next $0',
+        today: function (buttonText, unit) {
+            return (unit === 'day')
+                ? 'Today'
+                : "This " + buttonText;
+        },
+    }, viewHint: '$0 view', navLinkHint: 'Go to $0', moreLinkHint: function (eventCnt) {
+        return "Show " + eventCnt + " more event" + (eventCnt === 1 ? '' : 's');
+    } });
+function organizeRawLocales(explicitRawLocales) {
+    var defaultCode = explicitRawLocales.length > 0 ? explicitRawLocales[0].code : 'en';
+    var allRawLocales = globalLocales.concat(explicitRawLocales);
+    var rawLocaleMap = {
+        en: RAW_EN_LOCALE,
+    };
+    for (var _i = 0, allRawLocales_1 = allRawLocales; _i < allRawLocales_1.length; _i++) {
+        var rawLocale = allRawLocales_1[_i];
+        rawLocaleMap[rawLocale.code] = rawLocale;
+    }
+    return {
+        map: rawLocaleMap,
+        defaultCode: defaultCode,
+    };
+}
+function buildLocale(inputSingular, available) {
+    if (typeof inputSingular === 'object' && !Array.isArray(inputSingular)) {
+        return parseLocale(inputSingular.code, [inputSingular.code], inputSingular);
+    }
+    return queryLocale(inputSingular, available);
+}
+function queryLocale(codeArg, available) {
+    var codes = [].concat(codeArg || []); // will convert to array
+    var raw = queryRawLocale(codes, available) || RAW_EN_LOCALE;
+    return parseLocale(codeArg, codes, raw);
+}
+function queryRawLocale(codes, available) {
+    for (var i = 0; i < codes.length; i += 1) {
+        var parts = codes[i].toLocaleLowerCase().split('-');
+        for (var j = parts.length; j > 0; j -= 1) {
+            var simpleId = parts.slice(0, j).join('-');
+            if (available[simpleId]) {
+                return available[simpleId];
+            }
+        }
+    }
+    return null;
+}
+function parseLocale(codeArg, codes, raw) {
+    var merged = mergeProps([MINIMAL_RAW_EN_LOCALE, raw], ['buttonText']);
+    delete merged.code; // don't want this part of the options
+    var week = merged.week;
+    delete merged.week;
+    return {
+        codeArg: codeArg,
+        codes: codes,
+        week: week,
+        simpleNumberFormat: new Intl.NumberFormat(codeArg),
+        options: merged,
+    };
+}
+
+function formatDate(dateInput, options) {
+    if (options === void 0) { options = {}; }
+    var dateEnv = buildDateEnv$1(options);
+    var formatter = createFormatter(options);
+    var dateMeta = dateEnv.createMarkerMeta(dateInput);
+    if (!dateMeta) { // TODO: warning?
+        return '';
+    }
+    return dateEnv.format(dateMeta.marker, formatter, {
+        forcedTzo: dateMeta.forcedTzo,
+    });
+}
+function formatRange(startInput, endInput, options) {
+    var dateEnv = buildDateEnv$1(typeof options === 'object' && options ? options : {}); // pass in if non-null object
+    var formatter = createFormatter(options);
+    var startMeta = dateEnv.createMarkerMeta(startInput);
+    var endMeta = dateEnv.createMarkerMeta(endInput);
+    if (!startMeta || !endMeta) { // TODO: warning?
+        return '';
+    }
+    return dateEnv.formatRange(startMeta.marker, endMeta.marker, formatter, {
+        forcedStartTzo: startMeta.forcedTzo,
+        forcedEndTzo: endMeta.forcedTzo,
+        isEndExclusive: options.isEndExclusive,
+        defaultSeparator: BASE_OPTION_DEFAULTS.defaultRangeSeparator,
+    });
+}
+// TODO: more DRY and optimized
+function buildDateEnv$1(settings) {
+    var locale = buildLocale(settings.locale || 'en', organizeRawLocales([]).map); // TODO: don't hardcode 'en' everywhere
+    return new DateEnv(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({ timeZone: BASE_OPTION_DEFAULTS.timeZone, calendarSystem: 'gregory' }, settings), { locale: locale }));
+}
+
+var DEF_DEFAULTS = {
+    startTime: '09:00',
+    endTime: '17:00',
+    daysOfWeek: [1, 2, 3, 4, 5],
+    display: 'inverse-background',
+    classNames: 'fc-non-business',
+    groupId: '_businessHours', // so multiple defs get grouped
+};
+/*
+TODO: pass around as EventDefHash!!!
+*/
+function parseBusinessHours(input, context) {
+    return parseEvents(refineInputs(input), null, context);
+}
+function refineInputs(input) {
+    var rawDefs;
+    if (input === true) {
+        rawDefs = [{}]; // will get DEF_DEFAULTS verbatim
+    }
+    else if (Array.isArray(input)) {
+        // if specifying an array, every sub-definition NEEDS a day-of-week
+        rawDefs = input.filter(function (rawDef) { return rawDef.daysOfWeek; });
+    }
+    else if (typeof input === 'object' && input) { // non-null object
+        rawDefs = [input];
+    }
+    else { // is probably false
+        rawDefs = [];
+    }
+    rawDefs = rawDefs.map(function (rawDef) { return (Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, DEF_DEFAULTS), rawDef)); });
+    return rawDefs;
+}
+
+function pointInsideRect(point, rect) {
+    return point.left >= rect.left &&
+        point.left < rect.right &&
+        point.top >= rect.top &&
+        point.top < rect.bottom;
+}
+// Returns a new rectangle that is the intersection of the two rectangles. If they don't intersect, returns false
+function intersectRects(rect1, rect2) {
+    var res = {
+        left: Math.max(rect1.left, rect2.left),
+        right: Math.min(rect1.right, rect2.right),
+        top: Math.max(rect1.top, rect2.top),
+        bottom: Math.min(rect1.bottom, rect2.bottom),
+    };
+    if (res.left < res.right && res.top < res.bottom) {
+        return res;
+    }
+    return false;
+}
+function translateRect(rect, deltaX, deltaY) {
+    return {
+        left: rect.left + deltaX,
+        right: rect.right + deltaX,
+        top: rect.top + deltaY,
+        bottom: rect.bottom + deltaY,
+    };
+}
+// Returns a new point that will have been moved to reside within the given rectangle
+function constrainPoint(point, rect) {
+    return {
+        left: Math.min(Math.max(point.left, rect.left), rect.right),
+        top: Math.min(Math.max(point.top, rect.top), rect.bottom),
+    };
+}
+// Returns a point that is the center of the given rectangle
+function getRectCenter(rect) {
+    return {
+        left: (rect.left + rect.right) / 2,
+        top: (rect.top + rect.bottom) / 2,
+    };
+}
+// Subtracts point2's coordinates from point1's coordinates, returning a delta
+function diffPoints(point1, point2) {
+    return {
+        left: point1.left - point2.left,
+        top: point1.top - point2.top,
+    };
+}
+
+var canVGrowWithinCell;
+function getCanVGrowWithinCell() {
+    if (canVGrowWithinCell == null) {
+        canVGrowWithinCell = computeCanVGrowWithinCell();
+    }
+    return canVGrowWithinCell;
+}
+function computeCanVGrowWithinCell() {
+    // for SSR, because this function is call immediately at top-level
+    // TODO: just make this logic execute top-level, immediately, instead of doing lazily
+    if (typeof document === 'undefined') {
+        return true;
+    }
+    var el = document.createElement('div');
+    el.style.position = 'absolute';
+    el.style.top = '0px';
+    el.style.left = '0px';
+    el.innerHTML = '<table><tr><td><div></div></td></tr></table>';
+    el.querySelector('table').style.height = '100px';
+    el.querySelector('div').style.height = '100%';
+    document.body.appendChild(el);
+    var div = el.querySelector('div');
+    var possible = div.offsetHeight > 0;
+    document.body.removeChild(el);
+    return possible;
+}
+
+var EMPTY_EVENT_STORE = createEmptyEventStore(); // for purecomponents. TODO: keep elsewhere
+var Splitter = /** @class */ (function () {
+    function Splitter() {
+        this.getKeysForEventDefs = memoize(this._getKeysForEventDefs);
+        this.splitDateSelection = memoize(this._splitDateSpan);
+        this.splitEventStore = memoize(this._splitEventStore);
+        this.splitIndividualUi = memoize(this._splitIndividualUi);
+        this.splitEventDrag = memoize(this._splitInteraction);
+        this.splitEventResize = memoize(this._splitInteraction);
+        this.eventUiBuilders = {}; // TODO: typescript protection
+    }
+    Splitter.prototype.splitProps = function (props) {
+        var _this = this;
+        var keyInfos = this.getKeyInfo(props);
+        var defKeys = this.getKeysForEventDefs(props.eventStore);
+        var dateSelections = this.splitDateSelection(props.dateSelection);
+        var individualUi = this.splitIndividualUi(props.eventUiBases, defKeys); // the individual *bases*
+        var eventStores = this.splitEventStore(props.eventStore, defKeys);
+        var eventDrags = this.splitEventDrag(props.eventDrag);
+        var eventResizes = this.splitEventResize(props.eventResize);
+        var splitProps = {};
+        this.eventUiBuilders = mapHash(keyInfos, function (info, key) { return _this.eventUiBuilders[key] || memoize(buildEventUiForKey); });
+        for (var key in keyInfos) {
+            var keyInfo = keyInfos[key];
+            var eventStore = eventStores[key] || EMPTY_EVENT_STORE;
+            var buildEventUi = this.eventUiBuilders[key];
+            splitProps[key] = {
+                businessHours: keyInfo.businessHours || props.businessHours,
+                dateSelection: dateSelections[key] || null,
+                eventStore: eventStore,
+                eventUiBases: buildEventUi(props.eventUiBases[''], keyInfo.ui, individualUi[key]),
+                eventSelection: eventStore.instances[props.eventSelection] ? props.eventSelection : '',
+                eventDrag: eventDrags[key] || null,
+                eventResize: eventResizes[key] || null,
+            };
+        }
+        return splitProps;
+    };
+    Splitter.prototype._splitDateSpan = function (dateSpan) {
+        var dateSpans = {};
+        if (dateSpan) {
+            var keys = this.getKeysForDateSpan(dateSpan);
+            for (var _i = 0, keys_1 = keys; _i < keys_1.length; _i++) {
+                var key = keys_1[_i];
+                dateSpans[key] = dateSpan;
+            }
+        }
+        return dateSpans;
+    };
+    Splitter.prototype._getKeysForEventDefs = function (eventStore) {
+        var _this = this;
+        return mapHash(eventStore.defs, function (eventDef) { return _this.getKeysForEventDef(eventDef); });
+    };
+    Splitter.prototype._splitEventStore = function (eventStore, defKeys) {
+        var defs = eventStore.defs, instances = eventStore.instances;
+        var splitStores = {};
+        for (var defId in defs) {
+            for (var _i = 0, _a = defKeys[defId]; _i < _a.length; _i++) {
+                var key = _a[_i];
+                if (!splitStores[key]) {
+                    splitStores[key] = createEmptyEventStore();
+                }
+                splitStores[key].defs[defId] = defs[defId];
+            }
+        }
+        for (var instanceId in instances) {
+            var instance = instances[instanceId];
+            for (var _b = 0, _c = defKeys[instance.defId]; _b < _c.length; _b++) {
+                var key = _c[_b];
+                if (splitStores[key]) { // must have already been created
+                    splitStores[key].instances[instanceId] = instance;
+                }
+            }
+        }
+        return splitStores;
+    };
+    Splitter.prototype._splitIndividualUi = function (eventUiBases, defKeys) {
+        var splitHashes = {};
+        for (var defId in eventUiBases) {
+            if (defId) { // not the '' key
+                for (var _i = 0, _a = defKeys[defId]; _i < _a.length; _i++) {
+                    var key = _a[_i];
+                    if (!splitHashes[key]) {
+                        splitHashes[key] = {};
+                    }
+                    splitHashes[key][defId] = eventUiBases[defId];
+                }
+            }
+        }
+        return splitHashes;
+    };
+    Splitter.prototype._splitInteraction = function (interaction) {
+        var splitStates = {};
+        if (interaction) {
+            var affectedStores_1 = this._splitEventStore(interaction.affectedEvents, this._getKeysForEventDefs(interaction.affectedEvents));
+            // can't rely on defKeys because event data is mutated
+            var mutatedKeysByDefId = this._getKeysForEventDefs(interaction.mutatedEvents);
+            var mutatedStores_1 = this._splitEventStore(interaction.mutatedEvents, mutatedKeysByDefId);
+            var populate = function (key) {
+                if (!splitStates[key]) {
+                    splitStates[key] = {
+                        affectedEvents: affectedStores_1[key] || EMPTY_EVENT_STORE,
+                        mutatedEvents: mutatedStores_1[key] || EMPTY_EVENT_STORE,
+                        isEvent: interaction.isEvent,
+                    };
+                }
+            };
+            for (var key in affectedStores_1) {
+                populate(key);
+            }
+            for (var key in mutatedStores_1) {
+                populate(key);
+            }
+        }
+        return splitStates;
+    };
+    return Splitter;
+}());
+function buildEventUiForKey(allUi, eventUiForKey, individualUi) {
+    var baseParts = [];
+    if (allUi) {
+        baseParts.push(allUi);
+    }
+    if (eventUiForKey) {
+        baseParts.push(eventUiForKey);
+    }
+    var stuff = {
+        '': combineEventUis(baseParts),
+    };
+    if (individualUi) {
+        Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(stuff, individualUi);
+    }
+    return stuff;
+}
+
+function getDateMeta(date, todayRange, nowDate, dateProfile) {
+    return {
+        dow: date.getUTCDay(),
+        isDisabled: Boolean(dateProfile && !rangeContainsMarker(dateProfile.activeRange, date)),
+        isOther: Boolean(dateProfile && !rangeContainsMarker(dateProfile.currentRange, date)),
+        isToday: Boolean(todayRange && rangeContainsMarker(todayRange, date)),
+        isPast: Boolean(nowDate ? (date < nowDate) : todayRange ? (date < todayRange.start) : false),
+        isFuture: Boolean(nowDate ? (date > nowDate) : todayRange ? (date >= todayRange.end) : false),
+    };
+}
+function getDayClassNames(meta, theme) {
+    var classNames = [
+        'fc-day',
+        "fc-day-" + DAY_IDS[meta.dow],
+    ];
+    if (meta.isDisabled) {
+        classNames.push('fc-day-disabled');
+    }
+    else {
+        if (meta.isToday) {
+            classNames.push('fc-day-today');
+            classNames.push(theme.getClass('today'));
+        }
+        if (meta.isPast) {
+            classNames.push('fc-day-past');
+        }
+        if (meta.isFuture) {
+            classNames.push('fc-day-future');
+        }
+        if (meta.isOther) {
+            classNames.push('fc-day-other');
+        }
+    }
+    return classNames;
+}
+function getSlotClassNames(meta, theme) {
+    var classNames = [
+        'fc-slot',
+        "fc-slot-" + DAY_IDS[meta.dow],
+    ];
+    if (meta.isDisabled) {
+        classNames.push('fc-slot-disabled');
+    }
+    else {
+        if (meta.isToday) {
+            classNames.push('fc-slot-today');
+            classNames.push(theme.getClass('today'));
+        }
+        if (meta.isPast) {
+            classNames.push('fc-slot-past');
+        }
+        if (meta.isFuture) {
+            classNames.push('fc-slot-future');
+        }
+    }
+    return classNames;
+}
+
+var DAY_FORMAT = createFormatter({ year: 'numeric', month: 'long', day: 'numeric' });
+var WEEK_FORMAT = createFormatter({ week: 'long' });
+function buildNavLinkAttrs(context, dateMarker, viewType, isTabbable) {
+    if (viewType === void 0) { viewType = 'day'; }
+    if (isTabbable === void 0) { isTabbable = true; }
+    var dateEnv = context.dateEnv, options = context.options, calendarApi = context.calendarApi;
+    var dateStr = dateEnv.format(dateMarker, viewType === 'week' ? WEEK_FORMAT : DAY_FORMAT);
+    if (options.navLinks) {
+        var zonedDate = dateEnv.toDate(dateMarker);
+        var handleInteraction = function (ev) {
+            var customAction = viewType === 'day' ? options.navLinkDayClick :
+                viewType === 'week' ? options.navLinkWeekClick : null;
+            if (typeof customAction === 'function') {
+                customAction.call(calendarApi, dateEnv.toDate(dateMarker), ev);
+            }
+            else {
+                if (typeof customAction === 'string') {
+                    viewType = customAction;
+                }
+                calendarApi.zoomTo(dateMarker, viewType);
+            }
+        };
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({ title: formatWithOrdinals(options.navLinkHint, [dateStr, zonedDate], dateStr), 'data-navlink': '' }, (isTabbable
+            ? createAriaClickAttrs(handleInteraction)
+            : { onClick: handleInteraction }));
+    }
+    return { 'aria-label': dateStr };
+}
+
+var _isRtlScrollbarOnLeft = null;
+function getIsRtlScrollbarOnLeft() {
+    if (_isRtlScrollbarOnLeft === null) {
+        _isRtlScrollbarOnLeft = computeIsRtlScrollbarOnLeft();
+    }
+    return _isRtlScrollbarOnLeft;
+}
+function computeIsRtlScrollbarOnLeft() {
+    var outerEl = document.createElement('div');
+    applyStyle(outerEl, {
+        position: 'absolute',
+        top: -1000,
+        left: 0,
+        border: 0,
+        padding: 0,
+        overflow: 'scroll',
+        direction: 'rtl',
+    });
+    outerEl.innerHTML = '<div></div>';
+    document.body.appendChild(outerEl);
+    var innerEl = outerEl.firstChild;
+    var res = innerEl.getBoundingClientRect().left > outerEl.getBoundingClientRect().left;
+    removeElement(outerEl);
+    return res;
+}
+
+var _scrollbarWidths;
+function getScrollbarWidths() {
+    if (!_scrollbarWidths) {
+        _scrollbarWidths = computeScrollbarWidths();
+    }
+    return _scrollbarWidths;
+}
+function computeScrollbarWidths() {
+    var el = document.createElement('div');
+    el.style.overflow = 'scroll';
+    el.style.position = 'absolute';
+    el.style.top = '-9999px';
+    el.style.left = '-9999px';
+    document.body.appendChild(el);
+    var res = computeScrollbarWidthsForEl(el);
+    document.body.removeChild(el);
+    return res;
+}
+// WARNING: will include border
+function computeScrollbarWidthsForEl(el) {
+    return {
+        x: el.offsetHeight - el.clientHeight,
+        y: el.offsetWidth - el.clientWidth,
+    };
+}
+
+function computeEdges(el, getPadding) {
+    if (getPadding === void 0) { getPadding = false; }
+    var computedStyle = window.getComputedStyle(el);
+    var borderLeft = parseInt(computedStyle.borderLeftWidth, 10) || 0;
+    var borderRight = parseInt(computedStyle.borderRightWidth, 10) || 0;
+    var borderTop = parseInt(computedStyle.borderTopWidth, 10) || 0;
+    var borderBottom = parseInt(computedStyle.borderBottomWidth, 10) || 0;
+    var badScrollbarWidths = computeScrollbarWidthsForEl(el); // includes border!
+    var scrollbarLeftRight = badScrollbarWidths.y - borderLeft - borderRight;
+    var scrollbarBottom = badScrollbarWidths.x - borderTop - borderBottom;
+    var res = {
+        borderLeft: borderLeft,
+        borderRight: borderRight,
+        borderTop: borderTop,
+        borderBottom: borderBottom,
+        scrollbarBottom: scrollbarBottom,
+        scrollbarLeft: 0,
+        scrollbarRight: 0,
+    };
+    if (getIsRtlScrollbarOnLeft() && computedStyle.direction === 'rtl') { // is the scrollbar on the left side?
+        res.scrollbarLeft = scrollbarLeftRight;
+    }
+    else {
+        res.scrollbarRight = scrollbarLeftRight;
+    }
+    if (getPadding) {
+        res.paddingLeft = parseInt(computedStyle.paddingLeft, 10) || 0;
+        res.paddingRight = parseInt(computedStyle.paddingRight, 10) || 0;
+        res.paddingTop = parseInt(computedStyle.paddingTop, 10) || 0;
+        res.paddingBottom = parseInt(computedStyle.paddingBottom, 10) || 0;
+    }
+    return res;
+}
+function computeInnerRect(el, goWithinPadding, doFromWindowViewport) {
+    if (goWithinPadding === void 0) { goWithinPadding = false; }
+    var outerRect = doFromWindowViewport ? el.getBoundingClientRect() : computeRect(el);
+    var edges = computeEdges(el, goWithinPadding);
+    var res = {
+        left: outerRect.left + edges.borderLeft + edges.scrollbarLeft,
+        right: outerRect.right - edges.borderRight - edges.scrollbarRight,
+        top: outerRect.top + edges.borderTop,
+        bottom: outerRect.bottom - edges.borderBottom - edges.scrollbarBottom,
+    };
+    if (goWithinPadding) {
+        res.left += edges.paddingLeft;
+        res.right -= edges.paddingRight;
+        res.top += edges.paddingTop;
+        res.bottom -= edges.paddingBottom;
+    }
+    return res;
+}
+function computeRect(el) {
+    var rect = el.getBoundingClientRect();
+    return {
+        left: rect.left + window.pageXOffset,
+        top: rect.top + window.pageYOffset,
+        right: rect.right + window.pageXOffset,
+        bottom: rect.bottom + window.pageYOffset,
+    };
+}
+function computeClippedClientRect(el) {
+    var clippingParents = getClippingParents(el);
+    var rect = el.getBoundingClientRect();
+    for (var _i = 0, clippingParents_1 = clippingParents; _i < clippingParents_1.length; _i++) {
+        var clippingParent = clippingParents_1[_i];
+        var intersection = intersectRects(rect, clippingParent.getBoundingClientRect());
+        if (intersection) {
+            rect = intersection;
+        }
+        else {
+            return null;
+        }
+    }
+    return rect;
+}
+function computeHeightAndMargins(el) {
+    return el.getBoundingClientRect().height + computeVMargins(el);
+}
+function computeVMargins(el) {
+    var computed = window.getComputedStyle(el);
+    return parseInt(computed.marginTop, 10) +
+        parseInt(computed.marginBottom, 10);
+}
+// does not return window
+function getClippingParents(el) {
+    var parents = [];
+    while (el instanceof HTMLElement) { // will stop when gets to document or null
+        var computedStyle = window.getComputedStyle(el);
+        if (computedStyle.position === 'fixed') {
+            break;
+        }
+        if ((/(auto|scroll)/).test(computedStyle.overflow + computedStyle.overflowY + computedStyle.overflowX)) {
+            parents.push(el);
+        }
+        el = el.parentNode;
+    }
+    return parents;
+}
+
+// given a function that resolves a result asynchronously.
+// the function can either call passed-in success and failure callbacks,
+// or it can return a promise.
+// if you need to pass additional params to func, bind them first.
+function unpromisify(func, success, failure) {
+    // guard against success/failure callbacks being called more than once
+    // and guard against a promise AND callback being used together.
+    var isResolved = false;
+    var wrappedSuccess = function () {
+        if (!isResolved) {
+            isResolved = true;
+            success.apply(this, arguments); // eslint-disable-line prefer-rest-params
+        }
+    };
+    var wrappedFailure = function () {
+        if (!isResolved) {
+            isResolved = true;
+            if (failure) {
+                failure.apply(this, arguments); // eslint-disable-line prefer-rest-params
+            }
+        }
+    };
+    var res = func(wrappedSuccess, wrappedFailure);
+    if (res && typeof res.then === 'function') {
+        res.then(wrappedSuccess, wrappedFailure);
+    }
+}
+
+var Emitter = /** @class */ (function () {
+    function Emitter() {
+        this.handlers = {};
+        this.thisContext = null;
+    }
+    Emitter.prototype.setThisContext = function (thisContext) {
+        this.thisContext = thisContext;
+    };
+    Emitter.prototype.setOptions = function (options) {
+        this.options = options;
+    };
+    Emitter.prototype.on = function (type, handler) {
+        addToHash(this.handlers, type, handler);
+    };
+    Emitter.prototype.off = function (type, handler) {
+        removeFromHash(this.handlers, type, handler);
+    };
+    Emitter.prototype.trigger = function (type) {
+        var args = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            args[_i - 1] = arguments[_i];
+        }
+        var attachedHandlers = this.handlers[type] || [];
+        var optionHandler = this.options && this.options[type];
+        var handlers = [].concat(optionHandler || [], attachedHandlers);
+        for (var _a = 0, handlers_1 = handlers; _a < handlers_1.length; _a++) {
+            var handler = handlers_1[_a];
+            handler.apply(this.thisContext, args);
+        }
+    };
+    Emitter.prototype.hasHandlers = function (type) {
+        return Boolean((this.handlers[type] && this.handlers[type].length) ||
+            (this.options && this.options[type]));
+    };
+    return Emitter;
+}());
+function addToHash(hash, type, handler) {
+    (hash[type] || (hash[type] = []))
+        .push(handler);
+}
+function removeFromHash(hash, type, handler) {
+    if (handler) {
+        if (hash[type]) {
+            hash[type] = hash[type].filter(function (func) { return func !== handler; });
+        }
+    }
+    else {
+        delete hash[type]; // remove all handler funcs for this type
+    }
+}
+
+/*
+Records offset information for a set of elements, relative to an origin element.
+Can record the left/right OR the top/bottom OR both.
+Provides methods for querying the cache by position.
+*/
+var PositionCache = /** @class */ (function () {
+    function PositionCache(originEl, els, isHorizontal, isVertical) {
+        this.els = els;
+        var originClientRect = this.originClientRect = originEl.getBoundingClientRect(); // relative to viewport top-left
+        if (isHorizontal) {
+            this.buildElHorizontals(originClientRect.left);
+        }
+        if (isVertical) {
+            this.buildElVerticals(originClientRect.top);
+        }
+    }
+    // Populates the left/right internal coordinate arrays
+    PositionCache.prototype.buildElHorizontals = function (originClientLeft) {
+        var lefts = [];
+        var rights = [];
+        for (var _i = 0, _a = this.els; _i < _a.length; _i++) {
+            var el = _a[_i];
+            var rect = el.getBoundingClientRect();
+            lefts.push(rect.left - originClientLeft);
+            rights.push(rect.right - originClientLeft);
+        }
+        this.lefts = lefts;
+        this.rights = rights;
+    };
+    // Populates the top/bottom internal coordinate arrays
+    PositionCache.prototype.buildElVerticals = function (originClientTop) {
+        var tops = [];
+        var bottoms = [];
+        for (var _i = 0, _a = this.els; _i < _a.length; _i++) {
+            var el = _a[_i];
+            var rect = el.getBoundingClientRect();
+            tops.push(rect.top - originClientTop);
+            bottoms.push(rect.bottom - originClientTop);
+        }
+        this.tops = tops;
+        this.bottoms = bottoms;
+    };
+    // Given a left offset (from document left), returns the index of the el that it horizontally intersects.
+    // If no intersection is made, returns undefined.
+    PositionCache.prototype.leftToIndex = function (leftPosition) {
+        var _a = this, lefts = _a.lefts, rights = _a.rights;
+        var len = lefts.length;
+        var i;
+        for (i = 0; i < len; i += 1) {
+            if (leftPosition >= lefts[i] && leftPosition < rights[i]) {
+                return i;
+            }
+        }
+        return undefined; // TODO: better
+    };
+    // Given a top offset (from document top), returns the index of the el that it vertically intersects.
+    // If no intersection is made, returns undefined.
+    PositionCache.prototype.topToIndex = function (topPosition) {
+        var _a = this, tops = _a.tops, bottoms = _a.bottoms;
+        var len = tops.length;
+        var i;
+        for (i = 0; i < len; i += 1) {
+            if (topPosition >= tops[i] && topPosition < bottoms[i]) {
+                return i;
+            }
+        }
+        return undefined; // TODO: better
+    };
+    // Gets the width of the element at the given index
+    PositionCache.prototype.getWidth = function (leftIndex) {
+        return this.rights[leftIndex] - this.lefts[leftIndex];
+    };
+    // Gets the height of the element at the given index
+    PositionCache.prototype.getHeight = function (topIndex) {
+        return this.bottoms[topIndex] - this.tops[topIndex];
+    };
+    return PositionCache;
+}());
+
+/* eslint max-classes-per-file: "off" */
+/*
+An object for getting/setting scroll-related information for an element.
+Internally, this is done very differently for window versus DOM element,
+so this object serves as a common interface.
+*/
+var ScrollController = /** @class */ (function () {
+    function ScrollController() {
+    }
+    ScrollController.prototype.getMaxScrollTop = function () {
+        return this.getScrollHeight() - this.getClientHeight();
+    };
+    ScrollController.prototype.getMaxScrollLeft = function () {
+        return this.getScrollWidth() - this.getClientWidth();
+    };
+    ScrollController.prototype.canScrollVertically = function () {
+        return this.getMaxScrollTop() > 0;
+    };
+    ScrollController.prototype.canScrollHorizontally = function () {
+        return this.getMaxScrollLeft() > 0;
+    };
+    ScrollController.prototype.canScrollUp = function () {
+        return this.getScrollTop() > 0;
+    };
+    ScrollController.prototype.canScrollDown = function () {
+        return this.getScrollTop() < this.getMaxScrollTop();
+    };
+    ScrollController.prototype.canScrollLeft = function () {
+        return this.getScrollLeft() > 0;
+    };
+    ScrollController.prototype.canScrollRight = function () {
+        return this.getScrollLeft() < this.getMaxScrollLeft();
+    };
+    return ScrollController;
+}());
+var ElementScrollController = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(ElementScrollController, _super);
+    function ElementScrollController(el) {
+        var _this = _super.call(this) || this;
+        _this.el = el;
+        return _this;
+    }
+    ElementScrollController.prototype.getScrollTop = function () {
+        return this.el.scrollTop;
+    };
+    ElementScrollController.prototype.getScrollLeft = function () {
+        return this.el.scrollLeft;
+    };
+    ElementScrollController.prototype.setScrollTop = function (top) {
+        this.el.scrollTop = top;
+    };
+    ElementScrollController.prototype.setScrollLeft = function (left) {
+        this.el.scrollLeft = left;
+    };
+    ElementScrollController.prototype.getScrollWidth = function () {
+        return this.el.scrollWidth;
+    };
+    ElementScrollController.prototype.getScrollHeight = function () {
+        return this.el.scrollHeight;
+    };
+    ElementScrollController.prototype.getClientHeight = function () {
+        return this.el.clientHeight;
+    };
+    ElementScrollController.prototype.getClientWidth = function () {
+        return this.el.clientWidth;
+    };
+    return ElementScrollController;
+}(ScrollController));
+var WindowScrollController = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(WindowScrollController, _super);
+    function WindowScrollController() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    WindowScrollController.prototype.getScrollTop = function () {
+        return window.pageYOffset;
+    };
+    WindowScrollController.prototype.getScrollLeft = function () {
+        return window.pageXOffset;
+    };
+    WindowScrollController.prototype.setScrollTop = function (n) {
+        window.scroll(window.pageXOffset, n);
+    };
+    WindowScrollController.prototype.setScrollLeft = function (n) {
+        window.scroll(n, window.pageYOffset);
+    };
+    WindowScrollController.prototype.getScrollWidth = function () {
+        return document.documentElement.scrollWidth;
+    };
+    WindowScrollController.prototype.getScrollHeight = function () {
+        return document.documentElement.scrollHeight;
+    };
+    WindowScrollController.prototype.getClientHeight = function () {
+        return document.documentElement.clientHeight;
+    };
+    WindowScrollController.prototype.getClientWidth = function () {
+        return document.documentElement.clientWidth;
+    };
+    return WindowScrollController;
+}(ScrollController));
+
+var Theme = /** @class */ (function () {
+    function Theme(calendarOptions) {
+        if (this.iconOverrideOption) {
+            this.setIconOverride(calendarOptions[this.iconOverrideOption]);
+        }
+    }
+    Theme.prototype.setIconOverride = function (iconOverrideHash) {
+        var iconClassesCopy;
+        var buttonName;
+        if (typeof iconOverrideHash === 'object' && iconOverrideHash) { // non-null object
+            iconClassesCopy = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, this.iconClasses);
+            for (buttonName in iconOverrideHash) {
+                iconClassesCopy[buttonName] = this.applyIconOverridePrefix(iconOverrideHash[buttonName]);
+            }
+            this.iconClasses = iconClassesCopy;
+        }
+        else if (iconOverrideHash === false) {
+            this.iconClasses = {};
+        }
+    };
+    Theme.prototype.applyIconOverridePrefix = function (className) {
+        var prefix = this.iconOverridePrefix;
+        if (prefix && className.indexOf(prefix) !== 0) { // if not already present
+            className = prefix + className;
+        }
+        return className;
+    };
+    Theme.prototype.getClass = function (key) {
+        return this.classes[key] || '';
+    };
+    Theme.prototype.getIconClass = function (buttonName, isRtl) {
+        var className;
+        if (isRtl && this.rtlIconClasses) {
+            className = this.rtlIconClasses[buttonName] || this.iconClasses[buttonName];
+        }
+        else {
+            className = this.iconClasses[buttonName];
+        }
+        if (className) {
+            return this.baseIconClass + " " + className;
+        }
+        return '';
+    };
+    Theme.prototype.getCustomButtonIconClass = function (customButtonProps) {
+        var className;
+        if (this.iconOverrideCustomButtonOption) {
+            className = customButtonProps[this.iconOverrideCustomButtonOption];
+            if (className) {
+                return this.baseIconClass + " " + this.applyIconOverridePrefix(className);
+            }
+        }
+        return '';
+    };
+    return Theme;
+}());
+Theme.prototype.classes = {};
+Theme.prototype.iconClasses = {};
+Theme.prototype.baseIconClass = '';
+Theme.prototype.iconOverridePrefix = '';
+
+var ScrollResponder = /** @class */ (function () {
+    function ScrollResponder(execFunc, emitter, scrollTime, scrollTimeReset) {
+        var _this = this;
+        this.execFunc = execFunc;
+        this.emitter = emitter;
+        this.scrollTime = scrollTime;
+        this.scrollTimeReset = scrollTimeReset;
+        this.handleScrollRequest = function (request) {
+            _this.queuedRequest = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, _this.queuedRequest || {}, request);
+            _this.drain();
+        };
+        emitter.on('_scrollRequest', this.handleScrollRequest);
+        this.fireInitialScroll();
+    }
+    ScrollResponder.prototype.detach = function () {
+        this.emitter.off('_scrollRequest', this.handleScrollRequest);
+    };
+    ScrollResponder.prototype.update = function (isDatesNew) {
+        if (isDatesNew && this.scrollTimeReset) {
+            this.fireInitialScroll(); // will drain
+        }
+        else {
+            this.drain();
+        }
+    };
+    ScrollResponder.prototype.fireInitialScroll = function () {
+        this.handleScrollRequest({
+            time: this.scrollTime,
+        });
+    };
+    ScrollResponder.prototype.drain = function () {
+        if (this.queuedRequest && this.execFunc(this.queuedRequest)) {
+            this.queuedRequest = null;
+        }
+    };
+    return ScrollResponder;
+}());
+
+var ViewContextType = Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createContext"])({}); // for Components
+function buildViewContext(viewSpec, viewApi, viewOptions, dateProfileGenerator, dateEnv, theme, pluginHooks, dispatch, getCurrentData, emitter, calendarApi, registerInteractiveComponent, unregisterInteractiveComponent) {
+    return {
+        dateEnv: dateEnv,
+        options: viewOptions,
+        pluginHooks: pluginHooks,
+        emitter: emitter,
+        dispatch: dispatch,
+        getCurrentData: getCurrentData,
+        calendarApi: calendarApi,
+        viewSpec: viewSpec,
+        viewApi: viewApi,
+        dateProfileGenerator: dateProfileGenerator,
+        theme: theme,
+        isRtl: viewOptions.direction === 'rtl',
+        addResizeHandler: function (handler) {
+            emitter.on('_resize', handler);
+        },
+        removeResizeHandler: function (handler) {
+            emitter.off('_resize', handler);
+        },
+        createScrollResponder: function (execFunc) {
+            return new ScrollResponder(execFunc, emitter, createDuration(viewOptions.scrollTime), viewOptions.scrollTimeReset);
+        },
+        registerInteractiveComponent: registerInteractiveComponent,
+        unregisterInteractiveComponent: unregisterInteractiveComponent,
+    };
+}
+
+/* eslint max-classes-per-file: off */
+var PureComponent = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(PureComponent, _super);
+    function PureComponent() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    PureComponent.prototype.shouldComponentUpdate = function (nextProps, nextState) {
+        if (this.debug) {
+            // eslint-disable-next-line no-console
+            console.log(getUnequalProps(nextProps, this.props), getUnequalProps(nextState, this.state));
+        }
+        return !compareObjs(this.props, nextProps, this.propEquality) ||
+            !compareObjs(this.state, nextState, this.stateEquality);
+    };
+    // HACK for freakin' React StrictMode
+    PureComponent.prototype.safeSetState = function (newState) {
+        if (!compareObjs(this.state, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, this.state), newState), this.stateEquality)) {
+            this.setState(newState);
+        }
+    };
+    PureComponent.addPropsEquality = addPropsEquality;
+    PureComponent.addStateEquality = addStateEquality;
+    PureComponent.contextType = ViewContextType;
+    return PureComponent;
+}(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["Component"]));
+PureComponent.prototype.propEquality = {};
+PureComponent.prototype.stateEquality = {};
+var BaseComponent = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(BaseComponent, _super);
+    function BaseComponent() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    BaseComponent.contextType = ViewContextType;
+    return BaseComponent;
+}(PureComponent));
+function addPropsEquality(propEquality) {
+    var hash = Object.create(this.prototype.propEquality);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(hash, propEquality);
+    this.prototype.propEquality = hash;
+}
+function addStateEquality(stateEquality) {
+    var hash = Object.create(this.prototype.stateEquality);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(hash, stateEquality);
+    this.prototype.stateEquality = hash;
+}
+// use other one
+function setRef(ref, current) {
+    if (typeof ref === 'function') {
+        ref(current);
+    }
+    else if (ref) {
+        // see https://github.com/facebook/react/issues/13029
+        ref.current = current;
+    }
+}
+
+/*
+an INTERACTABLE date component
+
+PURPOSES:
+- hook up to fg, fill, and mirror renderers
+- interface for dragging and hits
+*/
+var DateComponent = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(DateComponent, _super);
+    function DateComponent() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.uid = guid();
+        return _this;
+    }
+    // Hit System
+    // -----------------------------------------------------------------------------------------------------------------
+    DateComponent.prototype.prepareHits = function () {
+    };
+    DateComponent.prototype.queryHit = function (positionLeft, positionTop, elWidth, elHeight) {
+        return null; // this should be abstract
+    };
+    // Pointer Interaction Utils
+    // -----------------------------------------------------------------------------------------------------------------
+    DateComponent.prototype.isValidSegDownEl = function (el) {
+        return !this.props.eventDrag && // HACK
+            !this.props.eventResize && // HACK
+            !elementClosest(el, '.fc-event-mirror');
+    };
+    DateComponent.prototype.isValidDateDownEl = function (el) {
+        return !elementClosest(el, '.fc-event:not(.fc-bg-event)') &&
+            !elementClosest(el, '.fc-more-link') && // a "more.." link
+            !elementClosest(el, 'a[data-navlink]') && // a clickable nav link
+            !elementClosest(el, '.fc-popover'); // hack
+    };
+    return DateComponent;
+}(BaseComponent));
+
+// TODO: easier way to add new hooks? need to update a million things
+function createPlugin(input) {
+    return {
+        id: guid(),
+        deps: input.deps || [],
+        reducers: input.reducers || [],
+        isLoadingFuncs: input.isLoadingFuncs || [],
+        contextInit: [].concat(input.contextInit || []),
+        eventRefiners: input.eventRefiners || {},
+        eventDefMemberAdders: input.eventDefMemberAdders || [],
+        eventSourceRefiners: input.eventSourceRefiners || {},
+        isDraggableTransformers: input.isDraggableTransformers || [],
+        eventDragMutationMassagers: input.eventDragMutationMassagers || [],
+        eventDefMutationAppliers: input.eventDefMutationAppliers || [],
+        dateSelectionTransformers: input.dateSelectionTransformers || [],
+        datePointTransforms: input.datePointTransforms || [],
+        dateSpanTransforms: input.dateSpanTransforms || [],
+        views: input.views || {},
+        viewPropsTransformers: input.viewPropsTransformers || [],
+        isPropsValid: input.isPropsValid || null,
+        externalDefTransforms: input.externalDefTransforms || [],
+        viewContainerAppends: input.viewContainerAppends || [],
+        eventDropTransformers: input.eventDropTransformers || [],
+        componentInteractions: input.componentInteractions || [],
+        calendarInteractions: input.calendarInteractions || [],
+        themeClasses: input.themeClasses || {},
+        eventSourceDefs: input.eventSourceDefs || [],
+        cmdFormatter: input.cmdFormatter,
+        recurringTypes: input.recurringTypes || [],
+        namedTimeZonedImpl: input.namedTimeZonedImpl,
+        initialView: input.initialView || '',
+        elementDraggingImpl: input.elementDraggingImpl,
+        optionChangeHandlers: input.optionChangeHandlers || {},
+        scrollGridImpl: input.scrollGridImpl || null,
+        contentTypeHandlers: input.contentTypeHandlers || {},
+        listenerRefiners: input.listenerRefiners || {},
+        optionRefiners: input.optionRefiners || {},
+        propSetHandlers: input.propSetHandlers || {},
+    };
+}
+function buildPluginHooks(pluginDefs, globalDefs) {
+    var isAdded = {};
+    var hooks = {
+        reducers: [],
+        isLoadingFuncs: [],
+        contextInit: [],
+        eventRefiners: {},
+        eventDefMemberAdders: [],
+        eventSourceRefiners: {},
+        isDraggableTransformers: [],
+        eventDragMutationMassagers: [],
+        eventDefMutationAppliers: [],
+        dateSelectionTransformers: [],
+        datePointTransforms: [],
+        dateSpanTransforms: [],
+        views: {},
+        viewPropsTransformers: [],
+        isPropsValid: null,
+        externalDefTransforms: [],
+        viewContainerAppends: [],
+        eventDropTransformers: [],
+        componentInteractions: [],
+        calendarInteractions: [],
+        themeClasses: {},
+        eventSourceDefs: [],
+        cmdFormatter: null,
+        recurringTypes: [],
+        namedTimeZonedImpl: null,
+        initialView: '',
+        elementDraggingImpl: null,
+        optionChangeHandlers: {},
+        scrollGridImpl: null,
+        contentTypeHandlers: {},
+        listenerRefiners: {},
+        optionRefiners: {},
+        propSetHandlers: {},
+    };
+    function addDefs(defs) {
+        for (var _i = 0, defs_1 = defs; _i < defs_1.length; _i++) {
+            var def = defs_1[_i];
+            if (!isAdded[def.id]) {
+                isAdded[def.id] = true;
+                addDefs(def.deps);
+                hooks = combineHooks(hooks, def);
+            }
+        }
+    }
+    if (pluginDefs) {
+        addDefs(pluginDefs);
+    }
+    addDefs(globalDefs);
+    return hooks;
+}
+function buildBuildPluginHooks() {
+    var currentOverrideDefs = [];
+    var currentGlobalDefs = [];
+    var currentHooks;
+    return function (overrideDefs, globalDefs) {
+        if (!currentHooks || !isArraysEqual(overrideDefs, currentOverrideDefs) || !isArraysEqual(globalDefs, currentGlobalDefs)) {
+            currentHooks = buildPluginHooks(overrideDefs, globalDefs);
+        }
+        currentOverrideDefs = overrideDefs;
+        currentGlobalDefs = globalDefs;
+        return currentHooks;
+    };
+}
+function combineHooks(hooks0, hooks1) {
+    return {
+        reducers: hooks0.reducers.concat(hooks1.reducers),
+        isLoadingFuncs: hooks0.isLoadingFuncs.concat(hooks1.isLoadingFuncs),
+        contextInit: hooks0.contextInit.concat(hooks1.contextInit),
+        eventRefiners: Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, hooks0.eventRefiners), hooks1.eventRefiners),
+        eventDefMemberAdders: hooks0.eventDefMemberAdders.concat(hooks1.eventDefMemberAdders),
+        eventSourceRefiners: Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, hooks0.eventSourceRefiners), hooks1.eventSourceRefiners),
+        isDraggableTransformers: hooks0.isDraggableTransformers.concat(hooks1.isDraggableTransformers),
+        eventDragMutationMassagers: hooks0.eventDragMutationMassagers.concat(hooks1.eventDragMutationMassagers),
+        eventDefMutationAppliers: hooks0.eventDefMutationAppliers.concat(hooks1.eventDefMutationAppliers),
+        dateSelectionTransformers: hooks0.dateSelectionTransformers.concat(hooks1.dateSelectionTransformers),
+        datePointTransforms: hooks0.datePointTransforms.concat(hooks1.datePointTransforms),
+        dateSpanTransforms: hooks0.dateSpanTransforms.concat(hooks1.dateSpanTransforms),
+        views: Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, hooks0.views), hooks1.views),
+        viewPropsTransformers: hooks0.viewPropsTransformers.concat(hooks1.viewPropsTransformers),
+        isPropsValid: hooks1.isPropsValid || hooks0.isPropsValid,
+        externalDefTransforms: hooks0.externalDefTransforms.concat(hooks1.externalDefTransforms),
+        viewContainerAppends: hooks0.viewContainerAppends.concat(hooks1.viewContainerAppends),
+        eventDropTransformers: hooks0.eventDropTransformers.concat(hooks1.eventDropTransformers),
+        calendarInteractions: hooks0.calendarInteractions.concat(hooks1.calendarInteractions),
+        componentInteractions: hooks0.componentInteractions.concat(hooks1.componentInteractions),
+        themeClasses: Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, hooks0.themeClasses), hooks1.themeClasses),
+        eventSourceDefs: hooks0.eventSourceDefs.concat(hooks1.eventSourceDefs),
+        cmdFormatter: hooks1.cmdFormatter || hooks0.cmdFormatter,
+        recurringTypes: hooks0.recurringTypes.concat(hooks1.recurringTypes),
+        namedTimeZonedImpl: hooks1.namedTimeZonedImpl || hooks0.namedTimeZonedImpl,
+        initialView: hooks0.initialView || hooks1.initialView,
+        elementDraggingImpl: hooks0.elementDraggingImpl || hooks1.elementDraggingImpl,
+        optionChangeHandlers: Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, hooks0.optionChangeHandlers), hooks1.optionChangeHandlers),
+        scrollGridImpl: hooks1.scrollGridImpl || hooks0.scrollGridImpl,
+        contentTypeHandlers: Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, hooks0.contentTypeHandlers), hooks1.contentTypeHandlers),
+        listenerRefiners: Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, hooks0.listenerRefiners), hooks1.listenerRefiners),
+        optionRefiners: Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, hooks0.optionRefiners), hooks1.optionRefiners),
+        propSetHandlers: Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, hooks0.propSetHandlers), hooks1.propSetHandlers),
+    };
+}
+
+var StandardTheme = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(StandardTheme, _super);
+    function StandardTheme() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return StandardTheme;
+}(Theme));
+StandardTheme.prototype.classes = {
+    root: 'fc-theme-standard',
+    tableCellShaded: 'fc-cell-shaded',
+    buttonGroup: 'fc-button-group',
+    button: 'fc-button fc-button-primary',
+    buttonActive: 'fc-button-active',
+};
+StandardTheme.prototype.baseIconClass = 'fc-icon';
+StandardTheme.prototype.iconClasses = {
+    close: 'fc-icon-x',
+    prev: 'fc-icon-chevron-left',
+    next: 'fc-icon-chevron-right',
+    prevYear: 'fc-icon-chevrons-left',
+    nextYear: 'fc-icon-chevrons-right',
+};
+StandardTheme.prototype.rtlIconClasses = {
+    prev: 'fc-icon-chevron-right',
+    next: 'fc-icon-chevron-left',
+    prevYear: 'fc-icon-chevrons-right',
+    nextYear: 'fc-icon-chevrons-left',
+};
+StandardTheme.prototype.iconOverrideOption = 'buttonIcons'; // TODO: make TS-friendly
+StandardTheme.prototype.iconOverrideCustomButtonOption = 'icon';
+StandardTheme.prototype.iconOverridePrefix = 'fc-icon-';
+
+function compileViewDefs(defaultConfigs, overrideConfigs) {
+    var hash = {};
+    var viewType;
+    for (viewType in defaultConfigs) {
+        ensureViewDef(viewType, hash, defaultConfigs, overrideConfigs);
+    }
+    for (viewType in overrideConfigs) {
+        ensureViewDef(viewType, hash, defaultConfigs, overrideConfigs);
+    }
+    return hash;
+}
+function ensureViewDef(viewType, hash, defaultConfigs, overrideConfigs) {
+    if (hash[viewType]) {
+        return hash[viewType];
+    }
+    var viewDef = buildViewDef(viewType, hash, defaultConfigs, overrideConfigs);
+    if (viewDef) {
+        hash[viewType] = viewDef;
+    }
+    return viewDef;
+}
+function buildViewDef(viewType, hash, defaultConfigs, overrideConfigs) {
+    var defaultConfig = defaultConfigs[viewType];
+    var overrideConfig = overrideConfigs[viewType];
+    var queryProp = function (name) { return ((defaultConfig && defaultConfig[name] !== null) ? defaultConfig[name] :
+        ((overrideConfig && overrideConfig[name] !== null) ? overrideConfig[name] : null)); };
+    var theComponent = queryProp('component');
+    var superType = queryProp('superType');
+    var superDef = null;
+    if (superType) {
+        if (superType === viewType) {
+            throw new Error('Can\'t have a custom view type that references itself');
+        }
+        superDef = ensureViewDef(superType, hash, defaultConfigs, overrideConfigs);
+    }
+    if (!theComponent && superDef) {
+        theComponent = superDef.component;
+    }
+    if (!theComponent) {
+        return null; // don't throw a warning, might be settings for a single-unit view
+    }
+    return {
+        type: viewType,
+        component: theComponent,
+        defaults: Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, (superDef ? superDef.defaults : {})), (defaultConfig ? defaultConfig.rawOptions : {})),
+        overrides: Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, (superDef ? superDef.overrides : {})), (overrideConfig ? overrideConfig.rawOptions : {})),
+    };
+}
+
+/* eslint max-classes-per-file: off */
+// NOTE: in JSX, you should always use this class with <HookProps> arg. otherwise, will default to any???
+var RenderHook = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(RenderHook, _super);
+    function RenderHook() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.rootElRef = Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createRef"])();
+        _this.handleRootEl = function (el) {
+            setRef(_this.rootElRef, el);
+            if (_this.props.elRef) {
+                setRef(_this.props.elRef, el);
+            }
+        };
+        return _this;
+    }
+    RenderHook.prototype.render = function () {
+        var _this = this;
+        var props = this.props;
+        var hookProps = props.hookProps;
+        return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(MountHook, { hookProps: hookProps, didMount: props.didMount, willUnmount: props.willUnmount, elRef: this.handleRootEl }, function (rootElRef) { return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ContentHook, { hookProps: hookProps, content: props.content, defaultContent: props.defaultContent, backupElRef: _this.rootElRef }, function (innerElRef, innerContent) { return props.children(rootElRef, normalizeClassNames(props.classNames, hookProps), innerElRef, innerContent); })); }));
+    };
+    return RenderHook;
+}(BaseComponent));
+// TODO: rename to be about function, not default. use in above type
+// for forcing rerender of components that use the ContentHook
+var CustomContentRenderContext = Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createContext"])(0);
+function ContentHook(props) {
+    return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(CustomContentRenderContext.Consumer, null, function (renderId) { return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ContentHookInner, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({ renderId: renderId }, props))); }));
+}
+var ContentHookInner = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(ContentHookInner, _super);
+    function ContentHookInner() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.innerElRef = Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createRef"])();
+        return _this;
+    }
+    ContentHookInner.prototype.render = function () {
+        return this.props.children(this.innerElRef, this.renderInnerContent());
+    };
+    ContentHookInner.prototype.componentDidMount = function () {
+        this.updateCustomContent();
+    };
+    ContentHookInner.prototype.componentDidUpdate = function () {
+        this.updateCustomContent();
+    };
+    ContentHookInner.prototype.componentWillUnmount = function () {
+        if (this.customContentInfo && this.customContentInfo.destroy) {
+            this.customContentInfo.destroy();
+        }
+    };
+    ContentHookInner.prototype.renderInnerContent = function () {
+        var customContentInfo = this.customContentInfo; // only populated if using non-[p]react node(s)
+        var innerContent = this.getInnerContent();
+        var meta = this.getContentMeta(innerContent);
+        // initial run, or content-type changing? (from vue -> react for example)
+        if (!customContentInfo || customContentInfo.contentKey !== meta.contentKey) {
+            // clearing old value
+            if (customContentInfo) {
+                if (customContentInfo.destroy) {
+                    customContentInfo.destroy();
+                }
+                customContentInfo = this.customContentInfo = null;
+            }
+            // assigning new value
+            if (meta.contentKey) {
+                customContentInfo = this.customContentInfo = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({ contentKey: meta.contentKey, contentVal: innerContent[meta.contentKey] }, meta.buildLifecycleFuncs());
+            }
+            // updating
+        }
+        else if (customContentInfo) {
+            customContentInfo.contentVal = innerContent[meta.contentKey];
+        }
+        return customContentInfo
+            ? [] // signal that something was specified
+            : innerContent; // assume a [p]react vdom node. use it
+    };
+    ContentHookInner.prototype.getInnerContent = function () {
+        var props = this.props;
+        var innerContent = normalizeContent(props.content, props.hookProps);
+        if (innerContent === undefined) { // use the default
+            innerContent = normalizeContent(props.defaultContent, props.hookProps);
+        }
+        return innerContent == null ? null : innerContent; // convert undefined to null (better for React)
+    };
+    ContentHookInner.prototype.getContentMeta = function (innerContent) {
+        var contentTypeHandlers = this.context.pluginHooks.contentTypeHandlers;
+        var contentKey = '';
+        var buildLifecycleFuncs = null;
+        if (innerContent) { // allowed to be null, for convenience to caller
+            for (var searchKey in contentTypeHandlers) {
+                if (innerContent[searchKey] !== undefined) {
+                    contentKey = searchKey;
+                    buildLifecycleFuncs = contentTypeHandlers[searchKey];
+                    break;
+                }
+            }
+        }
+        return { contentKey: contentKey, buildLifecycleFuncs: buildLifecycleFuncs };
+    };
+    ContentHookInner.prototype.updateCustomContent = function () {
+        if (this.customContentInfo) { // for non-[p]react
+            this.customContentInfo.render(this.innerElRef.current || this.props.backupElRef.current, // the element to render into
+            this.customContentInfo.contentVal);
+        }
+    };
+    return ContentHookInner;
+}(BaseComponent));
+var MountHook = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(MountHook, _super);
+    function MountHook() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.handleRootEl = function (rootEl) {
+            _this.rootEl = rootEl;
+            if (_this.props.elRef) {
+                setRef(_this.props.elRef, rootEl);
+            }
+        };
+        return _this;
+    }
+    MountHook.prototype.render = function () {
+        return this.props.children(this.handleRootEl);
+    };
+    MountHook.prototype.componentDidMount = function () {
+        var callback = this.props.didMount;
+        if (callback) {
+            callback(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, this.props.hookProps), { el: this.rootEl }));
+        }
+    };
+    MountHook.prototype.componentWillUnmount = function () {
+        var callback = this.props.willUnmount;
+        if (callback) {
+            callback(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, this.props.hookProps), { el: this.rootEl }));
+        }
+    };
+    return MountHook;
+}(BaseComponent));
+function buildClassNameNormalizer() {
+    var currentGenerator;
+    var currentHookProps;
+    var currentClassNames = [];
+    return function (generator, hookProps) {
+        if (!currentHookProps || !isPropsEqual(currentHookProps, hookProps) || generator !== currentGenerator) {
+            currentGenerator = generator;
+            currentHookProps = hookProps;
+            currentClassNames = normalizeClassNames(generator, hookProps);
+        }
+        return currentClassNames;
+    };
+}
+function normalizeClassNames(classNames, hookProps) {
+    if (typeof classNames === 'function') {
+        classNames = classNames(hookProps);
+    }
+    return parseClassNames(classNames);
+}
+function normalizeContent(input, hookProps) {
+    if (typeof input === 'function') {
+        return input(hookProps, _vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"]); // give the function the vdom-creation func
+    }
+    return input;
+}
+
+var ViewRoot = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(ViewRoot, _super);
+    function ViewRoot() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.normalizeClassNames = buildClassNameNormalizer();
+        return _this;
+    }
+    ViewRoot.prototype.render = function () {
+        var _a = this, props = _a.props, context = _a.context;
+        var options = context.options;
+        var hookProps = { view: context.viewApi };
+        var customClassNames = this.normalizeClassNames(options.viewClassNames, hookProps);
+        return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(MountHook, { hookProps: hookProps, didMount: options.viewDidMount, willUnmount: options.viewWillUnmount, elRef: props.elRef }, function (rootElRef) { return props.children(rootElRef, ["fc-" + props.viewSpec.type + "-view", 'fc-view'].concat(customClassNames)); }));
+    };
+    return ViewRoot;
+}(BaseComponent));
+
+function parseViewConfigs(inputs) {
+    return mapHash(inputs, parseViewConfig);
+}
+function parseViewConfig(input) {
+    var rawOptions = typeof input === 'function' ?
+        { component: input } :
+        input;
+    var component = rawOptions.component;
+    if (rawOptions.content) {
+        component = createViewHookComponent(rawOptions);
+        // TODO: remove content/classNames/didMount/etc from options?
+    }
+    return {
+        superType: rawOptions.type,
+        component: component,
+        rawOptions: rawOptions,
+    };
+}
+function createViewHookComponent(options) {
+    return function (viewProps) { return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ViewContextType.Consumer, null, function (context) { return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ViewRoot, { viewSpec: context.viewSpec }, function (viewElRef, viewClassNames) {
+        var hookProps = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, viewProps), { nextDayThreshold: context.options.nextDayThreshold });
+        return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(RenderHook, { hookProps: hookProps, classNames: options.classNames, content: options.content, didMount: options.didMount, willUnmount: options.willUnmount, elRef: viewElRef }, function (rootElRef, customClassNames, innerElRef, innerContent) { return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", { className: viewClassNames.concat(customClassNames).join(' '), ref: rootElRef }, innerContent)); }));
+    })); })); };
+}
+
+function buildViewSpecs(defaultInputs, optionOverrides, dynamicOptionOverrides, localeDefaults) {
+    var defaultConfigs = parseViewConfigs(defaultInputs);
+    var overrideConfigs = parseViewConfigs(optionOverrides.views);
+    var viewDefs = compileViewDefs(defaultConfigs, overrideConfigs);
+    return mapHash(viewDefs, function (viewDef) { return buildViewSpec(viewDef, overrideConfigs, optionOverrides, dynamicOptionOverrides, localeDefaults); });
+}
+function buildViewSpec(viewDef, overrideConfigs, optionOverrides, dynamicOptionOverrides, localeDefaults) {
+    var durationInput = viewDef.overrides.duration ||
+        viewDef.defaults.duration ||
+        dynamicOptionOverrides.duration ||
+        optionOverrides.duration;
+    var duration = null;
+    var durationUnit = '';
+    var singleUnit = '';
+    var singleUnitOverrides = {};
+    if (durationInput) {
+        duration = createDurationCached(durationInput);
+        if (duration) { // valid?
+            var denom = greatestDurationDenominator(duration);
+            durationUnit = denom.unit;
+            if (denom.value === 1) {
+                singleUnit = durationUnit;
+                singleUnitOverrides = overrideConfigs[durationUnit] ? overrideConfigs[durationUnit].rawOptions : {};
+            }
+        }
+    }
+    var queryButtonText = function (optionsSubset) {
+        var buttonTextMap = optionsSubset.buttonText || {};
+        var buttonTextKey = viewDef.defaults.buttonTextKey;
+        if (buttonTextKey != null && buttonTextMap[buttonTextKey] != null) {
+            return buttonTextMap[buttonTextKey];
+        }
+        if (buttonTextMap[viewDef.type] != null) {
+            return buttonTextMap[viewDef.type];
+        }
+        if (buttonTextMap[singleUnit] != null) {
+            return buttonTextMap[singleUnit];
+        }
+        return null;
+    };
+    var queryButtonTitle = function (optionsSubset) {
+        var buttonHints = optionsSubset.buttonHints || {};
+        var buttonKey = viewDef.defaults.buttonTextKey; // use same key as text
+        if (buttonKey != null && buttonHints[buttonKey] != null) {
+            return buttonHints[buttonKey];
+        }
+        if (buttonHints[viewDef.type] != null) {
+            return buttonHints[viewDef.type];
+        }
+        if (buttonHints[singleUnit] != null) {
+            return buttonHints[singleUnit];
+        }
+        return null;
+    };
+    return {
+        type: viewDef.type,
+        component: viewDef.component,
+        duration: duration,
+        durationUnit: durationUnit,
+        singleUnit: singleUnit,
+        optionDefaults: viewDef.defaults,
+        optionOverrides: Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, singleUnitOverrides), viewDef.overrides),
+        buttonTextOverride: queryButtonText(dynamicOptionOverrides) ||
+            queryButtonText(optionOverrides) || // constructor-specified buttonText lookup hash takes precedence
+            viewDef.overrides.buttonText,
+        buttonTextDefault: queryButtonText(localeDefaults) ||
+            viewDef.defaults.buttonText ||
+            queryButtonText(BASE_OPTION_DEFAULTS) ||
+            viewDef.type,
+        // not DRY
+        buttonTitleOverride: queryButtonTitle(dynamicOptionOverrides) ||
+            queryButtonTitle(optionOverrides) ||
+            viewDef.overrides.buttonHint,
+        buttonTitleDefault: queryButtonTitle(localeDefaults) ||
+            viewDef.defaults.buttonHint ||
+            queryButtonTitle(BASE_OPTION_DEFAULTS),
+        // will eventually fall back to buttonText
+    };
+}
+// hack to get memoization working
+var durationInputMap = {};
+function createDurationCached(durationInput) {
+    var json = JSON.stringify(durationInput);
+    var res = durationInputMap[json];
+    if (res === undefined) {
+        res = createDuration(durationInput);
+        durationInputMap[json] = res;
+    }
+    return res;
+}
+
+var DateProfileGenerator = /** @class */ (function () {
+    function DateProfileGenerator(props) {
+        this.props = props;
+        this.nowDate = getNow(props.nowInput, props.dateEnv);
+        this.initHiddenDays();
+    }
+    /* Date Range Computation
+    ------------------------------------------------------------------------------------------------------------------*/
+    // Builds a structure with info about what the dates/ranges will be for the "prev" view.
+    DateProfileGenerator.prototype.buildPrev = function (currentDateProfile, currentDate, forceToValid) {
+        var dateEnv = this.props.dateEnv;
+        var prevDate = dateEnv.subtract(dateEnv.startOf(currentDate, currentDateProfile.currentRangeUnit), // important for start-of-month
+        currentDateProfile.dateIncrement);
+        return this.build(prevDate, -1, forceToValid);
+    };
+    // Builds a structure with info about what the dates/ranges will be for the "next" view.
+    DateProfileGenerator.prototype.buildNext = function (currentDateProfile, currentDate, forceToValid) {
+        var dateEnv = this.props.dateEnv;
+        var nextDate = dateEnv.add(dateEnv.startOf(currentDate, currentDateProfile.currentRangeUnit), // important for start-of-month
+        currentDateProfile.dateIncrement);
+        return this.build(nextDate, 1, forceToValid);
+    };
+    // Builds a structure holding dates/ranges for rendering around the given date.
+    // Optional direction param indicates whether the date is being incremented/decremented
+    // from its previous value. decremented = -1, incremented = 1 (default).
+    DateProfileGenerator.prototype.build = function (currentDate, direction, forceToValid) {
+        if (forceToValid === void 0) { forceToValid = true; }
+        var props = this.props;
+        var validRange;
+        var currentInfo;
+        var isRangeAllDay;
+        var renderRange;
+        var activeRange;
+        var isValid;
+        validRange = this.buildValidRange();
+        validRange = this.trimHiddenDays(validRange);
+        if (forceToValid) {
+            currentDate = constrainMarkerToRange(currentDate, validRange);
+        }
+        currentInfo = this.buildCurrentRangeInfo(currentDate, direction);
+        isRangeAllDay = /^(year|month|week|day)$/.test(currentInfo.unit);
+        renderRange = this.buildRenderRange(this.trimHiddenDays(currentInfo.range), currentInfo.unit, isRangeAllDay);
+        renderRange = this.trimHiddenDays(renderRange);
+        activeRange = renderRange;
+        if (!props.showNonCurrentDates) {
+            activeRange = intersectRanges(activeRange, currentInfo.range);
+        }
+        activeRange = this.adjustActiveRange(activeRange);
+        activeRange = intersectRanges(activeRange, validRange); // might return null
+        // it's invalid if the originally requested date is not contained,
+        // or if the range is completely outside of the valid range.
+        isValid = rangesIntersect(currentInfo.range, validRange);
+        return {
+            // constraint for where prev/next operations can go and where events can be dragged/resized to.
+            // an object with optional start and end properties.
+            validRange: validRange,
+            // range the view is formally responsible for.
+            // for example, a month view might have 1st-31st, excluding padded dates
+            currentRange: currentInfo.range,
+            // name of largest unit being displayed, like "month" or "week"
+            currentRangeUnit: currentInfo.unit,
+            isRangeAllDay: isRangeAllDay,
+            // dates that display events and accept drag-n-drop
+            // will be `null` if no dates accept events
+            activeRange: activeRange,
+            // date range with a rendered skeleton
+            // includes not-active days that need some sort of DOM
+            renderRange: renderRange,
+            // Duration object that denotes the first visible time of any given day
+            slotMinTime: props.slotMinTime,
+            // Duration object that denotes the exclusive visible end time of any given day
+            slotMaxTime: props.slotMaxTime,
+            isValid: isValid,
+            // how far the current date will move for a prev/next operation
+            dateIncrement: this.buildDateIncrement(currentInfo.duration),
+            // pass a fallback (might be null) ^
+        };
+    };
+    // Builds an object with optional start/end properties.
+    // Indicates the minimum/maximum dates to display.
+    // not responsible for trimming hidden days.
+    DateProfileGenerator.prototype.buildValidRange = function () {
+        var input = this.props.validRangeInput;
+        var simpleInput = typeof input === 'function'
+            ? input.call(this.props.calendarApi, this.nowDate)
+            : input;
+        return this.refineRange(simpleInput) ||
+            { start: null, end: null }; // completely open-ended
+    };
+    // Builds a structure with info about the "current" range, the range that is
+    // highlighted as being the current month for example.
+    // See build() for a description of `direction`.
+    // Guaranteed to have `range` and `unit` properties. `duration` is optional.
+    DateProfileGenerator.prototype.buildCurrentRangeInfo = function (date, direction) {
+        var props = this.props;
+        var duration = null;
+        var unit = null;
+        var range = null;
+        var dayCount;
+        if (props.duration) {
+            duration = props.duration;
+            unit = props.durationUnit;
+            range = this.buildRangeFromDuration(date, direction, duration, unit);
+        }
+        else if ((dayCount = this.props.dayCount)) {
+            unit = 'day';
+            range = this.buildRangeFromDayCount(date, direction, dayCount);
+        }
+        else if ((range = this.buildCustomVisibleRange(date))) {
+            unit = props.dateEnv.greatestWholeUnit(range.start, range.end).unit;
+        }
+        else {
+            duration = this.getFallbackDuration();
+            unit = greatestDurationDenominator(duration).unit;
+            range = this.buildRangeFromDuration(date, direction, duration, unit);
+        }
+        return { duration: duration, unit: unit, range: range };
+    };
+    DateProfileGenerator.prototype.getFallbackDuration = function () {
+        return createDuration({ day: 1 });
+    };
+    // Returns a new activeRange to have time values (un-ambiguate)
+    // slotMinTime or slotMaxTime causes the range to expand.
+    DateProfileGenerator.prototype.adjustActiveRange = function (range) {
+        var _a = this.props, dateEnv = _a.dateEnv, usesMinMaxTime = _a.usesMinMaxTime, slotMinTime = _a.slotMinTime, slotMaxTime = _a.slotMaxTime;
+        var start = range.start, end = range.end;
+        if (usesMinMaxTime) {
+            // expand active range if slotMinTime is negative (why not when positive?)
+            if (asRoughDays(slotMinTime) < 0) {
+                start = startOfDay(start); // necessary?
+                start = dateEnv.add(start, slotMinTime);
+            }
+            // expand active range if slotMaxTime is beyond one day (why not when negative?)
+            if (asRoughDays(slotMaxTime) > 1) {
+                end = startOfDay(end); // necessary?
+                end = addDays(end, -1);
+                end = dateEnv.add(end, slotMaxTime);
+            }
+        }
+        return { start: start, end: end };
+    };
+    // Builds the "current" range when it is specified as an explicit duration.
+    // `unit` is the already-computed greatestDurationDenominator unit of duration.
+    DateProfileGenerator.prototype.buildRangeFromDuration = function (date, direction, duration, unit) {
+        var _a = this.props, dateEnv = _a.dateEnv, dateAlignment = _a.dateAlignment;
+        var start;
+        var end;
+        var res;
+        // compute what the alignment should be
+        if (!dateAlignment) {
+            var dateIncrement = this.props.dateIncrement;
+            if (dateIncrement) {
+                // use the smaller of the two units
+                if (asRoughMs(dateIncrement) < asRoughMs(duration)) {
+                    dateAlignment = greatestDurationDenominator(dateIncrement).unit;
+                }
+                else {
+                    dateAlignment = unit;
+                }
+            }
+            else {
+                dateAlignment = unit;
+            }
+        }
+        // if the view displays a single day or smaller
+        if (asRoughDays(duration) <= 1) {
+            if (this.isHiddenDay(start)) {
+                start = this.skipHiddenDays(start, direction);
+                start = startOfDay(start);
+            }
+        }
+        function computeRes() {
+            start = dateEnv.startOf(date, dateAlignment);
+            end = dateEnv.add(start, duration);
+            res = { start: start, end: end };
+        }
+        computeRes();
+        // if range is completely enveloped by hidden days, go past the hidden days
+        if (!this.trimHiddenDays(res)) {
+            date = this.skipHiddenDays(date, direction);
+            computeRes();
+        }
+        return res;
+    };
+    // Builds the "current" range when a dayCount is specified.
+    DateProfileGenerator.prototype.buildRangeFromDayCount = function (date, direction, dayCount) {
+        var _a = this.props, dateEnv = _a.dateEnv, dateAlignment = _a.dateAlignment;
+        var runningCount = 0;
+        var start = date;
+        var end;
+        if (dateAlignment) {
+            start = dateEnv.startOf(start, dateAlignment);
+        }
+        start = startOfDay(start);
+        start = this.skipHiddenDays(start, direction);
+        end = start;
+        do {
+            end = addDays(end, 1);
+            if (!this.isHiddenDay(end)) {
+                runningCount += 1;
+            }
+        } while (runningCount < dayCount);
+        return { start: start, end: end };
+    };
+    // Builds a normalized range object for the "visible" range,
+    // which is a way to define the currentRange and activeRange at the same time.
+    DateProfileGenerator.prototype.buildCustomVisibleRange = function (date) {
+        var props = this.props;
+        var input = props.visibleRangeInput;
+        var simpleInput = typeof input === 'function'
+            ? input.call(props.calendarApi, props.dateEnv.toDate(date))
+            : input;
+        var range = this.refineRange(simpleInput);
+        if (range && (range.start == null || range.end == null)) {
+            return null;
+        }
+        return range;
+    };
+    // Computes the range that will represent the element/cells for *rendering*,
+    // but which may have voided days/times.
+    // not responsible for trimming hidden days.
+    DateProfileGenerator.prototype.buildRenderRange = function (currentRange, currentRangeUnit, isRangeAllDay) {
+        return currentRange;
+    };
+    // Compute the duration value that should be added/substracted to the current date
+    // when a prev/next operation happens.
+    DateProfileGenerator.prototype.buildDateIncrement = function (fallback) {
+        var dateIncrement = this.props.dateIncrement;
+        var customAlignment;
+        if (dateIncrement) {
+            return dateIncrement;
+        }
+        if ((customAlignment = this.props.dateAlignment)) {
+            return createDuration(1, customAlignment);
+        }
+        if (fallback) {
+            return fallback;
+        }
+        return createDuration({ days: 1 });
+    };
+    DateProfileGenerator.prototype.refineRange = function (rangeInput) {
+        if (rangeInput) {
+            var range = parseRange(rangeInput, this.props.dateEnv);
+            if (range) {
+                range = computeVisibleDayRange(range);
+            }
+            return range;
+        }
+        return null;
+    };
+    /* Hidden Days
+    ------------------------------------------------------------------------------------------------------------------*/
+    // Initializes internal variables related to calculating hidden days-of-week
+    DateProfileGenerator.prototype.initHiddenDays = function () {
+        var hiddenDays = this.props.hiddenDays || []; // array of day-of-week indices that are hidden
+        var isHiddenDayHash = []; // is the day-of-week hidden? (hash with day-of-week-index -> bool)
+        var dayCnt = 0;
+        var i;
+        if (this.props.weekends === false) {
+            hiddenDays.push(0, 6); // 0=sunday, 6=saturday
+        }
+        for (i = 0; i < 7; i += 1) {
+            if (!(isHiddenDayHash[i] = hiddenDays.indexOf(i) !== -1)) {
+                dayCnt += 1;
+            }
+        }
+        if (!dayCnt) {
+            throw new Error('invalid hiddenDays'); // all days were hidden? bad.
+        }
+        this.isHiddenDayHash = isHiddenDayHash;
+    };
+    // Remove days from the beginning and end of the range that are computed as hidden.
+    // If the whole range is trimmed off, returns null
+    DateProfileGenerator.prototype.trimHiddenDays = function (range) {
+        var start = range.start, end = range.end;
+        if (start) {
+            start = this.skipHiddenDays(start);
+        }
+        if (end) {
+            end = this.skipHiddenDays(end, -1, true);
+        }
+        if (start == null || end == null || start < end) {
+            return { start: start, end: end };
+        }
+        return null;
+    };
+    // Is the current day hidden?
+    // `day` is a day-of-week index (0-6), or a Date (used for UTC)
+    DateProfileGenerator.prototype.isHiddenDay = function (day) {
+        if (day instanceof Date) {
+            day = day.getUTCDay();
+        }
+        return this.isHiddenDayHash[day];
+    };
+    // Incrementing the current day until it is no longer a hidden day, returning a copy.
+    // DOES NOT CONSIDER validRange!
+    // If the initial value of `date` is not a hidden day, don't do anything.
+    // Pass `isExclusive` as `true` if you are dealing with an end date.
+    // `inc` defaults to `1` (increment one day forward each time)
+    DateProfileGenerator.prototype.skipHiddenDays = function (date, inc, isExclusive) {
+        if (inc === void 0) { inc = 1; }
+        if (isExclusive === void 0) { isExclusive = false; }
+        while (this.isHiddenDayHash[(date.getUTCDay() + (isExclusive ? inc : 0) + 7) % 7]) {
+            date = addDays(date, inc);
+        }
+        return date;
+    };
+    return DateProfileGenerator;
+}());
+
+function reduceViewType(viewType, action) {
+    switch (action.type) {
+        case 'CHANGE_VIEW_TYPE':
+            viewType = action.viewType;
+    }
+    return viewType;
+}
+
+function reduceDynamicOptionOverrides(dynamicOptionOverrides, action) {
+    var _a;
+    switch (action.type) {
+        case 'SET_OPTION':
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, dynamicOptionOverrides), (_a = {}, _a[action.optionName] = action.rawOptionValue, _a));
+        default:
+            return dynamicOptionOverrides;
+    }
+}
+
+function reduceDateProfile(currentDateProfile, action, currentDate, dateProfileGenerator) {
+    var dp;
+    switch (action.type) {
+        case 'CHANGE_VIEW_TYPE':
+            return dateProfileGenerator.build(action.dateMarker || currentDate);
+        case 'CHANGE_DATE':
+            return dateProfileGenerator.build(action.dateMarker);
+        case 'PREV':
+            dp = dateProfileGenerator.buildPrev(currentDateProfile, currentDate);
+            if (dp.isValid) {
+                return dp;
+            }
+            break;
+        case 'NEXT':
+            dp = dateProfileGenerator.buildNext(currentDateProfile, currentDate);
+            if (dp.isValid) {
+                return dp;
+            }
+            break;
+    }
+    return currentDateProfile;
+}
+
+function initEventSources(calendarOptions, dateProfile, context) {
+    var activeRange = dateProfile ? dateProfile.activeRange : null;
+    return addSources({}, parseInitialSources(calendarOptions, context), activeRange, context);
+}
+function reduceEventSources(eventSources, action, dateProfile, context) {
+    var activeRange = dateProfile ? dateProfile.activeRange : null; // need this check?
+    switch (action.type) {
+        case 'ADD_EVENT_SOURCES': // already parsed
+            return addSources(eventSources, action.sources, activeRange, context);
+        case 'REMOVE_EVENT_SOURCE':
+            return removeSource(eventSources, action.sourceId);
+        case 'PREV': // TODO: how do we track all actions that affect dateProfile :(
+        case 'NEXT':
+        case 'CHANGE_DATE':
+        case 'CHANGE_VIEW_TYPE':
+            if (dateProfile) {
+                return fetchDirtySources(eventSources, activeRange, context);
+            }
+            return eventSources;
+        case 'FETCH_EVENT_SOURCES':
+            return fetchSourcesByIds(eventSources, action.sourceIds ? // why no type?
+                arrayToHash(action.sourceIds) :
+                excludeStaticSources(eventSources, context), activeRange, action.isRefetch || false, context);
+        case 'RECEIVE_EVENTS':
+        case 'RECEIVE_EVENT_ERROR':
+            return receiveResponse(eventSources, action.sourceId, action.fetchId, action.fetchRange);
+        case 'REMOVE_ALL_EVENT_SOURCES':
+            return {};
+        default:
+            return eventSources;
+    }
+}
+function reduceEventSourcesNewTimeZone(eventSources, dateProfile, context) {
+    var activeRange = dateProfile ? dateProfile.activeRange : null; // need this check?
+    return fetchSourcesByIds(eventSources, excludeStaticSources(eventSources, context), activeRange, true, context);
+}
+function computeEventSourcesLoading(eventSources) {
+    for (var sourceId in eventSources) {
+        if (eventSources[sourceId].isFetching) {
+            return true;
+        }
+    }
+    return false;
+}
+function addSources(eventSourceHash, sources, fetchRange, context) {
+    var hash = {};
+    for (var _i = 0, sources_1 = sources; _i < sources_1.length; _i++) {
+        var source = sources_1[_i];
+        hash[source.sourceId] = source;
+    }
+    if (fetchRange) {
+        hash = fetchDirtySources(hash, fetchRange, context);
+    }
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, eventSourceHash), hash);
+}
+function removeSource(eventSourceHash, sourceId) {
+    return filterHash(eventSourceHash, function (eventSource) { return eventSource.sourceId !== sourceId; });
+}
+function fetchDirtySources(sourceHash, fetchRange, context) {
+    return fetchSourcesByIds(sourceHash, filterHash(sourceHash, function (eventSource) { return isSourceDirty(eventSource, fetchRange, context); }), fetchRange, false, context);
+}
+function isSourceDirty(eventSource, fetchRange, context) {
+    if (!doesSourceNeedRange(eventSource, context)) {
+        return !eventSource.latestFetchId;
+    }
+    return !context.options.lazyFetching ||
+        !eventSource.fetchRange ||
+        eventSource.isFetching || // always cancel outdated in-progress fetches
+        fetchRange.start < eventSource.fetchRange.start ||
+        fetchRange.end > eventSource.fetchRange.end;
+}
+function fetchSourcesByIds(prevSources, sourceIdHash, fetchRange, isRefetch, context) {
+    var nextSources = {};
+    for (var sourceId in prevSources) {
+        var source = prevSources[sourceId];
+        if (sourceIdHash[sourceId]) {
+            nextSources[sourceId] = fetchSource(source, fetchRange, isRefetch, context);
+        }
+        else {
+            nextSources[sourceId] = source;
+        }
+    }
+    return nextSources;
+}
+function fetchSource(eventSource, fetchRange, isRefetch, context) {
+    var options = context.options, calendarApi = context.calendarApi;
+    var sourceDef = context.pluginHooks.eventSourceDefs[eventSource.sourceDefId];
+    var fetchId = guid();
+    sourceDef.fetch({
+        eventSource: eventSource,
+        range: fetchRange,
+        isRefetch: isRefetch,
+        context: context,
+    }, function (res) {
+        var rawEvents = res.rawEvents;
+        if (options.eventSourceSuccess) {
+            rawEvents = options.eventSourceSuccess.call(calendarApi, rawEvents, res.xhr) || rawEvents;
+        }
+        if (eventSource.success) {
+            rawEvents = eventSource.success.call(calendarApi, rawEvents, res.xhr) || rawEvents;
+        }
+        context.dispatch({
+            type: 'RECEIVE_EVENTS',
+            sourceId: eventSource.sourceId,
+            fetchId: fetchId,
+            fetchRange: fetchRange,
+            rawEvents: rawEvents,
+        });
+    }, function (error) {
+        console.warn(error.message, error);
+        if (options.eventSourceFailure) {
+            options.eventSourceFailure.call(calendarApi, error);
+        }
+        if (eventSource.failure) {
+            eventSource.failure(error);
+        }
+        context.dispatch({
+            type: 'RECEIVE_EVENT_ERROR',
+            sourceId: eventSource.sourceId,
+            fetchId: fetchId,
+            fetchRange: fetchRange,
+            error: error,
+        });
+    });
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, eventSource), { isFetching: true, latestFetchId: fetchId });
+}
+function receiveResponse(sourceHash, sourceId, fetchId, fetchRange) {
+    var _a;
+    var eventSource = sourceHash[sourceId];
+    if (eventSource && // not already removed
+        fetchId === eventSource.latestFetchId) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, sourceHash), (_a = {}, _a[sourceId] = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, eventSource), { isFetching: false, fetchRange: fetchRange }), _a));
+    }
+    return sourceHash;
+}
+function excludeStaticSources(eventSources, context) {
+    return filterHash(eventSources, function (eventSource) { return doesSourceNeedRange(eventSource, context); });
+}
+function parseInitialSources(rawOptions, context) {
+    var refiners = buildEventSourceRefiners(context);
+    var rawSources = [].concat(rawOptions.eventSources || []);
+    var sources = []; // parsed
+    if (rawOptions.initialEvents) {
+        rawSources.unshift(rawOptions.initialEvents);
+    }
+    if (rawOptions.events) {
+        rawSources.unshift(rawOptions.events);
+    }
+    for (var _i = 0, rawSources_1 = rawSources; _i < rawSources_1.length; _i++) {
+        var rawSource = rawSources_1[_i];
+        var source = parseEventSource(rawSource, context, refiners);
+        if (source) {
+            sources.push(source);
+        }
+    }
+    return sources;
+}
+function doesSourceNeedRange(eventSource, context) {
+    var defs = context.pluginHooks.eventSourceDefs;
+    return !defs[eventSource.sourceDefId].ignoreRange;
+}
+
+function reduceEventStore(eventStore, action, eventSources, dateProfile, context) {
+    switch (action.type) {
+        case 'RECEIVE_EVENTS': // raw
+            return receiveRawEvents(eventStore, eventSources[action.sourceId], action.fetchId, action.fetchRange, action.rawEvents, context);
+        case 'ADD_EVENTS': // already parsed, but not expanded
+            return addEvent(eventStore, action.eventStore, // new ones
+            dateProfile ? dateProfile.activeRange : null, context);
+        case 'RESET_EVENTS':
+            return action.eventStore;
+        case 'MERGE_EVENTS': // already parsed and expanded
+            return mergeEventStores(eventStore, action.eventStore);
+        case 'PREV': // TODO: how do we track all actions that affect dateProfile :(
+        case 'NEXT':
+        case 'CHANGE_DATE':
+        case 'CHANGE_VIEW_TYPE':
+            if (dateProfile) {
+                return expandRecurring(eventStore, dateProfile.activeRange, context);
+            }
+            return eventStore;
+        case 'REMOVE_EVENTS':
+            return excludeSubEventStore(eventStore, action.eventStore);
+        case 'REMOVE_EVENT_SOURCE':
+            return excludeEventsBySourceId(eventStore, action.sourceId);
+        case 'REMOVE_ALL_EVENT_SOURCES':
+            return filterEventStoreDefs(eventStore, function (eventDef) { return (!eventDef.sourceId // only keep events with no source id
+            ); });
+        case 'REMOVE_ALL_EVENTS':
+            return createEmptyEventStore();
+        default:
+            return eventStore;
+    }
+}
+function receiveRawEvents(eventStore, eventSource, fetchId, fetchRange, rawEvents, context) {
+    if (eventSource && // not already removed
+        fetchId === eventSource.latestFetchId // TODO: wish this logic was always in event-sources
+    ) {
+        var subset = parseEvents(transformRawEvents(rawEvents, eventSource, context), eventSource, context);
+        if (fetchRange) {
+            subset = expandRecurring(subset, fetchRange, context);
+        }
+        return mergeEventStores(excludeEventsBySourceId(eventStore, eventSource.sourceId), subset);
+    }
+    return eventStore;
+}
+function transformRawEvents(rawEvents, eventSource, context) {
+    var calEachTransform = context.options.eventDataTransform;
+    var sourceEachTransform = eventSource ? eventSource.eventDataTransform : null;
+    if (sourceEachTransform) {
+        rawEvents = transformEachRawEvent(rawEvents, sourceEachTransform);
+    }
+    if (calEachTransform) {
+        rawEvents = transformEachRawEvent(rawEvents, calEachTransform);
+    }
+    return rawEvents;
+}
+function transformEachRawEvent(rawEvents, func) {
+    var refinedEvents;
+    if (!func) {
+        refinedEvents = rawEvents;
+    }
+    else {
+        refinedEvents = [];
+        for (var _i = 0, rawEvents_1 = rawEvents; _i < rawEvents_1.length; _i++) {
+            var rawEvent = rawEvents_1[_i];
+            var refinedEvent = func(rawEvent);
+            if (refinedEvent) {
+                refinedEvents.push(refinedEvent);
+            }
+            else if (refinedEvent == null) {
+                refinedEvents.push(rawEvent);
+            } // if a different falsy value, do nothing
+        }
+    }
+    return refinedEvents;
+}
+function addEvent(eventStore, subset, expandRange, context) {
+    if (expandRange) {
+        subset = expandRecurring(subset, expandRange, context);
+    }
+    return mergeEventStores(eventStore, subset);
+}
+function rezoneEventStoreDates(eventStore, oldDateEnv, newDateEnv) {
+    var defs = eventStore.defs;
+    var instances = mapHash(eventStore.instances, function (instance) {
+        var def = defs[instance.defId];
+        if (def.allDay || def.recurringDef) {
+            return instance; // isn't dependent on timezone
+        }
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, instance), { range: {
+                start: newDateEnv.createMarker(oldDateEnv.toDate(instance.range.start, instance.forcedStartTzo)),
+                end: newDateEnv.createMarker(oldDateEnv.toDate(instance.range.end, instance.forcedEndTzo)),
+            }, forcedStartTzo: newDateEnv.canComputeOffset ? null : instance.forcedStartTzo, forcedEndTzo: newDateEnv.canComputeOffset ? null : instance.forcedEndTzo });
+    });
+    return { defs: defs, instances: instances };
+}
+function excludeEventsBySourceId(eventStore, sourceId) {
+    return filterEventStoreDefs(eventStore, function (eventDef) { return eventDef.sourceId !== sourceId; });
+}
+// QUESTION: why not just return instances? do a general object-property-exclusion util
+function excludeInstances(eventStore, removals) {
+    return {
+        defs: eventStore.defs,
+        instances: filterHash(eventStore.instances, function (instance) { return !removals[instance.instanceId]; }),
+    };
+}
+
+function reduceDateSelection(currentSelection, action) {
+    switch (action.type) {
+        case 'UNSELECT_DATES':
+            return null;
+        case 'SELECT_DATES':
+            return action.selection;
+        default:
+            return currentSelection;
+    }
+}
+
+function reduceSelectedEvent(currentInstanceId, action) {
+    switch (action.type) {
+        case 'UNSELECT_EVENT':
+            return '';
+        case 'SELECT_EVENT':
+            return action.eventInstanceId;
+        default:
+            return currentInstanceId;
+    }
+}
+
+function reduceEventDrag(currentDrag, action) {
+    var newDrag;
+    switch (action.type) {
+        case 'UNSET_EVENT_DRAG':
+            return null;
+        case 'SET_EVENT_DRAG':
+            newDrag = action.state;
+            return {
+                affectedEvents: newDrag.affectedEvents,
+                mutatedEvents: newDrag.mutatedEvents,
+                isEvent: newDrag.isEvent,
+            };
+        default:
+            return currentDrag;
+    }
+}
+
+function reduceEventResize(currentResize, action) {
+    var newResize;
+    switch (action.type) {
+        case 'UNSET_EVENT_RESIZE':
+            return null;
+        case 'SET_EVENT_RESIZE':
+            newResize = action.state;
+            return {
+                affectedEvents: newResize.affectedEvents,
+                mutatedEvents: newResize.mutatedEvents,
+                isEvent: newResize.isEvent,
+            };
+        default:
+            return currentResize;
+    }
+}
+
+function parseToolbars(calendarOptions, calendarOptionOverrides, theme, viewSpecs, calendarApi) {
+    var header = calendarOptions.headerToolbar ? parseToolbar(calendarOptions.headerToolbar, calendarOptions, calendarOptionOverrides, theme, viewSpecs, calendarApi) : null;
+    var footer = calendarOptions.footerToolbar ? parseToolbar(calendarOptions.footerToolbar, calendarOptions, calendarOptionOverrides, theme, viewSpecs, calendarApi) : null;
+    return { header: header, footer: footer };
+}
+function parseToolbar(sectionStrHash, calendarOptions, calendarOptionOverrides, theme, viewSpecs, calendarApi) {
+    var sectionWidgets = {};
+    var viewsWithButtons = [];
+    var hasTitle = false;
+    for (var sectionName in sectionStrHash) {
+        var sectionStr = sectionStrHash[sectionName];
+        var sectionRes = parseSection(sectionStr, calendarOptions, calendarOptionOverrides, theme, viewSpecs, calendarApi);
+        sectionWidgets[sectionName] = sectionRes.widgets;
+        viewsWithButtons.push.apply(viewsWithButtons, sectionRes.viewsWithButtons);
+        hasTitle = hasTitle || sectionRes.hasTitle;
+    }
+    return { sectionWidgets: sectionWidgets, viewsWithButtons: viewsWithButtons, hasTitle: hasTitle };
+}
+/*
+BAD: querying icons and text here. should be done at render time
+*/
+function parseSection(sectionStr, calendarOptions, // defaults+overrides, then refined
+calendarOptionOverrides, // overrides only!, unrefined :(
+theme, viewSpecs, calendarApi) {
+    var isRtl = calendarOptions.direction === 'rtl';
+    var calendarCustomButtons = calendarOptions.customButtons || {};
+    var calendarButtonTextOverrides = calendarOptionOverrides.buttonText || {};
+    var calendarButtonText = calendarOptions.buttonText || {};
+    var calendarButtonHintOverrides = calendarOptionOverrides.buttonHints || {};
+    var calendarButtonHints = calendarOptions.buttonHints || {};
+    var sectionSubstrs = sectionStr ? sectionStr.split(' ') : [];
+    var viewsWithButtons = [];
+    var hasTitle = false;
+    var widgets = sectionSubstrs.map(function (buttonGroupStr) { return (buttonGroupStr.split(',').map(function (buttonName) {
+        if (buttonName === 'title') {
+            hasTitle = true;
+            return { buttonName: buttonName };
+        }
+        var customButtonProps;
+        var viewSpec;
+        var buttonClick;
+        var buttonIcon; // only one of these will be set
+        var buttonText; // "
+        var buttonHint;
+        // ^ for the title="" attribute, for accessibility
+        if ((customButtonProps = calendarCustomButtons[buttonName])) {
+            buttonClick = function (ev) {
+                if (customButtonProps.click) {
+                    customButtonProps.click.call(ev.target, ev, ev.target); // TODO: use Calendar this context?
+                }
+            };
+            (buttonIcon = theme.getCustomButtonIconClass(customButtonProps)) ||
+                (buttonIcon = theme.getIconClass(buttonName, isRtl)) ||
+                (buttonText = customButtonProps.text);
+            buttonHint = customButtonProps.hint || customButtonProps.text;
+        }
+        else if ((viewSpec = viewSpecs[buttonName])) {
+            viewsWithButtons.push(buttonName);
+            buttonClick = function () {
+                calendarApi.changeView(buttonName);
+            };
+            (buttonText = viewSpec.buttonTextOverride) ||
+                (buttonIcon = theme.getIconClass(buttonName, isRtl)) ||
+                (buttonText = viewSpec.buttonTextDefault);
+            var textFallback = viewSpec.buttonTextOverride ||
+                viewSpec.buttonTextDefault;
+            buttonHint = formatWithOrdinals(viewSpec.buttonTitleOverride ||
+                viewSpec.buttonTitleDefault ||
+                calendarOptions.viewHint, [textFallback, buttonName], // view-name = buttonName
+            textFallback);
+        }
+        else if (calendarApi[buttonName]) { // a calendarApi method
+            buttonClick = function () {
+                calendarApi[buttonName]();
+            };
+            (buttonText = calendarButtonTextOverrides[buttonName]) ||
+                (buttonIcon = theme.getIconClass(buttonName, isRtl)) ||
+                (buttonText = calendarButtonText[buttonName]); // everything else is considered default
+            if (buttonName === 'prevYear' || buttonName === 'nextYear') {
+                var prevOrNext = buttonName === 'prevYear' ? 'prev' : 'next';
+                buttonHint = formatWithOrdinals(calendarButtonHintOverrides[prevOrNext] ||
+                    calendarButtonHints[prevOrNext], [
+                    calendarButtonText.year || 'year',
+                    'year',
+                ], calendarButtonText[buttonName]);
+            }
+            else {
+                buttonHint = function (navUnit) { return formatWithOrdinals(calendarButtonHintOverrides[buttonName] ||
+                    calendarButtonHints[buttonName], [
+                    calendarButtonText[navUnit] || navUnit,
+                    navUnit,
+                ], calendarButtonText[buttonName]); };
+            }
+        }
+        return { buttonName: buttonName, buttonClick: buttonClick, buttonIcon: buttonIcon, buttonText: buttonText, buttonHint: buttonHint };
+    })); });
+    return { widgets: widgets, viewsWithButtons: viewsWithButtons, hasTitle: hasTitle };
+}
+
+var eventSourceDef$2 = {
+    ignoreRange: true,
+    parseMeta: function (refined) {
+        if (Array.isArray(refined.events)) {
+            return refined.events;
+        }
+        return null;
+    },
+    fetch: function (arg, success) {
+        success({
+            rawEvents: arg.eventSource.meta,
+        });
+    },
+};
+var arrayEventSourcePlugin = createPlugin({
+    eventSourceDefs: [eventSourceDef$2],
+});
+
+var eventSourceDef$1 = {
+    parseMeta: function (refined) {
+        if (typeof refined.events === 'function') {
+            return refined.events;
+        }
+        return null;
+    },
+    fetch: function (arg, success, failure) {
+        var dateEnv = arg.context.dateEnv;
+        var func = arg.eventSource.meta;
+        unpromisify(func.bind(null, buildRangeApiWithTimeZone(arg.range, dateEnv)), function (rawEvents) {
+            success({ rawEvents: rawEvents }); // needs an object response
+        }, failure);
+    },
+};
+var funcEventSourcePlugin = createPlugin({
+    eventSourceDefs: [eventSourceDef$1],
+});
+
+function requestJson(method, url, params, successCallback, failureCallback) {
+    method = method.toUpperCase();
+    var body = null;
+    if (method === 'GET') {
+        url = injectQueryStringParams(url, params);
+    }
+    else {
+        body = encodeParams(params);
+    }
+    var xhr = new XMLHttpRequest();
+    xhr.open(method, url, true);
+    if (method !== 'GET') {
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    }
+    xhr.onload = function () {
+        if (xhr.status >= 200 && xhr.status < 400) {
+            var parsed = false;
+            var res = void 0;
+            try {
+                res = JSON.parse(xhr.responseText);
+                parsed = true;
+            }
+            catch (err) {
+                // will handle parsed=false
+            }
+            if (parsed) {
+                successCallback(res, xhr);
+            }
+            else {
+                failureCallback('Failure parsing JSON', xhr);
+            }
+        }
+        else {
+            failureCallback('Request failed', xhr);
+        }
+    };
+    xhr.onerror = function () {
+        failureCallback('Request failed', xhr);
+    };
+    xhr.send(body);
+}
+function injectQueryStringParams(url, params) {
+    return url +
+        (url.indexOf('?') === -1 ? '?' : '&') +
+        encodeParams(params);
+}
+function encodeParams(params) {
+    var parts = [];
+    for (var key in params) {
+        parts.push(encodeURIComponent(key) + "=" + encodeURIComponent(params[key]));
+    }
+    return parts.join('&');
+}
+
+var JSON_FEED_EVENT_SOURCE_REFINERS = {
+    method: String,
+    extraParams: identity,
+    startParam: String,
+    endParam: String,
+    timeZoneParam: String,
+};
+
+var eventSourceDef = {
+    parseMeta: function (refined) {
+        if (refined.url && (refined.format === 'json' || !refined.format)) {
+            return {
+                url: refined.url,
+                format: 'json',
+                method: (refined.method || 'GET').toUpperCase(),
+                extraParams: refined.extraParams,
+                startParam: refined.startParam,
+                endParam: refined.endParam,
+                timeZoneParam: refined.timeZoneParam,
+            };
+        }
+        return null;
+    },
+    fetch: function (arg, success, failure) {
+        var meta = arg.eventSource.meta;
+        var requestParams = buildRequestParams(meta, arg.range, arg.context);
+        requestJson(meta.method, meta.url, requestParams, function (rawEvents, xhr) {
+            success({ rawEvents: rawEvents, xhr: xhr });
+        }, function (errorMessage, xhr) {
+            failure({ message: errorMessage, xhr: xhr });
+        });
+    },
+};
+var jsonFeedEventSourcePlugin = createPlugin({
+    eventSourceRefiners: JSON_FEED_EVENT_SOURCE_REFINERS,
+    eventSourceDefs: [eventSourceDef],
+});
+function buildRequestParams(meta, range, context) {
+    var dateEnv = context.dateEnv, options = context.options;
+    var startParam;
+    var endParam;
+    var timeZoneParam;
+    var customRequestParams;
+    var params = {};
+    startParam = meta.startParam;
+    if (startParam == null) {
+        startParam = options.startParam;
+    }
+    endParam = meta.endParam;
+    if (endParam == null) {
+        endParam = options.endParam;
+    }
+    timeZoneParam = meta.timeZoneParam;
+    if (timeZoneParam == null) {
+        timeZoneParam = options.timeZoneParam;
+    }
+    // retrieve any outbound GET/POST data from the options
+    if (typeof meta.extraParams === 'function') {
+        // supplied as a function that returns a key/value object
+        customRequestParams = meta.extraParams();
+    }
+    else {
+        // probably supplied as a straight key/value object
+        customRequestParams = meta.extraParams || {};
+    }
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(params, customRequestParams);
+    params[startParam] = dateEnv.formatIso(range.start);
+    params[endParam] = dateEnv.formatIso(range.end);
+    if (dateEnv.timeZone !== 'local') {
+        params[timeZoneParam] = dateEnv.timeZone;
+    }
+    return params;
+}
+
+var SIMPLE_RECURRING_REFINERS = {
+    daysOfWeek: identity,
+    startTime: createDuration,
+    endTime: createDuration,
+    duration: createDuration,
+    startRecur: identity,
+    endRecur: identity,
+};
+
+var recurring = {
+    parse: function (refined, dateEnv) {
+        if (refined.daysOfWeek || refined.startTime || refined.endTime || refined.startRecur || refined.endRecur) {
+            var recurringData = {
+                daysOfWeek: refined.daysOfWeek || null,
+                startTime: refined.startTime || null,
+                endTime: refined.endTime || null,
+                startRecur: refined.startRecur ? dateEnv.createMarker(refined.startRecur) : null,
+                endRecur: refined.endRecur ? dateEnv.createMarker(refined.endRecur) : null,
+            };
+            var duration = void 0;
+            if (refined.duration) {
+                duration = refined.duration;
+            }
+            if (!duration && refined.startTime && refined.endTime) {
+                duration = subtractDurations(refined.endTime, refined.startTime);
+            }
+            return {
+                allDayGuess: Boolean(!refined.startTime && !refined.endTime),
+                duration: duration,
+                typeData: recurringData, // doesn't need endTime anymore but oh well
+            };
+        }
+        return null;
+    },
+    expand: function (typeData, framingRange, dateEnv) {
+        var clippedFramingRange = intersectRanges(framingRange, { start: typeData.startRecur, end: typeData.endRecur });
+        if (clippedFramingRange) {
+            return expandRanges(typeData.daysOfWeek, typeData.startTime, clippedFramingRange, dateEnv);
+        }
+        return [];
+    },
+};
+var simpleRecurringEventsPlugin = createPlugin({
+    recurringTypes: [recurring],
+    eventRefiners: SIMPLE_RECURRING_REFINERS,
+});
+function expandRanges(daysOfWeek, startTime, framingRange, dateEnv) {
+    var dowHash = daysOfWeek ? arrayToHash(daysOfWeek) : null;
+    var dayMarker = startOfDay(framingRange.start);
+    var endMarker = framingRange.end;
+    var instanceStarts = [];
+    while (dayMarker < endMarker) {
+        var instanceStart 
+        // if everyday, or this particular day-of-week
+        = void 0;
+        // if everyday, or this particular day-of-week
+        if (!dowHash || dowHash[dayMarker.getUTCDay()]) {
+            if (startTime) {
+                instanceStart = dateEnv.add(dayMarker, startTime);
+            }
+            else {
+                instanceStart = dayMarker;
+            }
+            instanceStarts.push(instanceStart);
+        }
+        dayMarker = addDays(dayMarker, 1);
+    }
+    return instanceStarts;
+}
+
+var changeHandlerPlugin = createPlugin({
+    optionChangeHandlers: {
+        events: function (events, context) {
+            handleEventSources([events], context);
+        },
+        eventSources: handleEventSources,
+    },
+});
+/*
+BUG: if `event` was supplied, all previously-given `eventSources` will be wiped out
+*/
+function handleEventSources(inputs, context) {
+    var unfoundSources = hashValuesToArray(context.getCurrentData().eventSources);
+    var newInputs = [];
+    for (var _i = 0, inputs_1 = inputs; _i < inputs_1.length; _i++) {
+        var input = inputs_1[_i];
+        var inputFound = false;
+        for (var i = 0; i < unfoundSources.length; i += 1) {
+            if (unfoundSources[i]._raw === input) {
+                unfoundSources.splice(i, 1); // delete
+                inputFound = true;
+                break;
+            }
+        }
+        if (!inputFound) {
+            newInputs.push(input);
+        }
+    }
+    for (var _a = 0, unfoundSources_1 = unfoundSources; _a < unfoundSources_1.length; _a++) {
+        var unfoundSource = unfoundSources_1[_a];
+        context.dispatch({
+            type: 'REMOVE_EVENT_SOURCE',
+            sourceId: unfoundSource.sourceId,
+        });
+    }
+    for (var _b = 0, newInputs_1 = newInputs; _b < newInputs_1.length; _b++) {
+        var newInput = newInputs_1[_b];
+        context.calendarApi.addEventSource(newInput);
+    }
+}
+
+function handleDateProfile(dateProfile, context) {
+    context.emitter.trigger('datesSet', Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, buildRangeApiWithTimeZone(dateProfile.activeRange, context.dateEnv)), { view: context.viewApi }));
+}
+
+function handleEventStore(eventStore, context) {
+    var emitter = context.emitter;
+    if (emitter.hasHandlers('eventsSet')) {
+        emitter.trigger('eventsSet', buildEventApis(eventStore, context));
+    }
+}
+
+/*
+this array is exposed on the root namespace so that UMD plugins can add to it.
+see the rollup-bundles script.
+*/
+var globalPlugins = [
+    arrayEventSourcePlugin,
+    funcEventSourcePlugin,
+    jsonFeedEventSourcePlugin,
+    simpleRecurringEventsPlugin,
+    changeHandlerPlugin,
+    createPlugin({
+        isLoadingFuncs: [
+            function (state) { return computeEventSourcesLoading(state.eventSources); },
+        ],
+        contentTypeHandlers: {
+            html: buildHtmlRenderer,
+            domNodes: buildDomNodeRenderer,
+        },
+        propSetHandlers: {
+            dateProfile: handleDateProfile,
+            eventStore: handleEventStore,
+        },
+    }),
+];
+function buildHtmlRenderer() {
+    var currentEl = null;
+    var currentHtml = '';
+    function render(el, html) {
+        if (el !== currentEl || html !== currentHtml) {
+            el.innerHTML = html;
+        }
+        currentEl = el;
+        currentHtml = html;
+    }
+    function destroy() {
+        currentEl.innerHTML = '';
+        currentEl = null;
+        currentHtml = '';
+    }
+    return { render: render, destroy: destroy };
+}
+function buildDomNodeRenderer() {
+    var currentEl = null;
+    var currentDomNodes = [];
+    function render(el, domNodes) {
+        var newDomNodes = Array.prototype.slice.call(domNodes);
+        if (el !== currentEl || !isArraysEqual(currentDomNodes, newDomNodes)) {
+            // append first, remove second (for scroll resetting)
+            for (var _i = 0, newDomNodes_1 = newDomNodes; _i < newDomNodes_1.length; _i++) {
+                var newNode = newDomNodes_1[_i];
+                el.appendChild(newNode);
+            }
+            destroy();
+        }
+        currentEl = el;
+        currentDomNodes = newDomNodes;
+    }
+    function destroy() {
+        currentDomNodes.forEach(removeElement);
+        currentDomNodes = [];
+        currentEl = null;
+    }
+    return { render: render, destroy: destroy };
+}
+
+var DelayedRunner = /** @class */ (function () {
+    function DelayedRunner(drainedOption) {
+        this.drainedOption = drainedOption;
+        this.isRunning = false;
+        this.isDirty = false;
+        this.pauseDepths = {};
+        this.timeoutId = 0;
+    }
+    DelayedRunner.prototype.request = function (delay) {
+        this.isDirty = true;
+        if (!this.isPaused()) {
+            this.clearTimeout();
+            if (delay == null) {
+                this.tryDrain();
+            }
+            else {
+                this.timeoutId = setTimeout(// NOT OPTIMAL! TODO: look at debounce
+                this.tryDrain.bind(this), delay);
+            }
+        }
+    };
+    DelayedRunner.prototype.pause = function (scope) {
+        if (scope === void 0) { scope = ''; }
+        var pauseDepths = this.pauseDepths;
+        pauseDepths[scope] = (pauseDepths[scope] || 0) + 1;
+        this.clearTimeout();
+    };
+    DelayedRunner.prototype.resume = function (scope, force) {
+        if (scope === void 0) { scope = ''; }
+        var pauseDepths = this.pauseDepths;
+        if (scope in pauseDepths) {
+            if (force) {
+                delete pauseDepths[scope];
+            }
+            else {
+                pauseDepths[scope] -= 1;
+                var depth = pauseDepths[scope];
+                if (depth <= 0) {
+                    delete pauseDepths[scope];
+                }
+            }
+            this.tryDrain();
+        }
+    };
+    DelayedRunner.prototype.isPaused = function () {
+        return Object.keys(this.pauseDepths).length;
+    };
+    DelayedRunner.prototype.tryDrain = function () {
+        if (!this.isRunning && !this.isPaused()) {
+            this.isRunning = true;
+            while (this.isDirty) {
+                this.isDirty = false;
+                this.drained(); // might set isDirty to true again
+            }
+            this.isRunning = false;
+        }
+    };
+    DelayedRunner.prototype.clear = function () {
+        this.clearTimeout();
+        this.isDirty = false;
+        this.pauseDepths = {};
+    };
+    DelayedRunner.prototype.clearTimeout = function () {
+        if (this.timeoutId) {
+            clearTimeout(this.timeoutId);
+            this.timeoutId = 0;
+        }
+    };
+    DelayedRunner.prototype.drained = function () {
+        if (this.drainedOption) {
+            this.drainedOption();
+        }
+    };
+    return DelayedRunner;
+}());
+
+var TaskRunner = /** @class */ (function () {
+    function TaskRunner(runTaskOption, drainedOption) {
+        this.runTaskOption = runTaskOption;
+        this.drainedOption = drainedOption;
+        this.queue = [];
+        this.delayedRunner = new DelayedRunner(this.drain.bind(this));
+    }
+    TaskRunner.prototype.request = function (task, delay) {
+        this.queue.push(task);
+        this.delayedRunner.request(delay);
+    };
+    TaskRunner.prototype.pause = function (scope) {
+        this.delayedRunner.pause(scope);
+    };
+    TaskRunner.prototype.resume = function (scope, force) {
+        this.delayedRunner.resume(scope, force);
+    };
+    TaskRunner.prototype.drain = function () {
+        var queue = this.queue;
+        while (queue.length) {
+            var completedTasks = [];
+            var task = void 0;
+            while ((task = queue.shift())) {
+                this.runTask(task);
+                completedTasks.push(task);
+            }
+            this.drained(completedTasks);
+        } // keep going, in case new tasks were added in the drained handler
+    };
+    TaskRunner.prototype.runTask = function (task) {
+        if (this.runTaskOption) {
+            this.runTaskOption(task);
+        }
+    };
+    TaskRunner.prototype.drained = function (completedTasks) {
+        if (this.drainedOption) {
+            this.drainedOption(completedTasks);
+        }
+    };
+    return TaskRunner;
+}());
+
+// Computes what the title at the top of the calendarApi should be for this view
+function buildTitle(dateProfile, viewOptions, dateEnv) {
+    var range;
+    // for views that span a large unit of time, show the proper interval, ignoring stray days before and after
+    if (/^(year|month)$/.test(dateProfile.currentRangeUnit)) {
+        range = dateProfile.currentRange;
+    }
+    else { // for day units or smaller, use the actual day range
+        range = dateProfile.activeRange;
+    }
+    return dateEnv.formatRange(range.start, range.end, createFormatter(viewOptions.titleFormat || buildTitleFormat(dateProfile)), {
+        isEndExclusive: dateProfile.isRangeAllDay,
+        defaultSeparator: viewOptions.titleRangeSeparator,
+    });
+}
+// Generates the format string that should be used to generate the title for the current date range.
+// Attempts to compute the most appropriate format if not explicitly specified with `titleFormat`.
+function buildTitleFormat(dateProfile) {
+    var currentRangeUnit = dateProfile.currentRangeUnit;
+    if (currentRangeUnit === 'year') {
+        return { year: 'numeric' };
+    }
+    if (currentRangeUnit === 'month') {
+        return { year: 'numeric', month: 'long' }; // like "September 2014"
+    }
+    var days = diffWholeDays(dateProfile.currentRange.start, dateProfile.currentRange.end);
+    if (days !== null && days > 1) {
+        // multi-day range. shorter, like "Sep 9 - 10 2014"
+        return { year: 'numeric', month: 'short', day: 'numeric' };
+    }
+    // one day. longer, like "September 9 2014"
+    return { year: 'numeric', month: 'long', day: 'numeric' };
+}
+
+// in future refactor, do the redux-style function(state=initial) for initial-state
+// also, whatever is happening in constructor, have it happen in action queue too
+var CalendarDataManager = /** @class */ (function () {
+    function CalendarDataManager(props) {
+        var _this = this;
+        this.computeOptionsData = memoize(this._computeOptionsData);
+        this.computeCurrentViewData = memoize(this._computeCurrentViewData);
+        this.organizeRawLocales = memoize(organizeRawLocales);
+        this.buildLocale = memoize(buildLocale);
+        this.buildPluginHooks = buildBuildPluginHooks();
+        this.buildDateEnv = memoize(buildDateEnv);
+        this.buildTheme = memoize(buildTheme);
+        this.parseToolbars = memoize(parseToolbars);
+        this.buildViewSpecs = memoize(buildViewSpecs);
+        this.buildDateProfileGenerator = memoizeObjArg(buildDateProfileGenerator);
+        this.buildViewApi = memoize(buildViewApi);
+        this.buildViewUiProps = memoizeObjArg(buildViewUiProps);
+        this.buildEventUiBySource = memoize(buildEventUiBySource, isPropsEqual);
+        this.buildEventUiBases = memoize(buildEventUiBases);
+        this.parseContextBusinessHours = memoizeObjArg(parseContextBusinessHours);
+        this.buildTitle = memoize(buildTitle);
+        this.emitter = new Emitter();
+        this.actionRunner = new TaskRunner(this._handleAction.bind(this), this.updateData.bind(this));
+        this.currentCalendarOptionsInput = {};
+        this.currentCalendarOptionsRefined = {};
+        this.currentViewOptionsInput = {};
+        this.currentViewOptionsRefined = {};
+        this.currentCalendarOptionsRefiners = {};
+        this.getCurrentData = function () { return _this.data; };
+        this.dispatch = function (action) {
+            _this.actionRunner.request(action); // protects against recursive calls to _handleAction
+        };
+        this.props = props;
+        this.actionRunner.pause();
+        var dynamicOptionOverrides = {};
+        var optionsData = this.computeOptionsData(props.optionOverrides, dynamicOptionOverrides, props.calendarApi);
+        var currentViewType = optionsData.calendarOptions.initialView || optionsData.pluginHooks.initialView;
+        var currentViewData = this.computeCurrentViewData(currentViewType, optionsData, props.optionOverrides, dynamicOptionOverrides);
+        // wire things up
+        // TODO: not DRY
+        props.calendarApi.currentDataManager = this;
+        this.emitter.setThisContext(props.calendarApi);
+        this.emitter.setOptions(currentViewData.options);
+        var currentDate = getInitialDate(optionsData.calendarOptions, optionsData.dateEnv);
+        var dateProfile = currentViewData.dateProfileGenerator.build(currentDate);
+        if (!rangeContainsMarker(dateProfile.activeRange, currentDate)) {
+            currentDate = dateProfile.currentRange.start;
+        }
+        var calendarContext = {
+            dateEnv: optionsData.dateEnv,
+            options: optionsData.calendarOptions,
+            pluginHooks: optionsData.pluginHooks,
+            calendarApi: props.calendarApi,
+            dispatch: this.dispatch,
+            emitter: this.emitter,
+            getCurrentData: this.getCurrentData,
+        };
+        // needs to be after setThisContext
+        for (var _i = 0, _a = optionsData.pluginHooks.contextInit; _i < _a.length; _i++) {
+            var callback = _a[_i];
+            callback(calendarContext);
+        }
+        // NOT DRY
+        var eventSources = initEventSources(optionsData.calendarOptions, dateProfile, calendarContext);
+        var initialState = {
+            dynamicOptionOverrides: dynamicOptionOverrides,
+            currentViewType: currentViewType,
+            currentDate: currentDate,
+            dateProfile: dateProfile,
+            businessHours: this.parseContextBusinessHours(calendarContext),
+            eventSources: eventSources,
+            eventUiBases: {},
+            eventStore: createEmptyEventStore(),
+            renderableEventStore: createEmptyEventStore(),
+            dateSelection: null,
+            eventSelection: '',
+            eventDrag: null,
+            eventResize: null,
+            selectionConfig: this.buildViewUiProps(calendarContext).selectionConfig,
+        };
+        var contextAndState = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, calendarContext), initialState);
+        for (var _b = 0, _c = optionsData.pluginHooks.reducers; _b < _c.length; _b++) {
+            var reducer = _c[_b];
+            Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(initialState, reducer(null, null, contextAndState));
+        }
+        if (computeIsLoading(initialState, calendarContext)) {
+            this.emitter.trigger('loading', true); // NOT DRY
+        }
+        this.state = initialState;
+        this.updateData();
+        this.actionRunner.resume();
+    }
+    CalendarDataManager.prototype.resetOptions = function (optionOverrides, append) {
+        var props = this.props;
+        props.optionOverrides = append
+            ? Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, props.optionOverrides), optionOverrides) : optionOverrides;
+        this.actionRunner.request({
+            type: 'NOTHING',
+        });
+    };
+    CalendarDataManager.prototype._handleAction = function (action) {
+        var _a = this, props = _a.props, state = _a.state, emitter = _a.emitter;
+        var dynamicOptionOverrides = reduceDynamicOptionOverrides(state.dynamicOptionOverrides, action);
+        var optionsData = this.computeOptionsData(props.optionOverrides, dynamicOptionOverrides, props.calendarApi);
+        var currentViewType = reduceViewType(state.currentViewType, action);
+        var currentViewData = this.computeCurrentViewData(currentViewType, optionsData, props.optionOverrides, dynamicOptionOverrides);
+        // wire things up
+        // TODO: not DRY
+        props.calendarApi.currentDataManager = this;
+        emitter.setThisContext(props.calendarApi);
+        emitter.setOptions(currentViewData.options);
+        var calendarContext = {
+            dateEnv: optionsData.dateEnv,
+            options: optionsData.calendarOptions,
+            pluginHooks: optionsData.pluginHooks,
+            calendarApi: props.calendarApi,
+            dispatch: this.dispatch,
+            emitter: emitter,
+            getCurrentData: this.getCurrentData,
+        };
+        var currentDate = state.currentDate, dateProfile = state.dateProfile;
+        if (this.data && this.data.dateProfileGenerator !== currentViewData.dateProfileGenerator) { // hack
+            dateProfile = currentViewData.dateProfileGenerator.build(currentDate);
+        }
+        currentDate = reduceCurrentDate(currentDate, action);
+        dateProfile = reduceDateProfile(dateProfile, action, currentDate, currentViewData.dateProfileGenerator);
+        if (action.type === 'PREV' || // TODO: move this logic into DateProfileGenerator
+            action.type === 'NEXT' || // "
+            !rangeContainsMarker(dateProfile.currentRange, currentDate)) {
+            currentDate = dateProfile.currentRange.start;
+        }
+        var eventSources = reduceEventSources(state.eventSources, action, dateProfile, calendarContext);
+        var eventStore = reduceEventStore(state.eventStore, action, eventSources, dateProfile, calendarContext);
+        var isEventsLoading = computeEventSourcesLoading(eventSources); // BAD. also called in this func in computeIsLoading
+        var renderableEventStore = (isEventsLoading && !currentViewData.options.progressiveEventRendering) ?
+            (state.renderableEventStore || eventStore) : // try from previous state
+            eventStore;
+        var _b = this.buildViewUiProps(calendarContext), eventUiSingleBase = _b.eventUiSingleBase, selectionConfig = _b.selectionConfig; // will memoize obj
+        var eventUiBySource = this.buildEventUiBySource(eventSources);
+        var eventUiBases = this.buildEventUiBases(renderableEventStore.defs, eventUiSingleBase, eventUiBySource);
+        var newState = {
+            dynamicOptionOverrides: dynamicOptionOverrides,
+            currentViewType: currentViewType,
+            currentDate: currentDate,
+            dateProfile: dateProfile,
+            eventSources: eventSources,
+            eventStore: eventStore,
+            renderableEventStore: renderableEventStore,
+            selectionConfig: selectionConfig,
+            eventUiBases: eventUiBases,
+            businessHours: this.parseContextBusinessHours(calendarContext),
+            dateSelection: reduceDateSelection(state.dateSelection, action),
+            eventSelection: reduceSelectedEvent(state.eventSelection, action),
+            eventDrag: reduceEventDrag(state.eventDrag, action),
+            eventResize: reduceEventResize(state.eventResize, action),
+        };
+        var contextAndState = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, calendarContext), newState);
+        for (var _i = 0, _c = optionsData.pluginHooks.reducers; _i < _c.length; _i++) {
+            var reducer = _c[_i];
+            Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(newState, reducer(state, action, contextAndState)); // give the OLD state, for old value
+        }
+        var wasLoading = computeIsLoading(state, calendarContext);
+        var isLoading = computeIsLoading(newState, calendarContext);
+        // TODO: use propSetHandlers in plugin system
+        if (!wasLoading && isLoading) {
+            emitter.trigger('loading', true);
+        }
+        else if (wasLoading && !isLoading) {
+            emitter.trigger('loading', false);
+        }
+        this.state = newState;
+        if (props.onAction) {
+            props.onAction(action);
+        }
+    };
+    CalendarDataManager.prototype.updateData = function () {
+        var _a = this, props = _a.props, state = _a.state;
+        var oldData = this.data;
+        var optionsData = this.computeOptionsData(props.optionOverrides, state.dynamicOptionOverrides, props.calendarApi);
+        var currentViewData = this.computeCurrentViewData(state.currentViewType, optionsData, props.optionOverrides, state.dynamicOptionOverrides);
+        var data = this.data = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({ viewTitle: this.buildTitle(state.dateProfile, currentViewData.options, optionsData.dateEnv), calendarApi: props.calendarApi, dispatch: this.dispatch, emitter: this.emitter, getCurrentData: this.getCurrentData }, optionsData), currentViewData), state);
+        var changeHandlers = optionsData.pluginHooks.optionChangeHandlers;
+        var oldCalendarOptions = oldData && oldData.calendarOptions;
+        var newCalendarOptions = optionsData.calendarOptions;
+        if (oldCalendarOptions && oldCalendarOptions !== newCalendarOptions) {
+            if (oldCalendarOptions.timeZone !== newCalendarOptions.timeZone) {
+                // hack
+                state.eventSources = data.eventSources = reduceEventSourcesNewTimeZone(data.eventSources, state.dateProfile, data);
+                state.eventStore = data.eventStore = rezoneEventStoreDates(data.eventStore, oldData.dateEnv, data.dateEnv);
+            }
+            for (var optionName in changeHandlers) {
+                if (oldCalendarOptions[optionName] !== newCalendarOptions[optionName]) {
+                    changeHandlers[optionName](newCalendarOptions[optionName], data);
+                }
+            }
+        }
+        if (props.onData) {
+            props.onData(data);
+        }
+    };
+    CalendarDataManager.prototype._computeOptionsData = function (optionOverrides, dynamicOptionOverrides, calendarApi) {
+        // TODO: blacklist options that are handled by optionChangeHandlers
+        var _a = this.processRawCalendarOptions(optionOverrides, dynamicOptionOverrides), refinedOptions = _a.refinedOptions, pluginHooks = _a.pluginHooks, localeDefaults = _a.localeDefaults, availableLocaleData = _a.availableLocaleData, extra = _a.extra;
+        warnUnknownOptions(extra);
+        var dateEnv = this.buildDateEnv(refinedOptions.timeZone, refinedOptions.locale, refinedOptions.weekNumberCalculation, refinedOptions.firstDay, refinedOptions.weekText, pluginHooks, availableLocaleData, refinedOptions.defaultRangeSeparator);
+        var viewSpecs = this.buildViewSpecs(pluginHooks.views, optionOverrides, dynamicOptionOverrides, localeDefaults);
+        var theme = this.buildTheme(refinedOptions, pluginHooks);
+        var toolbarConfig = this.parseToolbars(refinedOptions, optionOverrides, theme, viewSpecs, calendarApi);
+        return {
+            calendarOptions: refinedOptions,
+            pluginHooks: pluginHooks,
+            dateEnv: dateEnv,
+            viewSpecs: viewSpecs,
+            theme: theme,
+            toolbarConfig: toolbarConfig,
+            localeDefaults: localeDefaults,
+            availableRawLocales: availableLocaleData.map,
+        };
+    };
+    // always called from behind a memoizer
+    CalendarDataManager.prototype.processRawCalendarOptions = function (optionOverrides, dynamicOptionOverrides) {
+        var _a = mergeRawOptions([
+            BASE_OPTION_DEFAULTS,
+            optionOverrides,
+            dynamicOptionOverrides,
+        ]), locales = _a.locales, locale = _a.locale;
+        var availableLocaleData = this.organizeRawLocales(locales);
+        var availableRawLocales = availableLocaleData.map;
+        var localeDefaults = this.buildLocale(locale || availableLocaleData.defaultCode, availableRawLocales).options;
+        var pluginHooks = this.buildPluginHooks(optionOverrides.plugins || [], globalPlugins);
+        var refiners = this.currentCalendarOptionsRefiners = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, BASE_OPTION_REFINERS), CALENDAR_LISTENER_REFINERS), CALENDAR_OPTION_REFINERS), pluginHooks.listenerRefiners), pluginHooks.optionRefiners);
+        var extra = {};
+        var raw = mergeRawOptions([
+            BASE_OPTION_DEFAULTS,
+            localeDefaults,
+            optionOverrides,
+            dynamicOptionOverrides,
+        ]);
+        var refined = {};
+        var currentRaw = this.currentCalendarOptionsInput;
+        var currentRefined = this.currentCalendarOptionsRefined;
+        var anyChanges = false;
+        for (var optionName in raw) {
+            if (optionName !== 'plugins') { // because plugins is special-cased
+                if (raw[optionName] === currentRaw[optionName] ||
+                    (COMPLEX_OPTION_COMPARATORS[optionName] &&
+                        (optionName in currentRaw) &&
+                        COMPLEX_OPTION_COMPARATORS[optionName](currentRaw[optionName], raw[optionName]))) {
+                    refined[optionName] = currentRefined[optionName];
+                }
+                else if (refiners[optionName]) {
+                    refined[optionName] = refiners[optionName](raw[optionName]);
+                    anyChanges = true;
+                }
+                else {
+                    extra[optionName] = currentRaw[optionName];
+                }
+            }
+        }
+        if (anyChanges) {
+            this.currentCalendarOptionsInput = raw;
+            this.currentCalendarOptionsRefined = refined;
+        }
+        return {
+            rawOptions: this.currentCalendarOptionsInput,
+            refinedOptions: this.currentCalendarOptionsRefined,
+            pluginHooks: pluginHooks,
+            availableLocaleData: availableLocaleData,
+            localeDefaults: localeDefaults,
+            extra: extra,
+        };
+    };
+    CalendarDataManager.prototype._computeCurrentViewData = function (viewType, optionsData, optionOverrides, dynamicOptionOverrides) {
+        var viewSpec = optionsData.viewSpecs[viewType];
+        if (!viewSpec) {
+            throw new Error("viewType \"" + viewType + "\" is not available. Please make sure you've loaded all neccessary plugins");
+        }
+        var _a = this.processRawViewOptions(viewSpec, optionsData.pluginHooks, optionsData.localeDefaults, optionOverrides, dynamicOptionOverrides), refinedOptions = _a.refinedOptions, extra = _a.extra;
+        warnUnknownOptions(extra);
+        var dateProfileGenerator = this.buildDateProfileGenerator({
+            dateProfileGeneratorClass: viewSpec.optionDefaults.dateProfileGeneratorClass,
+            duration: viewSpec.duration,
+            durationUnit: viewSpec.durationUnit,
+            usesMinMaxTime: viewSpec.optionDefaults.usesMinMaxTime,
+            dateEnv: optionsData.dateEnv,
+            calendarApi: this.props.calendarApi,
+            slotMinTime: refinedOptions.slotMinTime,
+            slotMaxTime: refinedOptions.slotMaxTime,
+            showNonCurrentDates: refinedOptions.showNonCurrentDates,
+            dayCount: refinedOptions.dayCount,
+            dateAlignment: refinedOptions.dateAlignment,
+            dateIncrement: refinedOptions.dateIncrement,
+            hiddenDays: refinedOptions.hiddenDays,
+            weekends: refinedOptions.weekends,
+            nowInput: refinedOptions.now,
+            validRangeInput: refinedOptions.validRange,
+            visibleRangeInput: refinedOptions.visibleRange,
+            monthMode: refinedOptions.monthMode,
+            fixedWeekCount: refinedOptions.fixedWeekCount,
+        });
+        var viewApi = this.buildViewApi(viewType, this.getCurrentData, optionsData.dateEnv);
+        return { viewSpec: viewSpec, options: refinedOptions, dateProfileGenerator: dateProfileGenerator, viewApi: viewApi };
+    };
+    CalendarDataManager.prototype.processRawViewOptions = function (viewSpec, pluginHooks, localeDefaults, optionOverrides, dynamicOptionOverrides) {
+        var raw = mergeRawOptions([
+            BASE_OPTION_DEFAULTS,
+            viewSpec.optionDefaults,
+            localeDefaults,
+            optionOverrides,
+            viewSpec.optionOverrides,
+            dynamicOptionOverrides,
+        ]);
+        var refiners = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, BASE_OPTION_REFINERS), CALENDAR_LISTENER_REFINERS), CALENDAR_OPTION_REFINERS), VIEW_OPTION_REFINERS), pluginHooks.listenerRefiners), pluginHooks.optionRefiners);
+        var refined = {};
+        var currentRaw = this.currentViewOptionsInput;
+        var currentRefined = this.currentViewOptionsRefined;
+        var anyChanges = false;
+        var extra = {};
+        for (var optionName in raw) {
+            if (raw[optionName] === currentRaw[optionName] ||
+                (COMPLEX_OPTION_COMPARATORS[optionName] &&
+                    COMPLEX_OPTION_COMPARATORS[optionName](raw[optionName], currentRaw[optionName]))) {
+                refined[optionName] = currentRefined[optionName];
+            }
+            else {
+                if (raw[optionName] === this.currentCalendarOptionsInput[optionName] ||
+                    (COMPLEX_OPTION_COMPARATORS[optionName] &&
+                        COMPLEX_OPTION_COMPARATORS[optionName](raw[optionName], this.currentCalendarOptionsInput[optionName]))) {
+                    if (optionName in this.currentCalendarOptionsRefined) { // might be an "extra" prop
+                        refined[optionName] = this.currentCalendarOptionsRefined[optionName];
+                    }
+                }
+                else if (refiners[optionName]) {
+                    refined[optionName] = refiners[optionName](raw[optionName]);
+                }
+                else {
+                    extra[optionName] = raw[optionName];
+                }
+                anyChanges = true;
+            }
+        }
+        if (anyChanges) {
+            this.currentViewOptionsInput = raw;
+            this.currentViewOptionsRefined = refined;
+        }
+        return {
+            rawOptions: this.currentViewOptionsInput,
+            refinedOptions: this.currentViewOptionsRefined,
+            extra: extra,
+        };
+    };
+    return CalendarDataManager;
+}());
+function buildDateEnv(timeZone, explicitLocale, weekNumberCalculation, firstDay, weekText, pluginHooks, availableLocaleData, defaultSeparator) {
+    var locale = buildLocale(explicitLocale || availableLocaleData.defaultCode, availableLocaleData.map);
+    return new DateEnv({
+        calendarSystem: 'gregory',
+        timeZone: timeZone,
+        namedTimeZoneImpl: pluginHooks.namedTimeZonedImpl,
+        locale: locale,
+        weekNumberCalculation: weekNumberCalculation,
+        firstDay: firstDay,
+        weekText: weekText,
+        cmdFormatter: pluginHooks.cmdFormatter,
+        defaultSeparator: defaultSeparator,
+    });
+}
+function buildTheme(options, pluginHooks) {
+    var ThemeClass = pluginHooks.themeClasses[options.themeSystem] || StandardTheme;
+    return new ThemeClass(options);
+}
+function buildDateProfileGenerator(props) {
+    var DateProfileGeneratorClass = props.dateProfileGeneratorClass || DateProfileGenerator;
+    return new DateProfileGeneratorClass(props);
+}
+function buildViewApi(type, getCurrentData, dateEnv) {
+    return new ViewApi(type, getCurrentData, dateEnv);
+}
+function buildEventUiBySource(eventSources) {
+    return mapHash(eventSources, function (eventSource) { return eventSource.ui; });
+}
+function buildEventUiBases(eventDefs, eventUiSingleBase, eventUiBySource) {
+    var eventUiBases = { '': eventUiSingleBase };
+    for (var defId in eventDefs) {
+        var def = eventDefs[defId];
+        if (def.sourceId && eventUiBySource[def.sourceId]) {
+            eventUiBases[defId] = eventUiBySource[def.sourceId];
+        }
+    }
+    return eventUiBases;
+}
+function buildViewUiProps(calendarContext) {
+    var options = calendarContext.options;
+    return {
+        eventUiSingleBase: createEventUi({
+            display: options.eventDisplay,
+            editable: options.editable,
+            startEditable: options.eventStartEditable,
+            durationEditable: options.eventDurationEditable,
+            constraint: options.eventConstraint,
+            overlap: typeof options.eventOverlap === 'boolean' ? options.eventOverlap : undefined,
+            allow: options.eventAllow,
+            backgroundColor: options.eventBackgroundColor,
+            borderColor: options.eventBorderColor,
+            textColor: options.eventTextColor,
+            color: options.eventColor,
+            // classNames: options.eventClassNames // render hook will handle this
+        }, calendarContext),
+        selectionConfig: createEventUi({
+            constraint: options.selectConstraint,
+            overlap: typeof options.selectOverlap === 'boolean' ? options.selectOverlap : undefined,
+            allow: options.selectAllow,
+        }, calendarContext),
+    };
+}
+function computeIsLoading(state, context) {
+    for (var _i = 0, _a = context.pluginHooks.isLoadingFuncs; _i < _a.length; _i++) {
+        var isLoadingFunc = _a[_i];
+        if (isLoadingFunc(state)) {
+            return true;
+        }
+    }
+    return false;
+}
+function parseContextBusinessHours(calendarContext) {
+    return parseBusinessHours(calendarContext.options.businessHours, calendarContext);
+}
+function warnUnknownOptions(options, viewName) {
+    for (var optionName in options) {
+        console.warn("Unknown option '" + optionName + "'" +
+            (viewName ? " for view '" + viewName + "'" : ''));
+    }
+}
+
+// TODO: move this to react plugin?
+var CalendarDataProvider = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(CalendarDataProvider, _super);
+    function CalendarDataProvider(props) {
+        var _this = _super.call(this, props) || this;
+        _this.handleData = function (data) {
+            if (!_this.dataManager) { // still within initial run, before assignment in constructor
+                // eslint-disable-next-line react/no-direct-mutation-state
+                _this.state = data; // can't use setState yet
+            }
+            else {
+                _this.setState(data);
+            }
+        };
+        _this.dataManager = new CalendarDataManager({
+            optionOverrides: props.optionOverrides,
+            calendarApi: props.calendarApi,
+            onData: _this.handleData,
+        });
+        return _this;
+    }
+    CalendarDataProvider.prototype.render = function () {
+        return this.props.children(this.state);
+    };
+    CalendarDataProvider.prototype.componentDidUpdate = function (prevProps) {
+        var newOptionOverrides = this.props.optionOverrides;
+        if (newOptionOverrides !== prevProps.optionOverrides) { // prevent recursive handleData
+            this.dataManager.resetOptions(newOptionOverrides);
+        }
+    };
+    return CalendarDataProvider;
+}(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["Component"]));
+
+// HELPERS
+/*
+if nextDayThreshold is specified, slicing is done in an all-day fashion.
+you can get nextDayThreshold from context.nextDayThreshold
+*/
+function sliceEvents(props, allDay) {
+    return sliceEventStore(props.eventStore, props.eventUiBases, props.dateProfile.activeRange, allDay ? props.nextDayThreshold : null).fg;
+}
+
+var NamedTimeZoneImpl = /** @class */ (function () {
+    function NamedTimeZoneImpl(timeZoneName) {
+        this.timeZoneName = timeZoneName;
+    }
+    return NamedTimeZoneImpl;
+}());
+
+var SegHierarchy = /** @class */ (function () {
+    function SegHierarchy() {
+        // settings
+        this.strictOrder = false;
+        this.allowReslicing = false;
+        this.maxCoord = -1; // -1 means no max
+        this.maxStackCnt = -1; // -1 means no max
+        this.levelCoords = []; // ordered
+        this.entriesByLevel = []; // parallel with levelCoords
+        this.stackCnts = {}; // TODO: use better technique!?
+    }
+    SegHierarchy.prototype.addSegs = function (inputs) {
+        var hiddenEntries = [];
+        for (var _i = 0, inputs_1 = inputs; _i < inputs_1.length; _i++) {
+            var input = inputs_1[_i];
+            this.insertEntry(input, hiddenEntries);
+        }
+        return hiddenEntries;
+    };
+    SegHierarchy.prototype.insertEntry = function (entry, hiddenEntries) {
+        var insertion = this.findInsertion(entry);
+        if (this.isInsertionValid(insertion, entry)) {
+            this.insertEntryAt(entry, insertion);
+            return 1;
+        }
+        return this.handleInvalidInsertion(insertion, entry, hiddenEntries);
+    };
+    SegHierarchy.prototype.isInsertionValid = function (insertion, entry) {
+        return (this.maxCoord === -1 || insertion.levelCoord + entry.thickness <= this.maxCoord) &&
+            (this.maxStackCnt === -1 || insertion.stackCnt < this.maxStackCnt);
+    };
+    // returns number of new entries inserted
+    SegHierarchy.prototype.handleInvalidInsertion = function (insertion, entry, hiddenEntries) {
+        if (this.allowReslicing && insertion.touchingEntry) {
+            return this.splitEntry(entry, insertion.touchingEntry, hiddenEntries);
+        }
+        hiddenEntries.push(entry);
+        return 0;
+    };
+    SegHierarchy.prototype.splitEntry = function (entry, barrier, hiddenEntries) {
+        var partCnt = 0;
+        var splitHiddenEntries = [];
+        var entrySpan = entry.span;
+        var barrierSpan = barrier.span;
+        if (entrySpan.start < barrierSpan.start) {
+            partCnt += this.insertEntry({
+                index: entry.index,
+                thickness: entry.thickness,
+                span: { start: entrySpan.start, end: barrierSpan.start },
+            }, splitHiddenEntries);
+        }
+        if (entrySpan.end > barrierSpan.end) {
+            partCnt += this.insertEntry({
+                index: entry.index,
+                thickness: entry.thickness,
+                span: { start: barrierSpan.end, end: entrySpan.end },
+            }, splitHiddenEntries);
+        }
+        if (partCnt) {
+            hiddenEntries.push.apply(hiddenEntries, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spreadArray"])([{
+                    index: entry.index,
+                    thickness: entry.thickness,
+                    span: intersectSpans(barrierSpan, entrySpan), // guaranteed to intersect
+                }], splitHiddenEntries));
+            return partCnt;
+        }
+        hiddenEntries.push(entry);
+        return 0;
+    };
+    SegHierarchy.prototype.insertEntryAt = function (entry, insertion) {
+        var _a = this, entriesByLevel = _a.entriesByLevel, levelCoords = _a.levelCoords;
+        if (insertion.lateral === -1) {
+            // create a new level
+            insertAt(levelCoords, insertion.level, insertion.levelCoord);
+            insertAt(entriesByLevel, insertion.level, [entry]);
+        }
+        else {
+            // insert into existing level
+            insertAt(entriesByLevel[insertion.level], insertion.lateral, entry);
+        }
+        this.stackCnts[buildEntryKey(entry)] = insertion.stackCnt;
+    };
+    SegHierarchy.prototype.findInsertion = function (newEntry) {
+        var _a = this, levelCoords = _a.levelCoords, entriesByLevel = _a.entriesByLevel, strictOrder = _a.strictOrder, stackCnts = _a.stackCnts;
+        var levelCnt = levelCoords.length;
+        var candidateCoord = 0;
+        var touchingLevel = -1;
+        var touchingLateral = -1;
+        var touchingEntry = null;
+        var stackCnt = 0;
+        for (var trackingLevel = 0; trackingLevel < levelCnt; trackingLevel += 1) {
+            var trackingCoord = levelCoords[trackingLevel];
+            // if the current level is past the placed entry, we have found a good empty space and can stop.
+            // if strictOrder, keep finding more lateral intersections.
+            if (!strictOrder && trackingCoord >= candidateCoord + newEntry.thickness) {
+                break;
+            }
+            var trackingEntries = entriesByLevel[trackingLevel];
+            var trackingEntry = void 0;
+            var searchRes = binarySearch(trackingEntries, newEntry.span.start, getEntrySpanEnd); // find first entry after newEntry's end
+            var lateralIndex = searchRes[0] + searchRes[1]; // if exact match (which doesn't collide), go to next one
+            while ( // loop through entries that horizontally intersect
+            (trackingEntry = trackingEntries[lateralIndex]) && // but not past the whole entry list
+                trackingEntry.span.start < newEntry.span.end // and not entirely past newEntry
+            ) {
+                var trackingEntryBottom = trackingCoord + trackingEntry.thickness;
+                // intersects into the top of the candidate?
+                if (trackingEntryBottom > candidateCoord) {
+                    candidateCoord = trackingEntryBottom;
+                    touchingEntry = trackingEntry;
+                    touchingLevel = trackingLevel;
+                    touchingLateral = lateralIndex;
+                }
+                // butts up against top of candidate? (will happen if just intersected as well)
+                if (trackingEntryBottom === candidateCoord) {
+                    // accumulate the highest possible stackCnt of the trackingEntries that butt up
+                    stackCnt = Math.max(stackCnt, stackCnts[buildEntryKey(trackingEntry)] + 1);
+                }
+                lateralIndex += 1;
+            }
+        }
+        // the destination level will be after touchingEntry's level. find it
+        var destLevel = 0;
+        if (touchingEntry) {
+            destLevel = touchingLevel + 1;
+            while (destLevel < levelCnt && levelCoords[destLevel] < candidateCoord) {
+                destLevel += 1;
+            }
+        }
+        // if adding to an existing level, find where to insert
+        var destLateral = -1;
+        if (destLevel < levelCnt && levelCoords[destLevel] === candidateCoord) {
+            destLateral = binarySearch(entriesByLevel[destLevel], newEntry.span.end, getEntrySpanEnd)[0];
+        }
+        return {
+            touchingLevel: touchingLevel,
+            touchingLateral: touchingLateral,
+            touchingEntry: touchingEntry,
+            stackCnt: stackCnt,
+            levelCoord: candidateCoord,
+            level: destLevel,
+            lateral: destLateral,
+        };
+    };
+    // sorted by levelCoord (lowest to highest)
+    SegHierarchy.prototype.toRects = function () {
+        var _a = this, entriesByLevel = _a.entriesByLevel, levelCoords = _a.levelCoords;
+        var levelCnt = entriesByLevel.length;
+        var rects = [];
+        for (var level = 0; level < levelCnt; level += 1) {
+            var entries = entriesByLevel[level];
+            var levelCoord = levelCoords[level];
+            for (var _i = 0, entries_1 = entries; _i < entries_1.length; _i++) {
+                var entry = entries_1[_i];
+                rects.push(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, entry), { levelCoord: levelCoord }));
+            }
+        }
+        return rects;
+    };
+    return SegHierarchy;
+}());
+function getEntrySpanEnd(entry) {
+    return entry.span.end;
+}
+function buildEntryKey(entry) {
+    return entry.index + ':' + entry.span.start;
+}
+// returns groups with entries sorted by input order
+function groupIntersectingEntries(entries) {
+    var merges = [];
+    for (var _i = 0, entries_2 = entries; _i < entries_2.length; _i++) {
+        var entry = entries_2[_i];
+        var filteredMerges = [];
+        var hungryMerge = {
+            span: entry.span,
+            entries: [entry],
+        };
+        for (var _a = 0, merges_1 = merges; _a < merges_1.length; _a++) {
+            var merge = merges_1[_a];
+            if (intersectSpans(merge.span, hungryMerge.span)) {
+                hungryMerge = {
+                    entries: merge.entries.concat(hungryMerge.entries),
+                    span: joinSpans(merge.span, hungryMerge.span),
+                };
+            }
+            else {
+                filteredMerges.push(merge);
+            }
+        }
+        filteredMerges.push(hungryMerge);
+        merges = filteredMerges;
+    }
+    return merges;
+}
+function joinSpans(span0, span1) {
+    return {
+        start: Math.min(span0.start, span1.start),
+        end: Math.max(span0.end, span1.end),
+    };
+}
+function intersectSpans(span0, span1) {
+    var start = Math.max(span0.start, span1.start);
+    var end = Math.min(span0.end, span1.end);
+    if (start < end) {
+        return { start: start, end: end };
+    }
+    return null;
+}
+// general util
+// ---------------------------------------------------------------------------------------------------------------------
+function insertAt(arr, index, item) {
+    arr.splice(index, 0, item);
+}
+function binarySearch(a, searchVal, getItemVal) {
+    var startIndex = 0;
+    var endIndex = a.length; // exclusive
+    if (!endIndex || searchVal < getItemVal(a[startIndex])) { // no items OR before first item
+        return [0, 0];
+    }
+    if (searchVal > getItemVal(a[endIndex - 1])) { // after last item
+        return [endIndex, 0];
+    }
+    while (startIndex < endIndex) {
+        var middleIndex = Math.floor(startIndex + (endIndex - startIndex) / 2);
+        var middleVal = getItemVal(a[middleIndex]);
+        if (searchVal < middleVal) {
+            endIndex = middleIndex;
+        }
+        else if (searchVal > middleVal) {
+            startIndex = middleIndex + 1;
+        }
+        else { // equal!
+            return [middleIndex, 1];
+        }
+    }
+    return [startIndex, 0];
+}
+
+var Interaction = /** @class */ (function () {
+    function Interaction(settings) {
+        this.component = settings.component;
+        this.isHitComboAllowed = settings.isHitComboAllowed || null;
+    }
+    Interaction.prototype.destroy = function () {
+    };
+    return Interaction;
+}());
+function parseInteractionSettings(component, input) {
+    return {
+        component: component,
+        el: input.el,
+        useEventCenter: input.useEventCenter != null ? input.useEventCenter : true,
+        isHitComboAllowed: input.isHitComboAllowed || null,
+    };
+}
+function interactionSettingsToStore(settings) {
+    var _a;
+    return _a = {},
+        _a[settings.component.uid] = settings,
+        _a;
+}
+// global state
+var interactionSettingsStore = {};
+
+/*
+An abstraction for a dragging interaction originating on an event.
+Does higher-level things than PointerDragger, such as possibly:
+- a "mirror" that moves with the pointer
+- a minimum number of pixels or other criteria for a true drag to begin
+
+subclasses must emit:
+- pointerdown
+- dragstart
+- dragmove
+- pointerup
+- dragend
+*/
+var ElementDragging = /** @class */ (function () {
+    function ElementDragging(el, selector) {
+        this.emitter = new Emitter();
+    }
+    ElementDragging.prototype.destroy = function () {
+    };
+    ElementDragging.prototype.setMirrorIsVisible = function (bool) {
+        // optional if subclass doesn't want to support a mirror
+    };
+    ElementDragging.prototype.setMirrorNeedsRevert = function (bool) {
+        // optional if subclass doesn't want to support a mirror
+    };
+    ElementDragging.prototype.setAutoScrollEnabled = function (bool) {
+        // optional
+    };
+    return ElementDragging;
+}());
+
+// TODO: get rid of this in favor of options system,
+// tho it's really easy to access this globally rather than pass thru options.
+var config = {};
+
+/*
+Information about what will happen when an external element is dragged-and-dropped
+onto a calendar. Contains information for creating an event.
+*/
+var DRAG_META_REFINERS = {
+    startTime: createDuration,
+    duration: createDuration,
+    create: Boolean,
+    sourceId: String,
+};
+function parseDragMeta(raw) {
+    var _a = refineProps(raw, DRAG_META_REFINERS), refined = _a.refined, extra = _a.extra;
+    return {
+        startTime: refined.startTime || null,
+        duration: refined.duration || null,
+        create: refined.create != null ? refined.create : true,
+        sourceId: refined.sourceId,
+        leftoverProps: extra,
+    };
+}
+
+var ToolbarSection = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(ToolbarSection, _super);
+    function ToolbarSection() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ToolbarSection.prototype.render = function () {
+        var _this = this;
+        var children = this.props.widgetGroups.map(function (widgetGroup) { return _this.renderWidgetGroup(widgetGroup); });
+        return _vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"].apply(void 0, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spreadArray"])(['div', { className: 'fc-toolbar-chunk' }], children));
+    };
+    ToolbarSection.prototype.renderWidgetGroup = function (widgetGroup) {
+        var props = this.props;
+        var theme = this.context.theme;
+        var children = [];
+        var isOnlyButtons = true;
+        for (var _i = 0, widgetGroup_1 = widgetGroup; _i < widgetGroup_1.length; _i++) {
+            var widget = widgetGroup_1[_i];
+            var buttonName = widget.buttonName, buttonClick = widget.buttonClick, buttonText = widget.buttonText, buttonIcon = widget.buttonIcon, buttonHint = widget.buttonHint;
+            if (buttonName === 'title') {
+                isOnlyButtons = false;
+                children.push(Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("h2", { className: "fc-toolbar-title", id: props.titleId }, props.title));
+            }
+            else {
+                var isPressed = buttonName === props.activeButton;
+                var isDisabled = (!props.isTodayEnabled && buttonName === 'today') ||
+                    (!props.isPrevEnabled && buttonName === 'prev') ||
+                    (!props.isNextEnabled && buttonName === 'next');
+                var buttonClasses = ["fc-" + buttonName + "-button", theme.getClass('button')];
+                if (isPressed) {
+                    buttonClasses.push(theme.getClass('buttonActive'));
+                }
+                children.push(Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("button", { type: "button", title: typeof buttonHint === 'function' ? buttonHint(props.navUnit) : buttonHint, disabled: isDisabled, "aria-pressed": isPressed, className: buttonClasses.join(' '), onClick: buttonClick }, buttonText || (buttonIcon ? Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", { className: buttonIcon }) : '')));
+            }
+        }
+        if (children.length > 1) {
+            var groupClassName = (isOnlyButtons && theme.getClass('buttonGroup')) || '';
+            return _vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"].apply(void 0, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spreadArray"])(['div', { className: groupClassName }], children));
+        }
+        return children[0];
+    };
+    return ToolbarSection;
+}(BaseComponent));
+
+var Toolbar = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(Toolbar, _super);
+    function Toolbar() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Toolbar.prototype.render = function () {
+        var _a = this.props, model = _a.model, extraClassName = _a.extraClassName;
+        var forceLtr = false;
+        var startContent;
+        var endContent;
+        var sectionWidgets = model.sectionWidgets;
+        var centerContent = sectionWidgets.center;
+        if (sectionWidgets.left) {
+            forceLtr = true;
+            startContent = sectionWidgets.left;
+        }
+        else {
+            startContent = sectionWidgets.start;
+        }
+        if (sectionWidgets.right) {
+            forceLtr = true;
+            endContent = sectionWidgets.right;
+        }
+        else {
+            endContent = sectionWidgets.end;
+        }
+        var classNames = [
+            extraClassName || '',
+            'fc-toolbar',
+            forceLtr ? 'fc-toolbar-ltr' : '',
+        ];
+        return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", { className: classNames.join(' ') },
+            this.renderSection('start', startContent || []),
+            this.renderSection('center', centerContent || []),
+            this.renderSection('end', endContent || [])));
+    };
+    Toolbar.prototype.renderSection = function (key, widgetGroups) {
+        var props = this.props;
+        return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ToolbarSection, { key: key, widgetGroups: widgetGroups, title: props.title, navUnit: props.navUnit, activeButton: props.activeButton, isTodayEnabled: props.isTodayEnabled, isPrevEnabled: props.isPrevEnabled, isNextEnabled: props.isNextEnabled, titleId: props.titleId }));
+    };
+    return Toolbar;
+}(BaseComponent));
+
+// TODO: do function component?
+var ViewContainer = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(ViewContainer, _super);
+    function ViewContainer() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = {
+            availableWidth: null,
+        };
+        _this.handleEl = function (el) {
+            _this.el = el;
+            setRef(_this.props.elRef, el);
+            _this.updateAvailableWidth();
+        };
+        _this.handleResize = function () {
+            _this.updateAvailableWidth();
+        };
+        return _this;
+    }
+    ViewContainer.prototype.render = function () {
+        var _a = this, props = _a.props, state = _a.state;
+        var aspectRatio = props.aspectRatio;
+        var classNames = [
+            'fc-view-harness',
+            (aspectRatio || props.liquid || props.height)
+                ? 'fc-view-harness-active' // harness controls the height
+                : 'fc-view-harness-passive', // let the view do the height
+        ];
+        var height = '';
+        var paddingBottom = '';
+        if (aspectRatio) {
+            if (state.availableWidth !== null) {
+                height = state.availableWidth / aspectRatio;
+            }
+            else {
+                // while waiting to know availableWidth, we can't set height to *zero*
+                // because will cause lots of unnecessary scrollbars within scrollgrid.
+                // BETTER: don't start rendering ANYTHING yet until we know container width
+                // NOTE: why not always use paddingBottom? Causes height oscillation (issue 5606)
+                paddingBottom = (1 / aspectRatio) * 100 + "%";
+            }
+        }
+        else {
+            height = props.height || '';
+        }
+        return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", { "aria-labelledby": props.labeledById, ref: this.handleEl, className: classNames.join(' '), style: { height: height, paddingBottom: paddingBottom } }, props.children));
+    };
+    ViewContainer.prototype.componentDidMount = function () {
+        this.context.addResizeHandler(this.handleResize);
+    };
+    ViewContainer.prototype.componentWillUnmount = function () {
+        this.context.removeResizeHandler(this.handleResize);
+    };
+    ViewContainer.prototype.updateAvailableWidth = function () {
+        if (this.el && // needed. but why?
+            this.props.aspectRatio // aspectRatio is the only height setting that needs availableWidth
+        ) {
+            this.setState({ availableWidth: this.el.offsetWidth });
+        }
+    };
+    return ViewContainer;
+}(BaseComponent));
+
+/*
+Detects when the user clicks on an event within a DateComponent
+*/
+var EventClicking = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(EventClicking, _super);
+    function EventClicking(settings) {
+        var _this = _super.call(this, settings) || this;
+        _this.handleSegClick = function (ev, segEl) {
+            var component = _this.component;
+            var context = component.context;
+            var seg = getElSeg(segEl);
+            if (seg && // might be the <div> surrounding the more link
+                component.isValidSegDownEl(ev.target)) {
+                // our way to simulate a link click for elements that can't be <a> tags
+                // grab before trigger fired in case trigger trashes DOM thru rerendering
+                var hasUrlContainer = elementClosest(ev.target, '.fc-event-forced-url');
+                var url = hasUrlContainer ? hasUrlContainer.querySelector('a[href]').href : '';
+                context.emitter.trigger('eventClick', {
+                    el: segEl,
+                    event: new EventApi(component.context, seg.eventRange.def, seg.eventRange.instance),
+                    jsEvent: ev,
+                    view: context.viewApi,
+                });
+                if (url && !ev.defaultPrevented) {
+                    window.location.href = url;
+                }
+            }
+        };
+        _this.destroy = listenBySelector(settings.el, 'click', '.fc-event', // on both fg and bg events
+        _this.handleSegClick);
+        return _this;
+    }
+    return EventClicking;
+}(Interaction));
+
+/*
+Triggers events and adds/removes core classNames when the user's pointer
+enters/leaves event-elements of a component.
+*/
+var EventHovering = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(EventHovering, _super);
+    function EventHovering(settings) {
+        var _this = _super.call(this, settings) || this;
+        // for simulating an eventMouseLeave when the event el is destroyed while mouse is over it
+        _this.handleEventElRemove = function (el) {
+            if (el === _this.currentSegEl) {
+                _this.handleSegLeave(null, _this.currentSegEl);
+            }
+        };
+        _this.handleSegEnter = function (ev, segEl) {
+            if (getElSeg(segEl)) { // TODO: better way to make sure not hovering over more+ link or its wrapper
+                _this.currentSegEl = segEl;
+                _this.triggerEvent('eventMouseEnter', ev, segEl);
+            }
+        };
+        _this.handleSegLeave = function (ev, segEl) {
+            if (_this.currentSegEl) {
+                _this.currentSegEl = null;
+                _this.triggerEvent('eventMouseLeave', ev, segEl);
+            }
+        };
+        _this.removeHoverListeners = listenToHoverBySelector(settings.el, '.fc-event', // on both fg and bg events
+        _this.handleSegEnter, _this.handleSegLeave);
+        return _this;
+    }
+    EventHovering.prototype.destroy = function () {
+        this.removeHoverListeners();
+    };
+    EventHovering.prototype.triggerEvent = function (publicEvName, ev, segEl) {
+        var component = this.component;
+        var context = component.context;
+        var seg = getElSeg(segEl);
+        if (!ev || component.isValidSegDownEl(ev.target)) {
+            context.emitter.trigger(publicEvName, {
+                el: segEl,
+                event: new EventApi(context, seg.eventRange.def, seg.eventRange.instance),
+                jsEvent: ev,
+                view: context.viewApi,
+            });
+        }
+    };
+    return EventHovering;
+}(Interaction));
+
+var CalendarContent = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(CalendarContent, _super);
+    function CalendarContent() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.buildViewContext = memoize(buildViewContext);
+        _this.buildViewPropTransformers = memoize(buildViewPropTransformers);
+        _this.buildToolbarProps = memoize(buildToolbarProps);
+        _this.headerRef = Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createRef"])();
+        _this.footerRef = Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createRef"])();
+        _this.interactionsStore = {};
+        // eslint-disable-next-line
+        _this.state = {
+            viewLabelId: getUniqueDomId(),
+        };
+        // Component Registration
+        // -----------------------------------------------------------------------------------------------------------------
+        _this.registerInteractiveComponent = function (component, settingsInput) {
+            var settings = parseInteractionSettings(component, settingsInput);
+            var DEFAULT_INTERACTIONS = [
+                EventClicking,
+                EventHovering,
+            ];
+            var interactionClasses = DEFAULT_INTERACTIONS.concat(_this.props.pluginHooks.componentInteractions);
+            var interactions = interactionClasses.map(function (TheInteractionClass) { return new TheInteractionClass(settings); });
+            _this.interactionsStore[component.uid] = interactions;
+            interactionSettingsStore[component.uid] = settings;
+        };
+        _this.unregisterInteractiveComponent = function (component) {
+            var listeners = _this.interactionsStore[component.uid];
+            if (listeners) {
+                for (var _i = 0, listeners_1 = listeners; _i < listeners_1.length; _i++) {
+                    var listener = listeners_1[_i];
+                    listener.destroy();
+                }
+                delete _this.interactionsStore[component.uid];
+            }
+            delete interactionSettingsStore[component.uid];
+        };
+        // Resizing
+        // -----------------------------------------------------------------------------------------------------------------
+        _this.resizeRunner = new DelayedRunner(function () {
+            _this.props.emitter.trigger('_resize', true); // should window resizes be considered "forced" ?
+            _this.props.emitter.trigger('windowResize', { view: _this.props.viewApi });
+        });
+        _this.handleWindowResize = function (ev) {
+            var options = _this.props.options;
+            if (options.handleWindowResize &&
+                ev.target === window // avoid jqui events
+            ) {
+                _this.resizeRunner.request(options.windowResizeDelay);
+            }
+        };
+        return _this;
+    }
+    /*
+    renders INSIDE of an outer div
+    */
+    CalendarContent.prototype.render = function () {
+        var props = this.props;
+        var toolbarConfig = props.toolbarConfig, options = props.options;
+        var toolbarProps = this.buildToolbarProps(props.viewSpec, props.dateProfile, props.dateProfileGenerator, props.currentDate, getNow(props.options.now, props.dateEnv), // TODO: use NowTimer????
+        props.viewTitle);
+        var viewVGrow = false;
+        var viewHeight = '';
+        var viewAspectRatio;
+        if (props.isHeightAuto || props.forPrint) {
+            viewHeight = '';
+        }
+        else if (options.height != null) {
+            viewVGrow = true;
+        }
+        else if (options.contentHeight != null) {
+            viewHeight = options.contentHeight;
+        }
+        else {
+            viewAspectRatio = Math.max(options.aspectRatio, 0.5); // prevent from getting too tall
+        }
+        var viewContext = this.buildViewContext(props.viewSpec, props.viewApi, props.options, props.dateProfileGenerator, props.dateEnv, props.theme, props.pluginHooks, props.dispatch, props.getCurrentData, props.emitter, props.calendarApi, this.registerInteractiveComponent, this.unregisterInteractiveComponent);
+        var viewLabelId = (toolbarConfig.header && toolbarConfig.header.hasTitle)
+            ? this.state.viewLabelId
+            : '';
+        return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ViewContextType.Provider, { value: viewContext },
+            toolbarConfig.header && (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(Toolbar, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({ ref: this.headerRef, extraClassName: "fc-header-toolbar", model: toolbarConfig.header, titleId: viewLabelId }, toolbarProps))),
+            Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ViewContainer, { liquid: viewVGrow, height: viewHeight, aspectRatio: viewAspectRatio, labeledById: viewLabelId },
+                this.renderView(props),
+                this.buildAppendContent()),
+            toolbarConfig.footer && (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(Toolbar, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({ ref: this.footerRef, extraClassName: "fc-footer-toolbar", model: toolbarConfig.footer, titleId: "" }, toolbarProps)))));
+    };
+    CalendarContent.prototype.componentDidMount = function () {
+        var props = this.props;
+        this.calendarInteractions = props.pluginHooks.calendarInteractions
+            .map(function (CalendarInteractionClass) { return new CalendarInteractionClass(props); });
+        window.addEventListener('resize', this.handleWindowResize);
+        var propSetHandlers = props.pluginHooks.propSetHandlers;
+        for (var propName in propSetHandlers) {
+            propSetHandlers[propName](props[propName], props);
+        }
+    };
+    CalendarContent.prototype.componentDidUpdate = function (prevProps) {
+        var props = this.props;
+        var propSetHandlers = props.pluginHooks.propSetHandlers;
+        for (var propName in propSetHandlers) {
+            if (props[propName] !== prevProps[propName]) {
+                propSetHandlers[propName](props[propName], props);
+            }
+        }
+    };
+    CalendarContent.prototype.componentWillUnmount = function () {
+        window.removeEventListener('resize', this.handleWindowResize);
+        this.resizeRunner.clear();
+        for (var _i = 0, _a = this.calendarInteractions; _i < _a.length; _i++) {
+            var interaction = _a[_i];
+            interaction.destroy();
+        }
+        this.props.emitter.trigger('_unmount');
+    };
+    CalendarContent.prototype.buildAppendContent = function () {
+        var props = this.props;
+        var children = props.pluginHooks.viewContainerAppends.map(function (buildAppendContent) { return buildAppendContent(props); });
+        return _vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"].apply(void 0, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spreadArray"])([_vdom_js__WEBPACK_IMPORTED_MODULE_2__["Fragment"], {}], children));
+    };
+    CalendarContent.prototype.renderView = function (props) {
+        var pluginHooks = props.pluginHooks;
+        var viewSpec = props.viewSpec;
+        var viewProps = {
+            dateProfile: props.dateProfile,
+            businessHours: props.businessHours,
+            eventStore: props.renderableEventStore,
+            eventUiBases: props.eventUiBases,
+            dateSelection: props.dateSelection,
+            eventSelection: props.eventSelection,
+            eventDrag: props.eventDrag,
+            eventResize: props.eventResize,
+            isHeightAuto: props.isHeightAuto,
+            forPrint: props.forPrint,
+        };
+        var transformers = this.buildViewPropTransformers(pluginHooks.viewPropsTransformers);
+        for (var _i = 0, transformers_1 = transformers; _i < transformers_1.length; _i++) {
+            var transformer = transformers_1[_i];
+            Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(viewProps, transformer.transform(viewProps, props));
+        }
+        var ViewComponent = viewSpec.component;
+        return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ViewComponent, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, viewProps)));
+    };
+    return CalendarContent;
+}(PureComponent));
+function buildToolbarProps(viewSpec, dateProfile, dateProfileGenerator, currentDate, now, title) {
+    // don't force any date-profiles to valid date profiles (the `false`) so that we can tell if it's invalid
+    var todayInfo = dateProfileGenerator.build(now, undefined, false); // TODO: need `undefined` or else INFINITE LOOP for some reason
+    var prevInfo = dateProfileGenerator.buildPrev(dateProfile, currentDate, false);
+    var nextInfo = dateProfileGenerator.buildNext(dateProfile, currentDate, false);
+    return {
+        title: title,
+        activeButton: viewSpec.type,
+        navUnit: viewSpec.singleUnit,
+        isTodayEnabled: todayInfo.isValid && !rangeContainsMarker(dateProfile.currentRange, now),
+        isPrevEnabled: prevInfo.isValid,
+        isNextEnabled: nextInfo.isValid,
+    };
+}
+// Plugin
+// -----------------------------------------------------------------------------------------------------------------
+function buildViewPropTransformers(theClasses) {
+    return theClasses.map(function (TheClass) { return new TheClass(); });
+}
+
+var CalendarRoot = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(CalendarRoot, _super);
+    function CalendarRoot() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = {
+            forPrint: false,
+        };
+        _this.handleBeforePrint = function () {
+            _this.setState({ forPrint: true });
+        };
+        _this.handleAfterPrint = function () {
+            _this.setState({ forPrint: false });
+        };
+        return _this;
+    }
+    CalendarRoot.prototype.render = function () {
+        var props = this.props;
+        var options = props.options;
+        var forPrint = this.state.forPrint;
+        var isHeightAuto = forPrint || options.height === 'auto' || options.contentHeight === 'auto';
+        var height = (!isHeightAuto && options.height != null) ? options.height : '';
+        var classNames = [
+            'fc',
+            forPrint ? 'fc-media-print' : 'fc-media-screen',
+            "fc-direction-" + options.direction,
+            props.theme.getClass('root'),
+        ];
+        if (!getCanVGrowWithinCell()) {
+            classNames.push('fc-liquid-hack');
+        }
+        return props.children(classNames, height, isHeightAuto, forPrint);
+    };
+    CalendarRoot.prototype.componentDidMount = function () {
+        var emitter = this.props.emitter;
+        emitter.on('_beforeprint', this.handleBeforePrint);
+        emitter.on('_afterprint', this.handleAfterPrint);
+    };
+    CalendarRoot.prototype.componentWillUnmount = function () {
+        var emitter = this.props.emitter;
+        emitter.off('_beforeprint', this.handleBeforePrint);
+        emitter.off('_afterprint', this.handleAfterPrint);
+    };
+    return CalendarRoot;
+}(BaseComponent));
+
+// Computes a default column header formatting string if `colFormat` is not explicitly defined
+function computeFallbackHeaderFormat(datesRepDistinctDays, dayCnt) {
+    // if more than one week row, or if there are a lot of columns with not much space,
+    // put just the day numbers will be in each cell
+    if (!datesRepDistinctDays || dayCnt > 10) {
+        return createFormatter({ weekday: 'short' }); // "Sat"
+    }
+    if (dayCnt > 1) {
+        return createFormatter({ weekday: 'short', month: 'numeric', day: 'numeric', omitCommas: true }); // "Sat 11/12"
+    }
+    return createFormatter({ weekday: 'long' }); // "Saturday"
+}
+
+var CLASS_NAME = 'fc-col-header-cell'; // do the cushion too? no
+function renderInner$1(hookProps) {
+    return hookProps.text;
+}
+
+var TableDateCell = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(TableDateCell, _super);
+    function TableDateCell() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    TableDateCell.prototype.render = function () {
+        var _a = this.context, dateEnv = _a.dateEnv, options = _a.options, theme = _a.theme, viewApi = _a.viewApi;
+        var props = this.props;
+        var date = props.date, dateProfile = props.dateProfile;
+        var dayMeta = getDateMeta(date, props.todayRange, null, dateProfile);
+        var classNames = [CLASS_NAME].concat(getDayClassNames(dayMeta, theme));
+        var text = dateEnv.format(date, props.dayHeaderFormat);
+        // if colCnt is 1, we are already in a day-view and don't need a navlink
+        var navLinkAttrs = (!dayMeta.isDisabled && props.colCnt > 1)
+            ? buildNavLinkAttrs(this.context, date)
+            : {};
+        var hookProps = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({ date: dateEnv.toDate(date), view: viewApi }, props.extraHookProps), { text: text }), dayMeta);
+        return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(RenderHook, { hookProps: hookProps, classNames: options.dayHeaderClassNames, content: options.dayHeaderContent, defaultContent: renderInner$1, didMount: options.dayHeaderDidMount, willUnmount: options.dayHeaderWillUnmount }, function (rootElRef, customClassNames, innerElRef, innerContent) { return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("th", Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({ ref: rootElRef, role: "columnheader", className: classNames.concat(customClassNames).join(' '), "data-date": !dayMeta.isDisabled ? formatDayString(date) : undefined, colSpan: props.colSpan }, props.extraDataAttrs),
+            Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", { className: "fc-scrollgrid-sync-inner" }, !dayMeta.isDisabled && (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("a", Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({ ref: innerElRef, className: [
+                    'fc-col-header-cell-cushion',
+                    props.isSticky ? 'fc-sticky' : '',
+                ].join(' ') }, navLinkAttrs), innerContent))))); }));
+    };
+    return TableDateCell;
+}(BaseComponent));
+
+var WEEKDAY_FORMAT = createFormatter({ weekday: 'long' });
+var TableDowCell = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(TableDowCell, _super);
+    function TableDowCell() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    TableDowCell.prototype.render = function () {
+        var props = this.props;
+        var _a = this.context, dateEnv = _a.dateEnv, theme = _a.theme, viewApi = _a.viewApi, options = _a.options;
+        var date = addDays(new Date(259200000), props.dow); // start with Sun, 04 Jan 1970 00:00:00 GMT
+        var dateMeta = {
+            dow: props.dow,
+            isDisabled: false,
+            isFuture: false,
+            isPast: false,
+            isToday: false,
+            isOther: false,
+        };
+        var classNames = [CLASS_NAME].concat(getDayClassNames(dateMeta, theme), props.extraClassNames || []);
+        var text = dateEnv.format(date, props.dayHeaderFormat);
+        var hookProps = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({ // TODO: make this public?
+            date: date }, dateMeta), { view: viewApi }), props.extraHookProps), { text: text });
+        return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(RenderHook, { hookProps: hookProps, classNames: options.dayHeaderClassNames, content: options.dayHeaderContent, defaultContent: renderInner$1, didMount: options.dayHeaderDidMount, willUnmount: options.dayHeaderWillUnmount }, function (rootElRef, customClassNames, innerElRef, innerContent) { return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("th", Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({ ref: rootElRef, role: "columnheader", className: classNames.concat(customClassNames).join(' '), colSpan: props.colSpan }, props.extraDataAttrs),
+            Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", { className: "fc-scrollgrid-sync-inner" },
+                Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("a", { "aria-label": dateEnv.format(date, WEEKDAY_FORMAT), className: [
+                        'fc-col-header-cell-cushion',
+                        props.isSticky ? 'fc-sticky' : '',
+                    ].join(' '), ref: innerElRef }, innerContent)))); }));
+    };
+    return TableDowCell;
+}(BaseComponent));
+
+var NowTimer = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(NowTimer, _super);
+    function NowTimer(props, context) {
+        var _this = _super.call(this, props, context) || this;
+        _this.initialNowDate = getNow(context.options.now, context.dateEnv);
+        _this.initialNowQueriedMs = new Date().valueOf();
+        _this.state = _this.computeTiming().currentState;
+        return _this;
+    }
+    NowTimer.prototype.render = function () {
+        var _a = this, props = _a.props, state = _a.state;
+        return props.children(state.nowDate, state.todayRange);
+    };
+    NowTimer.prototype.componentDidMount = function () {
+        this.setTimeout();
+    };
+    NowTimer.prototype.componentDidUpdate = function (prevProps) {
+        if (prevProps.unit !== this.props.unit) {
+            this.clearTimeout();
+            this.setTimeout();
+        }
+    };
+    NowTimer.prototype.componentWillUnmount = function () {
+        this.clearTimeout();
+    };
+    NowTimer.prototype.computeTiming = function () {
+        var _a = this, props = _a.props, context = _a.context;
+        var unroundedNow = addMs(this.initialNowDate, new Date().valueOf() - this.initialNowQueriedMs);
+        var currentUnitStart = context.dateEnv.startOf(unroundedNow, props.unit);
+        var nextUnitStart = context.dateEnv.add(currentUnitStart, createDuration(1, props.unit));
+        var waitMs = nextUnitStart.valueOf() - unroundedNow.valueOf();
+        // there is a max setTimeout ms value (https://stackoverflow.com/a/3468650/96342)
+        // ensure no longer than a day
+        waitMs = Math.min(1000 * 60 * 60 * 24, waitMs);
+        return {
+            currentState: { nowDate: currentUnitStart, todayRange: buildDayRange(currentUnitStart) },
+            nextState: { nowDate: nextUnitStart, todayRange: buildDayRange(nextUnitStart) },
+            waitMs: waitMs,
+        };
+    };
+    NowTimer.prototype.setTimeout = function () {
+        var _this = this;
+        var _a = this.computeTiming(), nextState = _a.nextState, waitMs = _a.waitMs;
+        this.timeoutId = setTimeout(function () {
+            _this.setState(nextState, function () {
+                _this.setTimeout();
+            });
+        }, waitMs);
+    };
+    NowTimer.prototype.clearTimeout = function () {
+        if (this.timeoutId) {
+            clearTimeout(this.timeoutId);
+        }
+    };
+    NowTimer.contextType = ViewContextType;
+    return NowTimer;
+}(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["Component"]));
+function buildDayRange(date) {
+    var start = startOfDay(date);
+    var end = addDays(start, 1);
+    return { start: start, end: end };
+}
+
+var DayHeader = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(DayHeader, _super);
+    function DayHeader() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.createDayHeaderFormatter = memoize(createDayHeaderFormatter);
+        return _this;
+    }
+    DayHeader.prototype.render = function () {
+        var context = this.context;
+        var _a = this.props, dates = _a.dates, dateProfile = _a.dateProfile, datesRepDistinctDays = _a.datesRepDistinctDays, renderIntro = _a.renderIntro;
+        var dayHeaderFormat = this.createDayHeaderFormatter(context.options.dayHeaderFormat, datesRepDistinctDays, dates.length);
+        return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(NowTimer, { unit: "day" }, function (nowDate, todayRange) { return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("tr", { role: "row" },
+            renderIntro && renderIntro('day'),
+            dates.map(function (date) { return (datesRepDistinctDays ? (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(TableDateCell, { key: date.toISOString(), date: date, dateProfile: dateProfile, todayRange: todayRange, colCnt: dates.length, dayHeaderFormat: dayHeaderFormat })) : (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(TableDowCell, { key: date.getUTCDay(), dow: date.getUTCDay(), dayHeaderFormat: dayHeaderFormat }))); }))); }));
+    };
+    return DayHeader;
+}(BaseComponent));
+function createDayHeaderFormatter(explicitFormat, datesRepDistinctDays, dateCnt) {
+    return explicitFormat || computeFallbackHeaderFormat(datesRepDistinctDays, dateCnt);
+}
+
+var DaySeriesModel = /** @class */ (function () {
+    function DaySeriesModel(range, dateProfileGenerator) {
+        var date = range.start;
+        var end = range.end;
+        var indices = [];
+        var dates = [];
+        var dayIndex = -1;
+        while (date < end) { // loop each day from start to end
+            if (dateProfileGenerator.isHiddenDay(date)) {
+                indices.push(dayIndex + 0.5); // mark that it's between indices
+            }
+            else {
+                dayIndex += 1;
+                indices.push(dayIndex);
+                dates.push(date);
+            }
+            date = addDays(date, 1);
+        }
+        this.dates = dates;
+        this.indices = indices;
+        this.cnt = dates.length;
+    }
+    DaySeriesModel.prototype.sliceRange = function (range) {
+        var firstIndex = this.getDateDayIndex(range.start); // inclusive first index
+        var lastIndex = this.getDateDayIndex(addDays(range.end, -1)); // inclusive last index
+        var clippedFirstIndex = Math.max(0, firstIndex);
+        var clippedLastIndex = Math.min(this.cnt - 1, lastIndex);
+        // deal with in-between indices
+        clippedFirstIndex = Math.ceil(clippedFirstIndex); // in-between starts round to next cell
+        clippedLastIndex = Math.floor(clippedLastIndex); // in-between ends round to prev cell
+        if (clippedFirstIndex <= clippedLastIndex) {
+            return {
+                firstIndex: clippedFirstIndex,
+                lastIndex: clippedLastIndex,
+                isStart: firstIndex === clippedFirstIndex,
+                isEnd: lastIndex === clippedLastIndex,
+            };
+        }
+        return null;
+    };
+    // Given a date, returns its chronolocial cell-index from the first cell of the grid.
+    // If the date lies between cells (because of hiddenDays), returns a floating-point value between offsets.
+    // If before the first offset, returns a negative number.
+    // If after the last offset, returns an offset past the last cell offset.
+    // Only works for *start* dates of cells. Will not work for exclusive end dates for cells.
+    DaySeriesModel.prototype.getDateDayIndex = function (date) {
+        var indices = this.indices;
+        var dayOffset = Math.floor(diffDays(this.dates[0], date));
+        if (dayOffset < 0) {
+            return indices[0] - 1;
+        }
+        if (dayOffset >= indices.length) {
+            return indices[indices.length - 1] + 1;
+        }
+        return indices[dayOffset];
+    };
+    return DaySeriesModel;
+}());
+
+var DayTableModel = /** @class */ (function () {
+    function DayTableModel(daySeries, breakOnWeeks) {
+        var dates = daySeries.dates;
+        var daysPerRow;
+        var firstDay;
+        var rowCnt;
+        if (breakOnWeeks) {
+            // count columns until the day-of-week repeats
+            firstDay = dates[0].getUTCDay();
+            for (daysPerRow = 1; daysPerRow < dates.length; daysPerRow += 1) {
+                if (dates[daysPerRow].getUTCDay() === firstDay) {
+                    break;
+                }
+            }
+            rowCnt = Math.ceil(dates.length / daysPerRow);
+        }
+        else {
+            rowCnt = 1;
+            daysPerRow = dates.length;
+        }
+        this.rowCnt = rowCnt;
+        this.colCnt = daysPerRow;
+        this.daySeries = daySeries;
+        this.cells = this.buildCells();
+        this.headerDates = this.buildHeaderDates();
+    }
+    DayTableModel.prototype.buildCells = function () {
+        var rows = [];
+        for (var row = 0; row < this.rowCnt; row += 1) {
+            var cells = [];
+            for (var col = 0; col < this.colCnt; col += 1) {
+                cells.push(this.buildCell(row, col));
+            }
+            rows.push(cells);
+        }
+        return rows;
+    };
+    DayTableModel.prototype.buildCell = function (row, col) {
+        var date = this.daySeries.dates[row * this.colCnt + col];
+        return {
+            key: date.toISOString(),
+            date: date,
+        };
+    };
+    DayTableModel.prototype.buildHeaderDates = function () {
+        var dates = [];
+        for (var col = 0; col < this.colCnt; col += 1) {
+            dates.push(this.cells[0][col].date);
+        }
+        return dates;
+    };
+    DayTableModel.prototype.sliceRange = function (range) {
+        var colCnt = this.colCnt;
+        var seriesSeg = this.daySeries.sliceRange(range);
+        var segs = [];
+        if (seriesSeg) {
+            var firstIndex = seriesSeg.firstIndex, lastIndex = seriesSeg.lastIndex;
+            var index = firstIndex;
+            while (index <= lastIndex) {
+                var row = Math.floor(index / colCnt);
+                var nextIndex = Math.min((row + 1) * colCnt, lastIndex + 1);
+                segs.push({
+                    row: row,
+                    firstCol: index % colCnt,
+                    lastCol: (nextIndex - 1) % colCnt,
+                    isStart: seriesSeg.isStart && index === firstIndex,
+                    isEnd: seriesSeg.isEnd && (nextIndex - 1) === lastIndex,
+                });
+                index = nextIndex;
+            }
+        }
+        return segs;
+    };
+    return DayTableModel;
+}());
+
+var Slicer = /** @class */ (function () {
+    function Slicer() {
+        this.sliceBusinessHours = memoize(this._sliceBusinessHours);
+        this.sliceDateSelection = memoize(this._sliceDateSpan);
+        this.sliceEventStore = memoize(this._sliceEventStore);
+        this.sliceEventDrag = memoize(this._sliceInteraction);
+        this.sliceEventResize = memoize(this._sliceInteraction);
+        this.forceDayIfListItem = false; // hack
+    }
+    Slicer.prototype.sliceProps = function (props, dateProfile, nextDayThreshold, context) {
+        var extraArgs = [];
+        for (var _i = 4; _i < arguments.length; _i++) {
+            extraArgs[_i - 4] = arguments[_i];
+        }
+        var eventUiBases = props.eventUiBases;
+        var eventSegs = this.sliceEventStore.apply(this, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spreadArray"])([props.eventStore, eventUiBases, dateProfile, nextDayThreshold], extraArgs));
+        return {
+            dateSelectionSegs: this.sliceDateSelection.apply(this, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spreadArray"])([props.dateSelection, eventUiBases, context], extraArgs)),
+            businessHourSegs: this.sliceBusinessHours.apply(this, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spreadArray"])([props.businessHours, dateProfile, nextDayThreshold, context], extraArgs)),
+            fgEventSegs: eventSegs.fg,
+            bgEventSegs: eventSegs.bg,
+            eventDrag: this.sliceEventDrag.apply(this, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spreadArray"])([props.eventDrag, eventUiBases, dateProfile, nextDayThreshold], extraArgs)),
+            eventResize: this.sliceEventResize.apply(this, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spreadArray"])([props.eventResize, eventUiBases, dateProfile, nextDayThreshold], extraArgs)),
+            eventSelection: props.eventSelection,
+        }; // TODO: give interactionSegs?
+    };
+    Slicer.prototype.sliceNowDate = function (// does not memoize
+    date, context) {
+        var extraArgs = [];
+        for (var _i = 2; _i < arguments.length; _i++) {
+            extraArgs[_i - 2] = arguments[_i];
+        }
+        return this._sliceDateSpan.apply(this, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spreadArray"])([{ range: { start: date, end: addMs(date, 1) }, allDay: false },
+            {},
+            context], extraArgs));
+    };
+    Slicer.prototype._sliceBusinessHours = function (businessHours, dateProfile, nextDayThreshold, context) {
+        var extraArgs = [];
+        for (var _i = 4; _i < arguments.length; _i++) {
+            extraArgs[_i - 4] = arguments[_i];
+        }
+        if (!businessHours) {
+            return [];
+        }
+        return this._sliceEventStore.apply(this, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spreadArray"])([expandRecurring(businessHours, computeActiveRange(dateProfile, Boolean(nextDayThreshold)), context),
+            {},
+            dateProfile,
+            nextDayThreshold], extraArgs)).bg;
+    };
+    Slicer.prototype._sliceEventStore = function (eventStore, eventUiBases, dateProfile, nextDayThreshold) {
+        var extraArgs = [];
+        for (var _i = 4; _i < arguments.length; _i++) {
+            extraArgs[_i - 4] = arguments[_i];
+        }
+        if (eventStore) {
+            var rangeRes = sliceEventStore(eventStore, eventUiBases, computeActiveRange(dateProfile, Boolean(nextDayThreshold)), nextDayThreshold);
+            return {
+                bg: this.sliceEventRanges(rangeRes.bg, extraArgs),
+                fg: this.sliceEventRanges(rangeRes.fg, extraArgs),
+            };
+        }
+        return { bg: [], fg: [] };
+    };
+    Slicer.prototype._sliceInteraction = function (interaction, eventUiBases, dateProfile, nextDayThreshold) {
+        var extraArgs = [];
+        for (var _i = 4; _i < arguments.length; _i++) {
+            extraArgs[_i - 4] = arguments[_i];
+        }
+        if (!interaction) {
+            return null;
+        }
+        var rangeRes = sliceEventStore(interaction.mutatedEvents, eventUiBases, computeActiveRange(dateProfile, Boolean(nextDayThreshold)), nextDayThreshold);
+        return {
+            segs: this.sliceEventRanges(rangeRes.fg, extraArgs),
+            affectedInstances: interaction.affectedEvents.instances,
+            isEvent: interaction.isEvent,
+        };
+    };
+    Slicer.prototype._sliceDateSpan = function (dateSpan, eventUiBases, context) {
+        var extraArgs = [];
+        for (var _i = 3; _i < arguments.length; _i++) {
+            extraArgs[_i - 3] = arguments[_i];
+        }
+        if (!dateSpan) {
+            return [];
+        }
+        var eventRange = fabricateEventRange(dateSpan, eventUiBases, context);
+        var segs = this.sliceRange.apply(this, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spreadArray"])([dateSpan.range], extraArgs));
+        for (var _a = 0, segs_1 = segs; _a < segs_1.length; _a++) {
+            var seg = segs_1[_a];
+            seg.eventRange = eventRange;
+        }
+        return segs;
+    };
+    /*
+    "complete" seg means it has component and eventRange
+    */
+    Slicer.prototype.sliceEventRanges = function (eventRanges, extraArgs) {
+        var segs = [];
+        for (var _i = 0, eventRanges_1 = eventRanges; _i < eventRanges_1.length; _i++) {
+            var eventRange = eventRanges_1[_i];
+            segs.push.apply(segs, this.sliceEventRange(eventRange, extraArgs));
+        }
+        return segs;
+    };
+    /*
+    "complete" seg means it has component and eventRange
+    */
+    Slicer.prototype.sliceEventRange = function (eventRange, extraArgs) {
+        var dateRange = eventRange.range;
+        // hack to make multi-day events that are being force-displayed as list-items to take up only one day
+        if (this.forceDayIfListItem && eventRange.ui.display === 'list-item') {
+            dateRange = {
+                start: dateRange.start,
+                end: addDays(dateRange.start, 1),
+            };
+        }
+        var segs = this.sliceRange.apply(this, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spreadArray"])([dateRange], extraArgs));
+        for (var _i = 0, segs_2 = segs; _i < segs_2.length; _i++) {
+            var seg = segs_2[_i];
+            seg.eventRange = eventRange;
+            seg.isStart = eventRange.isStart && seg.isStart;
+            seg.isEnd = eventRange.isEnd && seg.isEnd;
+        }
+        return segs;
+    };
+    return Slicer;
+}());
+/*
+for incorporating slotMinTime/slotMaxTime if appropriate
+TODO: should be part of DateProfile!
+TimelineDateProfile already does this btw
+*/
+function computeActiveRange(dateProfile, isComponentAllDay) {
+    var range = dateProfile.activeRange;
+    if (isComponentAllDay) {
+        return range;
+    }
+    return {
+        start: addMs(range.start, dateProfile.slotMinTime.milliseconds),
+        end: addMs(range.end, dateProfile.slotMaxTime.milliseconds - 864e5), // 864e5 = ms in a day
+    };
+}
+
+// high-level segmenting-aware tester functions
+// ------------------------------------------------------------------------------------------------------------------------
+function isInteractionValid(interaction, dateProfile, context) {
+    var instances = interaction.mutatedEvents.instances;
+    for (var instanceId in instances) {
+        if (!rangeContainsRange(dateProfile.validRange, instances[instanceId].range)) {
+            return false;
+        }
+    }
+    return isNewPropsValid({ eventDrag: interaction }, context); // HACK: the eventDrag props is used for ALL interactions
+}
+function isDateSelectionValid(dateSelection, dateProfile, context) {
+    if (!rangeContainsRange(dateProfile.validRange, dateSelection.range)) {
+        return false;
+    }
+    return isNewPropsValid({ dateSelection: dateSelection }, context);
+}
+function isNewPropsValid(newProps, context) {
+    var calendarState = context.getCurrentData();
+    var props = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({ businessHours: calendarState.businessHours, dateSelection: '', eventStore: calendarState.eventStore, eventUiBases: calendarState.eventUiBases, eventSelection: '', eventDrag: null, eventResize: null }, newProps);
+    return (context.pluginHooks.isPropsValid || isPropsValid)(props, context);
+}
+function isPropsValid(state, context, dateSpanMeta, filterConfig) {
+    if (dateSpanMeta === void 0) { dateSpanMeta = {}; }
+    if (state.eventDrag && !isInteractionPropsValid(state, context, dateSpanMeta, filterConfig)) {
+        return false;
+    }
+    if (state.dateSelection && !isDateSelectionPropsValid(state, context, dateSpanMeta, filterConfig)) {
+        return false;
+    }
+    return true;
+}
+// Moving Event Validation
+// ------------------------------------------------------------------------------------------------------------------------
+function isInteractionPropsValid(state, context, dateSpanMeta, filterConfig) {
+    var currentState = context.getCurrentData();
+    var interaction = state.eventDrag; // HACK: the eventDrag props is used for ALL interactions
+    var subjectEventStore = interaction.mutatedEvents;
+    var subjectDefs = subjectEventStore.defs;
+    var subjectInstances = subjectEventStore.instances;
+    var subjectConfigs = compileEventUis(subjectDefs, interaction.isEvent ?
+        state.eventUiBases :
+        { '': currentState.selectionConfig });
+    if (filterConfig) {
+        subjectConfigs = mapHash(subjectConfigs, filterConfig);
+    }
+    // exclude the subject events. TODO: exclude defs too?
+    var otherEventStore = excludeInstances(state.eventStore, interaction.affectedEvents.instances);
+    var otherDefs = otherEventStore.defs;
+    var otherInstances = otherEventStore.instances;
+    var otherConfigs = compileEventUis(otherDefs, state.eventUiBases);
+    for (var subjectInstanceId in subjectInstances) {
+        var subjectInstance = subjectInstances[subjectInstanceId];
+        var subjectRange = subjectInstance.range;
+        var subjectConfig = subjectConfigs[subjectInstance.defId];
+        var subjectDef = subjectDefs[subjectInstance.defId];
+        // constraint
+        if (!allConstraintsPass(subjectConfig.constraints, subjectRange, otherEventStore, state.businessHours, context)) {
+            return false;
+        }
+        // overlap
+        var eventOverlap = context.options.eventOverlap;
+        var eventOverlapFunc = typeof eventOverlap === 'function' ? eventOverlap : null;
+        for (var otherInstanceId in otherInstances) {
+            var otherInstance = otherInstances[otherInstanceId];
+            // intersect! evaluate
+            if (rangesIntersect(subjectRange, otherInstance.range)) {
+                var otherOverlap = otherConfigs[otherInstance.defId].overlap;
+                // consider the other event's overlap. only do this if the subject event is a "real" event
+                if (otherOverlap === false && interaction.isEvent) {
+                    return false;
+                }
+                if (subjectConfig.overlap === false) {
+                    return false;
+                }
+                if (eventOverlapFunc && !eventOverlapFunc(new EventApi(context, otherDefs[otherInstance.defId], otherInstance), // still event
+                new EventApi(context, subjectDef, subjectInstance))) {
+                    return false;
+                }
+            }
+        }
+        // allow (a function)
+        var calendarEventStore = currentState.eventStore; // need global-to-calendar, not local to component (splittable)state
+        for (var _i = 0, _a = subjectConfig.allows; _i < _a.length; _i++) {
+            var subjectAllow = _a[_i];
+            var subjectDateSpan = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, dateSpanMeta), { range: subjectInstance.range, allDay: subjectDef.allDay });
+            var origDef = calendarEventStore.defs[subjectDef.defId];
+            var origInstance = calendarEventStore.instances[subjectInstanceId];
+            var eventApi = void 0;
+            if (origDef) { // was previously in the calendar
+                eventApi = new EventApi(context, origDef, origInstance);
+            }
+            else { // was an external event
+                eventApi = new EventApi(context, subjectDef); // no instance, because had no dates
+            }
+            if (!subjectAllow(buildDateSpanApiWithContext(subjectDateSpan, context), eventApi)) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+// Date Selection Validation
+// ------------------------------------------------------------------------------------------------------------------------
+function isDateSelectionPropsValid(state, context, dateSpanMeta, filterConfig) {
+    var relevantEventStore = state.eventStore;
+    var relevantDefs = relevantEventStore.defs;
+    var relevantInstances = relevantEventStore.instances;
+    var selection = state.dateSelection;
+    var selectionRange = selection.range;
+    var selectionConfig = context.getCurrentData().selectionConfig;
+    if (filterConfig) {
+        selectionConfig = filterConfig(selectionConfig);
+    }
+    // constraint
+    if (!allConstraintsPass(selectionConfig.constraints, selectionRange, relevantEventStore, state.businessHours, context)) {
+        return false;
+    }
+    // overlap
+    var selectOverlap = context.options.selectOverlap;
+    var selectOverlapFunc = typeof selectOverlap === 'function' ? selectOverlap : null;
+    for (var relevantInstanceId in relevantInstances) {
+        var relevantInstance = relevantInstances[relevantInstanceId];
+        // intersect! evaluate
+        if (rangesIntersect(selectionRange, relevantInstance.range)) {
+            if (selectionConfig.overlap === false) {
+                return false;
+            }
+            if (selectOverlapFunc && !selectOverlapFunc(new EventApi(context, relevantDefs[relevantInstance.defId], relevantInstance), null)) {
+                return false;
+            }
+        }
+    }
+    // allow (a function)
+    for (var _i = 0, _a = selectionConfig.allows; _i < _a.length; _i++) {
+        var selectionAllow = _a[_i];
+        var fullDateSpan = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, dateSpanMeta), selection);
+        if (!selectionAllow(buildDateSpanApiWithContext(fullDateSpan, context), null)) {
+            return false;
+        }
+    }
+    return true;
+}
+// Constraint Utils
+// ------------------------------------------------------------------------------------------------------------------------
+function allConstraintsPass(constraints, subjectRange, otherEventStore, businessHoursUnexpanded, context) {
+    for (var _i = 0, constraints_1 = constraints; _i < constraints_1.length; _i++) {
+        var constraint = constraints_1[_i];
+        if (!anyRangesContainRange(constraintToRanges(constraint, subjectRange, otherEventStore, businessHoursUnexpanded, context), subjectRange)) {
+            return false;
+        }
+    }
+    return true;
+}
+function constraintToRanges(constraint, subjectRange, // for expanding a recurring constraint, or expanding business hours
+otherEventStore, // for if constraint is an even group ID
+businessHoursUnexpanded, // for if constraint is 'businessHours'
+context) {
+    if (constraint === 'businessHours') {
+        return eventStoreToRanges(expandRecurring(businessHoursUnexpanded, subjectRange, context));
+    }
+    if (typeof constraint === 'string') { // an group ID
+        return eventStoreToRanges(filterEventStoreDefs(otherEventStore, function (eventDef) { return eventDef.groupId === constraint; }));
+    }
+    if (typeof constraint === 'object' && constraint) { // non-null object
+        return eventStoreToRanges(expandRecurring(constraint, subjectRange, context));
+    }
+    return []; // if it's false
+}
+// TODO: move to event-store file?
+function eventStoreToRanges(eventStore) {
+    var instances = eventStore.instances;
+    var ranges = [];
+    for (var instanceId in instances) {
+        ranges.push(instances[instanceId].range);
+    }
+    return ranges;
+}
+// TODO: move to geom file?
+function anyRangesContainRange(outerRanges, innerRange) {
+    for (var _i = 0, outerRanges_1 = outerRanges; _i < outerRanges_1.length; _i++) {
+        var outerRange = outerRanges_1[_i];
+        if (rangeContainsRange(outerRange, innerRange)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+var VISIBLE_HIDDEN_RE = /^(visible|hidden)$/;
+var Scroller = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(Scroller, _super);
+    function Scroller() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.handleEl = function (el) {
+            _this.el = el;
+            setRef(_this.props.elRef, el);
+        };
+        return _this;
+    }
+    Scroller.prototype.render = function () {
+        var props = this.props;
+        var liquid = props.liquid, liquidIsAbsolute = props.liquidIsAbsolute;
+        var isAbsolute = liquid && liquidIsAbsolute;
+        var className = ['fc-scroller'];
+        if (liquid) {
+            if (liquidIsAbsolute) {
+                className.push('fc-scroller-liquid-absolute');
+            }
+            else {
+                className.push('fc-scroller-liquid');
+            }
+        }
+        return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", { ref: this.handleEl, className: className.join(' '), style: {
+                overflowX: props.overflowX,
+                overflowY: props.overflowY,
+                left: (isAbsolute && -(props.overcomeLeft || 0)) || '',
+                right: (isAbsolute && -(props.overcomeRight || 0)) || '',
+                bottom: (isAbsolute && -(props.overcomeBottom || 0)) || '',
+                marginLeft: (!isAbsolute && -(props.overcomeLeft || 0)) || '',
+                marginRight: (!isAbsolute && -(props.overcomeRight || 0)) || '',
+                marginBottom: (!isAbsolute && -(props.overcomeBottom || 0)) || '',
+                maxHeight: props.maxHeight || '',
+            } }, props.children));
+    };
+    Scroller.prototype.needsXScrolling = function () {
+        if (VISIBLE_HIDDEN_RE.test(this.props.overflowX)) {
+            return false;
+        }
+        // testing scrollWidth>clientWidth is unreliable cross-browser when pixel heights aren't integers.
+        // much more reliable to see if children are taller than the scroller, even tho doesn't account for
+        // inner-child margins and absolute positioning
+        var el = this.el;
+        var realClientWidth = this.el.getBoundingClientRect().width - this.getYScrollbarWidth();
+        var children = el.children;
+        for (var i = 0; i < children.length; i += 1) {
+            var childEl = children[i];
+            if (childEl.getBoundingClientRect().width > realClientWidth) {
+                return true;
+            }
+        }
+        return false;
+    };
+    Scroller.prototype.needsYScrolling = function () {
+        if (VISIBLE_HIDDEN_RE.test(this.props.overflowY)) {
+            return false;
+        }
+        // testing scrollHeight>clientHeight is unreliable cross-browser when pixel heights aren't integers.
+        // much more reliable to see if children are taller than the scroller, even tho doesn't account for
+        // inner-child margins and absolute positioning
+        var el = this.el;
+        var realClientHeight = this.el.getBoundingClientRect().height - this.getXScrollbarWidth();
+        var children = el.children;
+        for (var i = 0; i < children.length; i += 1) {
+            var childEl = children[i];
+            if (childEl.getBoundingClientRect().height > realClientHeight) {
+                return true;
+            }
+        }
+        return false;
+    };
+    Scroller.prototype.getXScrollbarWidth = function () {
+        if (VISIBLE_HIDDEN_RE.test(this.props.overflowX)) {
+            return 0;
+        }
+        return this.el.offsetHeight - this.el.clientHeight; // only works because we guarantee no borders. TODO: add to CSS with important?
+    };
+    Scroller.prototype.getYScrollbarWidth = function () {
+        if (VISIBLE_HIDDEN_RE.test(this.props.overflowY)) {
+            return 0;
+        }
+        return this.el.offsetWidth - this.el.clientWidth; // only works because we guarantee no borders. TODO: add to CSS with important?
+    };
+    return Scroller;
+}(BaseComponent));
+
+/*
+TODO: somehow infer OtherArgs from masterCallback?
+TODO: infer RefType from masterCallback if provided
+*/
+var RefMap = /** @class */ (function () {
+    function RefMap(masterCallback) {
+        var _this = this;
+        this.masterCallback = masterCallback;
+        this.currentMap = {};
+        this.depths = {};
+        this.callbackMap = {};
+        this.handleValue = function (val, key) {
+            var _a = _this, depths = _a.depths, currentMap = _a.currentMap;
+            var removed = false;
+            var added = false;
+            if (val !== null) {
+                // for bug... ACTUALLY: can probably do away with this now that callers don't share numeric indices anymore
+                removed = (key in currentMap);
+                currentMap[key] = val;
+                depths[key] = (depths[key] || 0) + 1;
+                added = true;
+            }
+            else {
+                depths[key] -= 1;
+                if (!depths[key]) {
+                    delete currentMap[key];
+                    delete _this.callbackMap[key];
+                    removed = true;
+                }
+            }
+            if (_this.masterCallback) {
+                if (removed) {
+                    _this.masterCallback(null, String(key));
+                }
+                if (added) {
+                    _this.masterCallback(val, String(key));
+                }
+            }
+        };
+    }
+    RefMap.prototype.createRef = function (key) {
+        var _this = this;
+        var refCallback = this.callbackMap[key];
+        if (!refCallback) {
+            refCallback = this.callbackMap[key] = function (val) {
+                _this.handleValue(val, String(key));
+            };
+        }
+        return refCallback;
+    };
+    // TODO: check callers that don't care about order. should use getAll instead
+    // NOTE: this method has become less valuable now that we are encouraged to map order by some other index
+    // TODO: provide ONE array-export function, buildArray, which fails on non-numeric indexes. caller can manipulate and "collect"
+    RefMap.prototype.collect = function (startIndex, endIndex, step) {
+        return collectFromHash(this.currentMap, startIndex, endIndex, step);
+    };
+    RefMap.prototype.getAll = function () {
+        return hashValuesToArray(this.currentMap);
+    };
+    return RefMap;
+}());
+
+function computeShrinkWidth(chunkEls) {
+    var shrinkCells = findElements(chunkEls, '.fc-scrollgrid-shrink');
+    var largestWidth = 0;
+    for (var _i = 0, shrinkCells_1 = shrinkCells; _i < shrinkCells_1.length; _i++) {
+        var shrinkCell = shrinkCells_1[_i];
+        largestWidth = Math.max(largestWidth, computeSmallestCellWidth(shrinkCell));
+    }
+    return Math.ceil(largestWidth); // <table> elements work best with integers. round up to ensure contents fits
+}
+function getSectionHasLiquidHeight(props, sectionConfig) {
+    return props.liquid && sectionConfig.liquid; // does the section do liquid-height? (need to have whole scrollgrid liquid-height as well)
+}
+function getAllowYScrolling(props, sectionConfig) {
+    return sectionConfig.maxHeight != null || // if its possible for the height to max out, we might need scrollbars
+        getSectionHasLiquidHeight(props, sectionConfig); // if the section is liquid height, it might condense enough to require scrollbars
+}
+// TODO: ONLY use `arg`. force out internal function to use same API
+function renderChunkContent(sectionConfig, chunkConfig, arg, isHeader) {
+    var expandRows = arg.expandRows;
+    var content = typeof chunkConfig.content === 'function' ?
+        chunkConfig.content(arg) :
+        Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])('table', {
+            role: 'presentation',
+            className: [
+                chunkConfig.tableClassName,
+                sectionConfig.syncRowHeights ? 'fc-scrollgrid-sync-table' : '',
+            ].join(' '),
+            style: {
+                minWidth: arg.tableMinWidth,
+                width: arg.clientWidth,
+                height: expandRows ? arg.clientHeight : '', // css `height` on a <table> serves as a min-height
+            },
+        }, arg.tableColGroupNode, Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(isHeader ? 'thead' : 'tbody', {
+            role: 'presentation',
+        }, typeof chunkConfig.rowContent === 'function'
+            ? chunkConfig.rowContent(arg)
+            : chunkConfig.rowContent));
+    return content;
+}
+function isColPropsEqual(cols0, cols1) {
+    return isArraysEqual(cols0, cols1, isPropsEqual);
+}
+function renderMicroColGroup(cols, shrinkWidth) {
+    var colNodes = [];
+    /*
+    for ColProps with spans, it would have been great to make a single <col span="">
+    HOWEVER, Chrome was getting messing up distributing the width to <td>/<th> elements with colspans.
+    SOLUTION: making individual <col> elements makes Chrome behave.
+    */
+    for (var _i = 0, cols_1 = cols; _i < cols_1.length; _i++) {
+        var colProps = cols_1[_i];
+        var span = colProps.span || 1;
+        for (var i = 0; i < span; i += 1) {
+            colNodes.push(Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("col", { style: {
+                    width: colProps.width === 'shrink' ? sanitizeShrinkWidth(shrinkWidth) : (colProps.width || ''),
+                    minWidth: colProps.minWidth || '',
+                } }));
+        }
+    }
+    return _vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"].apply(void 0, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spreadArray"])(['colgroup', {}], colNodes));
+}
+function sanitizeShrinkWidth(shrinkWidth) {
+    /* why 4? if we do 0, it will kill any border, which are needed for computeSmallestCellWidth
+    4 accounts for 2 2-pixel borders. TODO: better solution? */
+    return shrinkWidth == null ? 4 : shrinkWidth;
+}
+function hasShrinkWidth(cols) {
+    for (var _i = 0, cols_2 = cols; _i < cols_2.length; _i++) {
+        var col = cols_2[_i];
+        if (col.width === 'shrink') {
+            return true;
+        }
+    }
+    return false;
+}
+function getScrollGridClassNames(liquid, context) {
+    var classNames = [
+        'fc-scrollgrid',
+        context.theme.getClass('table'),
+    ];
+    if (liquid) {
+        classNames.push('fc-scrollgrid-liquid');
+    }
+    return classNames;
+}
+function getSectionClassNames(sectionConfig, wholeTableVGrow) {
+    var classNames = [
+        'fc-scrollgrid-section',
+        "fc-scrollgrid-section-" + sectionConfig.type,
+        sectionConfig.className, // used?
+    ];
+    if (wholeTableVGrow && sectionConfig.liquid && sectionConfig.maxHeight == null) {
+        classNames.push('fc-scrollgrid-section-liquid');
+    }
+    if (sectionConfig.isSticky) {
+        classNames.push('fc-scrollgrid-section-sticky');
+    }
+    return classNames;
+}
+function renderScrollShim(arg) {
+    return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", { className: "fc-scrollgrid-sticky-shim", style: {
+            width: arg.clientWidth,
+            minWidth: arg.tableMinWidth,
+        } }));
+}
+function getStickyHeaderDates(options) {
+    var stickyHeaderDates = options.stickyHeaderDates;
+    if (stickyHeaderDates == null || stickyHeaderDates === 'auto') {
+        stickyHeaderDates = options.height === 'auto' || options.viewHeight === 'auto';
+    }
+    return stickyHeaderDates;
+}
+function getStickyFooterScrollbar(options) {
+    var stickyFooterScrollbar = options.stickyFooterScrollbar;
+    if (stickyFooterScrollbar == null || stickyFooterScrollbar === 'auto') {
+        stickyFooterScrollbar = options.height === 'auto' || options.viewHeight === 'auto';
+    }
+    return stickyFooterScrollbar;
+}
+
+var SimpleScrollGrid = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(SimpleScrollGrid, _super);
+    function SimpleScrollGrid() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.processCols = memoize(function (a) { return a; }, isColPropsEqual); // so we get same `cols` props every time
+        // yucky to memoize VNodes, but much more efficient for consumers
+        _this.renderMicroColGroup = memoize(renderMicroColGroup);
+        _this.scrollerRefs = new RefMap();
+        _this.scrollerElRefs = new RefMap(_this._handleScrollerEl.bind(_this));
+        _this.state = {
+            shrinkWidth: null,
+            forceYScrollbars: false,
+            scrollerClientWidths: {},
+            scrollerClientHeights: {},
+        };
+        // TODO: can do a really simple print-view. dont need to join rows
+        _this.handleSizing = function () {
+            _this.safeSetState(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({ shrinkWidth: _this.computeShrinkWidth() }, _this.computeScrollerDims()));
+        };
+        return _this;
+    }
+    SimpleScrollGrid.prototype.render = function () {
+        var _a = this, props = _a.props, state = _a.state, context = _a.context;
+        var sectionConfigs = props.sections || [];
+        var cols = this.processCols(props.cols);
+        var microColGroupNode = this.renderMicroColGroup(cols, state.shrinkWidth);
+        var classNames = getScrollGridClassNames(props.liquid, context);
+        if (props.collapsibleWidth) {
+            classNames.push('fc-scrollgrid-collapsible');
+        }
+        // TODO: make DRY
+        var configCnt = sectionConfigs.length;
+        var configI = 0;
+        var currentConfig;
+        var headSectionNodes = [];
+        var bodySectionNodes = [];
+        var footSectionNodes = [];
+        while (configI < configCnt && (currentConfig = sectionConfigs[configI]).type === 'header') {
+            headSectionNodes.push(this.renderSection(currentConfig, microColGroupNode, true));
+            configI += 1;
+        }
+        while (configI < configCnt && (currentConfig = sectionConfigs[configI]).type === 'body') {
+            bodySectionNodes.push(this.renderSection(currentConfig, microColGroupNode, false));
+            configI += 1;
+        }
+        while (configI < configCnt && (currentConfig = sectionConfigs[configI]).type === 'footer') {
+            footSectionNodes.push(this.renderSection(currentConfig, microColGroupNode, true));
+            configI += 1;
+        }
+        // firefox bug: when setting height on table and there is a thead or tfoot,
+        // the necessary height:100% on the liquid-height body section forces the *whole* table to be taller. (bug #5524)
+        // use getCanVGrowWithinCell as a way to detect table-stupid firefox.
+        // if so, use a simpler dom structure, jam everything into a lone tbody.
+        var isBuggy = !getCanVGrowWithinCell();
+        var roleAttrs = { role: 'rowgroup' };
+        return Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])('table', {
+            role: 'grid',
+            className: classNames.join(' '),
+            style: { height: props.height },
+        }, Boolean(!isBuggy && headSectionNodes.length) && _vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"].apply(void 0, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spreadArray"])(['thead', roleAttrs], headSectionNodes)), Boolean(!isBuggy && bodySectionNodes.length) && _vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"].apply(void 0, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spreadArray"])(['tbody', roleAttrs], bodySectionNodes)), Boolean(!isBuggy && footSectionNodes.length) && _vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"].apply(void 0, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spreadArray"])(['tfoot', roleAttrs], footSectionNodes)), isBuggy && _vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"].apply(void 0, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spreadArray"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spreadArray"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spreadArray"])(['tbody', roleAttrs], headSectionNodes), bodySectionNodes), footSectionNodes)));
+    };
+    SimpleScrollGrid.prototype.renderSection = function (sectionConfig, microColGroupNode, isHeader) {
+        if ('outerContent' in sectionConfig) {
+            return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["Fragment"], { key: sectionConfig.key }, sectionConfig.outerContent));
+        }
+        return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("tr", { key: sectionConfig.key, role: "presentation", className: getSectionClassNames(sectionConfig, this.props.liquid).join(' ') }, this.renderChunkTd(sectionConfig, microColGroupNode, sectionConfig.chunk, isHeader)));
+    };
+    SimpleScrollGrid.prototype.renderChunkTd = function (sectionConfig, microColGroupNode, chunkConfig, isHeader) {
+        if ('outerContent' in chunkConfig) {
+            return chunkConfig.outerContent;
+        }
+        var props = this.props;
+        var _a = this.state, forceYScrollbars = _a.forceYScrollbars, scrollerClientWidths = _a.scrollerClientWidths, scrollerClientHeights = _a.scrollerClientHeights;
+        var needsYScrolling = getAllowYScrolling(props, sectionConfig); // TODO: do lazily. do in section config?
+        var isLiquid = getSectionHasLiquidHeight(props, sectionConfig);
+        // for `!props.liquid` - is WHOLE scrollgrid natural height?
+        // TODO: do same thing in advanced scrollgrid? prolly not b/c always has horizontal scrollbars
+        var overflowY = !props.liquid ? 'visible' :
+            forceYScrollbars ? 'scroll' :
+                !needsYScrolling ? 'hidden' :
+                    'auto';
+        var sectionKey = sectionConfig.key;
+        var content = renderChunkContent(sectionConfig, chunkConfig, {
+            tableColGroupNode: microColGroupNode,
+            tableMinWidth: '',
+            clientWidth: (!props.collapsibleWidth && scrollerClientWidths[sectionKey] !== undefined) ? scrollerClientWidths[sectionKey] : null,
+            clientHeight: scrollerClientHeights[sectionKey] !== undefined ? scrollerClientHeights[sectionKey] : null,
+            expandRows: sectionConfig.expandRows,
+            syncRowHeights: false,
+            rowSyncHeights: [],
+            reportRowHeightChange: function () { },
+        }, isHeader);
+        return Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(isHeader ? 'th' : 'td', {
+            ref: chunkConfig.elRef,
+            role: 'presentation',
+        }, Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", { className: "fc-scroller-harness" + (isLiquid ? ' fc-scroller-harness-liquid' : '') },
+            Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(Scroller, { ref: this.scrollerRefs.createRef(sectionKey), elRef: this.scrollerElRefs.createRef(sectionKey), overflowY: overflowY, overflowX: !props.liquid ? 'visible' : 'hidden' /* natural height? */, maxHeight: sectionConfig.maxHeight, liquid: isLiquid, liquidIsAbsolute // because its within a harness
+                : true }, content)));
+    };
+    SimpleScrollGrid.prototype._handleScrollerEl = function (scrollerEl, key) {
+        var section = getSectionByKey(this.props.sections, key);
+        if (section) {
+            setRef(section.chunk.scrollerElRef, scrollerEl);
+        }
+    };
+    SimpleScrollGrid.prototype.componentDidMount = function () {
+        this.handleSizing();
+        this.context.addResizeHandler(this.handleSizing);
+    };
+    SimpleScrollGrid.prototype.componentDidUpdate = function () {
+        // TODO: need better solution when state contains non-sizing things
+        this.handleSizing();
+    };
+    SimpleScrollGrid.prototype.componentWillUnmount = function () {
+        this.context.removeResizeHandler(this.handleSizing);
+    };
+    SimpleScrollGrid.prototype.computeShrinkWidth = function () {
+        return hasShrinkWidth(this.props.cols)
+            ? computeShrinkWidth(this.scrollerElRefs.getAll())
+            : 0;
+    };
+    SimpleScrollGrid.prototype.computeScrollerDims = function () {
+        var scrollbarWidth = getScrollbarWidths();
+        var _a = this, scrollerRefs = _a.scrollerRefs, scrollerElRefs = _a.scrollerElRefs;
+        var forceYScrollbars = false;
+        var scrollerClientWidths = {};
+        var scrollerClientHeights = {};
+        for (var sectionKey in scrollerRefs.currentMap) {
+            var scroller = scrollerRefs.currentMap[sectionKey];
+            if (scroller && scroller.needsYScrolling()) {
+                forceYScrollbars = true;
+                break;
+            }
+        }
+        for (var _i = 0, _b = this.props.sections; _i < _b.length; _i++) {
+            var section = _b[_i];
+            var sectionKey = section.key;
+            var scrollerEl = scrollerElRefs.currentMap[sectionKey];
+            if (scrollerEl) {
+                var harnessEl = scrollerEl.parentNode; // TODO: weird way to get this. need harness b/c doesn't include table borders
+                scrollerClientWidths[sectionKey] = Math.floor(harnessEl.getBoundingClientRect().width - (forceYScrollbars
+                    ? scrollbarWidth.y // use global because scroller might not have scrollbars yet but will need them in future
+                    : 0));
+                scrollerClientHeights[sectionKey] = Math.floor(harnessEl.getBoundingClientRect().height);
+            }
+        }
+        return { forceYScrollbars: forceYScrollbars, scrollerClientWidths: scrollerClientWidths, scrollerClientHeights: scrollerClientHeights };
+    };
+    return SimpleScrollGrid;
+}(BaseComponent));
+SimpleScrollGrid.addStateEquality({
+    scrollerClientWidths: isPropsEqual,
+    scrollerClientHeights: isPropsEqual,
+});
+function getSectionByKey(sections, key) {
+    for (var _i = 0, sections_1 = sections; _i < sections_1.length; _i++) {
+        var section = sections_1[_i];
+        if (section.key === key) {
+            return section;
+        }
+    }
+    return null;
+}
+
+var EventRoot = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(EventRoot, _super);
+    function EventRoot() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.elRef = Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createRef"])();
+        return _this;
+    }
+    EventRoot.prototype.render = function () {
+        var _a = this, props = _a.props, context = _a.context;
+        var options = context.options;
+        var seg = props.seg;
+        var eventRange = seg.eventRange;
+        var ui = eventRange.ui;
+        var hookProps = {
+            event: new EventApi(context, eventRange.def, eventRange.instance),
+            view: context.viewApi,
+            timeText: props.timeText,
+            textColor: ui.textColor,
+            backgroundColor: ui.backgroundColor,
+            borderColor: ui.borderColor,
+            isDraggable: !props.disableDragging && computeSegDraggable(seg, context),
+            isStartResizable: !props.disableResizing && computeSegStartResizable(seg, context),
+            isEndResizable: !props.disableResizing && computeSegEndResizable(seg),
+            isMirror: Boolean(props.isDragging || props.isResizing || props.isDateSelecting),
+            isStart: Boolean(seg.isStart),
+            isEnd: Boolean(seg.isEnd),
+            isPast: Boolean(props.isPast),
+            isFuture: Boolean(props.isFuture),
+            isToday: Boolean(props.isToday),
+            isSelected: Boolean(props.isSelected),
+            isDragging: Boolean(props.isDragging),
+            isResizing: Boolean(props.isResizing),
+        };
+        var standardClassNames = getEventClassNames(hookProps).concat(ui.classNames);
+        return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(RenderHook, { hookProps: hookProps, classNames: options.eventClassNames, content: options.eventContent, defaultContent: props.defaultContent, didMount: options.eventDidMount, willUnmount: options.eventWillUnmount, elRef: this.elRef }, function (rootElRef, customClassNames, innerElRef, innerContent) { return props.children(rootElRef, standardClassNames.concat(customClassNames), innerElRef, innerContent, hookProps); }));
+    };
+    EventRoot.prototype.componentDidMount = function () {
+        setElSeg(this.elRef.current, this.props.seg);
+    };
+    /*
+    need to re-assign seg to the element if seg changes, even if the element is the same
+    */
+    EventRoot.prototype.componentDidUpdate = function (prevProps) {
+        var seg = this.props.seg;
+        if (seg !== prevProps.seg) {
+            setElSeg(this.elRef.current, seg);
+        }
+    };
+    return EventRoot;
+}(BaseComponent));
+
+// should not be a purecomponent
+var StandardEvent = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(StandardEvent, _super);
+    function StandardEvent() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    StandardEvent.prototype.render = function () {
+        var _a = this, props = _a.props, context = _a.context;
+        var seg = props.seg;
+        var timeFormat = context.options.eventTimeFormat || props.defaultTimeFormat;
+        var timeText = buildSegTimeText(seg, timeFormat, context, props.defaultDisplayEventTime, props.defaultDisplayEventEnd);
+        return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(EventRoot, { seg: seg, timeText: timeText, disableDragging: props.disableDragging, disableResizing: props.disableResizing, defaultContent: props.defaultContent || renderInnerContent$1, isDragging: props.isDragging, isResizing: props.isResizing, isDateSelecting: props.isDateSelecting, isSelected: props.isSelected, isPast: props.isPast, isFuture: props.isFuture, isToday: props.isToday }, function (rootElRef, classNames, innerElRef, innerContent, hookProps) { return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("a", Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({ className: props.extraClassNames.concat(classNames).join(' '), style: {
+                borderColor: hookProps.borderColor,
+                backgroundColor: hookProps.backgroundColor,
+            }, ref: rootElRef }, getSegAnchorAttrs(seg, context)),
+            Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", { className: "fc-event-main", ref: innerElRef, style: { color: hookProps.textColor } }, innerContent),
+            hookProps.isStartResizable &&
+                Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", { className: "fc-event-resizer fc-event-resizer-start" }),
+            hookProps.isEndResizable &&
+                Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", { className: "fc-event-resizer fc-event-resizer-end" }))); }));
+    };
+    return StandardEvent;
+}(BaseComponent));
+function renderInnerContent$1(innerProps) {
+    return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", { className: "fc-event-main-frame" },
+        innerProps.timeText && (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", { className: "fc-event-time" }, innerProps.timeText)),
+        Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", { className: "fc-event-title-container" },
+            Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", { className: "fc-event-title fc-sticky" }, innerProps.event.title || Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["Fragment"], null, "\u00A0")))));
+}
+
+var NowIndicatorRoot = function (props) { return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ViewContextType.Consumer, null, function (context) {
+    var options = context.options;
+    var hookProps = {
+        isAxis: props.isAxis,
+        date: context.dateEnv.toDate(props.date),
+        view: context.viewApi,
+    };
+    return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(RenderHook, { hookProps: hookProps, classNames: options.nowIndicatorClassNames, content: options.nowIndicatorContent, didMount: options.nowIndicatorDidMount, willUnmount: options.nowIndicatorWillUnmount }, props.children));
+})); };
+
+var DAY_NUM_FORMAT = createFormatter({ day: 'numeric' });
+var DayCellContent = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(DayCellContent, _super);
+    function DayCellContent() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    DayCellContent.prototype.render = function () {
+        var _a = this, props = _a.props, context = _a.context;
+        var options = context.options;
+        var hookProps = refineDayCellHookProps({
+            date: props.date,
+            dateProfile: props.dateProfile,
+            todayRange: props.todayRange,
+            showDayNumber: props.showDayNumber,
+            extraProps: props.extraHookProps,
+            viewApi: context.viewApi,
+            dateEnv: context.dateEnv,
+        });
+        return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ContentHook, { hookProps: hookProps, content: options.dayCellContent, defaultContent: props.defaultContent }, props.children));
+    };
+    return DayCellContent;
+}(BaseComponent));
+function refineDayCellHookProps(raw) {
+    var date = raw.date, dateEnv = raw.dateEnv;
+    var dayMeta = getDateMeta(date, raw.todayRange, null, raw.dateProfile);
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({ date: dateEnv.toDate(date), view: raw.viewApi }, dayMeta), { dayNumberText: raw.showDayNumber ? dateEnv.format(date, DAY_NUM_FORMAT) : '' }), raw.extraProps);
+}
+
+var DayCellRoot = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(DayCellRoot, _super);
+    function DayCellRoot() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.refineHookProps = memoizeObjArg(refineDayCellHookProps);
+        _this.normalizeClassNames = buildClassNameNormalizer();
+        return _this;
+    }
+    DayCellRoot.prototype.render = function () {
+        var _a = this, props = _a.props, context = _a.context;
+        var options = context.options;
+        var hookProps = this.refineHookProps({
+            date: props.date,
+            dateProfile: props.dateProfile,
+            todayRange: props.todayRange,
+            showDayNumber: props.showDayNumber,
+            extraProps: props.extraHookProps,
+            viewApi: context.viewApi,
+            dateEnv: context.dateEnv,
+        });
+        var classNames = getDayClassNames(hookProps, context.theme).concat(hookProps.isDisabled
+            ? [] // don't use custom classNames if disabled
+            : this.normalizeClassNames(options.dayCellClassNames, hookProps));
+        var dataAttrs = hookProps.isDisabled ? {} : {
+            'data-date': formatDayString(props.date),
+        };
+        return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(MountHook, { hookProps: hookProps, didMount: options.dayCellDidMount, willUnmount: options.dayCellWillUnmount, elRef: props.elRef }, function (rootElRef) { return props.children(rootElRef, classNames, dataAttrs, hookProps.isDisabled); }));
+    };
+    return DayCellRoot;
+}(BaseComponent));
+
+function renderFill(fillType) {
+    return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", { className: "fc-" + fillType }));
+}
+var BgEvent = function (props) { return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(EventRoot, { defaultContent: renderInnerContent, seg: props.seg /* uselesss i think */, timeText: "", disableDragging: true, disableResizing: true, isDragging: false, isResizing: false, isDateSelecting: false, isSelected: false, isPast: props.isPast, isFuture: props.isFuture, isToday: props.isToday }, function (rootElRef, classNames, innerElRef, innerContent, hookProps) { return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", { ref: rootElRef, className: ['fc-bg-event'].concat(classNames).join(' '), style: {
+        backgroundColor: hookProps.backgroundColor,
+    } }, innerContent)); })); };
+function renderInnerContent(props) {
+    var title = props.event.title;
+    return title && (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", { className: "fc-event-title" }, props.event.title));
+}
+
+var WeekNumberRoot = function (props) { return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ViewContextType.Consumer, null, function (context) {
+    var dateEnv = context.dateEnv, options = context.options;
+    var date = props.date;
+    var format = options.weekNumberFormat || props.defaultFormat;
+    var num = dateEnv.computeWeekNumber(date); // TODO: somehow use for formatting as well?
+    var text = dateEnv.format(date, format);
+    var hookProps = { num: num, text: text, date: date };
+    return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(RenderHook, { hookProps: hookProps, classNames: options.weekNumberClassNames, content: options.weekNumberContent, defaultContent: renderInner, didMount: options.weekNumberDidMount, willUnmount: options.weekNumberWillUnmount }, props.children));
+})); };
+function renderInner(innerProps) {
+    return innerProps.text;
+}
+
+var PADDING_FROM_VIEWPORT = 10;
+var Popover = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(Popover, _super);
+    function Popover() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = {
+            titleId: getUniqueDomId(),
+        };
+        _this.handleRootEl = function (el) {
+            _this.rootEl = el;
+            if (_this.props.elRef) {
+                setRef(_this.props.elRef, el);
+            }
+        };
+        // Triggered when the user clicks *anywhere* in the document, for the autoHide feature
+        _this.handleDocumentMouseDown = function (ev) {
+            // only hide the popover if the click happened outside the popover
+            var target = getEventTargetViaRoot(ev);
+            if (!_this.rootEl.contains(target)) {
+                _this.handleCloseClick();
+            }
+        };
+        _this.handleDocumentKeyDown = function (ev) {
+            if (ev.key === 'Escape') {
+                _this.handleCloseClick();
+            }
+        };
+        _this.handleCloseClick = function () {
+            var onClose = _this.props.onClose;
+            if (onClose) {
+                onClose();
+            }
+        };
+        return _this;
+    }
+    Popover.prototype.render = function () {
+        var _a = this.context, theme = _a.theme, options = _a.options;
+        var _b = this, props = _b.props, state = _b.state;
+        var classNames = [
+            'fc-popover',
+            theme.getClass('popover'),
+        ].concat(props.extraClassNames || []);
+        return Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createPortal"])(Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({ id: props.id, className: classNames.join(' '), "aria-labelledby": state.titleId }, props.extraAttrs, { ref: this.handleRootEl }),
+            Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", { className: 'fc-popover-header ' + theme.getClass('popoverHeader') },
+                Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", { className: "fc-popover-title", id: state.titleId }, props.title),
+                Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", { className: 'fc-popover-close ' + theme.getIconClass('close'), title: options.closeHint, onClick: this.handleCloseClick })),
+            Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", { className: 'fc-popover-body ' + theme.getClass('popoverContent') }, props.children)), props.parentEl);
+    };
+    Popover.prototype.componentDidMount = function () {
+        document.addEventListener('mousedown', this.handleDocumentMouseDown);
+        document.addEventListener('keydown', this.handleDocumentKeyDown);
+        this.updateSize();
+    };
+    Popover.prototype.componentWillUnmount = function () {
+        document.removeEventListener('mousedown', this.handleDocumentMouseDown);
+        document.removeEventListener('keydown', this.handleDocumentKeyDown);
+    };
+    Popover.prototype.updateSize = function () {
+        var isRtl = this.context.isRtl;
+        var _a = this.props, alignmentEl = _a.alignmentEl, alignGridTop = _a.alignGridTop;
+        var rootEl = this.rootEl;
+        var alignmentRect = computeClippedClientRect(alignmentEl);
+        if (alignmentRect) {
+            var popoverDims = rootEl.getBoundingClientRect();
+            // position relative to viewport
+            var popoverTop = alignGridTop
+                ? elementClosest(alignmentEl, '.fc-scrollgrid').getBoundingClientRect().top
+                : alignmentRect.top;
+            var popoverLeft = isRtl ? alignmentRect.right - popoverDims.width : alignmentRect.left;
+            // constrain
+            popoverTop = Math.max(popoverTop, PADDING_FROM_VIEWPORT);
+            popoverLeft = Math.min(popoverLeft, document.documentElement.clientWidth - PADDING_FROM_VIEWPORT - popoverDims.width);
+            popoverLeft = Math.max(popoverLeft, PADDING_FROM_VIEWPORT);
+            var origin_1 = rootEl.offsetParent.getBoundingClientRect();
+            applyStyle(rootEl, {
+                top: popoverTop - origin_1.top,
+                left: popoverLeft - origin_1.left,
+            });
+        }
+    };
+    return Popover;
+}(BaseComponent));
+
+var MorePopover = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(MorePopover, _super);
+    function MorePopover() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.handleRootEl = function (rootEl) {
+            _this.rootEl = rootEl;
+            if (rootEl) {
+                _this.context.registerInteractiveComponent(_this, {
+                    el: rootEl,
+                    useEventCenter: false,
+                });
+            }
+            else {
+                _this.context.unregisterInteractiveComponent(_this);
+            }
+        };
+        return _this;
+    }
+    MorePopover.prototype.render = function () {
+        var _a = this.context, options = _a.options, dateEnv = _a.dateEnv;
+        var props = this.props;
+        var startDate = props.startDate, todayRange = props.todayRange, dateProfile = props.dateProfile;
+        var title = dateEnv.format(startDate, options.dayPopoverFormat);
+        return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(DayCellRoot, { date: startDate, dateProfile: dateProfile, todayRange: todayRange, elRef: this.handleRootEl }, function (rootElRef, dayClassNames, dataAttrs) { return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(Popover, { elRef: rootElRef, id: props.id, title: title, extraClassNames: ['fc-more-popover'].concat(dayClassNames), extraAttrs: dataAttrs /* TODO: make these time-based when not whole-day? */, parentEl: props.parentEl, alignmentEl: props.alignmentEl, alignGridTop: props.alignGridTop, onClose: props.onClose },
+            Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(DayCellContent, { date: startDate, dateProfile: dateProfile, todayRange: todayRange }, function (innerElRef, innerContent) { return (innerContent &&
+                Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", { className: "fc-more-popover-misc", ref: innerElRef }, innerContent)); }),
+            props.children)); }));
+    };
+    MorePopover.prototype.queryHit = function (positionLeft, positionTop, elWidth, elHeight) {
+        var _a = this, rootEl = _a.rootEl, props = _a.props;
+        if (positionLeft >= 0 && positionLeft < elWidth &&
+            positionTop >= 0 && positionTop < elHeight) {
+            return {
+                dateProfile: props.dateProfile,
+                dateSpan: Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({ allDay: true, range: {
+                        start: props.startDate,
+                        end: props.endDate,
+                    } }, props.extraDateSpan),
+                dayEl: rootEl,
+                rect: {
+                    left: 0,
+                    top: 0,
+                    right: elWidth,
+                    bottom: elHeight,
+                },
+                layer: 1, // important when comparing with hits from other components
+            };
+        }
+        return null;
+    };
+    return MorePopover;
+}(DateComponent));
+
+var MoreLinkRoot = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(MoreLinkRoot, _super);
+    function MoreLinkRoot() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.linkElRef = Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createRef"])();
+        _this.state = {
+            isPopoverOpen: false,
+            popoverId: getUniqueDomId(),
+        };
+        _this.handleClick = function (ev) {
+            var _a = _this, props = _a.props, context = _a.context;
+            var moreLinkClick = context.options.moreLinkClick;
+            var date = computeRange(props).start;
+            function buildPublicSeg(seg) {
+                var _a = seg.eventRange, def = _a.def, instance = _a.instance, range = _a.range;
+                return {
+                    event: new EventApi(context, def, instance),
+                    start: context.dateEnv.toDate(range.start),
+                    end: context.dateEnv.toDate(range.end),
+                    isStart: seg.isStart,
+                    isEnd: seg.isEnd,
+                };
+            }
+            if (typeof moreLinkClick === 'function') {
+                moreLinkClick = moreLinkClick({
+                    date: date,
+                    allDay: Boolean(props.allDayDate),
+                    allSegs: props.allSegs.map(buildPublicSeg),
+                    hiddenSegs: props.hiddenSegs.map(buildPublicSeg),
+                    jsEvent: ev,
+                    view: context.viewApi,
+                });
+            }
+            if (!moreLinkClick || moreLinkClick === 'popover') {
+                _this.setState({ isPopoverOpen: true });
+            }
+            else if (typeof moreLinkClick === 'string') { // a view name
+                context.calendarApi.zoomTo(date, moreLinkClick);
+            }
+        };
+        _this.handlePopoverClose = function () {
+            _this.setState({ isPopoverOpen: false });
+        };
+        return _this;
+    }
+    MoreLinkRoot.prototype.render = function () {
+        var _this = this;
+        var _a = this, props = _a.props, state = _a.state;
+        return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ViewContextType.Consumer, null, function (context) {
+            var viewApi = context.viewApi, options = context.options, calendarApi = context.calendarApi;
+            var moreLinkText = options.moreLinkText;
+            var moreCnt = props.moreCnt;
+            var range = computeRange(props);
+            var text = typeof moreLinkText === 'function' // TODO: eventually use formatWithOrdinals
+                ? moreLinkText.call(calendarApi, moreCnt)
+                : "+" + moreCnt + " " + moreLinkText;
+            var title = formatWithOrdinals(options.moreLinkHint, [moreCnt], text);
+            var hookProps = {
+                num: moreCnt,
+                shortText: "+" + moreCnt,
+                text: text,
+                view: viewApi,
+            };
+            return (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["Fragment"], null,
+                Boolean(props.moreCnt) && (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(RenderHook, { elRef: _this.linkElRef, hookProps: hookProps, classNames: options.moreLinkClassNames, content: options.moreLinkContent, defaultContent: props.defaultContent || renderMoreLinkInner, didMount: options.moreLinkDidMount, willUnmount: options.moreLinkWillUnmount }, function (rootElRef, customClassNames, innerElRef, innerContent) { return props.children(rootElRef, ['fc-more-link'].concat(customClassNames), innerElRef, innerContent, _this.handleClick, title, state.isPopoverOpen, state.isPopoverOpen ? state.popoverId : ''); })),
+                state.isPopoverOpen && (Object(_vdom_js__WEBPACK_IMPORTED_MODULE_2__["createElement"])(MorePopover, { id: state.popoverId, startDate: range.start, endDate: range.end, dateProfile: props.dateProfile, todayRange: props.todayRange, extraDateSpan: props.extraDateSpan, parentEl: _this.parentEl, alignmentEl: props.alignmentElRef.current, alignGridTop: props.alignGridTop, onClose: _this.handlePopoverClose }, props.popoverContent()))));
+        }));
+    };
+    MoreLinkRoot.prototype.componentDidMount = function () {
+        this.updateParentEl();
+    };
+    MoreLinkRoot.prototype.componentDidUpdate = function () {
+        this.updateParentEl();
+    };
+    MoreLinkRoot.prototype.updateParentEl = function () {
+        if (this.linkElRef.current) {
+            this.parentEl = elementClosest(this.linkElRef.current, '.fc-view-harness');
+        }
+    };
+    return MoreLinkRoot;
+}(BaseComponent));
+function renderMoreLinkInner(props) {
+    return props.text;
+}
+function computeRange(props) {
+    if (props.allDayDate) {
+        return {
+            start: props.allDayDate,
+            end: addDays(props.allDayDate, 1),
+        };
+    }
+    var hiddenSegs = props.hiddenSegs;
+    return {
+        start: computeEarliestSegStart(hiddenSegs),
+        end: computeLatestSegEnd(hiddenSegs),
+    };
+}
+function computeEarliestSegStart(segs) {
+    return segs.reduce(pickEarliestStart).eventRange.range.start;
+}
+function pickEarliestStart(seg0, seg1) {
+    return seg0.eventRange.range.start < seg1.eventRange.range.start ? seg0 : seg1;
+}
+function computeLatestSegEnd(segs) {
+    return segs.reduce(pickLatestEnd).eventRange.range.end;
+}
+function pickLatestEnd(seg0, seg1) {
+    return seg0.eventRange.range.end > seg1.eventRange.range.end ? seg0 : seg1;
+}
+
+// exports
+// --------------------------------------------------------------------------------------------------
+var version = '5.11.5'; // important to type it, so .d.ts has generic string
+
+
+//# sourceMappingURL=main.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@fullcalendar/common/vdom.js":
+/*!***************************************************!*\
+  !*** ./node_modules/@fullcalendar/common/vdom.js ***!
+  \***************************************************/
+/*! exports provided: Component, Fragment, createContext, createElement, createPortal, createRef, flushSync, render, unmountComponentAtNode */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Component", function() { return Component; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Fragment", function() { return Fragment; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createContext", function() { return createContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createElement", function() { return createElement; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPortal", function() { return createPortal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createRef", function() { return createRef; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "flushSync", function() { return flushSync; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unmountComponentAtNode", function() { return unmountComponentAtNode; });
+/// <reference types="@fullcalendar/core-preact" />
+if (typeof FullCalendarVDom === 'undefined') {
+    throw new Error('Please import the top-level fullcalendar lib before attempting to import a plugin.');
+}
+var Component = FullCalendarVDom.Component;
+var createElement = FullCalendarVDom.createElement;
+var render = FullCalendarVDom.render;
+var createRef = FullCalendarVDom.createRef;
+var Fragment = FullCalendarVDom.Fragment;
+var createContext = FullCalendarVDom.createContext;
+var createPortal = FullCalendarVDom.createPortal;
+var flushSync = FullCalendarVDom.flushSync;
+var unmountComponentAtNode = FullCalendarVDom.unmountComponentAtNode;
+/* eslint-enable */
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@fullcalendar/vue/dist/FullCalendar.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@fullcalendar/vue/dist/FullCalendar.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _fullcalendar_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fullcalendar/core */ "./node_modules/@fullcalendar/vue/node_modules/@fullcalendar/core/main.js");
+/* harmony import */ var _options__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./options */ "./node_modules/@fullcalendar/vue/dist/options.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils */ "./node_modules/@fullcalendar/vue/dist/utils.js");
+/* harmony import */ var _custom_content_type__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./custom-content-type */ "./node_modules/@fullcalendar/vue/dist/custom-content-type.js");
+
+
+
+
+
+
+var FullCalendar = vue__WEBPACK_IMPORTED_MODULE_1___default.a.extend({
+    props: {
+        options: Object
+    },
+    data: initData,
+    render: function (createElement) {
+        return createElement('div', {
+            // when renderId is changed, Vue will trigger a real-DOM async rerender, calling beforeUpdate/updated
+            attrs: { 'data-fc-render-id': this.renderId }
+        });
+    },
+    mounted: function () {
+        var internal = this.$options;
+        internal.scopedSlotOptions = Object(_utils__WEBPACK_IMPORTED_MODULE_4__["mapHash"])(this.$scopedSlots, _custom_content_type__WEBPACK_IMPORTED_MODULE_5__["wrapVDomGenerator"]); // needed for buildOptions
+        var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_2__["Calendar"](this.$el, this.buildOptions(this.options, this));
+        internal.calendar = calendar;
+        calendar.render();
+    },
+    methods: {
+        getApi: getApi,
+        buildOptions: buildOptions,
+    },
+    beforeUpdate: function () {
+        this.getApi().resumeRendering(); // the watcher handlers paused it
+    },
+    beforeDestroy: function () {
+        this.getApi().destroy();
+    },
+    watch: buildWatchers()
+});
+function initData() {
+    return {
+        renderId: 0
+    };
+}
+function buildOptions(suppliedOptions, parent) {
+    var internal = this.$options;
+    suppliedOptions = suppliedOptions || {};
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, internal.scopedSlotOptions), suppliedOptions), { plugins: (suppliedOptions.plugins || []).concat([
+            Object(_custom_content_type__WEBPACK_IMPORTED_MODULE_5__["createVueContentTypePlugin"])(parent)
+        ]) });
+}
+function getApi() {
+    var internal = this.$options;
+    return internal.calendar;
+}
+function buildWatchers() {
+    var watchers = {
+        // watches changes of ALL options and their nested objects,
+        // but this is only a means to be notified of top-level non-complex options changes.
+        options: {
+            deep: true,
+            handler: function (options) {
+                var calendar = this.getApi();
+                calendar.pauseRendering();
+                calendar.resetOptions(this.buildOptions(options, this));
+                this.renderId++; // will queue a rerender
+            }
+        }
+    };
+    var _loop_1 = function (complexOptionName) {
+        // handlers called when nested objects change
+        watchers["options." + complexOptionName] = {
+            deep: true,
+            handler: function (val) {
+                var _a;
+                // unfortunately the handler is called with undefined if new props were set, but the complex one wasn't ever set
+                if (val !== undefined) {
+                    var calendar = this.getApi();
+                    calendar.pauseRendering();
+                    calendar.resetOptions((_a = {},
+                        // the only reason we shallow-copy is to trick FC into knowing there's a nested change.
+                        // TODO: future versions of FC will more gracefully handle event option-changes that are same-reference.
+                        _a[complexOptionName] = Object(_utils__WEBPACK_IMPORTED_MODULE_4__["shallowCopy"])(val),
+                        _a), true);
+                    this.renderId++; // will queue a rerender
+                }
+            }
+        };
+    };
+    for (var complexOptionName in _options__WEBPACK_IMPORTED_MODULE_3__["OPTION_IS_COMPLEX"]) {
+        _loop_1(complexOptionName);
+    }
+    return watchers;
+}
+/* harmony default export */ __webpack_exports__["default"] = (FullCalendar);
+//# sourceMappingURL=FullCalendar.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@fullcalendar/vue/dist/custom-content-type.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@fullcalendar/vue/dist/custom-content-type.js ***!
+  \********************************************************************/
+/*! exports provided: wrapVDomGenerator, createVueContentTypePlugin */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wrapVDomGenerator", function() { return wrapVDomGenerator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createVueContentTypePlugin", function() { return createVueContentTypePlugin; });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fullcalendar/core */ "./node_modules/@fullcalendar/vue/node_modules/@fullcalendar/core/main.js");
+
+
+/*
+wrap it in an object with a `vue` key, which the custom content-type handler system will look for
+*/
+function wrapVDomGenerator(vDomGenerator) {
+    return function (props) {
+        return { vue: vDomGenerator(props) };
+    };
+}
+function createVueContentTypePlugin(parent) {
+    return Object(_fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["createPlugin"])({
+        contentTypeHandlers: {
+            vue: function () { return buildVDomHandler(parent); }, // looks for the `vue` key
+        }
+    });
+}
+function buildVDomHandler(parent) {
+    var currentEl;
+    var v; // the Vue instance
+    function render(el, vDomContent) {
+        if (currentEl !== el) {
+            if (currentEl && v) { // if changing elements, recreate the vue
+                v.$destroy();
+            }
+            currentEl = el;
+        }
+        if (!v) {
+            v = initVue(vDomContent, parent);
+            // vue's mount method *replaces* the given element. create an artificial inner el
+            var innerEl = document.createElement('span');
+            el.appendChild(innerEl);
+            v.$mount(innerEl);
+        }
+        else {
+            v.content = vDomContent;
+        }
+    }
+    function destroy() {
+        if (v) { // needed?
+            v.$destroy();
+        }
+    }
+    return { render: render, destroy: destroy };
+}
+function initVue(initialContent, parent) {
+    return new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
+        parent: parent,
+        data: {
+            content: initialContent,
+        },
+        render: function (h) {
+            var content = this.content;
+            // the slot result can be an array, but the returned value of a vue component's
+            // render method must be a single node.
+            if (content.length === 1) {
+                return content[0];
+            }
+            else {
+                return h('span', {}, content);
+            }
+        }
+    });
+}
+//# sourceMappingURL=custom-content-type.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@fullcalendar/vue/dist/main.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/@fullcalendar/vue/dist/main.js ***!
+  \*****************************************************/
+/*! exports provided: install, default, Component, Fragment, createContext, createElement, createPortal, createRef, flushSync, render, unmountComponentAtNode, BASE_OPTION_DEFAULTS, BASE_OPTION_REFINERS, BaseComponent, BgEvent, CalendarApi, CalendarContent, CalendarDataManager, CalendarDataProvider, CalendarRoot, ContentHook, CustomContentRenderContext, DateComponent, DateEnv, DateProfileGenerator, DayCellContent, DayCellRoot, DayHeader, DaySeriesModel, DayTableModel, DelayedRunner, ElementDragging, ElementScrollController, Emitter, EventApi, EventRoot, EventSourceApi, Interaction, MoreLinkRoot, MountHook, NamedTimeZoneImpl, NowIndicatorRoot, NowTimer, PositionCache, RefMap, RenderHook, ScrollController, ScrollResponder, Scroller, SegHierarchy, SimpleScrollGrid, Slicer, Splitter, StandardEvent, TableDateCell, TableDowCell, Theme, ViewApi, ViewContextType, ViewRoot, WeekNumberRoot, WindowScrollController, addDays, addDurations, addMs, addWeeks, allowContextMenu, allowSelection, applyMutationToEventStore, applyStyle, applyStyleProp, asCleanDays, asRoughMinutes, asRoughMs, asRoughSeconds, binarySearch, buildClassNameNormalizer, buildEntryKey, buildEventApis, buildEventRangeKey, buildHashFromArray, buildIsoString, buildNavLinkAttrs, buildSegCompareObj, buildSegTimeText, collectFromHash, combineEventUis, compareByFieldSpec, compareByFieldSpecs, compareNumbers, compareObjs, computeEarliestSegStart, computeEdges, computeFallbackHeaderFormat, computeHeightAndMargins, computeInnerRect, computeRect, computeSegDraggable, computeSegEndResizable, computeSegStartResizable, computeShrinkWidth, computeSmallestCellWidth, computeVisibleDayRange, config, constrainPoint, createAriaClickAttrs, createDuration, createEmptyEventStore, createEventInstance, createEventUi, createFormatter, createPlugin, diffDates, diffDayAndTime, diffDays, diffPoints, diffWeeks, diffWholeDays, diffWholeWeeks, disableCursor, elementClosest, elementMatches, enableCursor, eventTupleToStore, filterEventStoreDefs, filterHash, findDirectChildren, findElements, flexibleCompare, formatDate, formatDayString, formatIsoTimeString, formatRange, getAllowYScrolling, getCanVGrowWithinCell, getClippingParents, getDateMeta, getDayClassNames, getDefaultEventEnd, getElRoot, getElSeg, getEntrySpanEnd, getEventClassNames, getEventTargetViaRoot, getIsRtlScrollbarOnLeft, getRectCenter, getRelevantEvents, getScrollGridClassNames, getScrollbarWidths, getSectionClassNames, getSectionHasLiquidHeight, getSegAnchorAttrs, getSegMeta, getSlotClassNames, getStickyFooterScrollbar, getStickyHeaderDates, getUnequalProps, getUniqueDomId, globalLocales, globalPlugins, greatestDurationDenominator, groupIntersectingEntries, guid, hasBgRendering, hasShrinkWidth, identity, interactionSettingsStore, interactionSettingsToStore, intersectRanges, intersectRects, intersectSpans, isArraysEqual, isColPropsEqual, isDateSelectionValid, isDateSpansEqual, isInt, isInteractionValid, isMultiDayRange, isPropsEqual, isPropsValid, isValidDate, joinSpans, listenBySelector, mapHash, memoize, memoizeArraylike, memoizeHashlike, memoizeObjArg, mergeEventStores, multiplyDuration, padStart, parseBusinessHours, parseClassNames, parseDragMeta, parseEventDef, parseFieldSpecs, parseMarker, pointInsideRect, preventContextMenu, preventDefault, preventSelection, rangeContainsMarker, rangeContainsRange, rangesEqual, rangesIntersect, refineEventDef, refineProps, removeElement, removeExact, renderChunkContent, renderFill, renderMicroColGroup, renderScrollShim, requestJson, sanitizeShrinkWidth, setElSeg, setRef, sliceEventStore, sliceEvents, sortEventSegs, startOfDay, translateRect, triggerDateSelect, unpromisify, version, whenTransitionDone, wholeDivideDurations, Calendar */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "install", function() { return install; });
+/* harmony import */ var _FullCalendar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FullCalendar */ "./node_modules/@fullcalendar/vue/dist/FullCalendar.js");
+/* harmony import */ var _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fullcalendar/core */ "./node_modules/@fullcalendar/vue/node_modules/@fullcalendar/core/main.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Component", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["Component"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Fragment", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["Fragment"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createContext", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["createContext"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createElement", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["createElement"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createPortal", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["createPortal"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createRef", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["createRef"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "flushSync", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["flushSync"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "unmountComponentAtNode", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["unmountComponentAtNode"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BASE_OPTION_DEFAULTS", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["BASE_OPTION_DEFAULTS"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BASE_OPTION_REFINERS", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["BASE_OPTION_REFINERS"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BaseComponent", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["BaseComponent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BgEvent", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["BgEvent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CalendarApi", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["CalendarApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CalendarContent", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["CalendarContent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CalendarDataManager", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["CalendarDataManager"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CalendarDataProvider", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["CalendarDataProvider"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CalendarRoot", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["CalendarRoot"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContentHook", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["ContentHook"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CustomContentRenderContext", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["CustomContentRenderContext"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DateComponent", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["DateComponent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DateEnv", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["DateEnv"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DateProfileGenerator", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["DateProfileGenerator"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DayCellContent", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["DayCellContent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DayCellRoot", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["DayCellRoot"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DayHeader", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["DayHeader"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DaySeriesModel", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["DaySeriesModel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DayTableModel", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["DayTableModel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DelayedRunner", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["DelayedRunner"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ElementDragging", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["ElementDragging"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ElementScrollController", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["ElementScrollController"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Emitter", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["Emitter"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "EventApi", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["EventApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "EventRoot", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["EventRoot"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "EventSourceApi", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["EventSourceApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Interaction", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["Interaction"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MoreLinkRoot", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["MoreLinkRoot"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MountHook", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["MountHook"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NamedTimeZoneImpl", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["NamedTimeZoneImpl"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NowIndicatorRoot", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["NowIndicatorRoot"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NowTimer", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["NowTimer"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PositionCache", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["PositionCache"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RefMap", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["RefMap"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RenderHook", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["RenderHook"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ScrollController", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["ScrollController"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ScrollResponder", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["ScrollResponder"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Scroller", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["Scroller"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SegHierarchy", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["SegHierarchy"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SimpleScrollGrid", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["SimpleScrollGrid"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Slicer", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["Slicer"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Splitter", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["Splitter"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "StandardEvent", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["StandardEvent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableDateCell", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["TableDateCell"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableDowCell", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["TableDowCell"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Theme", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["Theme"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ViewApi", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["ViewApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ViewContextType", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["ViewContextType"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ViewRoot", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["ViewRoot"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WeekNumberRoot", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["WeekNumberRoot"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WindowScrollController", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["WindowScrollController"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "addDays", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["addDays"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "addDurations", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["addDurations"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "addMs", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["addMs"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "addWeeks", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["addWeeks"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "allowContextMenu", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["allowContextMenu"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "allowSelection", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["allowSelection"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "applyMutationToEventStore", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["applyMutationToEventStore"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "applyStyle", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["applyStyle"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "applyStyleProp", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["applyStyleProp"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "asCleanDays", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["asCleanDays"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "asRoughMinutes", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["asRoughMinutes"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "asRoughMs", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["asRoughMs"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "asRoughSeconds", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["asRoughSeconds"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "binarySearch", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["binarySearch"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buildClassNameNormalizer", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["buildClassNameNormalizer"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buildEntryKey", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["buildEntryKey"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buildEventApis", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["buildEventApis"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buildEventRangeKey", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["buildEventRangeKey"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buildHashFromArray", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["buildHashFromArray"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buildIsoString", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["buildIsoString"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buildNavLinkAttrs", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["buildNavLinkAttrs"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buildSegCompareObj", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["buildSegCompareObj"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buildSegTimeText", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["buildSegTimeText"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "collectFromHash", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["collectFromHash"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "combineEventUis", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["combineEventUis"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "compareByFieldSpec", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["compareByFieldSpec"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "compareByFieldSpecs", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["compareByFieldSpecs"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "compareNumbers", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["compareNumbers"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "compareObjs", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["compareObjs"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "computeEarliestSegStart", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["computeEarliestSegStart"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "computeEdges", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["computeEdges"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "computeFallbackHeaderFormat", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["computeFallbackHeaderFormat"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "computeHeightAndMargins", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["computeHeightAndMargins"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "computeInnerRect", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["computeInnerRect"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "computeRect", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["computeRect"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "computeSegDraggable", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["computeSegDraggable"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "computeSegEndResizable", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["computeSegEndResizable"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "computeSegStartResizable", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["computeSegStartResizable"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "computeShrinkWidth", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["computeShrinkWidth"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "computeSmallestCellWidth", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["computeSmallestCellWidth"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "computeVisibleDayRange", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["computeVisibleDayRange"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "config", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["config"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "constrainPoint", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["constrainPoint"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createAriaClickAttrs", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["createAriaClickAttrs"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createDuration", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["createDuration"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createEmptyEventStore", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["createEmptyEventStore"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createEventInstance", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["createEventInstance"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createEventUi", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["createEventUi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createFormatter", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["createFormatter"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createPlugin", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["createPlugin"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "diffDates", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["diffDates"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "diffDayAndTime", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["diffDayAndTime"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "diffDays", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["diffDays"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "diffPoints", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["diffPoints"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "diffWeeks", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["diffWeeks"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "diffWholeDays", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["diffWholeDays"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "diffWholeWeeks", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["diffWholeWeeks"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "disableCursor", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["disableCursor"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "elementClosest", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["elementClosest"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "elementMatches", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["elementMatches"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "enableCursor", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["enableCursor"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "eventTupleToStore", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["eventTupleToStore"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "filterEventStoreDefs", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["filterEventStoreDefs"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "filterHash", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["filterHash"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "findDirectChildren", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["findDirectChildren"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "findElements", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["findElements"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "flexibleCompare", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["flexibleCompare"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "formatDate", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["formatDate"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "formatDayString", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["formatDayString"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "formatIsoTimeString", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["formatIsoTimeString"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "formatRange", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["formatRange"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getAllowYScrolling", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getAllowYScrolling"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getCanVGrowWithinCell", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getCanVGrowWithinCell"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getClippingParents", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getClippingParents"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getDateMeta", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getDateMeta"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getDayClassNames", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getDayClassNames"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getDefaultEventEnd", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getDefaultEventEnd"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getElRoot", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getElRoot"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getElSeg", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getElSeg"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getEntrySpanEnd", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getEntrySpanEnd"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getEventClassNames", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getEventClassNames"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getEventTargetViaRoot", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getEventTargetViaRoot"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getIsRtlScrollbarOnLeft", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getIsRtlScrollbarOnLeft"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getRectCenter", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getRectCenter"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getRelevantEvents", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getRelevantEvents"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getScrollGridClassNames", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getScrollGridClassNames"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getScrollbarWidths", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getScrollbarWidths"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getSectionClassNames", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getSectionClassNames"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getSectionHasLiquidHeight", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getSectionHasLiquidHeight"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getSegAnchorAttrs", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getSegAnchorAttrs"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getSegMeta", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getSegMeta"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getSlotClassNames", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getSlotClassNames"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getStickyFooterScrollbar", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getStickyFooterScrollbar"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getStickyHeaderDates", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getStickyHeaderDates"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getUnequalProps", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getUnequalProps"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getUniqueDomId", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["getUniqueDomId"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "globalLocales", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["globalLocales"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "globalPlugins", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["globalPlugins"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "greatestDurationDenominator", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["greatestDurationDenominator"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "groupIntersectingEntries", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["groupIntersectingEntries"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "guid", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["guid"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "hasBgRendering", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["hasBgRendering"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "hasShrinkWidth", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["hasShrinkWidth"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "identity", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["identity"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "interactionSettingsStore", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["interactionSettingsStore"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "interactionSettingsToStore", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["interactionSettingsToStore"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "intersectRanges", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["intersectRanges"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "intersectRects", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["intersectRects"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "intersectSpans", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["intersectSpans"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isArraysEqual", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["isArraysEqual"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isColPropsEqual", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["isColPropsEqual"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isDateSelectionValid", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["isDateSelectionValid"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isDateSpansEqual", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["isDateSpansEqual"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isInt", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["isInt"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isInteractionValid", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["isInteractionValid"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isMultiDayRange", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["isMultiDayRange"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isPropsEqual", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["isPropsEqual"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isPropsValid", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["isPropsValid"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isValidDate", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["isValidDate"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "joinSpans", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["joinSpans"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "listenBySelector", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["listenBySelector"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "mapHash", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["mapHash"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "memoize", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["memoize"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "memoizeArraylike", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["memoizeArraylike"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "memoizeHashlike", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["memoizeHashlike"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "memoizeObjArg", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["memoizeObjArg"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "mergeEventStores", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["mergeEventStores"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "multiplyDuration", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["multiplyDuration"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "padStart", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["padStart"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "parseBusinessHours", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["parseBusinessHours"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "parseClassNames", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["parseClassNames"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "parseDragMeta", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["parseDragMeta"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "parseEventDef", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["parseEventDef"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "parseFieldSpecs", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["parseFieldSpecs"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "parseMarker", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["parseMarker"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "pointInsideRect", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["pointInsideRect"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "preventContextMenu", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["preventContextMenu"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "preventDefault", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["preventDefault"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "preventSelection", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["preventSelection"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "rangeContainsMarker", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["rangeContainsMarker"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "rangeContainsRange", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["rangeContainsRange"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "rangesEqual", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["rangesEqual"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "rangesIntersect", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["rangesIntersect"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "refineEventDef", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["refineEventDef"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "refineProps", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["refineProps"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "removeElement", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["removeElement"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "removeExact", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["removeExact"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "renderChunkContent", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["renderChunkContent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "renderFill", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["renderFill"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "renderMicroColGroup", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["renderMicroColGroup"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "renderScrollShim", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["renderScrollShim"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "requestJson", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["requestJson"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "sanitizeShrinkWidth", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["sanitizeShrinkWidth"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setElSeg", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["setElSeg"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setRef", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["setRef"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "sliceEventStore", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["sliceEventStore"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "sliceEvents", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["sliceEvents"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "sortEventSegs", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["sortEventSegs"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "startOfDay", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["startOfDay"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "translateRect", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["translateRect"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "triggerDateSelect", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["triggerDateSelect"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "unpromisify", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["unpromisify"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "version", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["version"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "whenTransitionDone", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["whenTransitionDone"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "wholeDivideDurations", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["wholeDivideDurations"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Calendar", function() { return _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__["Calendar"]; });
+
+
+/*
+Registers the component globally if appropriate.
+This modules exposes the component AND an install function.
+
+Derived from:
+https://vuejs.org/v2/cookbook/packaging-sfc-for-npm.html
+*/
+var installed = false;
+// declare install function executed by Vue.use()
+function install(Vue) {
+    if (!installed) {
+        installed = true;
+        Vue.component('FullCalendar', _FullCalendar__WEBPACK_IMPORTED_MODULE_0__["default"]);
+    }
+}
+// detect a globally availble version of Vue (eg. in browser via <script> tag)
+var GlobalVue;
+if (typeof globalThis !== 'undefined') {
+    GlobalVue = globalThis.Vue;
+}
+else {
+    GlobalVue = window.Vue;
+}
+// auto-install if possible
+if (GlobalVue) {
+    GlobalVue.use({
+        install: install
+    });
+}
+// to allow use as module (npm/webpack/etc.) export component
+/* harmony default export */ __webpack_exports__["default"] = (_FullCalendar__WEBPACK_IMPORTED_MODULE_0__["default"]);
+// so can access any of the utils/types from this lib
+
+//# sourceMappingURL=main.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@fullcalendar/vue/dist/options.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@fullcalendar/vue/dist/options.js ***!
+  \********************************************************/
+/*! exports provided: OPTION_IS_COMPLEX */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OPTION_IS_COMPLEX", function() { return OPTION_IS_COMPLEX; });
+var OPTION_IS_COMPLEX = {
+    headerToolbar: true,
+    footerToolbar: true,
+    events: true,
+    eventSources: true,
+    resources: true
+};
+//# sourceMappingURL=options.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@fullcalendar/vue/dist/utils.js":
+/*!******************************************************!*\
+  !*** ./node_modules/@fullcalendar/vue/dist/utils.js ***!
+  \******************************************************/
+/*! exports provided: shallowCopy, mapHash */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "shallowCopy", function() { return shallowCopy; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapHash", function() { return mapHash; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+// TODO: add types!
+
+/*
+works with objects and arrays
+*/
+function shallowCopy(val) {
+    if (typeof val === 'object') {
+        if (Array.isArray(val)) {
+            val = Array.prototype.slice.call(val);
+        }
+        else if (val) { // non-null
+            val = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, val);
+        }
+    }
+    return val;
+}
+function mapHash(input, func) {
+    var output = {};
+    for (var key in input) {
+        if (input.hasOwnProperty(key)) {
+            output[key] = func(input[key], key);
+        }
+    }
+    return output;
+}
+//# sourceMappingURL=utils.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@fullcalendar/vue/node_modules/@fullcalendar/core/main.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/@fullcalendar/vue/node_modules/@fullcalendar/core/main.js ***!
+  \********************************************************************************/
+/*! exports provided: Component, Fragment, createContext, createElement, createPortal, createRef, flushSync, render, unmountComponentAtNode, BASE_OPTION_DEFAULTS, BASE_OPTION_REFINERS, BaseComponent, BgEvent, CalendarApi, CalendarContent, CalendarDataManager, CalendarDataProvider, CalendarRoot, ContentHook, CustomContentRenderContext, DateComponent, DateEnv, DateProfileGenerator, DayCellContent, DayCellRoot, DayHeader, DaySeriesModel, DayTableModel, DelayedRunner, ElementDragging, ElementScrollController, Emitter, EventApi, EventRoot, EventSourceApi, Interaction, MoreLinkRoot, MountHook, NamedTimeZoneImpl, NowIndicatorRoot, NowTimer, PositionCache, RefMap, RenderHook, ScrollController, ScrollResponder, Scroller, SegHierarchy, SimpleScrollGrid, Slicer, Splitter, StandardEvent, TableDateCell, TableDowCell, Theme, ViewApi, ViewContextType, ViewRoot, WeekNumberRoot, WindowScrollController, addDays, addDurations, addMs, addWeeks, allowContextMenu, allowSelection, applyMutationToEventStore, applyStyle, applyStyleProp, asCleanDays, asRoughMinutes, asRoughMs, asRoughSeconds, binarySearch, buildClassNameNormalizer, buildEntryKey, buildEventApis, buildEventRangeKey, buildHashFromArray, buildIsoString, buildNavLinkAttrs, buildSegCompareObj, buildSegTimeText, collectFromHash, combineEventUis, compareByFieldSpec, compareByFieldSpecs, compareNumbers, compareObjs, computeEarliestSegStart, computeEdges, computeFallbackHeaderFormat, computeHeightAndMargins, computeInnerRect, computeRect, computeSegDraggable, computeSegEndResizable, computeSegStartResizable, computeShrinkWidth, computeSmallestCellWidth, computeVisibleDayRange, config, constrainPoint, createAriaClickAttrs, createDuration, createEmptyEventStore, createEventInstance, createEventUi, createFormatter, createPlugin, diffDates, diffDayAndTime, diffDays, diffPoints, diffWeeks, diffWholeDays, diffWholeWeeks, disableCursor, elementClosest, elementMatches, enableCursor, eventTupleToStore, filterEventStoreDefs, filterHash, findDirectChildren, findElements, flexibleCompare, formatDate, formatDayString, formatIsoTimeString, formatRange, getAllowYScrolling, getCanVGrowWithinCell, getClippingParents, getDateMeta, getDayClassNames, getDefaultEventEnd, getElRoot, getElSeg, getEntrySpanEnd, getEventClassNames, getEventTargetViaRoot, getIsRtlScrollbarOnLeft, getRectCenter, getRelevantEvents, getScrollGridClassNames, getScrollbarWidths, getSectionClassNames, getSectionHasLiquidHeight, getSegAnchorAttrs, getSegMeta, getSlotClassNames, getStickyFooterScrollbar, getStickyHeaderDates, getUnequalProps, getUniqueDomId, globalLocales, globalPlugins, greatestDurationDenominator, groupIntersectingEntries, guid, hasBgRendering, hasShrinkWidth, identity, interactionSettingsStore, interactionSettingsToStore, intersectRanges, intersectRects, intersectSpans, isArraysEqual, isColPropsEqual, isDateSelectionValid, isDateSpansEqual, isInt, isInteractionValid, isMultiDayRange, isPropsEqual, isPropsValid, isValidDate, joinSpans, listenBySelector, mapHash, memoize, memoizeArraylike, memoizeHashlike, memoizeObjArg, mergeEventStores, multiplyDuration, padStart, parseBusinessHours, parseClassNames, parseDragMeta, parseEventDef, parseFieldSpecs, parseMarker, pointInsideRect, preventContextMenu, preventDefault, preventSelection, rangeContainsMarker, rangeContainsRange, rangesEqual, rangesIntersect, refineEventDef, refineProps, removeElement, removeExact, renderChunkContent, renderFill, renderMicroColGroup, renderScrollShim, requestJson, sanitizeShrinkWidth, setElSeg, setRef, sliceEventStore, sliceEvents, sortEventSegs, startOfDay, translateRect, triggerDateSelect, unpromisify, version, whenTransitionDone, wholeDivideDurations, Calendar */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Calendar", function() { return Calendar; });
+/* harmony import */ var _vdom_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vdom.js */ "./node_modules/@fullcalendar/vue/node_modules/@fullcalendar/core/vdom.js");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fullcalendar/common */ "./node_modules/@fullcalendar/common/main.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Component", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["Component"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Fragment", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["Fragment"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createContext", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["createContext"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createElement", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["createElement"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createPortal", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["createPortal"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createRef", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["createRef"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "flushSync", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["flushSync"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "unmountComponentAtNode", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["unmountComponentAtNode"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BASE_OPTION_DEFAULTS", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["BASE_OPTION_DEFAULTS"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BASE_OPTION_REFINERS", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["BASE_OPTION_REFINERS"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BaseComponent", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["BaseComponent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BgEvent", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["BgEvent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CalendarApi", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["CalendarApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CalendarContent", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["CalendarContent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CalendarDataManager", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["CalendarDataManager"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CalendarDataProvider", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["CalendarDataProvider"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CalendarRoot", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["CalendarRoot"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ContentHook", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["ContentHook"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CustomContentRenderContext", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["CustomContentRenderContext"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DateComponent", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["DateComponent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DateEnv", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["DateEnv"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DateProfileGenerator", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["DateProfileGenerator"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DayCellContent", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["DayCellContent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DayCellRoot", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["DayCellRoot"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DayHeader", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["DayHeader"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DaySeriesModel", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["DaySeriesModel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DayTableModel", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["DayTableModel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DelayedRunner", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["DelayedRunner"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ElementDragging", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["ElementDragging"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ElementScrollController", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["ElementScrollController"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Emitter", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["Emitter"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "EventApi", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["EventApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "EventRoot", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["EventRoot"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "EventSourceApi", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["EventSourceApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Interaction", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["Interaction"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MoreLinkRoot", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["MoreLinkRoot"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MountHook", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["MountHook"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NamedTimeZoneImpl", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["NamedTimeZoneImpl"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NowIndicatorRoot", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["NowIndicatorRoot"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NowTimer", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["NowTimer"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PositionCache", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["PositionCache"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RefMap", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["RefMap"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RenderHook", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["RenderHook"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ScrollController", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["ScrollController"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ScrollResponder", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["ScrollResponder"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Scroller", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["Scroller"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SegHierarchy", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["SegHierarchy"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SimpleScrollGrid", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["SimpleScrollGrid"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Slicer", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["Slicer"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Splitter", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["Splitter"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "StandardEvent", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["StandardEvent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableDateCell", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["TableDateCell"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableDowCell", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["TableDowCell"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Theme", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["Theme"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ViewApi", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["ViewApi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ViewContextType", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["ViewContextType"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ViewRoot", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["ViewRoot"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WeekNumberRoot", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["WeekNumberRoot"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WindowScrollController", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["WindowScrollController"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "addDays", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["addDays"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "addDurations", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["addDurations"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "addMs", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["addMs"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "addWeeks", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["addWeeks"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "allowContextMenu", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["allowContextMenu"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "allowSelection", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["allowSelection"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "applyMutationToEventStore", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["applyMutationToEventStore"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "applyStyle", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["applyStyle"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "applyStyleProp", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["applyStyleProp"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "asCleanDays", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["asCleanDays"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "asRoughMinutes", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["asRoughMinutes"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "asRoughMs", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["asRoughMs"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "asRoughSeconds", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["asRoughSeconds"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "binarySearch", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["binarySearch"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buildClassNameNormalizer", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["buildClassNameNormalizer"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buildEntryKey", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["buildEntryKey"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buildEventApis", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["buildEventApis"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buildEventRangeKey", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["buildEventRangeKey"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buildHashFromArray", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["buildHashFromArray"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buildIsoString", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["buildIsoString"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buildNavLinkAttrs", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["buildNavLinkAttrs"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buildSegCompareObj", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["buildSegCompareObj"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buildSegTimeText", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["buildSegTimeText"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "collectFromHash", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["collectFromHash"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "combineEventUis", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["combineEventUis"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "compareByFieldSpec", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["compareByFieldSpec"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "compareByFieldSpecs", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["compareByFieldSpecs"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "compareNumbers", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["compareNumbers"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "compareObjs", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["compareObjs"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "computeEarliestSegStart", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["computeEarliestSegStart"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "computeEdges", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["computeEdges"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "computeFallbackHeaderFormat", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["computeFallbackHeaderFormat"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "computeHeightAndMargins", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["computeHeightAndMargins"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "computeInnerRect", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["computeInnerRect"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "computeRect", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["computeRect"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "computeSegDraggable", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["computeSegDraggable"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "computeSegEndResizable", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["computeSegEndResizable"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "computeSegStartResizable", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["computeSegStartResizable"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "computeShrinkWidth", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["computeShrinkWidth"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "computeSmallestCellWidth", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["computeSmallestCellWidth"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "computeVisibleDayRange", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["computeVisibleDayRange"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "config", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["config"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "constrainPoint", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["constrainPoint"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createAriaClickAttrs", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["createAriaClickAttrs"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createDuration", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["createDuration"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createEmptyEventStore", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["createEmptyEventStore"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createEventInstance", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["createEventInstance"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createEventUi", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["createEventUi"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createFormatter", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["createFormatter"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createPlugin", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["createPlugin"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "diffDates", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["diffDates"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "diffDayAndTime", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["diffDayAndTime"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "diffDays", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["diffDays"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "diffPoints", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["diffPoints"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "diffWeeks", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["diffWeeks"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "diffWholeDays", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["diffWholeDays"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "diffWholeWeeks", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["diffWholeWeeks"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "disableCursor", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["disableCursor"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "elementClosest", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["elementClosest"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "elementMatches", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["elementMatches"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "enableCursor", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["enableCursor"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "eventTupleToStore", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["eventTupleToStore"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "filterEventStoreDefs", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["filterEventStoreDefs"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "filterHash", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["filterHash"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "findDirectChildren", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["findDirectChildren"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "findElements", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["findElements"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "flexibleCompare", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["flexibleCompare"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "formatDate", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["formatDate"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "formatDayString", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["formatDayString"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "formatIsoTimeString", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["formatIsoTimeString"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "formatRange", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["formatRange"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getAllowYScrolling", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getAllowYScrolling"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getCanVGrowWithinCell", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getCanVGrowWithinCell"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getClippingParents", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getClippingParents"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getDateMeta", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getDateMeta"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getDayClassNames", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getDayClassNames"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getDefaultEventEnd", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getDefaultEventEnd"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getElRoot", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getElRoot"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getElSeg", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getElSeg"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getEntrySpanEnd", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getEntrySpanEnd"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getEventClassNames", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getEventClassNames"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getEventTargetViaRoot", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getEventTargetViaRoot"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getIsRtlScrollbarOnLeft", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getIsRtlScrollbarOnLeft"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getRectCenter", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getRectCenter"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getRelevantEvents", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getRelevantEvents"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getScrollGridClassNames", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getScrollGridClassNames"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getScrollbarWidths", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getScrollbarWidths"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getSectionClassNames", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getSectionClassNames"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getSectionHasLiquidHeight", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getSectionHasLiquidHeight"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getSegAnchorAttrs", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getSegAnchorAttrs"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getSegMeta", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getSegMeta"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getSlotClassNames", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getSlotClassNames"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getStickyFooterScrollbar", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getStickyFooterScrollbar"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getStickyHeaderDates", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getStickyHeaderDates"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getUnequalProps", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getUnequalProps"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getUniqueDomId", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["getUniqueDomId"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "globalLocales", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["globalLocales"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "globalPlugins", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["globalPlugins"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "greatestDurationDenominator", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["greatestDurationDenominator"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "groupIntersectingEntries", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["groupIntersectingEntries"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "guid", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["guid"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "hasBgRendering", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["hasBgRendering"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "hasShrinkWidth", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["hasShrinkWidth"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "identity", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["identity"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "interactionSettingsStore", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["interactionSettingsStore"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "interactionSettingsToStore", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["interactionSettingsToStore"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "intersectRanges", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["intersectRanges"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "intersectRects", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["intersectRects"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "intersectSpans", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["intersectSpans"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isArraysEqual", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["isArraysEqual"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isColPropsEqual", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["isColPropsEqual"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isDateSelectionValid", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["isDateSelectionValid"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isDateSpansEqual", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["isDateSpansEqual"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isInt", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["isInt"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isInteractionValid", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["isInteractionValid"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isMultiDayRange", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["isMultiDayRange"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isPropsEqual", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["isPropsEqual"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isPropsValid", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["isPropsValid"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isValidDate", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["isValidDate"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "joinSpans", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["joinSpans"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "listenBySelector", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["listenBySelector"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "mapHash", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["mapHash"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "memoize", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["memoize"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "memoizeArraylike", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["memoizeArraylike"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "memoizeHashlike", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["memoizeHashlike"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "memoizeObjArg", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["memoizeObjArg"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "mergeEventStores", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["mergeEventStores"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "multiplyDuration", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["multiplyDuration"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "padStart", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["padStart"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "parseBusinessHours", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["parseBusinessHours"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "parseClassNames", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["parseClassNames"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "parseDragMeta", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["parseDragMeta"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "parseEventDef", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["parseEventDef"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "parseFieldSpecs", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["parseFieldSpecs"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "parseMarker", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["parseMarker"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "pointInsideRect", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["pointInsideRect"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "preventContextMenu", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["preventContextMenu"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "preventDefault", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["preventDefault"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "preventSelection", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["preventSelection"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "rangeContainsMarker", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["rangeContainsMarker"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "rangeContainsRange", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["rangeContainsRange"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "rangesEqual", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["rangesEqual"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "rangesIntersect", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["rangesIntersect"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "refineEventDef", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["refineEventDef"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "refineProps", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["refineProps"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "removeElement", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["removeElement"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "removeExact", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["removeExact"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "renderChunkContent", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["renderChunkContent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "renderFill", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["renderFill"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "renderMicroColGroup", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["renderMicroColGroup"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "renderScrollShim", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["renderScrollShim"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "requestJson", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["requestJson"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "sanitizeShrinkWidth", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["sanitizeShrinkWidth"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setElSeg", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["setElSeg"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setRef", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["setRef"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "sliceEventStore", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["sliceEventStore"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "sliceEvents", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["sliceEvents"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "sortEventSegs", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["sortEventSegs"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "startOfDay", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["startOfDay"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "translateRect", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["translateRect"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "triggerDateSelect", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["triggerDateSelect"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "unpromisify", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["unpromisify"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "version", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["version"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "whenTransitionDone", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["whenTransitionDone"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "wholeDivideDurations", function() { return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["wholeDivideDurations"]; });
+
+/*!
+FullCalendar v5.11.5
+Docs & License: https://fullcalendar.io/
+(c) 2022 Adam Shaw
+*/
+
+
+
+
+
+var Calendar = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__extends"])(Calendar, _super);
+    function Calendar(el, optionOverrides) {
+        if (optionOverrides === void 0) { optionOverrides = {}; }
+        var _this = _super.call(this) || this;
+        _this.isRendering = false;
+        _this.isRendered = false;
+        _this.currentClassNames = [];
+        _this.customContentRenderId = 0; // will affect custom generated classNames?
+        _this.handleAction = function (action) {
+            // actions we know we want to render immediately
+            switch (action.type) {
+                case 'SET_EVENT_DRAG':
+                case 'SET_EVENT_RESIZE':
+                    _this.renderRunner.tryDrain();
+            }
+        };
+        _this.handleData = function (data) {
+            _this.currentData = data;
+            _this.renderRunner.request(data.calendarOptions.rerenderDelay);
+        };
+        _this.handleRenderRequest = function () {
+            if (_this.isRendering) {
+                _this.isRendered = true;
+                var currentData_1 = _this.currentData;
+                Object(_fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["flushSync"])(function () {
+                    Object(_fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["render"])(Object(_fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["CalendarRoot"], { options: currentData_1.calendarOptions, theme: currentData_1.theme, emitter: currentData_1.emitter }, function (classNames, height, isHeightAuto, forPrint) {
+                        _this.setClassNames(classNames);
+                        _this.setHeight(height);
+                        return (Object(_fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["CustomContentRenderContext"].Provider, { value: _this.customContentRenderId },
+                            Object(_fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["CalendarContent"], Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({ isHeightAuto: isHeightAuto, forPrint: forPrint }, currentData_1))));
+                    }), _this.el);
+                });
+            }
+            else if (_this.isRendered) {
+                _this.isRendered = false;
+                Object(_fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["unmountComponentAtNode"])(_this.el);
+                _this.setClassNames([]);
+                _this.setHeight('');
+            }
+        };
+        _this.el = el;
+        _this.renderRunner = new _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["DelayedRunner"](_this.handleRenderRequest);
+        new _fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["CalendarDataManager"]({
+            optionOverrides: optionOverrides,
+            calendarApi: _this,
+            onAction: _this.handleAction,
+            onData: _this.handleData,
+        });
+        return _this;
+    }
+    Object.defineProperty(Calendar.prototype, "view", {
+        get: function () { return this.currentData.viewApi; } // for public API
+        ,
+        enumerable: false,
+        configurable: true
+    });
+    Calendar.prototype.render = function () {
+        var wasRendering = this.isRendering;
+        if (!wasRendering) {
+            this.isRendering = true;
+        }
+        else {
+            this.customContentRenderId += 1;
+        }
+        this.renderRunner.request();
+        if (wasRendering) {
+            this.updateSize();
+        }
+    };
+    Calendar.prototype.destroy = function () {
+        if (this.isRendering) {
+            this.isRendering = false;
+            this.renderRunner.request();
+        }
+    };
+    Calendar.prototype.updateSize = function () {
+        var _this = this;
+        Object(_fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["flushSync"])(function () {
+            _super.prototype.updateSize.call(_this);
+        });
+    };
+    Calendar.prototype.batchRendering = function (func) {
+        this.renderRunner.pause('batchRendering');
+        func();
+        this.renderRunner.resume('batchRendering');
+    };
+    Calendar.prototype.pauseRendering = function () {
+        this.renderRunner.pause('pauseRendering');
+    };
+    Calendar.prototype.resumeRendering = function () {
+        this.renderRunner.resume('pauseRendering', true);
+    };
+    Calendar.prototype.resetOptions = function (optionOverrides, append) {
+        this.currentDataManager.resetOptions(optionOverrides, append);
+    };
+    Calendar.prototype.setClassNames = function (classNames) {
+        if (!Object(_fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["isArraysEqual"])(classNames, this.currentClassNames)) {
+            var classList = this.el.classList;
+            for (var _i = 0, _a = this.currentClassNames; _i < _a.length; _i++) {
+                var className = _a[_i];
+                classList.remove(className);
+            }
+            for (var _b = 0, classNames_1 = classNames; _b < classNames_1.length; _b++) {
+                var className = classNames_1[_b];
+                classList.add(className);
+            }
+            this.currentClassNames = classNames;
+        }
+    };
+    Calendar.prototype.setHeight = function (height) {
+        Object(_fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["applyStyleProp"])(this.el, 'height', height);
+    };
+    return Calendar;
+}(_fullcalendar_common__WEBPACK_IMPORTED_MODULE_2__["CalendarApi"]));
+
+
+//# sourceMappingURL=main.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@fullcalendar/vue/node_modules/@fullcalendar/core/vdom.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/@fullcalendar/vue/node_modules/@fullcalendar/core/vdom.js ***!
+  \********************************************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var preact__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! preact */ "./node_modules/preact/dist/preact.module.js");
+/* harmony import */ var preact_compat__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! preact/compat */ "./node_modules/preact/compat/dist/compat.module.js");
+
+
+
+
+var globalObj = typeof globalThis !== 'undefined' ? globalThis : window; // // TODO: streamline when killing IE11 support
+if (globalObj.FullCalendarVDom) {
+    console.warn('FullCalendar VDOM already loaded');
+}
+else {
+    globalObj.FullCalendarVDom = {
+        Component: preact__WEBPACK_IMPORTED_MODULE_1__["Component"],
+        createElement: preact__WEBPACK_IMPORTED_MODULE_1__["createElement"],
+        render: preact__WEBPACK_IMPORTED_MODULE_1__["render"],
+        createRef: preact__WEBPACK_IMPORTED_MODULE_1__["createRef"],
+        Fragment: preact__WEBPACK_IMPORTED_MODULE_1__["Fragment"],
+        createContext: createContext,
+        createPortal: preact_compat__WEBPACK_IMPORTED_MODULE_2__["createPortal"],
+        flushSync: flushSync,
+        unmountComponentAtNode: unmountComponentAtNode,
+    };
+}
+// HACKS...
+// TODO: lock version
+// TODO: link gh issues
+function flushSync(runBeforeFlush) {
+    runBeforeFlush();
+    var oldDebounceRendering = preact__WEBPACK_IMPORTED_MODULE_1__["options"].debounceRendering; // orig
+    var callbackQ = [];
+    function execCallbackSync(callback) {
+        callbackQ.push(callback);
+    }
+    preact__WEBPACK_IMPORTED_MODULE_1__["options"].debounceRendering = execCallbackSync;
+    preact__WEBPACK_IMPORTED_MODULE_1__["render"](preact__WEBPACK_IMPORTED_MODULE_1__["createElement"](FakeComponent, {}), document.createElement('div'));
+    while (callbackQ.length) {
+        callbackQ.shift()();
+    }
+    preact__WEBPACK_IMPORTED_MODULE_1__["options"].debounceRendering = oldDebounceRendering;
+}
+var FakeComponent = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"])(FakeComponent, _super);
+    function FakeComponent() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    FakeComponent.prototype.render = function () { return preact__WEBPACK_IMPORTED_MODULE_1__["createElement"]('div', {}); };
+    FakeComponent.prototype.componentDidMount = function () { this.setState({}); };
+    return FakeComponent;
+}(preact__WEBPACK_IMPORTED_MODULE_1__["Component"]));
+function createContext(defaultValue) {
+    var ContextType = preact__WEBPACK_IMPORTED_MODULE_1__["createContext"](defaultValue);
+    var origProvider = ContextType.Provider;
+    ContextType.Provider = function () {
+        var _this = this;
+        var isNew = !this.getChildContext;
+        var children = origProvider.apply(this, arguments); // eslint-disable-line prefer-rest-params
+        if (isNew) {
+            var subs_1 = [];
+            this.shouldComponentUpdate = function (_props) {
+                if (_this.props.value !== _props.value) {
+                    subs_1.forEach(function (c) {
+                        c.context = _props.value;
+                        c.forceUpdate();
+                    });
+                }
+            };
+            this.sub = function (c) {
+                subs_1.push(c);
+                var old = c.componentWillUnmount;
+                c.componentWillUnmount = function () {
+                    subs_1.splice(subs_1.indexOf(c), 1);
+                    old && old.call(c);
+                };
+            };
+        }
+        return children;
+    };
+    return ContextType;
+}
+function unmountComponentAtNode(node) {
+    preact__WEBPACK_IMPORTED_MODULE_1__["render"](null, node);
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/@fullcalendar/common/main.css":
+/*!************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/@fullcalendar/common/main.css ***!
+  \************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, "\n/* classes attached to <body> */\n/* TODO: make fc-event selector work when calender in shadow DOM */\n.fc-not-allowed,\n.fc-not-allowed .fc-event { /* override events' custom cursors */\n}\n[dir] .fc-not-allowed, [dir] .fc-not-allowed .fc-event {\n  cursor: not-allowed;\n}\n\n/* TODO: not attached to body. attached to specific els. move */\n.fc-unselectable {\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  -webkit-touch-callout: none;\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n}\n.fc {\n  /* layout of immediate children */\n  display: flex;\n  flex-direction: column;\n\n  font-size: 1em\n}\n.fc,\n  .fc *,\n  .fc *:before,\n  .fc *:after {\n    box-sizing: border-box;\n  }\n.fc table {\n    border-collapse: collapse;\n    border-spacing: 0;\n    font-size: 1em; /* normalize cross-browser */\n  }\n[dir] .fc th {\n    text-align: center;\n  }\n.fc th,\n  .fc td {\n    vertical-align: top;\n  }\n[dir] .fc th, [dir] .fc td {\n    padding: 0;\n  }\n[dir] .fc a[data-navlink] {\n    cursor: pointer;\n  }\n.fc a[data-navlink]:hover {\n    text-decoration: underline;\n  }\n[dir=ltr] .fc-direction-ltr {\n direction: ltr;\n text-align: left;\n}\n[dir=rtl] .fc-direction-ltr {\n  direction: rtl;\n  text-align: right;\n}\n[dir=ltr] .fc-direction-rtl {\n direction: rtl;\n text-align: right;\n}\n[dir=rtl] .fc-direction-rtl {\n  direction: ltr;\n  text-align: left;\n}\n[dir] .fc-theme-standard td, [dir] .fc-theme-standard th {\n    border: 1px solid #ddd;\n    border: 1px solid var(--fc-border-color, #ddd);\n  }\n/* for FF, which doesn't expand a 100% div within a table cell. use absolute positioning */\n/* inner-wrappers are responsible for being absolute */\n/* TODO: best place for this? */\n.fc-liquid-hack td,\n  .fc-liquid-hack th {\n    position: relative;\n  }\n\n@font-face {\n  font-family: 'fcicons';\n  src: url(\"data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBfAAAAC8AAAAYGNtYXAXVtKNAAABHAAAAFRnYXNwAAAAEAAAAXAAAAAIZ2x5ZgYydxIAAAF4AAAFNGhlYWQUJ7cIAAAGrAAAADZoaGVhB20DzAAABuQAAAAkaG10eCIABhQAAAcIAAAALGxvY2ED4AU6AAAHNAAAABhtYXhwAA8AjAAAB0wAAAAgbmFtZXsr690AAAdsAAABhnBvc3QAAwAAAAAI9AAAACAAAwPAAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADpBgPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAOAAAAAoACAACAAIAAQAg6Qb//f//AAAAAAAg6QD//f//AAH/4xcEAAMAAQAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAABAWIAjQKeAskAEwAAJSc3NjQnJiIHAQYUFwEWMjc2NCcCnuLiDQ0MJAz/AA0NAQAMJAwNDcni4gwjDQwM/wANIwz/AA0NDCMNAAAAAQFiAI0CngLJABMAACUBNjQnASYiBwYUHwEHBhQXFjI3AZ4BAA0N/wAMJAwNDeLiDQ0MJAyNAQAMIw0BAAwMDSMM4uINIwwNDQAAAAIA4gC3Ax4CngATACcAACUnNzY0JyYiDwEGFB8BFjI3NjQnISc3NjQnJiIPAQYUHwEWMjc2NCcB87e3DQ0MIw3VDQ3VDSMMDQ0BK7e3DQ0MJAzVDQ3VDCQMDQ3zuLcMJAwNDdUNIwzWDAwNIwy4twwkDA0N1Q0jDNYMDA0jDAAAAgDiALcDHgKeABMAJwAAJTc2NC8BJiIHBhQfAQcGFBcWMjchNzY0LwEmIgcGFB8BBwYUFxYyNwJJ1Q0N1Q0jDA0Nt7cNDQwjDf7V1Q0N1QwkDA0Nt7cNDQwkDLfWDCMN1Q0NDCQMt7gMIw0MDNYMIw3VDQ0MJAy3uAwjDQwMAAADAFUAAAOrA1UAMwBoAHcAABMiBgcOAQcOAQcOARURFBYXHgEXHgEXHgEzITI2Nz4BNz4BNz4BNRE0JicuAScuAScuASMFITIWFx4BFx4BFx4BFREUBgcOAQcOAQcOASMhIiYnLgEnLgEnLgE1ETQ2Nz4BNz4BNz4BMxMhMjY1NCYjISIGFRQWM9UNGAwLFQkJDgUFBQUFBQ4JCRULDBgNAlYNGAwLFQkJDgUFBQUFBQ4JCRULDBgN/aoCVgQIBAQHAwMFAQIBAQIBBQMDBwQECAT9qgQIBAQHAwMFAQIBAQIBBQMDBwQECASAAVYRGRkR/qoRGRkRA1UFBAUOCQkVDAsZDf2rDRkLDBUJCA4FBQUFBQUOCQgVDAsZDQJVDRkLDBUJCQ4FBAVVAgECBQMCBwQECAX9qwQJAwQHAwMFAQICAgIBBQMDBwQDCQQCVQUIBAQHAgMFAgEC/oAZEhEZGRESGQAAAAADAFUAAAOrA1UAMwBoAIkAABMiBgcOAQcOAQcOARURFBYXHgEXHgEXHgEzITI2Nz4BNz4BNz4BNRE0JicuAScuAScuASMFITIWFx4BFx4BFx4BFREUBgcOAQcOAQcOASMhIiYnLgEnLgEnLgE1ETQ2Nz4BNz4BNz4BMxMzFRQWMzI2PQEzMjY1NCYrATU0JiMiBh0BIyIGFRQWM9UNGAwLFQkJDgUFBQUFBQ4JCRULDBgNAlYNGAwLFQkJDgUFBQUFBQ4JCRULDBgN/aoCVgQIBAQHAwMFAQIBAQIBBQMDBwQECAT9qgQIBAQHAwMFAQIBAQIBBQMDBwQECASAgBkSEhmAERkZEYAZEhIZgBEZGREDVQUEBQ4JCRUMCxkN/asNGQsMFQkIDgUFBQUFBQ4JCBUMCxkNAlUNGQsMFQkJDgUEBVUCAQIFAwIHBAQIBf2rBAkDBAcDAwUBAgICAgEFAwMHBAMJBAJVBQgEBAcCAwUCAQL+gIASGRkSgBkSERmAEhkZEoAZERIZAAABAOIAjQMeAskAIAAAExcHBhQXFjI/ARcWMjc2NC8BNzY0JyYiDwEnJiIHBhQX4uLiDQ0MJAzi4gwkDA0N4uINDQwkDOLiDCQMDQ0CjeLiDSMMDQ3h4Q0NDCMN4uIMIw0MDOLiDAwNIwwAAAABAAAAAQAAa5n0y18PPPUACwQAAAAAANivOVsAAAAA2K85WwAAAAADqwNVAAAACAACAAAAAAAAAAEAAAPA/8AAAAQAAAAAAAOrAAEAAAAAAAAAAAAAAAAAAAALBAAAAAAAAAAAAAAAAgAAAAQAAWIEAAFiBAAA4gQAAOIEAABVBAAAVQQAAOIAAAAAAAoAFAAeAEQAagCqAOoBngJkApoAAQAAAAsAigADAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA4ArgABAAAAAAABAAcAAAABAAAAAAACAAcAYAABAAAAAAADAAcANgABAAAAAAAEAAcAdQABAAAAAAAFAAsAFQABAAAAAAAGAAcASwABAAAAAAAKABoAigADAAEECQABAA4ABwADAAEECQACAA4AZwADAAEECQADAA4APQADAAEECQAEAA4AfAADAAEECQAFABYAIAADAAEECQAGAA4AUgADAAEECQAKADQApGZjaWNvbnMAZgBjAGkAYwBvAG4Ac1ZlcnNpb24gMS4wAFYAZQByAHMAaQBvAG4AIAAxAC4AMGZjaWNvbnMAZgBjAGkAYwBvAG4Ac2ZjaWNvbnMAZgBjAGkAYwBvAG4Ac1JlZ3VsYXIAUgBlAGcAdQBsAGEAcmZjaWNvbnMAZgBjAGkAYwBvAG4Ac0ZvbnQgZ2VuZXJhdGVkIGJ5IEljb01vb24uAEYAbwBuAHQAIABnAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAEkAYwBvAE0AbwBvAG4ALgAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=\") format('truetype');\n  font-weight: normal;\n  font-style: normal;\n}\n\n.fc-icon {\n  /* added for fc */\n  display: inline-block;\n  width: 1em;\n  height: 1em;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n\n  /* use !important to prevent issues with browser extensions that change fonts */\n  font-family: 'fcicons' !important;\n  speak: none;\n  font-style: normal;\n  font-weight: normal;\n  font-variant: normal;\n  text-transform: none;\n  line-height: 1;\n\n  /* Better Font Rendering =========== */\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n[dir] .fc-icon {\n  text-align: center;\n}\n\n.fc-icon-chevron-left:before {\n  content: \"\\e900\";\n}\n\n.fc-icon-chevron-right:before {\n  content: \"\\e901\";\n}\n\n.fc-icon-chevrons-left:before {\n  content: \"\\e902\";\n}\n\n.fc-icon-chevrons-right:before {\n  content: \"\\e903\";\n}\n\n.fc-icon-minus-square:before {\n  content: \"\\e904\";\n}\n\n.fc-icon-plus-square:before {\n  content: \"\\e905\";\n}\n\n.fc-icon-x:before {\n  content: \"\\e906\";\n}\n/*\nLots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css\n\nThese styles only apply when the standard-theme is activated.\nWhen it's NOT activated, the fc-button classes won't even be in the DOM.\n*/\n.fc {\n\n  /* reset */\n\n}\n.fc .fc-button {\n    overflow: visible;\n    text-transform: none;\n    font-family: inherit;\n    font-size: inherit;\n    line-height: inherit;\n  }\n[dir] .fc .fc-button {\n    border-radius: 0;\n    margin: 0;\n  }\n.fc .fc-button:focus {\n    outline: 1px dotted;\n    outline: 5px auto -webkit-focus-ring-color;\n  }\n.fc .fc-button {\n    -webkit-appearance: button;\n  }\n[dir] .fc .fc-button:not(:disabled) {\n    cursor: pointer;\n  }\n[dir] .fc .fc-button::-moz-focus-inner {\n    padding: 0;\n    border-style: none;\n  }\n.fc {\n\n  /* theme */\n\n}\n.fc .fc-button {\n    display: inline-block;\n    font-weight: 400;\n    vertical-align: middle;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    font-size: 1em;\n    line-height: 1.5;\n  }\n[dir] .fc .fc-button {\n    text-align: center;\n    background-color: transparent;\n    border: 1px solid transparent;\n    padding: 0.4em 0.65em;\n    border-radius: 0.25em;\n  }\n.fc .fc-button:hover {\n    text-decoration: none;\n  }\n.fc .fc-button:focus {\n    outline: 0;\n  }\n[dir] .fc .fc-button:focus {\n    box-shadow: 0 0 0 0.2rem rgba(44, 62, 80, 0.25);\n  }\n.fc .fc-button:disabled {\n    opacity: 0.65;\n  }\n.fc {\n\n  /* \"primary\" coloring */\n\n}\n.fc .fc-button-primary {\n    color: #fff;\n    color: var(--fc-button-text-color, #fff);\n  }\n[dir] .fc .fc-button-primary {\n    background-color: #2C3E50;\n    background-color: var(--fc-button-bg-color, #2C3E50);\n    border-color: #2C3E50;\n    border-color: var(--fc-button-border-color, #2C3E50);\n  }\n.fc .fc-button-primary:hover {\n    color: #fff;\n    color: var(--fc-button-text-color, #fff);\n  }\n[dir] .fc .fc-button-primary:hover {\n    background-color: #1e2b37;\n    background-color: var(--fc-button-hover-bg-color, #1e2b37);\n    border-color: #1a252f;\n    border-color: var(--fc-button-hover-border-color, #1a252f);\n  }\n.fc .fc-button-primary:disabled { /* not DRY */\n    color: #fff;\n    color: var(--fc-button-text-color, #fff); /* overrides :hover */\n  }\n[dir] .fc .fc-button-primary:disabled {\n    background-color: #2C3E50;\n    background-color: var(--fc-button-bg-color, #2C3E50);\n    border-color: #2C3E50;\n    border-color: var(--fc-button-border-color, #2C3E50);\n  }\n[dir] .fc .fc-button-primary:focus {\n    box-shadow: 0 0 0 0.2rem rgba(76, 91, 106, 0.5);\n  }\n.fc .fc-button-primary:not(:disabled):active,\n  .fc .fc-button-primary:not(:disabled).fc-button-active {\n    color: #fff;\n    color: var(--fc-button-text-color, #fff);\n  }\n[dir] .fc .fc-button-primary:not(:disabled):active, [dir] .fc .fc-button-primary:not(:disabled).fc-button-active {\n    background-color: #1a252f;\n    background-color: var(--fc-button-active-bg-color, #1a252f);\n    border-color: #151e27;\n    border-color: var(--fc-button-active-border-color, #151e27);\n  }\n[dir] .fc .fc-button-primary:not(:disabled):active:focus, [dir] .fc .fc-button-primary:not(:disabled).fc-button-active:focus {\n    box-shadow: 0 0 0 0.2rem rgba(76, 91, 106, 0.5);\n  }\n.fc {\n\n  /* icons within buttons */\n\n}\n.fc .fc-button .fc-icon {\n    vertical-align: middle;\n    font-size: 1.5em; /* bump up the size (but don't make it bigger than line-height of button, which is 1.5em also) */\n  }\n.fc .fc-button-group {\n    position: relative;\n    display: inline-flex;\n    vertical-align: middle;\n  }\n.fc .fc-button-group > .fc-button {\n    position: relative;\n    flex: 1 1 auto;\n  }\n.fc .fc-button-group > .fc-button:hover {\n    z-index: 1;\n  }\n.fc .fc-button-group > .fc-button:focus,\n  .fc .fc-button-group > .fc-button:active,\n  .fc .fc-button-group > .fc-button.fc-button-active {\n    z-index: 1;\n  }\n[dir=ltr] .fc-direction-ltr .fc-button-group > .fc-button:not(:first-child) {\n margin-left: -1px;\n border-top-left-radius: 0;\n border-bottom-left-radius: 0;\n  }\n[dir=rtl] .fc-direction-ltr .fc-button-group > .fc-button:not(:first-child) {\n    margin-right: -1px;\n    border-top-right-radius: 0;\n    border-bottom-right-radius: 0;\n  }\n[dir=ltr] .fc-direction-ltr .fc-button-group > .fc-button:not(:last-child) {\n border-top-right-radius: 0;\n border-bottom-right-radius: 0;\n  }\n[dir=rtl] .fc-direction-ltr .fc-button-group > .fc-button:not(:last-child) {\n    border-top-left-radius: 0;\n    border-bottom-left-radius: 0;\n  }\n[dir=ltr] .fc-direction-rtl .fc-button-group > .fc-button:not(:first-child) {\n margin-right: -1px;\n border-top-right-radius: 0;\n border-bottom-right-radius: 0;\n  }\n[dir=rtl] .fc-direction-rtl .fc-button-group > .fc-button:not(:first-child) {\n    margin-left: -1px;\n    border-top-left-radius: 0;\n    border-bottom-left-radius: 0;\n  }\n[dir=ltr] .fc-direction-rtl .fc-button-group > .fc-button:not(:last-child) {\n border-top-left-radius: 0;\n border-bottom-left-radius: 0;\n  }\n[dir=rtl] .fc-direction-rtl .fc-button-group > .fc-button:not(:last-child) {\n    border-top-right-radius: 0;\n    border-bottom-right-radius: 0;\n  }\n.fc .fc-toolbar {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n  }\n[dir] .fc .fc-toolbar.fc-header-toolbar {\n    margin-bottom: 1.5em;\n  }\n[dir] .fc .fc-toolbar.fc-footer-toolbar {\n    margin-top: 1.5em;\n  }\n.fc .fc-toolbar-title {\n    font-size: 1.75em;\n  }\n[dir] .fc .fc-toolbar-title {\n    margin: 0;\n  }\n.fc-direction-ltr .fc-toolbar > * > :not(:first-child) { /* space between */\n  }\n[dir=ltr] .fc-direction-ltr .fc-toolbar > * > :not(:first-child) {\n margin-left: .75em;\n  }\n[dir=rtl] .fc-direction-ltr .fc-toolbar > * > :not(:first-child) {\n    margin-right: .75em;\n  }\n.fc-direction-rtl .fc-toolbar > * > :not(:first-child) { /* space between */\n  }\n[dir=ltr] .fc-direction-rtl .fc-toolbar > * > :not(:first-child) {\n margin-right: .75em;\n  }\n[dir=rtl] .fc-direction-rtl .fc-toolbar > * > :not(:first-child) {\n    margin-left: .75em;\n  }\n.fc-direction-rtl .fc-toolbar-ltr { /* when the toolbar-chunk positioning system is explicitly left-to-right */\n    flex-direction: row-reverse;\n  }\n.fc .fc-scroller {\n    -webkit-overflow-scrolling: touch;\n    position: relative; /* for abs-positioned elements within */\n  }\n.fc .fc-scroller-liquid {\n    height: 100%;\n  }\n.fc .fc-scroller-liquid-absolute {\n    position: absolute;\n    top: 0;\n    bottom: 0;\n  }\n[dir=ltr] .fc .fc-scroller-liquid-absolute {\n right: 0;\n left: 0;\n  }\n[dir=rtl] .fc .fc-scroller-liquid-absolute {\n    left: 0;\n    right: 0;\n  }\n.fc .fc-scroller-harness {\n    position: relative;\n    overflow: hidden;\n      /* hack for chrome computing the scroller's right/left wrong for rtl. undone below... */\n      /* TODO: demonstrate in codepen */\n  }\n[dir=ltr] .fc .fc-scroller-harness {\n direction: ltr;\n  }\n[dir=rtl] .fc .fc-scroller-harness {\n    direction: rtl;\n  }\n.fc .fc-scroller-harness-liquid {\n    height: 100%;\n  }\n.fc-direction-rtl .fc-scroller-harness > .fc-scroller { /* undo above hack */\n  }\n[dir=ltr] .fc-direction-rtl .fc-scroller-harness > .fc-scroller {\n direction: rtl;\n  }\n[dir=rtl] .fc-direction-rtl .fc-scroller-harness > .fc-scroller {\n    direction: ltr;\n  }\n.fc-theme-standard .fc-scrollgrid { /* bootstrap does this. match */\n  }\n[dir] .fc-theme-standard .fc-scrollgrid {\n    border: 1px solid #ddd;\n    border: 1px solid var(--fc-border-color, #ddd);\n  }\n.fc .fc-scrollgrid,\n    .fc .fc-scrollgrid table { /* all tables (self included) */\n      width: 100%; /* because tables don't normally do this */\n      table-layout: fixed;\n    }\n.fc .fc-scrollgrid table { /* inner tables */\n    }\n[dir] .fc .fc-scrollgrid table {\n      border-top-style: hidden;\n    }\n[dir=ltr] .fc .fc-scrollgrid table {\n border-left-style: hidden;\n border-right-style: hidden;\n    }\n[dir=rtl] .fc .fc-scrollgrid table {\n      border-right-style: hidden;\n      border-left-style: hidden;\n    }\n.fc .fc-scrollgrid {\n\n    border-collapse: separate;\n\n  }\n[dir] .fc .fc-scrollgrid {\n    border-bottom-width: 0;\n\n  }\n[dir=ltr] .fc .fc-scrollgrid {\n border-right-width: 0;\n\n  }\n[dir=rtl] .fc .fc-scrollgrid {\n    border-left-width: 0;\n\n  }\n.fc .fc-scrollgrid-liquid {\n    height: 100%;\n  }\n.fc .fc-scrollgrid-section { /* a <tr> */\n    height: 1px /* better than 0, for firefox */\n\n  }\n.fc .fc-scrollgrid-section > td {\n      height: 1px; /* needs a height so inner div within grow. better than 0, for firefox */\n    }\n.fc .fc-scrollgrid-section table {\n      height: 1px;\n        /* for most browsers, if a height isn't set on the table, can't do liquid-height within cells */\n        /* serves as a min-height. harmless */\n    }\n.fc .fc-scrollgrid-section-liquid > td {\n      height: 100%; /* better than `auto`, for firefox */\n    }\n[dir] .fc .fc-scrollgrid-section > * {\n    border-top-width: 0;\n  }\n[dir=ltr] .fc .fc-scrollgrid-section > * {\n border-left-width: 0;\n  }\n[dir=rtl] .fc .fc-scrollgrid-section > * {\n    border-right-width: 0;\n  }\n[dir] .fc .fc-scrollgrid-section-header > *, [dir] .fc .fc-scrollgrid-section-footer > * {\n    border-bottom-width: 0;\n  }\n.fc .fc-scrollgrid-section-body table,\n  .fc .fc-scrollgrid-section-footer table { /* head keeps its bottom border tho */\n  }\n[dir] .fc .fc-scrollgrid-section-body table, [dir] .fc .fc-scrollgrid-section-footer table {\n    border-bottom-style: hidden;\n  }\n.fc {\n\n  /* stickiness */\n\n}\n.fc .fc-scrollgrid-section-sticky > * {\n    position: sticky;\n    z-index: 3; /* TODO: var */\n    /* TODO: box-shadow when sticking */\n  }\n[dir] .fc .fc-scrollgrid-section-sticky > * {\n    background: #fff;\n    background: var(--fc-page-bg-color, #fff);\n  }\n.fc .fc-scrollgrid-section-header.fc-scrollgrid-section-sticky > * {\n    top: 0; /* because border-sharing causes a gap at the top */\n      /* TODO: give safari -1. has bug */\n  }\n.fc .fc-scrollgrid-section-footer.fc-scrollgrid-section-sticky > * {\n    bottom: 0; /* known bug: bottom-stickiness doesn't work in safari */\n  }\n.fc .fc-scrollgrid-sticky-shim { /* for horizontal scrollbar */\n    height: 1px; /* needs height to create scrollbars */\n  }\n[dir] .fc .fc-scrollgrid-sticky-shim {\n    margin-bottom: -1px;\n  }\n.fc-sticky { /* no .fc wrap because used as child of body */\n  position: sticky;\n}\n.fc .fc-view-harness {\n    flex-grow: 1; /* because this harness is WITHIN the .fc's flexbox */\n    position: relative;\n  }\n.fc {\n\n  /* when the harness controls the height, make the view liquid */\n\n}\n.fc .fc-view-harness-active > .fc-view {\n    position: absolute;\n    top: 0;\n    bottom: 0;\n  }\n[dir=ltr] .fc .fc-view-harness-active > .fc-view {\n right: 0;\n left: 0;\n  }\n[dir=rtl] .fc .fc-view-harness-active > .fc-view {\n    left: 0;\n    right: 0;\n  }\n.fc .fc-col-header-cell-cushion {\n    display: inline-block; /* x-browser for when sticky (when multi-tier header) */\n  }\n[dir] .fc .fc-col-header-cell-cushion {\n    padding: 2px 4px;\n  }\n.fc .fc-bg-event,\n  .fc .fc-non-business,\n  .fc .fc-highlight {\n    /* will always have a harness with position:relative/absolute, so absolutely expand */\n    position: absolute;\n    top: 0;\n    bottom: 0;\n  }\n[dir=ltr] .fc .fc-bg-event, [dir=ltr] .fc .fc-non-business, [dir=ltr] .fc .fc-highlight {\n left: 0;\n right: 0;\n  }\n[dir=rtl] .fc .fc-bg-event, [dir=rtl] .fc .fc-non-business, [dir=rtl] .fc .fc-highlight {\n    right: 0;\n    left: 0;\n  }\n[dir] .fc .fc-non-business {\n    background: rgba(215, 215, 215, 0.3);\n    background: var(--fc-non-business-color, rgba(215, 215, 215, 0.3));\n  }\n.fc .fc-bg-event {\n    opacity: 0.3;\n    opacity: var(--fc-bg-event-opacity, 0.3)\n  }\n[dir] .fc .fc-bg-event {\n    background: rgb(143, 223, 130);\n    background: var(--fc-bg-event-color, rgb(143, 223, 130))\n  }\n.fc .fc-bg-event .fc-event-title {\n      font-size: .85em;\n      font-size: var(--fc-small-font-size, .85em);\n      font-style: italic;\n    }\n[dir] .fc .fc-bg-event .fc-event-title {\n      margin: .5em;\n    }\n[dir] .fc .fc-highlight {\n    background: rgba(188, 232, 241, 0.3);\n    background: var(--fc-highlight-color, rgba(188, 232, 241, 0.3));\n  }\n[dir] .fc .fc-cell-shaded, [dir] .fc .fc-day-disabled {\n    background: rgba(208, 208, 208, 0.3);\n    background: var(--fc-neutral-bg-color, rgba(208, 208, 208, 0.3));\n  }\n/* link resets */\n/* ---------------------------------------------------------------------------------------------------- */\na.fc-event,\na.fc-event:hover {\n  text-decoration: none;\n}\n/* cursor */\n[dir] .fc-event[href], [dir] .fc-event.fc-event-draggable {\n  cursor: pointer;\n}\n/* event text content */\n/* ---------------------------------------------------------------------------------------------------- */\n.fc-event .fc-event-main {\n    position: relative;\n    z-index: 2;\n  }\n/* dragging */\n/* ---------------------------------------------------------------------------------------------------- */\n.fc-event-dragging:not(.fc-event-selected) { /* MOUSE */\n    opacity: 0.75;\n  }\n.fc-event-dragging.fc-event-selected { /* TOUCH */\n  }\n[dir] .fc-event-dragging.fc-event-selected {\n    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);\n  }\n/* resizing */\n/* ---------------------------------------------------------------------------------------------------- */\n/* (subclasses should hone positioning for touch and non-touch) */\n.fc-event .fc-event-resizer {\n    display: none;\n    position: absolute;\n    z-index: 4;\n  }\n.fc-event:hover, /* MOUSE */\n.fc-event-selected { /* TOUCH */\n\n}\n.fc-event:hover .fc-event-resizer, .fc-event-selected .fc-event-resizer {\n    display: block;\n  }\n.fc-event-selected .fc-event-resizer {\n    width: 8px;\n    width: var(--fc-event-resizer-dot-total-width, 8px);\n    height: 8px;\n    height: var(--fc-event-resizer-dot-total-width, 8px)\n\n    /* expand hit area */\n\n  }\n[dir] .fc-event-selected .fc-event-resizer {\n    border-radius: 4px;\n    border-radius: calc(var(--fc-event-resizer-dot-total-width, 8px) / 2);\n    border-width: 1px;\n    border-width: var(--fc-event-resizer-dot-border-width, 1px);\n    border-style: solid;\n    border-color: inherit;\n    background: #fff;\n    background: var(--fc-page-bg-color, #fff)\n\n  }\n.fc-event-selected .fc-event-resizer:before {\n      content: '';\n      position: absolute;\n      top: -20px;\n      bottom: -20px;\n    }\n[dir=ltr] .fc-event-selected .fc-event-resizer:before {\n left: -20px;\n right: -20px;\n    }\n[dir=rtl] .fc-event-selected .fc-event-resizer:before {\n      right: -20px;\n      left: -20px;\n    }\n/* selecting (always TOUCH) */\n/* OR, focused by tab-index */\n/* (TODO: maybe not the best focus-styling for .fc-daygrid-dot-event) */\n/* ---------------------------------------------------------------------------------------------------- */\n.fc-event-selected,\n.fc-event:focus {\n\n  /* expand hit area (subclasses should expand) */\n\n}\n[dir] .fc-event-selected, [dir] .fc-event:focus {\n  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2)\n\n}\n.fc-event-selected:before, .fc-event:focus:before {\n    content: \"\";\n    position: absolute;\n    z-index: 3;\n    top: 0;\n    bottom: 0;\n  }\n[dir=ltr] .fc-event-selected:before, [dir=ltr] .fc-event:focus:before {\n left: 0;\n right: 0;\n  }\n[dir=rtl] .fc-event-selected:before, [dir=rtl] .fc-event:focus:before {\n    right: 0;\n    left: 0;\n  }\n.fc-event-selected,\n.fc-event:focus {\n\n  /* dimmer effect */\n\n}\n.fc-event-selected:after, .fc-event:focus:after {\n    content: \"\";\n    position: absolute;\n    z-index: 1;\n\n    /* assume there's a border on all sides. overcome it. */\n    /* sometimes there's NOT a border, in which case the dimmer will go over */\n    /* an adjacent border, which looks fine. */\n    top: -1px;\n    bottom: -1px;\n  }\n[dir] .fc-event-selected:after, [dir] .fc-event:focus:after {\n    background: rgba(0, 0, 0, 0.25);\n    background: var(--fc-event-selected-overlay-color, rgba(0, 0, 0, 0.25));\n  }\n[dir=ltr] .fc-event-selected:after, [dir=ltr] .fc-event:focus:after {\n left: -1px;\n right: -1px;\n  }\n[dir=rtl] .fc-event-selected:after, [dir=rtl] .fc-event:focus:after {\n    right: -1px;\n    left: -1px;\n  }\n/*\nA HORIZONTAL event\n*/\n.fc-h-event { /* allowed to be top-level */\n  display: block\n\n}\n[dir] .fc-h-event {\n  border: 1px solid #3788d8;\n  border: 1px solid var(--fc-event-border-color, #3788d8);\n  background-color: #3788d8;\n  background-color: var(--fc-event-bg-color, #3788d8)\n\n}\n.fc-h-event .fc-event-main {\n    color: #fff;\n    color: var(--fc-event-text-color, #fff);\n  }\n.fc-h-event .fc-event-main-frame {\n    display: flex; /* for make fc-event-title-container expand */\n  }\n.fc-h-event .fc-event-time {\n    max-width: 100%; /* clip overflow on this element */\n    overflow: hidden;\n  }\n.fc-h-event .fc-event-title-container { /* serves as a container for the sticky cushion */\n    flex-grow: 1;\n    flex-shrink: 1;\n    min-width: 0; /* important for allowing to shrink all the way */\n  }\n.fc-h-event .fc-event-title {\n    display: inline-block; /* need this to be sticky cross-browser */\n    vertical-align: top; /* for not messing up line-height */  /* for sticky */ /* for sticky */\n    max-width: 100%; /* clip overflow on this element */\n    overflow: hidden;\n  }\n[dir=ltr] .fc-h-event .fc-event-title {\n left: 0;\n right: 0;\n  }\n[dir=rtl] .fc-h-event .fc-event-title {\n    right: 0;\n    left: 0;\n  }\n.fc-h-event.fc-event-selected:before {\n    /* expand hit area */\n    top: -10px;\n    bottom: -10px;\n  }\n/* adjust border and border-radius (if there is any) for non-start/end */\n[dir=ltr] .fc-direction-ltr .fc-daygrid-block-event:not(.fc-event-start), [dir=ltr] .fc-direction-rtl .fc-daygrid-block-event:not(.fc-event-end) {\n border-top-left-radius: 0;\n border-bottom-left-radius: 0;\n border-left-width: 0;\n}\n[dir=rtl] .fc-direction-ltr .fc-daygrid-block-event:not(.fc-event-start), [dir=rtl] .fc-direction-rtl .fc-daygrid-block-event:not(.fc-event-end) {\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 0;\n  border-right-width: 0;\n}\n[dir=ltr] .fc-direction-ltr .fc-daygrid-block-event:not(.fc-event-end), [dir=ltr] .fc-direction-rtl .fc-daygrid-block-event:not(.fc-event-start) {\n border-top-right-radius: 0;\n border-bottom-right-radius: 0;\n border-right-width: 0;\n}\n[dir=rtl] .fc-direction-ltr .fc-daygrid-block-event:not(.fc-event-end), [dir=rtl] .fc-direction-rtl .fc-daygrid-block-event:not(.fc-event-start) {\n  border-top-left-radius: 0;\n  border-bottom-left-radius: 0;\n  border-left-width: 0;\n}\n/* resizers */\n.fc-h-event:not(.fc-event-selected) .fc-event-resizer {\n  top: 0;\n  bottom: 0;\n  width: 8px;\n  width: var(--fc-event-resizer-thickness, 8px);\n}\n[dir] .fc-direction-ltr .fc-h-event:not(.fc-event-selected) .fc-event-resizer-start, [dir] .fc-direction-rtl .fc-h-event:not(.fc-event-selected) .fc-event-resizer-end {\n  cursor: w-resize;\n}\n[dir=ltr] .fc-direction-ltr .fc-h-event:not(.fc-event-selected) .fc-event-resizer-start, [dir=ltr] .fc-direction-rtl .fc-h-event:not(.fc-event-selected) .fc-event-resizer-end {\n left: -4px;\n left: calc(-0.5 * var(--fc-event-resizer-thickness, 8px));\n}\n[dir=rtl] .fc-direction-ltr .fc-h-event:not(.fc-event-selected) .fc-event-resizer-start, [dir=rtl] .fc-direction-rtl .fc-h-event:not(.fc-event-selected) .fc-event-resizer-end {\n  right: -4px;\n  right: calc(-0.5 * var(--fc-event-resizer-thickness, 8px));\n}\n[dir] .fc-direction-ltr .fc-h-event:not(.fc-event-selected) .fc-event-resizer-end, [dir] .fc-direction-rtl .fc-h-event:not(.fc-event-selected) .fc-event-resizer-start {\n  cursor: e-resize;\n}\n[dir=ltr] .fc-direction-ltr .fc-h-event:not(.fc-event-selected) .fc-event-resizer-end, [dir=ltr] .fc-direction-rtl .fc-h-event:not(.fc-event-selected) .fc-event-resizer-start {\n right: -4px;\n right: calc(-0.5 * var(--fc-event-resizer-thickness, 8px));\n}\n[dir=rtl] .fc-direction-ltr .fc-h-event:not(.fc-event-selected) .fc-event-resizer-end, [dir=rtl] .fc-direction-rtl .fc-h-event:not(.fc-event-selected) .fc-event-resizer-start {\n  left: -4px;\n  left: calc(-0.5 * var(--fc-event-resizer-thickness, 8px));\n}\n/* resizers for TOUCH */\n.fc-h-event.fc-event-selected .fc-event-resizer {\n  top: 50%;\n}\n[dir] .fc-h-event.fc-event-selected .fc-event-resizer {\n  margin-top: -4px;\n  margin-top: calc(-0.5 * var(--fc-event-resizer-dot-total-width, 8px));\n}\n[dir=ltr] .fc-direction-ltr .fc-h-event.fc-event-selected .fc-event-resizer-start, [dir=ltr] .fc-direction-rtl .fc-h-event.fc-event-selected .fc-event-resizer-end {\n left: -4px;\n left: calc(-0.5 * var(--fc-event-resizer-dot-total-width, 8px));\n}\n[dir=rtl] .fc-direction-ltr .fc-h-event.fc-event-selected .fc-event-resizer-start, [dir=rtl] .fc-direction-rtl .fc-h-event.fc-event-selected .fc-event-resizer-end {\n  right: -4px;\n  right: calc(-0.5 * var(--fc-event-resizer-dot-total-width, 8px));\n}\n[dir=ltr] .fc-direction-ltr .fc-h-event.fc-event-selected .fc-event-resizer-end, [dir=ltr] .fc-direction-rtl .fc-h-event.fc-event-selected .fc-event-resizer-start {\n right: -4px;\n right: calc(-0.5 * var(--fc-event-resizer-dot-total-width, 8px));\n}\n[dir=rtl] .fc-direction-ltr .fc-h-event.fc-event-selected .fc-event-resizer-end, [dir=rtl] .fc-direction-rtl .fc-h-event.fc-event-selected .fc-event-resizer-start {\n  left: -4px;\n  left: calc(-0.5 * var(--fc-event-resizer-dot-total-width, 8px));\n}\n.fc .fc-popover {\n    position: absolute;\n    z-index: 9999;\n  }\n[dir] .fc .fc-popover {\n    box-shadow: 0 2px 6px rgba(0,0,0,.15);\n  }\n.fc .fc-popover-header {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n  }\n[dir] .fc .fc-popover-header {\n    padding: 3px 4px;\n  }\n[dir] .fc .fc-popover-title {\n    margin: 0 2px;\n  }\n.fc .fc-popover-close {\n    opacity: 0.65;\n    font-size: 1.1em;\n  }\n[dir] .fc .fc-popover-close {\n    cursor: pointer;\n  }\n[dir] .fc-theme-standard .fc-popover {\n    border: 1px solid #ddd;\n    border: 1px solid var(--fc-border-color, #ddd);\n    background: #fff;\n    background: var(--fc-page-bg-color, #fff);\n  }\n[dir] .fc-theme-standard .fc-popover-header {\n    background: rgba(208, 208, 208, 0.3);\n    background: var(--fc-neutral-bg-color, rgba(208, 208, 208, 0.3));\n  }\n", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./node_modules/preact/compat/dist/compat.module.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/preact/compat/dist/compat.module.js ***!
+  \**********************************************************/
+/*! exports provided: Component, Fragment, createContext, createElement, createRef, useCallback, useContext, useDebugValue, useEffect, useErrorBoundary, useId, useImperativeHandle, useLayoutEffect, useMemo, useReducer, useRef, useState, Children, PureComponent, StrictMode, Suspense, SuspenseList, __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED, cloneElement, createFactory, createPortal, default, findDOMNode, flushSync, forwardRef, hydrate, isValidElement, lazy, memo, render, startTransition, unmountComponentAtNode, unstable_batchedUpdates, useDeferredValue, useInsertionEffect, useSyncExternalStore, useTransition, version */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Children", function() { return O; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PureComponent", function() { return w; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StrictMode", function() { return vn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Suspense", function() { return D; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SuspenseList", function() { return V; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED", function() { return rn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cloneElement", function() { return cn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createFactory", function() { return on; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPortal", function() { return j; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return bn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findDOMNode", function() { return an; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "flushSync", function() { return hn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "forwardRef", function() { return k; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hydrate", function() { return q; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isValidElement", function() { return ln; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lazy", function() { return M; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "memo", function() { return R; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return Y; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "startTransition", function() { return dn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unmountComponentAtNode", function() { return fn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_batchedUpdates", function() { return sn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useDeferredValue", function() { return pn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useInsertionEffect", function() { return yn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useSyncExternalStore", function() { return _n; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useTransition", function() { return mn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "version", function() { return un; });
+/* harmony import */ var preact__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! preact */ "./node_modules/preact/dist/preact.module.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Component", function() { return preact__WEBPACK_IMPORTED_MODULE_0__["Component"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Fragment", function() { return preact__WEBPACK_IMPORTED_MODULE_0__["Fragment"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createContext", function() { return preact__WEBPACK_IMPORTED_MODULE_0__["createContext"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createElement", function() { return preact__WEBPACK_IMPORTED_MODULE_0__["createElement"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createRef", function() { return preact__WEBPACK_IMPORTED_MODULE_0__["createRef"]; });
+
+/* harmony import */ var preact_hooks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! preact/hooks */ "./node_modules/preact/hooks/dist/hooks.module.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useCallback", function() { return preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useCallback"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useContext", function() { return preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useContext"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useDebugValue", function() { return preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useDebugValue"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useEffect", function() { return preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useEffect"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useErrorBoundary", function() { return preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useErrorBoundary"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useId", function() { return preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useId"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useImperativeHandle", function() { return preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useImperativeHandle"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useLayoutEffect", function() { return preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useLayoutEffect"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useMemo", function() { return preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useMemo"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useReducer", function() { return preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useReducer"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useRef", function() { return preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useRef"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useState", function() { return preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useState"]; });
+
+function g(n,t){for(var e in t)n[e]=t[e];return n}function C(n,t){for(var e in n)if("__source"!==e&&!(e in t))return!0;for(var r in t)if("__source"!==r&&n[r]!==t[r])return!0;return!1}function E(n,t){return n===t&&(0!==n||1/n==1/t)||n!=n&&t!=t}function w(n){this.props=n}function R(n,e){function r(n){var t=this.props.ref,r=t==n.ref;return!r&&t&&(t.call?t(null):t.current=null),e?!e(this.props,n)||!r:C(this.props,n)}function u(e){return this.shouldComponentUpdate=r,Object(preact__WEBPACK_IMPORTED_MODULE_0__["createElement"])(n,e)}return u.displayName="Memo("+(n.displayName||n.name)+")",u.prototype.isReactComponent=!0,u.__f=!0,u}(w.prototype=new preact__WEBPACK_IMPORTED_MODULE_0__["Component"]).isPureReactComponent=!0,w.prototype.shouldComponentUpdate=function(n,t){return C(this.props,n)||C(this.state,t)};var x=preact__WEBPACK_IMPORTED_MODULE_0__["options"].__b;preact__WEBPACK_IMPORTED_MODULE_0__["options"].__b=function(n){n.type&&n.type.__f&&n.ref&&(n.props.ref=n.ref,n.ref=null),x&&x(n)};var N="undefined"!=typeof Symbol&&Symbol.for&&Symbol.for("react.forward_ref")||3911;function k(n){function t(t){var e=g({},t);return delete e.ref,n(e,t.ref||null)}return t.$$typeof=N,t.render=t,t.prototype.isReactComponent=t.__f=!0,t.displayName="ForwardRef("+(n.displayName||n.name)+")",t}var A=function(n,t){return null==n?null:Object(preact__WEBPACK_IMPORTED_MODULE_0__["toChildArray"])(Object(preact__WEBPACK_IMPORTED_MODULE_0__["toChildArray"])(n).map(t))},O={map:A,forEach:A,count:function(n){return n?Object(preact__WEBPACK_IMPORTED_MODULE_0__["toChildArray"])(n).length:0},only:function(n){var t=Object(preact__WEBPACK_IMPORTED_MODULE_0__["toChildArray"])(n);if(1!==t.length)throw"Children.only";return t[0]},toArray:preact__WEBPACK_IMPORTED_MODULE_0__["toChildArray"]},T=preact__WEBPACK_IMPORTED_MODULE_0__["options"].__e;preact__WEBPACK_IMPORTED_MODULE_0__["options"].__e=function(n,t,e,r){if(n.then)for(var u,o=t;o=o.__;)if((u=o.__c)&&u.__c)return null==t.__e&&(t.__e=e.__e,t.__k=e.__k),u.__c(n,t);T(n,t,e,r)};var I=preact__WEBPACK_IMPORTED_MODULE_0__["options"].unmount;function L(n,t,e){return n&&(n.__c&&n.__c.__H&&(n.__c.__H.__.forEach(function(n){"function"==typeof n.__c&&n.__c()}),n.__c.__H=null),null!=(n=g({},n)).__c&&(n.__c.__P===e&&(n.__c.__P=t),n.__c=null),n.__k=n.__k&&n.__k.map(function(n){return L(n,t,e)})),n}function U(n,t,e){return n&&(n.__v=null,n.__k=n.__k&&n.__k.map(function(n){return U(n,t,e)}),n.__c&&n.__c.__P===t&&(n.__e&&e.insertBefore(n.__e,n.__d),n.__c.__e=!0,n.__c.__P=e)),n}function D(){this.__u=0,this.t=null,this.__b=null}function F(n){var t=n.__.__c;return t&&t.__a&&t.__a(n)}function M(n){var e,r,u;function o(o){if(e||(e=n()).then(function(n){r=n.default||n},function(n){u=n}),u)throw u;if(!r)throw e;return Object(preact__WEBPACK_IMPORTED_MODULE_0__["createElement"])(r,o)}return o.displayName="Lazy",o.__f=!0,o}function V(){this.u=null,this.o=null}preact__WEBPACK_IMPORTED_MODULE_0__["options"].unmount=function(n){var t=n.__c;t&&t.__R&&t.__R(),t&&!0===n.__h&&(n.type=null),I&&I(n)},(D.prototype=new preact__WEBPACK_IMPORTED_MODULE_0__["Component"]).__c=function(n,t){var e=t.__c,r=this;null==r.t&&(r.t=[]),r.t.push(e);var u=F(r.__v),o=!1,i=function(){o||(o=!0,e.__R=null,u?u(l):l())};e.__R=i;var l=function(){if(!--r.__u){if(r.state.__a){var n=r.state.__a;r.__v.__k[0]=U(n,n.__c.__P,n.__c.__O)}var t;for(r.setState({__a:r.__b=null});t=r.t.pop();)t.forceUpdate()}},c=!0===t.__h;r.__u++||c||r.setState({__a:r.__b=r.__v.__k[0]}),n.then(i,i)},D.prototype.componentWillUnmount=function(){this.t=[]},D.prototype.render=function(n,e){if(this.__b){if(this.__v.__k){var r=document.createElement("div"),o=this.__v.__k[0].__c;this.__v.__k[0]=L(this.__b,r,o.__O=o.__P)}this.__b=null}var i=e.__a&&Object(preact__WEBPACK_IMPORTED_MODULE_0__["createElement"])(preact__WEBPACK_IMPORTED_MODULE_0__["Fragment"],null,n.fallback);return i&&(i.__h=null),[Object(preact__WEBPACK_IMPORTED_MODULE_0__["createElement"])(preact__WEBPACK_IMPORTED_MODULE_0__["Fragment"],null,e.__a?null:n.children),i]};var W=function(n,t,e){if(++e[1]===e[0]&&n.o.delete(t),n.props.revealOrder&&("t"!==n.props.revealOrder[0]||!n.o.size))for(e=n.u;e;){for(;e.length>3;)e.pop()();if(e[1]<e[0])break;n.u=e=e[2]}};function P(n){return this.getChildContext=function(){return n.context},n.children}function $(n){var e=this,r=n.i;e.componentWillUnmount=function(){Object(preact__WEBPACK_IMPORTED_MODULE_0__["render"])(null,e.l),e.l=null,e.i=null},e.i&&e.i!==r&&e.componentWillUnmount(),n.__v?(e.l||(e.i=r,e.l={nodeType:1,parentNode:r,childNodes:[],appendChild:function(n){this.childNodes.push(n),e.i.appendChild(n)},insertBefore:function(n,t){this.childNodes.push(n),e.i.appendChild(n)},removeChild:function(n){this.childNodes.splice(this.childNodes.indexOf(n)>>>1,1),e.i.removeChild(n)}}),Object(preact__WEBPACK_IMPORTED_MODULE_0__["render"])(Object(preact__WEBPACK_IMPORTED_MODULE_0__["createElement"])(P,{context:e.context},n.__v),e.l)):e.l&&e.componentWillUnmount()}function j(n,e){var r=Object(preact__WEBPACK_IMPORTED_MODULE_0__["createElement"])($,{__v:n,i:e});return r.containerInfo=e,r}(V.prototype=new preact__WEBPACK_IMPORTED_MODULE_0__["Component"]).__a=function(n){var t=this,e=F(t.__v),r=t.o.get(n);return r[0]++,function(u){var o=function(){t.props.revealOrder?(r.push(u),W(t,n,r)):u()};e?e(o):o()}},V.prototype.render=function(n){this.u=null,this.o=new Map;var t=Object(preact__WEBPACK_IMPORTED_MODULE_0__["toChildArray"])(n.children);n.revealOrder&&"b"===n.revealOrder[0]&&t.reverse();for(var e=t.length;e--;)this.o.set(t[e],this.u=[1,0,this.u]);return n.children},V.prototype.componentDidUpdate=V.prototype.componentDidMount=function(){var n=this;this.o.forEach(function(t,e){W(n,e,t)})};var z="undefined"!=typeof Symbol&&Symbol.for&&Symbol.for("react.element")||60103,B=/^(?:accent|alignment|arabic|baseline|cap|clip(?!PathU)|color|dominant|fill|flood|font|glyph(?!R)|horiz|image|letter|lighting|marker(?!H|W|U)|overline|paint|pointer|shape|stop|strikethrough|stroke|text(?!L)|transform|underline|unicode|units|v|vector|vert|word|writing|x(?!C))[A-Z]/,H="undefined"!=typeof document,Z=function(n){return("undefined"!=typeof Symbol&&"symbol"==typeof Symbol()?/fil|che|rad/i:/fil|che|ra/i).test(n)};function Y(n,t,e){return null==t.__k&&(t.textContent=""),Object(preact__WEBPACK_IMPORTED_MODULE_0__["render"])(n,t),"function"==typeof e&&e(),n?n.__c:null}function q(n,t,e){return Object(preact__WEBPACK_IMPORTED_MODULE_0__["hydrate"])(n,t),"function"==typeof e&&e(),n?n.__c:null}preact__WEBPACK_IMPORTED_MODULE_0__["Component"].prototype.isReactComponent={},["componentWillMount","componentWillReceiveProps","componentWillUpdate"].forEach(function(t){Object.defineProperty(preact__WEBPACK_IMPORTED_MODULE_0__["Component"].prototype,t,{configurable:!0,get:function(){return this["UNSAFE_"+t]},set:function(n){Object.defineProperty(this,t,{configurable:!0,writable:!0,value:n})}})});var G=preact__WEBPACK_IMPORTED_MODULE_0__["options"].event;function J(){}function K(){return this.cancelBubble}function Q(){return this.defaultPrevented}preact__WEBPACK_IMPORTED_MODULE_0__["options"].event=function(n){return G&&(n=G(n)),n.persist=J,n.isPropagationStopped=K,n.isDefaultPrevented=Q,n.nativeEvent=n};var X,nn={configurable:!0,get:function(){return this.class}},tn=preact__WEBPACK_IMPORTED_MODULE_0__["options"].vnode;preact__WEBPACK_IMPORTED_MODULE_0__["options"].vnode=function(n){var t=n.type,e=n.props,u=e;if("string"==typeof t){var o=-1===t.indexOf("-");for(var i in u={},e){var l=e[i];H&&"children"===i&&"noscript"===t||"value"===i&&"defaultValue"in e&&null==l||("defaultValue"===i&&"value"in e&&null==e.value?i="value":"download"===i&&!0===l?l="":/ondoubleclick/i.test(i)?i="ondblclick":/^onchange(textarea|input)/i.test(i+t)&&!Z(e.type)?i="oninput":/^onfocus$/i.test(i)?i="onfocusin":/^onblur$/i.test(i)?i="onfocusout":/^on(Ani|Tra|Tou|BeforeInp|Compo)/.test(i)?i=i.toLowerCase():o&&B.test(i)?i=i.replace(/[A-Z0-9]/g,"-$&").toLowerCase():null===l&&(l=void 0),/^oninput$/i.test(i)&&(i=i.toLowerCase(),u[i]&&(i="oninputCapture")),u[i]=l)}"select"==t&&u.multiple&&Array.isArray(u.value)&&(u.value=Object(preact__WEBPACK_IMPORTED_MODULE_0__["toChildArray"])(e.children).forEach(function(n){n.props.selected=-1!=u.value.indexOf(n.props.value)})),"select"==t&&null!=u.defaultValue&&(u.value=Object(preact__WEBPACK_IMPORTED_MODULE_0__["toChildArray"])(e.children).forEach(function(n){n.props.selected=u.multiple?-1!=u.defaultValue.indexOf(n.props.value):u.defaultValue==n.props.value})),n.props=u,e.class!=e.className&&(nn.enumerable="className"in e,null!=e.className&&(u.class=e.className),Object.defineProperty(u,"className",nn))}n.$$typeof=z,tn&&tn(n)};var en=preact__WEBPACK_IMPORTED_MODULE_0__["options"].__r;preact__WEBPACK_IMPORTED_MODULE_0__["options"].__r=function(n){en&&en(n),X=n.__c};var rn={ReactCurrentDispatcher:{current:{readContext:function(n){return X.__n[n.__c].props.value}}}},un="17.0.2";function on(n){return preact__WEBPACK_IMPORTED_MODULE_0__["createElement"].bind(null,n)}function ln(n){return!!n&&n.$$typeof===z}function cn(n){return ln(n)?preact__WEBPACK_IMPORTED_MODULE_0__["cloneElement"].apply(null,arguments):n}function fn(n){return!!n.__k&&(Object(preact__WEBPACK_IMPORTED_MODULE_0__["render"])(null,n),!0)}function an(n){return n&&(n.base||1===n.nodeType&&n)||null}var sn=function(n,t){return n(t)},hn=function(n,t){return n(t)},vn=preact__WEBPACK_IMPORTED_MODULE_0__["Fragment"];function dn(n){n()}function pn(n){return n}function mn(){return[!1,dn]}var yn=preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useLayoutEffect"];function _n(n,t){var e=t(),r=Object(preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useState"])({h:{__:e,v:t}}),u=r[0].h,o=r[1];return Object(preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useLayoutEffect"])(function(){u.__=e,u.v=t,E(u.__,t())||o({h:u})},[n,e,t]),Object(preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function(){return E(u.__,u.v())||o({h:u}),n(function(){E(u.__,u.v())||o({h:u})})},[n]),e}var bn={useState:preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useState"],useId:preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useId"],useReducer:preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useReducer"],useEffect:preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useEffect"],useLayoutEffect:preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useLayoutEffect"],useInsertionEffect:yn,useTransition:mn,useDeferredValue:pn,useSyncExternalStore:_n,startTransition:dn,useRef:preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useRef"],useImperativeHandle:preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useImperativeHandle"],useMemo:preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useMemo"],useCallback:preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useCallback"],useContext:preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useContext"],useDebugValue:preact_hooks__WEBPACK_IMPORTED_MODULE_1__["useDebugValue"],version:"17.0.2",Children:O,render:Y,hydrate:q,unmountComponentAtNode:fn,createPortal:j,createElement:preact__WEBPACK_IMPORTED_MODULE_0__["createElement"],createContext:preact__WEBPACK_IMPORTED_MODULE_0__["createContext"],createFactory:on,cloneElement:cn,createRef:preact__WEBPACK_IMPORTED_MODULE_0__["createRef"],Fragment:preact__WEBPACK_IMPORTED_MODULE_0__["Fragment"],isValidElement:ln,findDOMNode:an,Component:preact__WEBPACK_IMPORTED_MODULE_0__["Component"],PureComponent:w,memo:R,forwardRef:k,flushSync:hn,unstable_batchedUpdates:sn,StrictMode:vn,Suspense:D,SuspenseList:V,lazy:M,__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:rn};
+//# sourceMappingURL=compat.module.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/preact/dist/preact.module.js":
+/*!***************************************************!*\
+  !*** ./node_modules/preact/dist/preact.module.js ***!
+  \***************************************************/
+/*! exports provided: Component, Fragment, cloneElement, createContext, createElement, createRef, h, hydrate, isValidElement, options, render, toChildArray */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Component", function() { return x; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Fragment", function() { return _; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cloneElement", function() { return F; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createContext", function() { return G; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createElement", function() { return y; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createRef", function() { return d; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return y; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hydrate", function() { return E; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isValidElement", function() { return i; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "options", function() { return l; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return D; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toChildArray", function() { return j; });
+var n,l,u,i,t,r,o,f,e,c={},s=[],a=/acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;function h(n,l){for(var u in l)n[u]=l[u];return n}function v(n){var l=n.parentNode;l&&l.removeChild(n)}function y(l,u,i){var t,r,o,f={};for(o in u)"key"==o?t=u[o]:"ref"==o?r=u[o]:f[o]=u[o];if(arguments.length>2&&(f.children=arguments.length>3?n.call(arguments,2):i),"function"==typeof l&&null!=l.defaultProps)for(o in l.defaultProps)void 0===f[o]&&(f[o]=l.defaultProps[o]);return p(l,f,t,r,null)}function p(n,i,t,r,o){var f={type:n,props:i,key:t,ref:r,__k:null,__:null,__b:0,__e:null,__d:void 0,__c:null,__h:null,constructor:void 0,__v:null==o?++u:o};return null==o&&null!=l.vnode&&l.vnode(f),f}function d(){return{current:null}}function _(n){return n.children}function k(n,l,u,i,t){var r;for(r in u)"children"===r||"key"===r||r in l||g(n,r,null,u[r],i);for(r in l)t&&"function"!=typeof l[r]||"children"===r||"key"===r||"value"===r||"checked"===r||u[r]===l[r]||g(n,r,l[r],u[r],i)}function b(n,l,u){"-"===l[0]?n.setProperty(l,null==u?"":u):n[l]=null==u?"":"number"!=typeof u||a.test(l)?u:u+"px"}function g(n,l,u,i,t){var r;n:if("style"===l)if("string"==typeof u)n.style.cssText=u;else{if("string"==typeof i&&(n.style.cssText=i=""),i)for(l in i)u&&l in u||b(n.style,l,"");if(u)for(l in u)i&&u[l]===i[l]||b(n.style,l,u[l])}else if("o"===l[0]&&"n"===l[1])r=l!==(l=l.replace(/Capture$/,"")),l=l.toLowerCase()in n?l.toLowerCase().slice(2):l.slice(2),n.l||(n.l={}),n.l[l+r]=u,u?i||n.addEventListener(l,r?w:m,r):n.removeEventListener(l,r?w:m,r);else if("dangerouslySetInnerHTML"!==l){if(t)l=l.replace(/xlink(H|:h)/,"h").replace(/sName$/,"s");else if("width"!==l&&"height"!==l&&"href"!==l&&"list"!==l&&"form"!==l&&"tabIndex"!==l&&"download"!==l&&l in n)try{n[l]=null==u?"":u;break n}catch(n){}"function"==typeof u||(null==u||!1===u&&-1==l.indexOf("-")?n.removeAttribute(l):n.setAttribute(l,u))}}function m(n){t=!0;try{return this.l[n.type+!1](l.event?l.event(n):n)}finally{t=!1}}function w(n){t=!0;try{return this.l[n.type+!0](l.event?l.event(n):n)}finally{t=!1}}function x(n,l){this.props=n,this.context=l}function A(n,l){if(null==l)return n.__?A(n.__,n.__.__k.indexOf(n)+1):null;for(var u;l<n.__k.length;l++)if(null!=(u=n.__k[l])&&null!=u.__e)return u.__e;return"function"==typeof n.type?A(n):null}function P(n){var l,u;if(null!=(n=n.__)&&null!=n.__c){for(n.__e=n.__c.base=null,l=0;l<n.__k.length;l++)if(null!=(u=n.__k[l])&&null!=u.__e){n.__e=n.__c.base=u.__e;break}return P(n)}}function C(n){t?setTimeout(n):f(n)}function T(n){(!n.__d&&(n.__d=!0)&&r.push(n)&&!$.__r++||o!==l.debounceRendering)&&((o=l.debounceRendering)||C)($)}function $(){var n,l,u,i,t,o,f,e;for(r.sort(function(n,l){return n.__v.__b-l.__v.__b});n=r.shift();)n.__d&&(l=r.length,i=void 0,t=void 0,f=(o=(u=n).__v).__e,(e=u.__P)&&(i=[],(t=h({},o)).__v=o.__v+1,M(e,o,t,u.__n,void 0!==e.ownerSVGElement,null!=o.__h?[f]:null,i,null==f?A(o):f,o.__h),N(i,o),o.__e!=f&&P(o)),r.length>l&&r.sort(function(n,l){return n.__v.__b-l.__v.__b}));$.__r=0}function H(n,l,u,i,t,r,o,f,e,a){var h,v,y,d,k,b,g,m=i&&i.__k||s,w=m.length;for(u.__k=[],h=0;h<l.length;h++)if(null!=(d=u.__k[h]=null==(d=l[h])||"boolean"==typeof d?null:"string"==typeof d||"number"==typeof d||"bigint"==typeof d?p(null,d,null,null,d):Array.isArray(d)?p(_,{children:d},null,null,null):d.__b>0?p(d.type,d.props,d.key,d.ref?d.ref:null,d.__v):d)){if(d.__=u,d.__b=u.__b+1,null===(y=m[h])||y&&d.key==y.key&&d.type===y.type)m[h]=void 0;else for(v=0;v<w;v++){if((y=m[v])&&d.key==y.key&&d.type===y.type){m[v]=void 0;break}y=null}M(n,d,y=y||c,t,r,o,f,e,a),k=d.__e,(v=d.ref)&&y.ref!=v&&(g||(g=[]),y.ref&&g.push(y.ref,null,d),g.push(v,d.__c||k,d)),null!=k?(null==b&&(b=k),"function"==typeof d.type&&d.__k===y.__k?d.__d=e=I(d,e,n):e=z(n,d,y,m,k,e),"function"==typeof u.type&&(u.__d=e)):e&&y.__e==e&&e.parentNode!=n&&(e=A(y))}for(u.__e=b,h=w;h--;)null!=m[h]&&("function"==typeof u.type&&null!=m[h].__e&&m[h].__e==u.__d&&(u.__d=L(i).nextSibling),q(m[h],m[h]));if(g)for(h=0;h<g.length;h++)S(g[h],g[++h],g[++h])}function I(n,l,u){for(var i,t=n.__k,r=0;t&&r<t.length;r++)(i=t[r])&&(i.__=n,l="function"==typeof i.type?I(i,l,u):z(u,i,i,t,i.__e,l));return l}function j(n,l){return l=l||[],null==n||"boolean"==typeof n||(Array.isArray(n)?n.some(function(n){j(n,l)}):l.push(n)),l}function z(n,l,u,i,t,r){var o,f,e;if(void 0!==l.__d)o=l.__d,l.__d=void 0;else if(null==u||t!=r||null==t.parentNode)n:if(null==r||r.parentNode!==n)n.appendChild(t),o=null;else{for(f=r,e=0;(f=f.nextSibling)&&e<i.length;e+=1)if(f==t)break n;n.insertBefore(t,r),o=r}return void 0!==o?o:t.nextSibling}function L(n){var l,u,i;if(null==n.type||"string"==typeof n.type)return n.__e;if(n.__k)for(l=n.__k.length-1;l>=0;l--)if((u=n.__k[l])&&(i=L(u)))return i;return null}function M(n,u,i,t,r,o,f,e,c){var s,a,v,y,p,d,k,b,g,m,w,A,P,C,T,$=u.type;if(void 0!==u.constructor)return null;null!=i.__h&&(c=i.__h,e=u.__e=i.__e,u.__h=null,o=[e]),(s=l.__b)&&s(u);try{n:if("function"==typeof $){if(b=u.props,g=(s=$.contextType)&&t[s.__c],m=s?g?g.props.value:s.__:t,i.__c?k=(a=u.__c=i.__c).__=a.__E:("prototype"in $&&$.prototype.render?u.__c=a=new $(b,m):(u.__c=a=new x(b,m),a.constructor=$,a.render=B),g&&g.sub(a),a.props=b,a.state||(a.state={}),a.context=m,a.__n=t,v=a.__d=!0,a.__h=[],a._sb=[]),null==a.__s&&(a.__s=a.state),null!=$.getDerivedStateFromProps&&(a.__s==a.state&&(a.__s=h({},a.__s)),h(a.__s,$.getDerivedStateFromProps(b,a.__s))),y=a.props,p=a.state,a.__v=u,v)null==$.getDerivedStateFromProps&&null!=a.componentWillMount&&a.componentWillMount(),null!=a.componentDidMount&&a.__h.push(a.componentDidMount);else{if(null==$.getDerivedStateFromProps&&b!==y&&null!=a.componentWillReceiveProps&&a.componentWillReceiveProps(b,m),!a.__e&&null!=a.shouldComponentUpdate&&!1===a.shouldComponentUpdate(b,a.__s,m)||u.__v===i.__v){for(u.__v!==i.__v&&(a.props=b,a.state=a.__s,a.__d=!1),u.__e=i.__e,u.__k=i.__k,u.__k.forEach(function(n){n&&(n.__=u)}),w=0;w<a._sb.length;w++)a.__h.push(a._sb[w]);a._sb=[],a.__h.length&&f.push(a);break n}null!=a.componentWillUpdate&&a.componentWillUpdate(b,a.__s,m),null!=a.componentDidUpdate&&a.__h.push(function(){a.componentDidUpdate(y,p,d)})}if(a.context=m,a.props=b,a.__P=n,A=l.__r,P=0,"prototype"in $&&$.prototype.render){for(a.state=a.__s,a.__d=!1,A&&A(u),s=a.render(a.props,a.state,a.context),C=0;C<a._sb.length;C++)a.__h.push(a._sb[C]);a._sb=[]}else do{a.__d=!1,A&&A(u),s=a.render(a.props,a.state,a.context),a.state=a.__s}while(a.__d&&++P<25);a.state=a.__s,null!=a.getChildContext&&(t=h(h({},t),a.getChildContext())),v||null==a.getSnapshotBeforeUpdate||(d=a.getSnapshotBeforeUpdate(y,p)),T=null!=s&&s.type===_&&null==s.key?s.props.children:s,H(n,Array.isArray(T)?T:[T],u,i,t,r,o,f,e,c),a.base=u.__e,u.__h=null,a.__h.length&&f.push(a),k&&(a.__E=a.__=null),a.__e=!1}else null==o&&u.__v===i.__v?(u.__k=i.__k,u.__e=i.__e):u.__e=O(i.__e,u,i,t,r,o,f,c);(s=l.diffed)&&s(u)}catch(n){u.__v=null,(c||null!=o)&&(u.__e=e,u.__h=!!c,o[o.indexOf(e)]=null),l.__e(n,u,i)}}function N(n,u){l.__c&&l.__c(u,n),n.some(function(u){try{n=u.__h,u.__h=[],n.some(function(n){n.call(u)})}catch(n){l.__e(n,u.__v)}})}function O(l,u,i,t,r,o,f,e){var s,a,h,y=i.props,p=u.props,d=u.type,_=0;if("svg"===d&&(r=!0),null!=o)for(;_<o.length;_++)if((s=o[_])&&"setAttribute"in s==!!d&&(d?s.localName===d:3===s.nodeType)){l=s,o[_]=null;break}if(null==l){if(null===d)return document.createTextNode(p);l=r?document.createElementNS("http://www.w3.org/2000/svg",d):document.createElement(d,p.is&&p),o=null,e=!1}if(null===d)y===p||e&&l.data===p||(l.data=p);else{if(o=o&&n.call(l.childNodes),a=(y=i.props||c).dangerouslySetInnerHTML,h=p.dangerouslySetInnerHTML,!e){if(null!=o)for(y={},_=0;_<l.attributes.length;_++)y[l.attributes[_].name]=l.attributes[_].value;(h||a)&&(h&&(a&&h.__html==a.__html||h.__html===l.innerHTML)||(l.innerHTML=h&&h.__html||""))}if(k(l,p,y,r,e),h)u.__k=[];else if(_=u.props.children,H(l,Array.isArray(_)?_:[_],u,i,t,r&&"foreignObject"!==d,o,f,o?o[0]:i.__k&&A(i,0),e),null!=o)for(_=o.length;_--;)null!=o[_]&&v(o[_]);e||("value"in p&&void 0!==(_=p.value)&&(_!==l.value||"progress"===d&&!_||"option"===d&&_!==y.value)&&g(l,"value",_,y.value,!1),"checked"in p&&void 0!==(_=p.checked)&&_!==l.checked&&g(l,"checked",_,y.checked,!1))}return l}function S(n,u,i){try{"function"==typeof n?n(u):n.current=u}catch(n){l.__e(n,i)}}function q(n,u,i){var t,r;if(l.unmount&&l.unmount(n),(t=n.ref)&&(t.current&&t.current!==n.__e||S(t,null,u)),null!=(t=n.__c)){if(t.componentWillUnmount)try{t.componentWillUnmount()}catch(n){l.__e(n,u)}t.base=t.__P=null,n.__c=void 0}if(t=n.__k)for(r=0;r<t.length;r++)t[r]&&q(t[r],u,i||"function"!=typeof n.type);i||null==n.__e||v(n.__e),n.__=n.__e=n.__d=void 0}function B(n,l,u){return this.constructor(n,u)}function D(u,i,t){var r,o,f;l.__&&l.__(u,i),o=(r="function"==typeof t)?null:t&&t.__k||i.__k,f=[],M(i,u=(!r&&t||i).__k=y(_,null,[u]),o||c,c,void 0!==i.ownerSVGElement,!r&&t?[t]:o?null:i.firstChild?n.call(i.childNodes):null,f,!r&&t?t:o?o.__e:i.firstChild,r),N(f,u)}function E(n,l){D(n,l,E)}function F(l,u,i){var t,r,o,f=h({},l.props);for(o in u)"key"==o?t=u[o]:"ref"==o?r=u[o]:f[o]=u[o];return arguments.length>2&&(f.children=arguments.length>3?n.call(arguments,2):i),p(l.type,f,t||l.key,r||l.ref,null)}function G(n,l){var u={__c:l="__cC"+e++,__:n,Consumer:function(n,l){return n.children(l)},Provider:function(n){var u,i;return this.getChildContext||(u=[],(i={})[l]=this,this.getChildContext=function(){return i},this.shouldComponentUpdate=function(n){this.props.value!==n.value&&u.some(function(n){n.__e=!0,T(n)})},this.sub=function(n){u.push(n);var l=n.componentWillUnmount;n.componentWillUnmount=function(){u.splice(u.indexOf(n),1),l&&l.call(n)}}),n.children}};return u.Provider.__=u.Consumer.contextType=u}n=s.slice,l={__e:function(n,l,u,i){for(var t,r,o;l=l.__;)if((t=l.__c)&&!t.__)try{if((r=t.constructor)&&null!=r.getDerivedStateFromError&&(t.setState(r.getDerivedStateFromError(n)),o=t.__d),null!=t.componentDidCatch&&(t.componentDidCatch(n,i||{}),o=t.__d),o)return t.__E=t}catch(l){n=l}throw n}},u=0,i=function(n){return null!=n&&void 0===n.constructor},t=!1,x.prototype.setState=function(n,l){var u;u=null!=this.__s&&this.__s!==this.state?this.__s:this.__s=h({},this.state),"function"==typeof n&&(n=n(h({},u),this.props)),n&&h(u,n),null!=n&&this.__v&&(l&&this._sb.push(l),T(this))},x.prototype.forceUpdate=function(n){this.__v&&(this.__e=!0,n&&this.__h.push(n),T(this))},x.prototype.render=_,r=[],f="function"==typeof Promise?Promise.prototype.then.bind(Promise.resolve()):setTimeout,$.__r=0,e=0;
+//# sourceMappingURL=preact.module.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/preact/hooks/dist/hooks.module.js":
+/*!********************************************************!*\
+  !*** ./node_modules/preact/hooks/dist/hooks.module.js ***!
+  \********************************************************/
+/*! exports provided: useCallback, useContext, useDebugValue, useEffect, useErrorBoundary, useId, useImperativeHandle, useLayoutEffect, useMemo, useReducer, useRef, useState */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useCallback", function() { return T; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useContext", function() { return q; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useDebugValue", function() { return x; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useEffect", function() { return h; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useErrorBoundary", function() { return P; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useId", function() { return V; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useImperativeHandle", function() { return A; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useLayoutEffect", function() { return s; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useMemo", function() { return F; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useReducer", function() { return y; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useRef", function() { return _; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useState", function() { return p; });
+/* harmony import */ var preact__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! preact */ "./node_modules/preact/dist/preact.module.js");
+var t,r,u,i,o=0,f=[],c=[],e=preact__WEBPACK_IMPORTED_MODULE_0__["options"].__b,a=preact__WEBPACK_IMPORTED_MODULE_0__["options"].__r,v=preact__WEBPACK_IMPORTED_MODULE_0__["options"].diffed,l=preact__WEBPACK_IMPORTED_MODULE_0__["options"].__c,m=preact__WEBPACK_IMPORTED_MODULE_0__["options"].unmount;function d(t,u){preact__WEBPACK_IMPORTED_MODULE_0__["options"].__h&&preact__WEBPACK_IMPORTED_MODULE_0__["options"].__h(r,t,o||u),o=0;var i=r.__H||(r.__H={__:[],__h:[]});return t>=i.__.length&&i.__.push({__V:c}),i.__[t]}function p(n){return o=1,y(B,n)}function y(n,u,i){var o=d(t++,2);if(o.t=n,!o.__c&&(o.__=[i?i(u):B(void 0,u),function(n){var t=o.__N?o.__N[0]:o.__[0],r=o.t(t,n);t!==r&&(o.__N=[r,o.__[1]],o.__c.setState({}))}],o.__c=r,!r.u)){r.u=!0;var f=r.shouldComponentUpdate;r.shouldComponentUpdate=function(n,t,r){if(!o.__c.__H)return!0;var u=o.__c.__H.__.filter(function(n){return n.__c});if(u.every(function(n){return!n.__N}))return!f||f.call(this,n,t,r);var i=!1;return u.forEach(function(n){if(n.__N){var t=n.__[0];n.__=n.__N,n.__N=void 0,t!==n.__[0]&&(i=!0)}}),!(!i&&o.__c.props===n)&&(!f||f.call(this,n,t,r))}}return o.__N||o.__}function h(u,i){var o=d(t++,3);!preact__WEBPACK_IMPORTED_MODULE_0__["options"].__s&&z(o.__H,i)&&(o.__=u,o.i=i,r.__H.__h.push(o))}function s(u,i){var o=d(t++,4);!preact__WEBPACK_IMPORTED_MODULE_0__["options"].__s&&z(o.__H,i)&&(o.__=u,o.i=i,r.__h.push(o))}function _(n){return o=5,F(function(){return{current:n}},[])}function A(n,t,r){o=6,s(function(){return"function"==typeof n?(n(t()),function(){return n(null)}):n?(n.current=t(),function(){return n.current=null}):void 0},null==r?r:r.concat(n))}function F(n,r){var u=d(t++,7);return z(u.__H,r)?(u.__V=n(),u.i=r,u.__h=n,u.__V):u.__}function T(n,t){return o=8,F(function(){return n},t)}function q(n){var u=r.context[n.__c],i=d(t++,9);return i.c=n,u?(null==i.__&&(i.__=!0,u.sub(r)),u.props.value):n.__}function x(t,r){preact__WEBPACK_IMPORTED_MODULE_0__["options"].useDebugValue&&preact__WEBPACK_IMPORTED_MODULE_0__["options"].useDebugValue(r?r(t):t)}function P(n){var u=d(t++,10),i=p();return u.__=n,r.componentDidCatch||(r.componentDidCatch=function(n,t){u.__&&u.__(n,t),i[1](n)}),[i[0],function(){i[1](void 0)}]}function V(){var n=d(t++,11);if(!n.__){for(var u=r.__v;null!==u&&!u.__m&&null!==u.__;)u=u.__;var i=u.__m||(u.__m=[0,0]);n.__="P"+i[0]+"-"+i[1]++}return n.__}function b(){for(var t;t=f.shift();)if(t.__P&&t.__H)try{t.__H.__h.forEach(k),t.__H.__h.forEach(w),t.__H.__h=[]}catch(r){t.__H.__h=[],preact__WEBPACK_IMPORTED_MODULE_0__["options"].__e(r,t.__v)}}preact__WEBPACK_IMPORTED_MODULE_0__["options"].__b=function(n){r=null,e&&e(n)},preact__WEBPACK_IMPORTED_MODULE_0__["options"].__r=function(n){a&&a(n),t=0;var i=(r=n.__c).__H;i&&(u===r?(i.__h=[],r.__h=[],i.__.forEach(function(n){n.__N&&(n.__=n.__N),n.__V=c,n.__N=n.i=void 0})):(i.__h.forEach(k),i.__h.forEach(w),i.__h=[])),u=r},preact__WEBPACK_IMPORTED_MODULE_0__["options"].diffed=function(t){v&&v(t);var o=t.__c;o&&o.__H&&(o.__H.__h.length&&(1!==f.push(o)&&i===preact__WEBPACK_IMPORTED_MODULE_0__["options"].requestAnimationFrame||((i=preact__WEBPACK_IMPORTED_MODULE_0__["options"].requestAnimationFrame)||j)(b)),o.__H.__.forEach(function(n){n.i&&(n.__H=n.i),n.__V!==c&&(n.__=n.__V),n.i=void 0,n.__V=c})),u=r=null},preact__WEBPACK_IMPORTED_MODULE_0__["options"].__c=function(t,r){r.some(function(t){try{t.__h.forEach(k),t.__h=t.__h.filter(function(n){return!n.__||w(n)})}catch(u){r.some(function(n){n.__h&&(n.__h=[])}),r=[],preact__WEBPACK_IMPORTED_MODULE_0__["options"].__e(u,t.__v)}}),l&&l(t,r)},preact__WEBPACK_IMPORTED_MODULE_0__["options"].unmount=function(t){m&&m(t);var r,u=t.__c;u&&u.__H&&(u.__H.__.forEach(function(n){try{k(n)}catch(n){r=n}}),u.__H=void 0,r&&preact__WEBPACK_IMPORTED_MODULE_0__["options"].__e(r,u.__v))};var g="function"==typeof requestAnimationFrame;function j(n){var t,r=function(){clearTimeout(u),g&&cancelAnimationFrame(t),setTimeout(n)},u=setTimeout(r,100);g&&(t=requestAnimationFrame(r))}function k(n){var t=r,u=n.__c;"function"==typeof u&&(n.__c=void 0,u()),r=t}function w(n){var t=r;n.__c=n.__(),r=t}function z(n,t){return!n||n.length!==t.length||t.some(function(t,r){return t!==n[r]})}function B(n,t){return"function"==typeof t?t(n):t}
+//# sourceMappingURL=hooks.module.js.map
+
+
+/***/ })
+
+}]);
