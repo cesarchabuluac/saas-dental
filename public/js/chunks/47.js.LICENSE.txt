@@ -1,11 +1,8 @@
-/*!
-FullCalendar v5.11.5
-Docs & License: https://fullcalendar.io/
-(c) 2022 Adam Shaw
-*/
-
 /**
-  * vee-validate v3.4.15
-  * (c) 2023 Abdelrahman Awad
-  * @license MIT
-  */
+ * Prism: Lightweight, robust, elegant syntax highlighting
+ *
+ * @license MIT <https://opensource.org/licenses/MIT>
+ * @author Lea Verou <https://lea.verou.me>
+ * @namespace
+ * @public
+ */
