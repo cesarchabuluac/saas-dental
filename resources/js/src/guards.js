@@ -24,24 +24,26 @@ export const SetupGuard = (to, from, next) => {
 export const SubscriptionGuard = (to, from, next) => {
     console.table(`¿ es central ? ${checkIsCentral()}`);
 
-    if (!checkIsCentral()) {
-        const isSubscriptionActive = store.getters['auth/getCurrentAccount'].is_subscribed;
-        const isInitialSetUpActive = store.getters['auth/getCurrentAccount'].initial_setup;
+    // if (!checkIsCentral()) {
+    //     const isSubscriptionActive = store.getters['auth/getCurrentAccount'].is_subscribed;
+    //     const isInitialSetUpActive = store.getters['auth/getCurrentAccount'].initial_setup;
        
-        if (!isInitialSetUpActive) {
-            next({ name: "initial-setup" }); // Redirige al usuario a la página de configuración inicial
-        } else {
-            if (isSubscriptionActive) {
-                next(); // Permite el acceso
-            } else {
-                next({ name: "subscription" }); // Redirige a la página de suscripción
-            }
-        }
-    } else {
-        console.log('Es central');
-        console.log('To:', to);
-        console.log('From:', from);
+    //     if (!isInitialSetUpActive) {
+    //         next({ name: "initial-setup" }); // Redirige al usuario a la página de configuración inicial
+    //     } else {
+    //         if (isSubscriptionActive) {
+    //             next(); // Permite el acceso
+    //         } else {
+    //             next({ name: "subscription" }); // Redirige a la página de suscripción
+    //         }
+    //     }
+    // } else {
+    //     console.log('Es central');
+    //     console.log('To:', to);
+    //     console.log('From:', from);
         
-        next({name: to.name}); // Si es central, permite el acceso
-    }
+    //     next(); // Si es central, permite el acceso
+    // }
+
+    next();
 };
