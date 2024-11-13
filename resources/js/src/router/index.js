@@ -16,7 +16,7 @@ const router = new VueRouter({
       path: '/',
       name: 'home',
       component: () => import('@/views/Dashboard.vue'),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         pageTitle: 'Home',
         permission: 'dashboards.index',
@@ -33,7 +33,7 @@ const router = new VueRouter({
       path: "/appointments",
       name: "appointments",
       component: () => import('@/views/apps/calendar/Calendar.vue'),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "appointments.index",
         pageTitle: "appointments.desc",
@@ -53,7 +53,7 @@ const router = new VueRouter({
       path: "/appointments/add",
       name: "appointments-add",
       component: () => import("@/views/apps/appointments/calendar-add/AppointmentAdd.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "appointments.create",
         pageTitle: "appointments.add.desc",
@@ -73,7 +73,7 @@ const router = new VueRouter({
       path: "/appointment/edit/:id",
       name: "appointment-edit",
       component: () => import("@/views/apps/appointments/calendar-edit/AppointmentEdit.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "appointments.update",
         pageTitle: "appointments.edit.desc",
@@ -133,7 +133,7 @@ const router = new VueRouter({
       path: '/subscription',
       name: 'subscription',
       component: () => import('@/views/tenant/subscriptions/Subscription.vue'),
-      // beforeEnter: SubscriptionGuard,
+      beforeEnter: SubscriptionGuard,
       meta: {
         // layout: 'full',
         pageTitle: 'subscriptions.desc',
@@ -149,7 +149,7 @@ const router = new VueRouter({
       path: '/initial-setup',
       name: 'initial-setup',
       component: () => import('@/views/tenant/InitialSetUp.vue'),
-      // beforeEnter: SubscriptionGuard,        
+      beforeEnter: SubscriptionGuard,        
       meta: {
         layout: 'full',
         // pageTitle: 'subscriptions.desc',
@@ -169,7 +169,7 @@ const router = new VueRouter({
       path: '/profile',
       name: 'profile',
       component: () => import('@/views/settings/profile/AccountSetting.vue'),
-      // beforeEnter: SubscriptionGuard,
+      beforeEnter: SubscriptionGuard,
       meta: {
         pageTitle: 'user_profiles.desc',
         requiresAuth: true,
@@ -188,7 +188,7 @@ const router = new VueRouter({
       path: "/settings",
       name: "settings",
       component: () => import("@/views/settings/general/Settings.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "settings.index",
         pageTitle: "app_setting",
@@ -268,7 +268,7 @@ const router = new VueRouter({
       path: "/settings/users",
       name: "settings-users",
       component: () => import("@/views/settings/users/Index.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "users.index",
         pageTitle: "user_desc",
@@ -288,7 +288,7 @@ const router = new VueRouter({
       path: "/settings/users/add",
       name: "settings-user-add",
       component: () => import("@/views/settings/users/Add.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "users.add",
         pageTitle: "user_add",
@@ -308,7 +308,7 @@ const router = new VueRouter({
       path: "/settings/users/:id/edit",
       name: "settings-user-edit",
       component: () => import("@/views/settings/users/Edit.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "users.edit",
         pageTitle: "user_edit",
@@ -328,7 +328,7 @@ const router = new VueRouter({
       path: "/users/:id/profile",
       name: "user-profile",
       component: () => import("@/views/settings/profile/Profile.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "users.profile",
       },
@@ -484,7 +484,7 @@ const router = new VueRouter({
       name: "settings-branch-offices",
       component: () =>
         import("@/views/settings/branchOffices/Index.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "branch-offices.index",
         pageTitle: "branch_offices.desc",
@@ -505,7 +505,7 @@ const router = new VueRouter({
       name: "settings-branch-offices-add",
       component: () =>
         import("@/views/settings/branchOffices/Add.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "branch-offices.create",
         pageTitle: "branch_offices.title_add",
@@ -526,7 +526,7 @@ const router = new VueRouter({
       name: "settings-branch-offices-edit",
       component: () =>
         import("@/views/settings/branchOffices/Edit.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "branch-offices.edit",
         pageTitle: "branch_offices.title_edit",
@@ -549,7 +549,7 @@ const router = new VueRouter({
       name: "actions-list",
       component: () =>
         import("@/views/apps/catalogs/clinicalActions/Index.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "actions.index",
         pageTitle: "clinical_actions.title_plural",
@@ -570,7 +570,7 @@ const router = new VueRouter({
       name: "actions-add",
       component: () =>
         import("@/views/apps/catalogs/clinicalActions/Add.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "actions.create",
         pageTitle: "clinical_actions.title_add",
@@ -591,7 +591,7 @@ const router = new VueRouter({
       name: "actions-edit",
       component: () =>
         import("@/views/apps/catalogs/clinicalActions/Edit.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "actions.edit",
         pageTitle: "clinical_actions.title_edit",
@@ -614,7 +614,7 @@ const router = new VueRouter({
       name: "laboratory-actions",
       component: () =>
         import("@/views/apps/catalogs/laboratoryActions/Index.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "laboratory_actions.index",
         pageTitle: "laboratory_actions.desc",
@@ -635,7 +635,7 @@ const router = new VueRouter({
       name: "apps-laboratory-actions-add",
       component: () =>
         import("@/views/apps/catalogs/laboratoryActions/Add.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "laboratory_actions.create",
         pageTitle: "laboratory_actions.title_add",
@@ -656,7 +656,7 @@ const router = new VueRouter({
       name: "apps-laboratory-actions-edit",
       component: () =>
         import("@/views/apps/catalogs/laboratoryActions/Edit.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "laboratory_actions.edit",
         pageTitle: "laboratory_actions.title_edit",
@@ -678,7 +678,7 @@ const router = new VueRouter({
       path: "/apps/laboratory/list",
       name: "apps-laboratory-list",
       component: () => import("@/views/apps/catalogs/laboratories/laboratory-list/LaboratoryList.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "laboratories.index",
         pageTitle: "laboratories.desc",
@@ -698,7 +698,7 @@ const router = new VueRouter({
       path: "/apps/laboratory/add",
       name: "apps-laboratory-add",
       component: () => import("@/views/apps/catalogs/laboratories/laboratory-add/LaboratoryAdd.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "laboratories.create",
         pageTitle: "laboratories.add.desc",
@@ -718,7 +718,7 @@ const router = new VueRouter({
       path: "/apps/laboratory/edit/:id",
       name: "apps-laboratory-edit",
       component: () => import("@/views/apps/catalogs/laboratories/laboratory-edit/LaboratoryEdit.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "laboratories.edit",
         pageTitle: "laboratories.edit.desc",
@@ -740,7 +740,7 @@ const router = new VueRouter({
       path: "/apps/work-orders/list",
       name: "apps-work-orders-list",
       component: () => import("@/views/apps/work-orders/work-order-list/WorkOrderList.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "orders.index",
         pageTitle: "work_orders.desc",
@@ -760,7 +760,7 @@ const router = new VueRouter({
       path: '/apps/work-orders/list/:filter',
       name: 'apps-work-orders-list-filter',
       component: () => import("@/views/apps/work-orders/work-order-list/WorkOrderList.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "orders.index",
       },
@@ -769,7 +769,7 @@ const router = new VueRouter({
       path: "/apps/work-orders/add",
       name: "apps-work-orders-add",
       component: () => import("@/views/apps/work-orders/work-order-add/WorkOrderAdd.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "orders.create",
         pageTitle: "work_orders.add.desc",
@@ -789,7 +789,7 @@ const router = new VueRouter({
       path: "/apps/work-orders/edit/:id",
       name: "apps-work-orders-edit",
       component: () => import("@/views/apps/work-orders/work-order-edit/WorkOrderEdit.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "orders.edit",
         pageTitle: "work_orders.edit.desc",
@@ -809,7 +809,7 @@ const router = new VueRouter({
       path: "/apps/work-orders/show/:id",
       name: "apps-work-orders-show",
       component: () => import("@/views/apps/work-orders/work-order-show/WorkOrderShow.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "orders.show",
         pageTitle: "work_orders.show.desc",
@@ -833,7 +833,7 @@ const router = new VueRouter({
       path: "/apps/inventories/categories",
       name: "apps-inventories-categories",
       component: () => import("@/views/apps/inventories/Categories.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "inventories.categories.index",
         pageTitle: "inventories.categories.title",
@@ -853,7 +853,7 @@ const router = new VueRouter({
       path: "/apps/inventories/subcategories",
       name: "apps-inventories-subcategories",
       component: () => import("@/views/apps/inventories/SubCategories.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "inventories.subcategories.index",
         pageTitle: "inventories.subcategories.title",
@@ -873,7 +873,7 @@ const router = new VueRouter({
       path: "/apps/inventories/units",
       name: "apps-inventories-units",
       component: () => import("@/views/apps/inventories/Units.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "inventories.units.index",
         pageTitle: "inventories.units.title",
@@ -893,7 +893,7 @@ const router = new VueRouter({
       path: "/apps/inventories/brands",
       name: "apps-inventories-brands",
       component: () => import("@/views/apps/inventories/Brands.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "inventories.brands.index",
         pageTitle: "inventories.brands.title",
@@ -913,7 +913,7 @@ const router = new VueRouter({
       path: "/apps/inventories/warehouses",
       name: "apps-inventories-warehouses",
       component: () => import("@/views/apps/inventories/Warehouses.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "inventories.warehouses.index",
         pageTitle: "inventories.warehouses.title",
@@ -933,7 +933,7 @@ const router = new VueRouter({
       path: "/apps/inventories/suppliers",
       name: "apps-inventories-suppliers",
       component: () => import("@/views/apps/inventories/Suppliers.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "inventories.suppliers.index",
         pageTitle: "inventories.suppliers.title",
@@ -953,7 +953,7 @@ const router = new VueRouter({
       path: "/apps/inventories/medicines",
       name: "apps-inventories-medicines",
       component: () => import("@/views/apps/inventories/Medicines.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "inventories.medicines.index",
         pageTitle: "inventories.medicines.title",
@@ -973,7 +973,7 @@ const router = new VueRouter({
       path: "/apps/inventories/purchases",
       name: "apps-inventories-purchases",
       component: () => import("@/views/apps/inventories/Purchases/Index.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "inventories.purchases.index",
         pageTitle: "inventories.purchases.title",
@@ -993,7 +993,7 @@ const router = new VueRouter({
       path: "/apps/inventories/purchases/add",
       name: "apps-inventories-purchases-add",
       component: () => import("@/views/apps/inventories/Purchases/Create.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "inventories.purchases.create",
         pageTitle: "inventories.purchases.add.title",
@@ -1013,7 +1013,7 @@ const router = new VueRouter({
       path: "/apps/inventories/purchases/:id/edit",
       name: "apps-inventories-purchases-edit",
       component: () => import("@/views/apps/inventories/Purchases/Update.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "inventories.purchases.edit",
         pageTitle: "inventories.purchases.edit.title",
@@ -1033,7 +1033,7 @@ const router = new VueRouter({
       path: "/apps/inventories/adjustments",
       name: "apps-inventories-adjustments",
       component: () => import("@/views/apps/inventories/Adjustments/Index.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "inventories.adjustments.index",
         pageTitle: "inventories.adjustments.title",
@@ -1053,7 +1053,7 @@ const router = new VueRouter({
       path: "/apps/inventories/adjustments/add",
       name: "apps-inventories-adjustments-add",
       component: () => import("@/views/apps/inventories/Adjustments/Create.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "inventories.adjustments.create",
         pageTitle: "inventories.adjustments.add.title",
@@ -1073,7 +1073,7 @@ const router = new VueRouter({
       path: "/apps/inventories/adjustments/:id/edit",
       name: "apps-inventories-adjustments-edit",
       component: () => import("@/views/apps/inventories/Adjustments/Update.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "inventories.adjustments.edit",
         pageTitle: "inventories.adjustments.edit.title",
@@ -1093,7 +1093,7 @@ const router = new VueRouter({
       path: "/apps/inventories/adjustments/:id/show",
       name: "apps-inventories-adjustments-show",
       component: () => import("@/views/apps/inventories/Adjustments/Show.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "inventories.adjustments.show",
         pageTitle: "inventories.adjustments.show.title",
@@ -1113,7 +1113,7 @@ const router = new VueRouter({
       path: "/apps/inventories/transfers",
       name: "apps-inventories-transfers",
       component: () => import("@/views/apps/inventories/Transfers/Index.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "inventories.transfers.index",
         pageTitle: "inventories.transfers.title",
@@ -1133,7 +1133,7 @@ const router = new VueRouter({
       path: "/apps/inventories/transfers/add",
       name: "apps-inventories-transfers-add",
       component: () => import("@/views/apps/inventories/Transfers/Create.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "inventories.transfers.create",
         pageTitle: "inventories.transfers.add.title",
@@ -1153,7 +1153,7 @@ const router = new VueRouter({
       path: "/apps/inventories/transfers/:id/show",
       name: "apps-inventories-transfers-show",
       component: () => import("@/views/apps/inventories/Transfers/Show.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "inventories.transfers.show",
         pageTitle: "inventories.transfers.show.title",
@@ -1175,7 +1175,7 @@ const router = new VueRouter({
       path: "/apps/patients/list",
       name: "apps-patients-list",
       component: () => import("@/views/apps/patients/patient-list/PatientList.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "patients.index",
         pageTitle: "patients.desc",
@@ -1194,7 +1194,7 @@ const router = new VueRouter({
       path: "/apps/patients/add",
       name: "apps-patients-add",
       component: () => import("@/views/apps/patients/patient-add/PatientAdd.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "patients.create",
         pageTitle: "patients.add.desc",
@@ -1214,7 +1214,7 @@ const router = new VueRouter({
       path: "/apps/patients/view/:id",
       name: "apps-patients-view",
       component: () => import("@/views/apps/patients/patient-view/PatientView.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "patients.show",
         pageTitle: "patients.show.desc",
@@ -1234,7 +1234,7 @@ const router = new VueRouter({
       path: "/apps/patients/view/:id/statement-detail",
       name: "apps-patients-view-statement-detail",
       component: () => import("@/views/apps/patients/StatementDetail.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "patients.show",
         pageTitle: "patients.statements.desc",
@@ -1254,7 +1254,7 @@ const router = new VueRouter({
       path: "/apps/patients/edit/:id",
       name: "apps-patients-edit",
       component: () => import("@/views/apps/patients/patient-edit/PatientEdit.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "patients.edit",
         pageTitle: "patients.edit.desc",
@@ -1274,7 +1274,7 @@ const router = new VueRouter({
       path: "/apps/patients/view/:id/evolution/:budget_id",
       name: "apps-patients-evolution",
       component: () => import("@/views/apps/patients/patient-evolution/PatientEvolution.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "patients.evolution",
         pageTitle: "patients.evolutions.desc",
@@ -1296,7 +1296,7 @@ const router = new VueRouter({
       path: "/patient-statistics",
       name: "patient-statistics",
       component: () => import("@/views/apps/patients/PatientStatistics.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "home",
         requiresAuth: true,
@@ -1320,7 +1320,7 @@ const router = new VueRouter({
       name: "apps-budgets-list",
       component: () =>
         import("@/views/apps/budgets/budget-list/BudgetList.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "budgets.index",
         pageTitle: "budgets.desc",
@@ -1341,7 +1341,7 @@ const router = new VueRouter({
       name: "apps-budgets-add",
       component: () =>
         import("@/views/apps/budgets/budget-add/BudgetAdd.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "budgets.create",
         pageTitle: "budgets.add.desc",
@@ -1362,7 +1362,7 @@ const router = new VueRouter({
       name: "apps-budgets-edit",
       component: () =>
         import("@/views/apps/budgets/budget-edit/BudgetEdit.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "budgets.edit",
         pageTitle: "budgets.edit.desc",
@@ -1383,7 +1383,7 @@ const router = new VueRouter({
       name: "apps-budgets-show",
       component: () =>
         import("@/views/apps/budgets/budget-show/BudgetShow.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "budgets.show",
         pageTitle: "budgets.show.desc",
@@ -1406,7 +1406,7 @@ const router = new VueRouter({
       name: "apps-payments-list",
       component: () =>
         import("@/views/apps/payments/payment-list/PaymentList.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "payments.index",
         pageTitle: "payments.desc",
@@ -1426,7 +1426,7 @@ const router = new VueRouter({
       path: "/apps/payments/view",
       name: "apps-payments-view",
       component: () => import("@/views/apps/payments/payment-view/PaymentView.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "payments.view",
         pageTitle: "payments.views",
@@ -1446,7 +1446,7 @@ const router = new VueRouter({
       path: "/apps/payment/budget/:id/charge",
       name: "payments.budgets.charge",
       component: () => import("@/views/apps/payments/payment-charge/Charge.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "payments.charge",
         pageTitle: "charges.add",
@@ -1466,7 +1466,7 @@ const router = new VueRouter({
       path: "/apps/payment/budget/:id/preview/:payment_id",
       name: "payments-budgets-preview",
       component: () => import("@/views/apps/payments/payment-preview/PaymentPreview.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "payments.preview",
         pageTitle: "payments.preview.desc",
@@ -1486,7 +1486,7 @@ const router = new VueRouter({
       path: "/apps/expense-categories/list",
       name: "apps-expense-categories",
       component: () => import("@/views/apps/expenses/Categories.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "expenses.index",
         pageTitle: "expenses.desc",
@@ -1506,7 +1506,7 @@ const router = new VueRouter({
       path: "/apps/expenses/list",
       name: "apps-expenses-list",
       component: () => import("@/views/apps/expenses/expense-list/ExpenseList.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "expenses.index",
         pageTitle: "expenses.desc",
@@ -1526,7 +1526,7 @@ const router = new VueRouter({
       path: "/apps/checks/list",
       name: "apps-checks-list",
       component: () => import("@/views/apps/checks/check-list/CheckList.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "checks.index",
         pageTitle: "checks.desc",
@@ -1548,7 +1548,7 @@ const router = new VueRouter({
       path: '/apps/cash-register/list',
       name: 'apps-cash-register-list',
       component: () => import('@/views/apps/cash-registers/cash-register-list/CashRegisterList.vue'),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: 'cash_registers.index',
         pageTitle: 'cash_registers.desc',
@@ -1568,7 +1568,7 @@ const router = new VueRouter({
       path: '/apps/cash-register/add',
       name: 'apps-cash-register-add',
       component: () => import('@/views/apps/cash-registers/cash-register-add/CashRegisterAdd.vue'),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: 'cash_registers.create',
         pageTitle: 'cash_registers.add.desc',
@@ -1588,7 +1588,7 @@ const router = new VueRouter({
       path: "/apps/cash-register/show/:id",
       name: "apps-cash-register-show",
       component: () => import("@/views/apps/cash-registers/cash-register-show/CashRegisterShow.vue"),
-      beforeEnter: SubscriptionGuard,
+      // beforeEnter: SubscriptionGuard,
       meta: {
         permission: "cash_registers.show",
         pageTitle: "cash_registers.show.desc",
