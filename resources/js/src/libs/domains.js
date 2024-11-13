@@ -9,17 +9,19 @@
 
 export function checkIsCentral() {
     const host = window.location.host;
-    console.log(`Host: ${host}`);
+    console.log(`Host completo: ${host}`);
+    console.log(`Host sin puerto: ${host.split(':')[0]}`);
 
     // Definir los dominios principales de la aplicación central
-    const centralDomains = ['fichadentales.com', 'www.fichadentales.com', 'localhost:8000', 'localhost'];
+    const centralDomains = ['fichadentales.com', 'www.fichadentales.com', 'localhost'];
 
     // Verificar si el dominio actual es uno de los dominios centrales
-    const isCentral = centralDomains.includes(host);
+    const isCentral = centralDomains.includes(host.split(':')[0]); // Asegúrate de que solo compares el dominio sin el puerto
 
     console.log(`Is central: ${isCentral}`);
 
-    return isCentral;  // Retorna true si es central, false si es inquilino
+    return isCentral;
 }
+
 
   
