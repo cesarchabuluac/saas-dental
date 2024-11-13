@@ -52,6 +52,7 @@ class App
             }
             view()->share('app_logo', $appLogo);
         } catch (\Exception $exception) {
+            Log::error($exception->getMessage());
         }
 
         return $next($request);
