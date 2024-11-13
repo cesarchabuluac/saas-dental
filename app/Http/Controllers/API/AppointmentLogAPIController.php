@@ -5,7 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class AppointmentLogController extends Controller
+class AppointmentLogAPIController extends Controller
 {
     /**
      * Store a newly created resource in storage.
