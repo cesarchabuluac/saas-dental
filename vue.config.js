@@ -7,7 +7,7 @@ module.exports = {
     loaderOptions: {
       sass: {
         sassOptions: {
-          includePaths: ['node_modules', 'resources/assets']
+          includePaths: ['./node_modules', 'resources/assets']
         }
       }
     }

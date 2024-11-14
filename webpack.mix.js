@@ -27,6 +27,10 @@ mix
     module: {
       rules: [
         {
+          test: /resources[\\\/]lang.+\.(php)$/,
+          loader: 'php-array-loader',
+        },
+        {
           test: /\.s[ac]ss$/i,
           use: [
             {
