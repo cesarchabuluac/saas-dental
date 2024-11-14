@@ -42,6 +42,7 @@ class TenantController extends Controller
     public function me(Request $request)
     {
 
+        Log::info('isMainDomain: ' . $this->tenantRepository->isMainDomain());
         if ($this->tenantRepository->isMainDomain()) {
             return $this->sendResponse([
                 'is_subscribed' => true,

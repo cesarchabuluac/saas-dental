@@ -104,6 +104,8 @@ class UserAPIController extends Controller
             $this->checkSubscriptionLimitByModelName($request->roles);
         }
 
+        Log::info($request->all());
+
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
         $roles = $request->roles;
