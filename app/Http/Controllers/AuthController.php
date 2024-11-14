@@ -139,6 +139,9 @@ class AuthController extends Controller
 
     public function getSubscription()
     {
+        Log::info('getSubscription');
+        Log::info('Es central: ' . checkIsCentral());
+
         if (!checkIsCentral()) {
             $tenant = tenant();
             if ($tenant->manually_subscribed_by) {

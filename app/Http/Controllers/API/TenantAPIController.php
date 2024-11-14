@@ -30,6 +30,9 @@ class TenantAPIController extends Controller
         }
 
         $tenant = tenant();
+
+        
+        Log::info('Tenant: ' . $tenant);
         if ($tenant->manually_subscribed_by) {
             $tenant->manually_subscribed_by = tenancy()->central(function () use ($tenant) {
                 return $this->userRepository->find($tenant->manually_subscribed_by)?->name ?? null;
