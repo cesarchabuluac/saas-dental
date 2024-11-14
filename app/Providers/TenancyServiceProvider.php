@@ -18,6 +18,7 @@ use Stancl\Tenancy\Listeners;
 use Stancl\Tenancy\Middleware;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use Stancl\Tenancy\Middleware\InitializeTenancyBySubdomain;
+use Stancl\Tenancy\Resolvers\DomainTenantResolver;
 
 class TenancyServiceProvider extends ServiceProvider
 {
@@ -26,11 +27,11 @@ class TenancyServiceProvider extends ServiceProvider
 
     public function developmentOrProductionEvent()
     {
-        // if (App::isLocal()) {
+        if (App::isLocal()) {
             return Events\TenantCreated::class;
-        // }
+        }
 
-        // return TenantVerified::class;
+        return TenantVerified::class;
     }
 
     public function events()
@@ -44,8 +45,8 @@ class TenancyServiceProvider extends ServiceProvider
                     JobPipeline::make([
                         Jobs\CreateDatabase::class,
                         Jobs\MigrateDatabase::class,
-                        //CreateTenantAdmin::class,
                         Jobs\SeedDatabase::class,
+                        CreateTenantAdmin::class,
                         CreateFrameworkDirectoriesForTenant::class,
     
                         // Your own jobs to prepare the tenant.
@@ -97,10 +98,19 @@ class TenancyServiceProvider extends ServiceProvider
             Events\EndingTenancy::class => [],
             Events\TenancyEnded::class => [
                 Listeners\RevertToCentralContext::class,
+                function (Events\TenancyEnded $event) {
+                    // Accede de forma estática a la propiedad cacheKey
+                    \Spatie\Permission\PermissionRegistrar::$cacheKey = 'spatie.permission.cache';
+                }
             ],
 
             Events\BootstrappingTenancy::class => [],
-            Events\TenancyBootstrapped::class => [],
+            Events\TenancyBootstrapped::class => [
+                function (Events\TenancyBootstrapped $event) {
+                    // Accede de forma estática a la propiedad cacheKey
+                    \Spatie\Permission\PermissionRegistrar::$cacheKey = 'spatie.permission.cache.tenant.' . $event->tenancy->tenant->getTenantKey();
+                }
+            ],
             Events\RevertingToCentralContext::class => [],
             Events\RevertedToCentralContext::class => [],
 
@@ -125,6 +135,17 @@ class TenancyServiceProvider extends ServiceProvider
         $this->mapRoutes();
 
         $this->makeTenancyMiddlewareHighestPriority();
+
+        // enable cache
+        DomainTenantResolver::$shouldCache = true;
+
+        // seconds, 3600 is the default value
+        DomainTenantResolver::$cacheTTL = 3600;
+
+        // specify some cache store
+        // null resolves to the default cache store
+        DomainTenantResolver::$cacheStore = null; //'redis';
+
 
         InitializeTenancyBySubdomain::$onFail = function () {
             abort(403, 'This domain or subdomain is not registered yet!');
