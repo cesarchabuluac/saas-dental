@@ -37,7 +37,7 @@
                                 <!-- Header: Left Content -->
                                 <div>
                                     <div class="logo-wrapper">
-                                        <b-img fluid :src="logo" alt="Logo" />
+                                        <!-- <b-img fluid :src="logo" alt="Logo" /> -->
                                         <h3 class="text-primary invoice-logo">
                                             <p>{{ budget.name }}</p>
                                         </h3>

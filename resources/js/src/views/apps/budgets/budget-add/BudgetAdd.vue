@@ -134,7 +134,7 @@
                                                     <v-select v-model="item.action_group_id" :options="actionGroups"
                                                         label="name" class="select-size-sm" :input-id="`group-action_group_${index}`"
                                                         @input="selectActionGroup(item)" :reduce="action => action.id"
-                                                        :clearable="false" :searchable="false" :placeholder="$t('select_an_option')" />
+                                                        :clearable="false" :searchable="true" :placeholder="$t('select_an_option')" />
                                                 </b-form-group>
                                             </b-col>
 
@@ -145,7 +145,7 @@
                                                     :label-for="`action-${index}`">
                                                     <v-select v-model="item.selectedAction" :options="item.actions"
                                                         label="name" class="select-size-sm" :input-id="`action-${index}`" @input="selectAction(item)"
-                                                        :clearable="false" :searchable="false" :placeholder="$t('select_an_option')" />
+                                                        :clearable="false" :searchable="true" :placeholder="$t('select_an_option')" />
                                                 </b-form-group>
                                             </b-col>
 
@@ -272,7 +272,7 @@
 
                             <b-card-footer v-if="canAccess('budgets.store') && budget_total > 0">
                                 <b-row>
-                                    <b-col cols="12" md="8" xl="8">
+                                    <b-col cols="12" md="10" xl="10">
                                         <b-form-group :label="$t('budgets.mark_as_approved')" label-for="mark_as_approved">
                                             <b-form-checkbox
                                                 v-model="budget.approved"
@@ -282,7 +282,7 @@
                                             </b-form-checkbox>
                                         </b-form-group>
                                     </b-col>
-                                    <b-col cols="12" md="4" xl="4" class="mt-md-0 mt-3 d-flex justify-content-end">
+                                    <b-col cols="12" md="2" xl="2" class="mt-md-0_ mt-3 d-flex justify-content-end">
                                         <b-button
                                             size="sm"
                                             block
@@ -946,13 +946,11 @@ export default {
             //antes de guardar debo validar que tengan un area seleccionada
             //Para hacer esto supongo que es mejor filtrar y los item que no tengan area seleccionada
 
-            const existsAreaNull = this.items.filter(item => item.area !== null)
-            if (existsAreaNull.length > 0) {
+            const existsAreaNull = this.items.some(item => item.area === null)
+            if (existsAreaNull) {
                 this.danger(this.$t('budgets.area_required'))
                 return
             }
-
-
 
             //Remove actions on row by row
             this.items.map((item) => {

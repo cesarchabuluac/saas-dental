@@ -50,4 +50,22 @@ class UpdatePatientRequest extends FormRequest
             'user_id' => 'nullable',
         ];
     }
+
+    public function attributes()
+    {
+        return [
+            'name' => __('lang.patient_name'),
+            'last_name' => __('lang.patient_last_name'),
+            'mother_last_name' => __('lang.patient_mother_last_name'),
+            'rut' => __('lang.patient_document'),
+            'birthday' => __('lang.patient_birthday'),
+            'email' => __('lang.email'),
+            'cellphone' => __('lang.patient_cellphone'),
+            'phone' => __('lang.patient_phone'),
+            'address' => __('lang.patient_address'),
+            'comments' => __('lang.patient_comments'),
+            'document_type' => __('lang.patient_document_type'),
+            'positive_balance' => __('lang.patient_positive_balance'),
+        ];
+    }
 }

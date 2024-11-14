@@ -423,6 +423,11 @@ export default {
             this.getUsers();
         },
         mapRoles() {
+            
+            console.log('isDirector', this.isDirector)
+            console.log('isAdmin', this.isAdmin)
+            console.log('isTenant', this.checkIsTenant())
+
             if (this.checkIsTenant()) {
                 if (this.isDirector) {
                     this.roleOptions = store.getters['auth/getRoles'].filter(rol => rol.id !== 1 /*&& rol.id !== 2*/)
@@ -436,6 +441,12 @@ export default {
                         value: rol.id, 
                         label: this.$t(`role_${rol.name}`) 
                     }))
+                } else {
+                    this.roleOptions = store.getters['auth/getRoles']
+                        .map(rol => ({
+                            value: rol.id, 
+                            label: this.$t(`role_${rol.name}`) 
+                        }))    
                 }
             } else {
                 this.roleOptions = store.getters['auth/getRoles']

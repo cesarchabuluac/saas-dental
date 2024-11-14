@@ -205,6 +205,11 @@ export default {
           const { data } = user
           if (data.success) {
             window.user = data.data.user
+
+            console.log('data.data.user', data.data.user)
+            console.log('role_name', data.data.user.roles[0].name)
+            console.log('role_id', data.data.user.roles[0].id)
+
             commit('SET_CURRENT_USER', data.data.user)
             commit('SET_ROLE_NAME', data.data.user.roles[0].name)
             commit('SET_ROLE_ID', data.data.user.roles[0].id)

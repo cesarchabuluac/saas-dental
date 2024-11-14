@@ -52,7 +52,7 @@ class CreatePatientRequest extends FormRequest
             'mother_last_name' => __('lang.patient_mother_last_name'),
             'rut' => __('lang.patient_document'),
             'birthday' => __('lang.patient_birthday'),
-            'email' => __('lang.patient_email'),
+            'email' => __('lang.email'),
             'cellphone' => __('lang.patient_cellphone'),
             'phone' => __('lang.patient_phone'),
             'address' => __('lang.patient_address'),

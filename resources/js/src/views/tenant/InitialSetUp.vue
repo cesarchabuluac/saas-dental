@@ -219,7 +219,7 @@ import {
 } from 'bootstrap-vue'
 
 import { required, email } from '@validations'
-import { computed, onMounted, ref } from '@vue/composition-api'
+import { computed, onMounted, ref, nextTick } from '@vue/composition-api'
 import store from '@/store'
 import router from '@/router'
 import vSelect from "vue-select";
@@ -237,6 +237,9 @@ import SettingMail from '@core/components/app-settings/SettingMail.vue'
 
 import SettingProvider from "@/providers/Settings";
 const SettingResource = new SettingProvider();
+
+import TenantProvider from '@/providers/Tenants'
+const TenantResource = new TenantProvider()
 
 export default {
     components: {
@@ -335,7 +338,10 @@ export default {
                     this.success(data.message);
                     store.commit("auth/SET_SETTING", data.data);
                     localStorage.setItem("oldSettings", JSON.stringify(store.getters["auth/getSettings"]));
-                    router.push({name: 'home'})
+                    
+                    this.$nextTick(async () => {
+                        await this.getCurrentAccount()
+                    })                    
                 }
             } catch (e) {
                 this.loading = false;
@@ -420,6 +426,18 @@ export default {
             })
         }
 
+        const getCurrentAccount = async () => {
+            try {
+                const { data } = await TenantResource.me()
+                if (data.success) {
+                    store.commit('auth/SET_CURRENT_ACCOUNT', data.data)
+                    router.push({name: 'home'})
+                }
+            } catch (e) {
+                helper.handleResponseErrors(e)
+            }
+        }
+
         onMounted(() => {
             localStorage.setItem("oldSettings", JSON.stringify(store.getters["auth/getSettings"]));
             config.value = store.getters["auth/getSettings"];
@@ -455,21 +473,23 @@ export default {
             }
 
             changedData['initial_setup'] = true
-
+            loading.value = true;
             try {
-                loading.value = true;
-                const { data } = await SettingResource.update(changedData);
-                loading.value = false;
+                const { data } = await SettingResource.update(changedData);                
                 if (data.success) {
                     localStorage.removeItem("oldSettings");
                     helper.success(data.message);
                     store.commit("auth/SET_SETTING", data.data);
                     localStorage.setItem("oldSettings", JSON.stringify(store.getters["auth/getSettings"]));
-                    router.push({name: 'home'})
+                    nextTick(async () => {
+                        await getCurrentAccount()
+                    })
                 }
             } catch (e) {
                 loading.value = false;
                 helper.handleResponseErrors(e);
+            } finally{
+                loading.value = false;
             }
         };
 
@@ -486,6 +506,7 @@ export default {
             //
             logout,
             updateSettings,
+            getCurrentAccount,
         }
     }
 

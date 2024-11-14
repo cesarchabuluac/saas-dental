@@ -51,8 +51,6 @@ class GeneralSettingController extends Controller
             return !is_null($value) ? $value : '';
         }, $input);
 
-
-
         // get settings data
         $allSettings = GeneralSetting::get();
 

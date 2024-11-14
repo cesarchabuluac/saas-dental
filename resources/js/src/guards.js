@@ -22,7 +22,7 @@ export const SetupGuard = (to, from, next) => {
 };
 
 export const SubscriptionGuard = (to, from, next) => {
-    console.table(`¿ es central ? ${checkIsCentral()}`);
+    // console.table(`¿ es central ? ${checkIsCentral()}`);
 
     if (!checkIsCentral()) {
         const isSubscriptionActive = store.getters['auth/getCurrentAccount'].is_subscribed;
@@ -38,9 +38,9 @@ export const SubscriptionGuard = (to, from, next) => {
             }
         }
     } else {
-        console.log('Es central');
-        console.log('To:', to);
-        console.log('From:', from);
+        // console.log('Es central');
+        // console.log('To:', to);
+        // console.log('From:', from);
         
         next(); // Si es central, permite el acceso
     }

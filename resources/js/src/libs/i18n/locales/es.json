@@ -95,6 +95,7 @@
   "inactive": "Inactivo",
   "yes": "Sí",
   "no": "No",
+  "total": "Total",
   "close": "Cerrar",
   "domain": "Dominio",
   "tenant_name": "Clínica",
@@ -2196,7 +2197,7 @@
       "slug": "Presupuesto"
     },
     "total_paid": "Total Pagado",
-    "mark_as_approved": "Aprovar de inmediato",
+    "mark_as_approved": "Aprobar de inmediato",
     "mark_as_approved_help": "Marcar para que el presupuesto sea aprobado de inmediato",
     "mark_as_approved_placeholder": "Marcar para que el presupuesto sea aprobado de inmediato",
     "details": {
