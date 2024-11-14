@@ -104,8 +104,6 @@ class UserAPIController extends Controller
             $this->checkSubscriptionLimitByModelName($request->roles);
         }
 
-        Log::info($request->all());
-
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
         $roles = $request->roles;
@@ -113,6 +111,7 @@ class UserAPIController extends Controller
         unset($input['schedules']);
         unset($input['roles']);
         $input['email_verified_at'] = Carbon::now();
+        unset($input['id']);
 
         $setting = $this->settingRepository->whereIn('key', ['language', 'app_theme'])->get();
         $language = $setting->where('key', 'language')->first()->value;
