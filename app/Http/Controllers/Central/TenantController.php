@@ -50,7 +50,7 @@ class TenantController extends Controller
 
         $tenant = tenant();
 
-        Log::info('Tenant: ' . $tenant);
+        Log::info('TenantController: ' . $tenant);
 
         if ($tenant->manually_subscribed_by) {
             $tenant->manually_subscribed_by = tenancy()->central(function () use ($tenant) {
