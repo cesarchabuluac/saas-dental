@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
+use Prettus\Repository\Criteria\RequestCriteria;
 use Psy\Readline\Hoa\Console;
 
 class UserAPIController extends Controller
@@ -59,27 +60,43 @@ class UserAPIController extends Controller
      */
     public function index(Request $request)
     {
+        $this->userRepository->pushCriteria(new RequestCriteria($request));
         $this->userRepository->pushCriteria(new TenantCriteria());
         $this->userRepository->pushCriteria(new UserCriteria($request));
 
-        if ($request->filled('isCalendar')) {
-            return $this->userRepository->with(['roles', 'schedules'])->get();
+        $users = $this->userRepository;
+
+        // Retorna todos los registros si 'isAll' está presente
+        if ($request->filled('isAll')) {
+            $users = $users->get();
+            return $this->sendResponse($users, __('lang.retrieved_successfully', ['operator' => __('lang.user')]));
         }
 
-        $users = $this->userRepository->with(['roles', 'schedules'])
-            ->where(function ($q) {
-                $q->where('name', 'LIKE', '%' . request('search') . '%')
-                    ->orWhere('email', 'LIKE', '%' . request('search') . '%');
-            });
+        // Relación con 'roles' y 'schedules' para el resto de las solicitudes
+        $users = $users->with(['roles', 'schedules']);
 
-        if ($request->filled('isAll')) {
-            return $users->get();
-        }  
-            
-        Log::info("aqui paso");
+        // Retorna todos los usuarios con relaciones si está en vista de calendario
+        if ($request->filled('isCalendar')) {
+            $users = $users->get();
+            return $this->sendResponse($users, __('lang.retrieved_successfully', ['operator' => __('lang.user')]));
+        }
 
-            return $users->withTrashed()
-            ->paginate(request('perPage'));
+        // Configuración de búsqueda con validación de 'search'
+        $searchTerm = $request->filled('search') ? '%' . $request->search . '%' : null;
+        $users = $users->when($searchTerm, function ($query) use ($searchTerm) {
+            $query->where('name', 'LIKE', $searchTerm)
+                ->orWhere('email', 'LIKE', $searchTerm);
+        });      
+
+        // Parámetros para paginación y condición para incluir eliminados
+        $perPage = $request->get('perPage', 15); // Default perPage de 15
+        if ($request->boolean('includeTrashed', false)) {
+            $users = $users->withTrashed();
+        }
+        
+        // Paginación y respuesta final
+        $users = $users->paginate($perPage);
+        return $this->sendResponse($users, __('lang.retrieved_successfully', ['operator' => __('lang.user')]));
     }
 
     /**
@@ -101,7 +118,7 @@ class UserAPIController extends Controller
     public function store(CreateUserRequest $request)
     {
         if (tenant()) {
-            $this->checkSubscriptionLimitByModelName($request->roles);
+           $this->checkSubscriptionLimitByModelName($request->roles);
         }
 
         $input = $request->all();
@@ -142,7 +159,7 @@ class UserAPIController extends Controller
 
                             //Crear un nuevo registro en la tabla user_schedules
                             if(!empty($schedule['breaks'])) {
-                                $schedule['breaks'] = json_encode($schedule['breaks']);
+                                $schedule['breaks'] = $schedule['breaks']; ///json_encode($schedule['breaks']);
                             } else {
                                 $schedule['breaks'] = null;
                             }
@@ -319,120 +336,120 @@ class UserAPIController extends Controller
         if (empty($oldUser)) {
             return $this->sendError(__('lang.not_found', ['operator' => __('lang.user')]));
         }
-
-        //Obtener los roles actuales del usuario:
+    
+        // Obtener roles actuales y comparar con los nuevos
         $currentRoleIds = $oldUser->roles->pluck('id')->toArray();
-
-        //Comparar con los roles nuevos:
-        $newRoleIds = $request->input('roles'); // Este es un array de IDs de roles
-
-        //array_diff para encontrar roles añadidos o eliminados:
+        $newRoleIds = $request->input('roles', []);
         $roleIdsAdded = array_diff($newRoleIds, $currentRoleIds);
-        $roleIdsRemoved = array_diff($currentRoleIds, $newRoleIds);
-
-        
-        //Valida si es tenant y si los roles han cambiado:        
-        if (tenant()) {
-            if (count($roleIdsAdded) > 0) {
-
-                $this->checkSubscriptionLimitByModelName($roleIdsAdded);
-            }
+    
+        // Validar límites de roles si aplica
+        if (tenant() && count($roleIdsAdded) > 0) {
+            $this->checkSubscriptionLimitByModelName($roleIdsAdded);
         }
-
-        //Si existe la variable de isSettings entonces solo actualiza la configuración del usuario
+    
+        // Actualización de configuraciones (solo settings)
         if ($request->boolean('isSettings')) {
             $settings = $oldUser->settings;
-            if ($request->filled('locale')) {
-                $settings['locale'] = $request->locale;
-            }
-            if ($request->filled('theme')) {
-                $settings['theme'] = $request->theme;
-            }
+            $settings['locale'] = $request->locale ?? $settings['locale'];
+            $settings['theme'] = $request->theme ?? $settings['theme'];
             $oldUser->settings = $settings;
             $oldUser->save();
-            return $this->sendResponse($oldUser->load('roles'), __('lang.updated_successfully', ['operator' => __('lang.setting')]));
+            return $this->sendResponse(
+                $oldUser->load('roles'),
+                __('lang.updated_successfully', ['operator' => __('lang.setting')])
+            );
         }
-
-        //Si no es settings entonces actualiza el usuario
-        $input = $request->except(['avatar', 'schedules', 'change_avatar', 'role_id', 'role', 'roles', 'has_media', 'deleted_at', 'created_at', 'updated_at', 'verified', 'id']);
-        
+    
+        $input = $request->except([
+            'avatar', 'schedules', 'change_avatar', 'role_id', 'role', 'roles',
+            'has_media', 'deleted_at', 'created_at', 'updated_at', 'verified', 'id'
+        ]);
+    
         //Si el campo de password no esta vacio entonces hashea la contraseña
         if (isset($input['password']) && !empty($input['password'])) {
             $input['password'] = Hash::make($input['password']);
         } else {
             unset($input['password']);
         }
-
+    
         try {
-
             DB::beginTransaction();
+    
+            // Actualizar usuario y roles
             $user = $this->userRepository->update($input, $id);
             $user->syncRoles($newRoleIds);
-                    
+    
+            if (tenant() && in_array(4, $newRoleIds)) {
+                
+                //Nuevos horarios
+                $newSchedules = $request->input('schedules', []);
 
-            if (tenant()) {
-
-                //Verficar si en array de $request['roles'] esta el id 4 que es el del doctor
-                if(in_array(4, $newRoleIds)) {
-
-                    //Validar si el array de $request['schedules'] no esta vacio
-                    if (!empty($request->schedules)) {
-
-                        $user->schedules()->delete();
-
-                        //Recorrer el array de $request['schedules']
-                        $schedules = $request->schedules;
-                        Log::warning($schedules);
-                        foreach ($schedules as $schedule) {
-
-                            //Crear un nuevo registro en la tabla user_schedules
-                            if(!empty($schedule['breaks'])) {
-                                $schedule['breaks'] = json_encode($schedule['breaks']);
-                            } else {
-                                $schedule['breaks'] = null;
-                            }
-                            $user->schedules()->create($schedule);
-                        }
-                    } else {
-                        DB::rollBack();
-                        return $this->sendError(__('lang.schedules_required'));   
-                    }                    
+                if (empty($newSchedules)) {
+                    DB::rollBack();
+                    return $this->sendError(__('lang.schedules_required'));
                 }
 
-
-                // $user->load(['roles', 'schedules']);
-
-                // if ($role->id === 4) {
-                //     $requestSchedules = $request->schedules;
-                //     $existingSchedules = $user->schedules()->get(); // Obtiene los días existentes
+                // Obtener horarios actuales del usuario
+                $currentSchedules = $user->schedules()->get()->toArray();
     
-                //     // Recorre los días existentes y verifica si no están en la selección actual
-                //     $existingSchedules->each(function ($schedule) use (&$requestSchedules) {
-                //         $found = false;
-                //         foreach ($requestSchedules as $key => $requestSchedule) {
-                //             if ($schedule->day_of_week == $requestSchedule['day_of_week']) {
-                //                 $found = true;
-                //                 // Actualiza los campos personalizados como "start_time" y "end_time"
-                //                 $schedule->start_time = $requestSchedule['start_time'];
-                //                 $schedule->end_time = $requestSchedule['end_time'];
-                //                 $schedule->save();
-                //                 // Quita el día del arreglo $requestSchedules para evitar duplicados
-                //                 unset($requestSchedules[$key]);
-                //                 break;
-                //             }
-                //         }
-    
-                //         // Si no se encontró el día en la selección actual, elimínalo
-                //         if (!$found) {
-                //             $schedule->delete();
-                //         }
-                //     });
-    
-                //     // Luego, agrega los nuevos días que quedan en $requestSchedules
-                //     $user->schedules()->createMany($requestSchedules);
-                //}
-            }          
+                $formattedCurrentSchedules = array_map(function ($schedule) {
+                    return [
+                        'start_time' => date('H:i:s', strtotime($schedule['start_time'])),
+                        'end_time' => date('H:i:s', strtotime($schedule['end_time'])),
+                        'breaks' => array_map(function ($break) {
+                            // Ordenar claves y formatear tiempos
+                            return [
+                                'start_time' => date('H:i:s', strtotime($break['start_time'])),
+                                'end_time' => date('H:i:s', strtotime($break['end_time'])),
+                            ];
+                        }, $schedule['breaks'] ?? [])
+                    ];
+                }, $currentSchedules);
+                
+                $formattedNewSchedules = array_map(function ($schedule) {
+                    return [
+                        'start_time' => date('H:i:s', strtotime($schedule['start_time'])),
+                        'end_time' => date('H:i:s', strtotime($schedule['end_time'])),
+                        'breaks' => array_map(function ($break) {
+                            // Ordenar claves y formatear tiempos
+                            return [
+                                'start_time' => date('H:i:s', strtotime($break['start_time'])),
+                                'end_time' => date('H:i:s', strtotime($break['end_time'])),
+                            ];
+                        }, $schedule['breaks'] ?? [])
+                    ];
+                }, $newSchedules);          
 
+                // Comparar horarios actuales con los nuevos
+                if ($formattedCurrentSchedules !== $formattedNewSchedules) {
+                    // Validar si hay citas en conflicto
+                    $existingAppointments = $user->appointments()
+                        ->whereIn('state', ['pending', 'confirmed'])
+                        ->where(function ($query) use ($newSchedules) {
+                            foreach ($newSchedules as $schedule) {
+                                $query->orWhere(function ($subQuery) use ($schedule) {
+                                    $subQuery->whereTime('date', '>=', $schedule['start_time'])
+                                            ->whereTime('date', '<=', $schedule['end_time']);
+                                });
+                            }
+                        })
+                        ->exists();
+
+                    if ($existingAppointments) {
+                        DB::rollBack();
+                        return $this->sendError(__('lang.cannot_change_schedule_due_to_appointments'));
+                    }
+
+                    // Actualizar horarios si no hay conflictos
+                    $user->schedules()->delete();
+                    foreach ($newSchedules as $schedule) {
+                        $schedule['breaks'] = $schedule['breaks'] ?? null;
+                        $user->schedules()->create($schedule);
+                    }
+                }               
+            }
+    
+            // Actualizar avatar si aplica
             if (isset($request->change_avatar) && $request->avatar) {
 
                 if ($oldUser->avatar) {
@@ -454,15 +471,16 @@ class UserAPIController extends Controller
                     ]);
                 }
             }
-
+    
             DB::commit();
-
+    
             return $this->sendResponse($user, __('lang.updated_successfully', ['operator' => __('lang.user')]));
         } catch (Exception $e) {
             DB::rollBack();
             return $this->sendError($e->getMessage());
         }
     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -473,20 +491,19 @@ class UserAPIController extends Controller
     public function destroy($id)
     {
         $user = $this->userRepository->with('roles')->withTrashed()->find($id);
-
         try {
 
             if (empty($user)) {
-                return $this->sendError(__('lang.not_found', ['operator' => __('lang.user')]));
+                return $this->sendError(__('lang.not_found', ['operator' => __('lang.user')]), 201);
             }
 
-            //Valida si es tenant y si los roles han cambiado:        
-            $roleIdsAdded = $user->roles->pluck('id')->toArray();
-            if (tenant()) {
-                if (count($roleIdsAdded) > 0) {
-                   $this->checkSubscriptionLimitByModelName($roleIdsAdded);
-                }
-            }
+            // //Valida si es tenant y si los roles han cambiado:        
+            // $roleIdsAdded = $user->roles->pluck('id')->toArray();
+            // if (tenant() && $user->deleted_at) {
+            //     if (count($roleIdsAdded) > 0) {
+            //        $this->checkSubscriptionLimitByModelName($roleIdsAdded);
+            //     }
+            // }
 
             $message = __('lang.disabled_successfully', ['operator' => __('lang.user')]);
             if (empty($user->deleted_at)) {
@@ -498,7 +515,8 @@ class UserAPIController extends Controller
 
             $user->load('roles');
             return $this->sendResponse($user, $message);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
+            Log::error($e->getMessage());
             return $this->sendError($e->getMessage());
         }
     }

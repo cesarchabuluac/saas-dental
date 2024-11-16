@@ -27,190 +27,190 @@
                     </div>
                 </template>
 
-            <!-- BODY -->
-            <validation-observer #default="{ handleSubmit }" ref="refFormObserver">
-                <!-- Form -->
-                <b-form class="p-2" @submit.prevent="handleSubmit(onSubmit)" @reset.prevent="resetForm">
-                    <!-- Full Name -->
-                    <validation-provider #default="validationContext" :name="$t('user_name')" rules="required">
-                        <b-form-group :label="$t('user_name')" :description="$t('user_name_help')" label-for="full-name">
-                            <b-form-input id="full-name" v-model="userData.name" autofocus autocomplete="off" :state="getValidationState(validationContext)"
-                                trim :placeholder="$t('user_name_placeholder')"/>
-                        </b-form-group>
-                    </validation-provider>
+                <!-- BODY -->
+                <validation-observer #default="{ handleSubmit }" ref="refFormObserver">
+                    <!-- Form -->
+                    <b-form class="p-2" @submit.prevent="handleSubmit(onSubmit)" @reset.prevent="resetForm">
+                        <!-- Full Name -->
+                        <validation-provider #default="validationContext" :name="$t('user_name')" rules="required">
+                            <b-form-group :label="$t('user_name')" :description="$t('user_name_help')" label-for="full-name">
+                                <b-form-input id="full-name" v-model="userData.name" autofocus autocomplete="off" :state="getValidationState(validationContext)"
+                                    trim :placeholder="$t('user_name_placeholder')"/>
+                            </b-form-group>
+                        </validation-provider>
 
-                    <!-- Email -->
-                    <validation-provider #default="validationContext" :name="$t('user_email')" rules="required|email">
-                        <b-form-group :label="$t('user_email')" :description="$t('user_email_help')" label-for="email">
-                            <b-form-input id="email" v-model="userData.email" :state="getValidationState(validationContext)" 
-                                trim autocomplete="off" :placeholder="$t('user_email_placeholder')"/>
-                        </b-form-group>
-                    </validation-provider>
+                        <!-- Email -->
+                        <validation-provider #default="validationContext" :name="$t('user_email')" rules="required|email">
+                            <b-form-group :label="$t('user_email')" :description="$t('user_email_help')" label-for="email">
+                                <b-form-input id="email" v-model="userData.email" :state="getValidationState(validationContext)" 
+                                    trim autocomplete="off" :placeholder="$t('user_email_placeholder')"/>
+                            </b-form-group>
+                        </validation-provider>
 
-                    <!-- User Role -->
-                    <validation-provider #default="validationContext" :name="$t('user_role_id')" rules="required">
-                        <b-form-group :label="$t('user_profile')" :description="$t('user_profile_help')" label-for="user-role" :state="getValidationState(validationContext)">
-                            <v-select
-                                id="profileList"
-                                v-model="userData.roles"
-                                multiple
-                                label="label"
-                                :options="roleOptions"
-                                :clearable="false"
-                                :searchable="false"
-                                :reduce="role => role.value"
-                                @input="onRoleChange"
-                                :placeholder="$t('select_an_option')"
-                            />
-                        </b-form-group>
-                    </validation-provider>
-
-                    <!-- Password -->
-                    <validation-provider
-                        #default="{ errors }"
-                        :name="$t('user_password')"
-                        :rules="isEdit ? '' : 'required|min:6'" 
-                    >
-                        <b-form-group :label="$t('user_password')" :description="isEdit ? $t('user_password_help_edit') : $t('user_password_help')" label-for="account-old-password">
-                            <b-input-group class="input-group-merge">
-                                <b-form-input
-                                    autocomplete="off"
-                                    id="account-old-password"
-                                    v-model="userData.password"
-                                    name="password"
-                                    :type="passwordFieldType"
-                                    :state="errors.length > 0 ? false : null"
-                                    :placeholder="$t('user_password_placeholder')"
+                        <!-- User Role -->
+                        <validation-provider #default="validationContext" :name="$t('user_role_id')" rules="required">
+                            <b-form-group :label="$t('user_profile')" :description="$t('user_profile_help')" label-for="user-role" :state="getValidationState(validationContext)">
+                                <v-select
+                                    id="profileList"
+                                    v-model="userData.roles"
+                                    multiple
+                                    label="label"
+                                    :options="roleOptions"
+                                    :clearable="false"
+                                    :searchable="false"
+                                    :reduce="role => role.value"
+                                    @input="onRoleChange"
+                                    :placeholder="$t('select_an_option')"
                                 />
-                                <b-input-group-append is-text>
-                                    <feather-icon
-                                        :icon="passwordToggleIcon"
-                                        class="cursor-pointer"
-                                        @click="togglePassword"
+                            </b-form-group>
+                        </validation-provider>
+
+                        <!-- Password -->
+                        <validation-provider
+                            #default="{ errors }"
+                            :name="$t('user_password')"
+                            :rules="isEdit ? '' : 'required|min:6'" 
+                        >
+                            <b-form-group :label="$t('user_password')" :description="isEdit ? $t('user_password_help_edit') : $t('user_password_help')" label-for="account-old-password">
+                                <b-input-group class="input-group-merge">
+                                    <b-form-input
+                                        autocomplete="off"
+                                        id="account-old-password"
+                                        v-model="userData.password"
+                                        name="password"
+                                        :type="passwordFieldType"
+                                        :state="errors.length > 0 ? false : null"
+                                        :placeholder="$t('user_password_placeholder')"
                                     />
-                                </b-input-group-append>
-                            </b-input-group>
-                        </b-form-group>
-                    </validation-provider>
+                                    <b-input-group-append is-text>
+                                        <feather-icon
+                                            :icon="passwordToggleIcon"
+                                            class="cursor-pointer"
+                                            @click="togglePassword"
+                                        />
+                                    </b-input-group-append>
+                                </b-input-group>
+                            </b-form-group>
+                        </validation-provider>
 
-                    <!-- Work Days -->
-                    <div v-if="isRoleDoctor">
-                        <h5> {{ $t('work_days') }} ({{ startJobTime }} {{ $t('to') }} {{ endJobTime }} Hrs)</h5>
-                        <table style="width: 100%!important;">
-                            <tbody v-for="(item, index) in days" :key="index">
-                                <tr>
-                                    <th>
-                                        <b-form-checkbox
-                                            :id="`checkbox-group-1-${index}`"
-                                            v-model="item.active"
-                                            name="flavour-1"
-                                            class="demo-inline-spacing"
-                                            @change="checkedDay(index)"
-                                        />
-                                        {{ item.text }}
-                                    </th>
-                                    <td>
-                                        <cleave
-                                            :id="`start-time-${index}`"
-                                            v-model="item.start_time"
-                                            class="form-control"
-                                            :raw="false"
-                                            :options="{
-                                                time: true,
-                                                timePattern: ['h', 'm'],
-                                            }"
-                                            placeholder="hh:mm"
-                                            style="height: 2rem!important;"
-                                        />
-                                    </td>
-                                    <td>
-                                        <cleave
-                                            :id="`end-time-${index}`"
-                                            v-model="item.end_time"
-                                            class="form-control"
-                                            :raw="false"
-                                            :options="{
-                                                time: true,
-                                                timePattern: ['h', 'm'],
-                                            }"
-                                            placeholder="hh:mm"
-                                            style="height: 2rem!important;"
-                                        />
-                                    </td>
-                                    <td>
-                                        <b-button @click="addBreaks(index)" variant="primary" size="sm"
-                                        v-b-tooltip.hover.right="$t('add_break')">                                            
-                                            <feather-icon icon="PlusIcon" />
-                                        </b-button>
-                                    </td>
-                                </tr>
-                                <tr v-for="(b, i) in item.value.breaks" :key="index+i">
-                                    <td>{{ $t('break_abbreviature') }}</td>
-                                    <td>
-                                        <cleave
-                                            :id="`break-start-time-${index + i}`"
-                                            v-model="b.start_time"
-                                            class="form-control"
-                                            :raw="false"
-                                            :options="{
-                                                time: true,
-                                                timePattern: ['h', 'm'],
-                                            }"
-                                            placeholder="hh:mm"
-                                            style="height: 2rem!important;"
-                                        />
-                                    </td>
-                                    <td>
-                                        <cleave
-                                            :id="`break-end-time-${index + i}`"
-                                            v-model="b.end_time"
-                                            class="form-control"
-                                            :raw="false"
-                                            :options="{
-                                                time: true,
-                                                timePattern: ['h', 'm'],
-                                            }"
-                                            placeholder="hh:mm"
-                                            style="height: 2rem!important;"
-                                        />
-                                    </td>
-                                    <td>
-                                        <b-button size="sm" @click="removeBreaks(index, i)" variant="danger"
-                                            v-b-tooltip.hover.right="$t('button_tooltip_destroy')">                                            
-                                            <feather-icon icon="MinusIcon" />
-                                        </b-button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="4"><hr></td>
-                                </tr>
-                            </tbody>
-                        </table>                      
-                    </div>
+                        <!-- Work Days -->
+                        <div v-if="isRoleDoctor">
+                            <h5> {{ $t('work_days') }} ({{ startJobTime }} {{ $t('to') }} {{ endJobTime }} Hrs)</h5>
+                            <table style="width: 100%!important;">
+                                <tbody v-for="(item, index) in days" :key="index">
+                                    <tr>
+                                        <th>
+                                            <b-form-checkbox
+                                                :id="`checkbox-group-1-${index}`"
+                                                v-model="item.active"
+                                                name="flavour-1"
+                                                class="demo-inline-spacing"
+                                                @change="checkedDay(index)"
+                                            />
+                                            {{ item.text }}
+                                        </th>
+                                        <td>
+                                            <cleave
+                                                :id="`start-time-${index}`"
+                                                v-model="item.start_time"
+                                                class="form-control"
+                                                :raw="false"
+                                                :options="{
+                                                    time: true,
+                                                    timePattern: ['h', 'm'],
+                                                }"
+                                                placeholder="hh:mm"
+                                                style="height: 2rem!important;"
+                                            />
+                                        </td>
+                                        <td>
+                                            <cleave
+                                                :id="`end-time-${index}`"
+                                                v-model="item.end_time"
+                                                class="form-control"
+                                                :raw="false"
+                                                :options="{
+                                                    time: true,
+                                                    timePattern: ['h', 'm'],
+                                                }"
+                                                placeholder="hh:mm"
+                                                style="height: 2rem!important;"
+                                            />
+                                        </td>
+                                        <td>
+                                            <b-button @click="addBreaks(index)" variant="primary" size="sm"
+                                            v-b-tooltip.hover.right="$t('add_break')">                                            
+                                                <feather-icon icon="PlusIcon" />
+                                            </b-button>
+                                        </td>
+                                    </tr>
+                                    <tr v-for="(b, i) in item.value.breaks" :key="index+i">
+                                        <td>{{ $t('break_abbreviature') }}</td>
+                                        <td>
+                                            <cleave
+                                                :id="`break-start-time-${index + i}`"
+                                                v-model="b.start_time"
+                                                class="form-control"
+                                                :raw="false"
+                                                :options="{
+                                                    time: true,
+                                                    timePattern: ['h', 'm'],
+                                                }"
+                                                placeholder="hh:mm"
+                                                style="height: 2rem!important;"
+                                            />
+                                        </td>
+                                        <td>
+                                            <cleave
+                                                :id="`break-end-time-${index + i}`"
+                                                v-model="b.end_time"
+                                                class="form-control"
+                                                :raw="false"
+                                                :options="{
+                                                    time: true,
+                                                    timePattern: ['h', 'm'],
+                                                }"
+                                                placeholder="hh:mm"
+                                                style="height: 2rem!important;"
+                                            />
+                                        </td>
+                                        <td>
+                                            <b-button size="sm" @click="removeBreaks(index, i)" variant="danger"
+                                                v-b-tooltip.hover.right="$t('button_tooltip_destroy')">                                            
+                                                <feather-icon icon="MinusIcon" />
+                                            </b-button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4"><hr></td>
+                                    </tr>
+                                </tbody>
+                            </table>                      
+                        </div>
 
-                    <!-- Form Actions -->
-                    <div class="d-flex mt-2">
-                        <b-button
-                            :disabled="loading"
-                            v-ripple.400="'rgba(255, 255, 255, 0.15)'"
-                            variant="primary"
-                            class="mr-2"
-                            type="submit"
-                        >
-                            {{ $t("save") }}
-                        </b-button>
-                        <b-button
-                            :disabled="loading"
-                            v-ripple.400="'rgba(186, 191, 199, 0.15)'"
-                            type="button"
-                            variant="outline-secondary"
-                            @click="hide"
-                        >
-                            {{ $t("cancel") }}
-                        </b-button>
-                    </div>
-                </b-form>
-            </validation-observer>
+                        <!-- Form Actions -->
+                        <div class="d-flex mt-2">
+                            <b-button
+                                :disabled="loading"
+                                v-ripple.400="'rgba(255, 255, 255, 0.15)'"
+                                variant="primary"
+                                class="mr-2"
+                                type="submit"
+                            >
+                                {{ $t("save") }}
+                            </b-button>
+                            <b-button
+                                :disabled="loading"
+                                v-ripple.400="'rgba(186, 191, 199, 0.15)'"
+                                type="button"
+                                variant="outline-secondary"
+                                @click="hide"
+                            >
+                                {{ $t("cancel") }}
+                            </b-button>
+                        </div>
+                    </b-form>
+                </validation-observer>
 
             </b-overlay>
         </template>
@@ -253,6 +253,7 @@ import UserProvider from "@/providers/Users";
 const UserResource = new UserProvider();
 
 export default {
+    name: "UserListAddNew",
     components: {
         BCol,
         BRow,
@@ -381,6 +382,9 @@ export default {
             }
         },
         user(val) {
+
+            console.log(val)
+
             if (val && val.roles != null || val.roles != undefined) {
                 this.userData.id = val.id
                 this.userData.roles = val.roles.map(item => item.id)
@@ -392,7 +396,7 @@ export default {
                     return {
                         ...item,
                         active: true,
-                        breaks: JSON.parse(item.breaks)
+                        breaks: item.breaks ? item.breaks : []
                     }
                 })
 
@@ -402,7 +406,7 @@ export default {
                         item.active = true
                         item.start_time = schedule.start_time
                         item.end_time = schedule.end_time
-                        item.value.breaks = schedule.breaks
+                        item.value.breaks = schedule.breaks ? schedule.breaks : []
                     }
                     return item
                 })

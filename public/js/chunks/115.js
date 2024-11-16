@@ -415,24 +415,31 @@ var BranchResource = new _providers_BranchOffices__WEBPACK_IMPORTED_MODULE_19__[
               _context2.prev = 0;
               _this2.loading = true;
               _context2.next = 4;
-              return BranchResource.getAll();
+              return BranchResource.index({
+                isAll: true
+              });
             case 4:
               _yield$BranchResource = _context2.sent;
               data = _yield$BranchResource.data;
-              _this2.loading = false;
-              _this2.branchs = data;
-              _context2.next = 14;
+              if (data.success) {
+                _this2.branchs = data.data;
+              }
+              _context2.next = 13;
               break;
-            case 10:
-              _context2.prev = 10;
+            case 9:
+              _context2.prev = 9;
               _context2.t0 = _context2["catch"](0);
               _this2.loading = false;
               _this2.handleResponseErrors(_context2.t0);
-            case 14:
+            case 13:
+              _context2.prev = 13;
+              _this2.loading = false;
+              return _context2.finish(13);
+            case 16:
             case "end":
               return _context2.stop();
           }
-        }, _callee2, null, [[0, 10]]);
+        }, _callee2, null, [[0, 9, 13, 16]]);
       }))();
     },
     handleResize: function handleResize() {
@@ -1502,14 +1509,21 @@ var BranchOffices = /*#__PURE__*/function () {
     Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, BranchOffices);
   }
   Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__["default"])(BranchOffices, [{
-    key: "store",
-    value:
+    key: "index",
+    value: function index(query) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/branch-offices", {
+        params: query
+      });
+    }
+
     /**
      * Function to update a branch
      * @param {Object} formdata
      * @return AxiosPromise
      */
-    function store(formdata) {
+  }, {
+    key: "store",
+    value: function store(formdata) {
       return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/branch-offices", formdata, {
         headers: {
           'Content-Type': 'multipart/form-data'

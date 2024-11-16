@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Central;
 
-use App\Models\User;
 use App\Models\Tenant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -11,17 +10,15 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\Tenant\TenantResource;
 use App\Http\Requests\Tenant\StoreTenantRequest;
 use App\Http\Requests\Tenant\UpdateTenantRequest;
-use App\Models\DoDomain;
+use App\Models\Role;
 use App\Repositories\DoDomainRepository;
 use App\Repositories\TenantRepository;
 use App\Repositories\UserRepository;
 use App\Services\DigitalOceanService;
-use App\Services\MailService;
 use Exception;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Spatie\Permission\Models\Role;
 
 class TenantController extends Controller
 {
@@ -88,19 +85,21 @@ class TenantController extends Controller
     {
         $tenant->limitations = $tenant->run(function () use ($tenant) {
 
-            $roles = Role::withCount('users')->get();
+            // $roles = Role::withCount('users')->get();
+            $roles = Role::withCount(['usersWithTrashed'])->get();
+            Log::info('Roles: ' . $roles);
 
             $doctorLimit = $tenant->plan->limit_doctor;
-            $doctorCurrent = $roles->firstWhere('id', 4)->users_count;
+            $doctorCurrent = $roles->firstWhere('id', 4)->users_with_trashed_count;
 
             $assistantLimit = $tenant->plan->limit_assistant;
-            $assistantCurrent = $roles->firstWhere('id', 6)->users_count;
+            $assistantCurrent = $roles->firstWhere('id', 6)->users_with_trashed_count;
 
             $receptionistLimit = $tenant->plan->limit_receptionist;
-            $receptionistCurrent = $roles->firstWhere('id', 3)->users_count;
+            $receptionistCurrent = $roles->firstWhere('id', 3)->users_with_trashed_count;
 
             $patientLimit = $tenant->plan->limit_patient;
-            $patientCurrent = $roles->firstWhere('id', 5)->users_count;
+            $patientCurrent = $roles->firstWhere('id', 5)->users_with_trashed_count;
 
             $domainLimit = $tenant->plan->limit_domains;
             $domainCurrent = $tenant->domains()->count();

@@ -5641,11 +5641,9 @@ var Patients = /*#__PURE__*/function () {
      */
   }, {
     key: "search",
-    value: function search(q) {
+    value: function search(query) {
       return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/patients/search", {
-        params: {
-          q: q
-        }
+        params: query
       });
     }
   }, {

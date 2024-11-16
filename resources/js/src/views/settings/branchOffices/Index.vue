@@ -27,9 +27,9 @@
                         <div class="d-flex align-items-center justify-content-end">
                             <b-input-group>
                                 <b-form-input size="sm" v-model="searchQuery" class="d-inline-block _mr-1" :placeholder="$t('branch_offices.search_options')"
-                                @keyup.enter="filter"/>
+                                @keyup.enter="getBranchs"/>
                                 <b-input-group-prepend>
-                                <b-button size="sm" variant="primary" @click="filter">
+                                <b-button size="sm" variant="primary" @click="getBranchs">
                                     <feather-icon icon="SearchIcon" />
                                 </b-button>
                                 </b-input-group-prepend>
@@ -51,7 +51,7 @@
                 :empty-text="$t('datatables.sZeroRecords')"
                 :sort-desc.sync="sortDesc"
                 :current-page="currentPage"
-                busy.sync="loading"
+                :busy.sync="loading"
                 stacked="md"
                 small
             >
@@ -111,7 +111,7 @@
             </b-table>
 
             <!-- Pagination -->
-            <div v-if="branchs" class="mx-2 mb-2">
+            <div v-if="totalBranch > 10" class="mx-2 mb-2">
                 <b-row>
                     <b-col cols="12" sm="6" class="d-flex align-items-center justify-content-center justify-content-sm-start">
                         <span class="text-muted">{{ resolvePaginationTranslate(dataMeta) }}</span>
@@ -256,12 +256,24 @@ export default {
                 sortDesc: this.sortDesc,
                 perPage: this.perPage,
                 page: this.currentPage,
+                includeTrashed: true,
             };
-            this.loading = true;
-            const { data } = await BranchResource.getList(query);
-            this.loading = false;
-            this.branchs = data.data;
-            this.totalBranch = data.total;
+
+            try {
+                this.loading = true;
+                const { data } = await BranchResource.index(query);
+                if (data.success) {
+                    this.branchs = data.data.data;
+                    this.totalBranch = data.data.total;
+                } else {
+                    this.danger(data.message);
+                }            
+            }catch(e) {
+                this.loading = false;
+                this.handleResponseErrors(e);
+            }finally {
+                this.loading = false;
+            }
         },
         deleteBranch(item) {
             this.loading = true;
@@ -311,10 +323,7 @@ export default {
                 },
                 allowOutsideClick: () => !Swal.isLoading(),
             });
-        },
-        filter() {
-            this.getBranchs();
-        },       
+        },          
         showMessage(data) {
             if (data.success) {
                 this.success(

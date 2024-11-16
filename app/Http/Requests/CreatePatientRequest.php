@@ -26,7 +26,7 @@ class CreatePatientRequest extends FormRequest
         return [
             'name' => 'required|min:3|max:100',
             'last_name' => 'required|min:3|max:100',
-            'mother_last_name' => 'required|min:3|max:100',
+            'mother_last_name' => 'nullable|min:3|max:100',
             'rut' => 'required|min:9|max:50|unique:patients,rut,' . $this->patient,
             'birthday' => 'nullable',
             'email' => 'required|email|max:100|unique:patients,email,' . $this->patient,

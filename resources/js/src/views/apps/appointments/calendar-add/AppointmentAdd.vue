@@ -27,7 +27,7 @@
                             <b-form-group :label="$t('appointments.professional')" label-for="add-professional">
                                 <v-select v-model="appointment.user_id" :options="professionals" label="name"
                                     :reduce="option => option.id" input-id="add-professional" :clearable="false"
-                                    :searchable="false">
+                                    :searchable="true">
                                 </v-select>
                             </b-form-group>
                         </b-col>
@@ -178,6 +178,7 @@ const AppointmentResource = new AppointmentProvider();
 const BranchOfficeResource = new BranchOfficeProvider();
 
 export default {
+    name: "AppointmentAdd",
     components: {
         BRow,
         BCol,
@@ -260,6 +261,7 @@ export default {
         }
     },
     created() {
+        
         if (store.state.auth.setting['language'] === "es") {
             flatpickr.localize(Spanish);
             localize(process.env.MIX_FALLBACK_LOCALE);
@@ -273,22 +275,35 @@ export default {
         }
     },
     async mounted() {
-        await this.getDoctors()
         await this.getBranch()
+        await this.getDoctors()
+        
     },
     methods: {
         async getBranch() {
-            const branches = store.state.auth.branches;
-            if (branches.length > 0) {
-                this.branchs = store.state.auth.branches
-            } else {
-                this.loading = true
-                const { data } = await BranchOfficeResource.getAll()
-                this.loading = false
-                this.branchs = data
-                store.commit('auth/SET_BRANCHES', data)
+            const query = {
+                isAll: true,
             }
-            this.appointment.branch_office_id = this.branchs[0].id
+
+            try {
+                this.loading = true
+                const { data } = await BranchOfficeResource.index(query)
+                if (data.success) {
+                    this.branchs = data.data
+                    this.appointment.branch_office_id = this.branchs[0].id
+                    store.commit('auth/SET_BRANCHES', data)
+                } else {
+                    this.danger(data.message)
+                }
+                
+            } catch (e) {
+                // this.loading = false
+                this.handleResponseErrors(e)
+            } finally {
+                this.loading = false
+            }
+
+
         },
         async onSearch(search, loading) {
             if (search.length) {
@@ -300,7 +315,14 @@ export default {
 
             const inputDateFormat = 'DD/MM/YYYY HH:mm';
             const officeStartTime = store.state.auth.setting['schedule_start_time'] || '09:00:00'; // Schedule start time
-            const officeEndTime = store.state.auth.setting['schedule_end_time'] || '22:00:00'; // Schedule end time            
+            const officeEndTime = store.state.auth.setting['schedule_end_time'] || '22:00:00'; // Schedule end time   
+            
+            console.log('onChange', dateStr)
+            console.log('selectedDates', selectedDates)
+            console.log('instance', instance)
+            console.log('inputDateFormat', inputDateFormat)
+            console.log('officeStartTime', officeStartTime)
+            console.log('officeEndTime', officeEndTime)
 
             const isValidDate = this.isValidDate(dateStr, inputDateFormat);
             if (!isValidDate) {
@@ -380,13 +402,24 @@ export default {
         },
         async getDoctors() {
             this.loading = true
-            const { data } = await UserResource.index({ criteria: "professionals", ignoreSchedules: false,});
-            this.loading = false
-            this.professionals = data.data
-            store.commit('auth/SET_DOCTORS', data.data)
-            if (this.professionals.length > 0) {
-                this.appointment.user_id = store.state.calendar.selectedProfessional.id
-            }
+            // try {
+                const { data } = await UserResource.index({ criteria: "professionals", ignoreSchedules: false, isAll: true });
+                this.loading = false
+                if (data.success) {
+                    this.professionals = data.data
+                    store.commit('auth/SET_DOCTORS', data.data)
+                    console.log(store.state.calendar)
+                    if (this.professionals.length > 0) {
+                        // this.appointment.user_id = store.state.calendar.selectedProfessional.id
+                    }
+                }
+                
+            // }catch(e) {
+            //     this.loading = false
+            //     this.handleResponseErrors(e)
+            // }finally {
+            //     this.loading = false
+            // }
         },
         async store() {
             try {

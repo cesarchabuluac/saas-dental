@@ -145,7 +145,6 @@ class Tenant extends BaseTenant implements TenantWithDatabase
 
     public static function isMainDomain()
     {
-        Log::info(config('tenancy.central_domains')[0]);
         return request()->getHost() === config('tenancy.central_domains')[0];
     }
 

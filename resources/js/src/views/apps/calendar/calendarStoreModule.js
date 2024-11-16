@@ -56,6 +56,7 @@ export default {
       },
     ],
     useProfessionals: [],
+    useBranchs: [],
     selectedCalendars: ["pending", "confirmed", "assisted", "unassisted", "canceled"],
     selectedPatient: {},
     selectedProfessional: {},
@@ -84,6 +85,9 @@ export default {
     },
     SET_USE_PROFESSIONALS(state, val) {
       state.useProfessionals = val
+    },
+    SET_USE_BRANCHS(state, val) {
+      state.useBranchs = val
     }
   },
   actions: {
@@ -131,6 +135,7 @@ export default {
       commit('SET_SELECTED_DATES', {})
       commit('SET_SELECTED_PROFESSIONAL', {})
       commit('SET_SELECTED_PATIENT', {})
+      commit('SET_USE_BRANCHS', [])
     }
   },
 }

@@ -2,17 +2,12 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Events\AppointmentStatusChangeEvent;
-use App\Events\MessagePublished;
-use App\Events\RealTimeMessage;
 use App\Exports\AppointmentsExport;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateAppointmentRequest;
 use App\Jobs\SendEmail;
-use App\Mail\AppointmentRegister;
 use App\Models\Appointment;
 use App\Notifications\AppointmentNotification;
-use App\Notifications\RealTimeNotification;
 use App\Repositories\ActionPaymentRepository;
 use App\Repositories\AppointmentLogRepository;
 use App\Repositories\AppointmentRepository;
@@ -22,13 +17,9 @@ use App\Repositories\UserRepository;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Notification;
 use Maatwebsite\Excel\Facades\Excel;
-
 
 class AppointmentAPIController extends Controller
 {
@@ -139,16 +130,17 @@ class AppointmentAPIController extends Controller
             }
 
             $message = "";
-            $message .= "*" . __('lang.appointment_mail_detail') . "*%0A%0A";
-            $message .= "*" . __('lang.appointment_mail_number') . ":* {$a->id}%0A";
-            $message .= "*" . __('lang.appointment_mail_date_detail') . "* {$appointmentDate}%0A";
-            $message .= "*" . __('lang.appointment_mail_document_detail') . ":* {$a->rut}%0A";
-            $message .= "*" . __('lang.appointment_mail_name_detail') . ":* {$a->patient_name}%0A%0A";
-            $message .= "*" . __('lang.appointment_mail_email_detail') . ":* {$a->email}%0A";
-            $message .= "*" . __('lang.appointment_mail_phone_detail') . ":* {$mobile}, {$a->phone}%0A";
-            $message .= "*" . __('lang.appointment_mail_duration_detail') . ":* {$a->duration}%0A%0A";
+            $message .= "📅 *" . __('lang.appointment_mail_detail') . "*%0A%0A";
+            $message .= "🔢 *" . __('lang.appointment_mail_number') . ":* {$a->id}%0A";
+            $message .= "📆 *" . __('lang.appointment_mail_date_detail') . "* {$appointmentDate}%0A";
+            $message .= "🆔 *" . __('lang.appointment_mail_document_detail') . ":* {$a->rut}%0A";
+            $message .= "👤 *" . __('lang.appointment_mail_name_detail') . ":* {$a->patient_name}%0A%0A";
+            $message .= "📧 *" . __('lang.appointment_mail_email_detail') . ":* {$a->email}%0A";
+            $message .= "📞 *" . __('lang.appointment_mail_phone_detail') . ":* {$mobile}, {$a->phone}%0A";
+            $message .= "⏳ *" . __('lang.appointment_mail_duration_detail') . ":* {$a->duration}%0A%0A";
             $message .= "*" . __('lang.appointment_mail_great') . "*%0A%0A";
-            $message .= __('lang.appointment_mail_doctor_1') . " *{$a->doctor}* " . __('lang.appointment_mail_doctor_2') . "%0A%0A";
+            $message .= "🧑‍⚕️ " . __('lang.appointment_mail_doctor_1') . " *{$a->doctor}* " . __('lang.appointment_mail_doctor_2') . "%0A%0A";
+            $message .= "✨ *¡Gracias por confiar en nosotros!%0A%0A";
             $whatsapp = "<a target='_blank' href='http://wa.me/{$mobile}?text={$message}'>$mobile</a>";
 
             $date = new \DateTime($a->date);
@@ -288,7 +280,6 @@ class AppointmentAPIController extends Controller
      */
     public function store(CreateAppointmentRequest $request)
     {
-        $request['onMethod'] = true;
         $response = $this->availableEvent($request);
 
         // Get the JSON content of the response
@@ -297,9 +288,9 @@ class AppointmentAPIController extends Controller
             if (!$responseData['original']['success']) {
                 return $this->sendError($responseData['original']['message'], 201);
             }
-        }
+        }        
 
-        $input = $request->except('patient', 'onMethod');
+        $input = $request->all();
         $input['date'] = Carbon::createFromFormat('d/m/Y H:i', $request['date'])->format('Y-m-d H:i:s');
 
         try {
@@ -314,13 +305,13 @@ class AppointmentAPIController extends Controller
             // $appointment->user->notify(new AppointmentStatusChangeEvent("New appointment #".$appointment->id." to ".$appointment->patient->full_name,));
             // $appointment->user->notify(new RealTimeMessage("New appointment #".$appointment->id." to ".$appointment->patient->full_name,));
 
-            $appointment->user->notify(new AppointmentNotification($appointment));
+            // $appointment->user->notify(new AppointmentNotification($appointment));
 
-            if (config('settings.enable_appointment_notification')) {
-                if (filter_var($appointment->patient->email, FILTER_VALIDATE_EMAIL)) {
-                    dispatch(new SendEmail('appointment', $appointment->patient->email, $appointment));
-                }
-            }
+            // if (config('settings.enable_appointment_notification')) {
+            //     if (filter_var($appointment->patient->email, FILTER_VALIDATE_EMAIL)) {
+            //         dispatch(new SendEmail('appointment', $appointment->patient->email, $appointment));
+            //     }
+            // }
         } catch (Exception $e) {
             DB::rollBack();
             return $this->sendError($e->getMessage());
@@ -335,9 +326,16 @@ class AppointmentAPIController extends Controller
      * @param  \App\Models\Appointment  $appointment
      * @return \Illuminate\Http\Response
      */
-    public function show(Appointment $appointment)
+    public function show($id)
     {
-        $appointment->load(['user', 'doctor', 'patient', 'branch']);
+
+        $appointment = $this->appointmentRepository->find($id);
+
+        if (empty($appointment)) {
+            return $this->sendError(__('lang.not_found', ['operator' => __('lang.appointment')]), 201);
+        }
+
+        $appointment->load(['user', 'doctor', 'patient', 'branch', 'logs.user']);
         return $this->sendResponse($appointment, __('lang.retrievied_successfully', ['operator' => __('lang.appointment')]));
     }
 
@@ -361,8 +359,9 @@ class AppointmentAPIController extends Controller
      */
     public function update($id, CreateAppointmentRequest $request)
     {
-        $input = $request->only('user_id', 'branch_office_id', 'date', 'state', 'duration', 'patient_id', 'intern_observation');
+        $input = $request->all(); //only('user_id', 'branch_office_id', 'date', 'state', 'duration', 'patient_id', 'intern_observation');
         $input['date'] = Carbon::createFromFormat('d/m/Y H:i', $request['date'])->format('Y-m-d H:i:s');
+        
         $oldAppointment = $this->appointmentRepository->find($id);
 
         if (empty($oldAppointment)) {
@@ -372,7 +371,7 @@ class AppointmentAPIController extends Controller
         $oldDate = Carbon::parse($oldAppointment->date);
         if ($oldDate->notEqualTo($input['date'])) {
 
-            $request['onMethod'] = true;
+            $request['isValidate'] = true;            
             $response = $this->availableEvent($request);
 
             // Get the JSON content of the response
@@ -391,7 +390,7 @@ class AppointmentAPIController extends Controller
         try {
 
             DB::beginTransaction();
-            $appointment = $this->appointmentRepository->where('id', $id)->update($input);
+            $appointment = $this->appointmentRepository->update($input, $id); //where('id', $id)->update($input);
 
             // Get the corresponding message according to the status of the appointment        
             $logMessage = __('lang.appointment_state_' . $input['state']);
@@ -524,76 +523,173 @@ class AppointmentAPIController extends Controller
 
     public function availableEvent(Request $request)
     {
-        // Duración estimada de una cita en minutos (ejemplo: 60 minutos)
+        if($request->filled('isValidate')) {
+            return  $this->validateAvailable($request);
+        }
+
+        // Duración estimada de una cita en minutos (ejemplo: 15 minutos)
         $appointmentDuration = config('settings.scheduled_appointment_interval') ?? 15;
 
-        $isDST = date('I'); // It will return 1 if it is daylight saving time, 0 if it is not.
+        // Obtén la fecha proporcionada por el usuario
+        $inputDate = Carbon::createFromFormat('d/m/Y H:i', $request['date']);  // Fecha solicitada por el usuario
 
-        // Get current date
-        $currentDate = date('Y-m-d H:i:s');
+        Log::warning('Input Date: ' . $inputDate);
 
-        //Apply the one hour adjustment in case of daylight saving time
-        if ($isDST) {
-            $currentDate = date('Y-m-d H:i:s', strtotime($currentDate) - 3600);
+        // Obtén la hora actual
+        $currentDateTime = Carbon::now();
+
+        Log::warning('Current Date Time: ' . $inputDate->gt($currentDateTime));
+
+        // Si la fecha solicitada es en el futuro, no redondeamos los minutos, sino que usamos la hora proporcionada
+        if ($inputDate->gt($currentDateTime)) {
+            $currentDateTime = $inputDate;  // Usar la fecha futura como base para la disponibilidad
+            Log::warning('Input Date is greater than current date');
+            Log::warning('Current Date: ' . $currentDateTime);
         }
 
-        // Check if the date is valid
-        if (!Carbon::hasFormat($request['date'], 'd/m/Y H:i')) {
-            return $this->sendError(__('lang.invalid_date_format'), 201);
-        }
+        // Obtenemos los minutos actuales
+        $currentMinutes = $currentDateTime->minute;
 
-        $date = Carbon::createFromFormat('d/m/Y H:i', $request['date'])->format('Y-m-d H:i:s');
+        Log::warning('Current Minutes: ' . $currentMinutes);
+
+        // Redondeamos los minutos a los múltiplos de 15 más cercanos
+        $roundedMinutes = floor($currentMinutes / $appointmentDuration) * $appointmentDuration;
+
+        Log::warning('Rounded Minutes: ' . $roundedMinutes);
+
+        // Establecemos los minutos redondeados y los segundos a 0
+        $currentDateTime = $currentDateTime->minute($roundedMinutes)->second(0);
+
+        Log::warning('Current Date Time: ' . $currentDateTime);
+
+        //Obtener solo la fecha:
+        $currentDate = $currentDateTime->format('Y-m-d');
+
+        Log::warning('Current Date: ' . $currentDate);
+
+        // Horario de inicio y fin del día
+        $startHour = Carbon::createFromFormat('H:i:s', config('settings.schedule_start_time') ?? "09:00:00");
+        $endHour = Carbon::createFromFormat('H:i:s', config('settings.schedule_end_time') ?? "22:00:00");
+
+        // Combinar fecha seleccionada con los horarios de inicio y fin
+        $startDateTime = Carbon::createFromFormat('Y-m-d H:i:s', "$currentDate {$startHour->format('H:i:s')}");
+        $endDateTime = Carbon::createFromFormat('Y-m-d H:i:s', "$currentDate {$endHour->format('H:i:s')}");
+
+        // Obtenemos el ID del usuario (doctor)
         $userId = $request['user_id'];
-
-
-        // Check if the user exists
         $user = $this->userRepository->find($userId);
-
-        // Log::info($user->isAvailableAt($currentDate));
 
         if (!$user) {
             return $this->sendError(__('lang.not_found', ['operator' => __('lang.doctor')]), 201);
         }
 
+        // Verificamos si estamos dentro del horario de oficina
+        if ($currentDateTime->lt($startDateTime)) {
+            $currentDateTime = $startDateTime;  // Aseguramos que no inicie antes de las 09:00
+        } elseif ($currentDateTime->gt($endDateTime)) {
+            return $this->sendError(__('lang.no_available_slots'), 201);
+        }
 
-        //Selected date
+        // Generamos los intervalos de tiempo de 15 minutos desde la hora actual hasta el final del día
+        $timeSlots = [];
+        $pointer = $currentDateTime;
+
+        while ($pointer->lte($endDateTime)) {
+            // Verificamos si el intervalo ya está ocupado
+            $appointments = $this->appointmentRepository
+                ->where('date', $pointer)
+                ->where('user_id', $user->id)
+                ->count();
+
+            // Aseguramos que no se muestren intervalos pasados y solo los futuros
+            if ($appointments === 0 /*&& $pointer->gte(Carbon::now())*/) {
+                // Añadimos el intervalo al array de slots disponibles
+                $timeSlots[] = $pointer->format('H:i');
+            }
+
+            // Avanzamos al siguiente intervalo de 15 minutos
+            $pointer->addMinutes($appointmentDuration);
+        }
+
+        return $this->sendResponse($timeSlots, __('lang.available_slots'));
+    }
+
+    public function validateAvailable(Request $request)
+    {
+        // Duración estimada de una cita
+        $appointmentDuration = config('settings.scheduled_appointment_interval') ?? 15;
+
+        $isDST = date('I'); // Verifica si está en horario de verano
+        $currentDate = date('Y-m-d H:i:s');
+        if ($isDST) {
+            $currentDate = date('Y-m-d H:i:s', strtotime($currentDate) - 3600);
+        }
+
+        // Validar formato de la fecha
+        if (!Carbon::hasFormat($request['date'], 'd/m/Y H:i')) {
+            return $this->sendError(__('lang.invalid_date_format'), 201);
+        }
+
+        $date = Carbon::createFromFormat('d/m/Y H:i', $request['date'])->format('Y-m-d H:i:s');
+        Log::warning('Date: ' . $date);
+        $userId = $request['user_id'];
+        $appointmentId = $request['appointment_id'] ?? null;
+
+        // Verificar si el usuario existe
+        $user = $this->userRepository->with('schedules')->find($userId);
+        if (!$user) {
+            return $this->sendError(__('lang.not_found', ['operator' => __('lang.doctor')]), 201);
+        }
+
+        $startAt = Carbon::parse($date)->startOfDay();
+        $scheduleForDay = $user->schedules->where('day_of_week', $startAt->dayOfWeek)->first();
+
+        if (!$scheduleForDay) {
+            return $this->sendError(__('lang.time_not_available'), 201);
+        }
+
+        // Validar que la fecha esté dentro del horario laboral
         $selectedDate = Carbon::parse($date)->format('Y-m-d');
+        $officeStartTime = Carbon::createFromFormat('H:i:s', config('settings.schedule_start_time') ?? "09:00:00");
+        $officeEndTime = Carbon::createFromFormat('H:i:s', config('settings.schedule_end_time') ?? "22:00:00");
+        $officeStartDateTime = Carbon::createFromFormat('Y-m-d H:i:s', "$selectedDate {$officeStartTime->format('H:i:s')}");
+        $officeEndDateTime = Carbon::createFromFormat('Y-m-d H:i:s', "$selectedDate {$officeEndTime->format('H:i:s')}");
 
-        // Get the start and end time of the day in which it is allowed to schedule appointments
-        $officeStartTime = Carbon::createFromFormat('H:i:s', config('settings.schedule_start_time'))->format('H:i:s') ?? "09:00:00";
-        $officeEndTime = Carbon::createFromFormat('H:i:s', config('settings.schedule_end_time'))->format('H:i:s') ?? "22:00:00";
+        $now = Carbon::parse($currentDate);
+        $selectedDateTime = Carbon::parse($date);
 
+        Log::warning('Now: ' . $now);
 
-        // Combines the date selected by the user with the start time of office hours
-        $officeStartTime = Carbon::createFromFormat('Y-m-d H:i:s', "$selectedDate $officeStartTime");
-
-
-        // Combines the date selected by the user with the end of office hours time
-        $officeEndTime = Carbon::createFromFormat('Y-m-d H:i:s', "$selectedDate $officeEndTime");
-
-        //Check if date is valid (greater than current)
-        $now = $currentDate;
-        $selectedDate = Carbon::createFromFormat('Y-m-d H:i:s', $date);
-
-        //Check if the selected date is within the range of office hours
-        if ($selectedDate >= $officeStartTime && $selectedDate <= $officeEndTime) {
-
-            if ($selectedDate <= $now) {
-                return $this->sendError(__('lang.appointment_not_available'), 201);
-            }
-
-            // Check availability
-            $appointment = $this->appointmentRepository->where('date', $selectedDate)->where('user_id', $user->id)->count();
-            if ($appointment > 0) {
-                return $this->sendError(__('lang.appointment_not_available'), 201);
-            }
-        } else {
+        if ($selectedDateTime < $now || $selectedDateTime < $officeStartDateTime || $selectedDateTime > $officeEndDateTime) {
             return $this->sendError(__('lang.appointment_not_available'), 201);
         }
 
-        // If everything is ok, the appointment is available
+        // Si es edición, verifica si la fecha ha cambiado
+        if ($appointmentId) {
+            $existingAppointment = $this->appointmentRepository->find($appointmentId);
+            if (!$existingAppointment) {
+                return $this->sendError(__('lang.not_found', ['operator' => __('lang.appointment')]), 201);
+            }
+
+            // Si la fecha no cambia, no hace falta validar conflictos
+            if ($existingAppointment->date === $selectedDateTime->format('Y-m-d H:i:s')) {
+                return $this->sendResponse($date, __('lang.appointment_available'));
+            }
+        }
+
+        // Validar conflictos con otras citas del usuario
+        $appointmentCount = $this->appointmentRepository
+            ->where('date', $selectedDateTime->format('Y-m-d H:i:s'))
+            ->where('user_id', $user->id)
+            ->count();
+
+        if ($appointmentCount > 0) {
+            return $this->sendError(__('lang.appointment_not_available'), 201);
+        }
+
         return $this->sendResponse($date, __('lang.appointment_available'));
     }
+
 
 
     /**

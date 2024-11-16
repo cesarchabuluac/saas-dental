@@ -4,16 +4,18 @@ namespace App\Repositories;
 
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
+use Prettus\Repository\Contracts\CacheableInterface;
 use Prettus\Repository\Eloquent\BaseRepository;
+use Prettus\Repository\Traits\CacheableRepository;
 
 /**
  * Class UserRepository.
  *
  * @package namespace App\Repositories;
  */
-class UserRepository extends BaseRepository
+class UserRepository extends BaseRepository implements CacheableInterface
 {
+    use CacheableRepository;
     /**
      * @var array
      */
@@ -33,6 +35,12 @@ class UserRepository extends BaseRepository
     public function model()
     {
         return User::class;
+    }
+
+    public function getCacheTags()
+    {
+        // Sobrescribe el método para evitar el uso de tags
+        return null;
     }
 
     public function revenueReport($startAt, $endAt, $userID = null)

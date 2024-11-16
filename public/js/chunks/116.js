@@ -330,19 +330,34 @@ if (_store__WEBPACK_IMPORTED_MODULE_10__["default"].state.auth.setting['language
         return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().wrap(function _callee2$(_context2) {
           while (1) switch (_context2.prev = _context2.next) {
             case 0:
+              _context2.prev = 0;
               _this2.loading = true;
-              _context2.next = 3;
-              return BranchResource.getAll();
-            case 3:
+              _context2.next = 4;
+              return BranchResource.index({
+                isAll: true
+              });
+            case 4:
               _yield$BranchResource = _context2.sent;
               data = _yield$BranchResource.data;
+              if (data.success) {
+                _this2.branchOffices = data.data;
+              }
+              _context2.next = 13;
+              break;
+            case 9:
+              _context2.prev = 9;
+              _context2.t0 = _context2["catch"](0);
               _this2.loading = false;
-              _this2.branchOffices = data;
-            case 7:
+              _this2.handleResponseErrors(_context2.t0);
+            case 13:
+              _context2.prev = 13;
+              _this2.loading = false;
+              return _context2.finish(13);
+            case 16:
             case "end":
               return _context2.stop();
           }
-        }, _callee2);
+        }, _callee2, null, [[0, 9, 13, 16]]);
       }))();
     },
     getExpenseCategories: function getExpenseCategories() {
@@ -1141,14 +1156,21 @@ var BranchOffices = /*#__PURE__*/function () {
     Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, BranchOffices);
   }
   Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__["default"])(BranchOffices, [{
-    key: "store",
-    value:
+    key: "index",
+    value: function index(query) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/branch-offices", {
+        params: query
+      });
+    }
+
     /**
      * Function to update a branch
      * @param {Object} formdata
      * @return AxiosPromise
      */
-    function store(formdata) {
+  }, {
+    key: "store",
+    value: function store(formdata) {
       return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/branch-offices", formdata, {
         headers: {
           'Content-Type': 'multipart/form-data'

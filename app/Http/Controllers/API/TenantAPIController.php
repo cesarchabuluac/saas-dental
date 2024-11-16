@@ -29,10 +29,7 @@ class TenantAPIController extends Controller
             ], __('lang.retrievied_successfully', ['operator' => 'tenant']));
         }
 
-        $tenant = tenant();
-
-        
-        Log::info('Tenant: ' . $tenant);
+        $tenant = tenant();        
         if ($tenant->manually_subscribed_by) {
             $tenant->manually_subscribed_by = tenancy()->central(function () use ($tenant) {
                 return $this->userRepository->find($tenant->manually_subscribed_by)?->name ?? null;

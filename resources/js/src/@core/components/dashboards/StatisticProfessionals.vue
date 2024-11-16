@@ -121,6 +121,7 @@ import UserProvider from "@/providers/Users";
 const UserResource = new UserProvider();
 
 export default {
+    name: "StatisticProfessionals",
     components: {
         BRow,
         BCol,
@@ -206,8 +207,6 @@ export default {
             const { data } = await UserResource.index(query)
             this.loading = false
             this.professionals = data.data
-
-            console.log(this.professionals)
         },
         resolveUserRoleVariant(roles) {
             if (!_.isEmpty(roles)) {

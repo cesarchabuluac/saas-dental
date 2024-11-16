@@ -281,10 +281,18 @@ export default {
     },
     methods: {
         async getBranchOffices () {
-            this.loading = true
-            const { data } = await BranchResource.getAll()
-            this.loading = false
-            this.branchOffices = data
+            try {
+                this.loading = true
+                const { data } = await BranchResource.index({isAll: true})
+                if (data.success) {
+                    this.branchOffices = data.data
+                }                
+            }catch (e) {
+                this.loading = false
+                this.handleResponseErrors(e)
+            }finally {
+                this.loading = false
+            }
         },
         async getExpenseCategories () {
             this.loading = true

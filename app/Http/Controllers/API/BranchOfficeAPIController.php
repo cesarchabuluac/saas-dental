@@ -38,19 +38,38 @@ class BranchOfficeAPIController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $searchTerm = '%' . request('search') . '%';
-        return $this->branchOfficeRepository->query()
-            ->where(function ($query) use ($searchTerm) {
+
+        $branches = $this->branchOfficeRepository
+            ->when($request->filled('search'), function ($query) use ($request) {
+                $searchTerm = '%' . $request->search . '%';
                 $query->where('name', 'LIKE', $searchTerm)
                     ->orWhere('email', 'LIKE', $searchTerm)
                     ->orWhere('phone', 'LIKE', $searchTerm)
                     ->orWhere('address', 'LIKE', $searchTerm);
-            })
-            ->orderBy(request('sortBy'), request('sortDesc') ? 'asc' : 'desc')
-            ->withTrashed()
-            ->paginate(request('perPage'));
+            });
+
+        if ($request->filled('isAll')) {
+            $branches = $branches->orderBy('name', 'asc')->get();
+            return $this->sendResponse($branches, 'Branches retrieved successfully');
+        }
+
+        // Configuración de parámetros de ordenamiento y paginación
+        $sortBy = $request->get('sortBy', 'name'); // Default sort by 'name'
+        $sortDesc = $request->boolean('sortDesc', false); // Default sort ascending
+        $perPage = $request->get('perPage', 15); // Default items per page
+
+        // Condicional para incluir eliminados si es necesario
+        if ($request->filled('includeTrashed')) {
+            $branches = $branches->withTrashed();
+        }
+
+        $branches = $branches
+            ->orderBy($sortBy, $sortDesc ? 'desc' : 'asc')
+            ->paginate($perPage);
+
+        return $this->sendResponse($branches, 'Branches retrieved successfully');
     }
 
     /**

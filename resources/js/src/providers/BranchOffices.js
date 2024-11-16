@@ -2,6 +2,10 @@ import axios from "axios";
 
 export default class BranchOffices {
 
+    index(query) {
+        return axios.get("/api/branch-offices", { params: query });
+    }
+
     /**
      * Function to update a branch
      * @param {Object} formdata

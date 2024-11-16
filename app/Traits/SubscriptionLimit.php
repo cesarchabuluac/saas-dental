@@ -3,9 +3,11 @@
 namespace App\Traits;
 
 use App\Models\Plan;
+use App\Models\Role;
 use Illuminate\Support\Facades\Log;
-use Spatie\Permission\Models\Role;
+// use Spatie\Permission\Models\Role;
 use Illuminate\Support\Str;
+
 
 trait SubscriptionLimit
 {
@@ -54,6 +56,7 @@ trait SubscriptionLimit
                 ];
             }
         }        
+        
 
         if (!empty($limits)) {
             $data = [
@@ -62,8 +65,7 @@ trait SubscriptionLimit
                 'message' => __('lang.subscription_limit', ['role' => $roleName]),
                 'data' => $limits,
             ];
-            Log::info($data);
-            response()->json($data, 201)->throwResponse();
+            response()->json($data, 201)->throwResponse();            
         } else {
             Log::info('Subscription limit check passed');   
         }
@@ -71,8 +73,8 @@ trait SubscriptionLimit
 
     private function getTenantCurrentCountByUserRole($userRoleID)
     {
-        $role = Role::withCount('users')->where('id', $userRoleID)->first();
-        $current =  $role->users_count;
+        $role = Role::withCount(['usersWithTrashed'])->where('id', $userRoleID)->first();
+        $current =  $role->users_with_trashed_count;
         return [
             "current" => $current,
             "name" => $role->name

@@ -24,10 +24,10 @@
 
     <b-navbar-nav v-if="user" class="nav align-items-center ml-auto">
       <!-- <locale /> -->
-      <!-- <search-bar/> -->
+      <search-bar/>
 
       <!-- Swtich Role Id -->
-      <session-dropdown />
+      <!-- <session-dropdown /> -->
 
       <notification-dropdown/>
       <b-nav-item-dropdown

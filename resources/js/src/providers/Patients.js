@@ -74,8 +74,8 @@ export default class Patients {
      *
      * @return  {[type]}     [return description]
      */
-    search(q) {
-        return axios.get("/api/patients/search", { params: { q: q } });
+    search(query) {
+        return axios.get("/api/patients/search", { params: query });
     }
 
     nextAppointment(query) {

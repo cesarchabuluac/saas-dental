@@ -1,55 +1,67 @@
 import { ref, watch } from '@vue/composition-api'
+import PatientProvider from '@/providers/Patients'
+const PatientResource = new PatientProvider()
 
 export default function useAutoSuggest(props) {
-  const filteredData = ref({})
+	const filteredData = ref({})
 
-  /**
-   * Filter group against provided query
-   * Grp Structure:
-   * {
-   *    key: 'title',
-   *    data: [
-   *      title: 'Admin', img: 'someImage.png',
-   *      title: 'Template', img: 'otherImage.png',
-   *    ]
-   * }
-   * @param {Object} grp Group object to perform filter on
-   * @param {String} query Query string to filter
-   */
-  const filterGrp = (grp, query) => {
-    const exactEle = grp.data.filter(item => item[grp.key].toLowerCase().startsWith(query.toLowerCase()))
-    const containEle = grp.data.filter(
-      // prettier-ignore
-      item => !item[grp.key].toLowerCase().startsWith(query.toLowerCase()) && item[grp.key].toLowerCase().indexOf(query.toLowerCase()) > -1,
-    )
-    return exactEle.concat(containEle).slice(0, props.searchLimit)
-  }
+	/**
+	 * Filter group against provided query
+	 * Grp Structure:
+	 * {
+	 *    key: 'title',
+	 *    data: [
+	 *      title: 'Admin', img: 'someImage.png',
+	 *      title: 'Template', img: 'otherImage.png',
+	 *    ]
+	 * }
+	 * @param {Object} grp Group object to perform filter on
+	 * @param {String} query Query string to filter
+	 */
+	const filterGrp = async (grp, query) => {
+		if (query == '' || query == null && query.length < 3) {
+			return false
+		}
 
-  const searchQuery = ref('')
-  const resetsearchQuery = () => {
-    searchQuery.value = ''
-  }
+		const q = {
+			search: query,
+			sortBy: 'name',
+			sortDesc: 'asc',
+			perPage: 10,
+		}
+		
+		const { data } = await PatientResource.nextAppointment(q)
+		console.log('data', data)
 
-  const handleSearchQueryUpdate = val => {
-    if (val === '') {
-      filteredData.value = {}
-    } else {
-      const queriedData = {}
-      const dataGrps = Object.keys(props.data)
+		return data.data.data
 
-      dataGrps.forEach((grp, i) => {
-        queriedData[dataGrps[i]] = filterGrp(props.data[grp], val)
-      })
+	}
 
-      filteredData.value = queriedData
-    }
-  }
+	const searchQuery = ref('')
+	const resetsearchQuery = () => {
+		searchQuery.value = ''
+	}
 
-  watch(searchQuery, val => handleSearchQueryUpdate(val))
+	const handleSearchQueryUpdate = val => {
+		if (val === '') {
+			filteredData.value = {}
+		} else {
+			const queriedData = {}
+			const dataGrps = Object.keys(props.data)
 
-  return {
-    searchQuery,
-    resetsearchQuery,
-    filteredData,
-  }
+			dataGrps.forEach((grp, i) => {
+				queriedData[dataGrps[i]] = filterGrp(props.data[grp], val)
+			})
+
+			filteredData.value = queriedData
+		}
+	}
+
+	watch(searchQuery, val => handleSearchQueryUpdate(val))
+
+	return {
+		searchQuery,
+		resetsearchQuery,
+		filteredData,
+	}
 }

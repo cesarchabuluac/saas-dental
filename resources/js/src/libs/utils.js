@@ -9,9 +9,13 @@ export default {
     methods: {
         isWithinOfficeHours(dateStr, startTime, endTime) {
             const selectedDateTime = new Date(dateStr);
+            console.log('selectedDateTime', selectedDateTime)
             const selectedHour = selectedDateTime.getHours();
+            console.log('selectedHour', selectedHour)
             const officeStartHour = parseInt(startTime.split(':')[0]);
+            console.log('officeStartHour', officeStartHour)
             const officeEndHour = parseInt(endTime.split(':')[0]);
+            console.log('officeEndHour', officeEndHour)
             return selectedHour >= officeStartHour && selectedHour <= officeEndHour
         },
         isValidDate(dateStr, format) {

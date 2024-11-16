@@ -15,7 +15,19 @@ class Appointment extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $guarded = [];
+    protected $fillable = [
+        'user_id',
+        'patient_id',
+        'branch_office_id',
+        'date',
+        'intern_observation',
+        'patient_name',
+        'patient_phone',
+        'patient_rut',
+        'patient_email',
+        'state',
+        'duration',
+    ];
 
     /**
      * New Attributes
@@ -29,7 +41,9 @@ class Appointment extends Model
         'custom_date',
         'custom_date_diff_humans',
         'custom_duration',
+        'folio',
     ];
+
 
     protected static function boot()
     {
@@ -49,6 +63,12 @@ class Appointment extends Model
         });
     }
 
+    public function getFolioAttribute()
+    {
+        return getFolio($this->id);
+    }
+
+    
     public function getCustomDurationAttribute()
     {
         $date = new \DateTime($this->date);
@@ -89,7 +109,7 @@ class Appointment extends Model
 
     public function logs()
     {
-        return $this->hasMany(AppointmentLog::class);
+        return $this->hasMany(AppointmentLog::class)->orderBy('created_at', 'DESC');;
     }
 
     // Método para crear el log de cita

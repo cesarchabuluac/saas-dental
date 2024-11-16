@@ -25,6 +25,7 @@ class UserSchedule extends Model
         'active' => 'boolean',
         // 'start_time' => 'datetime:H:i',
         // 'end_time' => 'datetime:H:i'
+        'breaks' => 'array'
     ];
 
     public function user () : BelongsTo

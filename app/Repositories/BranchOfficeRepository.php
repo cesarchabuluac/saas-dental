@@ -3,15 +3,19 @@
 namespace App\Repositories;
 
 use App\Models\BranchOffice;
+use Prettus\Repository\Contracts\CacheableInterface;
 use Prettus\Repository\Eloquent\BaseRepository;
+use Prettus\Repository\Traits\CacheableRepository;
 
 /**
  * Interface BranchOfficeRepository.
  *
  * @package namespace App\Repositories;
  */
-class BranchOfficeRepository extends BaseRepository
+class BranchOfficeRepository extends BaseRepository implements CacheableInterface
 {
+    use CacheableRepository;
+
     /**
      * @var array
      */

@@ -96,7 +96,7 @@
                 <!-- Column: User -->
                 <template #cell(name)="data">
                     <b-media vertical-align="center">
-                        <b-link :to="{ name: 'settings-user-edit', params: { id: data.item.id },}"
+                        <b-link @click="editUser(data.item)"
                             class="font-weight-bold d-block text-wrap">
                             {{ data.item.name }}
                         </b-link>
@@ -163,7 +163,7 @@
             </b-table>
 
             <!-- Pagination -->
-            <div v-if="users" class="mx-2 mb-2">
+            <div v-if="totalUsers > perPage" class="mx-2 mb-2">
                 <b-row>
                     <b-col cols="12" sm="6" class="d-flex align-items-center justify-content-center justify-content-sm-start">
                         <span class="text-muted">{{ resolvePaginationTranslate(dataMeta) }}</span>
@@ -330,6 +330,7 @@ export default {
           if (!value) {
             this.user = {}
             this.isEdit = false
+            this.getTenant()
           }
         },
     },
@@ -360,24 +361,36 @@ export default {
                 sortDesc: this.sortDesc,
                 perPage: this.perPage,
                 page: this.currentPage,
+                includeTrashed: true,
             };
-            this.loading = true;
-            const { data } = await UserResource.index(query);
-            this.loading = false;
-            this.users = data.data;
-            this.totalUsers = data.total;
-            this.isEdit = false
-            this.user = {}
-            this.isAddNewUserSidebarActive = false
+
+            try {
+                this.loading = true;
+                const { data } = await UserResource.index(query);
+                if (data.success) {
+                    this.users = data.data.data;
+                    this.totalUsers = data.data.total;
+                    this.isEdit = false
+                    this.user = {}
+                    this.isAddNewUserSidebarActive = false
+                } else {
+                    this.danger(data.message);
+                }
+            }catch(e) {
+                this.loading = false;
+                this.handleResponseErrors(e);
+            }finally {
+                this.loading = false;
+            }
         },
         deleteUser(item) {
             this.$swal({
                 title: !item.deleted_at
                     ? this.$t("disable_user.title")
                     : this.$t("active_user.title"),
-                text: !item.deleted_at
-                    ? this.$t("disable_user.text")
-                    : this.$t("active_user.text"),
+                // text: !item.deleted_at
+                //     ? this.$t("disable_user.text")
+                //     : this.$t("active_user.text"),
                 icon: "question",
                 showCancelButton: true,
                 confirmButtonText: this.$t("confirm"),              

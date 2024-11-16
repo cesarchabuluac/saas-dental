@@ -2,7 +2,6 @@
 
 namespace App\Http\Middleware;
 
-use App\Repositories\UploadRepository;
 use Carbon\Carbon;
 use Closure;
 use Illuminate\Support\Facades\Log;

@@ -3,7 +3,7 @@
         <b-modal id="modal-center" ref="info-modal" centered :title="`${$t('patients.patient')}: ${eventLocal.title}`"
             :visible="isEventHandlerSidebarActive" @hidden="$emit('update:is-event-handler-sidebar-active', false)"
             :size="isAdministrator ? 'lg' : 'sm'" hide-footer>
-            <b-row>
+            <b-row class="match-height">
                 <b-col cols="12" :lg="isAdministrator ? '8' : '12'" md="12">
                     <b-card no-body class="card-developer-meetup">
                         <div class="bg-light-primary rounded-top text-center">
@@ -78,7 +78,7 @@
                             </b-avatar-group>
 
                             <div v-if="!isDoctor" class="demo-inline-spacing mt-1">
-                                <b-button :disabled="!youCanConfirm"
+                                <b-button size="sm" :disabled="!youCanConfirm"
                                     @click="changeStatus(eventLocal.extendedProps, 'confirmed')"
                                     v-if="eventLocal.extendedProps.calendar === 'pending'"
                                     v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="outline-success">
@@ -86,7 +86,7 @@
                                     {{ $t('button_confirm') }}
                                 </b-button>
 
-                                <b-button v-if="eventLocal.extendedProps.calendar !== 'canceled'"
+                                <b-button size="sm" v-if="eventLocal.extendedProps.calendar !== 'canceled'"
                                     @click="changeStatus(eventLocal.extendedProps, 'canceled')"
                                     v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="outline-danger">
                                     <feather-icon icon="XIcon" size="16" />
@@ -95,21 +95,21 @@
                             </div>
 
                             <div v-if="!isDoctor" class="demo-inline-spacing mt-1">
-                                <b-button v-if="eventLocal.extendedProps.calendar !== 'canceled'"
-                                    @click="$router.push({ name: 'appointment-edit', params: { id: eventLocal.extendedProps.appointment_id } })"
+                                <b-button size="sm" v-if="eventLocal.extendedProps.calendar !== 'canceled'"
+                                    @click="isEditEventHandlerModalActive = true"
                                     v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="primary">
                                     <feather-icon icon="EditIcon" size="16" />
                                     {{ $t('button_edit') }}
                                 </b-button>
 
-                                <b-button v-if="eventLocal.extendedProps.calendar !== 'canceled'"
+                                <b-button size="sm" v-if="eventLocal.extendedProps.calendar !== 'canceled'"
                                     @click="sendWhatsapp(eventLocal.extendedProps)"
                                     v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="warning">
                                     <feather-icon icon="BellIcon" size="16" />
                                     {{ $t('button_notify') }}
                                 </b-button>
 
-                                <b-button v-if="isAdministrator"
+                                <b-button size="sm" v-if="isAdministrator"
                                     @click="$router.push({ name: 'apps-patients-view', params: { id: eventLocal.extendedProps.patient_id } })"
                                     v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="secondary">
                                     <feather-icon icon="EyeIcon" size="16" />
@@ -117,7 +117,7 @@
                                 </b-button>
                             </div>
                             <div v-else class="mt-3">
-                                <b-button v-if="canAccess('patients.show')"
+                                <b-button size="sm" v-if="canAccess('patients.show')"
                                     @click="$router.push({ name: 'apps-patients-view', params: { id: eventLocal.extendedProps.patient_id } })"
                                     v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="primary">
                                     <feather-icon icon="EyeIcon" size="16" />
@@ -128,28 +128,31 @@
                     </b-card>
                 </b-col>
                 <b-col v-if="isAdministrator" cols="12" lg="4" md="12">
-                    <b-card class="card-code">
-                        <h6 class="text-center">{{ $t('appointments.dating_timeline') }}</h6>
-                        <app-timeline class="mt-2">
-                            <app-timeline-item v-for="(item, index) in eventLocal.extendedProps.logs" :key="index" :variant="resolveStateAppointmentColor(item.state ? item.state : 'primary')">
-                                <div class="d-flex flex-sm-row flex-column flex-wrap justify-content-between mb-1 mb-sm-0">
-                                    <small class="text-muted">{{ dateTimeFormat(item.created_at) }}</small>
-                                </div>
-                                <small>{{ item.comments }}</small>
-                                <b-media class="mt-1">
-                                    <template #aside>
-                                        <b-avatar size="24" :src="item.user.has_media ? item.user.avatar : null"
-                                            :text="avatarText(item.user.name)" />
-                                    </template>
-                                    <small>{{ item.user.name }}</small>
-                                </b-media>
-                            </app-timeline-item>
-                        </app-timeline>
+                    <b-card class="card-code" no-body>
+                        <h6 class="text-center mt-1">{{ $t('appointments.dating_timeline') }}</h6>
+                        <b-overlay :show="loading" blur="2px" variant="transparent" rounded="lg" opacity="0.85">
+                            <app-timeline class="mt-2">
+                                <app-timeline-item v-for="(item, index) in appointment.logs" :key="index" :variant="resolveStateAppointmentColor(item.state ? item.state : 'primary')">
+                                    <div class="d-flex flex-sm-row flex-column flex-wrap justify-content-between mb-1 mb-sm-0">
+                                        <small class="text-muted">{{ dateTimeFormat(item.created_at) }}</small>
+                                    </div>
+                                    <small>{{ item.comments }}</small>
+                                    <b-media class="mt-1">
+                                        <template #aside>
+                                            <b-avatar size="24" :src="item.user.has_media ? item.user.avatar : null"
+                                                :text="avatarText(item.user.name)" />
+                                        </template>
+                                        <small>{{ item.user.name }}</small>
+                                    </b-media>
+                                </app-timeline-item>
+                            </app-timeline>
+                        </b-overlay>
                     </b-card>
                 </b-col>
             </b-row>
-
         </b-modal>
+
+        <calendar-appointment-edit v-model="isEditEventHandlerModalActive" :event="appointment" @edit-appointment="editAppointment" />
     </div>
 </template>
 
@@ -166,11 +169,12 @@ import {
     BAlert,
 } from 'bootstrap-vue'
 import Ripple from "vue-ripple-directive";
-import { ref, computed, toRefs, onMounted } from "@vue/composition-api";
+import { ref, computed, toRefs, onMounted, watch } from "@vue/composition-api";
 import store from "@/store";
 import router from "@/router";
 import { useUtils as useI18nUtils } from '@core/libs/i18n'
 import useCalendarEventHandler from "../calendar-event-handler/useCalendarEventHandler";
+import CalendarAppointmentEdit from '../CalendarAppointmentEdit.vue'
 import AppTimeline from '@core/components/app-timeline/AppTimeline.vue'
 import AppTimelineItem from '@core/components/app-timeline/AppTimelineItem.vue'
 
@@ -208,9 +212,11 @@ export default {
         BListGroup, BListGroupItem,
         BCardBody, BCardTitle, BMediaAside, BAvatarGroup, BMediaBody,
         BAlert,
+
         //
         AppTimeline,
         AppTimelineItem,
+        CalendarAppointmentEdit,
     },
     directives: {
         'b-toggle': VBToggle,
@@ -236,6 +242,9 @@ export default {
         // Use toast
         const toast = useToast();
         const { t } = useI18nUtils()
+        const isEditEventHandlerModalActive = ref(false);
+        const loading = ref(false)
+        const appointment = ref({})
 
         const clearFormData = ref(null);
         const isAdministrator = ref(false)
@@ -277,9 +286,31 @@ export default {
             return currentDate.isSameOrBefore(eventDate)
         })
 
+        const editAppointment = (data) => {            
+            console.warn('editAppointment', data)
+            emit('edit-appointment', data)
+            emit('update:is-event-handler-sidebar-active', false)
+        }
+
         onMounted(() => {
 
         })
+
+        const getAppointment = async (id) => {
+            try {
+                loading.value = true
+                const { data } = await AppointmentResource.show(id)
+                if (data.success) {
+                    appointment.value = data.data
+                } else {
+                    helper.danger(data.message)
+                }
+            } catch (e) {
+                helper.handleResponseErrors(e)
+            } finally {
+                loading.value = false
+            }
+        }
 
         const sendWhatsapp = (event => {
             window.open(
@@ -343,16 +374,28 @@ export default {
             })
         }
 
+        watch(() => props.isEventHandlerSidebarActive, async (newValue) => {
+            if (newValue) {
+                await getAppointment(props.event.id)
+            }
+        })
+
 
 
         return {
             eventLocal,
-            clearFormData,
-            sendWhatsapp,
-            changeStatus,
+            clearFormData,            
             isAdministrator,
             isDoctor,
             youCanConfirm,
+            isEditEventHandlerModalActive,
+            appointment,
+            loading,
+
+            //
+            editAppointment,
+            sendWhatsapp,
+            changeStatus,
 
             // i18n
             t,

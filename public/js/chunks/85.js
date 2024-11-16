@@ -1685,14 +1685,21 @@ var BranchOffices = /*#__PURE__*/function () {
     Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, BranchOffices);
   }
   Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__["default"])(BranchOffices, [{
-    key: "store",
-    value:
+    key: "index",
+    value: function index(query) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/branch-offices", {
+        params: query
+      });
+    }
+
     /**
      * Function to update a branch
      * @param {Object} formdata
      * @return AxiosPromise
      */
-    function store(formdata) {
+  }, {
+    key: "store",
+    value: function store(formdata) {
       return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/branch-offices", formdata, {
         headers: {
           'Content-Type': 'multipart/form-data'

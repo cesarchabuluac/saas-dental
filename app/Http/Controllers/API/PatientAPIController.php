@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\Mail;
 use Prettus\Validator\Exceptions\ValidatorException;
 use Illuminate\Support\Str;
 use Maatwebsite\Excel\Facades\Excel;
+use Prettus\Repository\Criteria\RequestCriteria;
 
 class PatientAPIController extends Controller
 {
@@ -324,38 +325,64 @@ class PatientAPIController extends Controller
      */
     public function searchPatients(Request $request)
     {
-        $search = trim($request->q);
-        if (!empty($search)) {
+        $search = trim(strtolower($request->q));
 
-
-            $patients = $this->patientRepository->with(['budgets', 'mobile'])
-                ->where(
-                    DB::raw(
-                        // REPLACE will remove the double white space with single (As defined)
-                        "REPLACE(
-                /* CONCAT will concat the columns with defined separator */
-                CONCAT(
-                    /* COALESCE operator will handle NUll values as defined value. */
-                    COALESCE(name,''),' ',
-                    COALESCE(last_name,''),' ',
-                    COALESCE(mother_last_name,'')
-                ),
-            '  ',' ')"
-                    ),
-                    'LIKE',
-                    '%' . $search . '%'
-                )
-                ->orWhere('rut', 'LIKE', '%' . $search . '%')
-                ->orWhere('phone', 'LIKE', '%' . $search . '%')
-                ->orWhere('cellphone', 'LIKE', '%' . $search . '%')
-                ->orWhere('email', 'LIKE', '%' . $search . '%')
-                // ->orderBy(DB::raw('RAND(' . $request->session()->get('session_rand') . ')'))
-                ->paginate($request->page);
-        } else {
-            $patients = [];
+        if (empty($search)) {
+            return response()->json([]);
         }
+
+        // Paginación y búsqueda con consulta nativa
+        $patients = DB::table('patients')
+            ->select('id', 'name', 'last_name', 'mother_last_name', 'rut', 'phone', 'cellphone', 'email')
+            ->whereRaw(
+                "REPLACE(CONCAT(COALESCE(name, ''), ' ', COALESCE(last_name, ''), ' ', COALESCE(mother_last_name, '')), '  ', ' ') LIKE ?",
+                ['%' . $search . '%']
+            )
+            ->orWhere('rut', 'LIKE', '%' . $search . '%')
+            ->orWhere('phone', 'LIKE', '%' . $search . '%')
+            ->orWhere('cellphone', 'LIKE', '%' . $search . '%')
+            ->orWhere('email', 'LIKE', '%' . $search . '%')
+            ->paginate($request->perPage);
+
         return response()->json($patients);
     }
+
+
+
+    // public function searchPatients(Request $request)
+    // {
+    //     $this->patientRepository->pushCriteria(new RequestCriteria($request));
+    //     $search = trim($request->q);
+    //     if (!empty($search)) {
+
+    //         $patients = $this->patientRepository
+    //             ->where(
+    //                 DB::raw(
+    //                     // REPLACE will remove the double white space with single (As defined)
+    //                     "REPLACE(
+    //             /* CONCAT will concat the columns with defined separator */
+    //             CONCAT(
+    //                 /* COALESCE operator will handle NUll values as defined value. */
+    //                 COALESCE(name,''),' ',
+    //                 COALESCE(last_name,''),' ',
+    //                 COALESCE(mother_last_name,'')
+    //             ),
+    //         '  ',' ')"
+    //                 ),
+    //                 'LIKE',
+    //                 '%' . $search . '%'
+    //             )
+    //             ->orWhere('rut', 'LIKE', '%' . $search . '%')
+    //             ->orWhere('phone', 'LIKE', '%' . $search . '%')
+    //             ->orWhere('cellphone', 'LIKE', '%' . $search . '%')
+    //             ->orWhere('email', 'LIKE', '%' . $search . '%')
+    //             // ->orderBy(DB::raw('RAND(' . $request->session()->get('session_rand') . ')'))
+    //             ->paginate($request->page);
+    //     } else {
+    //         $patients = [];
+    //     }
+    //     return response()->json($patients);
+    // }
 
     /**
      * [nextAppointment description]
@@ -464,7 +491,9 @@ class PatientAPIController extends Controller
             'access_web'
         );
 
-        $input['document_type'] = $input['document_type']['value'];
+        $input['document_type_id'] = $input['document_type']['value'];
+        $input['document_type'] = $input['document_type']['label'];
+        
         $input['is_default'] = 0;
         $input['active'] = 1;
         $input['positive_balance'] = 0;

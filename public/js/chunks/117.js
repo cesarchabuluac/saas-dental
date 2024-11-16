@@ -274,22 +274,38 @@ var BranchResource = new _providers_BranchOffices__WEBPACK_IMPORTED_MODULE_8__["
                 sortBy: _this2.sortBy,
                 sortDesc: _this2.sortDesc,
                 perPage: _this2.perPage,
-                page: _this2.currentPage
+                page: _this2.currentPage,
+                includeTrashed: true
               };
+              _context2.prev = 1;
               _this2.loading = true;
-              _context2.next = 4;
-              return BranchResource.getList(query);
-            case 4:
+              _context2.next = 5;
+              return BranchResource.index(query);
+            case 5:
               _yield$BranchResource = _context2.sent;
               data = _yield$BranchResource.data;
+              if (data.success) {
+                _this2.branchs = data.data.data;
+                _this2.totalBranch = data.data.total;
+              } else {
+                _this2.danger(data.message);
+              }
+              _context2.next = 14;
+              break;
+            case 10:
+              _context2.prev = 10;
+              _context2.t0 = _context2["catch"](1);
               _this2.loading = false;
-              _this2.branchs = data.data;
-              _this2.totalBranch = data.total;
-            case 9:
+              _this2.handleResponseErrors(_context2.t0);
+            case 14:
+              _context2.prev = 14;
+              _this2.loading = false;
+              return _context2.finish(14);
+            case 17:
             case "end":
               return _context2.stop();
           }
-        }, _callee2);
+        }, _callee2, null, [[1, 10, 14, 17]]);
       }))();
     },
     deleteBranch: function deleteBranch(item) {
@@ -359,9 +375,6 @@ var BranchResource = new _providers_BranchOffices__WEBPACK_IMPORTED_MODULE_8__["
           return !Swal.isLoading();
         }
       });
-    },
-    filter: function filter() {
-      this.getBranchs();
     },
     showMessage: function showMessage(data) {
       if (data.success) {
@@ -589,7 +602,7 @@ var render = function () {
                                   ) {
                                     return null
                                   }
-                                  return _vm.filter($event)
+                                  return _vm.getBranchs($event)
                                 },
                               },
                               model: {
@@ -608,7 +621,7 @@ var render = function () {
                                   "b-button",
                                   {
                                     attrs: { size: "sm", variant: "primary" },
-                                    on: { click: _vm.filter },
+                                    on: { click: _vm.getBranchs },
                                   },
                                   [
                                     _c("feather-icon", {
@@ -650,7 +663,7 @@ var render = function () {
                 "empty-text": _vm.$t("datatables.sZeroRecords"),
                 "sort-desc": _vm.sortDesc,
                 "current-page": _vm.currentPage,
-                "busy.sync": "loading",
+                busy: _vm.loading,
                 stacked: "md",
                 small: "",
               },
@@ -666,6 +679,9 @@ var render = function () {
                 },
                 "update:sort-desc": function ($event) {
                   _vm.sortDesc = $event
+                },
+                "update:busy": function ($event) {
+                  _vm.loading = $event
                 },
               },
               scopedSlots: _vm._u([
@@ -833,7 +849,7 @@ var render = function () {
             2
           ),
           _vm._v(" "),
-          _vm.branchs
+          _vm.totalBranch > 10
             ? _c(
                 "div",
                 { staticClass: "mx-2 mb-2" },
@@ -933,14 +949,21 @@ var BranchOffices = /*#__PURE__*/function () {
     Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, BranchOffices);
   }
   Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__["default"])(BranchOffices, [{
-    key: "store",
-    value:
+    key: "index",
+    value: function index(query) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/branch-offices", {
+        params: query
+      });
+    }
+
     /**
      * Function to update a branch
      * @param {Object} formdata
      * @return AxiosPromise
      */
-    function store(formdata) {
+  }, {
+    key: "store",
+    value: function store(formdata) {
       return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/branch-offices", formdata, {
         headers: {
           'Content-Type': 'multipart/form-data'

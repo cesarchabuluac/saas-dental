@@ -9,9 +9,12 @@ export default function useCalendarSidebar() {
 
 
   onMounted(async () => {
-    const { data } = await UserResource.index({ criteria: "professionals", isCalendar: true, ignoreSchedules: false, });    
-    store.commit('calendar/SET_USE_PROFESSIONALS', data)
-    store.commit("calendar/SET_USE_PROFESSIONALS", data);
+    
+    if (store.state.calendar.useProfessionals.length <= 0) {
+      const { data } = await UserResource.index({ criteria: "professionals", isCalendar: true, ignoreSchedules: false, });    
+      store.commit('calendar/SET_USE_PROFESSIONALS', data.data)
+    }
+    
     const userRolesIds = store.getters['auth/getUser'].roles.map(role => role.id);    
     if (userRolesIds.includes(4)) { //Professional
       store.commit("calendar/SET_SELECTED_PROFESSIONAL", store.getters['auth/getUser']);

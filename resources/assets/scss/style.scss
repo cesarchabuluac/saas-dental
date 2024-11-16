@@ -22,3 +22,10 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
     height: 30px!important; /* Ajusta la altura del input */
     /*font-size: 7px!important; /* Ajusta el tamaño del texto del input */
 }
+
+.fc-event-title {
+    font-size: 0.9em; /* Reducir texto para citas pequeñas */
+    white-space: nowrap; /* Evitar saltos de línea */
+    overflow: hidden; /* Esconder texto desbordante */
+    text-overflow: ellipsis; /* Mostrar "..." al truncar */
+}

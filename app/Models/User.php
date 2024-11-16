@@ -109,7 +109,7 @@ class User extends Authenticatable
 
     public function appointments(): HasMany
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(Appointment::class, 'user_id', 'id');
     }
 
     public function budgets(): HasMany

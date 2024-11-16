@@ -362,12 +362,15 @@ export default {
         async getBranchs() {
             try {
                 this.loading = true
-                const { data } = await BranchResource.getAll()
-                this.loading = false
-                this.branchs = data
-            } catch (e) {
+                const { data } = await BranchResource.index({isAll: true})
+                if (data.success) {
+                    this.branchs = data.data
+                }                
+            }catch (e) {
                 this.loading = false
                 this.handleResponseErrors(e)
+            }finally {
+                this.loading = false
             }
         },
         handleResize() {

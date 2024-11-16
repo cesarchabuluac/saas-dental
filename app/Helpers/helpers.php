@@ -187,6 +187,27 @@ function getPrice($price = 0)
     }
 }
 
+function getFolio($id)
+{
+    $appName = config()->get('settings.app_name') ?? setting('app_name');
+
+    // Convertimos el nombre en un arreglo de palabras
+    $words = explode(' ', $appName);
+
+    // Inicializamos un string vacío para las iniciales
+    $initials = '';
+
+    // Obtenemos la primera letra de cada palabra y la convertimos a mayúsculas
+    foreach ($words as $word) {
+        $initials .= strtoupper(substr($word, 0, 1));
+    }
+
+    // Aseguramos que el folio tenga 8 caracteres con ceros a la izquierda
+    $appointmentId = $id; // ID de la cita
+    $folio = $initials . str_pad($appointmentId, 10, '0', STR_PAD_LEFT);
+    return $folio;
+}
+
 
 function formatDate($date, $format = "j M Y (H:i)")
 {

@@ -194,6 +194,8 @@ return [
             "comments" => "Comentarios",
         ]
     ],
+    "no_available_slots" => "No hay horarios disponibles",
+    "available_slots" => "Horarios Disponibles",
     "payment" => "Pago",
     "payments" => [
         "card_payment" => "Pago con Tarjeta",
@@ -452,7 +454,9 @@ return [
     "plan" => "Plan",
     "plan_associate_help" => "Este plan está asociado con un inquilino. No puedes eliminarlo.",
     "appointment" => "Cita",
+    "schedule_not_found" => "Horario no encontrado",
     "time_not_available" => "Horario no disponible para agendar cita",
+    "cannot_change_schedule_due_to_appointments" => "No puedes cambiar el horario porque hay citas programadas",
     "invalid_date_format" => "Formato de fecha inválido",
     'appointment_reminder' => 'Recordatorio de Cita',
     "appointment_available" => "Fecha disponible para programar una cita",
