@@ -187,7 +187,8 @@
                                         <!-- :disabled="data.item.has_previous_professional" -->
                                         <v-select v-show="data.item.is_selected || data.item.has_previous_professional"
                                             v-model="data.item.professional" label="name" :options="professionals"
-                                            :clearable="false" :searchable="false" class="select-size-sm" />
+                                            :clearable="false" :searchable="true" class="select-size-sm"
+                                            :placeholder="$t('appointments.professional_placeholder')" />
                                     </b-col>
                                     <b-col cols="12" xl="4" class="p-1" v-if="!budget.has_partials">
                                         <label class="mb-2 fw-bolder">{{ $t('charges.assigned_amount') }}</label>
@@ -524,6 +525,7 @@ export default {
                 const { data } = await UserResource.index({
                     criteria: 'professional',
                     ignoreSchedules: true,
+                    isAll: true,
                 });
                 this.loading = false
                 this.professionals = data.data

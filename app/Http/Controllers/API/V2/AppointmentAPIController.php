@@ -327,7 +327,7 @@ class AppointmentAPIController extends Controller
 
     private function generateMessage($appointment, $mobile)
     {
-        // //Obtener el template:
+        //Obtener el template:
         // $headerHtml = config('settings.app_email_appointment_reminder_header');
         // $bodyHtml = config('settings.app_email_appointment_reminder_body');
         // $footerHtml = config('settings.app_email_appointment_reminder_footer');

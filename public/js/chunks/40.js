@@ -7943,30 +7943,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es_string_pad_start_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_pad_start_js__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! core-js/modules/es.regexp.to-string.js */ "./node_modules/core-js/modules/es.regexp.to-string.js");
 /* harmony import */ var core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _fullcalendar_core_locales_es__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fullcalendar/core/locales/es */ "./node_modules/@fullcalendar/core/locales/es.js");
-/* harmony import */ var _fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fullcalendar/daygrid */ "./node_modules/@fullcalendar/daygrid/main.js");
-/* harmony import */ var _fullcalendar_timegrid__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fullcalendar/timegrid */ "./node_modules/@fullcalendar/timegrid/main.js");
-/* harmony import */ var _fullcalendar_list__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fullcalendar/list */ "./node_modules/@fullcalendar/list/main.js");
-/* harmony import */ var _fullcalendar_interaction__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fullcalendar/interaction */ "./node_modules/@fullcalendar/interaction/main.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _fullcalendar_moment__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fullcalendar/moment */ "./node_modules/@fullcalendar/moment/index.js");
-/* harmony import */ var _fullcalendar_moment_timezone__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fullcalendar/moment-timezone */ "./node_modules/@fullcalendar/moment-timezone/index.js");
-/* harmony import */ var vue_toastification_composition__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! vue-toastification/composition */ "./node_modules/vue-toastification/composition/index.js");
-/* harmony import */ var vue_toastification_composition__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(vue_toastification_composition__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @core/components/toastification/ToastificationContent.vue */ "./resources/js/src/@core/components/toastification/ToastificationContent.vue");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_19__);
-/* harmony import */ var animate_css__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! animate.css */ "./node_modules/animate.css/animate.css");
-/* harmony import */ var animate_css__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(animate_css__WEBPACK_IMPORTED_MODULE_20__);
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_21__);
-/* harmony import */ var _vue_composition_api__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @vue/composition-api */ "./node_modules/@vue/composition-api/dist/vue-composition-api.mjs");
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @/store */ "./resources/js/src/store/index.js");
-/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @/router */ "./resources/js/src/router/index.js");
-/* harmony import */ var _libs_helpers__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @/libs/helpers */ "./resources/js/src/libs/helpers.js");
-/* harmony import */ var _providers_Appointments__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @/providers/Appointments */ "./resources/js/src/providers/Appointments.js");
-/* harmony import */ var _providers_Users__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @/providers/Users */ "./resources/js/src/providers/Users.js");
+/* harmony import */ var core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! core-js/modules/es.array.map.js */ "./node_modules/core-js/modules/es.array.map.js");
+/* harmony import */ var core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var core_js_modules_es_array_includes_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! core-js/modules/es.array.includes.js */ "./node_modules/core-js/modules/es.array.includes.js");
+/* harmony import */ var core_js_modules_es_array_includes_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_includes_js__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var core_js_modules_es_string_includes_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! core-js/modules/es.string.includes.js */ "./node_modules/core-js/modules/es.string.includes.js");
+/* harmony import */ var core_js_modules_es_string_includes_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_includes_js__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _fullcalendar_core_locales_es__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fullcalendar/core/locales/es */ "./node_modules/@fullcalendar/core/locales/es.js");
+/* harmony import */ var _fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fullcalendar/daygrid */ "./node_modules/@fullcalendar/daygrid/main.js");
+/* harmony import */ var _fullcalendar_timegrid__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fullcalendar/timegrid */ "./node_modules/@fullcalendar/timegrid/main.js");
+/* harmony import */ var _fullcalendar_list__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fullcalendar/list */ "./node_modules/@fullcalendar/list/main.js");
+/* harmony import */ var _fullcalendar_interaction__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fullcalendar/interaction */ "./node_modules/@fullcalendar/interaction/main.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _fullcalendar_moment__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @fullcalendar/moment */ "./node_modules/@fullcalendar/moment/index.js");
+/* harmony import */ var _fullcalendar_moment_timezone__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @fullcalendar/moment-timezone */ "./node_modules/@fullcalendar/moment-timezone/index.js");
+/* harmony import */ var vue_toastification_composition__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! vue-toastification/composition */ "./node_modules/vue-toastification/composition/index.js");
+/* harmony import */ var vue_toastification_composition__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(vue_toastification_composition__WEBPACK_IMPORTED_MODULE_20__);
+/* harmony import */ var _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @core/components/toastification/ToastificationContent.vue */ "./resources/js/src/@core/components/toastification/ToastificationContent.vue");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_22__);
+/* harmony import */ var animate_css__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! animate.css */ "./node_modules/animate.css/animate.css");
+/* harmony import */ var animate_css__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(animate_css__WEBPACK_IMPORTED_MODULE_23__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_24__);
+/* harmony import */ var _vue_composition_api__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @vue/composition-api */ "./node_modules/@vue/composition-api/dist/vue-composition-api.mjs");
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @/store */ "./resources/js/src/store/index.js");
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @/router */ "./resources/js/src/router/index.js");
+/* harmony import */ var _libs_helpers__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @/libs/helpers */ "./resources/js/src/libs/helpers.js");
+/* harmony import */ var _providers_Appointments__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @/providers/Appointments */ "./resources/js/src/providers/Appointments.js");
+/* harmony import */ var _providers_Users__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @/providers/Users */ "./resources/js/src/providers/Users.js");
+
+
+
 
 
 
@@ -8001,20 +8010,20 @@ __webpack_require__.r(__webpack_exports__);
 
 // Providers
 
-var AppointmentResource = new _providers_Appointments__WEBPACK_IMPORTED_MODULE_26__["default"]();
+var AppointmentResource = new _providers_Appointments__WEBPACK_IMPORTED_MODULE_29__["default"]();
 
-var UserResource = new _providers_Users__WEBPACK_IMPORTED_MODULE_27__["default"]();
+var UserResource = new _providers_Users__WEBPACK_IMPORTED_MODULE_30__["default"]();
 function userCalendar() {
   var _this = this;
   // Use toast
-  var toast = Object(vue_toastification_composition__WEBPACK_IMPORTED_MODULE_17__["useToast"])();
+  var toast = Object(vue_toastification_composition__WEBPACK_IMPORTED_MODULE_20__["useToast"])();
   // ------------------------------------------------
   // refCalendar
   // ------------------------------------------------
-  var refCalendar = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_22__["ref"])(null);
-  var isLoading = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_22__["ref"])(false);
+  var refCalendar = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_25__["ref"])(null);
+  var isLoading = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_25__["ref"])(false);
   var hasPermission = function hasPermission(permissionName) {
-    var permissions = _store__WEBPACK_IMPORTED_MODULE_23__["default"].getters['auth/getPermissions'];
+    var permissions = _store__WEBPACK_IMPORTED_MODULE_26__["default"].getters['auth/getPermissions'];
     return permissions.some(function (permission) {
       return permission.name === permissionName;
     });
@@ -8024,7 +8033,7 @@ function userCalendar() {
   // calendarApi
   // ------------------------------------------------
   var calendarApi = null;
-  Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_22__["onMounted"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee() {
+  Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_25__["onMounted"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee() {
     return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
@@ -8070,7 +8079,7 @@ function userCalendar() {
     professional_id: null,
     isEdit: false
   };
-  var event = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_22__["ref"])(JSON.parse(JSON.stringify(blankEvent)));
+  var event = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_25__["ref"])(JSON.parse(JSON.stringify(blankEvent)));
   var clearEventData = function clearEventData() {
     event.value = JSON.parse(JSON.stringify(blankEvent));
   };
@@ -8104,7 +8113,7 @@ function userCalendar() {
   // ------------------------------------------------
   var updateEventInCalendar = function updateEventInCalendar(updatedEventData, propsToUpdate, extendedPropsToUpdate) {
     toast({
-      component: _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_18__["default"],
+      component: _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_21__["default"],
       props: {
         title: 'Event Updated',
         icon: 'CheckIcon',
@@ -8141,7 +8150,7 @@ function userCalendar() {
   // ------------------------------------------------
   var removeEventInCalendar = function removeEventInCalendar(eventId) {
     toast({
-      component: _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_18__["default"],
+      component: _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_21__["default"],
       props: {
         title: 'Event Removed',
         icon: 'TrashIcon',
@@ -8191,7 +8200,7 @@ function userCalendar() {
   // ------------------------------------------------
   var removeEvent = function removeEvent() {
     var eventId = event.value.id;
-    _store__WEBPACK_IMPORTED_MODULE_23__["default"].dispatch('calendar/removeEvent', {
+    _store__WEBPACK_IMPORTED_MODULE_26__["default"].dispatch('calendar/removeEvent', {
       id: eventId
     }).then(function () {
       removeEventInCalendar(eventId);
@@ -8210,31 +8219,31 @@ function userCalendar() {
   // ------------------------------------------------
   // selectedCalendars
   // ------------------------------------------------
-  var selectedCalendars = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_22__["computed"])(function () {
-    return _store__WEBPACK_IMPORTED_MODULE_23__["default"].state.calendar.selectedCalendars;
+  var selectedCalendars = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_25__["computed"])(function () {
+    return _store__WEBPACK_IMPORTED_MODULE_26__["default"].state.calendar.selectedCalendars;
   });
-  Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_22__["watch"])(selectedCalendars, function (value) {
+  Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_25__["watch"])(selectedCalendars, function (value) {
     refetchEvents();
   });
 
   // ------------------------------------------------
   // selectedProfessionals
   // ------------------------------------------------
-  var selectedProfessional = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_22__["computed"])({
+  var selectedProfessional = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_25__["computed"])({
     get: function get() {
-      return _store__WEBPACK_IMPORTED_MODULE_23__["default"].state.calendar.selectedProfessional;
+      return _store__WEBPACK_IMPORTED_MODULE_26__["default"].state.calendar.selectedProfessional;
     },
     set: function set(val) {
-      _store__WEBPACK_IMPORTED_MODULE_23__["default"].commit("calendar/SET_SELECTED_PROFESSIONAL", val);
+      _store__WEBPACK_IMPORTED_MODULE_26__["default"].commit("calendar/SET_SELECTED_PROFESSIONAL", val);
     }
   });
-  Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_22__["watch"])([selectedProfessional], function (value) {
+  Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_25__["watch"])([selectedProfessional], function (value) {
     refetchEvents();
   });
-  var selectedCurrentDate = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_22__["computed"])(function () {
-    return _store__WEBPACK_IMPORTED_MODULE_23__["default"].state.calendar.selectedCurrentDate;
+  var selectedCurrentDate = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_25__["computed"])(function () {
+    return _store__WEBPACK_IMPORTED_MODULE_26__["default"].state.calendar.selectedCurrentDate;
   });
-  Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_22__["watch"])([selectedCurrentDate], function (newValue, oldValue) {
+  Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_25__["watch"])([selectedCurrentDate], function (newValue, oldValue) {
     if (newValue !== oldValue) {
       calendarApi.gotoDate(newValue[0]);
     }
@@ -8262,7 +8271,7 @@ function userCalendar() {
             }
             return _context2.abrupt("return", false);
           case 4:
-            _store__WEBPACK_IMPORTED_MODULE_23__["default"].commit("calendar/SET_SELECTED_DATES", {
+            _store__WEBPACK_IMPORTED_MODULE_26__["default"].commit("calendar/SET_SELECTED_DATES", {
               start: info.startStr,
               end: info.endStr
             });
@@ -8271,7 +8280,7 @@ function userCalendar() {
             _context2.prev = 5;
             isLoading.value = true;
             _context2.next = 9;
-            return _store__WEBPACK_IMPORTED_MODULE_23__["default"].dispatch("calendar/fetchEvents", {
+            return _store__WEBPACK_IMPORTED_MODULE_26__["default"].dispatch("calendar/fetchEvents", {
               calendars: {
                 calendar: selectedCalendars.value,
                 profesional: selectedProfessional.value.id
@@ -8285,7 +8294,7 @@ function userCalendar() {
               successCallback(data.data);
             } else {
               toast({
-                component: _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_18__["default"],
+                component: _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_21__["default"],
                 props: {
                   title: data.message,
                   icon: "AlertTriangleIcon",
@@ -8300,7 +8309,7 @@ function userCalendar() {
             _context2.t0 = _context2["catch"](5);
             isLoading.value = false;
             toast({
-              component: _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_18__["default"],
+              component: _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_21__["default"],
               props: {
                 title: 'Error fetching calendar events',
                 icon: 'AlertTriangleIcon',
@@ -8352,7 +8361,7 @@ function userCalendar() {
             } else {
               event.value = JSON.parse(JSON.stringify(blankEvent));
               toast({
-                component: _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_18__["default"],
+                component: _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_21__["default"],
                 props: {
                   title: data.message,
                   icon: "AlertTriangleIcon",
@@ -8369,7 +8378,7 @@ function userCalendar() {
             isLoading.value = false;
             if (_context3.t0.response.status === 422) {
               toast({
-                component: _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_18__["default"],
+                component: _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_21__["default"],
                 props: {
                   title: _this.getFirstValidationError(_context3.t0.response.data.errors),
                   icon: "AlertTriangleIcon",
@@ -8378,7 +8387,7 @@ function userCalendar() {
               });
             } else {
               toast({
-                component: _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_18__["default"],
+                component: _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_21__["default"],
                 props: {
                   title: _context3.t0.message,
                   icon: "AlertTriangleIcon",
@@ -8402,15 +8411,15 @@ function userCalendar() {
   // * This isn't considered in UI because this is the core of calendar app
   // ------------------------------------------------------------------------
 
-  var interval = _store__WEBPACK_IMPORTED_MODULE_23__["default"].state.auth.setting['scheduled_appointment_interval'] || 15; // Intervalo en minutos
+  var interval = _store__WEBPACK_IMPORTED_MODULE_26__["default"].state.auth.setting['scheduled_appointment_interval'] || 15; // Intervalo en minutos
   var hours = Math.floor(interval / 60); // Obtenemos las horas (15 minutos = 0 horas)
   var minutes = interval % 60; // Obtenemos los minutos (15 minutos)
   var formattedInterval = "".concat(hours.toString().padStart(2, '0'), ":").concat(minutes.toString().padStart(2, '0'), ":00");
-  var timezone = _store__WEBPACK_IMPORTED_MODULE_23__["default"].state.auth.setting['timezone'] || window._setting.timezone;
-  var language = _store__WEBPACK_IMPORTED_MODULE_23__["default"].state.auth.setting['language'] || 'es';
-  var calendarOptions = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_22__["ref"])({
-    plugins: [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_10__["default"], _fullcalendar_interaction__WEBPACK_IMPORTED_MODULE_13__["default"], _fullcalendar_timegrid__WEBPACK_IMPORTED_MODULE_11__["default"], _fullcalendar_list__WEBPACK_IMPORTED_MODULE_12__["default"], _fullcalendar_moment_timezone__WEBPACK_IMPORTED_MODULE_16__["default"]],
-    locale: _fullcalendar_core_locales_es__WEBPACK_IMPORTED_MODULE_9__["default"],
+  var timezone = _store__WEBPACK_IMPORTED_MODULE_26__["default"].state.auth.setting['timezone'] || window._setting.timezone;
+  var language = _store__WEBPACK_IMPORTED_MODULE_26__["default"].state.auth.setting['language'] || 'es';
+  var calendarOptions = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_25__["ref"])({
+    plugins: [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_13__["default"], _fullcalendar_interaction__WEBPACK_IMPORTED_MODULE_16__["default"], _fullcalendar_timegrid__WEBPACK_IMPORTED_MODULE_14__["default"], _fullcalendar_list__WEBPACK_IMPORTED_MODULE_15__["default"], _fullcalendar_moment_timezone__WEBPACK_IMPORTED_MODULE_19__["default"]],
+    locale: _fullcalendar_core_locales_es__WEBPACK_IMPORTED_MODULE_12__["default"],
     //language,
     timeZone: timezone,
     initialView: "timeGridDay",
@@ -8422,8 +8431,8 @@ function userCalendar() {
     allDaySlot: false,
     slotDuration: "".concat(formattedInterval),
     slotLabelInterval: "".concat(formattedInterval),
-    slotMinTime: _store__WEBPACK_IMPORTED_MODULE_23__["default"].state.auth.setting['schedule_start_time'] || "09:00:00",
-    slotMaxTime: _store__WEBPACK_IMPORTED_MODULE_23__["default"].state.auth.setting['schedule_end_time'] || "22:00:00",
+    slotMinTime: _store__WEBPACK_IMPORTED_MODULE_26__["default"].state.auth.setting['schedule_start_time'] || "09:00:00",
+    slotMaxTime: _store__WEBPACK_IMPORTED_MODULE_26__["default"].state.auth.setting['schedule_end_time'] || "22:00:00",
     // nextDayThreshold: '09:00:00',
     nowIndicator: true,
     //selectHelper: true,
@@ -8470,7 +8479,7 @@ function userCalendar() {
       // ! If you don't grab all fields then you will get error like: "object is not extensible"
       event.value = grabEventDataFromEventApi(clickedEvent);
       if (event.value.extendedProps.disabled) {
-        _libs_helpers__WEBPACK_IMPORTED_MODULE_25__["danger"](event.value.title);
+        _libs_helpers__WEBPACK_IMPORTED_MODULE_28__["danger"](event.value.title);
       } else {
         isEventHandlerSidebarActive.value = true;
       }
@@ -8497,17 +8506,16 @@ function userCalendar() {
       clearEventData();
 
       //Validamos si la fecha hora seleccionada es mayor a la fecha actual
-      var currenDateTime = moment__WEBPACK_IMPORTED_MODULE_14___default.a.tz(new Date(), 'YYYY-MM-DDTHH:mm:ss', timezone).format('YYYY-MM-DDTHH:mm:ss');
-      var selectedDateTime = moment__WEBPACK_IMPORTED_MODULE_14___default.a.tz(info.dateStr, 'YYYY-MM-DDTHH:mm:ss', timezone).format('YYYY-MM-DDTHH:mm:ss');
+      var currenDateTime = moment__WEBPACK_IMPORTED_MODULE_17___default.a.tz(new Date(), 'YYYY-MM-DDTHH:mm:ss', timezone).format('YYYY-MM-DDTHH:mm:ss');
+      var selectedDateTime = moment__WEBPACK_IMPORTED_MODULE_17___default.a.tz(info.dateStr, 'YYYY-MM-DDTHH:mm:ss', timezone).format('YYYY-MM-DDTHH:mm:ss');
       if (selectedDateTime < currenDateTime) {
-        _libs_helpers__WEBPACK_IMPORTED_MODULE_25__["danger"]('No puedes seleccionar una fecha anterior a la actual');
+        _libs_helpers__WEBPACK_IMPORTED_MODULE_28__["danger"]('No puedes seleccionar una fecha anterior a la actual');
         return;
       }
       event.value = JSON.parse(JSON.stringify(Object.assign(event.value, {
         start: info.date
       })));
       // isEventHandlerSidebarActive.value = true   
-      console.log(event.value);
 
       // Obtén los roles del usuario desde el store
       // const userRoleIds = store.getters['auth/getUser'].roles.map(role => role.id);
@@ -8515,7 +8523,7 @@ function userCalendar() {
       // Verifica si el usuario no tiene el rol con ID 4
       // if (!userRoleIds.includes(4)) {
       if (hasPermission('appointments.create')) {
-        var startDate = moment__WEBPACK_IMPORTED_MODULE_14___default.a.tz(info.dateStr, 'YYYY-MM-DDTHH:mm:ss', timezone).format('DD/MM/YYYY HH:mm');
+        var startDate = moment__WEBPACK_IMPORTED_MODULE_17___default.a.tz(info.dateStr, 'YYYY-MM-DDTHH:mm:ss', timezone).format('DD/MM/YYYY HH:mm');
         fetchAvailable(startDate);
       }
     },
@@ -8565,9 +8573,18 @@ function userCalendar() {
 
       // Generar el botón de WhatsApp
       var whatsappButton = cellphone !== "No disponible" ? "\n\t\t\t\t<button \n\t\t\t\t\tstyle=\"\n\t\t\t\t\t\tbackground: green; \n\t\t\t\t\t\tcolor: white; \n\t\t\t\t\t\tborder: none; \n\t\t\t\t\t\tpadding: 2px 5px; \n\t\t\t\t\t\tborder-radius: 3px; \n\t\t\t\t\t\tfont-size: 10px; \n\t\t\t\t\t\tmargin-left: 5px; \n\t\t\t\t\t\tcursor: pointer;\" \n\t\t\t\t\tonclick=\"event.stopPropagation(); window.open('https://wa.me/".concat(cellphone, "?text=").concat(event.message, "', '_blank')\">\n\t\t\t\t\tWhatsApp\n\t\t\t\t</button>") : "";
+      var isShowButton = false;
+
+      // Obtén los roles del usuario desde el store
+      var userRoleIds = _store__WEBPACK_IMPORTED_MODULE_26__["default"].getters['auth/getUser'].roles.map(function (role) {
+        return role.id;
+      });
+      if (!userRoleIds.includes(4)) {
+        isShowButton = true;
+      }
 
       // Construir el HTML del evento
-      var htmlContent = "\t\t\t\t\n\t\t\t\t\t<b style=\"flex: 1;\">".concat(title, " ").concat(whatsappButton, "</b><br>\n\t\t\t\t\t<b>Tel.:</b> ").concat(cellphone, " <b>OI:</b> ").concat(internObservation.substring(0, 50), "...\n\t\t\t\t\n\t\t\t");
+      var htmlContent = "\t\t\t\t\n\t\t\t\t\t<b style=\"flex: 1;\">".concat(title, " ").concat(isShowButton ? whatsappButton : '', "</b><br>\n\t\t\t\t\t<b>Tel.:</b> ").concat(cellphone, " <b>OI:</b> ").concat(internObservation.substring(0, 50), "...\n\t\t\t\t\n\t\t\t");
       return {
         html: htmlContent
       };
@@ -8609,8 +8626,8 @@ function userCalendar() {
       updateEvent(grabEventDataFromEventApi(resizedEvent));
     },
     // Get direction from app state (store)
-    direction: Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_22__["computed"])(function () {
-      return _store__WEBPACK_IMPORTED_MODULE_23__["default"].state.appConfig.isRTL ? 'rtl' : 'ltr';
+    direction: Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_25__["computed"])(function () {
+      return _store__WEBPACK_IMPORTED_MODULE_26__["default"].state.appConfig.isRTL ? 'rtl' : 'ltr';
     }),
     rerenderDelay: 350
   });
@@ -8621,11 +8638,11 @@ function userCalendar() {
   // *--------- UI ---------------------------------------*
   // *===============================================---*
 
-  var isEventHandlerSidebarActive = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_22__["ref"])(false);
-  var isNewEventHandlerModalActive = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_22__["ref"])(false);
-  var dateOnNewEvent = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_22__["ref"])(null);
-  var timeAvailables = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_22__["ref"])([]);
-  var isCalendarOverlaySidebarActive = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_22__["ref"])(false);
+  var isEventHandlerSidebarActive = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_25__["ref"])(false);
+  var isNewEventHandlerModalActive = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_25__["ref"])(false);
+  var dateOnNewEvent = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_25__["ref"])(null);
+  var timeAvailables = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_25__["ref"])([]);
+  var isCalendarOverlaySidebarActive = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_25__["ref"])(false);
   return {
     isLoading: isLoading,
     refCalendar: refCalendar,

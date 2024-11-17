@@ -5,15 +5,18 @@ namespace App\Repositories;
 use App\Models\Budget;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use Prettus\Repository\Contracts\CacheableInterface;
 use Prettus\Repository\Eloquent\BaseRepository;
+use Prettus\Repository\Traits\CacheableRepository;
 
 /**
  * Class BudgetRepository.
  *
  * @package namespace App\Repositories;
  */
-class BudgetRepository extends BaseRepository
+class BudgetRepository extends BaseRepository implements CacheableInterface
 {
+    use CacheableRepository;
 
     /**
      * @var array

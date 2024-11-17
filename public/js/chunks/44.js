@@ -298,6 +298,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -746,6 +752,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -776,7 +789,9 @@ var UserResource = new _providers_Users__WEBPACK_IMPORTED_MODULE_13__["default"]
     BBadge: bootstrap_vue__WEBPACK_IMPORTED_MODULE_10__["BBadge"],
     BOverlay: bootstrap_vue__WEBPACK_IMPORTED_MODULE_10__["BOverlay"],
     BSpinner: bootstrap_vue__WEBPACK_IMPORTED_MODULE_10__["BSpinner"],
-    BFormInput: bootstrap_vue__WEBPACK_IMPORTED_MODULE_10__["BFormInput"]
+    BFormInput: bootstrap_vue__WEBPACK_IMPORTED_MODULE_10__["BFormInput"],
+    BInputGroup: bootstrap_vue__WEBPACK_IMPORTED_MODULE_10__["BInputGroup"],
+    BInputGroupAppend: bootstrap_vue__WEBPACK_IMPORTED_MODULE_10__["BInputGroupAppend"]
   },
   directives: {
     "b-tooltip": bootstrap_vue__WEBPACK_IMPORTED_MODULE_10__["VBTooltip"],
@@ -1373,117 +1388,142 @@ var render = function () {
         "div",
         { attrs: { id: "user-profile" } },
         [
-          _c("profile-header", { attrs: { "header-data": _vm.profileData } }),
-          _vm._v(" "),
           _c(
-            "section",
-            { attrs: { id: "profile-info" } },
+            "b-row",
+            { staticClass: "match-height" },
             [
               _c(
-                "b-card",
-                { attrs: { "no-body": "" } },
+                "b-col",
+                { attrs: { cols: "12", md: "4" } },
+                [
+                  _c("profile-header", {
+                    attrs: { "header-data": _vm.profileData },
+                  }),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "b-col",
+                { attrs: { cols: "12", md: "8" } },
                 [
                   _c(
-                    "b-card-body",
+                    "b-card",
+                    { attrs: { "no-body": "" } },
                     [
                       _c(
-                        "b-row",
+                        "b-card-body",
                         [
                           _c(
-                            "b-col",
-                            {
-                              staticClass: "p-1",
-                              attrs: { cols: "12", xl: "3" },
-                            },
-                            [
-                              _c("label", [_vm._v(_vm._s(_vm.$t("start_at")))]),
-                              _vm._v(" "),
-                              _c("flat-pickr", {
-                                staticClass: "form-control",
-                                attrs: {
-                                  config: { dateFormat: "Y-m-d" },
-                                  placeholder: "DD/MM/YYYY",
-                                },
-                                model: {
-                                  value: _vm.dates.start_at,
-                                  callback: function ($$v) {
-                                    _vm.$set(_vm.dates, "start_at", $$v)
-                                  },
-                                  expression: "dates.start_at",
-                                },
-                              }),
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "b-col",
-                            {
-                              staticClass: "p-1",
-                              attrs: { cols: "12", xl: "3" },
-                            },
-                            [
-                              _c("label", [_vm._v(_vm._s(_vm.$t("end_at")))]),
-                              _vm._v(" "),
-                              _c("flat-pickr", {
-                                staticClass: "form-control",
-                                attrs: {
-                                  config: { dateFormat: "Y-m-d" },
-                                  placeholder: "DD/MM/YYYY",
-                                },
-                                model: {
-                                  value: _vm.dates.end_at,
-                                  callback: function ($$v) {
-                                    _vm.$set(_vm.dates, "end_at", $$v)
-                                  },
-                                  expression: "dates.end_at",
-                                },
-                              }),
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "b-col",
-                            {
-                              staticClass: "p-1",
-                              attrs: { cols: "12", xl: "3" },
-                            },
+                            "b-row",
                             [
                               _c(
-                                "b-button",
+                                "b-col",
                                 {
-                                  staticClass: "mt-2",
-                                  attrs: { variant: "primary" },
-                                  on: { click: _vm.filterData },
+                                  staticClass: "p-1",
+                                  attrs: { cols: "12", xl: "3" },
                                 },
                                 [
-                                  _vm._v(
-                                    "\n\t\t\t\t\t\t\t" +
-                                      _vm._s(_vm.$t("search")) +
-                                      "\n\t\t\t\t\t\t"
-                                  ),
-                                ]
+                                  _c("label", [
+                                    _vm._v(_vm._s(_vm.$t("start_at"))),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("flat-pickr", {
+                                    staticClass: "form-control",
+                                    attrs: {
+                                      config: { dateFormat: "Y-m-d" },
+                                      placeholder: "DD/MM/YYYY",
+                                    },
+                                    model: {
+                                      value: _vm.dates.start_at,
+                                      callback: function ($$v) {
+                                        _vm.$set(_vm.dates, "start_at", $$v)
+                                      },
+                                      expression: "dates.start_at",
+                                    },
+                                  }),
+                                ],
+                                1
                               ),
                               _vm._v(" "),
                               _c(
-                                "b-button",
+                                "b-col",
                                 {
-                                  staticClass: "mt-2",
-                                  attrs: { variant: "secondary" },
-                                  on: {
-                                    click: function ($event) {
-                                      return _vm.$router.push({ name: "home" })
-                                    },
-                                  },
+                                  staticClass: "p-1",
+                                  attrs: { cols: "12", xl: "3" },
                                 },
                                 [
-                                  _vm._v(
-                                    "\n\t\t\t\t\t\t\t" +
-                                      _vm._s(_vm.$t("back_to_dashboard")) +
-                                      "\n\t\t\t\t\t\t"
+                                  _c("label", [
+                                    _vm._v(_vm._s(_vm.$t("end_at"))),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("flat-pickr", {
+                                    staticClass: "form-control",
+                                    attrs: {
+                                      config: { dateFormat: "Y-m-d" },
+                                      placeholder: "DD/MM/YYYY",
+                                    },
+                                    model: {
+                                      value: _vm.dates.end_at,
+                                      callback: function ($$v) {
+                                        _vm.$set(_vm.dates, "end_at", $$v)
+                                      },
+                                      expression: "dates.end_at",
+                                    },
+                                  }),
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "b-col",
+                                {
+                                  staticClass: "p-1",
+                                  attrs: { cols: "12", xl: "6" },
+                                },
+                                [
+                                  _c(
+                                    "b-button",
+                                    {
+                                      staticClass: "mt-2",
+                                      attrs: { size: "sm", variant: "primary" },
+                                      on: { click: _vm.filterData },
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n\t\t\t\t\t\t\t\t" +
+                                          _vm._s(_vm.$t("search")) +
+                                          "\n\t\t\t\t\t\t\t"
+                                      ),
+                                    ]
                                   ),
-                                ]
+                                  _vm._v(" "),
+                                  _c(
+                                    "b-button",
+                                    {
+                                      staticClass: "mt-2",
+                                      attrs: {
+                                        size: "sm",
+                                        variant: "secondary",
+                                      },
+                                      on: {
+                                        click: function ($event) {
+                                          return _vm.$router.push({
+                                            name: "home",
+                                          })
+                                        },
+                                      },
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n\t\t\t\t\t\t\t\t" +
+                                          _vm._s(_vm.$t("back_to_dashboard")) +
+                                          "\n\t\t\t\t\t\t\t"
+                                      ),
+                                    ]
+                                  ),
+                                ],
+                                1
                               ),
                             ],
                             1
@@ -1497,7 +1537,14 @@ var render = function () {
                 ],
                 1
               ),
-              _vm._v(" "),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "section",
+            { attrs: { id: "profile-info" } },
+            [
               _c(
                 "b-row",
                 { staticClass: "match-height" },
@@ -1616,7 +1663,7 @@ var render = function () {
               _vm._v(" "),
               _c(
                 "b-row",
-                { staticClass: "d-flex" },
+                { staticClass: "d-flex match-height" },
                 [
                   _c(
                     "b-col",
@@ -1664,7 +1711,7 @@ var render = function () {
               _vm._v(" "),
               _c(
                 "b-row",
-                { staticClass: "d-flex" },
+                { staticClass: "d-flex match-height" },
                 [
                   _c(
                     "b-col",
@@ -2023,21 +2070,74 @@ var render = function () {
                                           "d-flex align-items-center justify-content-end",
                                       },
                                       [
-                                        _c("b-form-input", {
-                                          staticClass: "d-inline-block mr-1",
-                                          attrs: {
-                                            placeholder: _vm.$t(
-                                              "appointments.input_search"
+                                        _c(
+                                          "b-input-group",
+                                          [
+                                            _c("b-form-input", {
+                                              attrs: {
+                                                size: "sm",
+                                                placeholder: _vm.$t(
+                                                  "appointments.input_search"
+                                                ),
+                                              },
+                                              on: {
+                                                keydown: function ($event) {
+                                                  if (
+                                                    !$event.type.indexOf(
+                                                      "key"
+                                                    ) &&
+                                                    _vm._k(
+                                                      $event.keyCode,
+                                                      "enter",
+                                                      13,
+                                                      $event.key,
+                                                      "Enter"
+                                                    )
+                                                  ) {
+                                                    return null
+                                                  }
+                                                  return _vm.getAppointments(
+                                                    $event
+                                                  )
+                                                },
+                                              },
+                                              model: {
+                                                value: _vm.search,
+                                                callback: function ($$v) {
+                                                  _vm.search = $$v
+                                                },
+                                                expression: "search",
+                                              },
+                                            }),
+                                            _vm._v(" "),
+                                            _c(
+                                              "b-input-group-append",
+                                              [
+                                                _c(
+                                                  "b-button",
+                                                  {
+                                                    attrs: {
+                                                      size: "sm",
+                                                      variant:
+                                                        "outline-primary",
+                                                    },
+                                                    on: {
+                                                      click:
+                                                        _vm.getAppointments,
+                                                    },
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      "\n                                                    Buscar\n                                                "
+                                                    ),
+                                                  ]
+                                                ),
+                                              ],
+                                              1
                                             ),
-                                          },
-                                          model: {
-                                            value: _vm.search,
-                                            callback: function ($$v) {
-                                              _vm.search = $$v
-                                            },
-                                            expression: "search",
-                                          },
-                                        }),
+                                          ],
+                                          1
+                                        ),
                                       ],
                                       1
                                     ),

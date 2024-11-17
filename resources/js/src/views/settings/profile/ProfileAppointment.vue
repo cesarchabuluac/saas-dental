@@ -16,7 +16,6 @@
 
                                 <!-- Table Top -->
                                 <b-row>
-
                                     <!-- Per Page -->
                                     <b-col cols="12" md="6"
                                         class="d-flex align-items-center justify-content-start mb-1 mb-md-0 mt-1">
@@ -26,8 +25,16 @@
                                     <!-- Search -->
                                     <b-col cols="12" md="6">
                                         <div class="d-flex align-items-center justify-content-end">
-                                            <b-form-input v-model="search" class="d-inline-block mr-1"
-                                                :placeholder="$t('appointments.input_search')" />
+                                            <!-- <b-form-input size="sm" v-model="search" class="d-inline-block mr-1"
+                                                :placeholder="$t('appointments.input_search')" /> -->
+                                                <b-input-group>
+                                                    <b-form-input size="sm" v-model="search" @keydown.enter="getAppointments" :placeholder="$t('appointments.input_search')"  />
+                                                    <b-input-group-append>
+                                                    <b-button @click="getAppointments" size="sm" variant="outline-primary">
+                                                        Buscar
+                                                    </b-button>
+                                                    </b-input-group-append>
+                                                </b-input-group>
                                         </div>
                                     </b-col>
                                 </b-row>
@@ -108,6 +115,7 @@ import {
     BTable,
     BCardHeader, BCardTitle, BCardBody, BCardFooter, BBadge,
     BFormInput, BOverlay, BSpinner,
+    BInputGroup, BInputGroupAppend,
 } from "bootstrap-vue";
 import Ripple from "vue-ripple-directive";
 import { kFormatter } from "@core/utils/filter";
@@ -132,6 +140,7 @@ export default {
         BEmbed, BTable, BCardHeader, BCardTitle, BCardBody, BCardFooter, BBadge,
         BOverlay, BSpinner,
         BFormInput,
+        BInputGroup, BInputGroupAppend,
     },
     directives: {
         "b-tooltip": VBTooltip,

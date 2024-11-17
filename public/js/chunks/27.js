@@ -2718,7 +2718,7 @@ var TenantsResource = new _providers_Tenants__WEBPACK_IMPORTED_MODULE_17__["defa
     });
     var logout = function logout() {
       _store__WEBPACK_IMPORTED_MODULE_15__["default"].dispatch('auth/LOGOUT').then(function () {
-        _store__WEBPACK_IMPORTED_MODULE_15__["default"].dispatch('calendar/resetDatas');
+        // store.dispatch('calendar/resetDatas')
       });
     };
     return {

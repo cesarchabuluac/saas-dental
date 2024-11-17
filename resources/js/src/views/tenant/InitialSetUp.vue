@@ -422,7 +422,7 @@ export default {
 
         const logout = () => {
             store.dispatch('auth/LOGOUT').then( () => {
-                store.dispatch('calendar/resetDatas')
+                // store.dispatch('calendar/resetDatas')
             })
         }
 

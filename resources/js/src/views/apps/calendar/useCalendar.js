@@ -489,7 +489,6 @@ export default function userCalendar() {
 
 			event.value = JSON.parse(JSON.stringify(Object.assign(event.value, { start: info.date })))
 			// isEventHandlerSidebarActive.value = true   
-			console.log(event.value)
 
 			// Obtén los roles del usuario desde el store
 			// const userRoleIds = store.getters['auth/getUser'].roles.map(role => role.id);
@@ -561,10 +560,18 @@ export default function userCalendar() {
 					onclick="event.stopPropagation(); window.open('https://wa.me/${cellphone}?text=${event.message}', '_blank')">
 					WhatsApp
 				</button>` : "";
+
+			let isShowButton = false;
+
+			// Obtén los roles del usuario desde el store
+			const userRoleIds = store.getters['auth/getUser'].roles.map(role => role.id);
+			if (!userRoleIds.includes(4)) {
+				isShowButton = true;
+			}
 		
 			// Construir el HTML del evento
 			const htmlContent = `				
-					<b style="flex: 1;">${title} ${whatsappButton}</b><br>
+					<b style="flex: 1;">${title} ${isShowButton ? whatsappButton : ''}</b><br>
 					<b>Tel.:</b> ${cellphone} <b>OI:</b> ${internObservation.substring(0, 50)}...
 				
 			`;

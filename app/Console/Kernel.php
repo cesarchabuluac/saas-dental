@@ -25,6 +25,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('trial-ends-email:send')->hourly()->timezone(config('app.timezone'));
         $schedule->command('upcoming-invoice-email:send')->lastDayOfMonth()->timezone(config('app.timezone'));
         $schedule->command('reminder-appointment:send')->everyMinute()->runInBackground()->timezone(config('app.timezone'));
+        // \App\Console\Commands\AssignDoctorSchedules::class,
     }
 
     /**

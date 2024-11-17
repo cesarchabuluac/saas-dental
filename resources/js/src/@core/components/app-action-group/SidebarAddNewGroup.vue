@@ -57,11 +57,15 @@ export default {
 	props:['data', 'active', 'loading'],
     setup(props, context) {   
 
+        const loading = ref(false)
         const saveInfo = () => {           
             context.emit('store')
         }
 
         return {
+
+            loading,
+
             saveInfo,
         };
     },

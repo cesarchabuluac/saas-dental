@@ -64,10 +64,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: ['data', 'active', 'loading'],
   setup: function setup(props, context) {
+    var loading = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_1__["ref"])(false);
     var saveInfo = function saveInfo() {
       context.emit('store');
     };
     return {
+      loading: loading,
       saveInfo: saveInfo
     };
   },

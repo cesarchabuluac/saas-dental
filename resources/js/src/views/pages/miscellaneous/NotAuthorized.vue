@@ -14,7 +14,7 @@
                 <b-button
                     variant="primary"
                     class="mb-1 btn-sm-block"
-                    :to="$router.back()"
+                    :to="$router.push({name: 'home'})"
                     >Back to Home</b-button
                 >
                 <b-img fluid :src="imgUrl" alt="Not authorized page" />

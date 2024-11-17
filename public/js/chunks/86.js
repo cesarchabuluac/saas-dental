@@ -444,7 +444,7 @@ var PatientResource = new _providers_Patients__WEBPACK_IMPORTED_MODULE_13__["def
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "@charset \"UTF-8\";\n.flatpickr-small .flatpickr-input[data-v-daca046c] {\n  /*font-size: 8px!important; /* Ajusta el tamaño del texto del input */\n  /* Ajusta el padding del input */\n  /*width: 120px; /* Ajusta el ancho del input */\n}\n[dir] .flatpickr-small .flatpickr-input[data-v-daca046c] {\n  padding: 5px;\n}\n.flatpickr-input[data-v-daca046c] {\n  /*width: 150px!important; /* Ajusta el ancho del input */\n  height: 30px !important;\n  /* Ajusta la altura del input */\n  /*font-size: 7px!important; /* Ajusta el tamaño del texto del input */\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n.flatpickr-small .flatpickr-input[data-v-daca046c] {\n  /*font-size: 8px!important; /* Ajusta el tamaño del texto del input */\n  /* Ajusta el padding del input */\n  /*width: 120px; /* Ajusta el ancho del input */\n}\n[dir] .flatpickr-small .flatpickr-input[data-v-daca046c] {\n  padding: 5px;\n}\n.flatpickr-input[data-v-daca046c] {\n  /*width: 150px!important; /* Ajusta el ancho del input */\n  height: 30px !important;\n  /* Ajusta la altura del input */\n  /*font-size: 7px!important; /* Ajusta el tamaño del texto del input */\n}\n.b-table-sticky-header[data-v-daca046c] {\n  overflow-y: auto;\n  max-height: calc(100vh - 200px) !important;\n}", ""]);
 // Exports
 module.exports = exports;
 
@@ -867,7 +867,6 @@ var render = function () {
                     "primary-key": "id",
                     "show-empty": "",
                     "empty-text": _vm.$t("datatables.sZeroRecords"),
-                    stacked: "md",
                     small: "",
                     "sticky-header": true,
                     "no-border-collapse": true,
@@ -1127,7 +1126,7 @@ var render = function () {
               1
             ),
             _vm._v(" "),
-            _vm.patients.length > 0
+            _vm.totalPatient > 0
               ? _c(
                   "div",
                   { staticClass: "mx-2 mb-2" },

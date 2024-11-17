@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import { SubscriptionGuard } from '../guards'
 Vue.use(VueRouter)
 
+import store from '@/store'
 import reports from './reports'
 
 const router = new VueRouter({
@@ -121,6 +122,15 @@ const router = new VueRouter({
       component: () => import('@/views/error/Error404.vue'),
       meta: {
         layout: 'full',
+      },
+    },
+    {
+      path: '/pages/miscellaneous/not-authorized',
+      name: 'misc-not-authorized',
+      component: () => import('@/views/pages/miscellaneous/NotAuthorized.vue'),
+      meta: {
+        layout: 'full',
+        resource: 'Auth',
       },
     },
     {
@@ -1298,8 +1308,8 @@ const router = new VueRouter({
       component: () => import("@/views/apps/patients/PatientStatistics.vue"),
       beforeEnter: SubscriptionGuard,
       meta: {
-        permission: "home",
-        requiresAuth: true,
+        permission: "patients.show",
+        // requiresAuth: true,
         pageTitle: "patients.statistics.desc",
         breadcrumb: [
           {
@@ -1661,5 +1671,31 @@ const router = new VueRouter({
 
   ],
 })
+
+// Guard global para verificar permisos
+router.beforeEach((to, from, next) => {
+  const isLogged = localStorage.getItem('loggedIn') ? true : false;
+  
+  // Si el usuario no está autenticado y la ruta está protegida, redirige al inicio de sesión
+  if (!isLogged) {
+    return next(); // Reemplaza con el nombre de tu ruta de inicio de sesión
+  }
+
+  // Si el usuario está autenticado y la ruta tiene un permiso requerido
+  if (isLogged && to.meta.permission) {
+    const userPermissions = store.getters['auth/getPermissions']; // Asegúrate que Vuex está configurado correctamente
+
+    // Usa _.some para verificar si al menos un permiso coincide con to.meta.permission
+    const canAccess = userPermissions.some(p => p.name === to.meta.permission);
+
+    if (!canAccess) {
+      // Redirige a una página de acceso denegado si no tiene el permiso requerido
+      return next({ name: 'misc-not-authorized' }); // Asegúrate de tener una ruta 'not-authorize'
+    }
+  }
+
+  // Continúa a la ruta solicitada si el usuario tiene permisos o si no requiere permisos
+  next();
+});
 
 export default router

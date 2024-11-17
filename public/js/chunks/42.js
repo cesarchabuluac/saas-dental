@@ -1801,7 +1801,7 @@ var TenantResource = new _providers_Tenants__WEBPACK_IMPORTED_MODULE_28__["defau
     });
     var logout = function logout() {
       _store__WEBPACK_IMPORTED_MODULE_14__["default"].dispatch('auth/LOGOUT').then(function () {
-        _store__WEBPACK_IMPORTED_MODULE_14__["default"].dispatch('calendar/resetDatas');
+        // store.dispatch('calendar/resetDatas')
       });
     };
     var getCurrentAccount = /*#__PURE__*/function () {

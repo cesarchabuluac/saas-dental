@@ -60,7 +60,7 @@
                 <div class="table-responsive">
                     <b-table id="refPatientsListTable" ref="refPatientsListTable" class="position-relative table-small text-small small"
                         :items="patients" responsive :fields="column" primary-key="id" show-empty
-                        :empty-text="$t('datatables.sZeroRecords')" stacked="md" small
+                        :empty-text="$t('datatables.sZeroRecords')" small
                         :sticky-header="true"
                         :no-border-collapse="true"
                         >
@@ -147,7 +147,7 @@
                 </div>
 
                 <!-- Pagination -->
-                <div v-if="patients.length > 0" class="mx-2 mb-2">
+                <div v-if="totalPatient > 0" class="mx-2 mb-2">
                     <b-row>
                         <b-col cols="12" sm="6"
                             class="d-flex align-items-center justify-content-center justify-content-sm-start">
@@ -398,6 +398,12 @@ export default {
     /*width: 150px!important; /* Ajusta el ancho del input */
     height: 30px!important; /* Ajusta la altura del input */
     /*font-size: 7px!important; /* Ajusta el tamaño del texto del input */
+}
+
+.b-table-sticky-header {
+    overflow-y: auto;
+    // max-height: 350px;
+    max-height: calc(100vh - 200px)!important;
 }
 </style>
 

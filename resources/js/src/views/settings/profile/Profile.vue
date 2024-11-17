@@ -1,36 +1,42 @@
 <template>
 	<div v-if="Object.keys(profileData).length" id="user-profile">
-		<profile-header :header-data="profileData" />
+		<b-row class="match-height">
+			<b-col cols="12" md="4">
+				<profile-header :header-data="profileData" />
+			</b-col>
+			<b-col cols="12" md="8">
+				<b-card no-body>
+					<b-card-body>
+						<b-row>
+							<b-col cols="12" xl="3" class="p-1">
+								<label>{{ $t('start_at') }}</label>
+								<flat-pickr v-model="dates.start_at" class="form-control" :config="{ dateFormat: 'Y-m-d' }"
+									placeholder="DD/MM/YYYY" />
+							</b-col>
+
+							<b-col cols="12" xl="3" class="p-1">
+								<label>{{ $t('end_at') }}</label>
+								<flat-pickr v-model="dates.end_at" class="form-control" :config="{ dateFormat: 'Y-m-d' }"
+									placeholder="DD/MM/YYYY" />
+							</b-col>
+
+							<b-col cols="12" xl="6" class="p-1">
+								<b-button size="sm" @click="filterData" class="mt-2" variant="primary">
+									{{ $t("search") }}
+								</b-button>
+
+								<b-button size="sm" @click="$router.push({ name: 'home' })" class="mt-2" variant="secondary">
+									{{ $t('back_to_dashboard') }}
+								</b-button>
+							</b-col>
+						</b-row>
+					</b-card-body>
+				</b-card>
+			</b-col>
+		</b-row>
+		
 		<!-- profile info  -->
-		<section id="profile-info">
-
-			<b-card no-body>
-				<b-card-body>
-					<b-row>
-						<b-col cols="12" xl="3" class="p-1">
-							<label>{{ $t('start_at') }}</label>
-							<flat-pickr v-model="dates.start_at" class="form-control" :config="{ dateFormat: 'Y-m-d' }"
-								placeholder="DD/MM/YYYY" />
-						</b-col>
-
-						<b-col cols="12" xl="3" class="p-1">
-							<label>{{ $t('end_at') }}</label>
-							<flat-pickr v-model="dates.end_at" class="form-control" :config="{ dateFormat: 'Y-m-d' }"
-								placeholder="DD/MM/YYYY" />
-						</b-col>
-
-						<b-col cols="12" xl="3" class="p-1">
-							<b-button @click="filterData" class="mt-2" variant="primary">
-								{{ $t("search") }}
-							</b-button>
-
-							<b-button @click="$router.push({ name: 'home' })" class="mt-2" variant="secondary">
-								{{ $t('back_to_dashboard') }}
-							</b-button>
-						</b-col>
-					</b-row>
-				</b-card-body>
-			</b-card>
+		<section id="profile-info">			
 
 			<!-- Stats Card Vertical -->
 			<b-row class="match-height">
@@ -61,7 +67,7 @@
 				</b-col>
 			</b-row>			
 
-			<b-row class="d-flex">
+			<b-row class="d-flex match-height">
 				<!-- Profile About -->
 				<b-col lg="4" cols="12" order="2" order-lg="1">					
 					<profile-about :about-data="profileData" />
@@ -73,7 +79,7 @@
 				</b-col>
 			</b-row>
 
-			<b-row class="d-flex">
+			<b-row class="d-flex match-height">
 				<b-col lg="4" cols="12" order="2" order-lg="1">
 					<dashboard-card-transactions :data="profileData.transactionsData" :loading="loading" />
 				</b-col>

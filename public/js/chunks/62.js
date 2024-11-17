@@ -438,6 +438,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -717,7 +718,8 @@ var PaymentResource = new _providers_Payments__WEBPACK_IMPORTED_MODULE_22__["def
               _context4.next = 8;
               return UserResource.index({
                 criteria: 'professional',
-                ignoreSchedules: true
+                ignoreSchedules: true,
+                isAll: true
               });
             case 8:
               _yield$UserResource$i = _context4.sent;
@@ -2192,7 +2194,10 @@ var render = function () {
                                                       options:
                                                         _vm.professionals,
                                                       clearable: false,
-                                                      searchable: false,
+                                                      searchable: true,
+                                                      placeholder: _vm.$t(
+                                                        "appointments.professional_placeholder"
+                                                      ),
                                                     },
                                                     model: {
                                                       value:
@@ -2271,7 +2276,7 @@ var render = function () {
                               ],
                               null,
                               false,
-                              3116305744
+                              1776126650
                             ),
                           }),
                         ],

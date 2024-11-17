@@ -2181,6 +2181,48 @@ var render = function () {
             _c(
               "b-tab",
               {
+                attrs: {
+                  active: "",
+                  disabled: _vm.account.plan_ends_at !== null,
+                  lazy: "",
+                },
+                scopedSlots: _vm._u([
+                  {
+                    key: "title",
+                    fn: function () {
+                      return [
+                        _c("feather-icon", {
+                          staticClass: "mr-50",
+                          attrs: { icon: "DollarSignIcon", size: "18" },
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "font-weight-bold" }, [
+                          _vm._v(_vm._s(_vm.$t("subscriptions.plans.title"))),
+                        ]),
+                      ]
+                    },
+                    proxy: true,
+                  },
+                ]),
+              },
+              [
+                _vm._v(" "),
+                !_vm.isWitchPlan &&
+                _vm.account.is_subscribed &&
+                !_vm.account.on_trial
+                  ? _c("subscription-current", { staticClass: "mt-3" })
+                  : _vm.isWitchPlan ||
+                    !_vm.account.is_subscribed ||
+                    _vm.account.on_trial
+                  ? _c("subscription-price", { staticClass: "mt-3" })
+                  : _vm._e(),
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "b-tab",
+              {
                 attrs: { lazy: "" },
                 scopedSlots: _vm._u([
                   {
