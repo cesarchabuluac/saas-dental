@@ -33,11 +33,12 @@
 
 					<div class="card shadow-none border-0 mb-0 rounded-0">
 						<div class="card-header">
+							<label>{{ $t("professional") }}</label>
 							<div class="d-flex align-content-center justify-content-between w-100">
 								<v-select class="w-100" :disabled="!isAdmin && !isDirector"
 									v-model="selectedProfessional" :options="professionals" label="name"
 									input-id="list-professional" :clearable="false"
-									:placeholder="$t('appointments.search_doctor')" />
+									:placeholder="$t('appointments.search_doctor')" />								
 							</div>
 						</div>
 						<div class="card-body pb-0">

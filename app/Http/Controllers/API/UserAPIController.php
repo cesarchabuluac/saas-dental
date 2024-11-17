@@ -497,13 +497,27 @@ class UserAPIController extends Controller
                 return $this->sendError(__('lang.not_found', ['operator' => __('lang.user')]), 201);
             }
 
-            // //Valida si es tenant y si los roles han cambiado:        
+            //Valida si es tenant y si los roles han cambiado:        
             // $roleIdsAdded = $user->roles->pluck('id')->toArray();
             // if (tenant() && $user->deleted_at) {
             //     if (count($roleIdsAdded) > 0) {
             //        $this->checkSubscriptionLimitByModelName($roleIdsAdded);
             //     }
             // }
+
+            $roles = $user->roles->pluck('id')->toArray();
+            if (in_array(4, $roles)) {
+
+                //Necesitamos validar si tiene citas pendientes o confirmadas y evitar que se pueda desactivar el usuario.
+                $existingAppointments = $user->appointments()
+                    ->whereIn('state', ['pending', 'confirmed'])
+                    ->exists();
+
+                if ($existingAppointments) {
+                    return $this->sendError(__('lang.cannot_disable_user_due_to_appointments'));
+                }
+            }
+        
 
             $message = __('lang.disabled_successfully', ['operator' => __('lang.user')]);
             if (empty($user->deleted_at)) {

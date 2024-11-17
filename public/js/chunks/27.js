@@ -1227,18 +1227,48 @@ var NotificationResource = new _providers_notifications__WEBPACK_IMPORTED_MODULE
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js */ "./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js");
-/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/esm/index.js");
-/* harmony import */ var _vue_composition_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @vue/composition-api */ "./node_modules/@vue/composition-api/dist/vue-composition-api.mjs");
-/* harmony import */ var vue_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-perfect-scrollbar */ "./node_modules/vue-perfect-scrollbar/dist/index.js");
-/* harmony import */ var vue_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _core_components_app_auto_suggest_useAutoSuggest__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @core/components/app-auto-suggest/useAutoSuggest */ "./resources/js/src/@core/components/app-auto-suggest/useAutoSuggest.js");
-/* harmony import */ var _core_utils_filter__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @core/utils/filter */ "./resources/js/src/@core/utils/filter.js");
-/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/router */ "./resources/js/src/router/index.js");
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/store */ "./resources/js/src/store/index.js");
-/* harmony import */ var _search_and_bookmark_data__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../search-and-bookmark-data */ "./resources/js/src/@core/layouts/components/app-navbar/search-and-bookmark-data.js");
-/* harmony import */ var _providers_Patients__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @/providers/Patients */ "./resources/js/src/providers/Patients.js");
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createForOfIteratorHelper.js */ "./node_modules/@babel/runtime/helpers/esm/createForOfIteratorHelper.js");
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js */ "./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js");
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var core_js_modules_es_object_keys_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.object.keys.js */ "./node_modules/core-js/modules/es.object.keys.js");
+/* harmony import */ var core_js_modules_es_object_keys_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_keys_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var core_js_modules_es_array_push_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.array.push.js */ "./node_modules/core-js/modules/es.array.push.js");
+/* harmony import */ var core_js_modules_es_array_push_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_push_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var core_js_modules_es_object_values_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! core-js/modules/es.object.values.js */ "./node_modules/core-js/modules/es.object.values.js");
+/* harmony import */ var core_js_modules_es_object_values_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_values_js__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! core-js/modules/web.dom-collections.iterator.js */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var core_js_modules_es_object_entries_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! core-js/modules/es.object.entries.js */ "./node_modules/core-js/modules/es.object.entries.js");
+/* harmony import */ var core_js_modules_es_object_entries_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_entries_js__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! core-js/modules/es.array.concat.js */ "./node_modules/core-js/modules/es.array.concat.js");
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! core-js/modules/es.number.constructor.js */ "./node_modules/core-js/modules/es.number.constructor.js");
+/* harmony import */ var core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/esm/index.js");
+/* harmony import */ var _vue_composition_api__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @vue/composition-api */ "./node_modules/@vue/composition-api/dist/vue-composition-api.mjs");
+/* harmony import */ var vue_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! vue-perfect-scrollbar */ "./node_modules/vue-perfect-scrollbar/dist/index.js");
+/* harmony import */ var vue_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(vue_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _core_components_app_auto_suggest_useAutoSuggest__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @core/components/app-auto-suggest/useAutoSuggest */ "./resources/js/src/@core/components/app-auto-suggest/useAutoSuggest.js");
+/* harmony import */ var _core_utils_filter__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @core/utils/filter */ "./resources/js/src/@core/utils/filter.js");
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @/router */ "./resources/js/src/router/index.js");
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @/store */ "./resources/js/src/store/index.js");
+/* harmony import */ var _search_and_bookmark_data__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../search-and-bookmark-data */ "./resources/js/src/@core/layouts/components/app-navbar/search-and-bookmark-data.js");
+/* harmony import */ var _providers_Patients__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @/providers/Patients */ "./resources/js/src/providers/Patients.js");
+
+
+
+
+
+
+
+
+
+
 
 
 //
@@ -1318,8 +1348,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 
@@ -1330,51 +1358,74 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var PatientResource = new _providers_Patients__WEBPACK_IMPORTED_MODULE_10__["default"]();
+
+var PatientResource = new _providers_Patients__WEBPACK_IMPORTED_MODULE_21__["default"]();
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    BFormInput: bootstrap_vue__WEBPACK_IMPORTED_MODULE_2__["BFormInput"],
-    BLink: bootstrap_vue__WEBPACK_IMPORTED_MODULE_2__["BLink"],
-    BImg: bootstrap_vue__WEBPACK_IMPORTED_MODULE_2__["BImg"],
-    BAvatar: bootstrap_vue__WEBPACK_IMPORTED_MODULE_2__["BAvatar"],
-    VuePerfectScrollbar: vue_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_4___default.a
+    BFormInput: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BFormInput"],
+    BLink: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BLink"],
+    BImg: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BImg"],
+    BAvatar: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BAvatar"],
+    BButton: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BButton"],
+    BFormGroup: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BFormGroup"],
+    BFormCheckboxGroup: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BFormCheckboxGroup"],
+    BFormCheckbox: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BFormCheckbox"],
+    BCol: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BCol"],
+    BRow: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BRow"],
+    BInputGroup: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BInputGroup"],
+    BInputGroupPrepend: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BInputGroupPrepend"],
+    BDropdown: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BDropdown"],
+    BDropdownItem: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BDropdownItem"],
+    BOverlay: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BOverlay"],
+    BSpinner: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BSpinner"],
+    BModal: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BModal"],
+    VBModal: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["VBModal"],
+    BCard: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BCard"],
+    BMedia: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BMedia"],
+    BBadge: bootstrap_vue__WEBPACK_IMPORTED_MODULE_13__["BBadge"],
+    VuePerfectScrollbar: vue_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_15___default.a
   },
+  methods: {},
   setup: function setup() {
-    var showSearchBar = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_3__["ref"])(false);
+    var showSearchBar = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_14__["ref"])(false);
+    var timeout = null;
+    var loading = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_14__["ref"])(false);
     var perfectScrollbarSettings = {
       maxScrollbarLength: 60
     };
+    var searchPatient = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_14__["ref"])('');
+    var nextAppointments = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_14__["ref"])([]);
     var searchNextAppointment = /*#__PURE__*/function () {
-      var _ref = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee() {
+      var _ref = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_3__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2__["default"])().mark(function _callee() {
         var query, _yield$PatientResourc, data;
-        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee$(_context) {
+        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2__["default"])().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
-              if (!(searchQuery.value == '' || searchQuery.value == null)) {
-                _context.next = 2;
+              nextAppointments.value = [];
+              if (!(searchQuery.value == '' || searchQuery.value == null && searchQuery.value.length < 3)) {
+                _context.next = 3;
                 break;
               }
               return _context.abrupt("return", false);
-            case 2:
+            case 3:
+              loading.value = true;
               query = {
                 search: searchQuery.value,
                 sortBy: 'name',
                 sortDesc: 'asc',
                 perPage: 10
-              }; // activeModal.value = true
+              };
               nextAppointments.value = [];
-              isLoading.value = true;
-              _context.next = 7;
+              _context.next = 8;
               return PatientResource.nextAppointment(query);
-            case 7:
+            case 8:
               _yield$PatientResourc = _context.sent;
               data = _yield$PatientResourc.data;
-              isLoading.value = false;
+              loading.value = false;
               if (data.success) {
-                activeModal.value = true;
                 nextAppointments.value = data.data;
               }
-            case 11:
+            case 12:
             case "end":
               return _context.stop();
           }
@@ -1384,117 +1435,163 @@ var PatientResource = new _providers_Patients__WEBPACK_IMPORTED_MODULE_10__["def
         return _ref.apply(this, arguments);
       };
     }();
+
+    // Aplicar debounce a la función searchNextAppointment
+    var debouncedSearchNextAppointment = lodash__WEBPACK_IMPORTED_MODULE_12___default.a.debounce(searchNextAppointment, 300); // 500ms de espera
+
     var suggestionSelected = function suggestionSelected(grpName, suggestion) {
-      console.log('suggestionSelected', suggestion);
-      console.log('grpName', grpName);
+      // If parameter is not provided => Use current selected
+      if (!suggestion) {
+        // If currentSelected value is -1 => No value/item is selected (Prevent Errors)
+        /* eslint-disable no-use-before-define, no-param-reassign */
+        if (currentSelected.value !== -1) {
+          /* eslint-disable no-use-before-define, no-param-reassign */
+          var _currentSelected$valu = currentSelected.value.split('.'),
+            _currentSelected$valu2 = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_1__["default"])(_currentSelected$valu, 2),
+            grpIndex = _currentSelected$valu2[0],
+            itemIndex = _currentSelected$valu2[1];
+          grpName = Object.keys(filteredData.value)[grpIndex];
+          suggestion = filteredData.value[grpName][itemIndex];
+          /* eslint-enable */
+        }
+      }
 
-      //   // If parameter is not provided => Use current selected
-      //   if (!suggestion) {
-      //     // If currentSelected value is -1 => No value/item is selected (Prevent Errors)
-      //     /* eslint-disable no-use-before-define, no-param-reassign */
-      //     if (currentSelected.value !== -1) {
-      //       /* eslint-disable no-use-before-define, no-param-reassign */
-      //       const [grpIndex, itemIndex] = currentSelected.value.split('.')
-      //       grpName = Object.keys(filteredData.value)[grpIndex]
-      //       suggestion = filteredData.value[grpName][itemIndex]
-      //       /* eslint-enable */
-      //     }
-      //   }
-      //   if (grpName === 'pages') router.push(suggestion.route).catch(() => { })
-      //   // eslint-disable-next-line no-use-before-define
-      //   resetsearchQuery()
-      //   showSearchBar.value = false
+      if (grpName === 'pages') _router__WEBPACK_IMPORTED_MODULE_18__["default"].push(suggestion.route)["catch"](function () {});
+      // eslint-disable-next-line no-use-before-define
+      resetsearchQuery();
+      showSearchBar.value = false;
     };
-
-    var _useAutoSuggest = Object(_core_components_app_auto_suggest_useAutoSuggest__WEBPACK_IMPORTED_MODULE_5__["default"])({
-        data: _search_and_bookmark_data__WEBPACK_IMPORTED_MODULE_9__["default"],
+    var _useAutoSuggest = Object(_core_components_app_auto_suggest_useAutoSuggest__WEBPACK_IMPORTED_MODULE_16__["default"])({
+        data: [],
         searchLimit: 4
       }),
       searchQuery = _useAutoSuggest.searchQuery,
       resetsearchQuery = _useAutoSuggest.resetsearchQuery,
       filteredData = _useAutoSuggest.filteredData;
-    Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_3__["watch"])(searchQuery, function (val) {
-      _store__WEBPACK_IMPORTED_MODULE_8__["default"].commit('app/TOGGLE_OVERLAY', Boolean(val));
+    Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_14__["watch"])(searchPatient, /*#__PURE__*/function () {
+      var _ref2 = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_3__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2__["default"])().mark(function _callee2(val) {
+        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2__["default"])().wrap(function _callee2$(_context2) {
+          while (1) switch (_context2.prev = _context2.next) {
+            case 0:
+              debouncedSearchNextAppointment(); // Llamamos a la versión con debounce
+            case 1:
+            case "end":
+              return _context2.stop();
+          }
+        }, _callee2);
+      }));
+      return function (_x) {
+        return _ref2.apply(this, arguments);
+      };
+    }());
+    Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_14__["watch"])(searchQuery, /*#__PURE__*/function () {
+      var _ref3 = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_3__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2__["default"])().mark(function _callee3(val) {
+        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2__["default"])().wrap(function _callee3$(_context3) {
+          while (1) switch (_context3.prev = _context3.next) {
+            case 0:
+              _store__WEBPACK_IMPORTED_MODULE_19__["default"].commit('app/TOGGLE_OVERLAY', Boolean(val));
+              debouncedSearchNextAppointment(); // Llamamos a la versión con debounce
+            case 2:
+            case "end":
+              return _context3.stop();
+          }
+        }, _callee3);
+      }));
+      return function (_x2) {
+        return _ref3.apply(this, arguments);
+      };
+    }());
+    var currentSelected = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_14__["ref"])(-1);
+    Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_14__["watch"])(filteredData, function (val) {
+      if (!Object.values(val).some(function (obj) {
+        return obj.length;
+      })) {
+        currentSelected.value = -1;
+      } else {
+        // Auto Select first item if it's not item-404
+        var grpIndex = null;
+
+        // eslint-disable-next-line no-restricted-syntax
+        var _iterator = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Object.values(val).entries()),
+          _step;
+        try {
+          for (_iterator.s(); !(_step = _iterator.n()).done;) {
+            var _step$value = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_1__["default"])(_step.value, 2),
+              index = _step$value[0],
+              grpSuggestions = _step$value[1];
+            if (grpSuggestions.length) {
+              grpIndex = index;
+              break;
+            }
+          }
+        } catch (err) {
+          _iterator.e(err);
+        } finally {
+          _iterator.f();
+        }
+        if (grpIndex !== null) currentSelected.value = "".concat(grpIndex, ".0");
+      }
     });
-    var currentSelected = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_3__["ref"])(-1);
-    Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_3__["watch"])(filteredData, function (val) {
-      console.log('filteredData', val);
-      // if (!Object.values(val).some(obj => obj.length)) {
-      //   currentSelected.value = -1
-      // } else {
-      //   // Auto Select first item if it's not item-404
-      //   let grpIndex = null
-
-      //   // eslint-disable-next-line no-restricted-syntax
-      //   for (const [index, grpSuggestions] of Object.values(val).entries()) {
-      //     if (grpSuggestions.length) {
-      //       grpIndex = index
-      //       break
-      //     }
-      //   }
-
-      //   if (grpIndex !== null) currentSelected.value = `${grpIndex}.0`
-      // }
-    });
-
     var increaseIndex = function increaseIndex() {
       var val = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
-      console.log('increaseIndex', val);
-      console.log('filteredData', filteredData.value);
+      /* eslint-disable no-lonely-if, no-plusplus */
 
-      //   /* eslint-disable no-lonely-if, no-plusplus */
+      // If there's no matching items
+      if (!Object.values(filteredData.value).some(function (grpItems) {
+        return grpItems.length;
+      })) return;
+      var _currentSelected$valu3 = currentSelected.value.split('.'),
+        _currentSelected$valu4 = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_1__["default"])(_currentSelected$valu3, 2),
+        grpIndex = _currentSelected$valu4[0],
+        itemIndex = _currentSelected$valu4[1];
+      var grpArr = Object.entries(filteredData.value);
+      var activeGrpTotalItems = grpArr[grpIndex][1].length;
+      if (val) {
+        // If active item is not of last item in grp
+        if (activeGrpTotalItems - 1 > itemIndex) {
+          currentSelected.value = "".concat(grpIndex, ".").concat(Number(itemIndex) + 1);
 
-      //   // If there's no matching items
-      //   if (!Object.values(filteredData.value).some(grpItems => grpItems.length)) return
+          // If active item grp is not last in grp list
+        } else if (grpIndex < grpArr.length - 1) {
+          for (var i = Number(grpIndex) + 1; i < grpArr.length; i++) {
+            // If navigating group have items => Then move in that group
+            if (grpArr[i][1].length > 0) {
+              currentSelected.value = "".concat(Number(i), ".0");
+              break;
+            }
+          }
+        }
+      } else {
+        // If active item is not of first item in grp
+        if (Number(itemIndex)) {
+          currentSelected.value = "".concat(grpIndex, ".").concat(Number(itemIndex) - 1);
 
-      //   const [grpIndex, itemIndex] = currentSelected.value.split('.')
-
-      //   const grpArr = Object.entries(filteredData.value)
-      //   const activeGrpTotalItems = grpArr[grpIndex][1].length
-
-      //   if (val) {
-      //     // If active item is not of last item in grp
-      //     if (activeGrpTotalItems - 1 > itemIndex) {
-      //       currentSelected.value = `${grpIndex}.${Number(itemIndex) + 1}`
-
-      //       // If active item grp is not last in grp list
-      //     } else if (grpIndex < grpArr.length - 1) {
-      //       for (let i = Number(grpIndex) + 1; i < grpArr.length; i++) {
-      //         // If navigating group have items => Then move in that group
-      //         if (grpArr[i][1].length > 0) {
-      //           currentSelected.value = `${Number(i)}.0`
-      //           break
-      //         }
-      //       }
-      //     }
-      //   } else {
-      //     // If active item is not of first item in grp
-      //     if (Number(itemIndex)) {
-      //       currentSelected.value = `${grpIndex}.${Number(itemIndex) - 1}`
-
-      //       // If active item grp  is not first in grp list
-      //     } else if (Number(grpIndex)) {
-      //       for (let i = Number(grpIndex) - 1; i >= 0; i--) {
-      //         // If navigating group have items => Then move in that group
-      //         if (grpArr[i][1].length > 0) {
-      //           currentSelected.value = `${i}.${grpArr[i][1].length - 1}`
-      //           break
-      //         }
-      //       }
-      //     }
-      //   }
+          // If active item grp  is not first in grp list
+        } else if (Number(grpIndex)) {
+          for (var _i2 = Number(grpIndex) - 1; _i2 >= 0; _i2--) {
+            // If navigating group have items => Then move in that group
+            if (grpArr[_i2][1].length > 0) {
+              currentSelected.value = "".concat(_i2, ".").concat(grpArr[_i2][1].length - 1);
+              break;
+            }
+          }
+        }
+      }
       /* eslint-enable no-lonely-if, no-plusplus */
     };
 
     return {
+      loading: loading,
       showSearchBar: showSearchBar,
       perfectScrollbarSettings: perfectScrollbarSettings,
-      searchAndBookmarkData: _search_and_bookmark_data__WEBPACK_IMPORTED_MODULE_9__["default"],
-      title: _core_utils_filter__WEBPACK_IMPORTED_MODULE_6__["title"],
+      searchAndBookmarkData: _search_and_bookmark_data__WEBPACK_IMPORTED_MODULE_20__["default"],
+      title: _core_utils_filter__WEBPACK_IMPORTED_MODULE_17__["title"],
       suggestionSelected: suggestionSelected,
       currentSelected: currentSelected,
       increaseIndex: increaseIndex,
       // AutoSuggest
+      nextAppointments: nextAppointments,
+      searchPatient: searchPatient,
       searchQuery: searchQuery,
       resetsearchQuery: resetsearchQuery,
       filteredData: filteredData
@@ -4066,96 +4163,269 @@ var render = function () {
             class: { show: _vm.searchQuery },
             attrs: { settings: _vm.perfectScrollbarSettings, tagname: "ul" },
           },
-          _vm._l(
-            _vm.filteredData,
-            function (suggestion_list, grp_name, grp_index) {
-              return _c(
-                "li",
-                { key: grp_index, staticClass: "suggestions-groups-list" },
-                [
-                  _c("p", { staticClass: "suggestion-group-title" }, [
-                    _c("span", [
-                      _vm._v(
-                        "\n\t\t\t\t\t" +
-                          _vm._s(_vm.title(grp_name)) +
-                          "\n\t\t\t\t"
-                      ),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "ul",
-                    [
-                      _vm._l(suggestion_list, function (suggestion, index) {
-                        return _c(
-                          "li",
-                          {
-                            key: index,
-                            staticClass:
-                              "suggestion-group-suggestion cursor-pointer",
-                            class: {
-                              "suggestion-current-selected":
-                                _vm.currentSelected === grp_index + "." + index,
-                            },
-                            on: {
-                              mouseenter: function ($event) {
-                                _vm.currentSelected = grp_index + "." + index
+          [
+            _c("li", [
+              _c("p", { staticClass: "suggestion-group-title" }, [
+                _c("span", [
+                  _vm._v(_vm._s(_vm.$t("appointments.modal_next_title"))),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("ul", [
+                _c(
+                  "li",
+                  [
+                    _c(
+                      "b-overlay",
+                      {
+                        attrs: {
+                          show: _vm.loading,
+                          blur: "2px",
+                          variant: "transparent",
+                          rounded: "lg",
+                          opacity: "0.85",
+                        },
+                      },
+                      [
+                        _c(
+                          "ul",
+                          _vm._l(_vm.nextAppointments, function (item, index) {
+                            return _c(
+                              "li",
+                              {
+                                key: index,
+                                staticClass: "suggestions-groups-list",
                               },
-                              mousedown: function ($event) {
-                                $event.preventDefault()
-                                return _vm.suggestionSelected(
-                                  grp_name,
-                                  suggestion
-                                )
-                              },
-                            },
-                          },
-                          [
-                            grp_name === "reportes"
-                              ? _c(
-                                  "b-link",
-                                  {
-                                    staticClass: "p-0",
-                                    attrs: { to: suggestion.route },
-                                  },
-                                  [
-                                    _c("feather-icon", {
-                                      staticClass: "mr-75",
-                                      attrs: { icon: suggestion.icon },
-                                    }),
-                                    _vm._v(" "),
-                                    _c(
-                                      "span",
-                                      { staticClass: "align-middle" },
-                                      [_vm._v(_vm._s(suggestion.title))]
-                                    ),
-                                  ],
-                                  1
-                                )
-                              : _vm._e(),
-                          ],
-                          1
-                        )
-                      }),
-                      _vm._v(" "),
-                      !suggestion_list.length && _vm.searchQuery
-                        ? _c(
-                            "li",
-                            {
-                              staticClass:
-                                "suggestion-group-suggestion no-results",
-                            },
-                            [_c("p", [_vm._v("No Results Found.")])]
-                          )
-                        : _vm._e(),
-                    ],
-                    2
-                  ),
-                ]
-              )
-            }
-          ),
-          0
+                              [
+                                _c("ul", [
+                                  _c(
+                                    "li",
+                                    {
+                                      staticClass:
+                                        "suggestion-group-suggestion cursor-pointer",
+                                    },
+                                    [
+                                      _c("p", [
+                                        _c("strong", [
+                                          _vm._v(
+                                            _vm._s(
+                                              _vm.$t("appointments.appointment")
+                                            ) +
+                                              " " +
+                                              _vm._s(
+                                                item.custom_date_diff_humans
+                                              )
+                                          ),
+                                        ]),
+                                        _vm._v(" "),
+                                        _c(
+                                          "small",
+                                          {
+                                            staticClass:
+                                              "text-muted text-capitalize",
+                                          },
+                                          [
+                                            _vm._v(
+                                              _vm._s(
+                                                _vm.dateTimeFormat(item.date)
+                                              )
+                                            ),
+                                          ]
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "d-flex flex-sm-row flex-column flex-wrap justify-content-between mb-1 mb-sm-0",
+                                        },
+                                        [
+                                          _c("p", [
+                                            _vm._v(
+                                              "\n\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                _vm._s(item.full_name)
+                                            ),
+                                            _c("br"),
+                                            _vm._v(" "),
+                                            _c(
+                                              "small",
+                                              { staticClass: "text-secondary" },
+                                              [
+                                                _c("feather-icon", {
+                                                  attrs: {
+                                                    icon: "TerminalIcon",
+                                                    size: "16",
+                                                  },
+                                                }),
+                                                _vm._v(
+                                                  _vm._s(item.document_type) +
+                                                    ": " +
+                                                    _vm._s(item.rut)
+                                                ),
+                                              ],
+                                              1
+                                            ),
+                                            _c("br"),
+                                            _vm._v(" "),
+                                            _c(
+                                              "small",
+                                              { staticClass: "text-secondary" },
+                                              [
+                                                _c("feather-icon", {
+                                                  attrs: {
+                                                    icon: "MailIcon",
+                                                    size: "16",
+                                                  },
+                                                }),
+                                                _vm._v(
+                                                  " " + _vm._s(item.email)
+                                                ),
+                                              ],
+                                              1
+                                            ),
+                                            _c("br"),
+                                            _vm._v(" "),
+                                            _c(
+                                              "small",
+                                              { staticClass: "text-secondary" },
+                                              [
+                                                _c("feather-icon", {
+                                                  attrs: {
+                                                    icon: "PhoneIcon",
+                                                    size: "16",
+                                                  },
+                                                }),
+                                                _vm._v(
+                                                  " " + _vm._s(item.phone)
+                                                ),
+                                              ],
+                                              1
+                                            ),
+                                            _c("br"),
+                                            _vm._v(" "),
+                                            _c(
+                                              "small",
+                                              [
+                                                _vm._v(
+                                                  "\n\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                    _vm._s(
+                                                      _vm.$t(
+                                                        "appointments.state"
+                                                      )
+                                                    ) +
+                                                    ":\n\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                ),
+                                                _c(
+                                                  "b-badge",
+                                                  {
+                                                    attrs: {
+                                                      variant:
+                                                        "" +
+                                                        _vm.resolveStateAppointmentColor(
+                                                          item.state
+                                                        ),
+                                                    },
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      _vm._s(
+                                                        _vm.resolveStateAppointment(
+                                                          item.state
+                                                        )
+                                                      )
+                                                    ),
+                                                  ]
+                                                ),
+                                              ],
+                                              1
+                                            ),
+                                          ]),
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("small", [
+                                        _vm._v(
+                                          _vm._s(
+                                            _vm.$t(
+                                              "appointments.table_observations"
+                                            )
+                                          ) +
+                                            ": " +
+                                            _vm._s(item.intern_observation)
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "b-media",
+                                        {
+                                          staticClass: "mt-1",
+                                          scopedSlots: _vm._u(
+                                            [
+                                              {
+                                                key: "aside",
+                                                fn: function () {
+                                                  return [
+                                                    _c("b-avatar", {
+                                                      attrs: {
+                                                        size: "24",
+                                                        src: null,
+                                                        text: _vm.avatarText(
+                                                          item.name
+                                                        ),
+                                                      },
+                                                    }),
+                                                  ]
+                                                },
+                                                proxy: true,
+                                              },
+                                            ],
+                                            null,
+                                            true
+                                          ),
+                                        },
+                                        [
+                                          _vm._v(" "),
+                                          _c("small", [
+                                            _vm._v(
+                                              _vm._s(
+                                                _vm
+                                                  .$t(
+                                                    "appointments.doctor_will_assist_you"
+                                                  )
+                                                  .replace(":doctor", item.name)
+                                              )
+                                            ),
+                                          ]),
+                                        ]
+                                      ),
+                                    ],
+                                    1
+                                  ),
+                                ]),
+                              ]
+                            )
+                          }),
+                          0
+                        ),
+                      ]
+                    ),
+                  ],
+                  1
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            !_vm.nextAppointments.length && _vm.searchQuery
+              ? _c(
+                  "li",
+                  { staticClass: "suggestion-group-suggestion no-results" },
+                  [_c("p", [_vm._v(_vm._s(_vm.$t("no_results_found")))])]
+                )
+              : _vm._e(),
+          ]
         ),
       ],
       1
@@ -5591,16 +5861,21 @@ function useJwt(axiosIns, jwtOverrideConfig) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return useAutoSuggest; });
-/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js */ "./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js");
-/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var core_js_modules_es_object_keys_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.object.keys.js */ "./node_modules/core-js/modules/es.object.keys.js");
-/* harmony import */ var core_js_modules_es_object_keys_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_keys_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
-/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _vue_composition_api__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @vue/composition-api */ "./node_modules/@vue/composition-api/dist/vue-composition-api.mjs");
-/* harmony import */ var _providers_Patients__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/providers/Patients */ "./resources/js/src/providers/Patients.js");
+/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.filter.js */ "./node_modules/core-js/modules/es.array.filter.js");
+/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_string_starts_with_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.string.starts-with.js */ "./node_modules/core-js/modules/es.string.starts-with.js");
+/* harmony import */ var core_js_modules_es_string_starts_with_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_starts_with_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.array.slice.js */ "./node_modules/core-js/modules/es.array.slice.js");
+/* harmony import */ var core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.array.concat.js */ "./node_modules/core-js/modules/es.array.concat.js");
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var core_js_modules_es_object_keys_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.object.keys.js */ "./node_modules/core-js/modules/es.object.keys.js");
+/* harmony import */ var core_js_modules_es_object_keys_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_keys_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _vue_composition_api__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @vue/composition-api */ "./node_modules/@vue/composition-api/dist/vue-composition-api.mjs");
 
 
 
@@ -5608,9 +5883,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var PatientResource = new _providers_Patients__WEBPACK_IMPORTED_MODULE_6__["default"]();
+
 function useAutoSuggest(props) {
-  var filteredData = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_5__["ref"])({});
+  var filteredData = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_7__["ref"])({});
 
   /**
    * Filter group against provided query
@@ -5625,42 +5900,18 @@ function useAutoSuggest(props) {
    * @param {Object} grp Group object to perform filter on
    * @param {String} query Query string to filter
    */
-  var filterGrp = /*#__PURE__*/function () {
-    var _ref = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee(grp, query) {
-      var q, _yield$PatientResourc, data;
-      return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee$(_context) {
-        while (1) switch (_context.prev = _context.next) {
-          case 0:
-            if (!(query == '' || query == null && query.length < 3)) {
-              _context.next = 2;
-              break;
-            }
-            return _context.abrupt("return", false);
-          case 2:
-            q = {
-              search: query,
-              sortBy: 'name',
-              sortDesc: 'asc',
-              perPage: 10
-            };
-            _context.next = 5;
-            return PatientResource.nextAppointment(q);
-          case 5:
-            _yield$PatientResourc = _context.sent;
-            data = _yield$PatientResourc.data;
-            console.log('data', data);
-            return _context.abrupt("return", data.data.data);
-          case 9:
-          case "end":
-            return _context.stop();
-        }
-      }, _callee);
-    }));
-    return function filterGrp(_x, _x2) {
-      return _ref.apply(this, arguments);
-    };
-  }();
-  var searchQuery = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_5__["ref"])('');
+  var filterGrp = function filterGrp(grp, query) {
+    var exactEle = grp.data.filter(function (item) {
+      return item[grp.key].toLowerCase().startsWith(query.toLowerCase());
+    });
+    var containEle = grp.data.filter(
+    // prettier-ignore
+    function (item) {
+      return !item[grp.key].toLowerCase().startsWith(query.toLowerCase()) && item[grp.key].toLowerCase().indexOf(query.toLowerCase()) > -1;
+    });
+    return exactEle.concat(containEle).slice(0, props.searchLimit);
+  };
+  var searchQuery = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_7__["ref"])('');
   var resetsearchQuery = function resetsearchQuery() {
     searchQuery.value = '';
   };
@@ -5676,7 +5927,7 @@ function useAutoSuggest(props) {
       filteredData.value = queriedData;
     }
   };
-  Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_5__["watch"])(searchQuery, function (val) {
+  Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_7__["watch"])(searchQuery, function (val) {
     return handleSearchQueryUpdate(val);
   });
   return {
@@ -7390,6 +7641,20 @@ __webpack_require__.r(__webpack_exports__);
       from: 'Sirena Linkert',
       icon: __webpack_require__(/*! @/assets/images/icons/pdf.png */ "./resources/js/src/assets/images/icons/pdf.png"),
       size: '1.5 mb'
+    }]
+  },
+  appointments: {
+    key: 'name',
+    data: [{
+      full_name: '',
+      email: '',
+      date: '',
+      custom_date: '',
+      observation: '',
+      docto: '',
+      state: '',
+      rut: '',
+      document_type: ''
     }]
   },
   contacts: {

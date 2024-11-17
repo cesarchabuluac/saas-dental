@@ -212,6 +212,22 @@ export default {
       },
     ],
   },
+  appointments: {
+    key: 'name',
+    data: [
+      {
+        full_name: '',
+        email: '',
+        date: '',
+        custom_date: '',
+        observation: '',
+        docto: '',
+        state: '',
+        rut: '',
+        document_type: '',
+      }
+    ]
+  },
   contacts: {
     key: 'name',
     data: [

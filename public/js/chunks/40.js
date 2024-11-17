@@ -151,6 +151,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -3440,6 +3441,8 @@ var render = function () {
                 { staticClass: "card shadow-none border-0 mb-0 rounded-0" },
                 [
                   _c("div", { staticClass: "card-header" }, [
+                    _c("label", [_vm._v(_vm._s(_vm.$t("professional")))]),
+                    _vm._v(" "),
                     _c(
                       "div",
                       {
@@ -4293,7 +4296,11 @@ var render = function () {
                             "b-button",
                             {
                               staticClass: "mb-1 mb-sm-0 mr-0 mr-sm-1",
-                              attrs: { variant: "primary", type: "submit" },
+                              attrs: {
+                                disabled: _vm.loading,
+                                variant: "primary",
+                                type: "submit",
+                              },
                             },
                             [
                               _vm._v(
@@ -7817,12 +7824,12 @@ __webpack_require__.r(__webpack_exports__);
 var UserResource = new _providers_Users__WEBPACK_IMPORTED_MODULE_7__["default"]();
 function useCalendarSidebar() {
   Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_6__["onMounted"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee() {
-    var _yield$UserResource$i, _data, userRolesIds;
+    var _yield$UserResource$i, data, userRolesIds;
     return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
           if (!(_store__WEBPACK_IMPORTED_MODULE_5__["default"].state.calendar.useProfessionals.length <= 0)) {
-            _context.next = 6;
+            _context.next = 7;
             break;
           }
           _context.next = 3;
@@ -7833,19 +7840,18 @@ function useCalendarSidebar() {
           });
         case 3:
           _yield$UserResource$i = _context.sent;
-          _data = _yield$UserResource$i.data;
-          _store__WEBPACK_IMPORTED_MODULE_5__["default"].commit('calendar/SET_USE_PROFESSIONALS', _data.data);
-        case 6:
+          data = _yield$UserResource$i.data;
+          _store__WEBPACK_IMPORTED_MODULE_5__["default"].commit('calendar/SET_USE_PROFESSIONALS', data.data);
+          _store__WEBPACK_IMPORTED_MODULE_5__["default"].commit("calendar/SET_SELECTED_PROFESSIONAL", data.data[0]);
+        case 7:
           userRolesIds = _store__WEBPACK_IMPORTED_MODULE_5__["default"].getters['auth/getUser'].roles.map(function (role) {
             return role.id;
           });
           if (userRolesIds.includes(4)) {
             //Professional
             _store__WEBPACK_IMPORTED_MODULE_5__["default"].commit("calendar/SET_SELECTED_PROFESSIONAL", _store__WEBPACK_IMPORTED_MODULE_5__["default"].getters['auth/getUser']);
-          } else {
-            _store__WEBPACK_IMPORTED_MODULE_5__["default"].commit("calendar/SET_SELECTED_PROFESSIONAL", data[0]);
           }
-        case 8:
+        case 9:
         case "end":
           return _context.stop();
       }

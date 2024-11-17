@@ -2748,6 +2748,7 @@
     "completed": "Completadas",
     "deleted": "Eliminadas"
   },
+  "no_results_found": "No se encontraron resultados",
   "no_data_found": "No hay datos",
   "dashboard_statistics": {
     "title": "Estadísticas del mes actual :month"

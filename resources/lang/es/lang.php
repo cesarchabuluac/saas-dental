@@ -457,6 +457,7 @@ return [
     "schedule_not_found" => "Horario no encontrado",
     "time_not_available" => "Horario no disponible para agendar cita",
     "cannot_change_schedule_due_to_appointments" => "No puedes cambiar el horario porque hay citas programadas",
+    "cannot_disable_user_due_to_appointments" => "No puedes deshabilitar al usuario porque tiene citas programadas",
     "invalid_date_format" => "Formato de fecha inválido",
     'appointment_reminder' => 'Recordatorio de Cita',
     "appointment_available" => "Fecha disponible para programar una cita",

@@ -105,7 +105,7 @@
                             {{ $t("cancel") }}
                         </b-button>
 
-                        <b-button v-if="canAccess('appointments.store')" variant="primary"
+                        <b-button :disabled="loading" v-if="canAccess('appointments.store')" variant="primary"
                             class="mb-1 mb-sm-0 mr-0 mr-sm-1" type="submit">
                             {{ $t("save") }}
                         </b-button>
