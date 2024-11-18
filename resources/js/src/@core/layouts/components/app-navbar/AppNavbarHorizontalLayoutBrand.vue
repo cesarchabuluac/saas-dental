@@ -4,7 +4,7 @@
       <li class="nav-item">
         <b-link class="navbar-brand" to="/">
           <span class="brand-logo">
-            <b-img :src="system_logo" alt="logo"/>
+            <b-img fluid :src="system_logo" :alt="system_name"/>
           </span>
           <h2 class="brand-text mb-0">{{ system_name }}</h2>
         </b-link>
@@ -54,5 +54,7 @@ export default {
 </script>
 
 <style>
-
+.horizontal-menu .header-navbar.navbar-brand-center .navbar-header .navbar-brand .brand-logo img {
+    max-width: 70px!important;
+}
 </style>

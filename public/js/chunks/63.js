@@ -1,182 +1,117 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[63],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/esm/createForOfIteratorHelper.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/createForOfIteratorHelper.js ***!
+  \******************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/objectSpread2.js */ "./node_modules/@babel/runtime/helpers/esm/objectSpread2.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _createForOfIteratorHelper; });
+/* harmony import */ var _unsupportedIterableToArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./unsupportedIterableToArray.js */ "./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js");
+
+function _createForOfIteratorHelper(o, allowArrayLike) {
+  var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"];
+  if (!it) {
+    if (Array.isArray(o) || (it = Object(_unsupportedIterableToArray_js__WEBPACK_IMPORTED_MODULE_0__["default"])(o)) || allowArrayLike && o && typeof o.length === "number") {
+      if (it) o = it;
+      var i = 0;
+      var F = function F() {};
+      return {
+        s: F,
+        n: function n() {
+          if (i >= o.length) return {
+            done: true
+          };
+          return {
+            done: false,
+            value: o[i++]
+          };
+        },
+        e: function e(_e) {
+          throw _e;
+        },
+        f: F
+      };
+    }
+    throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+  var normalCompletion = true,
+    didErr = false,
+    err;
+  return {
+    s: function s() {
+      it = it.call(o);
+    },
+    n: function n() {
+      var step = it.next();
+      normalCompletion = step.done;
+      return step;
+    },
+    e: function e(_e2) {
+      didErr = true;
+      err = _e2;
+    },
+    f: function f() {
+      try {
+        if (!normalCompletion && it["return"] != null) it["return"]();
+      } finally {
+        if (didErr) throw err;
+      }
+    }
+  };
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/payments/payment-charge/Charge.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/payments/payment-charge/Charge.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createForOfIteratorHelper.js */ "./node_modules/@babel/runtime/helpers/esm/createForOfIteratorHelper.js");
 /* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js */ "./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js");
 /* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
-/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var core_js_modules_es_string_search_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.string.search.js */ "./node_modules/core-js/modules/es.string.search.js");
-/* harmony import */ var core_js_modules_es_string_search_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_search_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var core_js_modules_es_array_push_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.array.push.js */ "./node_modules/core-js/modules/es.array.push.js");
-/* harmony import */ var core_js_modules_es_array_push_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_push_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/router */ "./resources/js/src/router/index.js");
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/store */ "./resources/js/src/store/index.js");
-/* harmony import */ var _core_components_b_card_code__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @core/components/b-card-code */ "./resources/js/src/@core/components/b-card-code/index.js");
-/* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/esm/index.js");
-/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
-/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! vue-flatpickr-component */ "./node_modules/vue-flatpickr-component/dist/vue-flatpickr.min.js");
-/* harmony import */ var vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var flatpickr_dist_l10n_es_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! flatpickr/dist/l10n/es.js */ "./node_modules/flatpickr/dist/l10n/es.js");
-/* harmony import */ var flatpickr_dist_l10n_es_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(flatpickr_dist_l10n_es_js__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var vue_ripple_directive__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! vue-ripple-directive */ "./node_modules/vue-ripple-directive/src/ripple.js");
-/* harmony import */ var vee_validate__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! vee-validate */ "./node_modules/vee-validate/dist/vee-validate.esm.js");
-/* harmony import */ var _validations__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @validations */ "./resources/js/src/@core/utils/validations/validations.js");
-/* harmony import */ var _core_comp_functions_forms_form_validation__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @core/comp-functions/forms/form-validation */ "./resources/js/src/@core/comp-functions/forms/form-validation.js");
-/* harmony import */ var _core_components_patients_SidebarAddNewPatient_vue__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @core/components/patients/SidebarAddNewPatient.vue */ "./resources/js/src/@core/components/patients/SidebarAddNewPatient.vue");
-/* harmony import */ var _core_components_patients_SearchPatient_vue__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @core/components/patients/SearchPatient.vue */ "./resources/js/src/@core/components/patients/SearchPatient.vue");
-/* harmony import */ var _providers_Users__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @/providers/Users */ "./resources/js/src/providers/Users.js");
-/* harmony import */ var _providers_Patients__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @/providers/Patients */ "./resources/js/src/providers/Patients.js");
-/* harmony import */ var _providers_Appointments__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @/providers/Appointments */ "./resources/js/src/providers/Appointments.js");
-/* harmony import */ var _providers_BranchOffices__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @/providers/BranchOffices */ "./resources/js/src/providers/BranchOffices.js");
-/* harmony import */ var moment_timezone__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! moment-timezone */ "./node_modules/moment-timezone/index.js");
-/* harmony import */ var moment_timezone__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(moment_timezone__WEBPACK_IMPORTED_MODULE_23__);
-
-
-
-
-
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.number.constructor.js */ "./node_modules/core-js/modules/es.number.constructor.js");
+/* harmony import */ var core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_es_string_repeat_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.string.repeat.js */ "./node_modules/core-js/modules/es.string.repeat.js");
+/* harmony import */ var core_js_modules_es_string_repeat_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_repeat_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.array.filter.js */ "./node_modules/core-js/modules/es.array.filter.js");
+/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! core-js/modules/es.array.reduce.js */ "./node_modules/core-js/modules/es.array.reduce.js");
+/* harmony import */ var core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! core-js/modules/es.array.map.js */ "./node_modules/core-js/modules/es.array.map.js");
+/* harmony import */ var core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var core_js_modules_es_array_push_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! core-js/modules/es.array.push.js */ "./node_modules/core-js/modules/es.array.push.js");
+/* harmony import */ var core_js_modules_es_array_push_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_push_js__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var core_js_modules_es_number_to_fixed_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! core-js/modules/es.number.to-fixed.js */ "./node_modules/core-js/modules/es.number.to-fixed.js");
+/* harmony import */ var core_js_modules_es_number_to_fixed_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_number_to_fixed_js__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var core_js_modules_es_array_flat_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! core-js/modules/es.array.flat.js */ "./node_modules/core-js/modules/es.array.flat.js");
+/* harmony import */ var core_js_modules_es_array_flat_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_flat_js__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var core_js_modules_es_array_unscopables_flat_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! core-js/modules/es.array.unscopables.flat.js */ "./node_modules/core-js/modules/es.array.unscopables.flat.js");
+/* harmony import */ var core_js_modules_es_array_unscopables_flat_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_unscopables_flat_js__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! core-js/modules/es.regexp.to-string.js */ "./node_modules/core-js/modules/es.regexp.to-string.js");
+/* harmony import */ var core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var core_js_modules_es_string_starts_with_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! core-js/modules/es.string.starts-with.js */ "./node_modules/core-js/modules/es.string.starts-with.js");
+/* harmony import */ var core_js_modules_es_string_starts_with_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_starts_with_js__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @/store */ "./resources/js/src/store/index.js");
+/* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/esm/index.js");
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _core_layouts_components_Logo_vue__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @core/layouts/components/Logo.vue */ "./resources/js/src/@core/layouts/components/Logo.vue");
+/* harmony import */ var vue_ripple_directive__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! vue-ripple-directive */ "./node_modules/vue-ripple-directive/src/ripple.js");
+/* harmony import */ var _providers_Budgets__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @/providers/Budgets */ "./resources/js/src/providers/Budgets.js");
+/* harmony import */ var _providers_Users__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @/providers/Users */ "./resources/js/src/providers/Users.js");
+/* harmony import */ var _providers_Payments__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @/providers/Payments */ "./resources/js/src/providers/Payments.js");
+/* harmony import */ var _CheckInfoModal__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./CheckInfoModal */ "./resources/js/src/views/apps/payments/payment-charge/CheckInfoModal.vue");
 
 
 
@@ -192,104 +127,491 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 
-var UserResource = new _providers_Users__WEBPACK_IMPORTED_MODULE_19__["default"]();
-var PatientResource = new _providers_Patients__WEBPACK_IMPORTED_MODULE_20__["default"]();
-var AppointmentResource = new _providers_Appointments__WEBPACK_IMPORTED_MODULE_21__["default"]();
-var BranchOfficeResource = new _providers_BranchOffices__WEBPACK_IMPORTED_MODULE_22__["default"]();
+
+
+
+
+
+
+var BudgetResource = new _providers_Budgets__WEBPACK_IMPORTED_MODULE_20__["default"]();
+var UserResource = new _providers_Users__WEBPACK_IMPORTED_MODULE_21__["default"]();
+var PaymentResource = new _providers_Payments__WEBPACK_IMPORTED_MODULE_22__["default"]();
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "AppointmentAdd",
-  components: {
-    BRow: bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["BRow"],
-    BCol: bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["BCol"],
-    BCard: bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["BCard"],
-    BCardBody: bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["BCardBody"],
-    BTableLite: bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["BTableLite"],
-    BCardText: bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["BCardText"],
-    BButton: bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["BButton"],
-    BSidebar: bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["BSidebar"],
-    BForm: bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["BForm"],
-    BFormGroup: bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["BFormGroup"],
-    BFormInput: bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["BFormInput"],
-    BInputGroup: bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["BInputGroup"],
-    BInputGroupAppend: bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["BInputGroupAppend"],
-    BInputGroupPrepend: bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["BInputGroupPrepend"],
-    BFormCheckbox: bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["BFormCheckbox"],
-    BFormTextarea: bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["BFormTextarea"],
-    BAvatar: bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["BAvatar"],
-    vSelect: vue_select__WEBPACK_IMPORTED_MODULE_10___default.a,
-    flatPickr: vue_flatpickr_component__WEBPACK_IMPORTED_MODULE_11___default.a,
-    ValidationProvider: vee_validate__WEBPACK_IMPORTED_MODULE_14__["ValidationProvider"],
-    BFormInvalidFeedback: bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["BFormInvalidFeedback"],
-    ValidationObserver: vee_validate__WEBPACK_IMPORTED_MODULE_14__["ValidationObserver"],
-    BOverlay: bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["BOverlay"],
-    BSpinner: bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["BSpinner"],
-    BCardCode: _core_components_b_card_code__WEBPACK_IMPORTED_MODULE_8__["default"],
-    SidebarAddNewPatient: _core_components_patients_SidebarAddNewPatient_vue__WEBPACK_IMPORTED_MODULE_17__["default"],
-    SearchPatient: _core_components_patients_SearchPatient_vue__WEBPACK_IMPORTED_MODULE_18__["default"]
-  },
+  name: "PaymentCharge",
   directives: {
-    'b-toggle': bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["VBToggle"],
-    Ripple: vue_ripple_directive__WEBPACK_IMPORTED_MODULE_13__["default"]
+    Ripple: vue_ripple_directive__WEBPACK_IMPORTED_MODULE_19__["default"],
+    'b-modal': bootstrap_vue__WEBPACK_IMPORTED_MODULE_16__["VBModal"],
+    'b-toggle': bootstrap_vue__WEBPACK_IMPORTED_MODULE_16__["VBToggle"]
+  },
+  components: {
+    BRow: bootstrap_vue__WEBPACK_IMPORTED_MODULE_16__["BRow"],
+    BCol: bootstrap_vue__WEBPACK_IMPORTED_MODULE_16__["BCol"],
+    BCard: bootstrap_vue__WEBPACK_IMPORTED_MODULE_16__["BCard"],
+    BCardBody: bootstrap_vue__WEBPACK_IMPORTED_MODULE_16__["BCardBody"],
+    BCardText: bootstrap_vue__WEBPACK_IMPORTED_MODULE_16__["BCardText"],
+    BButton: bootstrap_vue__WEBPACK_IMPORTED_MODULE_16__["BButton"],
+    BAlert: bootstrap_vue__WEBPACK_IMPORTED_MODULE_16__["BAlert"],
+    BLink: bootstrap_vue__WEBPACK_IMPORTED_MODULE_16__["BLink"],
+    BOverlay: bootstrap_vue__WEBPACK_IMPORTED_MODULE_16__["BOverlay"],
+    BSpinner: bootstrap_vue__WEBPACK_IMPORTED_MODULE_16__["BSpinner"],
+    BTable: bootstrap_vue__WEBPACK_IMPORTED_MODULE_16__["BTable"],
+    BTableLite: bootstrap_vue__WEBPACK_IMPORTED_MODULE_16__["BTableLite"],
+    Logo: _core_layouts_components_Logo_vue__WEBPACK_IMPORTED_MODULE_18__["default"],
+    vSelect: vue_select__WEBPACK_IMPORTED_MODULE_17___default.a,
+    BFormCheckbox: bootstrap_vue__WEBPACK_IMPORTED_MODULE_16__["BFormCheckbox"],
+    BFormGroup: bootstrap_vue__WEBPACK_IMPORTED_MODULE_16__["BFormGroup"],
+    BFormInput: bootstrap_vue__WEBPACK_IMPORTED_MODULE_16__["BFormInput"],
+    BModal: bootstrap_vue__WEBPACK_IMPORTED_MODULE_16__["BModal"],
+    VBModal: bootstrap_vue__WEBPACK_IMPORTED_MODULE_16__["VBModal"],
+    CheckInfoModal: _CheckInfoModal__WEBPACK_IMPORTED_MODULE_23__["default"]
   },
   data: function data() {
     return {
       loading: false,
-      hideSidebar: false,
-      isValidCellPhone: false,
-      appointment: {
-        state: 'pending',
-        user_id: null,
-        branch_office_id: null,
-        patient: null
+      budget_id: this.$route.params.id,
+      columns: [{
+        key: "action",
+        label: this.$t("charges.table_description")
+      }, {
+        key: "price",
+        label: this.$t("charges.table_costo")
       },
-      professionals: [],
-      calendarOptions: [{
-        color: "warning",
-        label: "pending"
+      // {
+      //     key: "discount",
+      //     label: this.$t("charges.table_discount"),
+      // },
+      {
+        key: "subtotal",
+        label: this.$t("charges.table_total")
       }, {
-        color: "success",
-        label: "confirmed"
+        key: "paid",
+        label: this.$t("charges.table_paid")
       }, {
-        color: "danger",
-        label: "canceled"
+        key: "debt",
+        label: this.$t("charges.table_debt")
+      }, {
+        key: "options",
+        label: ''
       }],
-      patients: [],
-      patient: {},
-      selectedPatient: {
-        full_name: null
+      paymentTypes: [{
+        label: this.$t('payments.type_cash'),
+        value: 1,
+        disabled: true
+      }, {
+        label: this.$t('payments.type_pay'),
+        value: 2,
+        disabled: true
+      }, {
+        label: this.$t('payments.type_deferred'),
+        value: 3,
+        disabled: true
+      }],
+      paymentMethods: [{
+        label: this.$t('payments.method_cash'),
+        value: 'cash'
+      }, {
+        label: this.$t('payments.method_debit_card'),
+        value: 'debit_card'
+      }, {
+        label: this.$t('payments.method_credit_card'),
+        value: 'credit_card'
+      }, {
+        label: this.$t('payments.method_check'),
+        value: 'check'
+      }, {
+        label: this.$t('payments.method_transfer'),
+        value: 'transfer'
+      }],
+      ns: null,
+      cdf: null,
+      budget: {},
+      budget_diferido: {},
+      payment: {},
+      check: {
+        reference: "",
+        bank: "",
+        serie: "",
+        date: ""
       },
-      isAvailable: false,
-      branchs: [],
-      selectedBranch: null,
-      activeSearchPatient: false
+      checkModalIsTransfer: false,
+      checkModalTitle: this.$t('charges.check_detail_title'),
+      checkModalActive: false,
+      checkInfoStored: false,
+      clinicalActions: [],
+      laboratoryActions: [],
+      professionals: [],
+      income: 0,
+      remainingIncome: 0,
+      paymentMethod: {
+        label: this.$t('payments.method_cash'),
+        value: 'cash'
+      },
+      positiveBalance: 0,
+      paymentType: "",
+      paymentsNumber: 3,
+      printPayment: {},
+      showPrintPayment: false,
+      isTransfer: false,
+      branches: []
     };
   },
   computed: {
-    slotMinTime: function slotMinTime() {
-      return _store__WEBPACK_IMPORTED_MODULE_7__["default"].state.auth.setting['schedule_start_time'] || "09:00:00";
+    hasPreviousPayments: function hasPreviousPayments() {
+      if (_.isEmpty(this.budget)) return false;
+      if (this.budget.total_paid > 0 || this.budget.has_partials) return true;
+      return false;
     },
-    slotMaxTime: function slotMaxTime() {
-      _store__WEBPACK_IMPORTED_MODULE_7__["default"].state.auth.setting['schedule_end_time'] || "22:00:00";
+    totalIncome: function totalIncome() {
+      return Number(this.income) + Number(this.positiveBalance);
     },
-    slotInterval: function slotInterval() {
-      return _store__WEBPACK_IMPORTED_MODULE_7__["default"].state.auth.setting['scheduled_appointment_interval'] || 1;
+    dots: function dots() {
+      return ".".repeat(400);
+    },
+    selectedClinicalActions: function selectedClinicalActions() {
+      if (this.isEmpty(this.budget)) return [];
+      return this.clinicalActions.filter(function (action) {
+        return action.is_selected;
+      });
+    },
+    selectedLaboratoryActions: function selectedLaboratoryActions() {
+      if (this.isEmpty(this.budget)) return [];
+      return this.laboratoryActions.filter(function (action) {
+        return action.is_selected;
+      });
+    },
+    totalClinicalActions: function totalClinicalActions() {
+      return this.selectedClinicalActions.reduce(function (carry, action) {
+        return carry + action.debt;
+      }, 0);
+    },
+    totalLaboratoryActions: function totalLaboratoryActions() {
+      return this.selectedLaboratoryActions.reduce(function (carry, action) {
+        return carry + action.debt;
+      }, 0);
+    },
+    allowModifications: function allowModifications() {
+      return this.paymentType.value === 2;
     }
   },
   created: function created() {
-    if (_store__WEBPACK_IMPORTED_MODULE_7__["default"].state.auth.setting['language'] === "es") {
-      flatpickr.localize(flatpickr_dist_l10n_es_js__WEBPACK_IMPORTED_MODULE_12__["Spanish"]);
-      Object(vee_validate__WEBPACK_IMPORTED_MODULE_14__["localize"])("es");
-    }
-    if (_store__WEBPACK_IMPORTED_MODULE_7__["default"].state.calendar) {
-      if (_router__WEBPACK_IMPORTED_MODULE_6__["default"].currentRoute.params.date) {
-        this.appointment.date = _router__WEBPACK_IMPORTED_MODULE_6__["default"].currentRoute.params.date;
-        this.isAvailable = true;
-      }
-    }
+    // this.paymentTypes[0].disabled = !this.budget.has_partials
+    // this.paymentTypes[1].disabled = !this.budget.has_partials
   },
   mounted: function mounted() {
     var _this = this;
@@ -298,10 +620,10 @@ var BranchOfficeResource = new _providers_BranchOffices__WEBPACK_IMPORTED_MODULE
         while (1) switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return _this.getBranch();
+            return _this.getProfessionals();
           case 2:
             _context.next = 4;
-            return _this.getDoctors();
+            return _this.getBudget();
           case 4:
           case "end":
             return _context.stop();
@@ -310,514 +632,485 @@ var BranchOfficeResource = new _providers_BranchOffices__WEBPACK_IMPORTED_MODULE
     }))();
   },
   methods: {
-    getBranch: function getBranch() {
+    selectPaymentTypes: function selectPaymentTypes(evt) {
+      if (evt.value === 3) {
+        this.paymentMethod = {
+          label: this.$t('payments.method_cash'),
+          value: 'cash'
+        };
+      }
+    },
+    getBudget: function getBudget() {
       var _this2 = this;
       return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().mark(function _callee2() {
-        var query, _yield$BranchOfficeRe, data;
+        var _yield$BudgetResource, data;
         return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().wrap(function _callee2$(_context2) {
           while (1) switch (_context2.prev = _context2.next) {
             case 0:
-              query = {
-                isAll: true
-              };
-              _context2.prev = 1;
               _this2.loading = true;
-              _context2.next = 5;
-              return BranchOfficeResource.index(query);
-            case 5:
-              _yield$BranchOfficeRe = _context2.sent;
-              data = _yield$BranchOfficeRe.data;
-              if (data.success) {
-                _this2.branchs = data.data;
-                _this2.appointment.branch_office_id = _this2.branchs[0].id;
-                _store__WEBPACK_IMPORTED_MODULE_7__["default"].commit('auth/SET_BRANCHES', data);
-              } else {
-                _this2.danger(data.message);
-              }
-              _context2.next = 13;
-              break;
-            case 10:
-              _context2.prev = 10;
-              _context2.t0 = _context2["catch"](1);
-              // this.loading = false
-              _this2.handleResponseErrors(_context2.t0);
-            case 13:
-              _context2.prev = 13;
+              _context2.next = 3;
+              return BudgetResource.getBudgetDetail(_this2.budget_id);
+            case 3:
+              _yield$BudgetResource = _context2.sent;
+              data = _yield$BudgetResource.data;
               _this2.loading = false;
-              return _context2.finish(13);
-            case 16:
+              _this2.budget = data.data;
+              _this2.positiveBalance = _this2.budget.patient.positive_balance;
+              if (_this2.budget.has_partials) {
+                _this2.paymentType = {
+                  label: _this2.$t('payments.type_deferred'),
+                  value: 3
+                };
+              } else {
+                if (_this2.budget.total_paid > 0) _this2.paymentType = {
+                  label: _this2.$t('payments.type_pay'),
+                  value: 2
+                };
+              }
+              _this2.budget.budget_actions.map(function (item) {
+                item.is_disabled = false;
+                if (item.action_type === 'clinical') {
+                  _this2.clinicalActions.push(item);
+                } else {
+                  _this2.laboratoryActions.push(item);
+                }
+                return item;
+              });
+            case 10:
             case "end":
               return _context2.stop();
           }
-        }, _callee2, null, [[1, 10, 13, 16]]);
+        }, _callee2);
       }))();
     },
-    onSearch: function onSearch(search, loading) {
+    getBranches: function getBranches() {
       var _this3 = this;
       return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().mark(function _callee3() {
         return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().wrap(function _callee3$(_context3) {
           while (1) switch (_context3.prev = _context3.next) {
             case 0:
-              if (!search.length) {
-                _context3.next = 4;
-                break;
-              }
-              loading(true);
-              _context3.next = 4;
-              return _this3.searchPatients(loading, search, _this3);
-            case 4:
+              _this3.branches = [];
+              if (_store__WEBPACK_IMPORTED_MODULE_15__["default"].getters['auth/getBranches'].length > 0) {}
+            case 2:
             case "end":
               return _context3.stop();
           }
         }, _callee3);
       }))();
     },
-    onChange: function onChange(selectedDates, dateStr, instance) {
+    getProfessionals: function getProfessionals() {
       var _this4 = this;
       return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().mark(function _callee4() {
-        var inputDateFormat, officeStartTime, officeEndTime, isValidDate, isWithinOfficeHours, now, selectedDateTime, isDateAvailable;
+        var _yield$UserResource$i, data;
         return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().wrap(function _callee4$(_context4) {
           while (1) switch (_context4.prev = _context4.next) {
             case 0:
-              inputDateFormat = 'DD/MM/YYYY HH:mm';
-              officeStartTime = _store__WEBPACK_IMPORTED_MODULE_7__["default"].state.auth.setting['schedule_start_time'] || '09:00:00'; // Schedule start time
-              officeEndTime = _store__WEBPACK_IMPORTED_MODULE_7__["default"].state.auth.setting['schedule_end_time'] || '22:00:00'; // Schedule end time   
-              console.log('onChange', dateStr);
-              console.log('selectedDates', selectedDates);
-              console.log('instance', instance);
-              console.log('inputDateFormat', inputDateFormat);
-              console.log('officeStartTime', officeStartTime);
-              console.log('officeEndTime', officeEndTime);
-              isValidDate = _this4.isValidDate(dateStr, inputDateFormat);
-              if (isValidDate) {
-                _context4.next = 13;
+              _this4.professionals = [];
+              if (!(_store__WEBPACK_IMPORTED_MODULE_15__["default"].getters['auth/getDoctors'].length > 0)) {
+                _context4.next = 5;
                 break;
               }
-              _this4.danger(_this4.$t('invalid_date_format'));
-              return _context4.abrupt("return", false);
-            case 13:
-              isWithinOfficeHours = _this4.isWithinOfficeHours(dateStr, officeStartTime, officeEndTime);
-              if (isWithinOfficeHours) {
-                _context4.next = 17;
-                break;
-              }
-              _this4.danger(_this4.$t('closed_office'));
-              return _context4.abrupt("return", false);
-            case 17:
-              //
-              now = moment_timezone__WEBPACK_IMPORTED_MODULE_23___default()();
-              selectedDateTime = moment_timezone__WEBPACK_IMPORTED_MODULE_23___default()(dateStr, inputDateFormat, true);
-              if (!selectedDateTime.isSameOrBefore(now)) {
-                _context4.next = 22;
-                break;
-              }
-              _this4.danger(_this4.$t('date_not_available'));
-              return _context4.abrupt("return", false);
-            case 22:
-              _context4.next = 24;
-              return _this4.checkAvailability(dateStr);
-            case 24:
-              isDateAvailable = _context4.sent;
-              if (isDateAvailable) {
-                _context4.next = 28;
-                break;
-              }
-              _this4.danger(_this4.$t('date_not_available'));
-              return _context4.abrupt("return", false);
-            case 28:
-              // If you get here, all is well and the date is available
-              _this4.isAvailable = true;
-            case 29:
+              _this4.professionals = _store__WEBPACK_IMPORTED_MODULE_15__["default"].getters['auth/getDoctors'];
+              _context4.next = 12;
+              break;
+            case 5:
+              _this4.loading = true;
+              _context4.next = 8;
+              return UserResource.index({
+                criteria: 'professional',
+                ignoreSchedules: true,
+                isAll: true
+              });
+            case 8:
+              _yield$UserResource$i = _context4.sent;
+              data = _yield$UserResource$i.data;
+              _this4.loading = false;
+              _this4.professionals = data.data;
+            case 12:
             case "end":
               return _context4.stop();
           }
         }, _callee4);
       }))();
     },
-    checkAvailability: function checkAvailability(dateStr) {
+    updateTable: function updateTable() {
       var _this5 = this;
+      this.clinicalActions = this.clinicalActions.map(function (action) {
+        return action;
+      });
+      this.laboratoryActions = this.laboratoryActions.map(function (action) {
+        return action;
+      });
+      this.remainingIncome = this.totalIncome;
+      this.selectedClinicalActions.filter(function (action) {
+        return action.debt > 0;
+      }).map(function (action) {
+        if (_this5.remainingIncome === 0) {
+          action.assigned_income = 0;
+        } else if (_this5.remainingIncome >= action.debt) {
+          action.assigned_income = action.debt;
+          _this5.remainingIncome -= action.debt;
+        } else {
+          action.assigned_income = _this5.remainingIncome;
+          _this5.remainingIncome = 0;
+        }
+        return action;
+      });
+      this.selectedLaboratoryActions.filter(function (action) {
+        return action.debt > 0;
+      }).map(function (action) {
+        if (_this5.remainingIncome === 0) action.assigned_income = 0;else if (_this5.remainingIncome >= action.debt) {
+          action.assigned_income = action.debt;
+          _this5.remainingIncome -= action.debt;
+        } else {
+          action.assigned_income = _this5.remainingIncome;
+          _this5.remainingIncome = 0;
+        }
+        return action;
+      });
+      this.remainingIncome = Number(this.remainingIncome).toFixed(2);
+      this.$forceUpdate();
+    },
+    store: function store() {
+      var _this6 = this;
       return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().mark(function _callee5() {
-        var query, _yield$AppointmentRes, data;
+        var payload, _iterator, _step, action, _yield$PaymentResourc, data;
         return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().wrap(function _callee5$(_context5) {
           while (1) switch (_context5.prev = _context5.next) {
             case 0:
-              _this5.loading = true;
-              query = {
-                date: dateStr,
-                user_id: _this5.appointment.user_id
+              payload = {
+                budget_id: _this6.budget.id,
+                amount: _this6.totalIncome,
+                clinical_actions: _this6.selectedClinicalActions.filter(function (action) {
+                  return action.debt > 0;
+                }).flat(),
+                laboratory_actions: _this6.selectedLaboratoryActions.filter(function (action) {
+                  return action.debt > 0;
+                }).flat(),
+                payment_method: _this6.paymentMethod,
+                positive_balance: _this6.remainingIncome,
+                type: _this6.paymentType,
+                payments_number: _this6.paymentsNumber,
+                check: _this6.check,
+                total_action: _this6.totalClinicalActions + _this6.totalLaboratoryActions
               };
-              _context5.prev = 2;
-              _context5.next = 5;
-              return AppointmentResource.available(query);
-            case 5:
-              _yield$AppointmentRes = _context5.sent;
-              data = _yield$AppointmentRes.data;
-              _this5.loading = false;
-              if (!data.success) {
-                _context5.next = 12;
+              if (!(payload.laboratory_actions.length === 0 && payload.clinical_actions.length === 0)) {
+                _context5.next = 4;
                 break;
               }
-              return _context5.abrupt("return", true);
-            case 12:
-              _this5.danger(data.message);
+              _this6.danger(_this6.$t('charges.required_actions'));
               return _context5.abrupt("return", false);
-            case 14:
-              _context5.next = 21;
+            case 4:
+              if (!(_this6.totalIncome <= 0)) {
+                _context5.next = 7;
+                break;
+              }
+              _this6.danger(_this6.$t('charges.valid_quantity'));
+              return _context5.abrupt("return", false);
+            case 7:
+              _iterator = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_0__["default"])(_this6.selectedClinicalActions);
+              _context5.prev = 8;
+              _iterator.s();
+            case 10:
+              if ((_step = _iterator.n()).done) {
+                _context5.next = 17;
+                break;
+              }
+              action = _step.value;
+              if (!(action.professional === undefined || action.professional === null)) {
+                _context5.next = 15;
+                break;
+              }
+              _this6.danger(_this6.$t('charges.required_user'));
+              return _context5.abrupt("return", false);
+            case 15:
+              _context5.next = 10;
               break;
-            case 16:
-              _context5.prev = 16;
-              _context5.t0 = _context5["catch"](2);
-              _this5.loading = false;
-              _this5.handleResponseErrors(_context5.t0);
+            case 17:
+              _context5.next = 22;
+              break;
+            case 19:
+              _context5.prev = 19;
+              _context5.t0 = _context5["catch"](8);
+              _iterator.e(_context5.t0);
+            case 22:
+              _context5.prev = 22;
+              _iterator.f();
+              return _context5.finish(22);
+            case 25:
+              if (!((_this6.paymentMethod.value === "check" || _this6.paymentMethod.value === "transfer") && !_this6.checkInfoStored)) {
+                _context5.next = 28;
+                break;
+              }
+              _this6.checkModalActive = true;
               return _context5.abrupt("return", false);
-            case 21:
+            case 28:
+              _context5.prev = 28;
+              _this6.loading = true;
+              _context5.next = 32;
+              return PaymentResource.store(payload);
+            case 32:
+              _yield$PaymentResourc = _context5.sent;
+              data = _yield$PaymentResourc.data;
+              _this6.loading = false;
+              if (!data.success) {
+                _context5.next = 51;
+                break;
+              }
+              _this6.budget = data.data.budget;
+              _this6.payment = data.data.payment;
+              if (!(_this6.paymentType.value == 3)) {
+                _context5.next = 46;
+                break;
+              }
+              _this6.paymentTypes[0].disabled = !_this6.payment.has_partials;
+              _this6.paymentTypes[1].disabled = !_this6.payment_has_partials;
+              _.map(_this6.budget.budget_actions, function (item, index) {
+                item.is_selected = true;
+                _this6.$set(item, '_showDetails', true);
+              });
+              _this6.success(_this6.$t('charges.deferred_successfully'));
+              return _context5.abrupt("return", false);
+            case 46:
+              _this6.success(_this6.$t('charges.successfully'));
+              _this6.$router.push({
+                name: "payments-budgets-preview",
+                params: {
+                  id: _this6.budget.id,
+                  payment_id: _this6.payment.id,
+                  model: 'apps-payments-list'
+                }
+              });
+              return _context5.abrupt("return", false);
+            case 49:
+              _context5.next = 52;
+              break;
+            case 51:
+              _this6.danger(data.message);
+            case 52:
+              _context5.next = 61;
+              break;
+            case 54:
+              _context5.prev = 54;
+              _context5.t1 = _context5["catch"](28);
+              _this6.loading = false;
+              if (!(_this6.paymentMethod.value === "check" || _this6.paymentMethod.value === "transfer")) {
+                _context5.next = 60;
+                break;
+              }
+              _this6.checkModalActive = true;
+              return _context5.abrupt("return", false);
+            case 60:
+              _this6.handleResponseErrors(_context5.t1);
+            case 61:
             case "end":
               return _context5.stop();
           }
-        }, _callee5, null, [[2, 16]]);
+        }, _callee5, null, [[8, 19, 22, 25], [28, 54]]);
       }))();
     },
-    storePatient: function storePatient() {
-      var _this6 = this;
+    storePartialPayment: function storePartialPayment() {
+      var _this7 = this;
       return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().mark(function _callee6() {
-        var _yield$PatientResourc, data;
+        var payload, _yield$PaymentResourc2, data;
         return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().wrap(function _callee6$(_context6) {
           while (1) switch (_context6.prev = _context6.next) {
             case 0:
-              _context6.prev = 0;
-              _this6.loading = true;
-              _this6.patient.phone = _this6.patient.mobile.phoneNumber;
-              _this6.patient.cellphone = _this6.patient.mobile.e164;
-              _this6.patient.address = " --- ";
-              _context6.next = 7;
-              return PatientResource.save(_this6.patient);
-            case 7:
-              _yield$PatientResourc = _context6.sent;
-              data = _yield$PatientResourc.data;
-              _this6.loading = false;
-              if (data.success) {
-                _this6.hideSidebar = true;
-                _this6.appointment.patient = data.data;
-              } else {
-                _this6.danger(data.message);
+              payload = {
+                budget_id: _this7.budget.id,
+                payment_method: _this7.paymentMethod,
+                check: _this7.check
+              };
+              if (!((_this7.paymentMethod.value === "check" || _this7.paymentMethod.value === "transfer") && !_this7.checkInfoStored)) {
+                _context6.next = 4;
+                break;
               }
-              _context6.next = 17;
+              _this7.checkModalActive = true;
+              return _context6.abrupt("return", false);
+            case 4:
+              _context6.prev = 4;
+              _this7.loading = true;
+              _context6.next = 8;
+              return PaymentResource.storePartial(payload);
+            case 8:
+              _yield$PaymentResourc2 = _context6.sent;
+              data = _yield$PaymentResourc2.data;
+              _this7.loading = false;
+              console.log(data);
+              if (!data.success) {
+                _context6.next = 18;
+                break;
+              }
+              _this7.success(_this7.$t('charges.successfully'));
+              _this7.$router.push({
+                name: "payments-budgets-preview",
+                params: {
+                  id: data.data.payment.budget_id,
+                  payment_id: data.data.payment.id,
+                  model: 'apps-payments-list'
+                }
+              });
+              return _context6.abrupt("return", false);
+            case 18:
+              _this7.danger(data.message);
+            case 19:
+              _context6.next = 25;
               break;
-            case 13:
-              _context6.prev = 13;
-              _context6.t0 = _context6["catch"](0);
-              _this6.loading = false;
-              _this6.handleResponseErrors(_context6.t0);
-            case 17:
+            case 21:
+              _context6.prev = 21;
+              _context6.t0 = _context6["catch"](4);
+              _this7.loading = false;
+              _this7.handleResponseErrors(_context6.t0);
+            case 25:
             case "end":
               return _context6.stop();
           }
-        }, _callee6, null, [[0, 13]]);
+        }, _callee6, null, [[4, 21]]);
       }))();
     },
-    searchPatients: function searchPatients(loading, search, vm) {
-      var _this7 = this;
-      return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().mark(function _callee7() {
-        var _yield$PatientResourc2, data;
-        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().wrap(function _callee7$(_context7) {
-          while (1) switch (_context7.prev = _context7.next) {
-            case 0:
-              _this7.loading = true;
-              _context7.next = 3;
-              return PatientResource.search(search);
-            case 3:
-              _yield$PatientResourc2 = _context7.sent;
-              data = _yield$PatientResourc2.data;
-              vm.patients = data.data;
-              _this7.loading = false;
-              loading(false);
-            case 8:
-            case "end":
-              return _context7.stop();
-          }
-        }, _callee7);
-      }))();
+    storeWithCheck: function storeWithCheck() {
+      this.checkInfoStored = true;
+      if (this.budget.has_partials) {
+        this.storePartialPayment();
+      } else {
+        this.store();
+      }
     },
-    getDoctors: function getDoctors() {
-      var _this8 = this;
-      return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().mark(function _callee8() {
-        var _yield$UserResource$i, data;
-        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().wrap(function _callee8$(_context8) {
-          while (1) switch (_context8.prev = _context8.next) {
-            case 0:
-              _this8.loading = true;
-              // try {
-              _context8.next = 3;
-              return UserResource.index({
-                criteria: "professionals",
-                ignoreSchedules: false,
-                isAll: true
-              });
-            case 3:
-              _yield$UserResource$i = _context8.sent;
-              data = _yield$UserResource$i.data;
-              _this8.loading = false;
-              if (data.success) {
-                _this8.professionals = data.data;
-                _store__WEBPACK_IMPORTED_MODULE_7__["default"].commit('auth/SET_DOCTORS', data.data);
-                console.log(_store__WEBPACK_IMPORTED_MODULE_7__["default"].state.calendar);
-                if (_this8.professionals.length > 0) {
-                  // this.appointment.user_id = store.state.calendar.selectedProfessional.id
-                }
-              }
-
-              // }catch(e) {
-              //     this.loading = false
-              //     this.handleResponseErrors(e)
-              // }finally {
-              //     this.loading = false
-              // }
-            case 7:
-            case "end":
-              return _context8.stop();
-          }
-        }, _callee8);
-      }))();
+    expandAll: function expandAll() {
+      var _iterator2 = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this.clinicalActions),
+        _step2;
+      try {
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var item = _step2.value;
+          this.$set(item, '_showDetails', true);
+        }
+      } catch (err) {
+        _iterator2.e(err);
+      } finally {
+        _iterator2.f();
+      }
     },
-    store: function store() {
-      var _this9 = this;
-      return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().mark(function _callee9() {
-        var _this9$appointment$pa, _yield$AppointmentRes2, data;
-        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().wrap(function _callee9$(_context9) {
-          while (1) switch (_context9.prev = _context9.next) {
-            case 0:
-              _context9.prev = 0;
-              _this9.appointment.patient_id = (_this9$appointment$pa = _this9.appointment.patient) === null || _this9$appointment$pa === void 0 ? void 0 : _this9$appointment$pa.id;
-              _this9.loading = true;
-              _context9.next = 5;
-              return AppointmentResource.save(_this9.appointment);
-            case 5:
-              _yield$AppointmentRes2 = _context9.sent;
-              data = _yield$AppointmentRes2.data;
-              _this9.loading = false;
-              if (data.success) {
-                _this9.success(data.message);
-                _router__WEBPACK_IMPORTED_MODULE_6__["default"].push({
-                  name: "appointments"
-                });
-              } else {
-                _this9.danger(data.message);
-              }
-              _context9.next = 15;
-              break;
-            case 11:
-              _context9.prev = 11;
-              _context9.t0 = _context9["catch"](0);
-              _this9.loading = false;
-              _this9.handleResponseErrors(_context9.t0);
-            case 15:
-            case "end":
-              return _context9.stop();
-          }
-        }, _callee9, null, [[0, 11]]);
-      }))();
-    },
-    selectPatient: function selectPatient(e) {
-      this.selectedPatient = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__["default"])({}, e);
-      this.appointment.patient = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__["default"])({}, e);
+    collapseAl: function collapseAl() {
+      var _iterator3 = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this.clinicalActions),
+        _step3;
+      try {
+        for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+          var item = _step3.value;
+          this.$set(item, '_showDetails', false);
+        }
+      } catch (err) {
+        _iterator3.e(err);
+      } finally {
+        _iterator3.f();
+      }
     }
   },
   watch: {
-    isAvailable: function isAvailable(value) {
-      console.log(value);
+    income: function income(newValue) {
+      var stringValue = newValue.toString();
+      if (Number(stringValue) < 0) {
+        this.income = 0;
+        return;
+      }
+      var res = stringValue.toString().split(".");
+      if (res.length > 1) {
+        if (res[1].length > 2) {
+          this.income = Number(stringValue).toFixed(2);
+          return;
+        }
+      }
+      if (stringValue.startsWith("0")) {
+        this.income = Number(stringValue.substring(1));
+        return;
+      }
+      this.updateTable();
+    },
+    paymentType: function paymentType(newValue) {
+      var _this8 = this;
+      this.collapseAl();
+      this.$forceUpdate();
+      switch (newValue.value) {
+        case 1: //Contado
+        case 3:
+          //Diferido
+          this.clinicalActions = this.clinicalActions.map(function (action) {
+            action.is_selected = true;
+            return action;
+          });
+          this.laboratoryActions = this.laboratoryActions.map(function (action) {
+            action.is_selected = true;
+            return action;
+          });
+          this.income = this.totalClinicalActions + this.totalLaboratoryActions - this.positiveBalance;
+          this.expandAll();
+          break;
+        case 2:
+          //Abonos
+          this.clinicalActions = this.clinicalActions.map(function (action) {
+            if (action.debt === 0) {
+              action.is_selected = true;
+              action.is_disabled = true;
+              _this8.$set(action, '_showDetails', true);
+            } else {
+              action.is_selected = false;
+              action.is_disabled = false;
+            }
+            return action;
+          });
+          this.laboratoryActions = this.laboratoryActions.map(function (action) {
+            if (action.debt === 0) {
+              action.is_selected = true;
+              action.is_disabled = true;
+              _this8.$set(action, '_showDetails', true);
+            } else {
+              action.is_selected = false;
+              action.is_disabled = false;
+            }
+            return action;
+          });
+          this.income = 0;
+          break;
+      }
+    },
+    paymentMethod: function paymentMethod(newValue) {
+      if (newValue.value === "check") {
+        this.isTransfer = false;
+        this.checkModalIsTransfer = false;
+        this.checkModalTitle = this.$t('scharges.check_detail_title');
+      } else {
+        this.isTransfer = true;
+        this.checkModalIsTransfer = true;
+        this.checkModalTitle = this.$t('charges.transfer_detail_title');
+      }
     }
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/core-js/internals/array-from.js":
-/*!******************************************************!*\
-  !*** ./node_modules/core-js/internals/array-from.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var bind = __webpack_require__(/*! ../internals/function-bind-context */ "./node_modules/core-js/internals/function-bind-context.js");
-var call = __webpack_require__(/*! ../internals/function-call */ "./node_modules/core-js/internals/function-call.js");
-var toObject = __webpack_require__(/*! ../internals/to-object */ "./node_modules/core-js/internals/to-object.js");
-var callWithSafeIterationClosing = __webpack_require__(/*! ../internals/call-with-safe-iteration-closing */ "./node_modules/core-js/internals/call-with-safe-iteration-closing.js");
-var isArrayIteratorMethod = __webpack_require__(/*! ../internals/is-array-iterator-method */ "./node_modules/core-js/internals/is-array-iterator-method.js");
-var isConstructor = __webpack_require__(/*! ../internals/is-constructor */ "./node_modules/core-js/internals/is-constructor.js");
-var lengthOfArrayLike = __webpack_require__(/*! ../internals/length-of-array-like */ "./node_modules/core-js/internals/length-of-array-like.js");
-var createProperty = __webpack_require__(/*! ../internals/create-property */ "./node_modules/core-js/internals/create-property.js");
-var getIterator = __webpack_require__(/*! ../internals/get-iterator */ "./node_modules/core-js/internals/get-iterator.js");
-var getIteratorMethod = __webpack_require__(/*! ../internals/get-iterator-method */ "./node_modules/core-js/internals/get-iterator-method.js");
-
-var $Array = Array;
-
-// `Array.from` method implementation
-// https://tc39.es/ecma262/#sec-array.from
-module.exports = function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
-  var O = toObject(arrayLike);
-  var IS_CONSTRUCTOR = isConstructor(this);
-  var argumentsLength = arguments.length;
-  var mapfn = argumentsLength > 1 ? arguments[1] : undefined;
-  var mapping = mapfn !== undefined;
-  if (mapping) mapfn = bind(mapfn, argumentsLength > 2 ? arguments[2] : undefined);
-  var iteratorMethod = getIteratorMethod(O);
-  var index = 0;
-  var length, result, step, iterator, next, value;
-  // if the target is not iterable or it's an array with the default iterator - use a simple case
-  if (iteratorMethod && !(this === $Array && isArrayIteratorMethod(iteratorMethod))) {
-    iterator = getIterator(O, iteratorMethod);
-    next = iterator.next;
-    result = IS_CONSTRUCTOR ? new this() : [];
-    for (;!(step = call(next, iterator)).done; index++) {
-      value = mapping ? callWithSafeIterationClosing(iterator, mapfn, [step.value, index], true) : step.value;
-      createProperty(result, index, value);
-    }
-  } else {
-    length = lengthOfArrayLike(O);
-    result = IS_CONSTRUCTOR ? new this(length) : $Array(length);
-    for (;length > index; index++) {
-      value = mapping ? mapfn(O[index], index) : O[index];
-      createProperty(result, index, value);
-    }
-  }
-  result.length = index;
-  return result;
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/call-with-safe-iteration-closing.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/core-js/internals/call-with-safe-iteration-closing.js ***!
-  \****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js/internals/an-object.js");
-var iteratorClose = __webpack_require__(/*! ../internals/iterator-close */ "./node_modules/core-js/internals/iterator-close.js");
-
-// call something on iterator step with safe closing on error
-module.exports = function (iterator, fn, value, ENTRIES) {
-  try {
-    return ENTRIES ? fn(anObject(value)[0], value[1]) : fn(value);
-  } catch (error) {
-    iteratorClose(iterator, 'throw', error);
-  }
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/get-iterator-method.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/core-js/internals/get-iterator-method.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var classof = __webpack_require__(/*! ../internals/classof */ "./node_modules/core-js/internals/classof.js");
-var getMethod = __webpack_require__(/*! ../internals/get-method */ "./node_modules/core-js/internals/get-method.js");
-var isNullOrUndefined = __webpack_require__(/*! ../internals/is-null-or-undefined */ "./node_modules/core-js/internals/is-null-or-undefined.js");
-var Iterators = __webpack_require__(/*! ../internals/iterators */ "./node_modules/core-js/internals/iterators.js");
-var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
-
-var ITERATOR = wellKnownSymbol('iterator');
-
-module.exports = function (it) {
-  if (!isNullOrUndefined(it)) return getMethod(it, ITERATOR)
-    || getMethod(it, '@@iterator')
-    || Iterators[classof(it)];
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/get-iterator.js":
-/*!********************************************************!*\
-  !*** ./node_modules/core-js/internals/get-iterator.js ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var call = __webpack_require__(/*! ../internals/function-call */ "./node_modules/core-js/internals/function-call.js");
-var aCallable = __webpack_require__(/*! ../internals/a-callable */ "./node_modules/core-js/internals/a-callable.js");
-var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js/internals/an-object.js");
-var tryToString = __webpack_require__(/*! ../internals/try-to-string */ "./node_modules/core-js/internals/try-to-string.js");
-var getIteratorMethod = __webpack_require__(/*! ../internals/get-iterator-method */ "./node_modules/core-js/internals/get-iterator-method.js");
-
-var $TypeError = TypeError;
-
-module.exports = function (argument, usingIterator) {
-  var iteratorMethod = arguments.length < 2 ? getIteratorMethod(argument) : usingIterator;
-  if (aCallable(iteratorMethod)) return anObject(call(iteratorMethod, argument));
-  throw $TypeError(tryToString(argument) + ' is not iterable');
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/is-array-iterator-method.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/core-js/internals/is-array-iterator-method.js ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
-var Iterators = __webpack_require__(/*! ../internals/iterators */ "./node_modules/core-js/internals/iterators.js");
-
-var ITERATOR = wellKnownSymbol('iterator');
-var ArrayPrototype = Array.prototype;
-
-// check on default Array iterator
-module.exports = function (it) {
-  return it !== undefined && (Iterators.Array === it || ArrayPrototype[ITERATOR] === it);
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/iterator-close.js":
+/***/ "./node_modules/core-js/modules/es.string.repeat.js":
 /*!**********************************************************!*\
-  !*** ./node_modules/core-js/internals/iterator-close.js ***!
+  !*** ./node_modules/core-js/modules/es.string.repeat.js ***!
   \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var call = __webpack_require__(/*! ../internals/function-call */ "./node_modules/core-js/internals/function-call.js");
-var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js/internals/an-object.js");
-var getMethod = __webpack_require__(/*! ../internals/get-method */ "./node_modules/core-js/internals/get-method.js");
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var repeat = __webpack_require__(/*! ../internals/string-repeat */ "./node_modules/core-js/internals/string-repeat.js");
 
-module.exports = function (iterator, kind, value) {
-  var innerResult, innerError;
-  anObject(iterator);
-  try {
-    innerResult = getMethod(iterator, 'return');
-    if (!innerResult) {
-      if (kind === 'throw') throw value;
-      return value;
-    }
-    innerResult = call(innerResult, iterator);
-  } catch (error) {
-    innerError = true;
-    innerResult = error;
-  }
-  if (kind === 'throw') throw value;
-  if (innerError) throw innerResult;
-  anObject(innerResult);
-  return value;
-};
+// `String.prototype.repeat` method
+// https://tc39.es/ecma262/#sec-string.prototype.repeat
+$({ target: 'String', proto: true }, {
+  repeat: repeat
+});
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=style&index=0&id=c89cf072&lang=scss&":
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--12-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=style&index=0&id=c89cf072&lang=scss& ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/payments/payment-charge/Charge.vue?vue&type=style&index=0&id=262a5e49&lang=scss&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--12-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/payments/payment-charge/Charge.vue?vue&type=style&index=0&id=262a5e49&lang=scss& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -914,15 +1207,15 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=style&index=0&id=c89cf072&lang=scss&":
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--12-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=style&index=0&id=c89cf072&lang=scss& ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/payments/payment-charge/Charge.vue?vue&type=style&index=0&id=262a5e49&lang=scss&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--12-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/payments/payment-charge/Charge.vue?vue&type=style&index=0&id=262a5e49&lang=scss& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--12-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AppointmentAdd.vue?vue&type=style&index=0&id=c89cf072&lang=scss& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=style&index=0&id=c89cf072&lang=scss&");
+var content = __webpack_require__(/*! !../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--12-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Charge.vue?vue&type=style&index=0&id=262a5e49&lang=scss& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/payments/payment-charge/Charge.vue?vue&type=style&index=0&id=262a5e49&lang=scss&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -944,10 +1237,184 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=template&id=c89cf072&":
-/*!***********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=template&id=c89cf072& ***!
-  \***********************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/@core/layouts/components/Logo.vue?vue&type=template&id=46f77075&":
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/@core/layouts/components/Logo.vue?vue&type=template&id=46f77075& ***!
+  \*************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "svg",
+    {
+      attrs: {
+        viewBox: "0 0 139 95",
+        version: "1.1",
+        xmlns: "http://www.w3.org/2000/svg",
+        "xmlns:xlink": "http://www.w3.org/1999/xlink",
+        height: "24",
+      },
+    },
+    [
+      _c(
+        "defs",
+        [
+          _c(
+            "linearGradient",
+            {
+              attrs: {
+                id: "linearGradient-1",
+                x1: "100%",
+                y1: "10.5120544%",
+                x2: "50%",
+                y2: "89.4879456%",
+              },
+            },
+            [
+              _c("stop", { attrs: { "stop-color": "#000000", offset: "0%" } }),
+              _vm._v(" "),
+              _c("stop", {
+                attrs: { "stop-color": "#FFFFFF", offset: "100%" },
+              }),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "linearGradient",
+            {
+              attrs: {
+                id: "linearGradient-2",
+                x1: "64.0437835%",
+                y1: "46.3276743%",
+                x2: "37.373316%",
+                y2: "100%",
+              },
+            },
+            [
+              _c("stop", {
+                attrs: {
+                  "stop-color": "#EEEEEE",
+                  "stop-opacity": "0",
+                  offset: "0%",
+                },
+              }),
+              _vm._v(" "),
+              _c("stop", {
+                attrs: { "stop-color": "#FFFFFF", offset: "100%" },
+              }),
+            ],
+            1
+          ),
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "g",
+        {
+          attrs: {
+            id: "Page-1",
+            stroke: "none",
+            "stroke-width": "1",
+            fill: "none",
+            "fill-rule": "evenodd",
+          },
+        },
+        [
+          _c(
+            "g",
+            {
+              attrs: {
+                id: "Artboard",
+                transform: "translate(-400.000000, -178.000000)",
+              },
+            },
+            [
+              _c(
+                "g",
+                {
+                  attrs: {
+                    id: "Group",
+                    transform: "translate(400.000000, 178.000000)",
+                  },
+                },
+                [
+                  _c("path", {
+                    staticClass: "text-primary",
+                    staticStyle: { fill: "currentColor" },
+                    attrs: {
+                      id: "Path",
+                      d: "M-5.68434189e-14,2.84217094e-14 L39.1816085,2.84217094e-14 L69.3453773,32.2519224 L101.428699,2.84217094e-14 L138.784583,2.84217094e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L6.71554594,44.4188507 C2.46876683,39.9813776 0.345377275,35.1089553 0.345377275,29.8015838 C0.345377275,24.4942122 0.230251516,14.560351 -5.68434189e-14,2.84217094e-14 Z",
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("path", {
+                    attrs: {
+                      id: "Path1",
+                      d: "M69.3453773,32.2519224 L101.428699,1.42108547e-14 L138.784583,1.42108547e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L32.8435758,70.5039241 L69.3453773,32.2519224 Z",
+                      fill: "url(#linearGradient-1)",
+                      opacity: "0.2",
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("polygon", {
+                    attrs: {
+                      id: "Path-2",
+                      fill: "#000000",
+                      opacity: "0.049999997",
+                      points:
+                        "69.3922914 32.4202615 32.8435758 70.5039241 54.0490008 16.1851325",
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("polygon", {
+                    attrs: {
+                      id: "Path-21",
+                      fill: "#000000",
+                      opacity: "0.099999994",
+                      points:
+                        "69.3922914 32.4202615 32.8435758 70.5039241 58.3683556 20.7402338",
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("polygon", {
+                    attrs: {
+                      id: "Path-3",
+                      fill: "url(#linearGradient-2)",
+                      opacity: "0.099999994",
+                      points:
+                        "101.428699 0 83.0667527 94.1480575 130.378721 47.0740288",
+                    },
+                  }),
+                ]
+              ),
+            ]
+          ),
+        ]
+      ),
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/payments/payment-charge/Charge.vue?vue&type=template&id=262a5e49&":
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/payments/payment-charge/Charge.vue?vue&type=template&id=262a5e49& ***!
+  \*************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -998,480 +1465,1296 @@ var render = function () {
     },
     [
       _vm._v(" "),
-      _c("b-card", { staticClass: "mb-0", attrs: { "no-body": "" } }, [
-        _c(
-          "div",
-          { staticClass: "m-2" },
-          [
-            _c(
-              "b-form",
-              [
-                _c(
-                  "b-row",
-                  [
-                    _c(
-                      "b-col",
-                      { attrs: { cols: "12", md: "6", lg: "4" } },
-                      [
-                        _c(
-                          "b-form-group",
-                          {
-                            attrs: {
-                              label: _vm.$t("branch_office"),
-                              "label-for": "branch_office_id",
-                            },
-                          },
-                          [
-                            _c("v-select", {
-                              attrs: {
-                                options: _vm.branchs,
-                                reduce: function (option) {
-                                  return option.id
-                                },
-                                label: "name",
-                                "input-id": "branch_office_id",
-                                clearable: false,
-                                searchable: false,
-                              },
-                              model: {
-                                value: _vm.appointment.branch_office_id,
-                                callback: function ($$v) {
-                                  _vm.$set(
-                                    _vm.appointment,
-                                    "branch_office_id",
-                                    $$v
-                                  )
-                                },
-                                expression: "appointment.branch_office_id",
-                              },
-                            }),
-                          ],
-                          1
-                        ),
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "b-col",
-                      { attrs: { cols: "12", md: "6", lg: "4" } },
-                      [
-                        _c(
-                          "b-form-group",
-                          {
-                            attrs: {
-                              label: _vm.$t("appointments.professional"),
-                              "label-for": "add-professional",
-                            },
-                          },
-                          [
-                            _c("v-select", {
-                              attrs: {
-                                options: _vm.professionals,
-                                label: "name",
-                                reduce: function (option) {
-                                  return option.id
-                                },
-                                "input-id": "add-professional",
-                                clearable: false,
-                                searchable: true,
-                              },
-                              model: {
-                                value: _vm.appointment.user_id,
-                                callback: function ($$v) {
-                                  _vm.$set(_vm.appointment, "user_id", $$v)
-                                },
-                                expression: "appointment.user_id",
-                              },
-                            }),
-                          ],
-                          1
-                        ),
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "b-col",
-                      { attrs: { cols: "12", md: "6", lg: "4" } },
-                      [
-                        _c(
-                          "b-form-group",
-                          {
-                            attrs: {
-                              label: _vm.$t("appointments.date"),
-                              "label-for": "birthday",
-                              description: !_vm.isAvailable
-                                ? _vm.$t("appointments.not_available_help")
-                                : "",
-                            },
-                          },
-                          [
-                            _c("flat-pickr", {
-                              staticClass: "form-control",
-                              class: !_vm.isAvailable ? "is-invalid" : "",
-                              attrs: {
-                                config: {
-                                  minDate: "today",
-                                  enableTime: true,
-                                  time_24hr: true,
-                                  dateFormat: "d/m/Y H:i",
-                                  minTime: _vm.slotMinTime,
-                                  maxTime: _vm.slotMaxTime,
-                                  minuteIncrement: 15,
-                                },
-                                placeholder: "DD/MM/YYYY H:I:S",
-                              },
-                              on: {
-                                "on-change": _vm.onChange,
-                                "on-ValueUpdate": _vm.onChange,
-                              },
-                              model: {
-                                value: _vm.appointment.date,
-                                callback: function ($$v) {
-                                  _vm.$set(_vm.appointment, "date", $$v)
-                                },
-                                expression: "appointment.date",
-                              },
-                            }),
-                          ],
-                          1
-                        ),
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "b-col",
-                      { attrs: { cols: "12", md: "6", lg: "4" } },
-                      [
-                        _c(
-                          "b-form-group",
-                          {
-                            attrs: {
-                              label: _vm.$t("appointments.state"),
-                              "label-for": "calendar",
-                            },
-                          },
-                          [
-                            _c("v-select", {
-                              attrs: {
-                                options: _vm.calendarOptions,
-                                label: "label",
-                                reduce: function (calendar) {
-                                  return calendar.label
-                                },
-                                "input-id": "calendar",
-                                clearable: false,
-                                searchable: false,
-                              },
-                              scopedSlots: _vm._u([
+      _c(
+        "section",
+        { staticClass: "invoice-preview-wrapper" },
+        [
+          !_vm.isEmpty(_vm.budget)
+            ? _c(
+                "b-row",
+                { staticClass: "invoice-preview" },
+                [
+                  _c(
+                    "b-col",
+                    { attrs: { cols: "12", xl: "9", md: "8" } },
+                    [
+                      _c(
+                        "b-card",
+                        {
+                          staticClass: "invoice-preview-card",
+                          attrs: { "no-body": "" },
+                        },
+                        [
+                          _c(
+                            "b-card-body",
+                            { staticClass: "invoice-padding pb-0" },
+                            [
+                              _c(
+                                "div",
                                 {
-                                  key: "option",
-                                  fn: function (ref) {
-                                    var color = ref.color
-                                    var label = ref.label
-                                    return [
-                                      _c("div", {
-                                        staticClass:
-                                          "rounded-circle d-inline-block mr-50",
-                                        class: "bg-" + color,
-                                        staticStyle: {
-                                          height: "10px",
-                                          width: "10px",
+                                  staticClass:
+                                    "d-flex justify-content-between flex-md-row flex-column invoice-spacing mt-0",
+                                },
+                                [
+                                  _c("div", [
+                                    _c("div", { staticClass: "logo-wrapper" }, [
+                                      _c(
+                                        "h3",
+                                        {
+                                          staticClass:
+                                            "text-primary invoice-logo",
                                         },
-                                      }),
-                                      _vm._v(" "),
-                                      _c("span", [
-                                        _vm._v(
-                                          _vm._s(
-                                            _vm.$t(
-                                              "appointments.status." + label
-                                            )
-                                          )
-                                        ),
-                                      ]),
-                                    ]
-                                  },
-                                },
-                                {
-                                  key: "selected-option",
-                                  fn: function (ref) {
-                                    var color = ref.color
-                                    var label = ref.label
-                                    return [
-                                      _c("div", {
-                                        staticClass:
-                                          "rounded-circle d-inline-block mr-50",
-                                        class: "bg-" + color,
-                                        staticStyle: {
-                                          height: "10px",
-                                          width: "10px",
-                                        },
-                                      }),
-                                      _vm._v(" "),
-                                      _c("span", [
-                                        _vm._v(
-                                          _vm._s(
-                                            _vm.$t(
-                                              "appointments.status." + label
-                                            )
-                                          )
-                                        ),
-                                      ]),
-                                    ]
-                                  },
-                                },
-                              ]),
-                              model: {
-                                value: _vm.appointment.state,
-                                callback: function ($$v) {
-                                  _vm.$set(_vm.appointment, "state", $$v)
-                                },
-                                expression: "appointment.state",
-                              },
-                            }),
-                          ],
-                          1
-                        ),
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "b-col",
-                      { attrs: { cols: "12", md: "8", lg: "8" } },
-                      [
-                        _c(
-                          "b-form-group",
-                          {
-                            attrs: {
-                              label: _vm.$t("patients.patient"),
-                              "label-for": "add-patient",
-                            },
-                          },
-                          [
-                            _c(
-                              "b-input-group",
-                              { staticClass: "input-group-merge" },
-                              [
-                                _c(
-                                  "b-input-group-prepend",
-                                  { attrs: { "is-text": "" } },
-                                  [
-                                    _c("feather-icon", {
-                                      attrs: { icon: "SearchIcon" },
-                                    }),
-                                  ],
-                                  1
-                                ),
-                                _vm._v(" "),
-                                _c("b-form-input", {
-                                  attrs: {
-                                    readonly: "",
-                                    placeholder: _vm.$t(
-                                      "patients.search_options"
-                                    ),
-                                  },
-                                  on: {
-                                    click: function ($event) {
-                                      _vm.activeSearchPatient = true
-                                    },
-                                  },
-                                  model: {
-                                    value: _vm.selectedPatient.full_name,
-                                    callback: function ($$v) {
-                                      _vm.$set(
-                                        _vm.selectedPatient,
-                                        "full_name",
-                                        $$v
-                                      )
-                                    },
-                                    expression: "selectedPatient.full_name",
-                                  },
-                                }),
-                                _vm._v(" "),
-                                _c(
-                                  "b-input-group-append",
-                                  [
+                                        [
+                                          _vm._v(
+                                            "\n                                        " +
+                                              _vm._s(
+                                                _vm.findSetting("app_name")
+                                              ) +
+                                              "\n                                    "
+                                          ),
+                                        ]
+                                      ),
+                                    ]),
+                                    _vm._v(" "),
                                     _c(
-                                      "b-button",
-                                      {
-                                        directives: [
-                                          {
-                                            name: "b-toggle",
-                                            rawName:
-                                              "v-b-toggle.sidebar-add-new-patient",
-                                            modifiers: {
-                                              "sidebar-add-new-patient": true,
-                                            },
-                                          },
-                                        ],
-                                        attrs: { variant: "primary" },
-                                      },
+                                      "p",
+                                      { staticClass: "card-text mb-25" },
                                       [
-                                        _c("feather-icon", {
-                                          attrs: { icon: "PlusIcon" },
-                                        }),
-                                      ],
-                                      1
+                                        _vm._v(
+                                          "\n                                    " +
+                                            _vm._s(_vm.budget.branch.name) +
+                                            "\n                                "
+                                        ),
+                                      ]
                                     ),
-                                  ],
-                                  1
-                                ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "p",
+                                      { staticClass: "card-text mb-25" },
+                                      [
+                                        _vm._v(
+                                          "\n                                    " +
+                                            _vm._s(_vm.budget.branch.address) +
+                                            "\n                                "
+                                        ),
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("p", { staticClass: "card-text mb-0" }, [
+                                      _vm._v(
+                                        "\n                                    " +
+                                          _vm._s(_vm.budget.branch.phone) +
+                                          "\n                                "
+                                      ),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("p", { staticClass: "card-text mb-0" }, [
+                                      _vm._v(
+                                        "\n                                    " +
+                                          _vm._s(_vm.budget.branch.email) +
+                                          "\n                                "
+                                      ),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "mt-md-0 mt-2" }, [
+                                    _c("h4", { staticClass: "invoice-title" }, [
+                                      _vm._v(
+                                        "\n                                    " +
+                                          _vm._s(_vm.$t("budgets.folio")) +
+                                          "\n                                    "
+                                      ),
+                                      _c(
+                                        "span",
+                                        { staticClass: "invoice-number" },
+                                        [_vm._v(_vm._s(_vm.budget.label))]
+                                      ),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "invoice-date-wrapper" },
+                                      [
+                                        _c(
+                                          "p",
+                                          {
+                                            staticClass:
+                                              "invoice-date-title text-capitalize",
+                                          },
+                                          [
+                                            _c("strong", [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.$t("budgets.date_issued")
+                                                )
+                                              ),
+                                            ]),
+                                            _vm._v(
+                                              "\n                                        " +
+                                                _vm._s(
+                                                  _vm.dateTimeFormat(
+                                                    _vm.budget.created_at
+                                                  )
+                                                ) +
+                                                "\n                                    "
+                                            ),
+                                          ]
+                                        ),
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "invoice-date-wrapper" },
+                                      [
+                                        _c(
+                                          "p",
+                                          { staticClass: "invoice-date-title" },
+                                          [
+                                            _c("strong", [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.$t("budgets.transmitter")
+                                                )
+                                              ),
+                                            ]),
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(_vm.budget.user.name) +
+                                                "\n                                    "
+                                            ),
+                                          ]
+                                        ),
+                                      ]
+                                    ),
+                                  ]),
+                                ]
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("hr", { staticClass: "invoice-spacing" }),
+                          _vm._v(" "),
+                          _c(
+                            "b-card-body",
+                            { staticClass: "invoice-padding pt-0" },
+                            [
+                              _c(
+                                "b-row",
+                                { staticClass: "invoice-spacing" },
+                                [
+                                  _c(
+                                    "b-col",
+                                    {
+                                      staticClass: "p-1",
+                                      attrs: { cols: "12", xl: "6" },
+                                    },
+                                    [
+                                      _c("h6", { staticClass: "mb-2" }, [
+                                        _c("strong", [
+                                          _vm._v(
+                                            _vm._s(_vm.$t("budgets.patient"))
+                                          ),
+                                        ]),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("h6", { staticClass: "mb-25" }, [
+                                        _vm._v(
+                                          _vm._s(_vm.budget.patient.full_name)
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "p",
+                                        { staticClass: "card-text mb-25" },
+                                        [
+                                          _c("strong", [
+                                            _vm._v(
+                                              _vm._s(
+                                                _vm.$t("patients.table.address")
+                                              ) + ":"
+                                            ),
+                                          ]),
+                                          _vm._v(
+                                            " " +
+                                              _vm._s(
+                                                _vm.budget.patient.address
+                                              ) +
+                                              "\n                                "
+                                          ),
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "p",
+                                        { staticClass: "card-text mb-25" },
+                                        [
+                                          _c("strong", [
+                                            _vm._v(
+                                              _vm._s(
+                                                _vm.$t("patients.table.phone")
+                                              ) + ":"
+                                            ),
+                                          ]),
+                                          _vm._v(
+                                            " " +
+                                              _vm._s(_vm.budget.patient.phone) +
+                                              ",\n                                    " +
+                                              _vm._s(
+                                                _vm.budget.patient.cellphone
+                                              ) +
+                                              "\n                                "
+                                          ),
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "p",
+                                        { staticClass: "card-text mb-25" },
+                                        [
+                                          _c("strong", [
+                                            _vm._v(
+                                              _vm._s(
+                                                _vm.$t("patients.table.email")
+                                              ) + ":"
+                                            ),
+                                          ]),
+                                          _vm._v(
+                                            " " +
+                                              _vm._s(_vm.budget.patient.email) +
+                                              "\n                                "
+                                          ),
+                                        ]
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "b-col",
+                                    {
+                                      staticClass:
+                                        "p-1 mt-xl-0 mt-2 d-flex justify-content-xl-end",
+                                      attrs: { xl: "6", cols: "12" },
+                                    },
+                                    [
+                                      _c("div", [
+                                        _c("h6", { staticClass: "mb-2" }, [
+                                          _vm._v(
+                                            _vm._s(_vm.$t("payments.details"))
+                                          ),
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("table", [
+                                          _c("tbody", [
+                                            _c("tr", [
+                                              _c(
+                                                "td",
+                                                { staticClass: "pr-1" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      _vm.$t("budgets.total")
+                                                    )
+                                                  ),
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c("td", [
+                                                _c(
+                                                  "span",
+                                                  {
+                                                    staticClass:
+                                                      "font-weight-bold",
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      _vm._s(
+                                                        _vm.formatPrice(
+                                                          _vm.budget.total_cost
+                                                        )
+                                                      )
+                                                    ),
+                                                  ]
+                                                ),
+                                              ]),
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("tr", [
+                                              _c(
+                                                "td",
+                                                { staticClass: "pr-1" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      _vm.$t(
+                                                        "payments.total_due"
+                                                      )
+                                                    )
+                                                  ),
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c("td", [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    _vm.formatPrice(
+                                                      _vm.budget.total_debt
+                                                    )
+                                                  )
+                                                ),
+                                              ]),
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("tr", [
+                                              _c(
+                                                "td",
+                                                { staticClass: "pr-1" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      _vm.$t(
+                                                        "payments.total_subscriber"
+                                                      )
+                                                    )
+                                                  ),
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c("td", [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    _vm.formatPrice(
+                                                      _vm.budget.total_paid
+                                                    )
+                                                  )
+                                                ),
+                                              ]),
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("tr", [
+                                              _c(
+                                                "td",
+                                                { staticClass: "pr-1" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      _vm.$t(
+                                                        "payments.total_actions"
+                                                      )
+                                                    )
+                                                  ),
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c("td", [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    _vm.formatPrice(
+                                                      _vm.totalClinicalActions +
+                                                        _vm.totalLaboratoryActions
+                                                    )
+                                                  ) +
+                                                    "\n                                                "
+                                                ),
+                                              ]),
+                                            ]),
+                                          ]),
+                                        ]),
+                                      ]),
+                                    ]
+                                  ),
+                                ],
+                                1
+                              ),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-card-body",
+                            { staticClass: "invoice-padding pt-0" },
+                            [
+                              _c(
+                                "b-row",
+                                { staticClass: "invoice-spacing" },
+                                [
+                                  _c(
+                                    "b-col",
+                                    {
+                                      staticClass: "p-1",
+                                      attrs: { cols: "12", xl: "4" },
+                                    },
+                                    [
+                                      _c(
+                                        "label",
+                                        {
+                                          staticClass:
+                                            "mb-2 fw-bolder select-size-sm",
+                                        },
+                                        [
+                                          _vm._v(
+                                            _vm._s(_vm.$t("payments.method"))
+                                          ),
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("v-select", {
+                                        attrs: {
+                                          options: _vm.paymentTypes,
+                                          label: "label",
+                                          disabled: _vm.hasPreviousPayments,
+                                          clearable: false,
+                                          searchable: false,
+                                          selectable: function (option) {
+                                            return option.disabled
+                                          },
+                                          placeholder:
+                                            _vm.$t("select_an_option"),
+                                        },
+                                        on: { input: _vm.selectPaymentTypes },
+                                        model: {
+                                          value: _vm.paymentType,
+                                          callback: function ($$v) {
+                                            _vm.paymentType = $$v
+                                          },
+                                          expression: "paymentType",
+                                        },
+                                      }),
+                                    ],
+                                    1
+                                  ),
+                                ],
+                                1
+                              ),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("b-table", {
+                            ref: "tableItems",
+                            staticClass: "text-small small table-small",
+                            attrs: {
+                              id: "table-items",
+                              stacked: "sm",
+                              items: _vm.budget.budget_actions,
+                              fields: _vm.columns,
+                              small: "",
+                            },
+                            scopedSlots: _vm._u(
+                              [
+                                {
+                                  key: "cell(action)",
+                                  fn: function (data) {
+                                    return [
+                                      _c(
+                                        "b-card-text",
+                                        {
+                                          staticClass: "font-weight-bold mb-25",
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                                " +
+                                              _vm._s(data.item.action_name) +
+                                              "\n                            "
+                                          ),
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "b-card-text",
+                                        { staticClass: "text-wrap" },
+                                        [
+                                          _vm._v(
+                                            "\n                                " +
+                                              _vm._s(
+                                                data.item.action_group_name
+                                              ) +
+                                              ", "
+                                          ),
+                                          _c("strong", [
+                                            _vm._v(
+                                              _vm._s(
+                                                _vm.$t("budgets.action_area")
+                                              ) +
+                                                "\n                                    " +
+                                                _vm._s(data.item.area)
+                                            ),
+                                          ]),
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "span",
+                                        {
+                                          staticClass:
+                                            "badge badge-light-primary float-left text-wrap",
+                                        },
+                                        [
+                                          _vm._v(
+                                            _vm._s(
+                                              data.item.action_type ===
+                                                "clinical"
+                                                ? _vm.$t(
+                                                    "budgets.clinical_actions"
+                                                  )
+                                                : _vm.$t(
+                                                    "budgets.laboratory_actions"
+                                                  )
+                                            )
+                                          ),
+                                        ]
+                                      ),
+                                    ]
+                                  },
+                                },
+                                {
+                                  key: "cell(price)",
+                                  fn: function (data) {
+                                    return [
+                                      _vm._v(
+                                        "\n                            " +
+                                          _vm._s(
+                                            _vm.formatPrice(data.item.price)
+                                          ) +
+                                          "\n                        "
+                                      ),
+                                    ]
+                                  },
+                                },
+                                {
+                                  key: "cell(subtotal)",
+                                  fn: function (data) {
+                                    return [
+                                      data.item.discount > 0
+                                        ? _c("span", [
+                                            _vm._v(
+                                              "Desc. " +
+                                                _vm._s(
+                                                  _vm.formatPrice(
+                                                    data.item.discount
+                                                  )
+                                                )
+                                            ),
+                                            _c("br"),
+                                          ])
+                                        : _vm._e(),
+                                      _vm._v(
+                                        "\n                            " +
+                                          _vm._s(
+                                            _vm.formatPrice(data.item.subtotal)
+                                          ) +
+                                          "\n                        "
+                                      ),
+                                    ]
+                                  },
+                                },
+                                {
+                                  key: "cell(debt)",
+                                  fn: function (data) {
+                                    return [
+                                      _c(
+                                        "span",
+                                        {
+                                          class:
+                                            "" +
+                                            (data.item.debt > 0
+                                              ? "text-danger"
+                                              : "text-success"),
+                                        },
+                                        [
+                                          _vm._v(
+                                            _vm._s(
+                                              _vm.formatPrice(data.item.debt)
+                                            )
+                                          ),
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      data.item.paid > 0
+                                        ? _c(
+                                            "b-card-text",
+                                            {
+                                              staticClass:
+                                                "text-nowrap text-success",
+                                            },
+                                            [
+                                              _c("strong", [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    _vm.$t("charges.table_paid")
+                                                  ) + ":"
+                                                ),
+                                              ]),
+                                              _vm._v(
+                                                " " +
+                                                  _vm._s(
+                                                    _vm.formatPrice(
+                                                      data.item.paid
+                                                    )
+                                                  ) +
+                                                  "\n                            "
+                                              ),
+                                            ]
+                                          )
+                                        : _vm._e(),
+                                    ]
+                                  },
+                                },
+                                {
+                                  key: "cell(options)",
+                                  fn: function (data) {
+                                    return [
+                                      _c(
+                                        "b-form-group",
+                                        [
+                                          _c("b-form-checkbox", {
+                                            attrs: {
+                                              size: "xl",
+                                              disabled:
+                                                !_vm.allowModifications ||
+                                                data.item.is_disabled,
+                                            },
+                                            on: {
+                                              input: _vm.updateTable,
+                                              change: data.toggleDetails,
+                                            },
+                                            model: {
+                                              value: data.item.is_selected,
+                                              callback: function ($$v) {
+                                                _vm.$set(
+                                                  data.item,
+                                                  "is_selected",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "data.item.is_selected",
+                                            },
+                                          }),
+                                        ],
+                                        1
+                                      ),
+                                    ]
+                                  },
+                                },
+                                {
+                                  key: "row-details",
+                                  fn: function (data) {
+                                    return [
+                                      data.item.action_type === "clinical"
+                                        ? _c(
+                                            "b-row",
+                                            { staticClass: "invoice-spacing" },
+                                            [
+                                              _c(
+                                                "b-col",
+                                                {
+                                                  staticClass: "p-1",
+                                                  attrs: {
+                                                    cols: "12",
+                                                    xl: "4",
+                                                  },
+                                                },
+                                                [
+                                                  _c(
+                                                    "label",
+                                                    {
+                                                      staticClass:
+                                                        "mb-2 fw-bolder",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm.$t(
+                                                            "charges.professional"
+                                                          )
+                                                        )
+                                                      ),
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c("v-select", {
+                                                    directives: [
+                                                      {
+                                                        name: "show",
+                                                        rawName: "v-show",
+                                                        value:
+                                                          data.item
+                                                            .is_selected ||
+                                                          data.item
+                                                            .has_previous_professional,
+                                                        expression:
+                                                          "data.item.is_selected || data.item.has_previous_professional",
+                                                      },
+                                                    ],
+                                                    staticClass:
+                                                      "select-size-sm",
+                                                    attrs: {
+                                                      label: "name",
+                                                      options:
+                                                        _vm.professionals,
+                                                      clearable: false,
+                                                      searchable: true,
+                                                      placeholder: _vm.$t(
+                                                        "appointments.professional_placeholder"
+                                                      ),
+                                                    },
+                                                    model: {
+                                                      value:
+                                                        data.item.professional,
+                                                      callback: function ($$v) {
+                                                        _vm.$set(
+                                                          data.item,
+                                                          "professional",
+                                                          $$v
+                                                        )
+                                                      },
+                                                      expression:
+                                                        "data.item.professional",
+                                                    },
+                                                  }),
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              !_vm.budget.has_partials
+                                                ? _c(
+                                                    "b-col",
+                                                    {
+                                                      staticClass: "p-1",
+                                                      attrs: {
+                                                        cols: "12",
+                                                        xl: "4",
+                                                      },
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "label",
+                                                        {
+                                                          staticClass:
+                                                            "mb-2 fw-bolder",
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            _vm._s(
+                                                              _vm.$t(
+                                                                "charges.assigned_amount"
+                                                              )
+                                                            )
+                                                          ),
+                                                        ]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c("b-form-input", {
+                                                        staticClass:
+                                                          "d-inline-block mr-1",
+                                                        attrs: {
+                                                          size: "sm",
+                                                          disabled: "",
+                                                          value:
+                                                            "" +
+                                                            (data.item
+                                                              .assigned_income
+                                                              ? _vm.formatPrice(
+                                                                  data.item
+                                                                    .assigned_income
+                                                                )
+                                                              : 0),
+                                                        },
+                                                      }),
+                                                    ],
+                                                    1
+                                                  )
+                                                : _vm._e(),
+                                            ],
+                                            1
+                                          )
+                                        : _vm._e(),
+                                    ]
+                                  },
+                                },
                               ],
-                              1
+                              null,
+                              false,
+                              1776126650
                             ),
-                          ],
-                          1
-                        ),
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "b-col",
-                      { attrs: { cols: "12", md: "4", lg: "4" } },
-                      [
-                        _c(
-                          "b-form-group",
-                          {
-                            attrs: {
-                              label: _vm.$t("appointments.duration"),
-                              "label-for": "event-duration",
-                            },
-                          },
-                          [
-                            _c("b-form-input", {
-                              attrs: {
-                                "input-id": "event-duration",
-                                type: "number",
-                                placeholder: _vm.$t(
-                                  "appointments.duration_placeholder"
-                                ),
-                              },
-                              model: {
-                                value: _vm.appointment.duration,
-                                callback: function ($$v) {
-                                  _vm.$set(_vm.appointment, "duration", $$v)
-                                },
-                                expression: "appointment.duration",
-                              },
-                            }),
-                          ],
-                          1
-                        ),
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "b-col",
-                      { attrs: { cols: "12", md: "8", lg: "8" } },
-                      [
-                        _c(
-                          "b-form-group",
-                          {
-                            attrs: {
-                              label: _vm.$t("appointments.observations"),
-                              "label-for": "event-observation",
-                            },
-                          },
-                          [
-                            _c("b-form-textarea", {
-                              attrs: {
-                                id: "event-observation",
-                                placeholder: _vm.$t(
-                                  "appointments.observations_placeholder"
-                                ),
-                              },
-                              model: {
-                                value: _vm.appointment.intern_observation,
-                                callback: function ($$v) {
-                                  _vm.$set(
-                                    _vm.appointment,
-                                    "intern_observation",
-                                    $$v
-                                  )
-                                },
-                                expression: "appointment.intern_observation",
-                              },
-                            }),
-                          ],
-                          1
-                        ),
-                      ],
-                      1
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _vm.canAccess("appointments.store") && _vm.isAvailable
-                  ? _c(
-                      "b-button",
-                      {
-                        staticClass: "mb-1 mb-sm-0 mr-0 mr-sm-1",
-                        attrs: { variant: "primary" },
-                        on: { click: _vm.store },
-                      },
-                      [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(_vm.$t("save")) +
-                            "\n                "
-                        ),
-                      ]
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _c(
-                  "b-button",
-                  {
-                    staticClass: "mb-1 mb-sm-0 mr-0 mr-sm-1",
-                    attrs: { variant: "outline-secondary" },
-                    on: {
-                      click: function ($event) {
-                        return _vm.$router.push({ name: "appointment" })
-                      },
+                          }),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "b-col",
+                    {
+                      staticClass: "invoice-actions",
+                      attrs: { cols: "12", md: "4", xl: "3" },
                     },
-                  },
-                  [
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.$t("back")) +
-                        "\n                "
-                    ),
-                  ]
-                ),
-              ],
-              1
-            ),
-          ],
-          1
-        ),
-      ]),
-      _vm._v(" "),
-      _c("search-patient", {
-        attrs: { active: _vm.activeSearchPatient },
-        on: {
-          selected: _vm.selectPatient,
-          close: function ($event) {
-            _vm.activeSearchPatient = false
-          },
-        },
-      }),
-      _vm._v(" "),
-      _c("sidebar-add-new-patient", {
-        attrs: {
-          active: _vm.hideSidebar,
-          data: _vm.patient,
-          isValidCellPhone: _vm.isValidCellPhone,
-        },
-        on: { store: _vm.storePatient },
-      }),
-    ],
-    1
+                    [
+                      _c(
+                        "b-card",
+                        [
+                          _vm.budget.total_debt > 0 &&
+                          _vm.paymentType !== "" &&
+                          !_vm.budget.has_partials
+                            ? _c(
+                                "b-row",
+                                { staticClass: "invoice-spacing" },
+                                [
+                                  _c(
+                                    "b-col",
+                                    { attrs: { cols: "12 mb-75" } },
+                                    [
+                                      _c("label", [
+                                        _vm._v(
+                                          _vm._s(
+                                            _vm.paymentType.value == 3
+                                              ? _vm.$t("charges.amount_defer")
+                                              : _vm.$t("charges.amount_pay")
+                                          )
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("b-form-input", {
+                                        staticClass: "d-inline-block mr-1",
+                                        attrs: {
+                                          disabled: !_vm.allowModifications,
+                                          placeholder:
+                                            _vm.paymentType.value == 3
+                                              ? _vm.$t("charges.amount_defer")
+                                              : _vm.$t("charges.amount_pay"),
+                                        },
+                                        model: {
+                                          value: _vm.income,
+                                          callback: function ($$v) {
+                                            _vm.income = $$v
+                                          },
+                                          expression: "income",
+                                        },
+                                      }),
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "b-col",
+                                    { attrs: { cols: "12 mb-75" } },
+                                    [
+                                      _vm._v(
+                                        "\n                            " +
+                                          _vm._s(
+                                            _vm.$t("payments.positive_balance")
+                                          ) +
+                                          ":\n                            "
+                                      ),
+                                      _c("b-form-input", {
+                                        attrs: {
+                                          disabled: "",
+                                          placeholder:
+                                            "" +
+                                            _vm.formatPrice(
+                                              _vm.positiveBalance
+                                            ),
+                                        },
+                                      }),
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "b-col",
+                                    { attrs: { cols: "12 mb-75" } },
+                                    [
+                                      _vm._v(
+                                        "\n                            " +
+                                          _vm._s(
+                                            _vm.paymentType.value == 3
+                                              ? _vm.$t("charges.total_defer")
+                                              : _vm.$t("charges.total_pay")
+                                          ) +
+                                          "\n                            "
+                                      ),
+                                      _c("b-form-input", {
+                                        attrs: {
+                                          disabled: "",
+                                          placeholder:
+                                            "" + _vm.formatPrice(_vm.income),
+                                        },
+                                      }),
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("hr"),
+                                  _vm._v(" "),
+                                  _c("b-col", { attrs: { cols: "12 mb-75" } }, [
+                                    _vm.paymentType.value != 3
+                                      ? _c(
+                                          "div",
+                                          [
+                                            _vm._v(
+                                              "\n                                " +
+                                                _vm._s(
+                                                  _vm.$t("payments.method")
+                                                ) +
+                                                "\n                                "
+                                            ),
+                                            _c("v-select", {
+                                              attrs: {
+                                                options: _vm.paymentMethods,
+                                                label: "label",
+                                                clearable: false,
+                                                searchable: false,
+                                              },
+                                              model: {
+                                                value: _vm.paymentMethod,
+                                                callback: function ($$v) {
+                                                  _vm.paymentMethod = $$v
+                                                },
+                                                expression: "paymentMethod",
+                                              },
+                                            }),
+                                          ],
+                                          1
+                                        )
+                                      : _vm.paymentType.value == 3
+                                      ? _c("div", [
+                                          _c(
+                                            "span",
+                                            { staticClass: "pull-left" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.$t(
+                                                    "charges.defer_payment_on"
+                                                  )
+                                                ) + ":"
+                                              ),
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c("input", {
+                                            directives: [
+                                              {
+                                                name: "model",
+                                                rawName: "v-model",
+                                                value: _vm.paymentsNumber,
+                                                expression: "paymentsNumber",
+                                              },
+                                            ],
+                                            staticClass: "form-control",
+                                            attrs: {
+                                              type: "number",
+                                              placeholder: _vm.$t(
+                                                "charges.defer_payment_on_placeholder"
+                                              ),
+                                            },
+                                            domProps: {
+                                              value: _vm.paymentsNumber,
+                                            },
+                                            on: {
+                                              input: function ($event) {
+                                                if ($event.target.composing) {
+                                                  return
+                                                }
+                                                _vm.paymentsNumber =
+                                                  $event.target.value
+                                              },
+                                            },
+                                          }),
+                                        ])
+                                      : _vm._e(),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "b-col",
+                                    { attrs: { cols: "12 mb-75" } },
+                                    [
+                                      _c(
+                                        "b-button",
+                                        {
+                                          directives: [
+                                            {
+                                              name: "ripple",
+                                              rawName: "v-ripple.400",
+                                              value:
+                                                "rgba(255, 255, 255, 0.15)",
+                                              expression:
+                                                "'rgba(255, 255, 255, 0.15)'",
+                                              modifiers: { 400: true },
+                                            },
+                                          ],
+                                          staticClass: "mb-75",
+                                          attrs: {
+                                            variant: "primary",
+                                            block: "",
+                                          },
+                                          on: { click: _vm.store },
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                                " +
+                                              _vm._s(
+                                                _vm.paymentType.value == 3
+                                                  ? _vm.$t(
+                                                      "charges.divide_payments"
+                                                    )
+                                                  : _vm.$t("charges.pay")
+                                              ) +
+                                              "\n                            "
+                                          ),
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("hr"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "p",
+                                        {
+                                          staticClass:
+                                            "card-description text-left",
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                                " +
+                                              _vm._s(
+                                                _vm.$t(
+                                                  "charges.note_positive_balance"
+                                                )
+                                              ) +
+                                              " "
+                                          ),
+                                          _c(
+                                            "span",
+                                            { staticClass: "fw-bolder" },
+                                            [
+                                              _vm._v(
+                                                "$" +
+                                                  _vm._s(this.remainingIncome)
+                                              ),
+                                            ]
+                                          ),
+                                        ]
+                                      ),
+                                    ],
+                                    1
+                                  ),
+                                ],
+                                1
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.budget.has_partials
+                            ? _c(
+                                "b-row",
+                                { staticClass: "invoice-spacing" },
+                                [
+                                  _c(
+                                    "b-col",
+                                    { attrs: { cols: "12 mb-75" } },
+                                    [
+                                      _vm._v(
+                                        "\n                            " +
+                                          _vm._s(
+                                            _vm.$t(
+                                              "charges.deferred_payment_in"
+                                            )
+                                          ) +
+                                          "\n                            "
+                                      ),
+                                      _c("b-form-input", {
+                                        attrs: {
+                                          disabled: "",
+                                          value: "" + _vm.budget.divided_on,
+                                        },
+                                      }),
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "b-col",
+                                    { attrs: { cols: "12 mb-75" } },
+                                    [
+                                      _vm._v(
+                                        "\n                            " +
+                                          _vm._s(
+                                            _vm.$t("charges.pending_payments")
+                                          ) +
+                                          "\n                            "
+                                      ),
+                                      _c("b-form-input", {
+                                        attrs: {
+                                          disabled: "",
+                                          value: _vm.budget.pending_payments,
+                                        },
+                                      }),
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _vm.budget.pending_payments > 0
+                                    ? _c(
+                                        "b-col",
+                                        { attrs: { cols: "12 mb-75" } },
+                                        [
+                                          _c("label", [
+                                            _vm._v(
+                                              _vm._s(
+                                                _vm.$t("charges.amount_pay")
+                                              )
+                                            ),
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("b-form-input", {
+                                            staticClass: "d-inline-block mr-1",
+                                            attrs: {
+                                              value: _vm.budget.partial_amount,
+                                              disabled: "",
+                                            },
+                                          }),
+                                        ],
+                                        1
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  _vm.budget.pending_payments > 0
+                                    ? _c(
+                                        "b-col",
+                                        { attrs: { cols: "12 mb-75" } },
+                                        [
+                                          _vm._v(
+                                            "\n                            " +
+                                              _vm._s(
+                                                _vm.$t("payments.method")
+                                              ) +
+                                              "\n                            "
+                                          ),
+                                          _c("v-select", {
+                                            attrs: {
+                                              options: _vm.paymentMethods,
+                                              label: "label",
+                                              clearable: false,
+                                            },
+                                            model: {
+                                              value: _vm.paymentMethod,
+                                              callback: function ($$v) {
+                                                _vm.paymentMethod = $$v
+                                              },
+                                              expression: "paymentMethod",
+                                            },
+                                          }),
+                                        ],
+                                        1
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  _c(
+                                    "b-col",
+                                    { attrs: { cols: "12 mb-75" } },
+                                    [
+                                      _c(
+                                        "b-button",
+                                        {
+                                          directives: [
+                                            {
+                                              name: "ripple",
+                                              rawName: "v-ripple.400",
+                                              value:
+                                                "rgba(255, 255, 255, 0.15)",
+                                              expression:
+                                                "'rgba(255, 255, 255, 0.15)'",
+                                              modifiers: { 400: true },
+                                            },
+                                          ],
+                                          staticClass: "mb-75",
+                                          attrs: {
+                                            variant: "primary",
+                                            block: "",
+                                          },
+                                          on: {
+                                            click: _vm.storePartialPayment,
+                                          },
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                                " +
+                                              _vm._s(
+                                                _vm.$t(
+                                                  "charges.make_deferred_payment"
+                                                )
+                                              ) +
+                                              "\n                            "
+                                          ),
+                                        ]
+                                      ),
+                                    ],
+                                    1
+                                  ),
+                                ],
+                                1
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _c(
+                            "b-button",
+                            {
+                              directives: [
+                                {
+                                  name: "ripple",
+                                  rawName: "v-ripple.400",
+                                  value: "rgba(255, 255, 255, 0.15)",
+                                  expression: "'rgba(255, 255, 255, 0.15)'",
+                                  modifiers: { 400: true },
+                                },
+                              ],
+                              staticClass: "mb-75",
+                              attrs: { variant: "outline-primary", block: "" },
+                              on: {
+                                click: function ($event) {
+                                  return _vm.$router.back()
+                                },
+                              },
+                            },
+                            [
+                              _vm._v(
+                                "\n                        " +
+                                  _vm._s(_vm.$t("back")) +
+                                  "\n                    "
+                              ),
+                            ]
+                          ),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _c("check-info-modal", {
+            attrs: {
+              active: _vm.checkModalActive,
+              title: _vm.checkModalTitle,
+              isTransfer: _vm.checkModalIsTransfer,
+              check: _vm.check,
+            },
+            on: {
+              close: function ($event) {
+                _vm.checkModalActive = false
+              },
+              store: _vm.storeWithCheck,
+            },
+          }),
+        ],
+        1
+      ),
+    ]
   )
 }
 var staticRenderFns = []
@@ -1481,129 +2764,173 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./resources/js/src/providers/Appointments.js":
-/*!****************************************************!*\
-  !*** ./resources/js/src/providers/Appointments.js ***!
-  \****************************************************/
+/***/ "./resources/js/src/@core/layouts/components/Logo.vue":
+/*!************************************************************!*\
+  !*** ./resources/js/src/@core/layouts/components/Logo.vue ***!
+  \************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return appointments; });
+/* harmony import */ var _Logo_vue_vue_type_template_id_46f77075___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Logo.vue?vue&type=template&id=46f77075& */ "./resources/js/src/@core/layouts/components/Logo.vue?vue&type=template&id=46f77075&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _Logo_vue_vue_type_template_id_46f77075___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Logo_vue_vue_type_template_id_46f77075___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/src/@core/layouts/components/Logo.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/src/@core/layouts/components/Logo.vue?vue&type=template&id=46f77075&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/src/@core/layouts/components/Logo.vue?vue&type=template&id=46f77075& ***!
+  \*******************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Logo_vue_vue_type_template_id_46f77075___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Logo.vue?vue&type=template&id=46f77075& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/@core/layouts/components/Logo.vue?vue&type=template&id=46f77075&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Logo_vue_vue_type_template_id_46f77075___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Logo_vue_vue_type_template_id_46f77075___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/src/providers/Budgets.js":
+/*!***********************************************!*\
+  !*** ./resources/js/src/providers/Budgets.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Budgets; });
 /* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
 /* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 
 
-/* eslint-disable class-methods-use-this */
 
-var appointments = /*#__PURE__*/function () {
-  function appointments() {
-    Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, appointments);
+var Budgets = /*#__PURE__*/function () {
+  function Budgets() {
+    Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Budgets);
   }
-  Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__["default"])(appointments, [{
-    key: "getList",
-    value: function getList(query) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/appointments", {
-        params: query
-      });
-    }
-
-    /**
-     * Function to get all appointments without pagination
-     */
-  }, {
-    key: "getEvents",
-    value: function getEvents(query) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/appointments/events", {
-        params: query
-      });
-    }
-
-    /**
-     * Function to store a appointment
-     * @param {Object} formdata
-     * @return AxiosPromise
-     */
-  }, {
+  Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__["default"])(Budgets, [{
     key: "save",
-    value: function save(formdata) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/appointments", formdata);
+    value:
+    /**
+    * Function to update a branch
+    * @param {Object} formdata
+    * @return AxiosPromise
+    */
+    function save(formdata) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/api/budgets', formdata);
     }
+
+    /**
+    * Function to update a branch
+    * @param {Object} formdata
+    * @return AxiosPromise
+    */
   }, {
     key: "update",
     value: function update(id, formdata) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("/api/appointments/".concat(id), formdata);
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("/api/budgets/".concat(id), formdata);
     }
   }, {
-    key: "destroy",
-    value: function destroy(id) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a["delete"]("/api/appointments/".concat(id));
+    key: "approve",
+    value: function approve(id) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("/api/budgets/".concat(id, "/approve"));
     }
   }, {
-    key: "send",
-    value: function send(id, formData) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/appointments/".concat(id, "/send"), formData);
+    key: "sendEmail",
+    value: function sendEmail(id, formData) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/budgets/".concat(id, "/send"), formData);
     }
+
+    /**
+    * Function to get information by budget
+    * @param {Number} id
+    * @return AxiosPromise
+    */
   }, {
-    key: "getByMonthly",
-    value: function getByMonthly() {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/appointments/monthly");
+    key: "getBudgetDetail",
+    value: function getBudgetDetail(id) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/budgets/".concat(id));
     }
+
+    /**
+    * Funtion to delete actions
+    * @param {Array} users
+    * @return AxiosPromise
+    */
   }, {
-    key: "available",
-    value: function available(query) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/appointments/available", {
+    key: "deleteBudget",
+    value: function deleteBudget(id) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a["delete"]("/api/budgets/".concat(id));
+    }
+
+    /**
+    * Function to get all budgets without pagination
+    */
+  }, {
+    key: "getList",
+    value: function getList(query) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/budgets', {
         params: query
       });
     }
   }, {
-    key: "show",
-    value: function show(id) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/appointments/".concat(id));
-    }
-  }, {
-    key: "printMe",
-    value: function printMe() {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/appointments/print");
-    }
-  }, {
-    key: "reports",
-    value: function reports(query) {
-      if (query.isDownload) {
-        return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/appointments/report", {
-          responseType: "blob",
-          params: query
-        });
-      }
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/appointments/report", {
+    key: "donwloadPDF",
+    value: function donwloadPDF(id, query) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/api/budgets/pdf', {
+        id: id
+      }, {
+        responseType: 'arraybuffer'
+      }, {
         params: query
       });
-    }
-  }, {
-    key: "changeStatus",
-    value: function changeStatus(id, payload) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("/api/appointments/".concat(id, "/status"), payload);
     }
   }]);
-  return appointments;
+  return Budgets;
 }();
 
 
 /***/ }),
 
-/***/ "./resources/js/src/providers/BranchOffices.js":
-/*!*****************************************************!*\
-  !*** ./resources/js/src/providers/BranchOffices.js ***!
-  \*****************************************************/
+/***/ "./resources/js/src/providers/Payments.js":
+/*!************************************************!*\
+  !*** ./resources/js/src/providers/Payments.js ***!
+  \************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return BranchOffices; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Payments; });
 /* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
 /* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
@@ -1611,42 +2938,141 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var BranchOffices = /*#__PURE__*/function () {
-  function BranchOffices() {
-    Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, BranchOffices);
+var Payments = /*#__PURE__*/function () {
+  function Payments() {
+    Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Payments);
   }
-  Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__["default"])(BranchOffices, [{
+  Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__["default"])(Payments, [{
+    key: "getList",
+    value: function getList(query) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/payments", {
+        params: query
+      });
+    }
+  }, {
+    key: "dashboard",
+    value: function dashboard(query) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/payments/dashboard", {
+        params: query
+      });
+    }
+  }, {
+    key: "store",
+    value: function store(formData) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/api/payments', formData);
+    }
+  }, {
+    key: "storeCollection",
+    value: function storeCollection(formData) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/api/payments/collection', formData);
+    }
+  }, {
+    key: "storePartial",
+    value: function storePartial(formData) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/api/payments/partial', formData);
+    }
+  }, {
+    key: "detail",
+    value: function detail(id) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/payments/".concat(id, "/preview"));
+    }
+  }, {
+    key: "deletePayment",
+    value: function deletePayment(id, comments) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a["delete"]("/api/payments/".concat(id), {
+        params: comments
+      });
+    }
+  }, {
+    key: "send",
+    value: function send(formData) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/payments/send/", formData);
+    }
+  }, {
+    key: "donwloadPDF",
+    value: function donwloadPDF(id, query) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/api/payments/pdf', {
+        id: id
+      }, {
+        responseType: 'arraybuffer'
+      }, {
+        params: query
+      });
+    }
+  }]);
+  return Payments;
+}();
+
+
+/***/ }),
+
+/***/ "./resources/js/src/providers/Users.js":
+/*!*********************************************!*\
+  !*** ./resources/js/src/providers/Users.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(process) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Users; });
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.array.concat.js */ "./node_modules/core-js/modules/es.array.concat.js");
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+/* eslint-disable class-methods-use-this */
+
+var Users = /*#__PURE__*/function () {
+  function Users() {
+    Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Users);
+  }
+  Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__["default"])(Users, [{
     key: "index",
-    value: function index(query) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/branch-offices", {
+    value:
+    /**
+    * Function to get all users without pagination
+    */
+    function index(query) {
+      return axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("/api/users", {
         params: query
       });
     }
 
     /**
-     * Function to update a branch
+     * Function to permissions
+     * @return Promise
+     */
+  }, {
+    key: "permissions",
+    value: function permissions() {
+      return axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("api/permissions");
+    }
+
+    /**
+     * Function to create new user
      * @param {Object} formdata
      * @return AxiosPromise
      */
   }, {
     key: "store",
     value: function store(formdata) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/branch-offices", formdata, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      });
+      return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post("/api/users", formdata);
     }
 
     /**
-     * Function to update a branch
+     * Function to update a user
      * @param {Object} formdata
      * @return AxiosPromise
      */
   }, {
     key: "update",
     value: function update(id, formdata) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/branch-offices/".concat(id), formdata, {
+      return axios__WEBPACK_IMPORTED_MODULE_3___default.a.put("/api/users/".concat(id), formdata, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -1654,61 +3080,89 @@ var BranchOffices = /*#__PURE__*/function () {
     }
 
     /**
-     * Function to get information by branch
+     * Function to get information by user
      * @param {Number} id
      * @return AxiosPromise
      */
   }, {
-    key: "getBranchDetail",
-    value: function getBranchDetail(id) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/branch-offices/".concat(id));
+    key: "getUserDetail",
+    value: function getUserDetail(id, query) {
+      return axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("/api/users/".concat(id), {
+        params: query
+      });
     }
 
     /**
-     * Funtion to delete branchs-offices
+     * Funtion to delete multi users
      * @param {Array} users
      * @return AxiosPromise
      */
   }, {
-    key: "deleteBranch",
-    value: function deleteBranch(id) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a["delete"]("/api/branch-offices/".concat(id));
+    key: "destroy",
+    value: function destroy(id) {
+      return axios__WEBPACK_IMPORTED_MODULE_3___default.a["delete"]("/api/users/".concat(id));
     }
 
     /**
-     * Function to get all branchs-offices without pagination
+     * Function to get all users without pagination
      */
   }, {
     key: "getList",
     value: function getList(query) {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/branch-offices", {
+      return axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("/api/users", {
         params: query
       });
     }
+
+    /**
+     * Function to active an user
+     * @param {Object} formdata
+     * @return AxiosPromise
+     */
   }, {
-    key: "getAll",
-    value: function getAll() {
-      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/branch-offices/all");
+    key: "activeUser",
+    value: function activeUser(contactId, userId, formdata) {
+      return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post("".concat(process.env.API_URL, "/contacts/").concat(contactId, "/user/").concat(userId), formdata);
+    }
+
+    /**
+     * Function to request password change
+     * @return Promise
+     */
+  }, {
+    key: "passwordChange",
+    value: function passwordChange(formdata) {
+      return axios__WEBPACK_IMPORTED_MODULE_3___default.a.put("api/change-password", formdata);
+    }
+  }, {
+    key: "getUserByCriteria",
+    value: function getUserByCriteria(criteria) {
+      return axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("/api/users/criteria", {
+        params: {
+          criteria: criteria
+        }
+      });
     }
   }]);
-  return BranchOffices;
+  return Users;
 }();
 
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue":
-/*!**********************************************************************************!*\
-  !*** ./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue ***!
-  \**********************************************************************************/
+/***/ "./resources/js/src/views/apps/payments/payment-charge/Charge.vue":
+/*!************************************************************************!*\
+  !*** ./resources/js/src/views/apps/payments/payment-charge/Charge.vue ***!
+  \************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _AppointmentAdd_vue_vue_type_template_id_c89cf072___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AppointmentAdd.vue?vue&type=template&id=c89cf072& */ "./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=template&id=c89cf072&");
-/* harmony import */ var _AppointmentAdd_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AppointmentAdd.vue?vue&type=script&lang=js& */ "./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _AppointmentAdd_vue_vue_type_style_index_0_id_c89cf072_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AppointmentAdd.vue?vue&type=style&index=0&id=c89cf072&lang=scss& */ "./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=style&index=0&id=c89cf072&lang=scss&");
+/* harmony import */ var _Charge_vue_vue_type_template_id_262a5e49___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Charge.vue?vue&type=template&id=262a5e49& */ "./resources/js/src/views/apps/payments/payment-charge/Charge.vue?vue&type=template&id=262a5e49&");
+/* harmony import */ var _Charge_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Charge.vue?vue&type=script&lang=js& */ "./resources/js/src/views/apps/payments/payment-charge/Charge.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Charge_vue_vue_type_style_index_0_id_262a5e49_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Charge.vue?vue&type=style&index=0&id=262a5e49&lang=scss& */ "./resources/js/src/views/apps/payments/payment-charge/Charge.vue?vue&type=style&index=0&id=262a5e49&lang=scss&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -1719,9 +3173,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
-  _AppointmentAdd_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _AppointmentAdd_vue_vue_type_template_id_c89cf072___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _AppointmentAdd_vue_vue_type_template_id_c89cf072___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _Charge_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Charge_vue_vue_type_template_id_262a5e49___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Charge_vue_vue_type_template_id_262a5e49___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -1731,54 +3185,54 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue"
+component.options.__file = "resources/js/src/views/apps/payments/payment-charge/Charge.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************/
+/***/ "./resources/js/src/views/apps/payments/payment-charge/Charge.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/payments/payment-charge/Charge.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentAdd_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AppointmentAdd.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentAdd_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Charge_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Charge.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/payments/payment-charge/Charge.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Charge_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=style&index=0&id=c89cf072&lang=scss&":
-/*!********************************************************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=style&index=0&id=c89cf072&lang=scss& ***!
-  \********************************************************************************************************************************/
+/***/ "./resources/js/src/views/apps/payments/payment-charge/Charge.vue?vue&type=style&index=0&id=262a5e49&lang=scss&":
+/*!**********************************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/payments/payment-charge/Charge.vue?vue&type=style&index=0&id=262a5e49&lang=scss& ***!
+  \**********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentAdd_vue_vue_type_style_index_0_id_c89cf072_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/style-loader!../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--12-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AppointmentAdd.vue?vue&type=style&index=0&id=c89cf072&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=style&index=0&id=c89cf072&lang=scss&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentAdd_vue_vue_type_style_index_0_id_c89cf072_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentAdd_vue_vue_type_style_index_0_id_c89cf072_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentAdd_vue_vue_type_style_index_0_id_c89cf072_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentAdd_vue_vue_type_style_index_0_id_c89cf072_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Charge_vue_vue_type_style_index_0_id_262a5e49_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/style-loader!../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--12-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Charge.vue?vue&type=style&index=0&id=262a5e49&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/payments/payment-charge/Charge.vue?vue&type=style&index=0&id=262a5e49&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Charge_vue_vue_type_style_index_0_id_262a5e49_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Charge_vue_vue_type_style_index_0_id_262a5e49_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Charge_vue_vue_type_style_index_0_id_262a5e49_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Charge_vue_vue_type_style_index_0_id_262a5e49_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=template&id=c89cf072&":
-/*!*****************************************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=template&id=c89cf072& ***!
-  \*****************************************************************************************************************/
+/***/ "./resources/js/src/views/apps/payments/payment-charge/Charge.vue?vue&type=template&id=262a5e49&":
+/*!*******************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/payments/payment-charge/Charge.vue?vue&type=template&id=262a5e49& ***!
+  \*******************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentAdd_vue_vue_type_template_id_c89cf072___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AppointmentAdd.vue?vue&type=template&id=c89cf072& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=template&id=c89cf072&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentAdd_vue_vue_type_template_id_c89cf072___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Charge_vue_vue_type_template_id_262a5e49___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Charge.vue?vue&type=template&id=262a5e49& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/payments/payment-charge/Charge.vue?vue&type=template&id=262a5e49&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Charge_vue_vue_type_template_id_262a5e49___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentAdd_vue_vue_type_template_id_c89cf072___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Charge_vue_vue_type_template_id_262a5e49___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

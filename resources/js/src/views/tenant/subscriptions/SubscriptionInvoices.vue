@@ -147,7 +147,7 @@ export default {
         }
  
         onMounted(async () => {
-            // await getInvoices();
+            await getInvoices();
         });
 
         return {

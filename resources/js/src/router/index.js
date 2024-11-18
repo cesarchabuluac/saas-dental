@@ -93,7 +93,7 @@ const router = new VueRouter({
     {
       path: '/login',
       name: 'login',
-      component: () => import('@/views/authentication/Login.vue'),
+      component: () => import('@/views/authentication/Login-v1.vue'),
       meta: {
         layout: "full",
         resource: "Auth",

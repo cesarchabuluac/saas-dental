@@ -34,7 +34,7 @@
   </noscript> -->
   <div id="loading-bg">
     <div class="loading-logo">
-      <img src="{{ config('settings.app_logo') }}" alt="Soft-Dental" />
+      <img src="{{ config('settings.app_logo') }}" height="100" alt="{{ config('settings.app_name') }}" />
     </div>
     <div class="loading">
       <div class="effect-1 effects"></div>

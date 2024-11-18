@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[64],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/appointments/calendar-edit/AppointmentEdit.vue?vue&type=script&lang=js&":
-/*!*********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/appointments/calendar-edit/AppointmentEdit.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -38,6 +38,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _providers_Patients__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @/providers/Patients */ "./resources/js/src/providers/Patients.js");
 /* harmony import */ var _providers_Appointments__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @/providers/Appointments */ "./resources/js/src/providers/Appointments.js");
 /* harmony import */ var _providers_BranchOffices__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @/providers/BranchOffices */ "./resources/js/src/providers/BranchOffices.js");
+/* harmony import */ var moment_timezone__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! moment-timezone */ "./node_modules/moment-timezone/index.js");
+/* harmony import */ var moment_timezone__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(moment_timezone__WEBPACK_IMPORTED_MODULE_23__);
 
 
 
@@ -172,6 +174,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 
@@ -195,6 +201,7 @@ var PatientResource = new _providers_Patients__WEBPACK_IMPORTED_MODULE_20__["def
 var AppointmentResource = new _providers_Appointments__WEBPACK_IMPORTED_MODULE_21__["default"]();
 var BranchOfficeResource = new _providers_BranchOffices__WEBPACK_IMPORTED_MODULE_22__["default"]();
 /* harmony default export */ __webpack_exports__["default"] = ({
+  name: "AppointmentAdd",
   components: {
     BRow: bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["BRow"],
     BCol: bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["BCol"],
@@ -231,11 +238,14 @@ var BranchOfficeResource = new _providers_BranchOffices__WEBPACK_IMPORTED_MODULE
   data: function data() {
     return {
       loading: false,
-      appointment_id: _router__WEBPACK_IMPORTED_MODULE_6__["default"].currentRoute.params.id,
+      hideSidebar: false,
+      isValidCellPhone: false,
       appointment: {
-        state: 'pending'
+        state: 'pending',
+        user_id: null,
+        branch_office_id: null,
+        patient: null
       },
-      oldDateAppointment: null,
       professionals: [],
       calendarOptions: [{
         color: "warning",
@@ -247,23 +257,38 @@ var BranchOfficeResource = new _providers_BranchOffices__WEBPACK_IMPORTED_MODULE
         color: "danger",
         label: "canceled"
       }],
-      patient: {},
       patients: [],
-      isAvailable: false,
-      loadingByFetch: false,
-      branchs: [],
-      activeSearchPatient: false,
-      hideSidebar: false,
+      patient: {},
       selectedPatient: {
         full_name: null
       },
-      isValidCellPhone: false
+      isAvailable: false,
+      branchs: [],
+      selectedBranch: null,
+      activeSearchPatient: false
     };
+  },
+  computed: {
+    slotMinTime: function slotMinTime() {
+      return _store__WEBPACK_IMPORTED_MODULE_7__["default"].state.auth.setting['schedule_start_time'] || "09:00:00";
+    },
+    slotMaxTime: function slotMaxTime() {
+      _store__WEBPACK_IMPORTED_MODULE_7__["default"].state.auth.setting['schedule_end_time'] || "22:00:00";
+    },
+    slotInterval: function slotInterval() {
+      return _store__WEBPACK_IMPORTED_MODULE_7__["default"].state.auth.setting['scheduled_appointment_interval'] || 1;
+    }
   },
   created: function created() {
     if (_store__WEBPACK_IMPORTED_MODULE_7__["default"].state.auth.setting['language'] === "es") {
       flatpickr.localize(flatpickr_dist_l10n_es_js__WEBPACK_IMPORTED_MODULE_12__["Spanish"]);
       Object(vee_validate__WEBPACK_IMPORTED_MODULE_14__["localize"])("es");
+    }
+    if (_store__WEBPACK_IMPORTED_MODULE_7__["default"].state.calendar) {
+      if (_router__WEBPACK_IMPORTED_MODULE_6__["default"].currentRoute.params.date) {
+        this.appointment.date = _router__WEBPACK_IMPORTED_MODULE_6__["default"].currentRoute.params.date;
+        this.isAvailable = true;
+      }
     }
   },
   mounted: function mounted() {
@@ -278,9 +303,6 @@ var BranchOfficeResource = new _providers_BranchOffices__WEBPACK_IMPORTED_MODULE
             _context.next = 4;
             return _this.getDoctors();
           case 4:
-            _context.next = 6;
-            return _this.getAppointment();
-          case 6:
           case "end":
             return _context.stop();
         }
@@ -291,82 +313,63 @@ var BranchOfficeResource = new _providers_BranchOffices__WEBPACK_IMPORTED_MODULE
     getBranch: function getBranch() {
       var _this2 = this;
       return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().mark(function _callee2() {
-        var branches, _yield$BranchOfficeRe, data;
+        var query, _yield$BranchOfficeRe, data;
         return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().wrap(function _callee2$(_context2) {
           while (1) switch (_context2.prev = _context2.next) {
             case 0:
-              branches = _store__WEBPACK_IMPORTED_MODULE_7__["default"].state.auth.branches;
-              if (!(branches.length > 0)) {
-                _context2.next = 5;
-                break;
-              }
-              _this2.branchs = _store__WEBPACK_IMPORTED_MODULE_7__["default"].state.auth.branches;
-              _context2.next = 13;
-              break;
-            case 5:
+              query = {
+                isAll: true
+              };
+              _context2.prev = 1;
               _this2.loading = true;
-              _context2.next = 8;
-              return BranchOfficeResource.getAll();
-            case 8:
+              _context2.next = 5;
+              return BranchOfficeResource.index(query);
+            case 5:
               _yield$BranchOfficeRe = _context2.sent;
               data = _yield$BranchOfficeRe.data;
-              _this2.loading = false;
-              _this2.branchs = data;
-              _store__WEBPACK_IMPORTED_MODULE_7__["default"].commit('auth/SET_BRANCHES', data);
+              if (data.success) {
+                _this2.branchs = data.data;
+                _this2.appointment.branch_office_id = _this2.branchs[0].id;
+                _store__WEBPACK_IMPORTED_MODULE_7__["default"].commit('auth/SET_BRANCHES', data);
+              } else {
+                _this2.danger(data.message);
+              }
+              _context2.next = 13;
+              break;
+            case 10:
+              _context2.prev = 10;
+              _context2.t0 = _context2["catch"](1);
+              // this.loading = false
+              _this2.handleResponseErrors(_context2.t0);
             case 13:
+              _context2.prev = 13;
+              _this2.loading = false;
+              return _context2.finish(13);
+            case 16:
             case "end":
               return _context2.stop();
           }
-        }, _callee2);
+        }, _callee2, null, [[1, 10, 13, 16]]);
       }))();
     },
     onSearch: function onSearch(search, loading) {
-      if (search.length) {
-        loading(true);
-        this.searchPatients(loading, search, this);
-      }
-    },
-    checkAvailability: function checkAvailability(dateStr) {
       var _this3 = this;
       return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().mark(function _callee3() {
-        var query, _yield$AppointmentRes, data;
         return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().wrap(function _callee3$(_context3) {
           while (1) switch (_context3.prev = _context3.next) {
             case 0:
-              _this3.loading = true;
-              query = {
-                date: dateStr,
-                user_id: _this3.appointment.user_id
-              };
-              _context3.prev = 2;
-              _context3.next = 5;
-              return AppointmentResource.available(query);
-            case 5:
-              _yield$AppointmentRes = _context3.sent;
-              data = _yield$AppointmentRes.data;
-              _this3.loading = false;
-              if (!data.success) {
-                _context3.next = 12;
+              if (!search.length) {
+                _context3.next = 4;
                 break;
               }
-              return _context3.abrupt("return", true);
-            case 12:
-              _this3.danger(data.message);
-              return _context3.abrupt("return", false);
-            case 14:
-              _context3.next = 21;
-              break;
-            case 16:
-              _context3.prev = 16;
-              _context3.t0 = _context3["catch"](2);
-              _this3.loading = false;
-              _this3.handleResponseErrors(_context3.t0);
-              return _context3.abrupt("return", false);
-            case 21:
+              loading(true);
+              _context3.next = 4;
+              return _this3.searchPatients(loading, search, _this3);
+            case 4:
             case "end":
               return _context3.stop();
           }
-        }, _callee3, null, [[2, 16]]);
+        }, _callee3);
       }))();
     },
     onChange: function onChange(selectedDates, dateStr, instance) {
@@ -378,18 +381,13 @@ var BranchOfficeResource = new _providers_BranchOffices__WEBPACK_IMPORTED_MODULE
             case 0:
               inputDateFormat = 'DD/MM/YYYY HH:mm';
               officeStartTime = _store__WEBPACK_IMPORTED_MODULE_7__["default"].state.auth.setting['schedule_start_time'] || '09:00:00'; // Schedule start time
-              officeEndTime = _store__WEBPACK_IMPORTED_MODULE_7__["default"].state.auth.setting['schedule_end_time'] || '22:00:00'; // Schedule end time
-              if (!_this4.appointment) {
-                _context4.next = 29;
-                break;
-              }
-              if (!(_this4.oldDateAppointment === _this4.appointment.date)) {
-                _context4.next = 9;
-                break;
-              }
-              _this4.isAvailable = true;
-              return _context4.abrupt("return", false);
-            case 9:
+              officeEndTime = _store__WEBPACK_IMPORTED_MODULE_7__["default"].state.auth.setting['schedule_end_time'] || '22:00:00'; // Schedule end time   
+              console.log('onChange', dateStr);
+              console.log('selectedDates', selectedDates);
+              console.log('instance', instance);
+              console.log('inputDateFormat', inputDateFormat);
+              console.log('officeStartTime', officeStartTime);
+              console.log('officeEndTime', officeEndTime);
               isValidDate = _this4.isValidDate(dateStr, inputDateFormat);
               if (isValidDate) {
                 _context4.next = 13;
@@ -407,8 +405,8 @@ var BranchOfficeResource = new _providers_BranchOffices__WEBPACK_IMPORTED_MODULE
               return _context4.abrupt("return", false);
             case 17:
               //
-              now = moment();
-              selectedDateTime = moment(dateStr, inputDateFormat, true);
+              now = moment_timezone__WEBPACK_IMPORTED_MODULE_23___default()();
+              selectedDateTime = moment_timezone__WEBPACK_IMPORTED_MODULE_23___default()(dateStr, inputDateFormat, true);
               if (!selectedDateTime.isSameOrBefore(now)) {
                 _context4.next = 22;
                 break;
@@ -436,178 +434,197 @@ var BranchOfficeResource = new _providers_BranchOffices__WEBPACK_IMPORTED_MODULE
         }, _callee4);
       }))();
     },
-    searchPatients: function searchPatients(loading, search, vm) {
+    checkAvailability: function checkAvailability(dateStr) {
       var _this5 = this;
       return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().mark(function _callee5() {
-        var _yield$PatientResourc, data;
+        var query, _yield$AppointmentRes, data;
         return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().wrap(function _callee5$(_context5) {
           while (1) switch (_context5.prev = _context5.next) {
             case 0:
               _this5.loading = true;
-              _context5.next = 3;
-              return PatientResource.search(search);
-            case 3:
-              _yield$PatientResourc = _context5.sent;
-              data = _yield$PatientResourc.data;
-              vm.patients = data.data;
+              query = {
+                date: dateStr,
+                user_id: _this5.appointment.user_id
+              };
+              _context5.prev = 2;
+              _context5.next = 5;
+              return AppointmentResource.available(query);
+            case 5:
+              _yield$AppointmentRes = _context5.sent;
+              data = _yield$AppointmentRes.data;
               _this5.loading = false;
-              loading(false);
-            case 8:
+              if (!data.success) {
+                _context5.next = 12;
+                break;
+              }
+              return _context5.abrupt("return", true);
+            case 12:
+              _this5.danger(data.message);
+              return _context5.abrupt("return", false);
+            case 14:
+              _context5.next = 21;
+              break;
+            case 16:
+              _context5.prev = 16;
+              _context5.t0 = _context5["catch"](2);
+              _this5.loading = false;
+              _this5.handleResponseErrors(_context5.t0);
+              return _context5.abrupt("return", false);
+            case 21:
             case "end":
               return _context5.stop();
           }
-        }, _callee5);
+        }, _callee5, null, [[2, 16]]);
       }))();
     },
-    getDoctors: function getDoctors() {
+    storePatient: function storePatient() {
       var _this6 = this;
       return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().mark(function _callee6() {
-        var _yield$UserResource$i, data;
+        var _yield$PatientResourc, data;
         return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().wrap(function _callee6$(_context6) {
           while (1) switch (_context6.prev = _context6.next) {
             case 0:
-              if (!(_store__WEBPACK_IMPORTED_MODULE_7__["default"].state.auth.doctors.length > 0)) {
-                _context6.next = 4;
-                break;
-              }
-              _this6.professionals = _store__WEBPACK_IMPORTED_MODULE_7__["default"].state.auth.doctors;
-              _context6.next = 12;
-              break;
-            case 4:
+              _context6.prev = 0;
               _this6.loading = true;
+              _this6.patient.phone = _this6.patient.mobile.phoneNumber;
+              _this6.patient.cellphone = _this6.patient.mobile.e164;
+              _this6.patient.address = " --- ";
               _context6.next = 7;
-              return UserResource.index({
-                criteria: "professionals"
-              });
+              return PatientResource.save(_this6.patient);
             case 7:
-              _yield$UserResource$i = _context6.sent;
-              data = _yield$UserResource$i.data;
+              _yield$PatientResourc = _context6.sent;
+              data = _yield$PatientResourc.data;
               _this6.loading = false;
-              _this6.professionals = data.data;
-              _store__WEBPACK_IMPORTED_MODULE_7__["default"].commit('auth/SET_DOCTORS', data.data);
-            case 12:
+              if (data.success) {
+                _this6.hideSidebar = true;
+                _this6.appointment.patient = data.data;
+              } else {
+                _this6.danger(data.message);
+              }
+              _context6.next = 17;
+              break;
+            case 13:
+              _context6.prev = 13;
+              _context6.t0 = _context6["catch"](0);
+              _this6.loading = false;
+              _this6.handleResponseErrors(_context6.t0);
+            case 17:
             case "end":
               return _context6.stop();
           }
-        }, _callee6);
+        }, _callee6, null, [[0, 13]]);
       }))();
     },
-    update: function update() {
+    searchPatients: function searchPatients(loading, search, vm) {
       var _this7 = this;
       return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().mark(function _callee7() {
-        var eventData, _yield$AppointmentRes2, data;
+        var _yield$PatientResourc2, data;
         return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().wrap(function _callee7$(_context7) {
           while (1) switch (_context7.prev = _context7.next) {
             case 0:
-              _context7.prev = 0;
               _this7.loading = true;
-              _this7.appointment.user_id = _this7.appointment.doctor ? _this7.appointment.doctor.id : null;
-              _this7.appointment.patient_id = _this7.appointment.patient ? _this7.appointment.patient.id : null;
-              eventData = _this7.appointment;
-              _context7.next = 7;
-              return AppointmentResource.update(_this7.appointment.id, eventData);
-            case 7:
-              _yield$AppointmentRes2 = _context7.sent;
-              data = _yield$AppointmentRes2.data;
+              _context7.next = 3;
+              return PatientResource.search(search);
+            case 3:
+              _yield$PatientResourc2 = _context7.sent;
+              data = _yield$PatientResourc2.data;
+              vm.patients = data.data;
               _this7.loading = false;
+              loading(false);
+            case 8:
+            case "end":
+              return _context7.stop();
+          }
+        }, _callee7);
+      }))();
+    },
+    getDoctors: function getDoctors() {
+      var _this8 = this;
+      return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().mark(function _callee8() {
+        var _yield$UserResource$i, data;
+        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().wrap(function _callee8$(_context8) {
+          while (1) switch (_context8.prev = _context8.next) {
+            case 0:
+              _this8.loading = true;
+              // try {
+              _context8.next = 3;
+              return UserResource.index({
+                criteria: "professionals",
+                ignoreSchedules: false,
+                isAll: true
+              });
+            case 3:
+              _yield$UserResource$i = _context8.sent;
+              data = _yield$UserResource$i.data;
+              _this8.loading = false;
               if (data.success) {
-                _this7.success(data.message, "", "CheckIcon");
+                _this8.professionals = data.data;
+                _store__WEBPACK_IMPORTED_MODULE_7__["default"].commit('auth/SET_DOCTORS', data.data);
+                console.log(_store__WEBPACK_IMPORTED_MODULE_7__["default"].state.calendar);
+                if (_this8.professionals.length > 0) {
+                  // this.appointment.user_id = store.state.calendar.selectedProfessional.id
+                }
+              }
+
+              // }catch(e) {
+              //     this.loading = false
+              //     this.handleResponseErrors(e)
+              // }finally {
+              //     this.loading = false
+              // }
+            case 7:
+            case "end":
+              return _context8.stop();
+          }
+        }, _callee8);
+      }))();
+    },
+    store: function store() {
+      var _this9 = this;
+      return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().mark(function _callee9() {
+        var _this9$appointment$pa, _yield$AppointmentRes2, data;
+        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().wrap(function _callee9$(_context9) {
+          while (1) switch (_context9.prev = _context9.next) {
+            case 0:
+              _context9.prev = 0;
+              _this9.appointment.patient_id = (_this9$appointment$pa = _this9.appointment.patient) === null || _this9$appointment$pa === void 0 ? void 0 : _this9$appointment$pa.id;
+              _this9.loading = true;
+              _context9.next = 5;
+              return AppointmentResource.save(_this9.appointment);
+            case 5:
+              _yield$AppointmentRes2 = _context9.sent;
+              data = _yield$AppointmentRes2.data;
+              _this9.loading = false;
+              if (data.success) {
+                _this9.success(data.message);
                 _router__WEBPACK_IMPORTED_MODULE_6__["default"].push({
                   name: "appointments"
                 });
               } else {
-                _this7.danger(data.message, "Error", "AlertCircleIcon");
+                _this9.danger(data.message);
               }
-              _context7.next = 17;
+              _context9.next = 15;
               break;
-            case 13:
-              _context7.prev = 13;
-              _context7.t0 = _context7["catch"](0);
-              _this7.loading = false;
-              if (_context7.t0.response.status === 422) {
-                _this7.danger(_this7.getFirstValidationError(_context7.t0.response.data.errors), "Error", "AlertCircleIcon");
-              } else {
-                _this7.danger(_context7.t0.message, "Error", "AlertCircleIcon");
-              }
-            case 17:
-            case "end":
-              return _context7.stop();
-          }
-        }, _callee7, null, [[0, 13]]);
-      }))();
-    },
-    storePatient: function storePatient() {
-      var _this8 = this;
-      return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().mark(function _callee8() {
-        var _yield$PatientResourc2, data;
-        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().wrap(function _callee8$(_context8) {
-          while (1) switch (_context8.prev = _context8.next) {
-            case 0:
-              _context8.prev = 0;
-              _this8.loading = true;
-              _this8.patient.phone = _this8.patient.mobile.phoneNumber;
-              _this8.patient.cellphone = _this8.patient.mobile.e164;
-              _this8.patient.address = " --- ";
-              _context8.next = 7;
-              return PatientResource.save(_this8.patient);
-            case 7:
-              _yield$PatientResourc2 = _context8.sent;
-              data = _yield$PatientResourc2.data;
-              _this8.loading = false;
-              if (data.success) {
-                _this8.hideSidebar = true;
-                _this8.appointment.patient = data.data;
-              } else {
-                _this8.danger(data.message, 'Error', "AlertOctagonIcon");
-              }
-              _context8.next = 17;
-              break;
-            case 13:
-              _context8.prev = 13;
-              _context8.t0 = _context8["catch"](0);
-              _this8.loading = false;
-              if (_context8.t0.response.status === 422) {
-                _this8.danger(_this8.getFirstValidationError(_context8.t0.response.data.errors), "AlertOctagonIcon");
-                _this8.errors = _context8.t0.response.data.errors;
-              } else {
-                _this8.danger(_context8.t0.message, "Error", "AlertOctagonIcon");
-              }
-            case 17:
-            case "end":
-              return _context8.stop();
-          }
-        }, _callee8, null, [[0, 13]]);
-      }))();
-    },
-    getAppointment: function getAppointment() {
-      var _this9 = this;
-      return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().mark(function _callee9() {
-        var _yield$AppointmentRes3, data;
-        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__["default"])().wrap(function _callee9$(_context9) {
-          while (1) switch (_context9.prev = _context9.next) {
-            case 0:
-              _this9.loading = true;
-              _this9.appointment = {};
-              _context9.next = 4;
-              return AppointmentResource.show(_this9.appointment_id);
-            case 4:
-              _yield$AppointmentRes3 = _context9.sent;
-              data = _yield$AppointmentRes3.data;
-              _this9.loading = false;
-              _this9.oldDateAppointment = _this9.dateFormat(data.data.date, 'DD/MM/YYYY H:mm');
-              _this9.appointment = data.data;
-              _this9.appointment.date = _this9.oldDateAppointment;
-              _this9.selectedPatient = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__["default"])({}, _this9.appointment.patient);
             case 11:
+              _context9.prev = 11;
+              _context9.t0 = _context9["catch"](0);
+              _this9.loading = false;
+              _this9.handleResponseErrors(_context9.t0);
+            case 15:
             case "end":
               return _context9.stop();
           }
-        }, _callee9);
+        }, _callee9, null, [[0, 11]]);
       }))();
     },
     selectPatient: function selectPatient(e) {
       this.selectedPatient = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__["default"])({}, e);
       this.appointment.patient = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__["default"])({}, e);
+    }
+  },
+  watch: {
+    isAvailable: function isAvailable(value) {
+      console.log(value);
     }
   }
 });
@@ -797,10 +814,10 @@ module.exports = function (iterator, kind, value) {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/appointments/calendar-edit/AppointmentEdit.vue?vue&type=style&index=0&id=146ada5b&lang=scss&":
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--12-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/appointments/calendar-edit/AppointmentEdit.vue?vue&type=style&index=0&id=146ada5b&lang=scss& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=style&index=0&id=c89cf072&lang=scss&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--12-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=style&index=0&id=c89cf072&lang=scss& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -897,15 +914,15 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/appointments/calendar-edit/AppointmentEdit.vue?vue&type=style&index=0&id=146ada5b&lang=scss&":
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--12-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/appointments/calendar-edit/AppointmentEdit.vue?vue&type=style&index=0&id=146ada5b&lang=scss& ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=style&index=0&id=c89cf072&lang=scss&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--12-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=style&index=0&id=c89cf072&lang=scss& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--12-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AppointmentEdit.vue?vue&type=style&index=0&id=146ada5b&lang=scss& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/appointments/calendar-edit/AppointmentEdit.vue?vue&type=style&index=0&id=146ada5b&lang=scss&");
+var content = __webpack_require__(/*! !../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--12-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AppointmentAdd.vue?vue&type=style&index=0&id=c89cf072&lang=scss& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=style&index=0&id=c89cf072&lang=scss&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -927,10 +944,10 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/appointments/calendar-edit/AppointmentEdit.vue?vue&type=template&id=146ada5b&":
-/*!*************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/appointments/calendar-edit/AppointmentEdit.vue?vue&type=template&id=146ada5b& ***!
-  \*************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=template&id=c89cf072&":
+/*!***********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=template&id=c89cf072& ***!
+  \***********************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -943,368 +960,359 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
-    [
-      _c(
-        "b-overlay",
+    "b-overlay",
+    {
+      attrs: {
+        show: _vm.loading,
+        blur: "2px",
+        variant: "transparent",
+        rounded: "lg",
+        opacity: "0.85",
+      },
+      scopedSlots: _vm._u([
         {
-          attrs: {
-            show: _vm.loading,
-            blur: "2px",
-            variant: "transparent",
-            rounded: "lg",
-            opacity: "0.85",
+          key: "overlay",
+          fn: function () {
+            return [
+              _c(
+                "div",
+                { staticClass: "d-flex align-items-center" },
+                [
+                  _c("b-spinner", {
+                    attrs: { small: "", type: "grow", variant: "secondary" },
+                  }),
+                  _vm._v(" "),
+                  _c("b-spinner", { attrs: { type: "grow", variant: "dark" } }),
+                  _vm._v(" "),
+                  _c("b-spinner", {
+                    attrs: { small: "", type: "grow", variant: "secondary" },
+                  }),
+                ],
+                1
+              ),
+            ]
           },
-          scopedSlots: _vm._u([
-            {
-              key: "overlay",
-              fn: function () {
-                return [
-                  _c(
-                    "div",
-                    { staticClass: "d-flex align-items-center" },
-                    [
-                      _c("b-spinner", {
-                        attrs: {
-                          small: "",
-                          type: "grow",
-                          variant: "secondary",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("b-spinner", {
-                        attrs: { type: "grow", variant: "dark" },
-                      }),
-                      _vm._v(" "),
-                      _c("b-spinner", {
-                        attrs: {
-                          small: "",
-                          type: "grow",
-                          variant: "secondary",
-                        },
-                      }),
-                    ],
-                    1
-                  ),
-                ]
-              },
-              proxy: true,
-            },
-          ]),
+          proxy: true,
         },
-        [
-          _vm._v(" "),
-          _c("b-card", { staticClass: "mb-0", attrs: { "no-body": "" } }, [
+      ]),
+    },
+    [
+      _vm._v(" "),
+      _c("b-card", { staticClass: "mb-0", attrs: { "no-body": "" } }, [
+        _c(
+          "div",
+          { staticClass: "m-2" },
+          [
             _c(
-              "div",
-              { staticClass: "m-2" },
+              "b-form",
               [
                 _c(
-                  "b-form",
+                  "b-row",
                   [
                     _c(
-                      "b-row",
+                      "b-col",
+                      { attrs: { cols: "12", md: "6", lg: "4" } },
                       [
                         _c(
-                          "b-col",
-                          { attrs: { cols: "12", md: "6", lg: "4" } },
+                          "b-form-group",
+                          {
+                            attrs: {
+                              label: _vm.$t("branch_office"),
+                              "label-for": "branch_office_id",
+                            },
+                          },
+                          [
+                            _c("v-select", {
+                              attrs: {
+                                options: _vm.branchs,
+                                reduce: function (option) {
+                                  return option.id
+                                },
+                                label: "name",
+                                "input-id": "branch_office_id",
+                                clearable: false,
+                                searchable: false,
+                              },
+                              model: {
+                                value: _vm.appointment.branch_office_id,
+                                callback: function ($$v) {
+                                  _vm.$set(
+                                    _vm.appointment,
+                                    "branch_office_id",
+                                    $$v
+                                  )
+                                },
+                                expression: "appointment.branch_office_id",
+                              },
+                            }),
+                          ],
+                          1
+                        ),
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-col",
+                      { attrs: { cols: "12", md: "6", lg: "4" } },
+                      [
+                        _c(
+                          "b-form-group",
+                          {
+                            attrs: {
+                              label: _vm.$t("appointments.professional"),
+                              "label-for": "add-professional",
+                            },
+                          },
+                          [
+                            _c("v-select", {
+                              attrs: {
+                                options: _vm.professionals,
+                                label: "name",
+                                reduce: function (option) {
+                                  return option.id
+                                },
+                                "input-id": "add-professional",
+                                clearable: false,
+                                searchable: true,
+                              },
+                              model: {
+                                value: _vm.appointment.user_id,
+                                callback: function ($$v) {
+                                  _vm.$set(_vm.appointment, "user_id", $$v)
+                                },
+                                expression: "appointment.user_id",
+                              },
+                            }),
+                          ],
+                          1
+                        ),
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-col",
+                      { attrs: { cols: "12", md: "6", lg: "4" } },
+                      [
+                        _c(
+                          "b-form-group",
+                          {
+                            attrs: {
+                              label: _vm.$t("appointments.date"),
+                              "label-for": "birthday",
+                              description: !_vm.isAvailable
+                                ? _vm.$t("appointments.not_available_help")
+                                : "",
+                            },
+                          },
+                          [
+                            _c("flat-pickr", {
+                              staticClass: "form-control",
+                              class: !_vm.isAvailable ? "is-invalid" : "",
+                              attrs: {
+                                config: {
+                                  minDate: "today",
+                                  enableTime: true,
+                                  time_24hr: true,
+                                  dateFormat: "d/m/Y H:i",
+                                  minTime: _vm.slotMinTime,
+                                  maxTime: _vm.slotMaxTime,
+                                  minuteIncrement: 15,
+                                },
+                                placeholder: "DD/MM/YYYY H:I:S",
+                              },
+                              on: {
+                                "on-change": _vm.onChange,
+                                "on-ValueUpdate": _vm.onChange,
+                              },
+                              model: {
+                                value: _vm.appointment.date,
+                                callback: function ($$v) {
+                                  _vm.$set(_vm.appointment, "date", $$v)
+                                },
+                                expression: "appointment.date",
+                              },
+                            }),
+                          ],
+                          1
+                        ),
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-col",
+                      { attrs: { cols: "12", md: "6", lg: "4" } },
+                      [
+                        _c(
+                          "b-form-group",
+                          {
+                            attrs: {
+                              label: _vm.$t("appointments.state"),
+                              "label-for": "calendar",
+                            },
+                          },
+                          [
+                            _c("v-select", {
+                              attrs: {
+                                options: _vm.calendarOptions,
+                                label: "label",
+                                reduce: function (calendar) {
+                                  return calendar.label
+                                },
+                                "input-id": "calendar",
+                                clearable: false,
+                                searchable: false,
+                              },
+                              scopedSlots: _vm._u([
+                                {
+                                  key: "option",
+                                  fn: function (ref) {
+                                    var color = ref.color
+                                    var label = ref.label
+                                    return [
+                                      _c("div", {
+                                        staticClass:
+                                          "rounded-circle d-inline-block mr-50",
+                                        class: "bg-" + color,
+                                        staticStyle: {
+                                          height: "10px",
+                                          width: "10px",
+                                        },
+                                      }),
+                                      _vm._v(" "),
+                                      _c("span", [
+                                        _vm._v(
+                                          _vm._s(
+                                            _vm.$t(
+                                              "appointments.status." + label
+                                            )
+                                          )
+                                        ),
+                                      ]),
+                                    ]
+                                  },
+                                },
+                                {
+                                  key: "selected-option",
+                                  fn: function (ref) {
+                                    var color = ref.color
+                                    var label = ref.label
+                                    return [
+                                      _c("div", {
+                                        staticClass:
+                                          "rounded-circle d-inline-block mr-50",
+                                        class: "bg-" + color,
+                                        staticStyle: {
+                                          height: "10px",
+                                          width: "10px",
+                                        },
+                                      }),
+                                      _vm._v(" "),
+                                      _c("span", [
+                                        _vm._v(
+                                          _vm._s(
+                                            _vm.$t(
+                                              "appointments.status." + label
+                                            )
+                                          )
+                                        ),
+                                      ]),
+                                    ]
+                                  },
+                                },
+                              ]),
+                              model: {
+                                value: _vm.appointment.state,
+                                callback: function ($$v) {
+                                  _vm.$set(_vm.appointment, "state", $$v)
+                                },
+                                expression: "appointment.state",
+                              },
+                            }),
+                          ],
+                          1
+                        ),
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-col",
+                      { attrs: { cols: "12", md: "8", lg: "8" } },
+                      [
+                        _c(
+                          "b-form-group",
+                          {
+                            attrs: {
+                              label: _vm.$t("patients.patient"),
+                              "label-for": "add-patient",
+                            },
+                          },
                           [
                             _c(
-                              "b-form-group",
-                              {
-                                attrs: {
-                                  label: _vm.$t("branch_office"),
-                                  "label-for": "branch_office_id",
-                                },
-                              },
+                              "b-input-group",
+                              { staticClass: "input-group-merge" },
                               [
-                                _c("v-select", {
+                                _c(
+                                  "b-input-group-prepend",
+                                  { attrs: { "is-text": "" } },
+                                  [
+                                    _c("feather-icon", {
+                                      attrs: { icon: "SearchIcon" },
+                                    }),
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c("b-form-input", {
                                   attrs: {
-                                    options: _vm.branchs,
-                                    label: "name",
-                                    reduce: function (option) {
-                                      return option.id
+                                    readonly: "",
+                                    placeholder: _vm.$t(
+                                      "patients.search_options"
+                                    ),
+                                  },
+                                  on: {
+                                    click: function ($event) {
+                                      _vm.activeSearchPatient = true
                                     },
-                                    "input-id": "branch_office_id",
-                                    clearable: false,
-                                    searchable: false,
                                   },
                                   model: {
-                                    value: _vm.appointment.branch_office_id,
+                                    value: _vm.selectedPatient.full_name,
                                     callback: function ($$v) {
                                       _vm.$set(
-                                        _vm.appointment,
-                                        "branch_office_id",
+                                        _vm.selectedPatient,
+                                        "full_name",
                                         $$v
                                       )
                                     },
-                                    expression: "appointment.branch_office_id",
+                                    expression: "selectedPatient.full_name",
                                   },
                                 }),
-                              ],
-                              1
-                            ),
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "b-col",
-                          { attrs: { cols: "12", md: "6", lg: "4" } },
-                          [
-                            _c(
-                              "b-form-group",
-                              {
-                                attrs: {
-                                  label: _vm.$t("appointments.professional"),
-                                  "label-for": "add-guests",
-                                },
-                              },
-                              [
-                                _c("v-select", {
-                                  attrs: {
-                                    options: _vm.professionals,
-                                    label: "name",
-                                    "input-id": "add-professional",
-                                    clearable: false,
-                                    searchable: false,
-                                  },
-                                  model: {
-                                    value: _vm.appointment.doctor,
-                                    callback: function ($$v) {
-                                      _vm.$set(_vm.appointment, "doctor", $$v)
-                                    },
-                                    expression: "appointment.doctor",
-                                  },
-                                }),
-                              ],
-                              1
-                            ),
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "b-col",
-                          { attrs: { cols: "12", md: "6", lg: "4" } },
-                          [
-                            _c(
-                              "b-form-group",
-                              {
-                                attrs: {
-                                  label: _vm.$t("appointments.date"),
-                                  "label-for": "date",
-                                },
-                              },
-                              [
-                                _c("flat-pickr", {
-                                  staticClass: "form-control",
-                                  attrs: {
-                                    config: {
-                                      minDate: "today",
-                                      enableTime: true,
-                                      time_24hr: true,
-                                      dateFormat: "d/m/Y H:i",
-                                      minTime: "09:00:00",
-                                      maxTime: "21:45:00",
-                                      minuteIncrement: 15,
-                                    },
-                                    placeholder: "DD-MM-YYYY H:I:S",
-                                  },
-                                  on: {
-                                    "on-change": _vm.onChange,
-                                    "on-ValueUpdate": _vm.onChange,
-                                  },
-                                  model: {
-                                    value: _vm.appointment.date,
-                                    callback: function ($$v) {
-                                      _vm.$set(_vm.appointment, "date", $$v)
-                                    },
-                                    expression: "appointment.date",
-                                  },
-                                }),
-                              ],
-                              1
-                            ),
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "b-col",
-                          { attrs: { cols: "12", md: "6", lg: "4" } },
-                          [
-                            _c(
-                              "b-form-group",
-                              {
-                                attrs: {
-                                  label: _vm.$t("appointments.state"),
-                                  "label-for": "calendar",
-                                },
-                              },
-                              [
-                                _c("v-select", {
-                                  attrs: {
-                                    options: _vm.calendarOptions,
-                                    label: "label",
-                                    reduce: function (calendar) {
-                                      return calendar.label
-                                    },
-                                    "input-id": "calendar",
-                                    clearable: false,
-                                    searchable: false,
-                                  },
-                                  scopedSlots: _vm._u([
-                                    {
-                                      key: "option",
-                                      fn: function (ref) {
-                                        var color = ref.color
-                                        var label = ref.label
-                                        return [
-                                          _c("div", {
-                                            staticClass:
-                                              "rounded-circle d-inline-block mr-50",
-                                            class: "bg-" + color,
-                                            staticStyle: {
-                                              height: "10px",
-                                              width: "10px",
-                                            },
-                                          }),
-                                          _vm._v(" "),
-                                          _c("span", [
-                                            _vm._v(
-                                              _vm._s(
-                                                _vm.$t(
-                                                  "appointments.status." + label
-                                                )
-                                              )
-                                            ),
-                                          ]),
-                                        ]
-                                      },
-                                    },
-                                    {
-                                      key: "selected-option",
-                                      fn: function (ref) {
-                                        var color = ref.color
-                                        var label = ref.label
-                                        return [
-                                          _c("div", {
-                                            staticClass:
-                                              "rounded-circle d-inline-block mr-50",
-                                            class: "bg-" + color,
-                                            staticStyle: {
-                                              height: "10px",
-                                              width: "10px",
-                                            },
-                                          }),
-                                          _vm._v(" "),
-                                          _c("span", [
-                                            _vm._v(
-                                              _vm._s(
-                                                _vm.$t(
-                                                  "appointments.status." + label
-                                                )
-                                              )
-                                            ),
-                                          ]),
-                                        ]
-                                      },
-                                    },
-                                  ]),
-                                  model: {
-                                    value: _vm.appointment.state,
-                                    callback: function ($$v) {
-                                      _vm.$set(_vm.appointment, "state", $$v)
-                                    },
-                                    expression: "appointment.state",
-                                  },
-                                }),
-                              ],
-                              1
-                            ),
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "b-col",
-                          { attrs: { cols: "12", md: "8", lg: "8" } },
-                          [
-                            _c(
-                              "b-form-group",
-                              {
-                                attrs: {
-                                  label: _vm.$t("patients.patient"),
-                                  "label-for": "add-patient",
-                                },
-                              },
-                              [
+                                _vm._v(" "),
                                 _c(
-                                  "b-input-group",
-                                  { staticClass: "input-group-merge" },
+                                  "b-input-group-append",
                                   [
                                     _c(
-                                      "b-input-group-prepend",
-                                      { attrs: { "is-text": "" } },
+                                      "b-button",
+                                      {
+                                        directives: [
+                                          {
+                                            name: "b-toggle",
+                                            rawName:
+                                              "v-b-toggle.sidebar-add-new-patient",
+                                            modifiers: {
+                                              "sidebar-add-new-patient": true,
+                                            },
+                                          },
+                                        ],
+                                        attrs: { variant: "primary" },
+                                      },
                                       [
                                         _c("feather-icon", {
-                                          attrs: { icon: "SearchIcon" },
+                                          attrs: { icon: "PlusIcon" },
                                         }),
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c("b-form-input", {
-                                      attrs: {
-                                        readonly: "",
-                                        placeholder: _vm.$t(
-                                          "patients.search_options"
-                                        ),
-                                      },
-                                      on: {
-                                        click: function ($event) {
-                                          _vm.activeSearchPatient = true
-                                        },
-                                      },
-                                      model: {
-                                        value: _vm.selectedPatient.full_name,
-                                        callback: function ($$v) {
-                                          _vm.$set(
-                                            _vm.selectedPatient,
-                                            "full_name",
-                                            $$v
-                                          )
-                                        },
-                                        expression: "selectedPatient.full_name",
-                                      },
-                                    }),
-                                    _vm._v(" "),
-                                    _c(
-                                      "b-input-group-append",
-                                      [
-                                        _c(
-                                          "b-button",
-                                          {
-                                            directives: [
-                                              {
-                                                name: "b-toggle",
-                                                rawName:
-                                                  "v-b-toggle.sidebar-add-new-patient",
-                                                modifiers: {
-                                                  "sidebar-add-new-patient": true,
-                                                },
-                                              },
-                                            ],
-                                            attrs: { variant: "primary" },
-                                          },
-                                          [
-                                            _c("feather-icon", {
-                                              attrs: { icon: "PlusIcon" },
-                                            }),
-                                          ],
-                                          1
-                                        ),
                                       ],
                                       1
                                     ),
@@ -1317,79 +1325,39 @@ var render = function () {
                           ],
                           1
                         ),
-                        _vm._v(" "),
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-col",
+                      { attrs: { cols: "12", md: "4", lg: "4" } },
+                      [
                         _c(
-                          "b-col",
-                          { attrs: { cols: "12", md: "4", lg: "4" } },
+                          "b-form-group",
+                          {
+                            attrs: {
+                              label: _vm.$t("appointments.duration"),
+                              "label-for": "event-duration",
+                            },
+                          },
                           [
-                            _c(
-                              "b-form-group",
-                              {
-                                attrs: {
-                                  label: _vm.$t("appointments.duration"),
-                                  "label-for": "event-duration",
-                                },
+                            _c("b-form-input", {
+                              attrs: {
+                                "input-id": "event-duration",
+                                type: "number",
+                                placeholder: _vm.$t(
+                                  "appointments.duration_placeholder"
+                                ),
                               },
-                              [
-                                _c("b-form-input", {
-                                  attrs: {
-                                    "input-id": "event-duration",
-                                    type: "number",
-                                    placeholder: _vm.$t(
-                                      "appointments.duration_placeholder"
-                                    ),
-                                  },
-                                  model: {
-                                    value: _vm.appointment.duration,
-                                    callback: function ($$v) {
-                                      _vm.$set(_vm.appointment, "duration", $$v)
-                                    },
-                                    expression: "appointment.duration",
-                                  },
-                                }),
-                              ],
-                              1
-                            ),
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "b-col",
-                          { attrs: { cols: "12", md: "8", lg: "8" } },
-                          [
-                            _c(
-                              "b-form-group",
-                              {
-                                attrs: {
-                                  label: _vm.$t("appointments.observations"),
-                                  "label-for": "event-observation",
+                              model: {
+                                value: _vm.appointment.duration,
+                                callback: function ($$v) {
+                                  _vm.$set(_vm.appointment, "duration", $$v)
                                 },
+                                expression: "appointment.duration",
                               },
-                              [
-                                _c("b-form-textarea", {
-                                  attrs: {
-                                    id: "event-observation",
-                                    placeholder: _vm.$t(
-                                      "appointments.observations_placeholder"
-                                    ),
-                                  },
-                                  model: {
-                                    value: _vm.appointment.intern_observation,
-                                    callback: function ($$v) {
-                                      _vm.$set(
-                                        _vm.appointment,
-                                        "intern_observation",
-                                        $$v
-                                      )
-                                    },
-                                    expression:
-                                      "appointment.intern_observation",
-                                  },
-                                }),
-                              ],
-                              1
-                            ),
+                            }),
                           ],
                           1
                         ),
@@ -1397,71 +1365,111 @@ var render = function () {
                       1
                     ),
                     _vm._v(" "),
-                    _vm.canAccess("appointments.update") && _vm.isAvailable
-                      ? _c(
-                          "b-button",
+                    _c(
+                      "b-col",
+                      { attrs: { cols: "12", md: "8", lg: "8" } },
+                      [
+                        _c(
+                          "b-form-group",
                           {
-                            staticClass: "mb-1 mb-sm-0 mr-0 mr-sm-1",
-                            attrs: { variant: "primary" },
-                            on: { click: _vm.update },
+                            attrs: {
+                              label: _vm.$t("appointments.observations"),
+                              "label-for": "event-observation",
+                            },
                           },
                           [
-                            _vm._v(
-                              "\n                        " +
-                                _vm._s(_vm.$t("save")) +
-                                "\n                    "
-                            ),
-                          ]
-                        )
-                      : _vm._e(),
-                    _vm._v(" "),
-                    _c(
-                      "b-button",
-                      {
-                        attrs: { variant: "outline-secondary" },
-                        on: {
-                          click: function ($event) {
-                            return _vm.$router.push({ name: "appointment" })
-                          },
-                        },
-                      },
-                      [
-                        _vm._v(
-                          "\n                        " +
-                            _vm._s(_vm.$t("back")) +
-                            "\n                    "
+                            _c("b-form-textarea", {
+                              attrs: {
+                                id: "event-observation",
+                                placeholder: _vm.$t(
+                                  "appointments.observations_placeholder"
+                                ),
+                              },
+                              model: {
+                                value: _vm.appointment.intern_observation,
+                                callback: function ($$v) {
+                                  _vm.$set(
+                                    _vm.appointment,
+                                    "intern_observation",
+                                    $$v
+                                  )
+                                },
+                                expression: "appointment.intern_observation",
+                              },
+                            }),
+                          ],
+                          1
                         ),
-                      ]
+                      ],
+                      1
                     ),
                   ],
                   1
                 ),
+                _vm._v(" "),
+                _vm.canAccess("appointments.store") && _vm.isAvailable
+                  ? _c(
+                      "b-button",
+                      {
+                        staticClass: "mb-1 mb-sm-0 mr-0 mr-sm-1",
+                        attrs: { variant: "primary" },
+                        on: { click: _vm.store },
+                      },
+                      [
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(_vm.$t("save")) +
+                            "\n                "
+                        ),
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _c(
+                  "b-button",
+                  {
+                    staticClass: "mb-1 mb-sm-0 mr-0 mr-sm-1",
+                    attrs: { variant: "outline-secondary" },
+                    on: {
+                      click: function ($event) {
+                        return _vm.$router.push({ name: "appointment" })
+                      },
+                    },
+                  },
+                  [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(_vm.$t("back")) +
+                        "\n                "
+                    ),
+                  ]
+                ),
               ],
               1
             ),
-          ]),
-          _vm._v(" "),
-          _c("search-patient", {
-            attrs: { active: _vm.activeSearchPatient },
-            on: {
-              selected: _vm.selectPatient,
-              close: function ($event) {
-                _vm.activeSearchPatient = false
-              },
-            },
-          }),
-          _vm._v(" "),
-          _c("sidebar-add-new-patient", {
-            attrs: {
-              active: _vm.hideSidebar,
-              data: _vm.patient,
-              isValidCellPhone: _vm.isValidCellPhone,
-            },
-            on: { store: _vm.storePatient },
-          }),
-        ],
-        1
-      ),
+          ],
+          1
+        ),
+      ]),
+      _vm._v(" "),
+      _c("search-patient", {
+        attrs: { active: _vm.activeSearchPatient },
+        on: {
+          selected: _vm.selectPatient,
+          close: function ($event) {
+            _vm.activeSearchPatient = false
+          },
+        },
+      }),
+      _vm._v(" "),
+      _c("sidebar-add-new-patient", {
+        attrs: {
+          active: _vm.hideSidebar,
+          data: _vm.patient,
+          isValidCellPhone: _vm.isValidCellPhone,
+        },
+        on: { store: _vm.storePatient },
+      }),
     ],
     1
   )
@@ -1689,18 +1697,18 @@ var BranchOffices = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/appointments/calendar-edit/AppointmentEdit.vue":
-/*!************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/appointments/calendar-edit/AppointmentEdit.vue ***!
-  \************************************************************************************/
+/***/ "./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue ***!
+  \**********************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _AppointmentEdit_vue_vue_type_template_id_146ada5b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AppointmentEdit.vue?vue&type=template&id=146ada5b& */ "./resources/js/src/views/apps/appointments/calendar-edit/AppointmentEdit.vue?vue&type=template&id=146ada5b&");
-/* harmony import */ var _AppointmentEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AppointmentEdit.vue?vue&type=script&lang=js& */ "./resources/js/src/views/apps/appointments/calendar-edit/AppointmentEdit.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _AppointmentEdit_vue_vue_type_style_index_0_id_146ada5b_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AppointmentEdit.vue?vue&type=style&index=0&id=146ada5b&lang=scss& */ "./resources/js/src/views/apps/appointments/calendar-edit/AppointmentEdit.vue?vue&type=style&index=0&id=146ada5b&lang=scss&");
+/* harmony import */ var _AppointmentAdd_vue_vue_type_template_id_c89cf072___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AppointmentAdd.vue?vue&type=template&id=c89cf072& */ "./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=template&id=c89cf072&");
+/* harmony import */ var _AppointmentAdd_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AppointmentAdd.vue?vue&type=script&lang=js& */ "./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _AppointmentAdd_vue_vue_type_style_index_0_id_c89cf072_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AppointmentAdd.vue?vue&type=style&index=0&id=c89cf072&lang=scss& */ "./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=style&index=0&id=c89cf072&lang=scss&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -1711,9 +1719,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
-  _AppointmentEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _AppointmentEdit_vue_vue_type_template_id_146ada5b___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _AppointmentEdit_vue_vue_type_template_id_146ada5b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _AppointmentAdd_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _AppointmentAdd_vue_vue_type_template_id_c89cf072___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AppointmentAdd_vue_vue_type_template_id_c89cf072___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -1723,54 +1731,54 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/src/views/apps/appointments/calendar-edit/AppointmentEdit.vue"
+component.options.__file = "resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/appointments/calendar-edit/AppointmentEdit.vue?vue&type=script&lang=js&":
-/*!*************************************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/appointments/calendar-edit/AppointmentEdit.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************/
+/***/ "./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AppointmentEdit.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/appointments/calendar-edit/AppointmentEdit.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentAdd_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AppointmentAdd.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentAdd_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/appointments/calendar-edit/AppointmentEdit.vue?vue&type=style&index=0&id=146ada5b&lang=scss&":
-/*!**********************************************************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/appointments/calendar-edit/AppointmentEdit.vue?vue&type=style&index=0&id=146ada5b&lang=scss& ***!
-  \**********************************************************************************************************************************/
+/***/ "./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=style&index=0&id=c89cf072&lang=scss&":
+/*!********************************************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=style&index=0&id=c89cf072&lang=scss& ***!
+  \********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentEdit_vue_vue_type_style_index_0_id_146ada5b_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/style-loader!../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--12-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AppointmentEdit.vue?vue&type=style&index=0&id=146ada5b&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/appointments/calendar-edit/AppointmentEdit.vue?vue&type=style&index=0&id=146ada5b&lang=scss&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentEdit_vue_vue_type_style_index_0_id_146ada5b_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentEdit_vue_vue_type_style_index_0_id_146ada5b_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentEdit_vue_vue_type_style_index_0_id_146ada5b_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentEdit_vue_vue_type_style_index_0_id_146ada5b_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentAdd_vue_vue_type_style_index_0_id_c89cf072_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/style-loader!../../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--12-0!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AppointmentAdd.vue?vue&type=style&index=0&id=c89cf072&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=style&index=0&id=c89cf072&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentAdd_vue_vue_type_style_index_0_id_c89cf072_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentAdd_vue_vue_type_style_index_0_id_c89cf072_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentAdd_vue_vue_type_style_index_0_id_c89cf072_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentAdd_vue_vue_type_style_index_0_id_c89cf072_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/apps/appointments/calendar-edit/AppointmentEdit.vue?vue&type=template&id=146ada5b&":
-/*!*******************************************************************************************************************!*\
-  !*** ./resources/js/src/views/apps/appointments/calendar-edit/AppointmentEdit.vue?vue&type=template&id=146ada5b& ***!
-  \*******************************************************************************************************************/
+/***/ "./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=template&id=c89cf072&":
+/*!*****************************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=template&id=c89cf072& ***!
+  \*****************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentEdit_vue_vue_type_template_id_146ada5b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AppointmentEdit.vue?vue&type=template&id=146ada5b& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/appointments/calendar-edit/AppointmentEdit.vue?vue&type=template&id=146ada5b&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentEdit_vue_vue_type_template_id_146ada5b___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentAdd_vue_vue_type_template_id_c89cf072___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AppointmentAdd.vue?vue&type=template&id=c89cf072& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/appointments/calendar-add/AppointmentAdd.vue?vue&type=template&id=c89cf072&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentAdd_vue_vue_type_template_id_c89cf072___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentEdit_vue_vue_type_template_id_146ada5b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AppointmentAdd_vue_vue_type_template_id_c89cf072___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

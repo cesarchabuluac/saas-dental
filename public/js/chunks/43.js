@@ -816,6 +816,9 @@ var SubscriptionResources = new _providers_Subscriptions__WEBPACK_IMPORTED_MODUL
       return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
+            _context2.next = 2;
+            return getInvoices();
+          case 2:
           case "end":
             return _context2.stop();
         }
