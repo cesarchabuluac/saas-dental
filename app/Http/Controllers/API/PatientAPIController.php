@@ -9,6 +9,7 @@ use App\Http\Requests\UpdatePatientRequest;
 use App\Mail\StatementDetail;
 use App\Mail\UserRegister;
 use App\Repositories\AppointmentRepository;
+use App\Repositories\DocumentTypeRepository;
 use App\Repositories\PatientNumberRepository;
 use App\Repositories\PatientRepository;
 use App\Repositories\UserRepository;
@@ -42,13 +43,17 @@ class PatientAPIController extends Controller
 
     protected $appointmentRepository;
 
-    public function __construct(PatientRepository $patientRepo, UserRepository $userRepo, PatientNumberRepository $patientNumberRepository, StorageService $storageService, AppointmentRepository $appointmentRepository)
+    protected $documentTypeRepository;
+
+    public function __construct(PatientRepository $patientRepo, UserRepository $userRepo, PatientNumberRepository $patientNumberRepository, 
+        StorageService $storageService, AppointmentRepository $appointmentRepository, DocumentTypeRepository $documentTypeRepository)
     {
         $this->patientRepository = $patientRepo;
         $this->userRepository = $userRepo;
         $this->patientNumberRepository = $patientNumberRepository;
         $this->storageService = $storageService;
         $this->appointmentRepository = $appointmentRepository;
+        $this->documentTypeRepository = $documentTypeRepository;
     }
 
     /**
@@ -491,7 +496,9 @@ class PatientAPIController extends Controller
             'access_web'
         );
 
-        $input['document_type_id'] = $input['document_type']['value'];
+        $documentType =$this->documentTypeRepository->where('description', $input['document_type']['value'])->first();
+        
+        $input['document_type_id'] = $documentType->id ?? 1;
         $input['document_type'] = $input['document_type']['label'];
         
         $input['is_default'] = 0;
@@ -650,9 +657,13 @@ class PatientAPIController extends Controller
             'comments',
             'access_web'
         );
+
+        $documentType =$this->documentTypeRepository->where('description', $input['document_type']['value'])->first();
         $input['document_type'] = $input['document_type']['value'];
         $accessWeb = filter_var($input['access_web'], FILTER_VALIDATE_BOOLEAN);
         $input['birthday'] = (isset($input['birthday']) && !empty($input['birthday'])) ? Carbon::createFromFormat('d/m/Y', $input['birthday'])->format('Y-m-d') : null;
+
+        $input['document_type_id'] = $documentType->id ?? 1;
 
         DB::beginTransaction();
 

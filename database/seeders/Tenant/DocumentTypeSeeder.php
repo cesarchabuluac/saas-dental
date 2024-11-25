@@ -16,9 +16,9 @@ class DocumentTypeSeeder extends Seeder
      */
     public function run()
     {
-        DocumentType::firstOrCreate(['name' => 'rut'], ['description' => 'RUT', 'is_active' => true]);
-        DocumentType::firstOrCreate(['name' => 'passport'], ['description' => 'Passport:', 'is_active' => true]);
-        DocumentType::firstOrCreate(['name' => 'other'], ['description' => 'Otro', 'is_active' => true]);
+        DocumentType::updateOrCreate(['name' => 'rut'], ['description' => 'RUT', 'is_active' => true]);
+        DocumentType::updateOrCreate(['name' => 'passport'], ['description' => 'Pasaporte', 'is_active' => true]);
+        DocumentType::updateOrCreate(['name' => 'other'], ['description' => 'Otro', 'is_active' => true]);
 
 
         DB::statement("UPDATE patients SET document_type_id = 1 WHERE document_type='Otro'");

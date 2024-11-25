@@ -151,28 +151,28 @@ class TenantService
         )->token;
 
         // notify tenant
-        // $service = app()->make(MailService::class);
-        // $dataEmail = [
-        //     'to' => [
-        //         [
-        //             'name' => $request->name,
-        //             'email' => $request->email,
-        //         ],
-        //     ],
-        //     'subject' => "Bienvenido a Soft-Dental",
-        //     'template_id' => $templateID,
-        //     'vars' => [
-        //         "name" => $request->name,
-        //         "app_name" => "Soft-Dental",
-        //         "email" => $request->email,
-        //         "password" => $request->password,
-        //         "domain_link" => $domainWithHost,
-        //         "days" => 14,
-        //     ],
-        // ];
+        $service = app()->make(MailService::class);
+        $dataEmail = [
+            'to' => [
+                [
+                    'name' => $request->name,
+                    'email' => $request->email,
+                ],
+            ],
+            'subject' => "Bienvenido a Soft-Dental",
+            'template_id' => $templateID,
+            'vars' => [
+                "name" => $request->name,
+                "app_name" => "Soft-Dental",
+                "email" => $request->email,
+                "password" => $request->password,
+                "domain_link" => $domainWithHost,
+                "days" => 14,
+            ],
+        ];
 
-        // $log = $service->sendEmail($dataEmail);
-        // Log::info(json_encode($log));
+        $log = $service->sendEmail($dataEmail);
+        Log::info(json_encode($log));
 
         // Artisan::call("generate:site-config");
         //$this->createDigitalOceanRecords($tenant->domain, $tenant->id);
@@ -219,7 +219,7 @@ class TenantService
         // $tenant->notify(new NewSubscriptionNotification($domainWithHost));
 
         // notify admin
-        $admins = User::where('account_role', 1)->get();
+        // $admins = User::where('account_role', 1)->get();
         // Notification::send($admins , new TenantRegisterNotifyForAdmin($tenant, $domainWithHost));
 
         return [

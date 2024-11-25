@@ -73,7 +73,11 @@ class UserAPIController extends Controller
         }
 
         // Relación con 'roles' y 'schedules' para el resto de las solicitudes
-        $users = $users->with(['roles', 'schedules']);
+        if (tenant()) {
+            $users = $users->with(['roles', 'schedules']);
+        } else {
+            $users = $users->with(['roles']);
+        }
 
         // Retorna todos los usuarios con relaciones si está en vista de calendario
         if ($request->filled('isCalendar')) {
