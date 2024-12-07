@@ -47,3 +47,10 @@ yarn-error.log*
 
 # Docs
 /docs/.temp
+/storage/*/framework/cache/repository-cache-keys.json
+/storage/*/framework/cache/*
+/storage/*/framework/cache/repository-cache-keys.json
+/storage/*/framework/cache/*
+
+
+
