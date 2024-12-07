@@ -1,2 +1,2371 @@
-/*! For license information please see 88.js.LICENSE.txt */
-(window.webpackJsonp=window.webpackJsonp||[]).push([[88,9],{"08sT":function(e,t,n){"use strict";n.d(t,"a",(function(){return P})),n.d(t,"c",(function(){return S})),n.d(t,"b",(function(){return $}));var r,a,i=n("L3ns"),s=n("pyNs"),o=n("AFYn"),c=n("kGy3"),u=n("ex6f"),l=n("PCFI"),p=n("WPLV"),d=n("2C+6"),h=n("z3V6"),g=n("STsD"),b=n("3ec0"),f=n("qVMd"),m=n("rUdO"),v=n("1SAT"),O=n("kO/s"),j=n("jBgq");function y(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function k(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?y(Object(n),!0).forEach((function(t){w(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):y(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function w(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var x=Object(p.a)("checked",{defaultValue:null}),F=x.mixin,A=x.props,C=x.prop,P=x.event,S=Object(h.d)(Object(d.m)(k(k(k(k(k(k(k({},O.b),A),b.b),m.b),v.b),f.b),{},{ariaLabel:Object(h.c)(s.u),ariaLabelledby:Object(h.c)(s.u),button:Object(h.c)(s.g,!1),buttonVariant:Object(h.c)(s.u),inline:Object(h.c)(s.g,!1),value:Object(h.c)(s.a)})),"formRadioCheckControls"),$=Object(i.c)({mixins:[g.a,O.a,F,j.a,b.a,m.a,v.a,f.a],inheritAttrs:!1,props:S,data:function(){return{localChecked:this.isGroup?this.bvGroup[C]:this[C],hasFocus:!1}},computed:{computedLocalChecked:{get:function(){return this.isGroup?this.bvGroup.localChecked:this.localChecked},set:function(e){this.isGroup?this.bvGroup.localChecked=e:this.localChecked=e}},isChecked:function(){return Object(l.a)(this.value,this.computedLocalChecked)},isRadio:function(){return!0},isGroup:function(){return!!this.bvGroup},isBtnMode:function(){return this.isGroup?this.bvGroup.buttons:this.button},isPlain:function(){return!this.isBtnMode&&(this.isGroup?this.bvGroup.plain:this.plain)},isCustom:function(){return!this.isBtnMode&&!this.isPlain},isSwitch:function(){return!(this.isBtnMode||this.isRadio||this.isPlain)&&(this.isGroup?this.bvGroup.switches:this.switch)},isInline:function(){return this.isGroup?this.bvGroup.inline:this.inline},isDisabled:function(){return this.isGroup&&this.bvGroup.disabled||this.disabled},isRequired:function(){return this.computedName&&(this.isGroup?this.bvGroup.required:this.required)},computedName:function(){return(this.isGroup?this.bvGroup.groupName:this.name)||null},computedForm:function(){return(this.isGroup?this.bvGroup.form:this.form)||null},computedSize:function(){return(this.isGroup?this.bvGroup.size:this.size)||""},computedState:function(){return this.isGroup?this.bvGroup.computedState:Object(u.b)(this.state)?this.state:null},computedButtonVariant:function(){var e=this.buttonVariant;return e||(this.isGroup&&this.bvGroup.buttonVariant?this.bvGroup.buttonVariant:"secondary")},buttonClasses:function(){var e,t=this.computedSize;return["btn","btn-".concat(this.computedButtonVariant),(e={},w(e,"btn-".concat(t),t),w(e,"disabled",this.isDisabled),w(e,"active",this.isChecked),w(e,"focus",this.hasFocus),e)]},computedAttrs:function(){var e=this.isDisabled,t=this.isRequired;return k(k({},this.bvAttrs),{},{id:this.safeId(),type:this.isRadio?"radio":"checkbox",name:this.computedName,form:this.computedForm,disabled:e,required:t,"aria-required":t||null,"aria-label":this.ariaLabel||null,"aria-labelledby":this.ariaLabelledby||null})}},watch:(r={},w(r,C,(function(){this["".concat(C,"Watcher")].apply(this,arguments)})),w(r,"computedLocalChecked",(function(){this.computedLocalCheckedWatcher.apply(this,arguments)})),r),methods:(a={},w(a,"".concat(C,"Watcher"),(function(e){Object(l.a)(e,this.computedLocalChecked)||(this.computedLocalChecked=e)})),w(a,"computedLocalCheckedWatcher",(function(e,t){Object(l.a)(e,t)||this.$emit(P,e)})),w(a,"handleChange",(function(e){var t=this,n=e.target.checked,r=this.value,a=n?r:null;this.computedLocalChecked=r,this.$nextTick((function(){t.$emit(o.d,a),t.isGroup&&t.bvGroup.$emit(o.d,a)}))})),w(a,"handleFocus",(function(e){e.target&&("focus"===e.type?this.hasFocus=!0:"blur"===e.type&&(this.hasFocus=!1))})),w(a,"focus",(function(){this.isDisabled||Object(c.d)(this.$refs.input)})),w(a,"blur",(function(){this.isDisabled||Object(c.c)(this.$refs.input)})),a),render:function(e){var t=this.isRadio,n=this.isBtnMode,r=this.isPlain,a=this.isCustom,i=this.isInline,s=this.isSwitch,o=this.computedSize,c=this.bvAttrs,u=this.normalizeSlot(),l=e("input",{class:[{"form-check-input":r,"custom-control-input":a,"position-static":r&&!u},n?"":this.stateClass],directives:[{name:"model",value:this.computedLocalChecked}],attrs:this.computedAttrs,domProps:{value:this.value,checked:this.isChecked},on:k({change:this.handleChange},n?{focus:this.handleFocus,blur:this.handleFocus}:{}),key:"input",ref:"input"});if(n){var p=e("label",{class:this.buttonClasses},[l,u]);return this.isGroup||(p=e("div",{class:["btn-group-toggle","d-inline-block"]},[p])),p}var d=e();return r&&!u||(d=e("label",{class:{"form-check-label":r,"custom-control-label":a},attrs:{for:this.safeId()}},u)),e("div",{class:[w({"form-check":r,"form-check-inline":r&&i,"custom-control":a,"custom-control-inline":a&&i,"custom-checkbox":a&&!t&&!s,"custom-switch":s,"custom-radio":a&&t},"b-custom-control-".concat(o),o&&!n),c.class],style:c.style},[l,d])}})},"0ZAa":function(e,t,n){"use strict";n.d(t,"a",(function(){return u}));var r=n("L3ns"),a=n("tC49"),i=n("xjcK"),s=n("pyNs"),o=n("z3V6"),c=Object(o.d)({tag:Object(o.c)(s.u,"div")},i.Z),u=Object(r.c)({name:i.Z,functional:!0,props:c,render:function(e,t){var n=t.props,r=t.data,i=t.children;return e(n.tag,Object(a.a)(r,{staticClass:"input-group-text"}),i)}})},"8y4F":function(e,t,n){"use strict";n.d(t,"a",(function(){return z})),n.d(t,"c",(function(){return G})),n.d(t,"b",(function(){return T}));var r,a=n("L3ns"),i=n("pyNs"),s=n("m3aq"),o=n("hpAl"),c=n("PCFI"),u=n("WPLV"),l=n("2C+6"),p=n("z3V6"),d=n("w+YJ"),h=n("nhTo"),g=n("3ec0"),b=n("qVMd"),f=n("qHSZ"),m=n("ex6f"),v=n("aGvM"),O=Object(p.d)({disabledField:Object(p.c)(i.u,"disabled"),htmlField:Object(p.c)(i.u,"html"),options:Object(p.c)(i.d,[]),textField:Object(p.c)(i.u,"text"),valueField:Object(p.c)(i.u,"value")},"formOptionControls"),j=Object(a.c)({props:O,computed:{formOptions:function(){return this.normalizeOptions(this.options)}},methods:{normalizeOption:function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:null;if(Object(m.k)(e)){var n=Object(f.a)(e,this.valueField),r=Object(f.a)(e,this.textField);return{value:Object(m.o)(n)?t||r:n,text:Object(o.b)(String(Object(m.o)(r)?t:r)),html:Object(f.a)(e,this.htmlField),disabled:Boolean(Object(f.a)(e,this.disabledField))}}return{value:t||e,text:Object(o.b)(String(e)),disabled:!1}},normalizeOptions:function(e){var t=this;return Object(m.a)(e)?e.map((function(e){return t.normalizeOption(e)})):Object(m.k)(e)?(Object(v.a)('Setting prop "options" to an object is deprecated. Use the array format instead.',this.$options.name),Object(l.h)(e).map((function(n){return t.normalizeOption(e[n]||{},n)}))):[]}}}),y=n("rUdO"),k=n("1SAT"),w=n("kO/s"),x=n("jBgq");function F(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function A(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?F(Object(n),!0).forEach((function(t){C(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):F(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function C(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var P=["aria-describedby","aria-labelledby"],S=Object(u.a)("checked"),$=S.mixin,E=S.props,z=S.prop,L=S.event,G=Object(p.d)(Object(l.m)(A(A(A(A(A(A(A(A({},w.b),E),g.b),O),y.b),k.b),b.b),{},{ariaInvalid:Object(p.c)(i.j,!1),buttonVariant:Object(p.c)(i.u),buttons:Object(p.c)(i.g,!1),stacked:Object(p.c)(i.g,!1),validated:Object(p.c)(i.g,!1)})),"formRadioCheckGroups"),T=Object(a.c)({mixins:[w.a,$,x.a,g.a,j,y.a,k.a,b.a],inheritAttrs:!1,props:G,data:function(){return{localChecked:this[z]}},computed:{inline:function(){return!this.stacked},groupName:function(){return this.name||this.safeId()},groupClasses:function(){var e=this.inline,t=this.size,n={"was-validated":this.validated};return this.buttons&&(n=[n,"btn-group-toggle",C({"btn-group":e,"btn-group-vertical":!e},"btn-group-".concat(t),t)]),n}},watch:(r={},C(r,z,(function(e){Object(c.a)(e,this.localChecked)||(this.localChecked=e)})),C(r,"localChecked",(function(e,t){Object(c.a)(e,t)||this.$emit(L,e)})),r),render:function(e){var t=this,n=this.isRadioGroup,r=Object(l.k)(this.$attrs,P),a=n?h.a:d.a,i=this.formOptions.map((function(n,i){var s="BV_option_".concat(i);return e(a,{props:{disabled:n.disabled||!1,id:t.safeId(s),value:n.value},attrs:r,key:s},[e("span",{domProps:Object(o.a)(n.html,n.text)})])}));return e("div",{class:[this.groupClasses,"bv-no-focus-ring"],attrs:A(A({},Object(l.j)(this.$attrs,P)),{},{"aria-invalid":this.computedAriaInvalid,"aria-required":this.required?"true":null,id:this.safeId(),role:n?"radiogroup":"group",tabindex:"-1"})},[this.normalizeSlot(s.q),i,this.normalizeSlot()])}})},Ep9I:function(e,t){e.exports=Object.is||function(e,t){return e===t?0!==e||1/e==1/t:e!=e&&t!=t}},KSQ5:function(e,t,n){"use strict";n.d(t,"a",(function(){return c}));var r=n("L3ns"),a=n("xjcK"),i=n("z3V6"),s=n("8y4F"),o=Object(i.d)(s.c,a.J),c=Object(r.c)({name:a.J,mixins:[s.b],provide:function(){var e=this;return{getBvRadioGroup:function(){return e}}},props:o,computed:{isRadioGroup:function(){return!0}}})},"NlY+":function(e,t,n){"use strict";n.d(t,"a",(function(){return h}));var r=n("L3ns"),a=n("tC49"),i=n("xjcK"),s=n("2C+6"),o=n("z3V6"),c=n("Rrza");function u(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function l(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?u(Object(n),!0).forEach((function(t){p(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):u(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function p(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var d=Object(o.d)(Object(s.j)(c.b,["append"]),i.Y),h=Object(r.c)({name:i.Y,functional:!0,props:d,render:function(e,t){var n=t.props,r=t.data,i=t.children;return e(c.a,Object(a.a)(r,{props:l(l({},n),{},{append:!1})}),i)}})},OfmS:function(e,t,n){(t=n("JPst")(!1)).push([e.i,'/**\n * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML\n * Based on https://github.com/chriskempson/tomorrow-theme\n * @author Rose Pritchard\n */\n\ncode[class*="language-"],\npre[class*="language-"] {\n\tcolor: #ccc;\n\tfont-family: Consolas, Monaco, \'Andale Mono\', \'Ubuntu Mono\', monospace;\n\tfont-size: 1em;\n\twhite-space: pre;\n\tword-spacing: normal;\n\tword-break: normal;\n\tword-wrap: normal;\n\tline-height: 1.5;\n\n\t-moz-tab-size: 4;\n\t-o-tab-size: 4;\n\ttab-size: 4;\n\n\t-webkit-hyphens: none;\n\t-moz-hyphens: none;\n\t-ms-hyphens: none;\n\thyphens: none;\n\n}\n\n[dir] code[class*="language-"], [dir] pre[class*="language-"] {\n\tbackground: none;\n\n}\n\n[dir=ltr] code[class*="language-"], [dir=ltr] pre[class*="language-"] {\n\ttext-align: left;\n\n}\n\n[dir=rtl] code[class*="language-"], [dir=rtl] pre[class*="language-"] {\n\ttext-align: right;\n\n}\n\n/* Code blocks */\npre[class*="language-"] {\n\toverflow: auto;\n}\n[dir] pre[class*="language-"] {\n\tpadding: 1em;\n\tmargin: .5em 0;\n}\n\n[dir] :not(pre) > code[class*="language-"], [dir] pre[class*="language-"] {\n\tbackground: #2d2d2d;\n}\n\n/* Inline code */\n:not(pre) > code[class*="language-"] {\n\twhite-space: normal;\n}\n[dir] :not(pre) > code[class*="language-"] {\n\tpadding: .1em;\n\tborder-radius: .3em;\n}\n\n.token.comment,\n.token.block-comment,\n.token.prolog,\n.token.doctype,\n.token.cdata {\n\tcolor: #999;\n}\n\n.token.punctuation {\n\tcolor: #ccc;\n}\n\n.token.tag,\n.token.attr-name,\n.token.namespace,\n.token.deleted {\n\tcolor: #e2777a;\n}\n\n.token.function-name {\n\tcolor: #6196cc;\n}\n\n.token.boolean,\n.token.number,\n.token.function {\n\tcolor: #f08d49;\n}\n\n.token.property,\n.token.class-name,\n.token.constant,\n.token.symbol {\n\tcolor: #f8c555;\n}\n\n.token.selector,\n.token.important,\n.token.atrule,\n.token.keyword,\n.token.builtin {\n\tcolor: #cc99cd;\n}\n\n.token.string,\n.token.char,\n.token.attr-value,\n.token.regex,\n.token.variable {\n\tcolor: #7ec699;\n}\n\n.token.operator,\n.token.entity,\n.token.url {\n\tcolor: #67cdcc;\n}\n\n.token.important,\n.token.bold {\n\tfont-weight: bold;\n}\n.token.italic {\n\tfont-style: italic;\n}\n\n[dir] .token.entity {\n\tcursor: help;\n}\n\n.token.inserted {\n\tcolor: green;\n}\n',""]),e.exports=t},Rrza:function(e,t,n){"use strict";n.d(t,"b",(function(){return u})),n.d(t,"a",(function(){return l}));var r=n("L3ns"),a=n("tC49"),i=n("xjcK"),s=n("pyNs"),o=n("z3V6"),c=n("0ZAa"),u=Object(o.d)({append:Object(o.c)(s.g,!1),id:Object(o.c)(s.u),isText:Object(o.c)(s.g,!1),tag:Object(o.c)(s.u,"div")},i.W),l=Object(r.c)({name:i.W,functional:!0,props:u,render:function(e,t){var n=t.props,r=t.data,i=t.children,s=n.append;return e(n.tag,Object(a.a)(r,{class:{"input-group-append":s,"input-group-prepend":!s},attrs:{id:n.id}}),n.isText?[e(c.a,i)]:i)}})},WEOK:function(e,t,n){"use strict";n.d(t,"a",(function(){return I}));var r,a=n("L3ns"),i=n("xjcK"),s=n("6GPe"),o=n("AFYn"),c=n("pyNs"),u=n("m3aq"),l=n("kGy3"),p=n("a3f1"),d=n("WPLV"),h=n("2C+6"),g=n("z3V6"),b=n("kO/s"),f=n("YC3Q"),m=n("jBgq"),v=n("tC49"),O={css:!0,enterClass:"",enterActiveClass:"collapsing",enterToClass:"collapse show",leaveClass:"collapse show",leaveActiveClass:"collapsing",leaveToClass:"collapse"},j={enter:function(e){Object(l.F)(e,"height",0),Object(l.B)((function(){Object(l.w)(e),Object(l.F)(e,"height","".concat(e.scrollHeight,"px"))}))},afterEnter:function(e){Object(l.A)(e,"height")},leave:function(e){Object(l.F)(e,"height","auto"),Object(l.F)(e,"display","block"),Object(l.F)(e,"height","".concat(Object(l.i)(e).height,"px")),Object(l.w)(e),Object(l.F)(e,"height",0)},afterLeave:function(e){Object(l.A)(e,"height")}},y={appear:Object(g.c)(c.g,!1)},k=Object(a.c)({name:i.v,functional:!0,props:y,render:function(e,t){var n=t.props,r=t.data,a=t.children;return e("transition",Object(v.a)(r,{props:O,on:j},{props:n}),a)}});function w(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function x(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?w(Object(n),!0).forEach((function(t){F(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):w(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function F(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var A=Object(p.d)(i.u,"toggle"),C=Object(p.d)(i.u,"request-state"),P=Object(p.e)(i.u,"accordion"),S=Object(p.e)(i.u,"state"),$=Object(p.e)(i.u,"sync-state"),E=Object(d.a)("visible",{type:c.g,defaultValue:!1}),z=E.mixin,L=E.props,G=E.prop,T=E.event,D=Object(g.d)(Object(h.m)(x(x(x({},b.b),L),{},{accordion:Object(g.c)(c.u),appear:Object(g.c)(c.g,!1),isNav:Object(g.c)(c.g,!1),tag:Object(g.c)(c.u,"div")})),i.u),I=Object(a.c)({name:i.u,mixins:[b.a,z,m.a,f.a],props:D,data:function(){return{show:this[G],transitioning:!1}},computed:{classObject:function(){var e=this.transitioning;return{"navbar-collapse":this.isNav,collapse:!e,show:this.show&&!e}},slotScope:function(){var e=this;return{visible:this.show,close:function(){e.show=!1}}}},watch:(r={},F(r,G,(function(e){e!==this.show&&(this.show=e)})),F(r,"show",(function(e,t){e!==t&&this.emitState()})),r),created:function(){this.show=this[G]},mounted:function(){var e=this;this.show=this[G],this.listenOnRoot(A,this.handleToggleEvent),this.listenOnRoot(P,this.handleAccordionEvent),this.isNav&&(this.setWindowEvents(!0),this.handleResize()),this.$nextTick((function(){e.emitState()})),this.listenOnRoot(C,(function(t){t===e.safeId()&&e.$nextTick(e.emitSync)}))},updated:function(){this.emitSync()},deactivated:function(){this.isNav&&this.setWindowEvents(!1)},activated:function(){this.isNav&&this.setWindowEvents(!0),this.emitSync()},beforeDestroy:function(){this.show=!1,this.isNav&&s.g&&this.setWindowEvents(!1)},methods:{setWindowEvents:function(e){Object(p.c)(e,window,"resize",this.handleResize,o.Y),Object(p.c)(e,window,"orientationchange",this.handleResize,o.Y)},toggle:function(){this.show=!this.show},onEnter:function(){this.transitioning=!0,this.$emit(o.S)},onAfterEnter:function(){this.transitioning=!1,this.$emit(o.T)},onLeave:function(){this.transitioning=!0,this.$emit(o.x)},onAfterLeave:function(){this.transitioning=!1,this.$emit(o.w)},emitState:function(){var e=this.show,t=this.accordion,n=this.safeId();this.$emit(T,e),this.emitOnRoot(S,n,e),t&&e&&this.emitOnRoot(P,n,t)},emitSync:function(){this.emitOnRoot($,this.safeId(),this.show)},checkDisplayBlock:function(){var e=this.$el,t=Object(l.p)(e,"show");Object(l.y)(e,"show");var n="block"===Object(l.k)(e).display;return t&&Object(l.b)(e,"show"),n},clickHandler:function(e){var t=e.target;this.isNav&&t&&"block"===Object(l.k)(this.$el).display&&(!Object(l.v)(t,".nav-link,.dropdown-item")&&!Object(l.e)(".nav-link,.dropdown-item",t)||this.checkDisplayBlock()||(this.show=!1))},handleToggleEvent:function(e){e===this.safeId()&&this.toggle()},handleAccordionEvent:function(e,t){var n=this.accordion,r=this.show;if(n&&n===t){var a=e===this.safeId();(a&&!r||!a&&r)&&this.toggle()}},handleResize:function(){this.show="block"===Object(l.k)(this.$el).display}},render:function(e){var t=this.appear,n=e(this.tag,{class:this.classObject,directives:[{name:"show",value:this.show}],attrs:{id:this.safeId()},on:{click:this.clickHandler}},this.normalizeSlot(u.i,this.slotScope));return e(k,{props:{appear:t},on:{enter:this.onEnter,afterEnter:this.onAfterEnter,leave:this.onLeave,afterLeave:this.onAfterLeave}},[n])}})},XhI9:function(e,t,n){"use strict";n.d(t,"a",(function(){return b}));var r=n("L3ns"),a=n("tC49"),i=n("xjcK"),s=n("pyNs"),o=n("m3aq"),c=n("hpAl"),u=n("Nlw7"),l=n("z3V6"),p=n("zMAm"),d=n("NlY+"),h=n("0ZAa");var g=Object(l.d)({append:Object(l.c)(s.u),appendHtml:Object(l.c)(s.u),id:Object(l.c)(s.u),prepend:Object(l.c)(s.u),prependHtml:Object(l.c)(s.u),size:Object(l.c)(s.u),tag:Object(l.c)(s.u,"div")},i.V),b=Object(r.c)({name:i.V,functional:!0,props:g,render:function(e,t){var n=t.props,r=t.data,i=t.slots,s=t.scopedSlots,l=n.prepend,g=n.prependHtml,b=n.append,f=n.appendHtml,m=n.size,v=s||{},O=i(),j={},y=e(),k=Object(u.a)(o.K,v,O);(k||l||g)&&(y=e(d.a,[k?Object(u.b)(o.K,j,v,O):e(h.a,{domProps:Object(c.a)(g,l)})]));var w,x,F,A=e(),C=Object(u.a)(o.b,v,O);return(C||b||f)&&(A=e(p.a,[C?Object(u.b)(o.b,j,v,O):e(h.a,{domProps:Object(c.a)(f,b)})])),e(n.tag,Object(a.a)(r,{staticClass:"input-group",class:(w={},x="input-group-".concat(m),F=m,x in w?Object.defineProperty(w,x,{value:F,enumerable:!0,configurable:!0,writable:!0}):w[x]=F,w),attrs:{id:n.id||null,role:"group"}}),[y,Object(u.b)(o.i,j,v,O),A])}})},hByQ:function(e,t,n){"use strict";var r=n("xluM"),a=n("14Sl"),i=n("glrk"),s=n("cjT7"),o=n("HYAF"),c=n("Ep9I"),u=n("V37c"),l=n("3Eq5"),p=n("FMNM");a("search",(function(e,t,n){return[function(t){var n=o(this),a=s(t)?void 0:l(t,e);return a?r(a,t,n):new RegExp(t)[e](u(n))},function(e){var r=i(this),a=u(e),s=n(t,r,a);if(s.done)return s.value;var o=r.lastIndex;c(o,0)||(r.lastIndex=0);var l=p(r,a);return c(r.lastIndex,o)||(r.lastIndex=o),null===l?-1:l.index}]}))},"hL/g":function(e,t,n){var r=n("OfmS");"string"==typeof r&&(r=[[e.i,r,""]]);var a={hmr:!0,transform:void 0,insertInto:void 0};n("aET+")(r,a);r.locals&&(e.exports=r.locals)},jVEP:function(e,t,n){"use strict";var r,a=(r=n("wZee"))&&"object"==typeof r&&"default"in r?r.default:r;function i(e){for(var t=1;t<arguments.length;t++)for(var n in arguments[t])e[n]=arguments[t][n];return e}var s={functional:!0,props:{code:{type:String},inline:{type:Boolean,default:!1},language:{type:String,default:"markup"}},render:function(e,t){var n=t.props.code||(t.children&&t.children.length>0?t.children[0].text:""),r=t.props.inline,s=t.props.language,o=a.languages[s],c="language-".concat(s);return r?e("code",i({},t.data,{class:[t.data.class,c],domProps:i({},t.data.domProps,{innerHTML:a.highlight(n,o)})})):e("pre",i({},t.data,{class:[t.data.class,c]}),[e("code",{class:c,domProps:{innerHTML:a.highlight(n,o)}})])}};e.exports=s},mwM1:function(e,t,n){"use strict";n.d(t,"a",(function(){return v}));var r=n("L3ns"),a=n("xjcK"),i=n("AFYn"),s=n("pyNs"),o=n("m3aq"),c=n("OljW"),u=n("jBgq"),l=n("z3V6"),p=n("AeMN"),d=n("zio1");function h(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function g(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?h(Object(n),!0).forEach((function(t){b(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):h(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function b(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var f={top:0,left:0,bottom:0,right:0},m=Object(l.d)({bgColor:Object(l.c)(s.u),blur:Object(l.c)(s.u,"2px"),fixed:Object(l.c)(s.g,!1),noCenter:Object(l.c)(s.g,!1),noFade:Object(l.c)(s.g,!1),noWrap:Object(l.c)(s.g,!1),opacity:Object(l.c)(s.p,.85,(function(e){var t=Object(c.a)(e,0);return t>=0&&t<=1})),overlayTag:Object(l.c)(s.u,"div"),rounded:Object(l.c)(s.j,!1),show:Object(l.c)(s.g,!1),spinnerSmall:Object(l.c)(s.g,!1),spinnerType:Object(l.c)(s.u,"border"),spinnerVariant:Object(l.c)(s.u),variant:Object(l.c)(s.u,"light"),wrapTag:Object(l.c)(s.u,"div"),zIndex:Object(l.c)(s.p,10)},a.ob),v=Object(r.c)({name:a.ob,mixins:[u.a],props:m,computed:{computedRounded:function(){var e=this.rounded;return!0===e||""===e?"rounded":e?"rounded-".concat(e):""},computedVariant:function(){var e=this.variant;return e&&!this.bgColor?"bg-".concat(e):""},slotScope:function(){return{spinnerType:this.spinnerType||null,spinnerVariant:this.spinnerVariant||null,spinnerSmall:this.spinnerSmall}}},methods:{defaultOverlayFn:function(e){var t=e.spinnerType,n=e.spinnerVariant,r=e.spinnerSmall;return this.$createElement(p.a,{props:{type:t,variant:n,small:r}})}},render:function(e){var t=this,n=this.show,r=this.fixed,a=this.noFade,s=this.noWrap,c=this.slotScope,u=e();if(n){var l=e("div",{staticClass:"position-absolute",class:[this.computedVariant,this.computedRounded],style:g(g({},f),{},{opacity:this.opacity,backgroundColor:this.bgColor||null,backdropFilter:this.blur?"blur(".concat(this.blur,")"):null})}),p=e("div",{staticClass:"position-absolute",style:this.noCenter?g({},f):{top:"50%",left:"50%",transform:"translateX(-50%) translateY(-50%)"}},[this.normalizeSlot(o.H,c)||this.defaultOverlayFn(c)]);u=e(this.overlayTag,{staticClass:"b-overlay",class:{"position-absolute":!s||s&&!r,"position-fixed":s&&r},style:g(g({},f),{},{zIndex:this.zIndex||10}),on:{click:function(e){return t.$emit(i.f,e)}},key:"overlay"},[l,p])}return u=e(d.a,{props:{noFade:a,appear:!0},on:{"after-enter":function(){return t.$emit(i.T)},"after-leave":function(){return t.$emit(i.w)}}},[u]),s?u:e(this.wrapTag,{staticClass:"b-overlay-wrap position-relative",attrs:{"aria-busy":n?"true":null}},s?[u]:[this.normalizeSlot(),u])}})},nhTo:function(e,t,n){"use strict";n.d(t,"a",(function(){return c}));var r=n("L3ns"),a=n("xjcK"),i=n("z3V6"),s=n("08sT"),o=Object(i.d)(s.c,a.I),c=Object(r.c)({name:a.I,mixins:[s.b],inject:{getBvGroup:{from:"getBvRadioGroup",default:function(){return function(){return null}}}},props:o,computed:{bvGroup:function(){return this.getBvGroup()}}})},qVMd:function(e,t,n){"use strict";n.d(t,"b",(function(){return s})),n.d(t,"a",(function(){return o}));var r=n("L3ns"),a=n("pyNs"),i=n("z3V6"),s=Object(i.d)({plain:Object(i.c)(a.g,!1)},"formControls"),o=Object(r.c)({props:s,computed:{custom:function(){return!this.plain}}})},"w+YJ":function(e,t,n){"use strict";n.d(t,"a",(function(){return O}));var r,a=n("L3ns"),i=n("xjcK"),s=n("AFYn"),o=n("pyNs"),c=n("ex6f"),u=n("PCFI"),l=function(e,t){for(var n=0;n<e.length;n++)if(Object(u.a)(e[n],t))return n;return-1},p=n("2C+6"),d=n("z3V6"),h=n("08sT");function g(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function b(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?g(Object(n),!0).forEach((function(t){f(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):g(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function f(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var m=s.cb+"indeterminate",v=Object(d.d)(Object(p.m)(b(b({},h.c),{},(f(r={},"indeterminate",Object(d.c)(o.g,!1)),f(r,"switch",Object(d.c)(o.g,!1)),f(r,"uncheckedValue",Object(d.c)(o.a,!1)),f(r,"value",Object(d.c)(o.a,!0)),r))),i.C),O=Object(a.c)({name:i.C,mixins:[h.b],inject:{getBvGroup:{from:"getBvCheckGroup",default:function(){return function(){return null}}}},props:v,computed:{bvGroup:function(){return this.getBvGroup()},isChecked:function(){var e=this.value,t=this.computedLocalChecked;return Object(c.a)(t)?l(t,e)>-1:Object(u.a)(t,e)},isRadio:function(){return!1}},watch:f({},"indeterminate",(function(e,t){Object(u.a)(e,t)||this.setIndeterminate(e)})),mounted:function(){this.setIndeterminate(this.indeterminate)},methods:{computedLocalCheckedWatcher:function(e,t){if(!Object(u.a)(e,t)){this.$emit(h.a,e);var n=this.$refs.input;n&&this.$emit(m,n.indeterminate)}},handleChange:function(e){var t=this,n=e.target,r=n.checked,a=n.indeterminate,i=this.value,o=this.uncheckedValue,u=this.computedLocalChecked;if(Object(c.a)(u)){var p=l(u,i);r&&p<0?u=u.concat(i):!r&&p>-1&&(u=u.slice(0,p).concat(u.slice(p+1)))}else u=r?i:o;this.computedLocalChecked=u,this.$nextTick((function(){t.$emit(s.d,u),t.isGroup&&t.bvGroup.$emit(s.d,u),t.$emit(m,a)}))},setIndeterminate:function(e){Object(c.a)(this.computedLocalChecked)&&(e=!1);var t=this.$refs.input;t&&(t.indeterminate=e,this.$emit(m,e))}}})},wZee:function(e,t,n){(function(t){var n=function(e){var t=/(?:^|\s)lang(?:uage)?-([\w-]+)(?=\s|$)/i,n=0,r={},a={manual:e.Prism&&e.Prism.manual,disableWorkerMessageHandler:e.Prism&&e.Prism.disableWorkerMessageHandler,util:{encode:function e(t){return t instanceof i?new i(t.type,e(t.content),t.alias):Array.isArray(t)?t.map(e):t.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).slice(8,-1)},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++n}),e.__id},clone:function e(t,n){var r,i;switch(n=n||{},a.util.type(t)){case"Object":if(i=a.util.objId(t),n[i])return n[i];for(var s in r={},n[i]=r,t)t.hasOwnProperty(s)&&(r[s]=e(t[s],n));return r;case"Array":return i=a.util.objId(t),n[i]?n[i]:(r=[],n[i]=r,t.forEach((function(t,a){r[a]=e(t,n)})),r);default:return t}},getLanguage:function(e){for(;e;){var n=t.exec(e.className);if(n)return n[1].toLowerCase();e=e.parentElement}return"none"},setLanguage:function(e,n){e.className=e.className.replace(RegExp(t,"gi"),""),e.classList.add("language-"+n)},currentScript:function(){if("undefined"==typeof document)return null;if("currentScript"in document)return document.currentScript;try{throw new Error}catch(r){var e=(/at [^(\r\n]*\((.*):[^:]+:[^:]+\)$/i.exec(r.stack)||[])[1];if(e){var t=document.getElementsByTagName("script");for(var n in t)if(t[n].src==e)return t[n]}return null}},isActive:function(e,t,n){for(var r="no-"+t;e;){var a=e.classList;if(a.contains(t))return!0;if(a.contains(r))return!1;e=e.parentElement}return!!n}},languages:{plain:r,plaintext:r,text:r,txt:r,extend:function(e,t){var n=a.util.clone(a.languages[e]);for(var r in t)n[r]=t[r];return n},insertBefore:function(e,t,n,r){var i=(r=r||a.languages)[e],s={};for(var o in i)if(i.hasOwnProperty(o)){if(o==t)for(var c in n)n.hasOwnProperty(c)&&(s[c]=n[c]);n.hasOwnProperty(o)||(s[o]=i[o])}var u=r[e];return r[e]=s,a.languages.DFS(a.languages,(function(t,n){n===u&&t!=e&&(this[t]=s)})),s},DFS:function e(t,n,r,i){i=i||{};var s=a.util.objId;for(var o in t)if(t.hasOwnProperty(o)){n.call(t,o,t[o],r||o);var c=t[o],u=a.util.type(c);"Object"!==u||i[s(c)]?"Array"!==u||i[s(c)]||(i[s(c)]=!0,e(c,n,o,i)):(i[s(c)]=!0,e(c,n,null,i))}}},plugins:{},highlightAll:function(e,t){a.highlightAllUnder(document,e,t)},highlightAllUnder:function(e,t,n){var r={callback:n,container:e,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};a.hooks.run("before-highlightall",r),r.elements=Array.prototype.slice.apply(r.container.querySelectorAll(r.selector)),a.hooks.run("before-all-elements-highlight",r);for(var i,s=0;i=r.elements[s++];)a.highlightElement(i,!0===t,r.callback)},highlightElement:function(t,n,r){var i=a.util.getLanguage(t),s=a.languages[i];a.util.setLanguage(t,i);var o=t.parentElement;o&&"pre"===o.nodeName.toLowerCase()&&a.util.setLanguage(o,i);var c={element:t,language:i,grammar:s,code:t.textContent};function u(e){c.highlightedCode=e,a.hooks.run("before-insert",c),c.element.innerHTML=c.highlightedCode,a.hooks.run("after-highlight",c),a.hooks.run("complete",c),r&&r.call(c.element)}if(a.hooks.run("before-sanity-check",c),(o=c.element.parentElement)&&"pre"===o.nodeName.toLowerCase()&&!o.hasAttribute("tabindex")&&o.setAttribute("tabindex","0"),!c.code)return a.hooks.run("complete",c),void(r&&r.call(c.element));if(a.hooks.run("before-highlight",c),c.grammar)if(n&&e.Worker){var l=new Worker(a.filename);l.onmessage=function(e){u(e.data)},l.postMessage(JSON.stringify({language:c.language,code:c.code,immediateClose:!0}))}else u(a.highlight(c.code,c.grammar,c.language));else u(a.util.encode(c.code))},highlight:function(e,t,n){var r={code:e,grammar:t,language:n};if(a.hooks.run("before-tokenize",r),!r.grammar)throw new Error('The language "'+r.language+'" has no grammar.');return r.tokens=a.tokenize(r.code,r.grammar),a.hooks.run("after-tokenize",r),i.stringify(a.util.encode(r.tokens),r.language)},tokenize:function(e,t){var n=t.rest;if(n){for(var r in n)t[r]=n[r];delete t.rest}var l=new o;return c(l,l.head,e),function e(t,n,r,o,l,p){for(var d in r)if(r.hasOwnProperty(d)&&r[d]){var h=r[d];h=Array.isArray(h)?h:[h];for(var g=0;g<h.length;++g){if(p&&p.cause==d+","+g)return;var b=h[g],f=b.inside,m=!!b.lookbehind,v=!!b.greedy,O=b.alias;if(v&&!b.pattern.global){var j=b.pattern.toString().match(/[imsuy]*$/)[0];b.pattern=RegExp(b.pattern.source,j+"g")}for(var y=b.pattern||b,k=o.next,w=l;k!==n.tail&&!(p&&w>=p.reach);w+=k.value.length,k=k.next){var x=k.value;if(n.length>t.length)return;if(!(x instanceof i)){var F,A=1;if(v){if(!(F=s(y,w,t,m))||F.index>=t.length)break;var C=F.index,P=F.index+F[0].length,S=w;for(S+=k.value.length;C>=S;)k=k.next,S+=k.value.length;if(S-=k.value.length,w=S,k.value instanceof i)continue;for(var $=k;$!==n.tail&&(S<P||"string"==typeof $.value);$=$.next)A++,S+=$.value.length;A--,x=t.slice(w,S),F.index-=w}else if(!(F=s(y,0,x,m)))continue;C=F.index;var E=F[0],z=x.slice(0,C),L=x.slice(C+E.length),G=w+x.length;p&&G>p.reach&&(p.reach=G);var T=k.prev;z&&(T=c(n,T,z),w+=z.length),u(n,T,A);var D=new i(d,f?a.tokenize(E,f):E,O,E);if(k=c(n,T,D),L&&c(n,k,L),A>1){var I={cause:d+","+g,reach:G};e(t,n,r,k.prev,w,I),p&&I.reach>p.reach&&(p.reach=I.reach)}}}}}}(e,l,t,l.head,0),function(e){var t=[],n=e.head.next;for(;n!==e.tail;)t.push(n.value),n=n.next;return t}(l)},hooks:{all:{},add:function(e,t){var n=a.hooks.all;n[e]=n[e]||[],n[e].push(t)},run:function(e,t){var n=a.hooks.all[e];if(n&&n.length)for(var r,i=0;r=n[i++];)r(t)}},Token:i};function i(e,t,n,r){this.type=e,this.content=t,this.alias=n,this.length=0|(r||"").length}function s(e,t,n,r){e.lastIndex=t;var a=e.exec(n);if(a&&r&&a[1]){var i=a[1].length;a.index+=i,a[0]=a[0].slice(i)}return a}function o(){var e={value:null,prev:null,next:null},t={value:null,prev:e,next:null};e.next=t,this.head=e,this.tail=t,this.length=0}function c(e,t,n){var r=t.next,a={value:n,prev:t,next:r};return t.next=a,r.prev=a,e.length++,a}function u(e,t,n){for(var r=t.next,a=0;a<n&&r!==e.tail;a++)r=r.next;t.next=r,r.prev=t,e.length-=a}if(e.Prism=a,i.stringify=function e(t,n){if("string"==typeof t)return t;if(Array.isArray(t)){var r="";return t.forEach((function(t){r+=e(t,n)})),r}var i={type:t.type,content:e(t.content,n),tag:"span",classes:["token",t.type],attributes:{},language:n},s=t.alias;s&&(Array.isArray(s)?Array.prototype.push.apply(i.classes,s):i.classes.push(s)),a.hooks.run("wrap",i);var o="";for(var c in i.attributes)o+=" "+c+'="'+(i.attributes[c]||"").replace(/"/g,"&quot;")+'"';return"<"+i.tag+' class="'+i.classes.join(" ")+'"'+o+">"+i.content+"</"+i.tag+">"},!e.document)return e.addEventListener?(a.disableWorkerMessageHandler||e.addEventListener("message",(function(t){var n=JSON.parse(t.data),r=n.language,i=n.code,s=n.immediateClose;e.postMessage(a.highlight(i,a.languages[r],r)),s&&e.close()}),!1),a):a;var l=a.util.currentScript();function p(){a.manual||a.highlightAll()}if(l&&(a.filename=l.src,l.hasAttribute("data-manual")&&(a.manual=!0)),!a.manual){var d=document.readyState;"loading"===d||"interactive"===d&&l&&l.defer?document.addEventListener("DOMContentLoaded",p):window.requestAnimationFrame?window.requestAnimationFrame(p):window.setTimeout(p,16)}return a}("undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{});e.exports&&(e.exports=n),void 0!==t&&(t.Prism=n),n.languages.markup={comment:{pattern:/<!--(?:(?!<!--)[\s\S])*?-->/,greedy:!0},prolog:{pattern:/<\?[\s\S]+?\?>/,greedy:!0},doctype:{pattern:/<!DOCTYPE(?:[^>"'[\]]|"[^"]*"|'[^']*')+(?:\[(?:[^<"'\]]|"[^"]*"|'[^']*'|<(?!!--)|<!--(?:[^-]|-(?!->))*-->)*\]\s*)?>/i,greedy:!0,inside:{"internal-subset":{pattern:/(^[^\[]*\[)[\s\S]+(?=\]>$)/,lookbehind:!0,greedy:!0,inside:null},string:{pattern:/"[^"]*"|'[^']*'/,greedy:!0},punctuation:/^<!|>$|[[\]]/,"doctype-tag":/^DOCTYPE/i,name:/[^\s<>'"]+/}},cdata:{pattern:/<!\[CDATA\[[\s\S]*?\]\]>/i,greedy:!0},tag:{pattern:/<\/?(?!\d)[^\s>\/=$<%]+(?:\s(?:\s*[^\s>\/=]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))|(?=[\s/>])))+)?\s*\/?>/,greedy:!0,inside:{tag:{pattern:/^<\/?[^\s>\/]+/,inside:{punctuation:/^<\/?/,namespace:/^[^\s>\/:]+:/}},"special-attr":[],"attr-value":{pattern:/=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+)/,inside:{punctuation:[{pattern:/^=/,alias:"attr-equals"},{pattern:/^(\s*)["']|["']$/,lookbehind:!0}]}},punctuation:/\/?>/,"attr-name":{pattern:/[^\s>\/]+/,inside:{namespace:/^[^\s>\/:]+:/}}}},entity:[{pattern:/&[\da-z]{1,8};/i,alias:"named-entity"},/&#x?[\da-f]{1,8};/i]},n.languages.markup.tag.inside["attr-value"].inside.entity=n.languages.markup.entity,n.languages.markup.doctype.inside["internal-subset"].inside=n.languages.markup,n.hooks.add("wrap",(function(e){"entity"===e.type&&(e.attributes.title=e.content.replace(/&amp;/,"&"))})),Object.defineProperty(n.languages.markup.tag,"addInlined",{value:function(e,t){var r={};r["language-"+t]={pattern:/(^<!\[CDATA\[)[\s\S]+?(?=\]\]>$)/i,lookbehind:!0,inside:n.languages[t]},r.cdata=/^<!\[CDATA\[|\]\]>$/i;var a={"included-cdata":{pattern:/<!\[CDATA\[[\s\S]*?\]\]>/i,inside:r}};a["language-"+t]={pattern:/[\s\S]+/,inside:n.languages[t]};var i={};i[e]={pattern:RegExp(/(<__[^>]*>)(?:<!\[CDATA\[(?:[^\]]|\](?!\]>))*\]\]>|(?!<!\[CDATA\[)[\s\S])*?(?=<\/__>)/.source.replace(/__/g,(function(){return e})),"i"),lookbehind:!0,greedy:!0,inside:a},n.languages.insertBefore("markup","cdata",i)}}),Object.defineProperty(n.languages.markup.tag,"addAttribute",{value:function(e,t){n.languages.markup.tag.inside["special-attr"].push({pattern:RegExp(/(^|["'\s])/.source+"(?:"+e+")"+/\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))/.source,"i"),lookbehind:!0,inside:{"attr-name":/^[^\s=]+/,"attr-value":{pattern:/=[\s\S]+/,inside:{value:{pattern:/(^=\s*(["']|(?!["'])))\S[\s\S]*(?=\2$)/,lookbehind:!0,alias:[t,"language-"+t],inside:n.languages[t]},punctuation:[{pattern:/^=/,alias:"attr-equals"},/"|'/]}}}})}}),n.languages.html=n.languages.markup,n.languages.mathml=n.languages.markup,n.languages.svg=n.languages.markup,n.languages.xml=n.languages.extend("markup",{}),n.languages.ssml=n.languages.xml,n.languages.atom=n.languages.xml,n.languages.rss=n.languages.xml,function(e){var t=/(?:"(?:\\(?:\r\n|[\s\S])|[^"\\\r\n])*"|'(?:\\(?:\r\n|[\s\S])|[^'\\\r\n])*')/;e.languages.css={comment:/\/\*[\s\S]*?\*\//,atrule:{pattern:RegExp("@[\\w-](?:"+/[^;{\s"']|\s+(?!\s)/.source+"|"+t.source+")*?"+/(?:;|(?=\s*\{))/.source),inside:{rule:/^@[\w-]+/,"selector-function-argument":{pattern:/(\bselector\s*\(\s*(?![\s)]))(?:[^()\s]|\s+(?![\s)])|\((?:[^()]|\([^()]*\))*\))+(?=\s*\))/,lookbehind:!0,alias:"selector"},keyword:{pattern:/(^|[^\w-])(?:and|not|only|or)(?![\w-])/,lookbehind:!0}}},url:{pattern:RegExp("\\burl\\((?:"+t.source+"|"+/(?:[^\\\r\n()"']|\\[\s\S])*/.source+")\\)","i"),greedy:!0,inside:{function:/^url/i,punctuation:/^\(|\)$/,string:{pattern:RegExp("^"+t.source+"$"),alias:"url"}}},selector:{pattern:RegExp("(^|[{}\\s])[^{}\\s](?:[^{};\"'\\s]|\\s+(?![\\s{])|"+t.source+")*(?=\\s*\\{)"),lookbehind:!0},string:{pattern:t,greedy:!0},property:{pattern:/(^|[^-\w\xA0-\uFFFF])(?!\s)[-_a-z\xA0-\uFFFF](?:(?!\s)[-\w\xA0-\uFFFF])*(?=\s*:)/i,lookbehind:!0},important:/!important\b/i,function:{pattern:/(^|[^-a-z0-9])[-a-z0-9]+(?=\()/i,lookbehind:!0},punctuation:/[(){};:,]/},e.languages.css.atrule.inside.rest=e.languages.css;var n=e.languages.markup;n&&(n.tag.addInlined("style","css"),n.tag.addAttribute("style","css"))}(n),n.languages.clike={comment:[{pattern:/(^|[^\\])\/\*[\s\S]*?(?:\*\/|$)/,lookbehind:!0,greedy:!0},{pattern:/(^|[^\\:])\/\/.*/,lookbehind:!0,greedy:!0}],string:{pattern:/(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,greedy:!0},"class-name":{pattern:/(\b(?:class|extends|implements|instanceof|interface|new|trait)\s+|\bcatch\s+\()[\w.\\]+/i,lookbehind:!0,inside:{punctuation:/[.\\]/}},keyword:/\b(?:break|catch|continue|do|else|finally|for|function|if|in|instanceof|new|null|return|throw|try|while)\b/,boolean:/\b(?:false|true)\b/,function:/\b\w+(?=\()/,number:/\b0x[\da-f]+\b|(?:\b\d+(?:\.\d*)?|\B\.\d+)(?:e[+-]?\d+)?/i,operator:/[<>]=?|[!=]=?=?|--?|\+\+?|&&?|\|\|?|[?*/~^%]/,punctuation:/[{}[\];(),.:]/},n.languages.javascript=n.languages.extend("clike",{"class-name":[n.languages.clike["class-name"],{pattern:/(^|[^$\w\xA0-\uFFFF])(?!\s)[_$A-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\.(?:constructor|prototype))/,lookbehind:!0}],keyword:[{pattern:/((?:^|\})\s*)catch\b/,lookbehind:!0},{pattern:/(^|[^.]|\.\.\.\s*)\b(?:as|assert(?=\s*\{)|async(?=\s*(?:function\b|\(|[$\w\xA0-\uFFFF]|$))|await|break|case|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally(?=\s*(?:\{|$))|for|from(?=\s*(?:['"]|$))|function|(?:get|set)(?=\s*(?:[#\[$\w\xA0-\uFFFF]|$))|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)\b/,lookbehind:!0}],function:/#?(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*(?:\.\s*(?:apply|bind|call)\s*)?\()/,number:{pattern:RegExp(/(^|[^\w$])/.source+"(?:"+/NaN|Infinity/.source+"|"+/0[bB][01]+(?:_[01]+)*n?/.source+"|"+/0[oO][0-7]+(?:_[0-7]+)*n?/.source+"|"+/0[xX][\dA-Fa-f]+(?:_[\dA-Fa-f]+)*n?/.source+"|"+/\d+(?:_\d+)*n/.source+"|"+/(?:\d+(?:_\d+)*(?:\.(?:\d+(?:_\d+)*)?)?|\.\d+(?:_\d+)*)(?:[Ee][+-]?\d+(?:_\d+)*)?/.source+")"+/(?![\w$])/.source),lookbehind:!0},operator:/--|\+\+|\*\*=?|=>|&&=?|\|\|=?|[!=]==|<<=?|>>>?=?|[-+*/%&|^!=<>]=?|\.{3}|\?\?=?|\?\.?|[~:]/}),n.languages.javascript["class-name"][0].pattern=/(\b(?:class|extends|implements|instanceof|interface|new)\s+)[\w.\\]+/,n.languages.insertBefore("javascript","keyword",{regex:{pattern:RegExp(/((?:^|[^$\w\xA0-\uFFFF."'\])\s]|\b(?:return|yield))\s*)/.source+/\//.source+"(?:"+/(?:\[(?:[^\]\\\r\n]|\\.)*\]|\\.|[^/\\\[\r\n])+\/[dgimyus]{0,7}/.source+"|"+/(?:\[(?:[^[\]\\\r\n]|\\.|\[(?:[^[\]\\\r\n]|\\.|\[(?:[^[\]\\\r\n]|\\.)*\])*\])*\]|\\.|[^/\\\[\r\n])+\/[dgimyus]{0,7}v[dgimyus]{0,7}/.source+")"+/(?=(?:\s|\/\*(?:[^*]|\*(?!\/))*\*\/)*(?:$|[\r\n,.;:})\]]|\/\/))/.source),lookbehind:!0,greedy:!0,inside:{"regex-source":{pattern:/^(\/)[\s\S]+(?=\/[a-z]*$)/,lookbehind:!0,alias:"language-regex",inside:n.languages.regex},"regex-delimiter":/^\/|\/$/,"regex-flags":/^[a-z]+$/}},"function-variable":{pattern:/#?(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*[=:]\s*(?:async\s*)?(?:\bfunction\b|(?:\((?:[^()]|\([^()]*\))*\)|(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*)\s*=>))/,alias:"function"},parameter:[{pattern:/(function(?:\s+(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*)?\s*\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\))/,lookbehind:!0,inside:n.languages.javascript},{pattern:/(^|[^$\w\xA0-\uFFFF])(?!\s)[_$a-z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*=>)/i,lookbehind:!0,inside:n.languages.javascript},{pattern:/(\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\)\s*=>)/,lookbehind:!0,inside:n.languages.javascript},{pattern:/((?:\b|\s|^)(?!(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)(?![$\w\xA0-\uFFFF]))(?:(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*\s*)\(\s*|\]\s*\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\)\s*\{)/,lookbehind:!0,inside:n.languages.javascript}],constant:/\b[A-Z](?:[A-Z_]|\dx?)*\b/}),n.languages.insertBefore("javascript","string",{hashbang:{pattern:/^#!.*/,greedy:!0,alias:"comment"},"template-string":{pattern:/`(?:\\[\s\S]|\$\{(?:[^{}]|\{(?:[^{}]|\{[^}]*\})*\})+\}|(?!\$\{)[^\\`])*`/,greedy:!0,inside:{"template-punctuation":{pattern:/^`|`$/,alias:"string"},interpolation:{pattern:/((?:^|[^\\])(?:\\{2})*)\$\{(?:[^{}]|\{(?:[^{}]|\{[^}]*\})*\})+\}/,lookbehind:!0,inside:{"interpolation-punctuation":{pattern:/^\$\{|\}$/,alias:"punctuation"},rest:n.languages.javascript}},string:/[\s\S]+/}},"string-property":{pattern:/((?:^|[,{])[ \t]*)(["'])(?:\\(?:\r\n|[\s\S])|(?!\2)[^\\\r\n])*\2(?=\s*:)/m,lookbehind:!0,greedy:!0,alias:"property"}}),n.languages.insertBefore("javascript","operator",{"literal-property":{pattern:/((?:^|[,{])[ \t]*)(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*:)/m,lookbehind:!0,alias:"property"}}),n.languages.markup&&(n.languages.markup.tag.addInlined("script","javascript"),n.languages.markup.tag.addAttribute(/on(?:abort|blur|change|click|composition(?:end|start|update)|dblclick|error|focus(?:in|out)?|key(?:down|up)|load|mouse(?:down|enter|leave|move|out|over|up)|reset|resize|scroll|select|slotchange|submit|unload|wheel)/.source,"javascript")),n.languages.js=n.languages.javascript,function(){if(void 0!==n&&"undefined"!=typeof document){Element.prototype.matches||(Element.prototype.matches=Element.prototype.msMatchesSelector||Element.prototype.webkitMatchesSelector);var e={js:"javascript",py:"python",rb:"ruby",ps1:"powershell",psm1:"powershell",sh:"bash",bat:"batch",h:"c",tex:"latex"},t='pre[data-src]:not([data-src-status="loaded"]):not([data-src-status="loading"])';n.hooks.add("before-highlightall",(function(e){e.selector+=", "+t})),n.hooks.add("before-sanity-check",(function(r){var a=r.element;if(a.matches(t)){r.code="",a.setAttribute("data-src-status","loading");var i=a.appendChild(document.createElement("CODE"));i.textContent="Loading…";var s=a.getAttribute("data-src"),o=r.language;if("none"===o){var c=(/\.(\w+)$/.exec(s)||[,"none"])[1];o=e[c]||c}n.util.setLanguage(i,o),n.util.setLanguage(a,o);var u=n.plugins.autoloader;u&&u.loadLanguages(o),function(e,t,n){var r=new XMLHttpRequest;r.open("GET",e,!0),r.onreadystatechange=function(){var e,a;4==r.readyState&&(r.status<400&&r.responseText?t(r.responseText):r.status>=400?n((e=r.status,a=r.statusText,"✖ Error "+e+" while fetching file: "+a)):n("✖ Error: File does not exist or is empty"))},r.send(null)}(s,(function(e){a.setAttribute("data-src-status","loaded");var t=function(e){var t=/^\s*(\d+)\s*(?:(,)\s*(?:(\d+)\s*)?)?$/.exec(e||"");if(t){var n=Number(t[1]),r=t[2],a=t[3];return r?a?[n,Number(a)]:[n,void 0]:[n,n]}}(a.getAttribute("data-range"));if(t){var r=e.split(/\r\n?|\n/g),s=t[0],o=null==t[1]?r.length:t[1];s<0&&(s+=r.length),s=Math.max(0,Math.min(s-1,r.length)),o<0&&(o+=r.length),o=Math.max(0,Math.min(o,r.length)),e=r.slice(s,o).join("\n"),a.hasAttribute("data-start")||a.setAttribute("data-start",String(s+1))}i.textContent=e,n.highlightElement(i)}),(function(e){a.setAttribute("data-src-status","failed"),i.textContent=e}))}})),n.plugins.fileHighlight={highlight:function(e){for(var r,a=(e||document).querySelectorAll(t),i=0;r=a[i++];)n.highlightElement(r)}};var r=!1;n.fileHighlight=function(){r||(console.warn("Prism.fileHighlight is deprecated. Use `Prism.plugins.fileHighlight.highlight` instead."),r=!0),n.plugins.fileHighlight.highlight.apply(this,arguments)}}}()}).call(this,n("yLpj"))},zMAm:function(e,t,n){"use strict";n.d(t,"a",(function(){return h}));var r=n("L3ns"),a=n("tC49"),i=n("xjcK"),s=n("2C+6"),o=n("z3V6"),c=n("Rrza");function u(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function l(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?u(Object(n),!0).forEach((function(t){p(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):u(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function p(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var d=Object(o.d)(Object(s.j)(c.b,["append"]),i.X),h=Object(r.c)({name:i.X,functional:!0,props:d,render:function(e,t){var n=t.props,r=t.data,i=t.children;return e(c.a,Object(a.a)(r,{props:l(l({},n),{},{append:!0})}),i)}})}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[88],{
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js */ "./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js");
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/objectSpread2.js */ "./node_modules/@babel/runtime/helpers/esm/objectSpread2.js");
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.array.map.js */ "./node_modules/core-js/modules/es.array.map.js");
+/* harmony import */ var core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.array.reduce.js */ "./node_modules/core-js/modules/es.array.reduce.js");
+/* harmony import */ var core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! core-js/modules/es.string.iterator.js */ "./node_modules/core-js/modules/es.string.iterator.js");
+/* harmony import */ var core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! core-js/modules/web.dom-collections.iterator.js */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var core_js_modules_web_url_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! core-js/modules/web.url.js */ "./node_modules/core-js/modules/web.url.js");
+/* harmony import */ var core_js_modules_web_url_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_js__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var core_js_modules_web_url_search_params_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! core-js/modules/web.url-search-params.js */ "./node_modules/core-js/modules/web.url-search-params.js");
+/* harmony import */ var core_js_modules_web_url_search_params_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_search_params_js__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var core_js_modules_web_url_search_params_delete_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! core-js/modules/web.url-search-params.delete.js */ "./node_modules/core-js/modules/web.url-search-params.delete.js");
+/* harmony import */ var core_js_modules_web_url_search_params_delete_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_search_params_delete_js__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var core_js_modules_web_url_search_params_has_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! core-js/modules/web.url-search-params.has.js */ "./node_modules/core-js/modules/web.url-search-params.has.js");
+/* harmony import */ var core_js_modules_web_url_search_params_has_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_search_params_has_js__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var core_js_modules_web_url_search_params_size_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! core-js/modules/web.url-search-params.size.js */ "./node_modules/core-js/modules/web.url-search-params.size.js");
+/* harmony import */ var core_js_modules_web_url_search_params_size_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_url_search_params_size_js__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! core-js/modules/es.array.concat.js */ "./node_modules/core-js/modules/es.array.concat.js");
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
+/* harmony import */ var _vue_composition_api__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @vue/composition-api */ "./node_modules/@vue/composition-api/dist/vue-composition-api.mjs");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var animate_css__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! animate.css */ "./node_modules/animate.css/animate.css");
+/* harmony import */ var animate_css__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(animate_css__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @/store */ "./resources/js/src/store/index.js");
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @/router */ "./resources/js/src/router/index.js");
+/* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/esm/index.js");
+/* harmony import */ var vue_ripple_directive__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! vue-ripple-directive */ "./node_modules/vue-ripple-directive/src/ripple.js");
+/* harmony import */ var vue_html2pdf__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! vue-html2pdf */ "./node_modules/vue-html2pdf/dist/vue-html2pdf.esm.js");
+/* harmony import */ var vue_toastification_composition__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! vue-toastification/composition */ "./node_modules/vue-toastification/composition/index.js");
+/* harmony import */ var vue_toastification_composition__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(vue_toastification_composition__WEBPACK_IMPORTED_MODULE_23__);
+/* harmony import */ var _core_components_toastification_ToastificationContent_vue__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @core/components/toastification/ToastificationContent.vue */ "./resources/js/src/@core/components/toastification/ToastificationContent.vue");
+/* harmony import */ var _core_libs_i18n__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @core/libs/i18n */ "./resources/js/src/@core/libs/i18n/index.js");
+/* harmony import */ var _providers_Patients__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @/providers/Patients */ "./resources/js/src/providers/Patients.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+
+
+
+
+// Notification
+
+
+
+
+var PatientResource = new _providers_Patients__WEBPACK_IMPORTED_MODULE_26__["default"]();
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'StatementDetail',
+  directives: {
+    Ripple: vue_ripple_directive__WEBPACK_IMPORTED_MODULE_21__["default"],
+    'b-toggle': bootstrap_vue__WEBPACK_IMPORTED_MODULE_20__["VBToggle"]
+  },
+  components: {
+    BRow: bootstrap_vue__WEBPACK_IMPORTED_MODULE_20__["BRow"],
+    BCol: bootstrap_vue__WEBPACK_IMPORTED_MODULE_20__["BCol"],
+    BCard: bootstrap_vue__WEBPACK_IMPORTED_MODULE_20__["BCard"],
+    BCardBody: bootstrap_vue__WEBPACK_IMPORTED_MODULE_20__["BCardBody"],
+    BTableLite: bootstrap_vue__WEBPACK_IMPORTED_MODULE_20__["BTableLite"],
+    BTable: bootstrap_vue__WEBPACK_IMPORTED_MODULE_20__["BTable"],
+    BCardText: bootstrap_vue__WEBPACK_IMPORTED_MODULE_20__["BCardText"],
+    BButton: bootstrap_vue__WEBPACK_IMPORTED_MODULE_20__["BButton"],
+    BAlert: bootstrap_vue__WEBPACK_IMPORTED_MODULE_20__["BAlert"],
+    BLink: bootstrap_vue__WEBPACK_IMPORTED_MODULE_20__["BLink"],
+    BBadge: bootstrap_vue__WEBPACK_IMPORTED_MODULE_20__["BBadge"],
+    BOverlay: bootstrap_vue__WEBPACK_IMPORTED_MODULE_20__["BOverlay"],
+    BSpinner: bootstrap_vue__WEBPACK_IMPORTED_MODULE_20__["BSpinner"],
+    //
+    VueHtml2pdf: vue_html2pdf__WEBPACK_IMPORTED_MODULE_22__["default"]
+  },
+  methods: {
+    generateDocument: function generateDocument() {
+      this.$refs.html2Pdf.generatePdf();
+    }
+  },
+  setup: function setup() {
+    // Use toast
+    var toast = Object(vue_toastification_composition__WEBPACK_IMPORTED_MODULE_23__["useToast"])();
+    var _useI18nUtils = Object(_core_libs_i18n__WEBPACK_IMPORTED_MODULE_25__["useUtils"])(),
+      t = _useI18nUtils.t;
+    var patientData = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_15__["ref"])(null);
+    var paymentDetails = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_15__["ref"])({});
+    var loading = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_15__["ref"])(false);
+    var pdfOptions = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_15__["ref"])({
+      margin: [5, 0, 0, 2],
+      // top, left, buttom, right
+      image: {
+        type: 'jpg',
+        quality: 0.98
+      },
+      html2canvas: {
+        scale: 2,
+        bottom: 0
+        // letterRendering: true,
+      },
+
+      jsPDF: {
+        unit: 'mm',
+        orientation: 'portrait'
+      }
+    });
+    var translateMessages = {
+      fileName: t('patients.statements.title_download'),
+      accept: t('accept'),
+      failed_download: t('patients.statements.failed_download'),
+      failed_print: t('patients.statements.failed_print'),
+      send_title: t('patients.statements.send.title'),
+      send_description: t('patients.statements.send.description'),
+      button_send: t('send'),
+      button_cancel: t('cancel'),
+      valid_email: t('patients.statements.send.valid_email'),
+      send_success_title: t('patients.statements.send.success.title'),
+      send_success_description: t('patients.statements.send.success.description'),
+      send_failed_title: t('patients.statements.send.failed.title')
+    };
+    var tableFields = [{
+      key: 'label',
+      label: t('patients.statements.table.budget'),
+      tdClass: 'font-weight-bold'
+    }, {
+      key: 'subtotal',
+      label: t('patients.statements.table.subtotal'),
+      tdClass: 'font-weight-bold'
+    }, {
+      key: 'discount',
+      label: t('patients.statements.table.discount'),
+      tdClass: 'font-weight-bold'
+    }, {
+      key: 'total',
+      label: t('patients.statements.table.total'),
+      tdClass: 'font-weight-bold'
+    }, {
+      key: 'paid',
+      label: t('patients.statements.table.paid'),
+      tdClass: 'font-weight-bold'
+    }, {
+      key: 'debt',
+      label: t('patients.statements.table.debt'),
+      tdClass: 'font-weight-bold'
+    }];
+    var tableDetailFields = [{
+      key: 'description',
+      label: t('patients.statements.table.description')
+    }, {
+      key: 'subtotal',
+      label: t('patients.statements.table.subtotal')
+    }, {
+      key: 'discount',
+      label: t('patients.statements.table.discount')
+    }, {
+      key: 'total',
+      label: t('patients.statements.table.total')
+    }, {
+      key: 'paid',
+      label: t('patients.statements.table.total')
+    }, {
+      key: 'debt',
+      label: t('patients.statements.table.balance')
+    }];
+    var tablePaymentDetails = [{
+      key: 'date',
+      label: t('patients.statements.table.date')
+    }, {
+      key: 'amount',
+      label: t('patients.statements.table.amount')
+    }, {
+      key: 'method',
+      label: t('patients.statements.table.method')
+    }];
+    var getPatient = /*#__PURE__*/function () {
+      var _ref = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee() {
+        var _yield$PatientResourc, data;
+        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              _context.prev = 0;
+              loading.value = true;
+              _context.next = 4;
+              return PatientResource.getPatientDetail(_router__WEBPACK_IMPORTED_MODULE_19__["default"].currentRoute.params.id);
+            case 4:
+              _yield$PatientResourc = _context.sent;
+              data = _yield$PatientResourc.data;
+              loading.value = false;
+              patientData.value = data.data;
+              patientData.value.budgets = data.data.budgets.map(function (b) {
+                return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_1__["default"])(Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_1__["default"])({}, b), {}, {
+                  _showDetails: true
+                });
+              });
+              _.map(patientData.value.budgets, function (budget) {
+                _.map(budget.budget_actions, function (action) {
+                  action._showDetails = true;
+                  return action;
+                });
+              });
+              _context.next = 15;
+              break;
+            case 12:
+              _context.prev = 12;
+              _context.t0 = _context["catch"](0);
+              console.log(_context.t0);
+            case 15:
+            case "end":
+              return _context.stop();
+          }
+        }, _callee, null, [[0, 12]]);
+      }));
+      return function getPatient() {
+        return _ref.apply(this, arguments);
+      };
+    }();
+    var isActive = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_15__["computed"])(function () {
+      return patientData.value.deleted_at !== null;
+    });
+    var totalCost = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_15__["computed"])(function () {
+      return patientData.value.budgets.reduce(function (carry, cost) {
+        return carry + (cost.approved ? parseFloat(cost.total_cost) : 0);
+      }, 0);
+    });
+    var totalPaid = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_15__["computed"])(function () {
+      return patientData.value.budgets.reduce(function (carry, cost) {
+        return carry + (cost.approved ? parseFloat(cost.total_paid) : 0);
+      }, 0);
+    });
+    var totalDebt = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_15__["computed"])(function () {
+      return patientData.value.budgets.reduce(function (carry, cost) {
+        return carry + (cost.approved ? parseFloat(cost.total_debt) : 0);
+      }, 0);
+    });
+    var totalCostFormatted = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_15__["computed"])(function () {
+      return totalCost.value.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD'
+      });
+    });
+    var totalPaidFormatted = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_15__["computed"])(function () {
+      return totalPaid.value.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD'
+      });
+    });
+    var totalDebtFormatted = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_15__["computed"])(function () {
+      return totalDebt.value.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD'
+      });
+    });
+    var amountFormatted = function amountFormatted(amount) {
+      return amount.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD'
+      });
+    };
+    var sendStatementDetails = /*#__PURE__*/function () {
+      var _ref2 = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee3() {
+        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee3$(_context3) {
+          while (1) switch (_context3.prev = _context3.next) {
+            case 0:
+              sweetalert2__WEBPACK_IMPORTED_MODULE_16___default.a.fire({
+                title: translateMessages.send_title,
+                html: translateMessages.send_description,
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: translateMessages.button_send,
+                cancelButtonText: translateMessages.button_cancel,
+                customClass: {
+                  confirmButton: "btn btn-primary",
+                  cancelButton: "btn btn-outline-danger ml-1"
+                },
+                showClass: {
+                  popup: "animate__animated animate__flipInX"
+                },
+                buttonsStyling: false,
+                showLoaderOnConfirm: true,
+                input: 'email',
+                inputValue: patientData.value.email,
+                inputAttributes: {
+                  autocapitalize: 'off'
+                },
+                preConfirm: function () {
+                  var _preConfirm = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee2(email) {
+                    var _yield$PatientResourc2, data;
+                    return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee2$(_context2) {
+                      while (1) switch (_context2.prev = _context2.next) {
+                        case 0:
+                          if (email) {
+                            _context2.next = 4;
+                            break;
+                          }
+                          sweetalert2__WEBPACK_IMPORTED_MODULE_16___default.a.showValidationMessage(translateMessages.valid_email);
+                          _context2.next = 16;
+                          break;
+                        case 4:
+                          _context2.prev = 4;
+                          _context2.next = 7;
+                          return PatientResource.show(_router__WEBPACK_IMPORTED_MODULE_19__["default"].currentRoute.params.id, {
+                            isMail: 1,
+                            email: email
+                          });
+                        case 7:
+                          _yield$PatientResourc2 = _context2.sent;
+                          data = _yield$PatientResourc2.data;
+                          if (data.success) {
+                            sweetalert2__WEBPACK_IMPORTED_MODULE_16___default.a.fire({
+                              title: translateMessages.send_success_title,
+                              text: translateMessages.send_success_description,
+                              icon: 'success',
+                              showClass: {
+                                popup: "animate__animated animate__flipInX"
+                              },
+                              buttonsStyling: false,
+                              confirmButtonText: translateMessages.accept,
+                              customClass: {
+                                confirmButton: "btn btn-primary"
+                              }
+                            });
+                          } else {
+                            sweetalert2__WEBPACK_IMPORTED_MODULE_16___default.a.showValidationMessage(translateMessages.send_failed_title);
+                          }
+                          _context2.next = 16;
+                          break;
+                        case 12:
+                          _context2.prev = 12;
+                          _context2.t0 = _context2["catch"](4);
+                          console.log(_context2.t0);
+                          sweetalert2__WEBPACK_IMPORTED_MODULE_16___default.a.showValidationMessage(translateMessages.send_failed_title);
+                        case 16:
+                        case "end":
+                          return _context2.stop();
+                      }
+                    }, _callee2, null, [[4, 12]]);
+                  }));
+                  function preConfirm(_x) {
+                    return _preConfirm.apply(this, arguments);
+                  }
+                  return preConfirm;
+                }(),
+                allowOutsideClick: function allowOutsideClick() {
+                  return !sweetalert2__WEBPACK_IMPORTED_MODULE_16___default.a.isLoading();
+                }
+              });
+            case 1:
+            case "end":
+              return _context3.stop();
+          }
+        }, _callee3);
+      }));
+      return function sendStatementDetails() {
+        return _ref2.apply(this, arguments);
+      };
+    }();
+    var statementDetailDownload = /*#__PURE__*/function () {
+      var _ref3 = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee4() {
+        var query, _yield$PatientResourc3, data, url, link, currentDate, formattedDate;
+        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee4$(_context4) {
+          while (1) switch (_context4.prev = _context4.next) {
+            case 0:
+              query = {
+                isPdf: 1
+              };
+              _context4.prev = 1;
+              loading.value = true;
+              _context4.next = 5;
+              return PatientResource.show(_router__WEBPACK_IMPORTED_MODULE_19__["default"].currentRoute.params.id, query);
+            case 5:
+              _yield$PatientResourc3 = _context4.sent;
+              data = _yield$PatientResourc3.data;
+              loading.value = false;
+              url = window.URL.createObjectURL(new Blob([data]));
+              link = document.createElement('a');
+              link.href = url;
+              currentDate = new Date();
+              formattedDate = Object(date_fns__WEBPACK_IMPORTED_MODULE_14__["format"])(currentDate, 'yyyyMMddHHmmss');
+              link.setAttribute('download', "".concat(translateMessages.fileName, "-").concat(patientData.value.id, "-").concat(formattedDate, ".pdf"));
+              link.click();
+              document.body.appendChild(link);
+              _context4.next = 21;
+              break;
+            case 18:
+              _context4.prev = 18;
+              _context4.t0 = _context4["catch"](1);
+              sweetalert2__WEBPACK_IMPORTED_MODULE_16___default.a.fire({
+                title: '¡Error!',
+                text: translateMessages.failed_download,
+                icon: 'error',
+                showClass: {
+                  popup: "animate__animated animate__flipInX"
+                },
+                buttonsStyling: false,
+                confirmButtonText: translateMessages.accept,
+                customClass: {
+                  confirmButton: "btn btn-primary"
+                }
+              });
+            case 21:
+            case "end":
+              return _context4.stop();
+          }
+        }, _callee4, null, [[1, 18]]);
+      }));
+      return function statementDetailDownload() {
+        return _ref3.apply(this, arguments);
+      };
+    }();
+    Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_15__["onMounted"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee5() {
+      return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee5$(_context5) {
+        while (1) switch (_context5.prev = _context5.next) {
+          case 0:
+            _context5.next = 2;
+            return getPatient();
+          case 2:
+          case "end":
+            return _context5.stop();
+        }
+      }, _callee5);
+    })));
+    var printInvoice = /*#__PURE__*/function () {
+      var _ref5 = Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().mark(function _callee6() {
+        var query, _yield$PatientResourc4, data, file, fileURL;
+        return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__["default"])().wrap(function _callee6$(_context6) {
+          while (1) switch (_context6.prev = _context6.next) {
+            case 0:
+              query = {
+                isPrint: 1
+              };
+              _context6.prev = 1;
+              loading.value = true;
+              _context6.next = 5;
+              return PatientResource.show(_router__WEBPACK_IMPORTED_MODULE_19__["default"].currentRoute.params.id, query);
+            case 5:
+              _yield$PatientResourc4 = _context6.sent;
+              data = _yield$PatientResourc4.data;
+              loading.value = false;
+              file = new Blob([data], {
+                type: 'application/pdf'
+              });
+              fileURL = URL.createObjectURL(file);
+              window.open(fileURL, '_blank');
+              _context6.next = 16;
+              break;
+            case 13:
+              _context6.prev = 13;
+              _context6.t0 = _context6["catch"](1);
+              sweetalert2__WEBPACK_IMPORTED_MODULE_16___default.a.fire({
+                title: '¡Error!',
+                text: translateMessages.failed_print,
+                icon: 'error',
+                showClass: {
+                  popup: "animate__animated animate__flipInX"
+                },
+                buttonsStyling: false,
+                confirmButtonText: translateMessages.accept,
+                customClass: {
+                  confirmButton: "btn btn-primary"
+                }
+              });
+            case 16:
+            case "end":
+              return _context6.stop();
+          }
+        }, _callee6, null, [[1, 13]]);
+      }));
+      return function printInvoice() {
+        return _ref5.apply(this, arguments);
+      };
+    }();
+    return {
+      isActive: isActive,
+      loading: loading,
+      patientData: patientData,
+      paymentDetails: paymentDetails,
+      printInvoice: printInvoice,
+      tableFields: tableFields,
+      tableDetailFields: tableDetailFields,
+      tablePaymentDetails: tablePaymentDetails,
+      pdfOptions: pdfOptions,
+      // Total Cost
+      totalCostFormatted: totalCostFormatted,
+      totalPaidFormatted: totalPaidFormatted,
+      totalDebtFormatted: totalDebtFormatted,
+      amountFormatted: amountFormatted,
+      //actions
+      sendStatementDetails: sendStatementDetails,
+      statementDetailDownload: statementDetailDownload
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=style&index=0&id=4d441ce2&lang=scss&scoped=true&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--12-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=style&index=0&id=4d441ce2&lang=scss&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+var ___CSS_LOADER_AT_RULE_IMPORT_0___ = __webpack_require__(/*! -!../../../../../../node_modules/css-loader/dist/cjs.js!sweetalert2/dist/sweetalert2.min.css */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sweetalert2/dist/sweetalert2.min.css");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+exports.i(___CSS_LOADER_AT_RULE_IMPORT_0___);
+// Module
+exports.push([module.i, "[dir=ltr] .invoice-preview .invoice-padding[data-v-4d441ce2], [dir=ltr] .invoice-edit .invoice-padding[data-v-4d441ce2], [dir=ltr] .invoice-add .invoice-padding[data-v-4d441ce2] {\n  padding-left: 2.5rem;\n  padding-right: 2.5rem;\n}\n[dir=rtl] .invoice-preview .invoice-padding[data-v-4d441ce2], [dir=rtl] .invoice-edit .invoice-padding[data-v-4d441ce2], [dir=rtl] .invoice-add .invoice-padding[data-v-4d441ce2] {\n  padding-right: 2.5rem;\n  padding-left: 2.5rem;\n}\n[dir=ltr] .invoice-preview .table th[data-v-4d441ce2]:first-child, [dir=ltr] .invoice-preview .table td[data-v-4d441ce2]:first-child, [dir=ltr] .invoice-edit .table th[data-v-4d441ce2]:first-child, [dir=ltr] .invoice-edit .table td[data-v-4d441ce2]:first-child, [dir=ltr] .invoice-add .table th[data-v-4d441ce2]:first-child, [dir=ltr] .invoice-add .table td[data-v-4d441ce2]:first-child {\n  padding-left: 2.5rem;\n}\n[dir=rtl] .invoice-preview .table th[data-v-4d441ce2]:first-child, [dir=rtl] .invoice-preview .table td[data-v-4d441ce2]:first-child, [dir=rtl] .invoice-edit .table th[data-v-4d441ce2]:first-child, [dir=rtl] .invoice-edit .table td[data-v-4d441ce2]:first-child, [dir=rtl] .invoice-add .table th[data-v-4d441ce2]:first-child, [dir=rtl] .invoice-add .table td[data-v-4d441ce2]:first-child {\n  padding-right: 2.5rem;\n}\n.invoice-preview .logo-wrapper[data-v-4d441ce2],\n.invoice-edit .logo-wrapper[data-v-4d441ce2],\n.invoice-add .logo-wrapper[data-v-4d441ce2] {\n  display: flex;\n  align-items: center;\n}\n[dir] .invoice-preview .logo-wrapper[data-v-4d441ce2], [dir] .invoice-edit .logo-wrapper[data-v-4d441ce2], [dir] .invoice-add .logo-wrapper[data-v-4d441ce2] {\n  margin-bottom: 1.9rem;\n}\n.invoice-preview .logo-wrapper .invoice-logo[data-v-4d441ce2],\n.invoice-edit .logo-wrapper .invoice-logo[data-v-4d441ce2],\n.invoice-add .logo-wrapper .invoice-logo[data-v-4d441ce2] {\n  font-size: 2.142rem;\n  font-weight: bold;\n  letter-spacing: -0.54px;\n}\n[dir] .invoice-preview .logo-wrapper .invoice-logo[data-v-4d441ce2], [dir] .invoice-edit .logo-wrapper .invoice-logo[data-v-4d441ce2], [dir] .invoice-add .logo-wrapper .invoice-logo[data-v-4d441ce2] {\n  margin-bottom: 0;\n}\n[dir=ltr] .invoice-preview .logo-wrapper .invoice-logo[data-v-4d441ce2], [dir=ltr] .invoice-edit .logo-wrapper .invoice-logo[data-v-4d441ce2], [dir=ltr] .invoice-add .logo-wrapper .invoice-logo[data-v-4d441ce2] {\n  margin-left: 1rem;\n}\n[dir=rtl] .invoice-preview .logo-wrapper .invoice-logo[data-v-4d441ce2], [dir=rtl] .invoice-edit .logo-wrapper .invoice-logo[data-v-4d441ce2], [dir=rtl] .invoice-add .logo-wrapper .invoice-logo[data-v-4d441ce2] {\n  margin-right: 1rem;\n}\n.invoice-preview .invoice-title[data-v-4d441ce2],\n.invoice-edit .invoice-title[data-v-4d441ce2],\n.invoice-add .invoice-title[data-v-4d441ce2] {\n  font-size: 1.285rem;\n}\n[dir] .invoice-preview .invoice-title[data-v-4d441ce2], [dir] .invoice-edit .invoice-title[data-v-4d441ce2], [dir] .invoice-add .invoice-title[data-v-4d441ce2] {\n  margin-bottom: 1rem;\n}\n.invoice-preview .invoice-title .invoice-number[data-v-4d441ce2],\n.invoice-edit .invoice-title .invoice-number[data-v-4d441ce2],\n.invoice-add .invoice-title .invoice-number[data-v-4d441ce2] {\n  font-weight: 600;\n}\n.invoice-preview .invoice-date-wrapper[data-v-4d441ce2],\n.invoice-edit .invoice-date-wrapper[data-v-4d441ce2],\n.invoice-add .invoice-date-wrapper[data-v-4d441ce2] {\n  display: flex;\n  align-items: center;\n}\n[dir] .invoice-preview .invoice-date-wrapper[data-v-4d441ce2]:not(:last-of-type), [dir] .invoice-edit .invoice-date-wrapper[data-v-4d441ce2]:not(:last-of-type), [dir] .invoice-add .invoice-date-wrapper[data-v-4d441ce2]:not(:last-of-type) {\n  margin-bottom: 0.5rem;\n}\n.invoice-preview .invoice-date-wrapper .invoice-date-title[data-v-4d441ce2],\n.invoice-edit .invoice-date-wrapper .invoice-date-title[data-v-4d441ce2],\n.invoice-add .invoice-date-wrapper .invoice-date-title[data-v-4d441ce2] {\n  width: 7rem;\n}\n[dir] .invoice-preview .invoice-date-wrapper .invoice-date-title[data-v-4d441ce2], [dir] .invoice-edit .invoice-date-wrapper .invoice-date-title[data-v-4d441ce2], [dir] .invoice-add .invoice-date-wrapper .invoice-date-title[data-v-4d441ce2] {\n  margin-bottom: 0;\n}\n.invoice-preview .invoice-date-wrapper .invoice-date[data-v-4d441ce2],\n.invoice-edit .invoice-date-wrapper .invoice-date[data-v-4d441ce2],\n.invoice-add .invoice-date-wrapper .invoice-date[data-v-4d441ce2] {\n  font-weight: 600;\n}\n[dir] .invoice-preview .invoice-date-wrapper .invoice-date[data-v-4d441ce2], [dir] .invoice-edit .invoice-date-wrapper .invoice-date[data-v-4d441ce2], [dir] .invoice-add .invoice-date-wrapper .invoice-date[data-v-4d441ce2] {\n  margin-bottom: 0;\n}\n[dir=ltr] .invoice-preview .invoice-date-wrapper .invoice-date[data-v-4d441ce2], [dir=ltr] .invoice-edit .invoice-date-wrapper .invoice-date[data-v-4d441ce2], [dir=ltr] .invoice-add .invoice-date-wrapper .invoice-date[data-v-4d441ce2] {\n  margin-left: 0.5rem;\n}\n[dir=rtl] .invoice-preview .invoice-date-wrapper .invoice-date[data-v-4d441ce2], [dir=rtl] .invoice-edit .invoice-date-wrapper .invoice-date[data-v-4d441ce2], [dir=rtl] .invoice-add .invoice-date-wrapper .invoice-date[data-v-4d441ce2] {\n  margin-right: 0.5rem;\n}\n[dir] .invoice-preview .invoice-spacing[data-v-4d441ce2], [dir] .invoice-edit .invoice-spacing[data-v-4d441ce2], [dir] .invoice-add .invoice-spacing[data-v-4d441ce2] {\n  margin: 1.45rem 0;\n}\n.invoice-preview .invoice-number-date .title[data-v-4d441ce2],\n.invoice-edit .invoice-number-date .title[data-v-4d441ce2],\n.invoice-add .invoice-number-date .title[data-v-4d441ce2] {\n  width: 115px;\n}\n.invoice-preview .invoice-total-wrapper[data-v-4d441ce2],\n.invoice-edit .invoice-total-wrapper[data-v-4d441ce2],\n.invoice-add .invoice-total-wrapper[data-v-4d441ce2] {\n  width: 100%;\n  max-width: 12rem;\n}\n.invoice-preview .invoice-total-wrapper .invoice-total-item[data-v-4d441ce2],\n.invoice-edit .invoice-total-wrapper .invoice-total-item[data-v-4d441ce2],\n.invoice-add .invoice-total-wrapper .invoice-total-item[data-v-4d441ce2] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n[dir] .invoice-preview .invoice-total-wrapper .invoice-total-item .invoice-total-title[data-v-4d441ce2], [dir] .invoice-edit .invoice-total-wrapper .invoice-total-item .invoice-total-title[data-v-4d441ce2], [dir] .invoice-add .invoice-total-wrapper .invoice-total-item .invoice-total-title[data-v-4d441ce2] {\n  margin-bottom: 0.35rem;\n}\n.invoice-preview .invoice-total-wrapper .invoice-total-item .invoice-total-amount[data-v-4d441ce2],\n.invoice-edit .invoice-total-wrapper .invoice-total-item .invoice-total-amount[data-v-4d441ce2],\n.invoice-add .invoice-total-wrapper .invoice-total-item .invoice-total-amount[data-v-4d441ce2] {\n  font-weight: 600;\n}\n[dir] .invoice-preview .invoice-total-wrapper .invoice-total-item .invoice-total-amount[data-v-4d441ce2], [dir] .invoice-edit .invoice-total-wrapper .invoice-total-item .invoice-total-amount[data-v-4d441ce2], [dir] .invoice-add .invoice-total-wrapper .invoice-total-item .invoice-total-amount[data-v-4d441ce2] {\n  margin-bottom: 0.35rem;\n}\n@media (min-width: 768px) {\n[dir] .invoice-preview .invoice-title[data-v-4d441ce2], [dir] .invoice-edit .invoice-title[data-v-4d441ce2], [dir] .invoice-add .invoice-title[data-v-4d441ce2] {\n    margin-bottom: 3rem;\n}\n[dir=ltr] .invoice-preview .invoice-title[data-v-4d441ce2], [dir=ltr] .invoice-edit .invoice-title[data-v-4d441ce2], [dir=ltr] .invoice-add .invoice-title[data-v-4d441ce2] {\n    text-align: right;\n}\n[dir=rtl] .invoice-preview .invoice-title[data-v-4d441ce2], [dir=rtl] .invoice-edit .invoice-title[data-v-4d441ce2], [dir=rtl] .invoice-add .invoice-title[data-v-4d441ce2] {\n    text-align: left;\n}\n}\n[dir] .invoice-edit .invoice-preview-card .invoice-title[data-v-4d441ce2], [dir] .invoice-add .invoice-preview-card .invoice-title[data-v-4d441ce2] {\n  margin-bottom: 0;\n}\n[dir=ltr] .invoice-edit .invoice-preview-card .invoice-title[data-v-4d441ce2], [dir=ltr] .invoice-add .invoice-preview-card .invoice-title[data-v-4d441ce2] {\n  text-align: left;\n  margin-right: 3.5rem;\n}\n[dir=rtl] .invoice-edit .invoice-preview-card .invoice-title[data-v-4d441ce2], [dir=rtl] .invoice-add .invoice-preview-card .invoice-title[data-v-4d441ce2] {\n  text-align: right;\n  margin-left: 3.5rem;\n}\n.invoice-edit .invoice-preview-card .invoice-edit-input[data-v-4d441ce2],\n.invoice-edit .invoice-preview-card .invoice-edit-input-group[data-v-4d441ce2],\n.invoice-add .invoice-preview-card .invoice-edit-input[data-v-4d441ce2],\n.invoice-add .invoice-preview-card .invoice-edit-input-group[data-v-4d441ce2] {\n  max-width: 11.21rem;\n}\n[dir] .invoice-edit .invoice-preview-card .invoice-product-details[data-v-4d441ce2], [dir] .invoice-add .invoice-preview-card .invoice-product-details[data-v-4d441ce2] {\n  background-color: #fcfcfc;\n  padding: 3.75rem 3.45rem 2.3rem 3.45rem;\n}\n[dir] .invoice-edit .invoice-preview-card .invoice-product-details .product-details-border[data-v-4d441ce2], [dir] .invoice-add .invoice-preview-card .invoice-product-details .product-details-border[data-v-4d441ce2] {\n  border: 1px solid #ebe9f1;\n  border-radius: 0.357rem;\n}\n[dir] .invoice-edit .invoice-preview-card .invoice-to-title[data-v-4d441ce2], [dir] .invoice-add .invoice-preview-card .invoice-to-title[data-v-4d441ce2] {\n  margin-bottom: 1.9rem;\n}\n.invoice-edit .invoice-preview-card .col-title[data-v-4d441ce2],\n.invoice-add .invoice-preview-card .col-title[data-v-4d441ce2] {\n  position: absolute;\n  top: -3.2rem;\n}\n.invoice-edit .invoice-preview-card .item-options-menu[data-v-4d441ce2],\n.invoice-add .invoice-preview-card .item-options-menu[data-v-4d441ce2] {\n  min-width: 20rem;\n}\n[dir] .invoice-edit .invoice-preview-card .repeater-wrapper[data-v-4d441ce2]:not(:last-child), [dir] .invoice-add .invoice-preview-card .repeater-wrapper[data-v-4d441ce2]:not(:last-child) {\n  margin-bottom: 3rem;\n}\n.invoice-edit .invoice-preview-card .invoice-calculations .total-amt-title[data-v-4d441ce2],\n.invoice-add .invoice-preview-card .invoice-calculations .total-amt-title[data-v-4d441ce2] {\n  width: 100px;\n}\n@media (max-width: 769px) {\n.invoice-edit .invoice-preview-card .invoice-title[data-v-4d441ce2],\n.invoice-add .invoice-preview-card .invoice-title[data-v-4d441ce2] {\n    width: 115px;\n}\n[dir=ltr] .invoice-edit .invoice-preview-card .invoice-title[data-v-4d441ce2], [dir=ltr] .invoice-add .invoice-preview-card .invoice-title[data-v-4d441ce2] {\n    margin-right: 0;\n}\n[dir=rtl] .invoice-edit .invoice-preview-card .invoice-title[data-v-4d441ce2], [dir=rtl] .invoice-add .invoice-preview-card .invoice-title[data-v-4d441ce2] {\n    margin-left: 0;\n}\n.invoice-edit .invoice-preview-card .invoice-edit-input[data-v-4d441ce2],\n.invoice-add .invoice-preview-card .invoice-edit-input[data-v-4d441ce2] {\n    max-width: 100%;\n}\n}\n@media (max-width: 992px) {\n.invoice-edit .col-title[data-v-4d441ce2],\n.invoice-add .col-title[data-v-4d441ce2] {\n    top: -1.5rem !important;\n}\n}\n@media print {\n[dir] .invoice-edit hr[data-v-4d441ce2], [dir] .invoice-add hr[data-v-4d441ce2] {\n    margin-top: 1rem !important;\n    margin-bottom: 1rem !important;\n}\n}\n[dir] .swal2-container .swal2-popup[data-v-4d441ce2] {\n  border-radius: 0.428rem;\n  padding-bottom: 1.5rem;\n}\n.swal2-container .swal2-popup .swal2-close[data-v-4d441ce2]:focus {\n  outline: none;\n}\n[dir] .swal2-container .swal2-popup .swal2-close[data-v-4d441ce2]:focus {\n  box-shadow: none;\n}\n.swal2-container .swal2-popup .swal2-content[data-v-4d441ce2] {\n  color: #6e6b7b;\n}\n.swal2-container .swal2-popup .swal2-title[data-v-4d441ce2] {\n  font-size: 1.5rem;\n  font-weight: inherit;\n  color: #5e5873;\n}\n[dir] .swal2-container .swal2-popup button.swal2-confirm[data-v-4d441ce2]:focus {\n  box-shadow: none;\n}\n.swal2-container .swal2-popup input.swal2-input[data-v-4d441ce2] {\n  height: 2.714rem;\n  font-size: 1rem;\n  color: #6e6b7b;\n  line-height: 1.45;\n}\n[dir] .swal2-container .swal2-popup input.swal2-input[data-v-4d441ce2] {\n  padding: 0.438rem 1rem;\n  border-color: #d8d6de;\n  border-radius: 0.357rem;\n}\n[dir] .swal2-container .swal2-popup input.swal2-input[data-v-4d441ce2]:focus {\n  border-color: #7367f0 !important;\n  box-shadow: 0 3px 10px 0 rgba(34, 41, 47, 0.1);\n}\n[dir] .swal2-container .swal2-popup .swal2-progress-steps .swal2-progress-step[data-v-4d441ce2] {\n  background-color: #7367f0;\n}\n[dir] .swal2-container .swal2-popup .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step ~ .swal2-progress-step-line[data-v-4d441ce2], [dir] .swal2-container .swal2-popup .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step ~ .swal2-progress-step[data-v-4d441ce2] {\n  background-color: #b3adf7;\n}\n[dir] .swal2-container .swal2-popup .swal2-progress-steps .swal2-progress-step-line[data-v-4d441ce2] {\n  background-color: #7367f0;\n}\n.swal2-container .swal2-popup pre[data-v-4d441ce2] {\n  min-height: 1.35rem;\n}\n[dir] .swal2-container .swal2-popup pre[data-v-4d441ce2] {\n  margin-top: 0.5rem;\n}\n.swal2-container .swal2-popup .swal2-footer[data-v-4d441ce2] {\n  color: #6e6b7b;\n}\n[dir] .swal2-container .swal2-popup .swal2-footer[data-v-4d441ce2] {\n  border-color: #ebe9f1;\n}\n.dark-layout .swal2-container .swal2-popup .swal2-title[data-v-4d441ce2] {\n  color: #d0d2d6;\n}\n[dir] .dark-layout .swal2-container .swal2-modal[data-v-4d441ce2] {\n  background-color: #283046;\n}\n.dark-layout .swal2-container .swal2-modal .swal2-header .swal2-title[data-v-4d441ce2] {\n  color: #d0d2d6;\n}\n.dark-layout .swal2-container .swal2-modal .swal2-header .swal2-icon-text[data-v-4d441ce2] {\n  color: inherit;\n}\n[dir] .dark-layout .swal2-container .swal2-modal .swal2-header .swal2-success-circular-line-left[data-v-4d441ce2], [dir] .dark-layout .swal2-container .swal2-modal .swal2-header .swal2-success-circular-line-right[data-v-4d441ce2], [dir] .dark-layout .swal2-container .swal2-modal .swal2-header .swal2-success-fix[data-v-4d441ce2], [dir] .dark-layout .swal2-container .swal2-modal .swal2-header .swal2-animate-success-icon[data-v-4d441ce2] {\n  background-color: #283046 !important;\n}\n.dark-layout .swal2-container .swal2-modal input.swal2-input[data-v-4d441ce2] {\n  color: #b4b7bd;\n}\n[dir] .dark-layout .swal2-container .swal2-modal input.swal2-input[data-v-4d441ce2] {\n  border-color: #3b4253;\n}\n.dark-layout .swal2-container .swal2-modal .swal2-content[data-v-4d441ce2],\n.dark-layout .swal2-container .swal2-modal .swal2-html-container[data-v-4d441ce2] {\n  color: #b4b7bd;\n}\n.dark-layout .swal2-container .swal2-modal pre[data-v-4d441ce2],\n.dark-layout .swal2-container .swal2-modal code[data-v-4d441ce2] {\n  color: #b4b7bd;\n}\n[dir] .dark-layout .swal2-container .swal2-modal .swal2-input[data-v-4d441ce2] {\n  background-color: #283046;\n}\n.dark-layout .swal2-container .swal2-modal .swal2-footer[data-v-4d441ce2] {\n  color: #b4b7bd;\n}\n[dir] .dark-layout .swal2-container .swal2-modal .swal2-footer[data-v-4d441ce2] {\n  border-color: #3b4253;\n}\n.dark-layout .swal2-container .swal2-validation-message[data-v-4d441ce2] {\n  color: #b4b7bd;\n}\n[dir] .dark-layout .swal2-container .swal2-validation-message[data-v-4d441ce2] {\n  background-color: #161d31;\n}\nhtml[dir=rtl] .swal2-rtl .swal2-close[data-v-4d441ce2] {\n  left: 0;\n  right: auto;\n}", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=style&index=1&id=4d441ce2&lang=scss&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--12-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=style&index=1&id=4d441ce2&lang=scss& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, "@media print {\n[dir] body {\n    background-color: transparent !important;\n}\nnav.header-navbar {\n    display: none;\n}\n.main-menu {\n    display: none;\n}\n.header-navbar-shadow {\n    display: none !important;\n}\n[dir] .content.app-content {\n    padding-top: 2rem !important;\n}\n[dir=ltr] .content.app-content {\n    margin-left: 0;\n}\n[dir=rtl] .content.app-content {\n    margin-right: 0;\n}\nfooter.footer {\n    display: none;\n}\n[dir] .card {\n    background-color: transparent;\n    box-shadow: none;\n}\n.customizer-toggle {\n    display: none !important;\n}\n.invoice-preview-wrapper .row.invoice-preview .col-md-8 {\n    max-width: 100%;\n    flex-grow: 1;\n}\n.invoice-preview-wrapper .row.invoice-preview .invoice-preview-card .card-body:nth-of-type(2) .row > .col-12 {\n    max-width: 50% !important;\n}\n.invoice-preview-wrapper .row.invoice-preview .invoice-preview-card .card-body:nth-of-type(2) .row .col-12:nth-child(2) {\n    display: flex;\n    align-items: flex-start;\n    justify-content: flex-end;\n}\n[dir] .invoice-preview-wrapper .row.invoice-preview .invoice-preview-card .card-body:nth-of-type(2) .row .col-12:nth-child(2) {\n    margin-top: 0 !important;\n}\n.invoice-preview-wrapper .invoice-actions {\n    display: none;\n}\n}", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=style&index=0&id=4d441ce2&lang=scss&scoped=true&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--12-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=style&index=0&id=4d441ce2&lang=scss&scoped=true& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--12-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./StatementDetail.vue?vue&type=style&index=0&id=4d441ce2&lang=scss&scoped=true& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=style&index=0&id=4d441ce2&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=style&index=1&id=4d441ce2&lang=scss&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/sass-loader/dist/cjs.js??ref--12-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=style&index=1&id=4d441ce2&lang=scss& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--12-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./StatementDetail.vue?vue&type=style&index=1&id=4d441ce2&lang=scss& */ "./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=style&index=1&id=4d441ce2&lang=scss&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=template&id=4d441ce2&scoped=true&":
+/*!*******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=template&id=4d441ce2&scoped=true& ***!
+  \*******************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "b-overlay",
+    {
+      attrs: {
+        show: _vm.loading,
+        blur: "2px",
+        variant: "transparent",
+        rounded: "lg",
+        opacity: "0.85",
+      },
+      scopedSlots: _vm._u([
+        {
+          key: "overlay",
+          fn: function () {
+            return [
+              _c(
+                "div",
+                { staticClass: "d-flex align-items-center" },
+                [
+                  _c("b-spinner", {
+                    attrs: { small: "", type: "grow", variant: "secondary" },
+                  }),
+                  _vm._v(" "),
+                  _c("b-spinner", { attrs: { type: "grow", variant: "dark" } }),
+                  _vm._v(" "),
+                  _c("b-spinner", {
+                    attrs: { small: "", type: "grow", variant: "secondary" },
+                  }),
+                ],
+                1
+              ),
+            ]
+          },
+          proxy: true,
+        },
+      ]),
+    },
+    [
+      _vm._v(" "),
+      _c(
+        "section",
+        { staticClass: "invoice-preview-wrapper" },
+        [
+          _c(
+            "b-alert",
+            {
+              attrs: { variant: "danger", show: _vm.patientData === undefined },
+            },
+            [
+              _c("h4", { staticClass: "alert-heading" }, [
+                _vm._v("\n\t\t\t\tError getting patient data\n\t\t\t"),
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "alert-body" },
+                [
+                  _vm._v(
+                    "\n\t\t\t\tNo data found with this patient ID.\n\t\t\t\t"
+                  ),
+                  _c(
+                    "b-link",
+                    {
+                      staticClass: "alert-link",
+                      attrs: { to: { name: "apps-patients-list" } },
+                    },
+                    [_vm._v("\n\t\t\t\t\tConsult the patient list\n\t\t\t\t")]
+                  ),
+                  _vm._v("\n\t\t\t\tto see other invoices\n\t\t\t"),
+                ],
+                1
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _vm.patientData
+            ? _c(
+                "b-row",
+                { staticClass: "invoice-preview" },
+                [
+                  _c(
+                    "b-col",
+                    { attrs: { cols: "12", xl: "9", md: "8" } },
+                    [
+                      _c(
+                        "b-card",
+                        {
+                          staticClass: "invoice-preview-card",
+                          attrs: { "no-body": "" },
+                        },
+                        [
+                          _c(
+                            "b-card-body",
+                            { staticClass: "invoice-padding pb-0" },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "d-flex justify-content-between flex-md-row flex-column invoice-spacing mt-0",
+                                },
+                                [
+                                  _c("div", [
+                                    _c("div", { staticClass: "logo-wrapper" }, [
+                                      _c(
+                                        "h3",
+                                        {
+                                          staticClass:
+                                            "text-primary invoice-logo",
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                              _vm._s(
+                                                _vm.findSetting("app_name")
+                                              ) +
+                                              "\n\t\t\t\t\t\t\t\t\t\t\t\t"
+                                          ),
+                                        ]
+                                      ),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "p",
+                                      { staticClass: "card-text mb-25" },
+                                      [
+                                        _c("strong", [
+                                          _vm._v(
+                                            _vm._s(_vm.patientData.full_name)
+                                          ),
+                                        ]),
+                                        _c("br"),
+                                        _vm._v(" "),
+                                        _c(
+                                          "small",
+                                          [
+                                            _c("feather-icon", {
+                                              staticClass: "mr-50",
+                                              attrs: { icon: "MailIcon" },
+                                            }),
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(_vm.patientData.email)
+                                            ),
+                                          ],
+                                          1
+                                        ),
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "p",
+                                      { staticClass: "card-text mb-25" },
+                                      [
+                                        _c("feather-icon", {
+                                          staticClass: "mr-50",
+                                          attrs: { icon: "UserIcon" },
+                                        }),
+                                        _vm._v(
+                                          " " +
+                                            _vm._s(
+                                              _vm.patientData.document_type
+                                            ) +
+                                            ":\n\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                            _vm._s(_vm.patientData.rut) +
+                                            "\n\t\t\t\t\t\t\t\t\t\t\t"
+                                        ),
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "p",
+                                      { staticClass: "card-text mb-25" },
+                                      [
+                                        _c("feather-icon", {
+                                          staticClass: "mr-50",
+                                          attrs: { icon: "MapPinIcon" },
+                                        }),
+                                        _vm._v(
+                                          " " +
+                                            _vm._s(_vm.patientData.address) +
+                                            "\n\t\t\t\t\t\t\t\t\t\t\t"
+                                        ),
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "p",
+                                      { staticClass: "card-text mb-0" },
+                                      [
+                                        _c("feather-icon", {
+                                          staticClass: "mr-50",
+                                          attrs: { icon: "PhoneIcon" },
+                                        }),
+                                        _vm._v(
+                                          " " +
+                                            _vm._s(
+                                              _vm.patientData.mobile
+                                                ? _vm.patientData.mobile.e164
+                                                : _vm.patientData.cellphone
+                                            ) +
+                                            ", " +
+                                            _vm._s(_vm.patientData.phone) +
+                                            "\n\t\t\t\t\t\t\t\t\t\t\t"
+                                        ),
+                                      ],
+                                      1
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "mt-md-0 mt-2" }, [
+                                    _c("h4", { staticClass: "invoice-title" }, [
+                                      _vm._v(
+                                        "\n\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                          _vm._s(
+                                            _vm.$t("patients.identifier")
+                                          ) +
+                                          ":\n\t\t\t\t\t\t\t\t\t\t\t\t"
+                                      ),
+                                      _c(
+                                        "span",
+                                        { staticClass: "invoice-number" },
+                                        [
+                                          _vm._v(
+                                            _vm._s(
+                                              _vm.padString(_vm.patientData.id)
+                                            )
+                                          ),
+                                        ]
+                                      ),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "ul",
+                                      {
+                                        staticClass:
+                                          "list-unstyled my-1 font-weight-bold text-capitalize",
+                                      },
+                                      [
+                                        _c("li", [
+                                          _c(
+                                            "span",
+                                            { staticClass: "align-middle" },
+                                            [
+                                              _vm._v(
+                                                "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                  _vm._s(_vm.$t("date")) +
+                                                  "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                  _vm._s(_vm.momentFormat()) +
+                                                  "\n\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                              ),
+                                            ]
+                                          ),
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("li", [
+                                          _c(
+                                            "span",
+                                            { staticClass: "align-middle" },
+                                            [
+                                              _vm._v(
+                                                "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                  _vm._s(_vm.$t("debt")) +
+                                                  "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                              ),
+                                              _c(
+                                                "b-badge",
+                                                {
+                                                  staticClass:
+                                                    "text-capitalize",
+                                                  attrs: {
+                                                    pill: "",
+                                                    variant: "light-danger",
+                                                  },
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                      _vm._s(
+                                                        _vm.totalCostFormatted
+                                                      ) +
+                                                      "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                  ),
+                                                ]
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("li", { staticClass: "my-25" }, [
+                                          _c(
+                                            "span",
+                                            { staticClass: "align-middle" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(_vm.$t("paid")) +
+                                                  "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                              ),
+                                              _c(
+                                                "b-badge",
+                                                {
+                                                  staticClass:
+                                                    "text-capitalize",
+                                                  attrs: {
+                                                    pill: "",
+                                                    variant: "light-success",
+                                                  },
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                      _vm._s(
+                                                        _vm.totalPaidFormatted
+                                                      ) +
+                                                      "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                  ),
+                                                ]
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("li", [
+                                          _c(
+                                            "span",
+                                            { staticClass: "align-middle" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(_vm.$t("per_paid")) +
+                                                  "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                              ),
+                                              _c(
+                                                "b-badge",
+                                                {
+                                                  staticClass:
+                                                    "text-capitalize",
+                                                  attrs: {
+                                                    pill: "",
+                                                    variant: "light-warning",
+                                                  },
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                      _vm._s(
+                                                        _vm.totalDebtFormatted
+                                                      ) +
+                                                      "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                  ),
+                                                ]
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                        ]),
+                                      ]
+                                    ),
+                                  ]),
+                                ]
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("b-table", {
+                            staticClass:
+                              "position-relative text-small table-small small",
+                            attrs: {
+                              responsive: "",
+                              bordered: "",
+                              outlined: "",
+                              "foot-clone": false,
+                              "no-border-collapse": false,
+                              fields: _vm.tableFields,
+                              items: _vm.patientData.budgets,
+                              small: "",
+                            },
+                            scopedSlots: _vm._u(
+                              [
+                                {
+                                  key: "cell(budget)",
+                                  fn: function (data) {
+                                    return [
+                                      _vm._v(
+                                        "\n\t\t\t\t\t\t\t\t\t\t" +
+                                          _vm._s(data.item.label) +
+                                          "\n\t\t\t\t\t\t\t\t\t"
+                                      ),
+                                    ]
+                                  },
+                                },
+                                {
+                                  key: "cell(subtotal)",
+                                  fn: function (data) {
+                                    return [
+                                      _vm._v(
+                                        "\n\t\t\t\t\t\t\t\t\t\t" +
+                                          _vm._s(
+                                            _vm.amountFormatted(
+                                              data.item.subtotal * 1
+                                            )
+                                          ) +
+                                          "\n\t\t\t\t\t\t\t\t\t"
+                                      ),
+                                    ]
+                                  },
+                                },
+                                {
+                                  key: "cell(discount)",
+                                  fn: function (data) {
+                                    return [
+                                      _vm._v(
+                                        "\n\t\t\t\t\t\t\t\t\t\t" +
+                                          _vm._s(
+                                            _vm.amountFormatted(
+                                              data.item.discount * 1
+                                            )
+                                          ) +
+                                          "\n\t\t\t\t\t\t\t\t\t"
+                                      ),
+                                    ]
+                                  },
+                                },
+                                {
+                                  key: "cell(total)",
+                                  fn: function (data) {
+                                    return [
+                                      _vm._v(
+                                        "\n\t\t\t\t\t\t\t\t\t\t" +
+                                          _vm._s(
+                                            _vm.amountFormatted(
+                                              data.item.total_cost
+                                            )
+                                          ) +
+                                          "\n\t\t\t\t\t\t\t\t\t"
+                                      ),
+                                    ]
+                                  },
+                                },
+                                {
+                                  key: "cell(paid)",
+                                  fn: function (data) {
+                                    return [
+                                      _vm._v(
+                                        "\n\t\t\t\t\t\t\t\t\t\t" +
+                                          _vm._s(
+                                            _vm.amountFormatted(
+                                              data.item.total_paid
+                                            )
+                                          ) +
+                                          "\n\t\t\t\t\t\t\t\t\t"
+                                      ),
+                                    ]
+                                  },
+                                },
+                                {
+                                  key: "cell(debt)",
+                                  fn: function (data) {
+                                    return [
+                                      _vm._v(
+                                        "\n\t\t\t\t\t\t\t\t\t\t" +
+                                          _vm._s(
+                                            _vm.amountFormatted(
+                                              data.item.total_debt
+                                            )
+                                          ) +
+                                          "\n\t\t\t\t\t\t\t\t\t"
+                                      ),
+                                    ]
+                                  },
+                                },
+                                {
+                                  key: "row-details",
+                                  fn: function (data) {
+                                    return [
+                                      _c(
+                                        "b-card",
+                                        [
+                                          _c(
+                                            "b-row",
+                                            { staticClass: "mb-2" },
+                                            [
+                                              _c(
+                                                "b-col",
+                                                {
+                                                  staticClass: "mb-1",
+                                                  attrs: { md: "12" },
+                                                },
+                                                [
+                                                  _c("b-table", {
+                                                    staticClass:
+                                                      "text-small table-small small",
+                                                    attrs: {
+                                                      responsive: "",
+                                                      "foot-clone": false,
+                                                      "no-border-collapse": false,
+                                                      items:
+                                                        data.item
+                                                          .budget_actions,
+                                                      fields:
+                                                        _vm.tableDetailFields,
+                                                      "caption-top": "",
+                                                      "show-empty": true,
+                                                      "empty-text": _vm.$t(
+                                                        "datatables.sEmptyTable"
+                                                      ),
+                                                      small: "",
+                                                    },
+                                                    scopedSlots: _vm._u(
+                                                      [
+                                                        {
+                                                          key: "table-caption",
+                                                          fn: function () {
+                                                            return [
+                                                              _c("strong", [
+                                                                _vm._v(
+                                                                  _vm._s(
+                                                                    _vm.$t(
+                                                                      "patients.statements.budget_detail"
+                                                                    )
+                                                                  ) +
+                                                                    " " +
+                                                                    _vm._s(
+                                                                      data.item
+                                                                        .label
+                                                                    )
+                                                                ),
+                                                              ]),
+                                                            ]
+                                                          },
+                                                          proxy: true,
+                                                        },
+                                                        {
+                                                          key: "cell(description)",
+                                                          fn: function (data) {
+                                                            return [
+                                                              _c(
+                                                                "b-card-text",
+                                                                {
+                                                                  staticClass:
+                                                                    "font-weight-bold mb-25",
+                                                                },
+                                                                [
+                                                                  _vm._v(
+                                                                    "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                                      _vm._s(
+                                                                        data
+                                                                          .item
+                                                                          .action_name
+                                                                      ) +
+                                                                      "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                                  ),
+                                                                ]
+                                                              ),
+                                                              _vm._v(" "),
+                                                              _c(
+                                                                "b-card-text",
+                                                                {
+                                                                  staticClass:
+                                                                    "text-wrap",
+                                                                },
+                                                                [
+                                                                  _vm._v(
+                                                                    "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                                      _vm._s(
+                                                                        data
+                                                                          .item
+                                                                          .action_group_name
+                                                                      ) +
+                                                                      ", \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                                  ),
+                                                                  _c("strong", [
+                                                                    _vm._v(
+                                                                      _vm._s(
+                                                                        _vm.$t(
+                                                                          "area"
+                                                                        )
+                                                                      ) +
+                                                                        " " +
+                                                                        _vm._s(
+                                                                          data
+                                                                            .item
+                                                                            .area
+                                                                        )
+                                                                    ),
+                                                                  ]),
+                                                                ]
+                                                              ),
+                                                              _vm._v(" "),
+                                                              _c(
+                                                                "span",
+                                                                {
+                                                                  staticClass:
+                                                                    "badge badge-light-primary float-left text-wrap",
+                                                                },
+                                                                [
+                                                                  _vm._v(
+                                                                    "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                                      _vm._s(
+                                                                        data
+                                                                          .item
+                                                                          .action_type ===
+                                                                          "clinical"
+                                                                          ? _vm.$t(
+                                                                              "budgets.clinical_action"
+                                                                            )
+                                                                          : _vm.$t(
+                                                                              "budgets.laboratory_action"
+                                                                            )
+                                                                      ) +
+                                                                      "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                                  ),
+                                                                ]
+                                                              ),
+                                                            ]
+                                                          },
+                                                        },
+                                                        {
+                                                          key: "cell(subtotal)",
+                                                          fn: function (data) {
+                                                            return [
+                                                              _vm._v(
+                                                                "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                                  _vm._s(
+                                                                    _vm.amountFormatted(
+                                                                      data.item
+                                                                        .price *
+                                                                        1
+                                                                    )
+                                                                  ) +
+                                                                  "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                              ),
+                                                            ]
+                                                          },
+                                                        },
+                                                        {
+                                                          key: "cell(discount)",
+                                                          fn: function (data) {
+                                                            return [
+                                                              _vm._v(
+                                                                "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                                  _vm._s(
+                                                                    _vm.amountFormatted(
+                                                                      data.item
+                                                                        .discount *
+                                                                        1
+                                                                    )
+                                                                  ) +
+                                                                  "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                              ),
+                                                            ]
+                                                          },
+                                                        },
+                                                        {
+                                                          key: "cell(total)",
+                                                          fn: function (data) {
+                                                            return [
+                                                              _vm._v(
+                                                                "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                                  _vm._s(
+                                                                    _vm.amountFormatted(
+                                                                      data.item
+                                                                        .subtotal *
+                                                                        1
+                                                                    )
+                                                                  ) +
+                                                                  "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                              ),
+                                                            ]
+                                                          },
+                                                        },
+                                                        {
+                                                          key: "cell(paid)",
+                                                          fn: function (data) {
+                                                            return [
+                                                              _vm._v(
+                                                                "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                                  _vm._s(
+                                                                    _vm.amountFormatted(
+                                                                      data.item
+                                                                        .paid *
+                                                                        1
+                                                                    )
+                                                                  ) +
+                                                                  "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                              ),
+                                                            ]
+                                                          },
+                                                        },
+                                                        {
+                                                          key: "cell(debt)",
+                                                          fn: function (data) {
+                                                            return [
+                                                              _vm._v(
+                                                                "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                                  _vm._s(
+                                                                    _vm.amountFormatted(
+                                                                      data.item
+                                                                        .debt *
+                                                                        1
+                                                                    )
+                                                                  ) +
+                                                                  "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                              ),
+                                                            ]
+                                                          },
+                                                        },
+                                                        {
+                                                          key: "row-details",
+                                                          fn: function (data) {
+                                                            return [
+                                                              data.item
+                                                                .action_type ===
+                                                              "clinical"
+                                                                ? _c(
+                                                                    "b-table",
+                                                                    {
+                                                                      staticClass:
+                                                                        "text-small table-small small",
+                                                                      attrs: {
+                                                                        responsive:
+                                                                          "",
+                                                                        "foot-clone": false,
+                                                                        "no-border-collapse": false,
+                                                                        items:
+                                                                          data
+                                                                            .item
+                                                                            .clinical_payments,
+                                                                        fields:
+                                                                          _vm.tablePaymentDetails,
+                                                                        "show-empty": true,
+                                                                        "caption-top":
+                                                                          "",
+                                                                        "empty-text":
+                                                                          _vm.$t(
+                                                                            "datatables.sEmptyTable"
+                                                                          ),
+                                                                        small:
+                                                                          "",
+                                                                      },
+                                                                      scopedSlots:
+                                                                        _vm._u(
+                                                                          [
+                                                                            {
+                                                                              key: "table-caption",
+                                                                              fn: function () {
+                                                                                return [
+                                                                                  _c(
+                                                                                    "strong",
+                                                                                    [
+                                                                                      _vm._v(
+                                                                                        _vm._s(
+                                                                                          _vm.$t(
+                                                                                            "patients.statements.payment_details"
+                                                                                          )
+                                                                                        )
+                                                                                      ),
+                                                                                    ]
+                                                                                  ),
+                                                                                ]
+                                                                              },
+                                                                              proxy: true,
+                                                                            },
+                                                                            {
+                                                                              key: "cell(date)",
+                                                                              fn: function (
+                                                                                data
+                                                                              ) {
+                                                                                return [
+                                                                                  _vm._v(
+                                                                                    "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                                                      _vm._s(
+                                                                                        data
+                                                                                          .item
+                                                                                          .payment_date
+                                                                                      ) +
+                                                                                      "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                                                  ),
+                                                                                ]
+                                                                              },
+                                                                            },
+                                                                            {
+                                                                              key: "cell(amount)",
+                                                                              fn: function (
+                                                                                data
+                                                                              ) {
+                                                                                return [
+                                                                                  _vm._v(
+                                                                                    "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                                                      _vm._s(
+                                                                                        _vm.amountFormatted(
+                                                                                          data
+                                                                                            .item
+                                                                                            .amount *
+                                                                                            1
+                                                                                        )
+                                                                                      ) +
+                                                                                      "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                                                  ),
+                                                                                ]
+                                                                              },
+                                                                            },
+                                                                            {
+                                                                              key: "cell(method)",
+                                                                              fn: function (
+                                                                                data
+                                                                              ) {
+                                                                                return [
+                                                                                  _vm._v(
+                                                                                    "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                                                      _vm._s(
+                                                                                        _vm.translatePaymentMethod(
+                                                                                          data
+                                                                                            .item
+                                                                                            .payment
+                                                                                            .method
+                                                                                        )
+                                                                                      ) +
+                                                                                      "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                                                  ),
+                                                                                ]
+                                                                              },
+                                                                            },
+                                                                          ],
+                                                                          null,
+                                                                          true
+                                                                        ),
+                                                                    }
+                                                                  )
+                                                                : _c(
+                                                                    "b-table",
+                                                                    {
+                                                                      staticClass:
+                                                                        "text-small table-small small",
+                                                                      attrs: {
+                                                                        responsive:
+                                                                          "",
+                                                                        "foot-clone": false,
+                                                                        "no-border-collapse": false,
+                                                                        items:
+                                                                          data
+                                                                            .item
+                                                                            .laboratory_payments,
+                                                                        fields:
+                                                                          _vm.tablePaymentDetails,
+                                                                        "show-empty": true,
+                                                                        "caption-top":
+                                                                          "",
+                                                                        "empty-text":
+                                                                          _vm.$t(
+                                                                            "datatables.sEmptyTable"
+                                                                          ),
+                                                                        small:
+                                                                          "",
+                                                                      },
+                                                                      scopedSlots:
+                                                                        _vm._u(
+                                                                          [
+                                                                            {
+                                                                              key: "table-caption",
+                                                                              fn: function () {
+                                                                                return [
+                                                                                  _c(
+                                                                                    "strong",
+                                                                                    [
+                                                                                      _vm._v(
+                                                                                        _vm._s(
+                                                                                          _vm.$t(
+                                                                                            "patients.statements.payment_details"
+                                                                                          )
+                                                                                        )
+                                                                                      ),
+                                                                                    ]
+                                                                                  ),
+                                                                                ]
+                                                                              },
+                                                                              proxy: true,
+                                                                            },
+                                                                            {
+                                                                              key: "cell(date)",
+                                                                              fn: function (
+                                                                                data
+                                                                              ) {
+                                                                                return [
+                                                                                  _vm._v(
+                                                                                    "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                                                      _vm._s(
+                                                                                        data
+                                                                                          .item
+                                                                                          .payment_date
+                                                                                      ) +
+                                                                                      "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                                                  ),
+                                                                                ]
+                                                                              },
+                                                                            },
+                                                                            {
+                                                                              key: "cell(amount)",
+                                                                              fn: function (
+                                                                                data
+                                                                              ) {
+                                                                                return [
+                                                                                  _vm._v(
+                                                                                    "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                                                      _vm._s(
+                                                                                        _vm.amountFormatted(
+                                                                                          data
+                                                                                            .item
+                                                                                            .amount *
+                                                                                            1
+                                                                                        )
+                                                                                      ) +
+                                                                                      "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                                                  ),
+                                                                                ]
+                                                                              },
+                                                                            },
+                                                                            {
+                                                                              key: "cell(method)",
+                                                                              fn: function (
+                                                                                data
+                                                                              ) {
+                                                                                return [
+                                                                                  _vm._v(
+                                                                                    "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                                                      _vm._s(
+                                                                                        _vm.translatePaymentMethod(
+                                                                                          data
+                                                                                            .item
+                                                                                            .payment
+                                                                                            .method
+                                                                                        )
+                                                                                      ) +
+                                                                                      "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                                                  ),
+                                                                                ]
+                                                                              },
+                                                                            },
+                                                                          ],
+                                                                          null,
+                                                                          true
+                                                                        ),
+                                                                    }
+                                                                  ),
+                                                            ]
+                                                          },
+                                                        },
+                                                      ],
+                                                      null,
+                                                      true
+                                                    ),
+                                                  }),
+                                                ],
+                                                1
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                        ],
+                                        1
+                                      ),
+                                    ]
+                                  },
+                                },
+                              ],
+                              null,
+                              false,
+                              3525038967
+                            ),
+                          }),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "b-col",
+                    {
+                      staticClass: "invoice-actions",
+                      attrs: { cols: "12", md: "4", xl: "3" },
+                    },
+                    [
+                      _c(
+                        "b-card",
+                        [
+                          _c(
+                            "b-button",
+                            {
+                              directives: [
+                                {
+                                  name: "ripple",
+                                  rawName: "v-ripple.400",
+                                  value: "rgba(255, 255, 255, 0.15)",
+                                  expression: "'rgba(255, 255, 255, 0.15)'",
+                                  modifiers: { 400: true },
+                                },
+                              ],
+                              staticClass: "mb-75",
+                              attrs: {
+                                disabled: _vm.isActive,
+                                variant: "primary",
+                                block: "",
+                              },
+                              on: { click: _vm.sendStatementDetails },
+                            },
+                            [
+                              _vm._v(
+                                "\n\t\t\t\t\t\t" +
+                                  _vm._s(_vm.$t("button_send")) +
+                                  "\n\t\t\t\t\t"
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-button",
+                            {
+                              directives: [
+                                {
+                                  name: "ripple",
+                                  rawName: "v-ripple.400",
+                                  value: "rgba(186, 191, 199, 0.15)",
+                                  expression: "'rgba(186, 191, 199, 0.15)'",
+                                  modifiers: { 400: true },
+                                },
+                              ],
+                              staticClass: "mb-75",
+                              attrs: {
+                                variant: "outline-secondary",
+                                block: "",
+                              },
+                              on: { click: _vm.statementDetailDownload },
+                            },
+                            [
+                              _vm._v(
+                                "\n\t\t\t\t\t\t" +
+                                  _vm._s(_vm.$t("button_download")) +
+                                  "\n\t\t\t\t\t"
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-button",
+                            {
+                              directives: [
+                                {
+                                  name: "ripple",
+                                  rawName: "v-ripple.400",
+                                  value: "rgba(186, 191, 199, 0.15)",
+                                  expression: "'rgba(186, 191, 199, 0.15)'",
+                                  modifiers: { 400: true },
+                                },
+                              ],
+                              staticClass: "mb-75",
+                              attrs: {
+                                variant: "outline-secondary",
+                                block: "",
+                              },
+                              on: { click: _vm.printInvoice },
+                            },
+                            [
+                              _vm._v(
+                                "\n\t\t\t\t\t\t" +
+                                  _vm._s(_vm.$t("button_print")) +
+                                  "\n\t\t\t\t\t"
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-button",
+                            {
+                              directives: [
+                                {
+                                  name: "ripple",
+                                  rawName: "v-ripple.400",
+                                  value: "rgba(255, 255, 255, 0.15)",
+                                  expression: "'rgba(255, 255, 255, 0.15)'",
+                                  modifiers: { 400: true },
+                                },
+                              ],
+                              staticClass: "mb-75",
+                              attrs: { variant: "secondary", block: "" },
+                              on: {
+                                click: function ($event) {
+                                  return _vm.$router.back()
+                                },
+                              },
+                            },
+                            [
+                              _vm._v(
+                                "\n\t\t\t\t\t\t" +
+                                  _vm._s(_vm.$t("back")) +
+                                  "\n\t\t\t\t\t"
+                              ),
+                            ]
+                          ),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              )
+            : _vm._e(),
+        ],
+        1
+      ),
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./resources/js/src/@core/libs/i18n/index.js":
+/*!***************************************************!*\
+  !*** ./resources/js/src/@core/libs/i18n/index.js ***!
+  \***************************************************/
+/*! exports provided: useUtils, _ */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useUtils", function() { return useUtils; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_", function() { return _; });
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/objectSpread2.js */ "./node_modules/@babel/runtime/helpers/esm/objectSpread2.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ "./resources/js/src/@core/libs/i18n/utils.js");
+
+
+var useUtils = function useUtils() {
+  return Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__["default"])({}, _utils__WEBPACK_IMPORTED_MODULE_1__);
+};
+var _ = null;
+
+/***/ }),
+
+/***/ "./resources/js/src/@core/libs/i18n/utils.js":
+/*!***************************************************!*\
+  !*** ./resources/js/src/@core/libs/i18n/utils.js ***!
+  \***************************************************/
+/*! exports provided: t, _ */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return t; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_", function() { return _; });
+/* harmony import */ var _vue_composition_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @vue/composition-api */ "./node_modules/@vue/composition-api/dist/vue-composition-api.mjs");
+
+
+/**
+ * Returns translated string if i18n package is available to Vue
+ * If i18n is not configured then it will simply return what is being passed
+ * Useful if you don't know if i18n is configured or not
+ * Used in @core files to handle absence of i18n without errors
+ * @param {String} key i18n key to use for translation
+ */
+var t = function t(key) {
+  var vm = Object(_vue_composition_api__WEBPACK_IMPORTED_MODULE_0__["getCurrentInstance"])().proxy;
+  return vm.$t ? vm.$t(key) : key;
+};
+var _ = null;
+
+/***/ }),
+
+/***/ "./resources/js/src/providers/Patients.js":
+/*!************************************************!*\
+  !*** ./resources/js/src/providers/Patients.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Patients; });
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+var Patients = /*#__PURE__*/function () {
+  function Patients() {
+    Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Patients);
+  }
+  Object(C_projects_saas_dental_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_1__["default"])(Patients, [{
+    key: "index",
+    value:
+    /**
+    * Function to get all patients without pagination
+    */
+    function index(query) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/patients", {
+        params: query
+      });
+    }
+
+    /**
+     * Function to update a branch
+     * @param {Object} formdata
+     * @return AxiosPromise
+     */
+  }, {
+    key: "save",
+    value: function save(formdata) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/patients", formdata);
+    }
+
+    /**
+     * Function to update a branch
+     * @param {Object} formdata
+     * @return AxiosPromise
+     */
+  }, {
+    key: "update",
+    value: function update(id, formdata) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("/api/patients/".concat(id), formdata);
+    }
+
+    /**
+     * Function to get information by branch
+     * @param {Number} id
+     * @return AxiosPromise
+     */
+  }, {
+    key: "getPatientDetail",
+    value: function getPatientDetail(id, query) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/patients/".concat(id), {
+        params: query
+      });
+    }
+  }, {
+    key: "show",
+    value: function show(id, query) {
+      if (query.isPdf || query.isPrint) {
+        return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/patients/".concat(id), {
+          params: query,
+          responseType: "arraybuffer"
+        });
+      }
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/patients/".concat(id), {
+        params: query
+      });
+    }
+
+    /**
+     * Funtion to delete patients
+     * @param {Array} users
+     * @return AxiosPromise
+     */
+  }, {
+    key: "deletePatient",
+    value: function deletePatient(id) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a["delete"]("/api/patients/".concat(id));
+    }
+
+    /**
+     * Function to get all patients without pagination
+     */
+  }, {
+    key: "getList",
+    value: function getList(query) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/patients", {
+        params: query
+      });
+    }
+  }, {
+    key: "find",
+    value: function find(id) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/patients/".concat(id));
+    }
+  }, {
+    key: "filterList",
+    value: function filterList() {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/patients/filter");
+    }
+
+    /**
+     * [search description]
+     *
+     * @param   {[type]}  q  [q description]
+     *
+     * @return  {[type]}     [return description]
+     */
+  }, {
+    key: "search",
+    value: function search(query) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/patients/search", {
+        params: query
+      });
+    }
+  }, {
+    key: "nextAppointment",
+    value: function nextAppointment(query) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/patients/next-appointment", {
+        params: query
+      });
+    }
+  }]);
+  return Patients;
+}();
+
+
+/***/ }),
+
+/***/ "./resources/js/src/views/apps/patients/StatementDetail.vue":
+/*!******************************************************************!*\
+  !*** ./resources/js/src/views/apps/patients/StatementDetail.vue ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _StatementDetail_vue_vue_type_template_id_4d441ce2_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StatementDetail.vue?vue&type=template&id=4d441ce2&scoped=true& */ "./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=template&id=4d441ce2&scoped=true&");
+/* harmony import */ var _StatementDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./StatementDetail.vue?vue&type=script&lang=js& */ "./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _StatementDetail_vue_vue_type_style_index_0_id_4d441ce2_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./StatementDetail.vue?vue&type=style&index=0&id=4d441ce2&lang=scss&scoped=true& */ "./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=style&index=0&id=4d441ce2&lang=scss&scoped=true&");
+/* harmony import */ var _StatementDetail_vue_vue_type_style_index_1_id_4d441ce2_lang_scss___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./StatementDetail.vue?vue&type=style&index=1&id=4d441ce2&lang=scss& */ "./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=style&index=1&id=4d441ce2&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_4__["default"])(
+  _StatementDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _StatementDetail_vue_vue_type_template_id_4d441ce2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _StatementDetail_vue_vue_type_template_id_4d441ce2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "4d441ce2",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/src/views/apps/patients/StatementDetail.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StatementDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./StatementDetail.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StatementDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=style&index=0&id=4d441ce2&lang=scss&scoped=true&":
+/*!****************************************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=style&index=0&id=4d441ce2&lang=scss&scoped=true& ***!
+  \****************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StatementDetail_vue_vue_type_style_index_0_id_4d441ce2_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/style-loader!../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--12-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./StatementDetail.vue?vue&type=style&index=0&id=4d441ce2&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=style&index=0&id=4d441ce2&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StatementDetail_vue_vue_type_style_index_0_id_4d441ce2_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StatementDetail_vue_vue_type_style_index_0_id_4d441ce2_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StatementDetail_vue_vue_type_style_index_0_id_4d441ce2_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StatementDetail_vue_vue_type_style_index_0_id_4d441ce2_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=style&index=1&id=4d441ce2&lang=scss&":
+/*!****************************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=style&index=1&id=4d441ce2&lang=scss& ***!
+  \****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StatementDetail_vue_vue_type_style_index_1_id_4d441ce2_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/style-loader!../../../../../../node_modules/css-loader/dist/cjs.js!../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--12-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./StatementDetail.vue?vue&type=style&index=1&id=4d441ce2&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=style&index=1&id=4d441ce2&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StatementDetail_vue_vue_type_style_index_1_id_4d441ce2_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StatementDetail_vue_vue_type_style_index_1_id_4d441ce2_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StatementDetail_vue_vue_type_style_index_1_id_4d441ce2_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_sass_loader_dist_cjs_js_ref_12_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StatementDetail_vue_vue_type_style_index_1_id_4d441ce2_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=template&id=4d441ce2&scoped=true&":
+/*!*************************************************************************************************************!*\
+  !*** ./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=template&id=4d441ce2&scoped=true& ***!
+  \*************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StatementDetail_vue_vue_type_template_id_4d441ce2_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./StatementDetail.vue?vue&type=template&id=4d441ce2&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/apps/patients/StatementDetail.vue?vue&type=template&id=4d441ce2&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StatementDetail_vue_vue_type_template_id_4d441ce2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StatementDetail_vue_vue_type_template_id_4d441ce2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ })
+
+}]);

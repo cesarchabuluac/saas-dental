@@ -31,11 +31,11 @@
                             <b-input-group>
                                 <b-form-input v-model="searchQuery" class="d-inline-block _mr-1"
                                     :placeholder="$t('expenses.input_search')" @keyup.enter="getExpenses" />
-                                <b-input-group-prepend>
-                                    <b-button variant="primary" @click="getExpenses">
-                                        <feather-icon icon="SearchIcon" />
-                                    </b-button>
-                                </b-input-group-prepend>
+                                <b-input-group-append>
+                                <b-button size="sm" variant="primary" @click="getExpenses">
+                                    <feather-icon icon="SearchIcon" /> Buscar
+                                </b-button>
+                                </b-input-group-append>
                             </b-input-group>
                         </div>
                     </b-col>

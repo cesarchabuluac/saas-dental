@@ -9,7 +9,7 @@
                     <!-- Search -->
                     <b-col cols="12" md="12">
                         <div class="d-flex align-items-center justify-content-end">
-                            <b-input-group>
+                            <!-- <b-input-group>
                                 <b-form-input size="sm" autofocus v-model="searchQuery" class="d-inline-block _mr-1" autocomplete="off"
                                     :placeholder="$t('patients.search_options')" @keyup.enter="searchPatients" />
                                 <b-input-group-prepend>
@@ -17,6 +17,15 @@
                                         <feather-icon icon="SearchIcon" />
                                     </b-button>
                                 </b-input-group-prepend>
+                            </b-input-group> -->
+                            <b-input-group>
+                                <b-form-input size="sm" autofocus v-model="searchQuery" class="d-inline-block _mr-1" autocomplete="off"
+                                    :placeholder="$t('patients.search_options')" @keyup.enter="searchPatients" />
+                                <b-input-group-append>
+                                <b-button size="sm" variant="outline-primary" @click="searchPatients">
+                                    <feather-icon icon="SearchIcon" /> Buscar
+                                </b-button>
+                                </b-input-group-append>
                             </b-input-group>
                         </div>
                     </b-col>
@@ -126,7 +135,7 @@ export default {
                 },
                 {
                     key: "document",
-                    label: this.$t("patients.table.document_type"),
+                    label: this.$t("patients.table.document"),
                 },
                 {
                     key: "phone",
@@ -147,10 +156,23 @@ export default {
             this.close();
         },
         async searchPatients() {
+
             this.loading = true;
-            const { data } = await PatientResource.search(this.searchQuery);
-            this.patients = data.data
-            this.loading = false
+            const query = {
+                q: this.searchQuery,
+            }
+
+            try {
+                
+                const { data } = await PatientResource.search(query);
+                this.patients = data.data
+                console.log(this.patients)
+                
+            }catch(e) {
+                console.log(e)
+            } finally{
+                this.loading = false
+            }
         },
         close() {
             this.$refs['modal-search-patient'].hide()

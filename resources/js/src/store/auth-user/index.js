@@ -205,11 +205,10 @@ export default {
           const { data } = user
           if (data.success) {
             window.user = data.data.user
-
-            console.log('data.data.user', data.data.user)
-            console.log('role_name', data.data.user.roles[0].name)
-            console.log('role_id', data.data.user.roles[0].id)
-
+            let theme = 'dark'
+            if (data.data.user.settings && data.data.user.settings.theme) {
+              theme = data.data.user.settings.theme
+            }
             commit('SET_CURRENT_USER', data.data.user)
             commit('SET_ROLE_NAME', data.data.user.roles[0].name)
             commit('SET_ROLE_ID', data.data.user.roles[0].id)
@@ -219,7 +218,7 @@ export default {
             commit('SET_LANGUAGES', data.data.languages)
             commit('SET_ROLES', data.data.roles)
             commit('SET_LOCALE', 'es')
-            commit('SET_THEME', 'dark')
+            commit('SET_THEME', theme)
             commit('SET_COUNTRIES', data.data.countries)
             commit('SET_CURRENCIES', data.data.currencies)
             commit('SET_LOGO', state.setting.app_logo)

@@ -81,7 +81,7 @@
                                 <b-form-input size="sm" v-model="filter.search" class="d-inline-block _mr-1" :placeholder="$t('inventories.medicines.search_help')"
                                 @keyup.enter="getMedicines"/>
                                 <b-input-group-prepend>
-                                <b-button size="sm" variant="primary" @click="getMedicines">
+                                <b-button variant="primary" @click="getMedicines">
                                     <feather-icon icon="SearchIcon" />
                                 </b-button>
                                 </b-input-group-prepend>

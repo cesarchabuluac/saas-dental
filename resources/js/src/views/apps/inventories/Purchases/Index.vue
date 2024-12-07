@@ -25,6 +25,15 @@
                     <!-- Search -->
                     <b-col cols="12" md="6">
                         <div class="d-flex align-items-center justify-content-end">
+                            <!-- <b-input-group>
+                                <b-form-input v-model="search" class="d-inline-block _mr-1" :placeholder="$t('inventories.purchases.search_help')"
+                                @keyup.enter="getPurchases"/>
+                                <b-input-group-prepend>
+                                <b-button variant="primary" @click="getPurchases">
+                                    <feather-icon icon="SearchIcon" />
+                                </b-button>
+                                </b-input-group-prepend>
+                            </b-input-group> -->
                             <b-input-group>
                                 <b-form-input v-model="search" class="d-inline-block _mr-1" :placeholder="$t('inventories.purchases.search_help')"
                                 @keyup.enter="getPurchases"/>

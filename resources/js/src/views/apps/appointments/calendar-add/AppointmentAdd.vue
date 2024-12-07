@@ -112,7 +112,7 @@
                         {{ $t("save") }}
                     </b-button>
                     <b-button variant="outline-secondary" class="mb-1 mb-sm-0 mr-0 mr-sm-1"
-                        @click="$router.push({ name: 'appointment' })">
+                        @click="$router.push({ name: 'appointments' })">
                         {{ $t("back") }}
                     </b-button>
                 </b-form>

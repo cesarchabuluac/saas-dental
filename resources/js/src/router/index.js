@@ -350,7 +350,7 @@ const router = new VueRouter({
       name: "settings-imports",
       component: () => import("@/views/settings/Imports/Index.vue"),
       meta: {
-        permission: "import.index",
+        permission: "imports.index",
         pageTitle: "imports.desc",
         requiresAuth: true,
         breadcrumb: [

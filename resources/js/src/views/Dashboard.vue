@@ -55,14 +55,13 @@
             <b-row class="match-height">
                 <!-- Appointment Table Card -->
                 <b-col lg="8" md="6">                
-                    <!-- <calendar-days v-model="currentDay"/> -->
                     <dashboard-appointments :isDashboard="true" />
                 </b-col>
                 <!--/ Appointment Table Card -->
 
                 <!-- Transaction Card -->
                 <b-col lg="4" md="6">
-                    <dashboard-card-transactions :data="dashboard.transactionsData" :loading="false" />              
+                    <dashboard-card-transactions :data="dashboard.transactionsData" :loading="loading" />              
                 </b-col>
                 <!--/ Transaction Card -->           
             </b-row>

@@ -1,16 +1,9 @@
 <template>
     <b-overlay :show="loading || isLoading" blur="2px" variant="transparent" rounded="lg" opacity="0.85">
-        <template #overlay>
-            <div class="d-flex align-items-center">
-                <b-spinner small type="grow" variant="secondary" />
-                <b-spinner type="grow" variant="dark" />
-                <b-spinner small type="grow" variant="secondary" />
-            </div>
-        </template>
         <b-card no-body class="card-revenue-budget">
             <b-row class="mx-0">
                 <b-col md="12" class="revenue-report-wrapper">
-                    <div class="d-sm-flex justify-content-between align-items-center mb-3">
+                    <div class="d-sm-flex justify-content-between align-items-center _mb-3">
                         <h5 class="card-title mb-50 mb-sm-0">
                             {{ $t('users_revenue.title') }}
                         </h5>
@@ -41,34 +34,38 @@
                             </div> -->
                         </div>
                     </div>
-
-                    <!-- chart -->
-                    <!-- <vue-apex-charts :key="chartKey" v-if="series[0].data.length > 0" id="revenue-report-chart" type="bar"
-                        height="230" :options="chartOptions" :series="series" @dataPointSelection="handleDataPointClick" /> -->
-                    <b-table
-                        ref="refProfessionalListTable" 
-                        class="position-relative b-table-responsive table-small small text-small" 
-                        :items="professionals" 
-                        responsive
-                        :sticky-header="true" 
-                        :no-border-collapse="true" 
-                        :fields="columTableProfessional" 
-                        primary-key="id"
-                        small
-                        show-empty 
-                        :empty-text="$t('datatables.sZeroRecords')">
-                        <template #cell(name)="data">
-                            <b-link :to="{ name: 'user-profile', params: { id: data.item.user_id }, }"
-                                class="font-weight-bold d-block text-nowrap">
-                                {{ data.item.name }}
-                            </b-link>
-                        </template>
-                        <template #cell(total)="data">
-                            <strong>{{ formatPrice(data.item.total) }}</strong>
-                        </template>
-                    </b-table>
                 </b-col>               
             </b-row>
+
+            <div class="position-relative b-table-responsive table-small small text-small b-table-sticky-header table-responsive">                
+                <table role="table" aria-busy="false" aria-colcount="7" class="table b-table table-sm b-table-no-border-collapse" id="__BVID__238">
+                    <thead role="rowgroup" class="">
+                        <tr role="row" class="">
+                            <th v-for="(column, index) in columTableProfessional" :key="index" role="columnheader" scope="col" :aria-colindex="index" class="table-b-table-default" style="font-size: 9px !important;">
+                                <div>{{ column.label }}</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody role="rowgroup">
+                        <tr v-for="(item, index) in professionals" :key="index" role="row" class="">
+                            <td :aria-colindex="index + 1" role="cell" class="">
+                                <b-link :to="{ name: 'user-profile', params: { id: item.user_id }, }"
+                                    class="font-weight-bold d-block text-nowrap">
+                                    {{ item.name }}
+                                </b-link>
+                            </td>
+                            <td :aria-colindex="index + 2" role="cell" class="">
+                                <strong>{{ formatPrice(item.total) }}</strong>
+                            </td>
+                            <td :aria-colindex="index + 3" role="cell" class="">{{ item.confirmed }}</td>
+                            <td :aria-colindex="index + 4" role="cell" class="">{{ item.pending }}</td>
+                            <td :aria-colindex="index + 5" role="cell" class="">{{ item.assisted }}</td>
+                            <td :aria-colindex="index + 6" role="cell" class="">{{ item.unassisted }}</td>
+                            <td :aria-colindex="index + 7" role="cell" class="">{{ item.canceled }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </b-card>
     </b-overlay>
 </template>

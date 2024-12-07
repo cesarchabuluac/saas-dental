@@ -33,7 +33,6 @@ export default {
           ...user
         }    
         const { data } = await UserResource.update(user.id, payload);
-        console.log(data)				
 				if (data.success) {
 					store.commit("auth/SET_CURRENT_USER", { ...data.data });
 				}

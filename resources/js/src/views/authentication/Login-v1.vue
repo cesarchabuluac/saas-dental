@@ -194,6 +194,7 @@ export default {
 					this.loading = true;
 					store.dispatch("auth/GET_AUTH_TOKEN", payload).then(() => {
 						const user = store.getters['auth/getUser']
+						store.commit('appConfig/UPDATE_SKIN', store.state.auth.theme)
 						this.success(`${this.$t('welcome')} ${user.name}`);
 						if (user.roles[0].id === 4) {
 							router.push({ name: "appointments" });

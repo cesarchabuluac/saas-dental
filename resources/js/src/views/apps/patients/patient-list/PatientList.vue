@@ -46,11 +46,11 @@
                             <b-input-group>
                                 <b-form-input size="sm" v-model="searchQuery" class="d-inline-block _mr-1"
                                     :placeholder="$t('patients.search_options')" @keyup.enter="getPatients" />
-                                <b-input-group-prepend>
-                                    <b-button size="sm" variant="primary" @click="getPatients">
-                                        <feather-icon icon="SearchIcon" />
-                                    </b-button>
-                                </b-input-group-prepend>
+                                <b-input-group-append>
+                                <b-button size="sm" variant="primary" @click="getPatients">
+                                    <feather-icon icon="SearchIcon" /> Buscar
+                                </b-button>
+                                </b-input-group-append>
                             </b-input-group>
                         </div>
                     </b-col>

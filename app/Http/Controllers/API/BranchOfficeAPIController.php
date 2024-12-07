@@ -51,7 +51,7 @@ class BranchOfficeAPIController extends Controller
             });
 
         if ($request->filled('isAll')) {
-            $branches = $branches->orderBy('name', 'asc')->get();
+            $branches = $branches->get();
             return $this->sendResponse($branches, 'Branches retrieved successfully');
         }
 

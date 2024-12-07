@@ -1,12 +1,5 @@
 <template>
-    <b-overlay :show="loading" blur="2px" variant="transparent" rounded="lg" opacity="0.85">
-        <template #overlay>
-            <div class="d-flex align-items-center">
-                <b-spinner small type="grow" variant="secondary" />
-                <b-spinner type="grow" variant="dark" />
-                <b-spinner small type="grow" variant="secondary" />
-            </div>
-        </template>
+    <b-overlay :show="loading" blur="2px" variant="transparent" rounded="lg" opacity="0.85">       
 
         <section class="invoice-add">
             <b-form ref="form" class="repeater-form">
@@ -15,22 +8,20 @@
                     <b-col cols="12" xl="12" md="12">
                         <b-card no-body class="invoice-preview-card">
                             <!-- Header -->
-                            <b-card-body class="invoice-padding pb-0">
-                                <div class="d-flex justify-content-between flex-md-row flex-column invoice-spacing mt-0">
-                                    <!-- Header: Left Content -->
-                                    <div></div>
-                                    <!-- Header: Right Content -->
+                            <!-- <b-card-body class="invoice-padding pb-0">
+                                <div class="d-flex justify-content-between flex-md-row flex-column invoice-spacing mt-0">                                    
+                                    <div></div>                                    
                                     <div class="mt-md-0 mt-2">
-                                        <b-button v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="outline-primary"
+                                        <b-button size="sm" v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="outline-primary"
                                             class="mb-75" block @click="$router.back()">
                                             {{ $t('back') }}
                                         </b-button>
                                     </div>
                                 </div>
-                            </b-card-body>
+                            </b-card-body> -->
 
                             <!-- Spacer -->
-                            <hr class="invoice-spacing">
+                            <!-- <hr class="invoice-spacing"> -->
 
                             <!-- Invoice Client & Payment Details -->
                             <b-card-body class="invoice-padding pt-0">
@@ -51,62 +42,56 @@
                                                 <b-input-group-prepend is-text>
                                                     <feather-icon icon="SearchIcon" />
                                                 </b-input-group-prepend>
-                                                <b-form-input size="sm" readonly @click="activeSearchPatient = true"
+                                                <b-form-input size="sm" @click="activeSearchPatient = true"
                                                     v-model="selectedPatient.full_name"
                                                     :placeholder="$t('patients.search_options')" />
                                                 <b-input-group-append>
                                                     <b-button size="sm" variant="outline-primary"
-                                                        v-b-toggle.sidebar-add-new-patient>
+                                                        @click="isAddNewPatientSidebarActive = true"
+                                                        v-b-tooltip.hover :title="$t('patients.title_add')">
                                                         <feather-icon icon="PlusIcon" />
                                                     </b-button>
                                                 </b-input-group-append>
                                             </b-input-group>
                                         </b-form-group>
-
-                                        <!-- Patient Details -->
-                                        <b-card-body v-if="selectedPatient.full_name" class="invoice-padding pt-0_">
-                                            <b-row class="invoice-spacing">
-                                                <b-col cols="12" xl="12" class="p-1">
-                                                    <p class="card-text mb-25">
-                                                        <strong>{{ $t('patients.document_type') }}({{
-                                                            selectedPatient.document_type }}):</strong>
-                                                        {{ selectedPatient.rut }}
-                                                    </p>
-                                                    <p class="card-text mb-25">
-                                                        <strong>{{ $t('patients.address') }}:</strong>
-                                                        {{ selectedPatient.address }}
-                                                    </p>
-                                                    <p class="card-text mb-25">
-                                                        <strong>{{ $t('patients.phone') }}:</strong>
-                                                        {{ selectedPatient.phone }}, {{ selectedPatient.cellphone }}
-                                                    </p>
-                                                    <p class="card-text mb-25">
-                                                        <strong>{{ $t('patients.email') }}:</strong>
-                                                        {{ selectedPatient.email }}
-                                                    </p>
-                                                </b-col>
-                                            </b-row>
-                                        </b-card-body>
                                     </b-col>
 
                                     <!-- Col: Balance Details -->
-                                    <b-col v-if="selectedPatient.full_name" xl="6" cols="12"
-                                        class="pt-2 mt-xl-0 mt-2 d-flex justify-content-xl-end">
+                                    <b-col v-if="selectedPatient.full_name" xl="6" cols="12" class="pt-2 mt-xl-0 mt-2 d-flex justify-content-xl-end">
                                         <div>
-                                            <h6 class="mb-2">{{ $t('payments.balance_general') }}:</h6>
-                                            <table>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="pe-1">{{ $t("patients.total_debt") }}: </td>
-                                                        <td aria-colindex="1" role="cell">
-                                                            <strong>{{ formatPrice(totalDebt) }}</strong>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="pe-1">{{ $t('patients.positive_balance') }}:</td>
-                                                        <td><strong>$ 0.00</strong></td>
-                                                    </tr>
-                                                </tbody>
+                                            <table class="small text-small">
+                                                <tr>
+                                                    <th>{{ $t('patients.document_type') }}</th>
+                                                    <td>{{ selectedPatient.rut }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>{{ $t('patients.address') }}</th>
+                                                    <td>{{ selectedPatient.address }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>{{ $t('patients.phone') }}</th>
+                                                    <td>{{ selectedPatient.phone }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>{{ $t('patients.email') }}</th>
+                                                    <td>{{ selectedPatient.email }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>{{ $t("patients.total_debt") }} </th>
+                                                    <th>{{ formatPrice(selectedPatient.total_debt) }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>{{ $t('patients.positive_balance') }}</th>
+                                                    <th>$ 0.00</th>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <b-button size="sm" v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="outline-secondary"
+                                                            class="mb-75" block @click="$router.push({name: 'apps-budgets-list'})">
+                                                            {{ $t('back') }}
+                                                        </b-button>
+                                                    </td>
+                                                </tr>
                                             </table>
                                         </div>
                                     </b-col>
@@ -221,8 +206,7 @@
                                                 <tbody>
                                                     <tr>
                                                         <td class="pe-1">
-                                                            <p class="invoice-total-title">{{ $t('budgets.subtotal') }}:
-                                                            </p>
+                                                            <p class="invoice-total-title">{{ $t('budgets.subtotal') }}:</p>
                                                         </td>
                                                         <td aria-colindex="1" role="cell">
                                                             <p class="invoice-total-amount">
@@ -303,7 +287,7 @@
         <search-patient :active="activeSearchPatient" @selected="selectPatient" @close="activeSearchPatient = false" />
 
         <!-- Patient Add -->
-        <sidebar-add-new-patient :active="hideSidebar" :data="patient" @store="storePatient"
+        <sidebar-add-new-patient  :is-add-new-patient-sidebar-active.sync="isAddNewPatientSidebarActive" :data="patient" @store="storePatient"
             :isValidCellPhone="isValidCellPhone" :loading="loading" />
 
         <!-- Modal areas -->
@@ -411,7 +395,9 @@ import BCardCode from '@core/components/b-card-code'
 import {
     BRow, BCol, BCard, BCardBody, BCardFooter, BTableLite, BCardText, BButton, BAlert, BLink, VBToggle, BOverlay, BSpinner, BTable, BFormCheckbox, BFormGroup, BFormInput,
     BModal, VBModal, BSidebar, BForm, BIcon, BInputGroup, BInputGroupAppend, BInputGroupPrepend, BFormTextarea, BFormTags, BAvatar,
-    BFormRadioGroup, BFormInvalidFeedback, BFormValidFeedback
+    BFormRadioGroup, BFormInvalidFeedback, BFormValidFeedback,  
+    BTooltip,
+    VBTooltip,
 } from 'bootstrap-vue'
 import router from "@/router";
 import vSelect from "vue-select";
@@ -442,6 +428,7 @@ export default {
         Ripple,
         'b-modal': VBModal,
         'b-toggle': VBToggle,
+        "b-tooltip": VBTooltip,
     },
     components: {
         BRow,
@@ -478,6 +465,8 @@ export default {
         BFormRadioGroup,
         BFormInvalidFeedback,
         BFormValidFeedback,
+        BTooltip,
+        VBTooltip,
     },
     mixins: [heightTransition],
     data() {
@@ -798,6 +787,7 @@ export default {
             selectedBranch: null,
             activeSearchPatient: false,
             example: {},
+            isAddNewPatientSidebarActive: false,
         }
     },
     computed: {
@@ -1170,9 +1160,9 @@ export default {
             }
         },
         selectedPatient(value) {
-            this.totalDebt = value.budgets.reduce((carry, debt) => {
-                return carry + parseFloat(debt.total_debt);
-            }, 0);
+            // this.totalDebt = value.budgets.reduce((carry, debt) => {
+            //     return carry + parseFloat(debt.total_debt);
+            // }, 0);
         },
         areasSelected(value) {
 

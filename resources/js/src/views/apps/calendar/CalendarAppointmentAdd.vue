@@ -532,7 +532,13 @@ export default {
 
                 nextTick(() => {
                     if (branchs.value.length > 0) {
-                        appointmentData.value.branch_office_id = branchs.value[0].id
+                        const finded = branchs.value.find(b => b.id === 1)
+
+                        if (finded) {
+                            appointmentData.value.branch_office_id = finded.id
+                        } else {
+                            appointmentData.value.branch_office_id = branchs.value[0].id
+                        }
                     }
                 })
 

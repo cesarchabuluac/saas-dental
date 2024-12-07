@@ -21,7 +21,7 @@
                     <!-- Search -->
                     <b-col cols="12" md="6">
                         <div class="d-flex align-items-center justify-content-end">
-                            <b-input-group>
+                            <!-- <b-input-group>
                                 <b-form-input v-model="searchQuery" class="d-inline-block _mr-1"
                                     :placeholder="$t('laboratories.search_options')" @keyup.enter="getLaboratories" />
                                 <b-input-group-prepend>
@@ -29,6 +29,15 @@
                                         <feather-icon icon="SearchIcon" />
                                     </b-button>
                                 </b-input-group-prepend>
+                            </b-input-group> -->
+                            <b-input-group>
+                                <b-form-input v-model="searchQuery" class="d-inline-block _mr-1"
+                                    :placeholder="$t('laboratories.search_options')" @keyup.enter="getLaboratories" />
+                                <b-input-group-append>
+                                <b-button size="sm" variant="primary" @click="getLaboratories">
+                                    <feather-icon icon="SearchIcon" /> Buscar
+                                </b-button>
+                                </b-input-group-append>
                             </b-input-group>
                         </div>
                     </b-col>

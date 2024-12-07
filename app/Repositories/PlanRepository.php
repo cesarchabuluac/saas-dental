@@ -3,35 +3,23 @@
 namespace App\Repositories;
 
 use App\Models\Plan;
+use Prettus\Repository\Contracts\CacheableInterface;
 use Prettus\Repository\Eloquent\BaseRepository;
+use Prettus\Repository\Traits\CacheableRepository;
 
 /**
  * Class PlanRepository.
  *
  * @package namespace App\Repositories;
  */
-class PlanRepository extends BaseRepository
+class PlanRepository extends BaseRepository implements CacheableInterface
 {
-     /**
+    use CacheableRepository;
+
+    /**
      * @var array
-     */
-    protected $fieldSearchable = [
-        'api_id',
-        'image',
-        'name',
-        'amount',
-        'currency',
-        'interval',
-        'product_id',
-        'description',
-        'limit_doctor',
-        'limit_assistant',
-        'limit_receptionist',
-        'limit_patient',
-        'limit_domains',
-        'limit_purchases',
-        'limit_invoices',
-    ];
+    */
+    protected $fieldSearchable = [];
 
     /**
      * Specify Model class name

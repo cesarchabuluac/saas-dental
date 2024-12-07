@@ -1,12 +1,5 @@
 <template>
     <b-overlay :show="loading" blur="2px" variant="transparent" rounded="lg" opacity="0.85">
-        <template #overlay>
-            <div class="d-flex align-items-center">
-                <b-spinner small type="grow" variant="secondary" />
-                <b-spinner type="grow" variant="dark" />
-                <b-spinner small type="grow" variant="secondary" />
-            </div>
-        </template>
         <b-card v-if="data" class="card-transaction" no-body>
             <b-card-header>
                 <b-card-title>{{ $t('payments.transactions') }}</b-card-title>

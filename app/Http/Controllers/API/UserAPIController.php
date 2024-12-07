@@ -336,14 +336,15 @@ class UserAPIController extends Controller
      */
     public function update(UpdateUserRequest $request, $id)
     {
-        $oldUser = $this->userRepository->find($id);
+        $oldUser = $this->userRepository->with(['roles'])->find($id);
         if (empty($oldUser)) {
             return $this->sendError(__('lang.not_found', ['operator' => __('lang.user')]));
         }
     
         // Obtener roles actuales y comparar con los nuevos
         $currentRoleIds = $oldUser->roles->pluck('id')->toArray();
-        $newRoleIds = $request->input('roles', []);
+        $newRoleIds = collect($request->input('roles', []))->pluck('id')->toArray();
+
         $roleIdsAdded = array_diff($newRoleIds, $currentRoleIds);
     
         // Validar límites de roles si aplica

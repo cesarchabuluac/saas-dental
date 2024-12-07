@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_PTH = window.location.origin
+const BASE_PATH = window.location.origin
 
 export default class Tenants {
 

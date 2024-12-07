@@ -6,8 +6,7 @@ use App\Exports\PatientReport;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreatePatientRequest;
 use App\Http\Requests\UpdatePatientRequest;
-use App\Mail\StatementDetail;
-use App\Mail\UserRegister;
+use App\Http\Resources\PatientResource;
 use App\Repositories\AppointmentRepository;
 use App\Repositories\DocumentTypeRepository;
 use App\Repositories\PatientNumberRepository;
@@ -17,15 +16,11 @@ use App\Services\StorageService;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
 use Prettus\Validator\Exceptions\ValidatorException;
 use Illuminate\Support\Str;
 use Maatwebsite\Excel\Facades\Excel;
-use Prettus\Repository\Criteria\RequestCriteria;
 
 class PatientAPIController extends Controller
 {
@@ -331,25 +326,48 @@ class PatientAPIController extends Controller
     public function searchPatients(Request $request)
     {
         $search = trim(strtolower($request->q));
+        $perPage = $request->input('perPage', 10); // Usa 15 como valor predeterminado
+
 
         if (empty($search)) {
             return response()->json([]);
         }
 
-        // Paginación y búsqueda con consulta nativa
-        $patients = DB::table('patients')
-            ->select('id', 'name', 'last_name', 'mother_last_name', 'rut', 'phone', 'cellphone', 'email')
-            ->whereRaw(
-                "REPLACE(CONCAT(COALESCE(name, ''), ' ', COALESCE(last_name, ''), ' ', COALESCE(mother_last_name, '')), '  ', ' ') LIKE ?",
-                ['%' . $search . '%']
-            )
-            ->orWhere('rut', 'LIKE', '%' . $search . '%')
-            ->orWhere('phone', 'LIKE', '%' . $search . '%')
-            ->orWhere('cellphone', 'LIKE', '%' . $search . '%')
-            ->orWhere('email', 'LIKE', '%' . $search . '%')
-            ->paginate($request->perPage);
+        // $patients = DB::table('patients')
+        //     ->select('id', 'name', 'last_name', 'mother_last_name', 'document_type', 'rut', 'phone', 'cellphone', 'email')
+        //     ->where(function ($query) use ($search) {
+        //         $query->whereRaw(
+        //             "REPLACE(CONCAT(COALESCE(name, ''), ' ', COALESCE(last_name, ''), ' ', COALESCE(mother_last_name, '')), '  ', ' ') LIKE ?",
+        //             ['%' . $search . '%']
+        //         )
+        //         ->orWhere('rut', 'LIKE', '%' . $search . '%')
+        //         ->orWhere('phone', 'LIKE', '%' . $search . '%')
+        //         ->orWhere('cellphone', 'LIKE', '%' . $search . '%')
+        //         ->orWhere('email', 'LIKE', '%' . $search . '%');
+        //     })
+        //     ->paginate($perPage);
 
-        return response()->json($patients);
+        $patients = $this->patientRepository->with(['budgets']) // Carga los presupuestos relacionados
+            ->where(function ($query) use ($search) {
+                $query->whereRaw(
+                    "REPLACE(CONCAT(COALESCE(name, ''), ' ', COALESCE(last_name, ''), ' ', COALESCE(mother_last_name, '')), '  ', ' ') LIKE ?",
+                    ['%' . $search . '%']
+                )
+                ->orWhere('rut', 'LIKE', '%' . $search . '%')
+                ->orWhere('phone', 'LIKE', '%' . $search . '%')
+                ->orWhere('cellphone', 'LIKE', '%' . $search . '%')
+                ->orWhere('email', 'LIKE', '%' . $search . '%');
+            })
+            ->paginate($perPage);
+
+        // Agregar la deuda total de cada paciente
+        $patients->getCollection()->transform(function ($patient) {
+            $patient->total_debt = $patient->budgets->sum('total_debt'); // Calcula la deuda total sumando los presupuestos
+            return $patient;
+        });
+
+        // Aplicar el Resource
+        return PatientResource::collection($patients);
     }
 
 

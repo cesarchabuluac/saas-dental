@@ -96,6 +96,8 @@ import store from '@/store'
 import router from "@/router";
 import { checkIsCentral } from '@/libs/domains';
 import ToastificationContent from '@core/components/toastification/ToastificationContent.vue'
+import useAppConfig from '@core/app-config/useAppConfig'
+import { computed, watch } from '@vue/composition-api'
 
 export default {
   components: {
@@ -154,7 +156,7 @@ export default {
     },
     appName () {
       return store.state.auth.app_name || window._setting.app_name
-    }
+    },    
   },
   mounted() {
 
@@ -173,6 +175,13 @@ export default {
           this.loading = true;
           store.dispatch("auth/GET_AUTH_TOKEN", payload).then(() => {
             const user = store.getters['auth/getUser']
+
+            console.error(user)
+
+            console.log(store.state.auth.theme)
+
+            store.commit('appConfig/UPDATE_SKIN', store.state.auth.theme)
+
             this.success(`${this.$t('welcome')} ${user.name}`);
             if(user.roles[0].id === 4) {
             	router.push({ name: "appointments" });
@@ -190,6 +199,18 @@ export default {
       })
     },
   },
+  setup() {
+    const { skin } = useAppConfig()
+
+    // const skinTheme = computed(() => {
+    //   return store.state.auth.theme || 'light'
+    // })
+
+    // watch(skinTheme, (value) => {
+    //   console.warn(value)
+    // })
+    
+  }
 }
 </script>
 

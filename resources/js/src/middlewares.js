@@ -3,7 +3,6 @@ import router from "./router";
 import store from "./store";
 
 router.beforeEach((to, from, next) => {
-    console.log(to.name)
     if (to.name === "login" || to.name === "forgot-password" || to.name === "reset-password" || to.name === "auth-register" || to.name === 'impersonate') {
         if (store.state.auth.user === null) {
             next();

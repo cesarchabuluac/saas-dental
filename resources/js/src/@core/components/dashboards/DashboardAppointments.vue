@@ -1,12 +1,5 @@
 <template>
     <b-overlay :show="loading" blur="2px" variant="transparent" rounded="lg" opacity="0.85">
-        <template #overlay>
-            <div class="d-flex align-items-center">
-                <b-spinner small type="grow" variant="secondary" />
-                <b-spinner type="grow" variant="dark" />
-                <b-spinner small type="grow" variant="secondary" />
-            </div>
-        </template>
 
         <!-- Table Container Card -->
         <b-card no-body>
@@ -45,11 +38,11 @@
                                     <b-input-group>
                                         <b-form-input size="sm" v-model="searchQuery" class="d-inline-block _mr-1"
                                             :placeholder="$t('appointments.input_search')" @keyup.enter="getAppointments" />
-                                        <b-input-group-prepend>
-                                            <b-button size="sm" variant="primary" @click="getAppointments">
-                                                <feather-icon icon="SearchIcon" />
-                                            </b-button>
-                                        </b-input-group-prepend>
+                                        <b-input-group-append>
+                                        <b-button size="sm" variant="primary" @click="getAppointments">
+                                            <feather-icon icon="SearchIcon" /> Buscar
+                                        </b-button>
+                                        </b-input-group-append>
                                     </b-input-group>
                                 </div>
                             </b-col>
@@ -58,80 +51,79 @@
                 </b-row>
             </div>
 
-            <b-table ref="refAppointmentsListTable" striped hover :items="appointments" :fields="columns" responsive
-                primary-key="id" show-empty :empty-text="$t('datatables.sZeroRecords')" class="position-relative table-small text-small small"
-                :current-page="currentPage" :busy.sync="loading" small stacked="md">
+            <div class="position-relative table-small text-small small b-table-sticky-header table-responsive">
+                <table role="table" aria-busy="false" aria-colcount="5" class="table b-table table-striped table-hover table-sm b-table-no-border-collapse">                    
+                    <thead role="rowgroup">
+                        <tr role="row" class="">
+                            <th v-for="(column, index) in columns" :key="index" role="columnheader" scope="col" :aria-colindex="index" class="table-b-table-default">
+                                <div>{{ column.label }}</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody role="rowgroup">
+                        <tr role="row" v-for="(item, index) in appointments" :key="index" :id="item.id">
+                            <td :aria-colindex="index + 1" role="cell" class=""> {{ dateTimeFormat(item.date, 'H:mm') }}</td>
+                            <td :aria-colindex="index + 2" role="cell" class="">
+                                <b-media vertical-align="center">
+                                    <b-link :to="{ name: 'apps-patients-view', params: { id: item.patient.id } }"
+                                        class="text-wrap">
+                                        <span class="font-weight-bold d-block text-wrap">
+                                            {{ item.patient.full_name }}
+                                        </span>
+                                    </b-link>
+                                    <small class="text-muted">
+                                        {{ item.patient.document_type }}: {{ item.patient.rut }}<br>
+                                        <b-link :href="`tel:${item.patient.phone}`">
+                                            <feather-icon icon="PhoneCallIcon" class="cursor-pointer" />
+                                            {{ item.patient.phone }}
+                                        </b-link>,
+                                        <b-link target="_blank"
+                                            :href="`https://wa.me/${item.patient.cellphone}?text=${messageWhatsapp(item)}`"
+                                            class="text-wrap">
+                                            <feather-icon icon="MessageSquareIcon" class="cursor-pointer" />
+                                            {{ item.patient.cellphone }}
+                                        </b-link>
+                                    </small>
+                                </b-media>
+                            </td>
+                            <td :aria-colindex="index + 3" role="cell" class="">
+                                <span class="font-weight-bold d-block text-wrap">
+                                    {{ item.user.name }}
+                                </span>
+                            </td>
+                            <td :aria-colindex="index + 4" role="cell" class="">
+                                <b-badge :variant="`${resolveStateAppointmentColor(item.state)}`">{{
+                                    resolveStateAppointment(item.state) }}</b-badge>   
+                            </td>
+                            <td :aria-colindex="index + 5" role="cell" class="">
+                                <div class="demo-inline-spacing">
+                                    <b-button
+                                        v-if="findSetting('enable_email_notification') && canAccess('appointments.send') && item.state !== 'canceled'"
+                                        v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="secondary" class="btn-icon" size="sm"
+                                        @click="sendEmail(item)">
+                                        <feather-icon icon="SendIcon" />
+                                    </b-button>                      
 
-                <!-- Hour -->
-                <template #cell(hour)="data">
-                    {{ dateTimeFormat(data.item.date, 'H:mm') }}
-                </template>
+                                    <b-button v-if="canAccess('appointments.edit')"
+                                        v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="primary" class="btn-icon" size="sm"
+                                        @click="editAppointment(item)">
+                                        <feather-icon icon="EditIcon" />
+                                    </b-button>
 
-                <!-- Column: Patient -->
-                <template #cell(patient_id)="data">
-                    <b-media vertical-align="center">
-                        <b-link :to="{ name: 'apps-patients-view', params: { id: data.item.patient.id } }"
-                            class="text-wrap">
-                            <span class="font-weight-bold d-block text-wrap">
-                                {{ data.item.patient.full_name }}
-                            </span>
-                        </b-link>
-                        <small class="text-muted">
-                            {{ data.item.patient.document_type }}: {{ data.item.patient.rut }}<br>
-                            <b-link :href="`tel:${data.item.patient.phone}`">
-                                <feather-icon icon="PhoneCallIcon" class="cursor-pointer" />
-                                {{ data.item.patient.phone }}
-                            </b-link>,
-                            <b-link target="_blank"
-                                :href="`https://wa.me/${data.item.patient.cellphone}?text=${messageWhatsapp(data.item)}`"
-                                class="text-wrap">
-                                <feather-icon icon="MessageSquareIcon" class="cursor-pointer" />
-                                {{ data.item.patient.cellphone }}
-                            </b-link>
-                        </small>
-                    </b-media>
-                </template>
-
-                <!-- user_id -->
-                <template #cell(user_id)="data">
-                    <span class="font-weight-bold d-block text-wrap">
-                        {{ data.item.user.name }}
-                    </span>
-                </template>
-
-                <!-- Column: Statte -->
-                <template #cell(state)="data">
-                    <b-badge :variant="`${resolveStateAppointmentColor(data.item.state)}`">{{
-                        resolveStateAppointment(data.item.state) }}</b-badge>
-                </template>
-
-                <!-- Column: Actions -->
-                <template #cell(actions)="data">
-                    <div class="demo-inline-spacing">
-                        <b-button
-                            v-if="findSetting('enable_email_notification') && canAccess('appointments.send') && data.item.state !== 'canceled'"
-                            v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="secondary" class="btn-icon" size="sm"
-                            @click="sendEmail(data.item)">
-                            <feather-icon icon="SendIcon" />
-                        </b-button>                      
-
-                        <b-button v-if="canAccess('appointments.edit')"
-                            v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="primary" class="btn-icon" size="sm"
-                            @click="editAppointment(data.item)">
-                            <feather-icon icon="EditIcon" />
-                        </b-button>
-
-                        <b-button v-if="canAccess('appointments.destroy') && (data.item.state == 'pending')"
-                            v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="danger" class="btn-icon" size="sm"
-                            @click="deleteAppointment(data.item)">
-                            <feather-icon icon="Trash2Icon" />
-                        </b-button>
-                    </div>
-                </template>
-            </b-table>
+                                    <b-button v-if="canAccess('appointments.destroy') && (item.state == 'pending')"
+                                        v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="danger" class="btn-icon" size="sm"
+                                        @click="deleteAppointment(item)">
+                                        <feather-icon icon="Trash2Icon" />
+                                    </b-button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>           
 
             <!-- Pagination -->
-            <div v-if="appointments" class="mx-2 mb-2">
+            <div v-if="totalAppointments > 0" class="mx-2 mb-2">
                 <b-row>
                     <b-col cols="12" sm="6"
                         class="d-flex align-items-center justify-content-center justify-content-sm-start">

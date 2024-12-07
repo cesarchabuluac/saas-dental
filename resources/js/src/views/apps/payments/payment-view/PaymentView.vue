@@ -80,11 +80,11 @@
                             <b-input-group>
                                 <b-form-input size="sm" v-model="searchQuery" class="d-inline-block _mr-1" :placeholder="$t('payments.input_search')" 
                                 @keyup.enter="getPayments"/>
-                                <b-input-group-prepend>
+                                <b-input-group-append>
                                 <b-button size="sm" variant="primary" @click="getPayments">
-                                    <feather-icon icon="SearchIcon" />
+                                    <feather-icon icon="SearchIcon" /> Buscar
                                 </b-button>
-                                </b-input-group-prepend>                                
+                                </b-input-group-append>
                             </b-input-group>
                         </div>
                     </b-col>

@@ -73,26 +73,27 @@
 							<!-- Table Top -->
 							<b-row>
 								<!-- Per Page -->
-								<b-col cols="12" md="4"
-									class="d-flex align-items-center justify-content-start mb-1 mb-md-0">
+								<b-col cols="12" md="6"
+									class="d-flex align-items-center justify-content-start mb-1 mb-md-0 col-md-6 col-12">
 									<label>{{ $t("show") }}</label>
 									<v-select v-model="perPage" :options="perPageOptions" :clearable="false"
-										class="per-page-selector d-inline mx-50 select-size-sm" />
-									<label>{{ $t("entries") }}</label>
+										class="select-size-sm per-page-selector d-inline-block mx-50" />									
 								</b-col>
 
 								<!-- Search -->
-								<b-col cols="12" md="8">
+								<b-col cols="12" md="6">
 									<div class="d-flex align-items-center justify-content-end">
-										<b-form-input size="sm" v-model="searchQuery" class="d-inline-block mr-1"
-											:placeholder="$t('budgets.search_options')" @keyup.enter="filter" />
-										<b-button size="sm" variant="primary" @click="filter">
-											<span class="text-nowrap">
-												{{ $t("search") }}
-											</span>
-										</b-button>
+										<b-input-group>
+											<b-form-input size="sm" v-model="searchQuery" class="d-inline-block _mr-1"
+											:placeholder="$t('budgets.search_options')" @keyup.enter="filter"/>
+											<b-input-group-append>
+											<b-button size="sm" variant="primary" @click="filter	">
+												<feather-icon icon="SearchIcon" /> Buscar
+											</b-button>
+											</b-input-group-append>
+										</b-input-group>
 									</div>
-								</b-col>
+								</b-col>								
 							</b-row>
 						</div>
 						<b-table ref="refPaymentsListTable" class="position-relative text-small small" :items="budgets" responsive
@@ -307,7 +308,7 @@ import * as moment from "moment";
 import {
 	VBToggle, BCard, BCardHeader, BCardTitle, BCardBody, BMediaBody, BMediaAside, BFormInput, BDropdown, BDropdownItem, BRow, BCol, BMedia,
 	BAvatar, BAlert, BLink, BOverlay, BSpinner, BButton, BTable, BSidebar, BForm, BFormGroup, BModal, VBModal, BCardText,
-	BPagination,
+	BPagination, BInputGroupPrepend, BInputGroupAppend, BInputGroup,
 } from "bootstrap-vue";
 import { VueGoodTable } from 'vue-good-table'
 import BCardCode from '@core/components/b-card-code'
@@ -358,6 +359,9 @@ export default {
 		BDropdown,
 		BDropdownItem,
 		BPagination,
+		BInputGroupPrepend, 
+		BInputGroupAppend, 
+		BInputGroup,
 		vSelect,
 		BSidebar,
 		BForm,

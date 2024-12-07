@@ -3,15 +3,19 @@
 namespace App\Repositories;
 
 use App\Models\Anamnesi;
+use Prettus\Repository\Contracts\CacheableInterface;
 use Prettus\Repository\Eloquent\BaseRepository;
+use Prettus\Repository\Traits\CacheableRepository;
 
 /**
  * Interface AnamnesiRepository.
  *
  * @package namespace App\Repositories;
  */
-class AnamnesiRepository extends BaseRepository
+class AnamnesiRepository extends BaseRepository implements CacheableInterface
 {
+    use CacheableRepository;
+    
     /**
      * @var array
      */

@@ -16,7 +16,7 @@
                     <span> {{ $t('last_month_help').replace(':operator', $t('patients.patients')) }}.</span>
                 </b-card-text>
 
-                <b-button :disabled="data.length" @click="$router.push({ name: 'patient-statistics' })" variant="outline-primary" class="mt-2">
+                <b-button :disabled="data.length" @click="$router.push({ name: 'patient-statistics' })" variant="outline-primary" class="_mt-2">
                     <feather-icon icon="EyeIcon" /> {{ $t('see_details') }}
                 </b-button>
             </b-col>

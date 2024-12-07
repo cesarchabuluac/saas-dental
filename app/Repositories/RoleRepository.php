@@ -17,9 +17,10 @@ use Prettus\Repository\Traits\CacheableRepository;
  * @method Role first($columns = ['*'])
 */
 
-class RoleRepository extends BaseRepository
+class RoleRepository extends BaseRepository implements CacheableInterface
 {
-
+    use CacheableRepository;
+    
     /**
      * @var array
      */

@@ -12,14 +12,15 @@ use Prettus\Repository\Traits\CacheableRepository;
  *
  * @package namespace App\Repositories;
  */
-class ActionGroupRepository extends BaseRepository
+class ActionGroupRepository extends BaseRepository implements CacheableInterface
 {
-   
+    use CacheableRepository;
+
     /**
      * @var array
      */
     protected $fieldSearchable = [
-        'name',
+        'name' => 'like',
     ];
 
     /**

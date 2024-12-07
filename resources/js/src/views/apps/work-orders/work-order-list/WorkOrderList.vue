@@ -44,12 +44,12 @@
                         <div class="d-flex align-items-center justify-content-end">
                             <b-input-group>
                                 <b-form-input v-model="searchQuery" class="d-inline-block _mr-1"
-                                    :placeholder="$t('work_orders.search_options')" @keyup.enter="getWorkOrders()" />
-                                <b-input-group-prepend>
-                                    <b-button variant="primary" @click="getWorkOrders()">
-                                        <feather-icon icon="SearchIcon" />
-                                    </b-button>
-                                </b-input-group-prepend>
+                                    :placeholder="$t('work_orders.search_options')" @keyup.enter="getWorkOrders" />
+                                <b-input-group-append>
+                                <b-button size="sm" variant="primary" @click="getWorkOrders">
+                                    <feather-icon icon="SearchIcon" /> Buscar
+                                </b-button>
+                                </b-input-group-append>
                             </b-input-group>
                         </div>
                     </b-col>

@@ -27,11 +27,11 @@
                             <b-input-group>
                                 <b-form-input v-model="search" class="d-inline-block _mr-1" :placeholder="$t('inventories.categories.search_help')"
                                 @keyup.enter="getUnits"/>
-                                <b-input-group-prepend>
-                                <b-button variant="primary" @click="getUnits">
-                                    <feather-icon icon="SearchIcon" />
+                                <b-input-group-append>
+                                <b-button size="sm" variant="primary" @click="getUnits">
+                                    <feather-icon icon="SearchIcon" /> Buscar
                                 </b-button>
-                                </b-input-group-prepend>
+                                </b-input-group-append>
                             </b-input-group>
                         </div>
                     </b-col>

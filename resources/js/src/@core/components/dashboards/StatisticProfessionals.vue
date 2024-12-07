@@ -1,20 +1,6 @@
 <template>
     <div>
-        <b-overlay
-            :show="loading"
-            blur="2px"
-            variant="transparent"
-            rounded="lg"
-            opacity="0.85"
-        >
-            <template #overlay>
-                <div class="d-flex align-items-center">
-                    <b-spinner small type="grow" variant="secondary" />
-                    <b-spinner type="grow" variant="dark" />
-                    <b-spinner small type="grow" variant="secondary" />
-                </div>
-            </template>
-
+        <b-overlay :show="loading" blur="2px" variant="transparent" rounded="lg" opacity="0.85">
             <b-card no-body class="mb-2">
                 <div class="m-2">
                     <b-row>
