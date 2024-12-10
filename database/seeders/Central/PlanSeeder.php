@@ -4,6 +4,7 @@ namespace Database\Seeders\Central;
 
 use App\Models\Plan;
 use Illuminate\Database\Seeder;
+use Laravelcm\Subscriptions\Interval;
 
 class PlanSeeder extends Seeder
 {
@@ -14,17 +15,18 @@ class PlanSeeder extends Seeder
      */
     public function run()
     {
-        Plan::insert([
+        Plan::updateOrCreate(['slug' => 'basico'], 
             [
-                'api_id' => 'plan_Obfm7WoAII1dZQ',
-                'image' => 'images/plans/default.png',
-                'name' => 'Básico',
-                'amount' => 15,
-                'currency_id' => 3,
-                'currency' => 'usd',
-                'interval' => 'month',
-                'product_id' => 'prod_ObfmLpyzx5VvYt',
-                'description' => 'Un comienzo sencillo para todos',
+                'name' => json_encode(['en' => 'Basic', 'es' => 'Básico']),
+                'description' => json_encode(['en' => 'A simple start for everyone', 'es' => 'Un comienzo sencillo para todos']), // JSON válido
+                'price' => 9.99,
+                'signup_fee' => 0,
+                'invoice_period' => 1,
+                'invoice_interval' => Interval::MONTH->value,
+                'trial_period' => 15,
+                'trial_interval' => Interval::DAY->value,
+                'sort_order' => 1,
+                'currency' => 'USD',                
                 'is_popular' => 0,
                 'limit_director' => 1,
                 'limit_doctor' => 1,
@@ -34,17 +36,20 @@ class PlanSeeder extends Seeder
                 'limit_domains' => 1,
                 'limit_purchases' => 999,
                 'limit_invoices' => 999,
-            ], [
-                'api_id' => 'plan_Obfopks2gqcxKJ',
-                'image' => 'images/plans/default.png',
-                'name' => 'Estandar',
-                'amount' => 49,
-                'currency_id' => 3,
-                'currency' => 'usd',
-                'interval' => 'month',
-                'product_id' => 'prod_ObfoCkle4qBLUX',
-                'description' => 'Lo mejor para medianas empresas',
-                'is_popular' => 0,
+            ]);
+            
+            Plan::updateOrCreate(['slug' => 'estandar'], [
+                'name' => json_encode(['en' => 'Standard', 'es' => 'Estándar']),
+                'description' => json_encode(['en' => 'The most popular choice', 'es' => 'La opción más popular']), // JSON válido                
+                'price' => 49,
+                'signup_fee' => 0,
+                'invoice_period' => 1,
+                'invoice_interval' => Interval::MONTH->value,
+                'trial_period' => 15,
+                'trial_interval' => Interval::DAY->value,
+                'sort_order' => 2,
+                'currency' => 'USD',
+                'is_popular' => 1,
                 'limit_director' => 1,
                 'limit_doctor' => 5,
                 'limit_assistant' => 5,
@@ -53,17 +58,20 @@ class PlanSeeder extends Seeder
                 'limit_domains' => 0,
                 'limit_purchases' => 9999,
                 'limit_invoices' => 9999,
-            ], [
-                'api_id' => 'plan_ObfpOCdNdDsl3M',
-                'image' => 'images/plans/default.png',
-                'name' => 'Empresa',
-                'amount' => 99,
-                'currency_id' => 3,
-                'currency' => 'usd',
-                'interval' => 'month',
-                'product_id' => 'prod_Obfpxg99j4t7ck',
-                'description' => 'Solución para grandes organizaciones',
-                'is_popular' => 1,
+            ]);
+            
+            Plan::updateOrCreate(['slug' => 'empresa'], [
+                'name' => json_encode(['en' => 'Enterprise', 'es' => 'Empresa']),
+                'description' => json_encode(['en' => 'For large organizations', 'es' => 'Para organizaciones grandes']), // JSON válido                
+                'price' => 99,
+                'signup_fee' => 0,
+                'invoice_period' => 1,
+                'invoice_interval' => Interval::MONTH->value,
+                'trial_period' => 15,
+                'trial_interval' => Interval::DAY->value,
+                'sort_order' => 1,
+                'currency' => 'USD',
+                'is_popular' => 0,
                 'limit_director' => 1,
                 'limit_doctor' => 0,
                 'limit_assistant' => 0,
@@ -72,7 +80,6 @@ class PlanSeeder extends Seeder
                 'limit_domains' => 0,
                 'limit_purchases' => 0,
                 'limit_invoices' => 0,
-            ],
         ]);
     }
 }

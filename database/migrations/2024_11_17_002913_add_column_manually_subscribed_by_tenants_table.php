@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('tenants', function (Blueprint $table) {
-            $table->foreignId('manually_subscribed_by')->nullable()->after('trial_ends_at')->constrained('users');
-        });
+        // Schema::table('tenants', function (Blueprint $table) {
+        //     $table->foreignId('manually_subscribed_by')->nullable()->after('trial_ends_at')->constrained('users');
+        // });
     }
 
     /**
@@ -25,8 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('tenants', function (Blueprint $table) {
-            $table->dropColumn('manually_subscribed_by');
-        });
+        // Schema::table('tenants', function (Blueprint $table) {
+        //     $table->dropColumn('manually_subscribed_by');
+        // });
     }
 };

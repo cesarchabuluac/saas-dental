@@ -13,9 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('plans', function (Blueprint $table) {
-            $table->integer('limit_director')->default(1)->comment('0 means unlimited')->after('is_popular');
-        });
+        Schema::dropIfExists('feature_plan');
+        Schema::dropIfExists('features');
+        Schema::dropIfExists('plans');
+        Schema::dropIfExists('subscription_items');
+        Schema::dropIfExists('subscriptions');
     }
 
     /**
@@ -25,8 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('plans', function (Blueprint $table) {
-            $table->dropColumn('limit_director');
-        });
+        //
     }
 };

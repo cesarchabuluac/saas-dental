@@ -140,10 +140,10 @@ class DashboardController extends Controller
     // return top clients
     public function topClients()
     {
-        $topClients = Tenant::withCount('subscriptions')
-            ->orderBy('subscriptions_count', 'desc')->get();
+        // $topClients = Tenant::withCount('subscriptions')
+        //     ->orderBy('subscriptions_count', 'desc')->get();
 
-        return $this->sendResponse($topClients, 'Top clients retrieved');
+        return $this->sendResponse([], 'Top clients retrieved');
     }
 
     public function databaseBackup(Request $request)

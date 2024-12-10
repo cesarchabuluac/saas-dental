@@ -14,44 +14,6 @@ class FeaturePlanSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        // FeaturePlan::insert([
-        //     [
-        //         'feature_id' => 1,
-        //         'plan_id' => 1
-        //     ],
-        //     [
-        //         'feature_id' => 2,
-        //         'plan_id' => 1
-        //     ],
-        //     [
-        //         'feature_id' => 1,
-        //         'plan_id' => 2
-        //     ],
-        //     [
-        //         'feature_id' => 2,
-        //         'plan_id' => 2
-        //     ],
-        //     [
-        //         'feature_id' => 3,
-        //         'plan_id' => 2
-        //     ],
-        //     [
-        //         'feature_id' => 1,
-        //         'plan_id' => 3
-        //     ],
-        //     [
-        //         'feature_id' => 2,
-        //         'plan_id' => 3
-        //     ],
-        //     [
-        //         'feature_id' => 3,
-        //         'plan_id' => 3
-        //     ],
-        //     [
-        //         'feature_id' => 4,
-        //         'plan_id' => 3
-        //     ],
-        // ]);
+    {        
     }
 }

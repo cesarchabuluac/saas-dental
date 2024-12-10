@@ -2,22 +2,18 @@
 
 namespace App\Models;
 
-use Attribute;
 use Carbon\Carbon;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Support\Facades\Log;
+use Laravelcm\Subscriptions\Traits\HasPlanSubscriptions;
 use Stancl\Tenancy\Contracts\TenantWithDatabase;
 use Stancl\Tenancy\Database\Concerns\HasDatabase;
 use Stancl\Tenancy\Database\Concerns\HasDomains;
 use Stancl\Tenancy\Database\Models\Tenant as BaseTenant;
-// use Laravel\Cashier\Billable;
 
 class Tenant extends BaseTenant implements TenantWithDatabase
 {
-    use HasDatabase, HasDomains, /*Billable,*/ Notifiable;
+    use HasDatabase, HasDomains, /*Billable,*/ Notifiable, HasPlanSubscriptions;
 
     protected $with = [
         'domains',
@@ -63,7 +59,7 @@ class Tenant extends BaseTenant implements TenantWithDatabase
     public function plan()
     {
         $plans = tenancy()->central(function () {
-            return Plan::orderBy('amount')->first();
+            return Plan::orderBy('price')->first();
         });
 
         return $this->belongsTo(Plan::class)
@@ -100,7 +96,9 @@ class Tenant extends BaseTenant implements TenantWithDatabase
      */
     public function getOnTrialAttribute()
     {
-        return false; //$this->onTrial();
+        return true; //$this->onTrial();
+        // $subscription = $this->subscription('default'); // O el nombre de la suscripción
+        // return $subscription ? $subscription->onTrial() : false;
     }
 
     public function getPhotoUrlAttribute()

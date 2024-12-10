@@ -14,19 +14,19 @@ class FeatureSeeder extends Seeder
      */
     public function run()
     {
-        Feature::insert([
-            [
-                'name' => 'Gestión de roles',
-            ],
-            [
-                'name' => 'Gestión de tasas de IVA',
-            ],
-            [
-                'name' => 'Copia de seguridad de la base de datos',
-            ],
-            [
-                'name' => 'Soporte bajo demanda',
-            ],
-        ]);
+        // Feature::insert([
+        //     [
+        //         'name' => 'Gestión de roles',
+        //     ],
+        //     [
+        //         'name' => 'Gestión de tasas de IVA',
+        //     ],
+        //     [
+        //         'name' => 'Copia de seguridad de la base de datos',
+        //     ],
+        //     [
+        //         'name' => 'Soporte bajo demanda',
+        //     ],
+        // ]);
     }
 }

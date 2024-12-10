@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Passport\Passport;
 use Stancl\Tenancy\Events\TenancyBootstrapped;
-use Laravel\Cashier\Cashier;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -95,7 +94,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        Cashier::ignoreMigrations();
+        // Cashier::ignoreMigrations();
         // if ($this->app->environment('local', 'testing') && class_exists(DuskServiceProvider::class)) {
         //     $this->app->register(DuskServiceProvider::class);
         // }
@@ -110,7 +109,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(Factory $cache, GeneralSetting $settings)
     {
         //define cashier model
-        Cashier::useCustomerModel(Tenant::class);
+        // Cashier::useCustomerModel(Tenant::class);
 
         Passport::loadKeysFrom(base_path(config('passport.key_path')));
 

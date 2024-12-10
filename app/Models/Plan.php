@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Support\Facades\Log;
+use Laravelcm\Subscriptions\Models\Plan as ModelPlan;
 
-class Plan extends Model
+class Plan extends ModelPlan
 {
     use HasFactory, SoftDeletes;
 
@@ -20,16 +20,26 @@ class Plan extends Model
      * @var array
      */
     protected $fillable = [
-        'api_id',
-        'image',
         'name',
-        'amount',
-        'currency_id',
-        'currency',
-        'interval',
-        'product_id',
+        'slug',
         'description',
+        'is_active',
+        'price',
+        'signup_fee',
+        'currency',
+        'trial_period',
+        'trial_interval',
+        'invoice_period',
+        'invoice_interval',
+        'grace_period',
+        'grace_interval',
+        'prorate_day',
+        'prorate_period',
+        'prorate_extend_due',
+        'active_subscribers_limit',
+        'sort_order',
         'is_popular',
+        'limit_director',
         'limit_doctor',
         'limit_assistant',
         'limit_receptionist',
@@ -55,18 +65,18 @@ class Plan extends Model
         'label_limit_patient',
     ];
 
-    protected static function boot()
-    {
-        parent::boot();
+    // protected static function boot()
+    // {
+    //     parent::boot();
 
-        // Cuando se está guardando un nuevo plan o actualizando un plan existente
-        static::saving(function ($plan) {
-            if ($plan->is_popular) {
-                // Si este plan se marca como popular, desmarca todos los demás
-                Plan::where('id', '!=', $plan->id)->update(['is_popular' => false]);
-            }
-        });
-    }
+    //     // Cuando se está guardando un nuevo plan o actualizando un plan existente
+    //     static::saving(function ($plan) {
+    //         if ($plan->is_popular) {
+    //             // Si este plan se marca como popular, desmarca todos los demás
+    //             Plan::where('id', '!=', $plan->id)->update(['is_popular' => false]);
+    //         }
+    //     });
+    // }
 
 
     public function getLabelLimitDoctorAttribute () {
@@ -101,10 +111,10 @@ class Plan extends Model
      /**
      * The features that belong to the plan.
      */
-    public function features(): BelongsToMany
-    {
-        return $this->belongsToMany(Feature::class);
-    }
+    // public function features(): BelongsToMany
+    // {
+    //     return $this->belongsToMany(Feature::class);
+    // }
 
     public function tenants(): HasMany
     {

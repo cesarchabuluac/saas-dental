@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\GeneralSetting;
 use Stancl\Tenancy\Database\Models\Domain;
 use App\Http\Requests\TenantRegisterRequest;
+use App\Models\Plan;
 use Illuminate\Support\Facades\Notification;
 use App\Notifications\NewSubscriptionNotification;
 use App\Notifications\OwnerWelcome;
@@ -99,6 +100,19 @@ class TenantService
             $request->safe()->except('password') +
                 $this->tenantData($request, $trialDayCount, now()),
         );
+
+        //Obtener el plan de menor precio
+        $basicPlan = Plan::orderBy('price')->first();
+
+        Log::info($basicPlan);
+
+        // Asignar el plan al tenant con un período de prueba
+        if ($basicPlan) {
+            $tenant->newPlanSubscription('default', $basicPlan)
+                ->trialDays($basicPlan->trial_period) // Usar los días del período de prueba definidos en el plan
+                ->create();
+        }
+
 
         $domain = $tenant->createDomain([
             'domain' => $request->domain,
