@@ -12,9 +12,9 @@
                             v-model="perPage"
                             :options="perPageOptions"
                             :clearable="false"
-                            class="per-page-selector d-inline-block mx-50"
+                            class="per-page-selector d-inline-block mx-50 select-size-sm"
                         />
-                        <b-button v-if="canAccess('tenants.create')" variant="primary"  @click="onShowModalCreateUpdateTenant=true">                            
+                        <b-button v-if="canAccess('tenants.create')" size="sm" variant="primary"  @click="onShowModalCreateUpdateTenant=true">                            
                             <span class="text-wrap">
                                 {{ $t("add") }}
                             </span>
@@ -25,13 +25,13 @@
                     <b-col cols="12" md="6">
                         <div class="d-flex align-items-center justify-content-end">
                             <b-input-group>
-                                <b-form-input v-model="searchQuery" class="d-inline-block _mr-1" :placeholder="$t('search')"
+                                <b-form-input size="sm" v-model="searchQuery" class="d-inline-block _mr-1" :placeholder="$t('search')"
                                 @keyup.enter="getTenants"/>
-                                <b-input-group-prepend>
-                                <b-button variant="primary" @click="getTenants">
-                                    <feather-icon icon="SearchIcon" />
+                                <b-input-group-append>
+                                <b-button size="sm" variant="primary" @click="getTenants">
+                                    <feather-icon icon="SearchIcon" /> Buscar
                                 </b-button>
-                                </b-input-group-prepend>
+                                </b-input-group-append>
                             </b-input-group>
                         </div>
                     </b-col>
@@ -208,16 +208,6 @@
             :visible="onShowModalCreateUpdateTenant">
 
             <b-overlay :show="loading" variant="transparent" blur="3px">
-            
-                <!-- <b-card-text class="mb-2 mt-2">
-                    {{ $t('form_register.description_2').replace(':number_days', this.setting.trial_day_count) }}
-                </b-card-text> -->
-                <b-alert variant="primary" show>
-                    <div class="alert-body">
-                        {{ $t('form_register.description_2').replace(':number_days', this.setting.trial_day_count) }}
-                    </div>
-                </b-alert>
-
                 <validation-observer ref="registerForm">
                     <b-form class="auth-register-form" @submit.prevent="register">
                         

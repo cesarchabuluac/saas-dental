@@ -12,9 +12,9 @@
                             v-model="perPage"
                             :options="perPageOptions"
                             :clearable="false"
-                            class="per-page-selector d-inline-block mx-50"
+                            class="per-page-selector d-inline-block mx-50 select-size-sm"
                         />
-                        <b-button variant="primary"  @click="onShowModalCreateUpdateFaq=true">                            
+                        <b-button size="sm" variant="primary"  @click="onShowModalCreateUpdateFaq=true">                            
                             <span class="text-wrap">
                                 {{ $t("add") }}
                             </span>
@@ -25,13 +25,13 @@
                     <b-col cols="12" md="6">
                         <div class="d-flex align-items-center justify-content-end">
                             <b-input-group>
-                                <b-form-input v-model="searchQuery" class="d-inline-block _mr-1" :placeholder="$t('search')"
+                                <b-form-input size="sm" v-model="searchQuery" class="d-inline-block _mr-1" :placeholder="$t('search')"
                                 @keyup.enter="getFaqs"/>
-                                <b-input-group-prepend>
-                                <b-button variant="primary" @click="getFaqs">
-                                    <feather-icon icon="SearchIcon" />
+                                <b-input-group-append>
+                                <b-button size="sm" variant="primary" @click="getFaqs">
+                                    <feather-icon icon="SearchIcon" /> Buscar
                                 </b-button>
-                                </b-input-group-prepend>
+                                </b-input-group-append>
                             </b-input-group>
                         </div>
                     </b-col>

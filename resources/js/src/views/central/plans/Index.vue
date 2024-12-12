@@ -12,9 +12,9 @@
                             v-model="perPage"
                             :options="perPageOptions"
                             :clearable="false"
-                            class="per-page-selector d-inline-block mx-50"
+                            class="per-page-selector d-inline-block mx-50 select-size-sm"
                         />
-                        <b-button v-if="canAccess('plans.create')" variant="primary" @click="$router.push({name: 'plans-add'})">                            
+                        <b-button v-if="canAccess('plans.create')" size="sm" variant="primary" @click="$router.push({name: 'plans-add'})">                            
                             <span class="text-wrap">
                                 {{ $t("add") }}
                             </span>
@@ -25,13 +25,13 @@
                     <b-col cols="12" md="6">
                         <div class="d-flex align-items-center justify-content-end">
                             <b-input-group>
-                                <b-form-input v-model="searchQuery" class="d-inline-block _mr-1" :placeholder="$t('search')"
+                                <b-form-input v-model="searchQuery" size="sm" class="d-inline-block _mr-1" :placeholder="$t('search')"
                                 @keyup.enter="getPlans"/>
-                                <b-input-group-prepend>
-                                <b-button variant="primary" @click="getPlans">
-                                    <feather-icon icon="SearchIcon" />
+                                <b-input-group-append>
+                                <b-button size="sm" variant="primary" @click="getPlans">
+                                    <feather-icon icon="SearchIcon" /> Buscar
                                 </b-button>
-                                </b-input-group-prepend>
+                                </b-input-group-append>
                             </b-input-group>
                         </div>
                     </b-col>

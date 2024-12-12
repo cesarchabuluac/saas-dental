@@ -536,7 +536,8 @@ var render = function () {
                       _c("label", [_vm._v(_vm._s(_vm.$t("table_show")))]),
                       _vm._v(" "),
                       _c("v-select", {
-                        staticClass: "per-page-selector d-inline-block mx-50",
+                        staticClass:
+                          "per-page-selector d-inline-block mx-50 select-size-sm",
                         attrs: {
                           options: _vm.perPageOptions,
                           clearable: false,
@@ -554,7 +555,7 @@ var render = function () {
                         ? _c(
                             "b-button",
                             {
-                              attrs: { variant: "primary" },
+                              attrs: { size: "sm", variant: "primary" },
                               on: {
                                 click: function ($event) {
                                   return _vm.$router.push({ name: "plans-add" })
@@ -589,7 +590,10 @@ var render = function () {
                           [
                             _c("b-form-input", {
                               staticClass: "d-inline-block _mr-1",
-                              attrs: { placeholder: _vm.$t("search") },
+                              attrs: {
+                                size: "sm",
+                                placeholder: _vm.$t("search"),
+                              },
                               on: {
                                 keyup: function ($event) {
                                   if (
@@ -617,18 +621,21 @@ var render = function () {
                             }),
                             _vm._v(" "),
                             _c(
-                              "b-input-group-prepend",
+                              "b-input-group-append",
                               [
                                 _c(
                                   "b-button",
                                   {
-                                    attrs: { variant: "primary" },
+                                    attrs: { size: "sm", variant: "primary" },
                                     on: { click: _vm.getPlans },
                                   },
                                   [
                                     _c("feather-icon", {
                                       attrs: { icon: "SearchIcon" },
                                     }),
+                                    _vm._v(
+                                      " Buscar\n                            "
+                                    ),
                                   ],
                                   1
                                 ),

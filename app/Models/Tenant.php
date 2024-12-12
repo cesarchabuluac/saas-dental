@@ -13,11 +13,11 @@ use Stancl\Tenancy\Contracts\TenantWithDatabase;
 use Stancl\Tenancy\Database\Concerns\HasDatabase;
 use Stancl\Tenancy\Database\Concerns\HasDomains;
 use Stancl\Tenancy\Database\Models\Tenant as BaseTenant;
-// use Laravel\Cashier\Billable;
+use Laravel\Cashier\Billable;
 
 class Tenant extends BaseTenant implements TenantWithDatabase
 {
-    use HasDatabase, HasDomains, /*Billable,*/ Notifiable;
+    use HasDatabase, HasDomains, Billable, Notifiable;
 
     protected $with = [
         'domains',

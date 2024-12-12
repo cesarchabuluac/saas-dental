@@ -373,16 +373,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -980,7 +970,8 @@ var render = function () {
                       _c("label", [_vm._v(_vm._s(_vm.$t("table_show")))]),
                       _vm._v(" "),
                       _c("v-select", {
-                        staticClass: "per-page-selector d-inline-block mx-50",
+                        staticClass:
+                          "per-page-selector d-inline-block mx-50 select-size-sm",
                         attrs: {
                           options: _vm.perPageOptions,
                           clearable: false,
@@ -998,7 +989,7 @@ var render = function () {
                         ? _c(
                             "b-button",
                             {
-                              attrs: { variant: "primary" },
+                              attrs: { size: "sm", variant: "primary" },
                               on: {
                                 click: function ($event) {
                                   _vm.onShowModalCreateUpdateTenant = true
@@ -1033,7 +1024,10 @@ var render = function () {
                           [
                             _c("b-form-input", {
                               staticClass: "d-inline-block _mr-1",
-                              attrs: { placeholder: _vm.$t("search") },
+                              attrs: {
+                                size: "sm",
+                                placeholder: _vm.$t("search"),
+                              },
                               on: {
                                 keyup: function ($event) {
                                   if (
@@ -1061,18 +1055,21 @@ var render = function () {
                             }),
                             _vm._v(" "),
                             _c(
-                              "b-input-group-prepend",
+                              "b-input-group-append",
                               [
                                 _c(
                                   "b-button",
                                   {
-                                    attrs: { variant: "primary" },
+                                    attrs: { size: "sm", variant: "primary" },
                                     on: { click: _vm.getTenants },
                                   },
                                   [
                                     _c("feather-icon", {
                                       attrs: { icon: "SearchIcon" },
                                     }),
+                                    _vm._v(
+                                      " Buscar\n                            "
+                                    ),
                                   ],
                                   1
                                 ),
@@ -1632,20 +1629,6 @@ var render = function () {
               ]),
             },
             [
-              _c("b-alert", { attrs: { variant: "primary", show: "" } }, [
-                _c("div", { staticClass: "alert-body" }, [
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(
-                        _vm
-                          .$t("form_register.description_2")
-                          .replace(":number_days", this.setting.trial_day_count)
-                      ) +
-                      "\n                "
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
               _c(
                 "validation-observer",
                 { ref: "registerForm" },
